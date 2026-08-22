@@ -121,6 +121,28 @@ def test_shock_scenario_changes_state_not_scripted():
     assert True
 
 
+def test_redesign_loop_improves_feasibility_under_constraint():
+    """Acceptance P: industrial constraint → product redesign → revised feasibility.
+
+    Under the REE export shock at 60% DVA, the validated SynRM substitution must
+    measurably reduce total shortfall in the pre-REPM-ramp window (2028), because body
+    actuators no longer consume shock-constrained magnets. Hand micro-actuators keep a
+    residual magnet gap by contract design.
+    """
+    from forge.shocks import apply_shocks as _apply
+    from forge.substitutions import apply_substitution as _apply_sub
+
+    pk = _humanoid()
+    pg = ProofGraph()
+    ex = explode_variant(pk.world, pg, "hv2_industrial", 1_000_000, [2028])
+    opts = ScenarioOptions(min_domestic_share=0.6)
+    w2, o2, _ = _apply(pk.world, pg, ["shk_cn_ree_minus80"], opts)
+    sr_plain = solve_objective(w2, pg, ex, [2028], o2)
+    ex_sub = _apply_sub(w2, pg, ex, pk.substitutions["sub_ree_free_actuation"])
+    sr_sub = solve_objective(w2, pg, ex_sub, [2028], o2)
+    assert sr_sub.years[2028].total_shortfall < sr_plain.years[2028].total_shortfall
+
+
 def test_reverse_buildability_dual_regime():
     pk = _humanoid()
     eng = ForgeEngine(pk)
