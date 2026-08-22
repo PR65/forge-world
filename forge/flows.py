@@ -67,6 +67,8 @@ class FlowGraph:
             self._parents.setdefault(e.dst, []).append(e)
         self._out_memo: Dict[str, Quantity] = {}
         self._in_memo: Dict[str, Quantity] = {}
+        self._in_progress_out: set = set()
+        self._in_progress_in: set = set()
 
     # ---------------------------------------------------------------- structure
     def children(self, node_id: str) -> List[FlowEdge]:
@@ -95,13 +97,19 @@ class FlowGraph:
         """Annual gross output requirement (includes own-route yield loss).
 
         The variant root's output is the objective itself: annual_units, never
-        yield-adjusted (its 'yield' slot is reserved and must stay unset).
+        yield-adjusted. Cycles raise UnitError explicitly.
         """
         if node_id == self.variant_id:
             return Quantity(self.annual_units, self.unit_by_node[node_id].unit)
         if node_id in self._out_memo:
             return self._out_memo[node_id]
-        direct = self.input_requirement(node_id)
+        if node_id in self._in_progress_out:
+            raise UnitError(f"cyclic requirement flow at '{node_id}'")
+        self._in_progress_out.add(node_id)
+        try:
+            direct = self.input_requirement(node_id)
+        finally:
+            self._in_progress_out.discard(node_id)
         y = self.yield_by_node.get(node_id, 1.0)
         val = direct.value / (y if y > 0 else 1e-9)
         self._out_memo[node_id] = Quantity(val, direct.unit)
@@ -111,16 +119,22 @@ class FlowGraph:
         """Annual amount of node demanded by its consumers (each edge counted once)."""
         if node_id in self._in_memo:
             return self._in_memo[node_id]
+        if node_id in self._in_progress_in:
+            raise UnitError(f"cyclic requirement flow at '{node_id}'")
         ins = self._parents.get(node_id, ())
         unit = self.unit_by_node[node_id]
         if not ins:
             self._in_memo[node_id] = Quantity(0.0, unit.unit)
             return self._in_memo[node_id]
+        self._in_progress_in.add(node_id)
         total: Optional[Quantity] = None
-        for e in ins:
-            parent_out = self.output_requirement(e.src)
-            contrib = Quantity(parent_out.value * e.qty.value, e.qty.unit)
-            total = contrib if total is None else _checked_add(total, contrib, node_id)
+        try:
+            for e in ins:
+                parent_out = self.output_requirement(e.src)
+                contrib = Quantity(parent_out.value * e.qty.value, e.qty.unit)
+                total = contrib if total is None else _checked_add(total, contrib, node_id)
+        finally:
+            self._in_progress_in.discard(node_id)
         self._in_memo[node_id] = total
         return total
 

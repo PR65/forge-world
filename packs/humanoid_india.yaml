@@ -1138,6 +1138,7 @@ substitutions:
       powered_joints: [30, 50]
       runtime_h: [4, 8]
       payload_kg: [15, 25]
+      backlash_arcmin: [0.5, 1.0]
     performance_delta:
       torque_density: "-15% vs NdFeB PMSM (REPORTED tradeoff)"
       inverter_demand: "+SiC stages required"
