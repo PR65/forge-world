@@ -567,20 +567,37 @@ def solve_objective(
                     "assumptions": sorted(set(br.assumptions_used)),
                 }
                 break
+            # If the shortfall already blocks delivery, DVA cannot be certified by
+            # tightening import caps — record and stop (infeasibility dominates).
+            if any(not yr.shortfall_vector.is_zero() for yr in results.values()):
+                dva_certificate = {
+                    "status": "infeasible_delivery_shortfall",
+                    "target_dva": target_dva,
+                    "achieved_dva_on_delivered": round(achieved, 6),
+                    "iterations": iterations,
+                    "tightened_items": {k: round(v, 4) for k, v in tighten.items()},
+                    "convention": br.convention,
+                    "assumptions": sorted(set(br.assumptions_used)),
+                }
+                break
             # tighten: reduce import allowance on items whose imported share of
             # delivered mix exceeds what the DVA budget can absorb
             slack = target_dva - achieved
-            step = min(0.25, max(0.05, slack))
+            step = min(0.5, max(0.15, slack))
             changed = False
-            for it, info in br.per_item.items():
+            ranked = sorted(br.per_item.items(),
+                            key=lambda kv: -kv[1].get("import_share_solved", 0.0))
+            for it, info in ranked:
                 imp_share = info.get("import_share_solved", 0.0)
-                if imp_share <= 0.0:
+                if imp_share <= 1e-9:
                     continue
                 cur = tighten.get(it, 1.0)
-                new_val = max(cur - step * imp_share, 0.0)
+                new_val = max(cur - step * cur if cur > 0 else 0.0, 0.0)
+                new_val = max(new_val, 0.02) if cur > 0.02 else 0.0
                 if new_val < cur - 1e-9:
                     tighten[it] = new_val
                     changed = True
+                    break   # one item per pass: keep certificates interpretable
             if not changed:
                 dva_certificate = {
                     "status": "infeasible_no_tightening_leverage",
@@ -591,11 +608,7 @@ def solve_objective(
                     "assumptions": sorted(set(br.assumptions_used)),
                 }
                 break
-            prev_worst = max(yr.normalized_deficit for yr in results.values()) \
-                if results else 0.0
             results = run_pass(tighten)
-            new_worst = max(yr.normalized_deficit for yr in results.values()) \
-                if results else 0.0
             if iterations == DVA_LOOP_MAX_ITER:
                 dva_certificate = {
                     "status": "max_iterations",
@@ -604,8 +617,6 @@ def solve_objective(
                     "iterations": iterations,
                     "tightened_items": {k: round(v, 4) for k, v in tighten.items()},
                 }
-        else:
-            pass
     elif adjudicable:
         dva_certificate = {
             "status": "not_enforced" if target_dva == 0 else "n/a",
