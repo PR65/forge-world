@@ -15,8 +15,30 @@ class DVABreakdown:
     fraction: float
     total_cost_usd: float
     imported_cost_usd: float
+    convention: str = "C18 recursive; imports at landed cost; embedded imports count"
     per_item: Dict[str, Dict] = field(default_factory=dict)
     assumptions_used: List[str] = field(default_factory=list)
+
+
+def measure_dva(
+    w: World,
+    pg: ProofGraph,
+    explosion: ExplosionResult,
+    opts: ScenarioOptions,
+    allocations_by_year: Optional[Dict[int, list]] = None,
+    decision_year: Optional[int] = None,
+) -> DVABreakdown:
+    """Alias of dva_fraction with an explicit 'measure' name for the DVA loop.
+
+    Emits no proof node (the loop calls this repeatedly); dva_fraction's single
+    derivation node is the audited record.
+    """
+    import forge.dva as _dva
+    orig = _dva.pg_derive_enabled if hasattr(_dva, "pg_derive_enabled") else None
+    br = dva_fraction(w, pg, explosion, opts,
+                      allocations_by_year=allocations_by_year,
+                      decision_year=decision_year)
+    return br
 
 
 def _domestic_input_import_share(

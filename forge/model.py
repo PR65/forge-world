@@ -262,6 +262,34 @@ class CapacitySegment(Entity):
 
 
 @dataclass
+class ForeignSupplySegment(Entity):
+    """Evidenced ABSOLUTE supply capacity available for import from an origin.
+
+    Import eligibility (policy) is a separate multiplier; this entity is the physical
+    ceiling. Without it, imports are eligibility-bounded only and the solve reports
+    that limitation in its conditionality ledger. V0 had no such concept, so any
+    eligible supplier implicitly offered demand-sized supply (F6).
+    """
+
+    item_id: str = ""
+    origin_country: str = ""
+    nameplate_annual: Optional[Quantity] = None
+    availability: float = 1.0
+    export_availability_fraction: float = 1.0   # share of capacity exported vs domestic use
+    valid_from: int = 1900
+    valid_to: int = 2100
+    epistemic_class: str = "REPORTED"
+
+    def effective_annual(self, year: int) -> Optional[Quantity]:
+        if not (self.valid_from <= year <= self.valid_to):
+            return None
+        if self.nameplate_annual is None:
+            return None
+        f = self.availability * self.export_availability_fraction
+        return self.nameplate_annual * f
+
+
+@dataclass
 class Project(Entity):
     item_id: str = ""
     geography: str = "INDIA"

@@ -287,6 +287,7 @@ class ForgeEngine:
                 "imported_cost_usd": dva.imported_cost_usd,
                 "assumptions": dva.assumptions_used,
                 "per_item_top": dict(list(sorted(dva.per_item.items()))[:24]),
+                "certificate": sr.dva_certificate,
             },
             "actions": [a.to_json() for a in actions],
             "plan": plan.to_json(),
