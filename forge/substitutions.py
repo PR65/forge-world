@@ -12,7 +12,7 @@ passed to explosion — no monkey-patching, no global state.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 from .evidence import ProofGraph
 from .explode import ExplosionResult, RequirementLine, primary_recipe
@@ -47,10 +47,16 @@ def validate_substitution(
         if not w.has(variant_id):
             reasons.append(f"unknown variant '{variant_id}'")
         else:
-            for e in w.out_edges(variant_id):
-                fr = w.entities.get(e.dst)
-                if not isinstance(fr, FunctionalRequirement):
-                    continue
+            # FRs link to the variant via derived_from (pack.py); check both directions.
+            fr_entities = [
+                ent for ent in w.entities.values()
+                if isinstance(ent, FunctionalRequirement)
+                and (
+                    any(e.src == ent.id and e.dst == variant_id
+                        for e in w.in_edges(variant_id))
+                )
+            ]
+            for fr in fr_entities:
                 spec = envelope.get(fr.metric)
                 entry = {
                     "requirement": fr.metric,
@@ -108,7 +114,8 @@ def apply_substitution(
     """Architecture-level rewrite + complete re-explosion. Immutable by construction."""
     from .explode import explode_variant
 
-    check = validate_substitution(w, contract)
+    variant_id = explosion.flows.variant_id
+    check = validate_substitution(w, contract, variant_id=variant_id)
     if not check.accepted:
         raise ValueError(
             f"substitution '{contract.get('id')}' rejected by equivalence gate: {check.reasons}"
@@ -142,12 +149,20 @@ def apply_substitution(
 
     # Route override: the replaced part resolves to the alternative recipe during rebuild.
     overrides = {replaced: alt_rec}
+    alt_part = alt_rec.output_part
+    # If the alternative recipe yields a different part, the architecture edit swaps
+    # the BOM entry: exclude the replaced part and add the alternative part instead.
+    bom_exclusions: Set[str] = set()
+    if alt_part and alt_part != replaced:
+        bom_exclusions.add(replaced)
+        bom_additions.append((alt_part, 1.0))
 
     res = explode_variant(
         w, pg, variant_id, annual_units, [2030],
         geography="INDIA",
         route_override=overrides,
         bom_additions=bom_additions,
+        bom_exclusions=bom_exclusions,
     )
     res.variant_id = f"{variant_id}+sub:{contract.get('id')}"
 

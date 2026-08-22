@@ -117,12 +117,14 @@ def _collect_bom_edges(w: World, node_id: str, depth: int,
 def explode_variant(w: World, pg: ProofGraph, variant_id: str, annual_units: float,
                     years: List[int], geography: Optional[str] = None,
                     route_override: Optional[Dict[str, ProductionRecipe]] = None,
-                    bom_additions: Optional[List[Tuple[str, float]]] = None) -> ExplosionResult:
+                    bom_additions: Optional[List[Tuple[str, float]]] = None,
+                    bom_exclusions: Optional[Set[str]] = None) -> ExplosionResult:
     """Expand variant BOM + recipe chains into an immutable FlowGraph and aggregate lines.
 
     `route_override` maps part_id -> recipe used instead of route selection
     (architecture edits; substitutions). `bom_additions` appends synthetic BOM edges
-    (variant -> part, qty pcs per unit) before expansion.
+    (variant -> part, qty pcs per unit) before expansion. `bom_exclusions` drops
+    declared BOM parts (architecture edits where the replacement part differs).
     Emits proof nodes for every computed line (C15 legacy behavior preserved).
     Raises UnitError on dimensionally invalid merges or cycles.
     """
@@ -143,6 +145,10 @@ def explode_variant(w: World, pg: ProofGraph, variant_id: str, annual_units: flo
     # --- Phase A: full BOM structure (product decomposition), per-unit edge qtys ---
     bom: List[FlowEdge] = []
     _collect_bom_edges(w, variant_id, 0, bom, set())
+    excl = set(bom_exclusions or set())
+    if excl:
+        bom = [e for e in bom if e.dst not in excl]
+        notes.append(f"BOM parts excluded by architecture edit: {sorted(excl)}")
     for pid, qty in (bom_additions or []):
         if not w.has(pid):
             w.add(Part(id=pid, name=pid, kind="part", part_class="component"))
