@@ -16,7 +16,8 @@
   reproducible ModelRuns.
 - **Three domain packs** — humanoid_india (flagship, 104 entities/18 evidence records),
   battery_gwh_india, smallsat_india. All schema-validated; UNKNOWN left UNKNOWN.
-- **48 passing tests** including pack benchmarks and three mechanism backtests.
+- **52 passing tests** including pack benchmarks, mechanism backtests, NL parsing, and the
+  redesign-loop acceptance lock.
 - **API server** — /api/packs, /api/solve, /api/packs/{id}, /api/optionvalue,
   /api/adapter/worldbank. Serves the built console.
 - **Console UI** — five instrument modes (VERDICT / STRATA / TIME / STRESS LAB / FRONTIER)
@@ -43,8 +44,15 @@
    equipment fleets are UNKNOWN (correctly) — so recursion triggers are exercised mainly in
    tests rather than the flagship run.
 6. Frontend assumes local API; no auth/multi-user.
-7. LLM adapter is an interface slot only — deterministic objective entry is the shipped path
-   (C20 keeps LLMs out of the numeric authority role regardless).
+7. LLM adapter is an interface slot only — deterministic objective entry (composer +
+   rule-based NL parser) is the shipped path (C20 keeps LLMs out of the numeric authority
+   role regardless).
+8. Inventory/WIP dynamics are out of V0 scope; shocks bite without buffer drawdown.
+
+## Human-only blockers
+
+None. No credentials, permissions, or external account actions were required; all data used
+is either supplied, public with permissive terms, or fetched live from open APIs.
 
 ## Next highest-leverage work
 
