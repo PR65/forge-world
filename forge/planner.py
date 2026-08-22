@@ -204,19 +204,33 @@ class PlanEngine:
             },
             geography=self.base_opts.geography,
             min_domestic_share=self.base_opts.min_domestic_share,
+            per_item_import_cap=dict(self.base_opts.per_item_import_cap),
             qualification_boosts=set(self.base_opts.qualification_boosts),
             competing_demand_cuts=dict(self.base_opts.competing_demand_cuts),
+            enforce_dva=self.base_opts.enforce_dva,
+            # N4/N6: preserve the base pipeline mode across clones.
+            funded_pipeline=self.base_opts.funded_pipeline,
         )
         subs = list(active_substitutions or [])
+        fund_added: Set[str] = set()
         for a in actions:
             opts.funded_project_ids |= a.effect_projects
-            if a.action_id.startswith("fund:"):
-                pid = a.action_id.split(":", 1)[1]
-                opts.funded_project_ids.add(pid)
+            if a.action_id.startswith("fund:") or a.kind == "FUND_PROJECT":
+                pid = a.action_id.split(":", 1)[1] if ":" in a.action_id else None
+                for pid2 in ({pid} if pid else set()) | a.effect_projects:
+                    if pid2:
+                        opts.funded_project_ids.add(pid2)
+                        fund_added.add(pid2)
             if a.kind == "SUBSTITUTE" and a.effect_substitution:
                 subs.append(a.effect_substitution)
             if a.kind == "QUALIFY" and a.resolves_unknown:
                 opts.qualification_boosts.add(a.resolves_unknown)
+        # N6: FUND actions must be numerically meaningful. Under the optimistic
+        # pipeline every evidenced project already counts, so adding an id is a
+        # no-op; a plan that funds projects therefore evaluates the
+        # selected-only pipeline containing exactly the chosen portfolio.
+        if fund_added and opts.funded_pipeline == "optimistic":
+            opts.funded_pipeline = "selected_only"
         sr = self.evaluate(opts, subs)
         return sr, opts
 
