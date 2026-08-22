@@ -7,7 +7,8 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from . import SOLVER_VERSION
-from .evidence import ProofGraph, snapshot_hash
+from .evidence import ProofGraph, snapshot_hash, world_snapshot
+from .units import Quantity
 
 
 @dataclass
@@ -34,13 +35,25 @@ class ModelRun:
         data_snapshot_payload: Any,
         assumptions: Optional[List[str]] = None,
         seed: int = 0,
+        world=None,
+        scenario_opts=None,
+        transform_config: Optional[Dict] = None,
     ) -> "ModelRun":
+        """Build a run identity over the FULL canonicalized solver-relevant state.
+
+        `data_snapshot_payload` is kept for backward compatibility; when `world` is
+        supplied the hash covers its complete entity/edge snapshot instead of any
+        summary (V0 hashed counts, so numeric edits were invisible — F21/P7b).
+        Timestamps and other non-deterministic metadata are excluded from the hash.
+        """
         payload = {
             "pack_id": pack_id,
             "pack_version": pack_version,
             "objective": objective,
             "scenario": scenario,
-            "data": data_snapshot_payload,
+            "data": (world_snapshot(world) if world is not None else data_snapshot_payload),
+            "scenario_options": _jsonify(scenario_opts) if scenario_opts is not None else None,
+            "transform_config": transform_config or {},
             "solver": SOLVER_VERSION,
             "seed": seed,
         }
@@ -76,3 +89,20 @@ class ModelRun:
             outputs=self.outputs,
             warnings=self.warnings,
         )
+
+
+def _jsonify(obj):
+    """Best-effort canonical JSON form for ScenarioOptions-like objects."""
+    if obj is None or isinstance(obj, (str, int, float, bool)):
+        return obj
+    if hasattr(obj, "value") and hasattr(obj, "unit"):
+        return [obj.value, obj.unit]
+    if isinstance(obj, dict):
+        return {str(k): _jsonify(v) for k, v in sorted(obj.items(), key=lambda kv: str(kv[0]))}
+    if isinstance(obj, (set, frozenset)):
+        return sorted(str(i) for i in obj)
+    if isinstance(obj, (list, tuple)):
+        return [_jsonify(v) for v in obj]
+    if hasattr(obj, "__dict__"):
+        return {k: _jsonify(v) for k, v in sorted(obj.__dict__.items())}
+    return str(obj)

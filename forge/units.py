@@ -124,8 +124,13 @@ for u in _COUNT_UNITS:
 _reg("%", _SINGLE["pcs"], 1.0)
 
 _reg("USD", _SINGLE["USD"], 1.0)
-_reg("EUR", _SINGLE["USD"], 1.0)
-_reg("INR", _SINGLE["USD"], 1.0)
+# Currencies share the USD *value* dimension for arithmetic but carry distinct
+# currency identities: cross-currency operations without an explicit FX context are
+# rejected at the arithmetic level too (V0 leak: EUR*pcs/pcs silently became USD).
+_CURRENCIES = ("USD", "EUR", "INR")
+for _c in _CURRENCIES:
+    _reg(_c, _SINGLE["USD"], 1.0)
+CURRENCY_OF_UNIT: Dict[str, str] = {u: u for u in _CURRENCIES}
 
 _reg("m2", _SINGLE["m2"], 1.0)
 _reg("km2", _SINGLE["m2"], 1e6)
@@ -266,7 +271,7 @@ class Quantity:
         if isinstance(other, Quantity):
             new_dim = self.dim * other.dim
             raw = self.canonical() * other.canonical()
-            return from_canonical(raw, new_dim)
+            return _check_currency_pair(self, other, from_canonical(raw, new_dim))
         if isinstance(other, (int, float)):
             return Quantity(self.value * other, self.unit)
         return NotImplemented
@@ -278,7 +283,7 @@ class Quantity:
         if isinstance(other, Quantity):
             new_dim = self.dim / other.dim
             raw = self.canonical() / other.canonical()
-            return from_canonical(raw, new_dim)
+            return _check_currency_pair(self, other, from_canonical(raw, new_dim))
         if isinstance(other, (int, float)):
             return Quantity(self.value / other, self.unit)
         return NotImplemented
@@ -365,6 +370,41 @@ def _composite_display(dim: Dim):
 
 def q(value: float, unit: str) -> Quantity:
     return Quantity(float(value), unit)
+
+
+def _currency_of_unit(unit: str) -> Optional[str]:
+    toks = set()
+    for side in unit.split("/"):
+        for tok in side.split("*"):
+            tok = tok.strip()
+            if tok in CURRENCY_OF_UNIT:
+                toks.add(tok)
+    if len(toks) > 1:
+        raise UnitError(f"multiple currencies in one quantity: {sorted(toks)}")
+    return next(iter(toks)) if toks else None
+
+
+def _check_currency_pair(a: "Quantity", b: "Quantity", out: "Quantity") -> "Quantity":
+    """Cross-currency arithmetic without an explicit FX context is rejected.
+
+    Distinct currencies meeting in one expression raise UnitError (V0 silently
+    normalized EUR -> USD here). Same-currency cancel-outs stay in that currency.
+    """
+    ca, cb = _currency_of_unit(a.unit), _currency_of_unit(b.unit)
+    if ca and cb and ca != cb:
+        raise UnitError(
+            f"cross-currency arithmetic {ca} vs {cb} requires an explicit scenario "
+            f"fx_rate via units.convert(); refusing silent normalization"
+        )
+    surviving = ca or cb
+    if surviving is None or out.unit == surviving:
+        return out
+    # Display-unit normalization relabeled a currency-bearing result (the value
+    # dimension renders as 'USD' by default, e.g. 'USD*pcs'). If exactly one
+    # currency entered the expression, restore its identity at face value.
+    if surviving and out.dim.exp_dict.get("USD", 0) >= 1:
+        return Quantity(out.value, surviving)
+    return out
 
 
 def register_unit(name: str, dim_spec, factor: float):
