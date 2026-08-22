@@ -1,0 +1,118 @@
+pack_id: test_mini
+title: Minimal synthetic test pack (NOT real-world data)
+version: 0.0.1
+geography_focus: INDIA
+notes: >
+  Synthetic fixture for pipeline tests only. Every entity here is ASSUMPTION-class.
+  It must never be presented as observed reality (C21).
+
+sources:
+  - id: src_test
+    name: Test fixture source
+    publisher: FORGE tests
+    url: ""
+    license: test-fixture
+    access_date: "2026-08-22"
+
+evidence:
+  - claim_id: ev_test_cap
+    subject: test_widget_line
+    predicate: qualified_effective_capacity
+    epistemic_class: ASSUMPTION
+    value_quantity: [50000, "pcs/yr"]
+    source_ids: [src_test]
+    quote_or_caveat: synthetic test capacity
+
+parts:
+  - id: gadget
+    name: Test gadget
+    part_class: subassembly
+  - id: widget
+    name: Test widget
+    part_class: component
+  - id: frame
+    name: Test frame
+    part_class: component
+    mass: [2, "kg_product"]
+
+product_variants:
+  - id: gadget_v1
+    name: Gadget variant 1
+    bom:
+      - part: widget
+        qty: 4
+      - part: frame
+        qty: 1
+
+recipes:
+  - id: rec_widget
+    name: Widget route
+    output_part: widget
+    output_quantity: [1, "pcs"]
+    steps:
+      - id: st_machine
+        name: machine
+        equipment_classes: [cnc_mill]
+        yield_fraction: 0.95
+    inputs:
+      - id: steel_bar
+        quantity: [1, "kg_product"]
+    evidence_ids: []
+  - id: rec_frame
+    name: Frame route
+    output_part: frame
+    output_quantity: [1, "pcs"]
+    steps:
+      - id: st_cast
+        name: cast
+        equipment_classes: [casting_cell]
+        yield_fraction: 0.9
+        scrap_fraction: 0.05
+    inputs:
+      - id: alu_ingot
+        quantity: [3, "kg_product"]
+    evidence_ids: []
+
+capacity_segments:
+  - id: seg_widget_test
+    item_id: widget
+    geography: INDIA
+    nameplate_annual: [60000, "pcs/yr"]
+    availability: 0.9
+    utilization: 0.85
+    yield_fraction: 0.95
+    qualification_fraction: 0.8
+    valid_from: 2020
+    evidence_ids: [ev_test_cap]
+  - id: seg_frame_import
+    item_id: frame
+    geography: GLOBAL
+    nameplate_annual: [1000000, "pcs/yr"]
+    evidence_ids: [ev_test_cap]
+
+projects:
+  - id: prj_widget_expand
+    item_id: widget
+    state: announced
+    state_date: "2026-06-01"
+    earliest_start_year: 2026
+    years_to_commission: [2, 3]
+    design_capacity_annual: [40000, "pcs/yr"]
+    ramp_points: [[0, 0.4], [2, 0.9], [3, 1.0]]
+    capex: [120, "MUSD"]
+    evidence_ids: [ev_test_cap]
+
+demand_pools:
+  - id: dp_steel
+    resource_id: steel_bar
+    baseline_annual: [90000000, "kg_product/yr"]
+    contestable_fraction: 0.1
+
+shocks:
+  - id: shk_steel_ban
+    name: Steel import ban (test)
+    description: Blocks steel_bar imports entirely
+    edits:
+      - type: import_eligibility
+        origin: CHINA
+        fraction: 0.0

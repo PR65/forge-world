@@ -1,0 +1,306 @@
+pack_id: smallsat_india
+title: "Domain pack 3: India 50 small satellites/yr (300 kg class) by 2030"
+version: 1.0.0
+geography_focus: INDIA
+notes: >
+  Low-volume/high-complexity contrast pack. Tests ontology generality: unit economics
+  are dominated by HiRel qualification, precision mechanisms (reaction wheels), radiation
+  tolerance and test infrastructure rather than raw throughput. Shares enabling
+  capabilities with the humanoid and battery packs (Li-ion cells, precision machining,
+  edge compute class devices, solar cells).
+
+sources:
+  - id: src_isro_ecosystem
+    name: Indian space reforms / IN-SPACe ecosystem reporting (supplied corpus context)
+    publisher: Government of India / corpus
+    url: ""
+    source_type: government_programme
+    license: public
+    access_date: "2026-08-22"
+  - id: src_iea_minerals
+    name: IEA critical minerals analysis
+    publisher: International Energy Agency
+    url: "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary"
+    source_type: intergovernmental_analysis
+    license: CC BY 4.0 (per IEA)
+    access_date: "2026-08-22"
+  - id: src_corpus_streams
+    name: FORGE WORLD Wide Research corpus stream notes
+    publisher: Supplied research corpus
+    url: ""
+    source_type: research_corpus
+    license: supplied-for-project use only
+    access_date: "2026-08-22"
+
+evidence:
+  - claim_id: ev_space_reforms
+    subject: india_space_sector
+    predicate: reform_state
+    epistemic_class: REPORTED
+    value_text: "Indian space sector opened to private participation (IN-SPACe framework); dozens of space startups active; ISRO transfer-of-tech pathways publicised"
+    source_ids: [src_isro_ecosystem]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.75, directness: 0.65, recency: 0.85}
+    quote_or_caveat: Reform existence is well reported; private HiRel component capacity remains largely UNKNOWN
+  - claim_id: ev_hirel_qualification
+    subject: space_grade_qualification
+    predicate: latency_and_cost_regime
+    epistemic_class: REPORTED
+    value_text: "Space-grade parts qualification regimes (screening, lot acceptance, radiation testing) drive long lead times and low volumes vs terrestrial electronics"
+    source_ids: [src_corpus_streams]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.7, corroboration: 0.7, completeness: 0.45}
+  - claim_id: ev_adcs_concentration
+    subject: reaction_wheel_supply
+    predicate: supplier_concentration
+    epistemic_class: REPORTED
+    value_text: "Precision ADCS mechanisms (reaction wheels/star trackers) are supplied by a small number of specialized firms concentrated in a few countries"
+    source_ids: [src_corpus_streams]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.6, corroboration: 0.6, completeness: 0.4}
+  - claim_id: ev_space_pv_cells
+    subject: triple_junction_cell_supply
+    predicate: production_concentration
+    epistemic_class: REPORTED
+    value_text: "Space-grade triple-junction GaAs cell production is concentrated in a handful of EU/US suppliers"
+    source_ids: [src_corpus_streams]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.6, corroboration: 0.55, completeness: 0.4}
+
+parts:
+  - id: sat_bus_structure
+    name: Satellite bus structure (Al honeycomb/CFC)
+    part_class: subassembly
+    mass: [60, "kg_product"]
+  - id: reaction_wheel
+    name: Reaction wheel assembly (precision flywheel + motor)
+    part_class: component
+    supplied_by_countries: [ESP, USA, DEU]
+    concentration_hhi: 0.7
+    lead_time: [12, "mo"]
+  - id: star_tracker
+    name: Star tracker
+    part_class: component
+    supplied_by_countries: [DNK, ESP, FRA]
+  - id: sun_sensor
+    name: Sun sensor
+    part_class: component
+  - id: gps_receiver_space
+    name: Space GNSS receiver
+    part_class: component
+  - id: obc_board_radhard
+    name: Onboard computer (rad-tolerant)
+    part_class: component
+    supplied_by_countries: [USA, FRA]
+  - id: sband_transponder
+    name: S-band transponder TT&C
+    part_class: component
+  - id: xband_payload_downlink
+    name: X-band payload downlink
+    part_class: component
+  - id: solar_panel_array
+    name: Deployable solar array (panel level)
+    part_class: subassembly
+  - id: triple_junction_cell
+    name: Triple-junction GaAs solar cell
+    part_class: component
+    supplied_by_countries: [DEU, USA]
+    concentration_hhi: 0.6
+  - id: battery_pack_satellite
+    name: Satellite battery pack (Li-ion, space-rated)
+    part_class: subassembly
+  - id: battery_cell_liion_space
+    name: Space-rated Li-ion cell (screened lot)
+    part_class: component
+  - id: thruster_set_chemical
+    name: Chemical monopropellant thruster set
+    part_class: component
+    supplied_by_countries: [USA, FRA]
+  - id: harness_spacegrade
+    name: Space-grade wiring harness
+    part_class: component
+    mass: [4, "kg_product"]
+  - id: optical_payload_300kg
+    name: Electro-optical payload suite
+    part_class: subassembly
+
+product_variants:
+  - id: eo_smallsat_300kg
+    name: EO small satellite, 300 kg class, 5-year life
+    anchor_evidence: [ev_space_reforms]
+    mass_kg: 300
+    functional_requirements:
+      - metric: annual_units
+        min: 40
+        max: 60
+        unit: units
+      - metric: orbit_life_years
+        min: 4
+        max: 7
+        unit: yr
+      - metric: payload_power_w
+        min: 300
+        max: 800
+        unit: W
+    bom:
+      - part: sat_bus_structure
+        qty: 1
+      - part: reaction_wheel
+        qty: 4
+      - part: star_tracker
+        qty: 2
+      - part: sun_sensor
+        qty: 2
+      - part: gps_receiver_space
+        qty: 1
+      - part: obc_board_radhard
+        qty: 1
+      - part: sband_transponder
+        qty: 1
+      - part: xband_payload_downlink
+        qty: 1
+      - part: solar_panel_array
+        qty: 3
+      - part: battery_pack_satellite
+        qty: 1
+      - part: thruster_set_chemical
+        qty: 1
+      - part: harness_spacegrade
+        qty: 1
+      - part: optical_payload_300kg
+        qty: 1
+
+recipes:
+  - id: rec_solar_panel_array
+    name: Solar array assembly
+    output_part: solar_panel_array
+    output_quantity: [1, "pcs"]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: cell_bonding
+        name: cell bonding + interconnect
+        equipment_classes: [cleanroom_bench]
+        yield_fraction: 0.96
+      - id: deploy_mech
+        name: deployment mechanism integration + test
+        equipment_classes: [thermal_vac_chamber]
+        yield_fraction: 0.97
+    inputs:
+      - id: triple_junction_cell
+        quantity: [220, "pcs"]
+
+  - id: rec_battery_pack_satellite
+    name: Satellite battery pack
+    output_part: battery_pack_satellite
+    output_quantity: [1, "pcs"]
+    maturity: pilot
+    requires_qualification: [qual_space_battery]
+    steps:
+      - id: pack_build_screen
+        name: build + screened-lot integration
+        equipment_classes: [cleanroom_bench]
+        yield_fraction: 0.95
+    inputs:
+      - id: battery_cell_liion_space
+        quantity: [56, "pcs"]
+
+  - id: rec_sat_bus_structure
+    name: Bus structure fabrication
+    output_part: sat_bus_structure
+    output_quantity: [1, "pcs"]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: composite_bond
+        name: honeycomb/composite layup + bond
+        equipment_classes: [autoclave]
+        yield_fraction: 0.95
+      - id: dim_inspect
+        name: dimensional inspection
+        equipment_classes: [metrology_cmm]
+        yield_fraction: 0.98
+    inputs:
+      - id: alu_ingot_aero
+        quantity: [70, "kg_product"]
+
+capacity_segments:
+  - id: seg_india_structures_space
+    item_id: sat_bus_structure
+    geography: INDIA
+    nameplate_annual: [120, "units/yr"]
+    availability: 0.9
+    utilization: 0.7
+    yield_fraction: 0.95
+    qualification_fraction: 0.9
+    valid_from: 2023
+    epistemic_class: ESTIMATED
+    notes: Order-of-magnitude prior from ISRO-ecosystem industrial base; not a measured line rate (C13)
+    evidence_ids: []
+
+projects:
+  - id: prj_private_constellation_plant
+    name: Private constellation integration facility (announced)
+    item_id: sat_bus_structure
+    state: announced
+    state_date: "2026-05-01"
+    earliest_start_year: 2027
+    years_to_commission: [2.0, 3.0]
+    design_capacity_annual: [100, "units/yr"]
+    ramp_points: [[0, 0.4], [2, 1.0]]
+    notes: Representative announced private facility; allocation/schedule UNKNOWN pending disclosures
+    evidence_ids: [ev_space_reforms]
+
+qualifications:
+  - id: qual_space_battery
+    item_id: battery_pack_satellite
+    qualifier: regulator
+    standard_ref: "space battery safety + screening regime"
+    status: study
+    latency_months: [18, 36]
+    evidence_ids: [ev_hirel_qualification]
+
+demand_pools:
+  - id: dp_tj_cells_global
+    resource_id: triple_junction_cell
+    baseline_annual: [4000000, "pcs/yr"]
+    contestable_fraction: 0.25
+    note: Global space-PV cell pool order-of-magnitude prior (ASSUMPTION)
+
+shocks:
+  - id: shk_launch_backlog
+    name: Launch availability crunch
+    description: Corridor-style constraint on launch slots raises program cost/time
+    edits:
+      - type: cost_multiplier
+        item: "*"
+        side: import
+        factor: 1.15
+  - id: shk_wheel_supply
+    name: Reaction wheel supplier disruption
+    description: Single-region ADCS supply cut to 30%
+    edits:
+      - type: import_eligibility
+        origin: ESP
+        fraction: 0.3
+
+substitutions: []
+
+resource_classes:
+  - id: radhard_components_chain
+    category: component_family
+    unit: pcs
+    supplied_by_countries: [USA, FRA]
+    concentration_hhi: 0.66
+
+crosswalks:
+  - from_class: HS
+    from_code: "8802.60"
+    to_entity: sat_bus_structure
+    confidence: 0.35
+    note: spacecraft heading exists at 6-digit but subsystem detail absent
+  - from_class: CPC_PATENT
+    from_code: "B64G"
+    to_entity: reaction_wheel
+    confidence: 0.3
+    note: astronautics patent class; inventive activity proxy only

@@ -1,0 +1,358 @@
+pack_id: battery_gwh_india
+title: "Domain pack 2: India 40 GWh/yr battery cell industrialization by 2030"
+version: 1.0.0
+geography_focus: INDIA
+notes: >
+  Material/process-heavy contrast pack grounded in evidenced policy data (ACC PLI).
+  Demonstrates chemistry substitutions (NMC->LFP->Na-ion), recycling as secondary
+  production, and purity-ladder constraints. Awarded capacity is NOT operating capacity.
+
+sources:
+  - id: src_pib_acc_pli
+    name: PIB — PLI scheme for Advanced Chemistry Cells
+    publisher: Press Information Bureau, Government of India
+    url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2224542"
+    source_type: government_release
+    license: public domain (Government of India)
+    access_date: "2026-08-22"
+  - id: src_swarajya_minerals
+    name: Swarajya critical-minerals reporting
+    publisher: Swarajya (Kovai Media)
+    url: "https://swarajyamag.com/economy/how-india-is-confronting-its-vulnerability-in-critical-mineral-supply-chains"
+    source_type: secondary_reporting
+    license: referenced
+    access_date: "2026-08-22"
+  - id: src_iea_minerals
+    name: IEA — The Role of Critical Minerals in Clean Energy Transitions / Outlook 2026
+    publisher: International Energy Agency
+    url: "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary"
+    source_type: intergovernmental_analysis
+    license: CC BY 4.0 (per IEA)
+    access_date: "2026-08-22"
+  - id: src_nature_recycling
+    name: Nature — Lithium-ion battery recycling perspective
+    publisher: Nature
+    url: "https://www.nature.com/articles/s44296-025-00083-7"
+    source_type: peer_reviewed
+    license: referenced
+    access_date: "2026-08-22"
+
+evidence:
+  - claim_id: ev_acc_pli_50gwh
+    subject: india_acc_pli
+    predicate: programme_target
+    epistemic_class: REPORTED
+    value_quantity: [50, "GWh/yr"]
+    value_text: "ACC PLI targets 50 GWh domestic ACC manufacturing; ~40 GWh awarded to four beneficiaries by early 2026"
+    source_ids: [src_pib_acc_pli]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.9, directness: 0.85, recency: 0.9}
+    quote_or_caveat: Awarded != commissioned; chemistry mix per beneficiary not fully public
+  - claim_id: ev_china_refining_share
+    subject: global_battery_material_refining
+    predicate: china_concentration
+    epistemic_class: REPORTED
+    value_text: "China holds dominant refining shares across lithium, cobalt, nickel and graphite battery chains (~90% class for graphite/REE processing)"
+    source_ids: [src_iea_minerals, src_swarajya_minerals]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.8, corroboration: 0.8}
+  - claim_id: ev_recycling_incentive
+    subject: india_recycling_programme
+    predicate: target_recovery
+    epistemic_class: REPORTED
+    value_quantity: [40000, "t_product/yr"]
+    value_text: "INR 1,500 cr recycling incentives targeting recovery of up to 40,000 t of critical minerals from secondary sources"
+    source_ids: [src_swarajya_minerals]
+    publication_date: "2025-12-18"
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.55, directness: 0.6, corroboration: 0.4}
+    quote_or_caveat: MEDIA-REPORTED; collection-rate reality is the binding unknown
+  - claim_id: ev_lfp_tradeoff
+    subject: lfp_substitution
+    predicate: energy_density_penalty
+    epistemic_class: REPORTED
+    value_text: "LFP removes Ni/Co exposure vs NMC at ~20-40% lower volumetric energy density; Na-ion removes Li entirely at further density cost and immature ecosystem"
+    source_ids: [src_iea_minerals]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.75, corroboration: 0.75}
+
+parts:
+  - id: battery_cell_ncm
+    name: NMC cell (21700-class)
+    part_class: component
+  - id: battery_cell_lfp
+    name: LFP prismatic cell
+    part_class: component
+  - id: battery_pack_ev80
+    name: EV traction pack (80 kWh, pack level)
+    part_class: subassembly
+  - id: bms_master
+    name: BMS master controller
+    part_class: component
+  - id: busbar_set
+    name: Pack busbar/termination set
+    part_class: component
+  - id: pack_enclosure
+    name: Pack enclosure + thermal plate
+    part_class: component
+    mass: [45, "kg_product"]
+  - id: lithium_carbonate_bg
+    name: Battery-grade lithium carbonate
+    part_class: component
+    mass: [1, "kg_product"]
+    supplied_by_countries: [CHL, ARG, CHN]
+    concentration_hhi: 0.65
+  - id: nickel_sulfate
+    name: Nickel sulfate (battery grade)
+    part_class: component
+    mass: [1, "kg_product"]
+    supplied_by_countries: [IDN, RUS, CHN]
+  - id: cobalt_sulfate
+    name: Cobalt sulfate
+    part_class: component
+    mass: [1, "kg_product"]
+    supplied_by_countries: [COD, CHN]
+  - id: iron_phosphate_bg
+    name: Iron phosphate (battery grade)
+    part_class: component
+    mass: [1, "kg_product"]
+  - id: graphite_anode
+    name: Graphite anode material (coated spherical)
+    part_class: component
+    mass: [1, "kg_product"]
+    supplied_by_countries: [CHN]
+    concentration_hhi: 0.85
+  - id: separator_film
+    name: Separator film
+    part_class: component
+    mass: [1, "kg_product"]
+    supplied_by_countries: [CHN, JPN, KOR]
+  - id: electrolyte_li
+    name: Electrolyte (LiPF6-class)
+    part_class: component
+    mass: [1, "kg_product"]
+    supplied_by_countries: [CHN, JPN]
+  - id: copper_foil
+    name: Copper foil (6-8 um)
+    part_class: component
+    mass: [1, "kg_product"]
+  - id: aluminium_foil
+    name: Aluminium foil (12-16 um)
+    part_class: component
+    mass: [1, "kg_product"]
+  - id: black_mass_feed
+    name: Recycled black mass feed
+    part_class: component
+
+product_variants:
+  - id: nmc_80kwh_pack_line
+    name: 500k packs/yr of 80 kWh NMC packs (40 GWh/yr)
+    anchor_evidence: [ev_acc_pli_50gwh]
+    notes: "Objective framing: 500,000 packs x 80 kWh = 40 GWh annual output"
+    functional_requirements:
+      - metric: annual_energy_gwh
+        min: 38
+        max: 42
+        unit: GWh
+      - metric: cycle_life
+        min: 1000
+        max: 4000
+        unit: cycles
+    bom:
+      - part: battery_cell_ncm
+        qty: 440
+      - part: bms_master
+        qty: 1
+      - part: busbar_set
+        qty: 1
+      - part: pack_enclosure
+        qty: 1
+
+recipes:
+  - id: rec_cell_ncm
+    name: NMC cell route
+    output_part: battery_cell_ncm
+    output_quantity: [1, "pcs"]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: mix_coat
+        name: electrode mixing/coating/calendering
+        equipment_classes: [coating_line_batt]
+        yield_fraction: 0.95
+      - id: assembly_dry_room
+        name: cell assembly (dry room)
+        equipment_classes: [dry_room_line]
+        yield_fraction: 0.94
+      - id: formation_aging
+        name: formation + aging
+        equipment_classes: [formation_bank]
+        yield_fraction: 0.96
+    inputs:
+      - id: lithium_carbonate_bg
+        quantity: [0.6, "kg_product"]
+      - id: nickel_sulfate
+        quantity: [1.1, "kg_product"]
+      - id: cobalt_sulfate
+        quantity: [0.35, "kg_product"]
+      - id: graphite_anode
+        quantity: [0.95, "kg_product"]
+      - id: separator_film
+        quantity: [0.12, "kg_product"]
+      - id: electrolyte_li
+        quantity: [0.11, "kg_product"]
+      - id: copper_foil
+        quantity: [0.09, "kg_product"]
+      - id: aluminium_foil
+        quantity: [0.06, "kg_product"]
+
+  - id: rec_cell_lfp
+    name: LFP cell route
+    output_part: battery_cell_lfp
+    output_quantity: [1, "pcs"]
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    steps:
+      - id: mix_coat_lfp
+        name: electrode mixing/coating/calendering
+        equipment_classes: [coating_line_batt]
+        yield_fraction: 0.95
+      - id: assembly_dry_lfp
+        name: cell assembly (dry room)
+        equipment_classes: [dry_room_line]
+        yield_fraction: 0.94
+      - id: formation_lfp
+        name: formation + aging
+        equipment_classes: [formation_bank]
+        yield_fraction: 0.96
+    inputs:
+      - id: lithium_carbonate_bg
+        quantity: [0.55, "kg_product"]
+      - id: iron_phosphate_bg
+        quantity: [1.35, "kg_product"]
+      - id: graphite_anode
+        quantity: [0.9, "kg_product"]
+      - id: separator_film
+        quantity: [0.13, "kg_product"]
+      - id: electrolyte_li
+        quantity: [0.12, "kg_product"]
+      - id: copper_foil
+        quantity: [0.1, "kg_product"]
+      - id: aluminium_foil
+        quantity: [0.09, "kg_product"]
+
+  - id: rec_pack_ev80
+    name: EV pack assembly
+    output_part: battery_pack_ev80
+    output_quantity: [1, "pcs"]
+    maturity: pilot
+    applicable_geographies: [INDIA]
+    steps:
+      - id: module_build
+        name: module build + laser weld
+        equipment_classes: [pack_line]
+        yield_fraction: 0.97
+      - id: eol_safety
+        name: EOL safety/hipot
+        yield_fraction: 0.995
+    inputs:
+      - id: bms_master
+        quantity: [1, "pcs"]
+
+capacity_segments:
+  - id: seg_india_enclosure_metalwork
+    item_id: pack_enclosure
+    geography: INDIA
+    nameplate_annual: [600000, "pcs/yr"]
+    availability: 0.88
+    utilization: 0.8
+    yield_fraction: 0.96
+    qualification_fraction: 0.8
+    valid_from: 2024
+    epistemic_class: ESTIMATED
+    notes: Order-of-magnitude prior from India's sheet-metal/battery-adjacent fabrication base (C13)
+    evidence_ids: []
+
+projects:
+  - id: prj_acc_cells_awarded
+    name: ACC PLI awarded cell plants (four beneficiaries)
+    item_id: battery_cell_ncm
+    state: approved
+    state_date: "2026-02-01"
+    earliest_start_year: 2026
+    years_to_commission: [2.0, 4.0]
+    design_capacity_annual: [440000000, "pcs/yr"]
+    ramp_points: [[0, 0.25], [2, 0.8], [4, 1.0]]
+    evidence_ids: [ev_acc_pli_50gwh]
+
+demand_pools:
+  - id: dp_lithium_global
+    resource_id: lithium_carbonate_bg
+    baseline_annual: [900000, "t_product/yr"]
+    contestable_fraction: 0.15
+    note: Global battery-grade Li2CO3/LiOH pool order-of-magnitude prior (ASSUMPTION basis)
+  - id: dp_graphite_global
+    resource_id: graphite_anode
+    baseline_annual: [1200000, "t_product/yr"]
+    contestable_fraction: 0.15
+
+shocks:
+  - id: shk_graphite_controls
+    name: Graphite export controls tighten
+    description: Chinese anode-material exports cut to 50% eligibility
+    edits:
+      - type: import_eligibility
+        origin: CHN
+        fraction: 0.5
+  - id: shk_lithium_spike
+    name: Lithium price spike x2.5
+    description: Cost multiplier on Li feedstock
+    edits:
+      - type: cost_multiplier
+        item: lithium_carbonate_bg
+        factor: 2.5
+        side: both
+
+substitutions:
+  - id: sub_nmc_to_lfp
+    name: Chemistry switch NMC -> LFP
+    replaces_part: battery_cell_ncm
+    alternative_recipe: rec_cell_lfp
+    level: component
+    functional_envelope:
+      annual_energy_gwh: [38, 42]
+      cycle_life: [3000, 6000]
+    performance_delta:
+      volumetric_density: "-20-40% (REPORTED)"
+      thermal_stability: "+improved"
+      cobalt_nickel_exposure: "eliminated"
+    changed_bom:
+      - part: battery_cell_lfp
+        qty: 520
+    new_equipment: []
+    new_skills: [lfp_cell_process_control]
+    maturity: series
+    transition_months: [12, 24]
+    evidence_ids: [ev_lfp_tradeoff]
+    notes: >
+      LFP is mature globally; India-side qualification/form-factor fit remains a
+      transition cost. Removes Ni/Co sulfate dependency entirely.
+
+resource_classes:
+  - id: graphite_chain
+    category: raw_material
+    unit: t_product
+    supplied_by_countries: [CHN]
+    concentration_hhi: 0.85
+
+crosswalks:
+  - from_class: HS
+    from_code: "8507.60"
+    to_entity: battery_cell_ncm
+    confidence: 0.55
+    note: Li-ion accumulator heading; chemistry not separable
+  - from_class: HS
+    from_code: "2827.39"
+    to_entity: cobalt_sulfate
+    confidence: 0.4
+    note: cobalt oxides/hydroxides family

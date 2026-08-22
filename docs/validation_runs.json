@@ -1,0 +1,77 @@
+{
+ "flagship_70": {
+  "result_class": "INFEASIBLE_UNDER_MODEL",
+  "worst_year": 2026,
+  "worst_item": "battery_cell_liion",
+  "shortfall_last": 334396038,
+  "dva": 0.1193,
+  "run_id": "run_0537846495ce",
+  "plan": [
+   "sub:sub_ree_free_actuation",
+   "qualify:structure_castings_set"
+  ],
+  "plan_class": "INFEASIBLE_UNDER_MODEL"
+ },
+ "flagship_0": {
+  "result_class": "CONDITIONALLY_FEASIBLE",
+  "worst_year": 0,
+  "worst_item": "",
+  "shortfall_last": 0,
+  "dva": 0.0,
+  "run_id": "run_65dacd48cd4d",
+  "plan": [],
+  "plan_class": "CONDITIONALLY_FEASIBLE"
+ },
+ "flagship_95": {
+  "result_class": "INFEASIBLE_UNDER_MODEL",
+  "worst_year": 2026,
+  "worst_item": "battery_cell_liion",
+  "shortfall_last": 463494320,
+  "dva": 0.2266,
+  "run_id": "run_395606a97bc1",
+  "plan": [
+   "sub:sub_ree_free_actuation",
+   "qualify:structure_castings_set"
+  ],
+  "plan_class": "INFEASIBLE_UNDER_MODEL"
+ },
+ "flagship_ree_shock": {
+  "result_class": "INFEASIBLE_UNDER_MODEL",
+  "worst_year": 2026,
+  "worst_item": "battery_cell_liion",
+  "shortfall_last": 371736072,
+  "dva": 0.1282,
+  "run_id": "run_4c176bcc024a",
+  "plan": [
+   "sub:sub_ree_free_actuation",
+   "qualify:structure_castings_set"
+  ],
+  "plan_class": "INFEASIBLE_UNDER_MODEL"
+ },
+ "flagship_deadline_2028": {
+  "result_class": "INFEASIBLE_UNDER_MODEL",
+  "worst_year": 2026,
+  "worst_item": "battery_cell_liion",
+  "shortfall_last": 361399600,
+  "dva": 0.1193,
+  "run_id": "run_a41fe47d0a33",
+  "plan": [
+   "sub:sub_ree_free_actuation",
+   "qualify:structure_castings_set"
+  ],
+  "plan_class": "INFEASIBLE_UNDER_MODEL"
+ },
+ "battery_60": {
+  "result_class": "INFEASIBLE_UNDER_MODEL",
+  "shortfall_2030": 1120437,
+  "dva": 0.1505
+ },
+ "battery_graphite_shock": {
+  "result_class": "INFEASIBLE_UNDER_MODEL",
+  "shortfall_2030": 1212138
+ },
+ "smallsat_60": {
+  "result_class": "INFEASIBLE_UNDER_MODEL",
+  "dva": 0.0558
+ }
+}

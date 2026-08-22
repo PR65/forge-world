@@ -1,0 +1,1192 @@
+pack_id: humanoid_india
+title: "Flagship: India 1,000,000 humanoid robots/yr by 2030"
+version: 1.0.0
+geography_focus: INDIA
+notes: >
+  Flagship domain knowledge pack. Evidence seeded from the supplied research corpus
+  (access dates 2026-08-22). UNKNOWN capacity is deliberately left UNKNOWN where the
+  corpus shows no adequate public evidence (humanoid-grade reducers, encoders,
+  robot-grade motors). MODEL/ESTIMATE rows are planning assumptions, never observations.
+
+sources:
+  - id: src_unitree_g1
+    name: Unitree G1 product page
+    publisher: Unitree Robotics
+    url: "https://www.unitree.com/g1/"
+    source_type: manufacturer_specification
+    license: public web page (referenced, not mirrored)
+    access_date: "2026-08-22"
+  - id: src_unitree_h1
+    name: Unitree H1 product page
+    publisher: Unitree Robotics
+    url: "https://www.unitree.com/h1"
+    source_type: manufacturer_specification
+    license: public web page (referenced)
+    access_date: "2026-08-22"
+  - id: src_figure03
+    name: Figure 03 product page and production ramp disclosure
+    publisher: Figure AI
+    url: "https://www.figure.ai/news/ramping-figure-03-production"
+    source_type: company_disclosure
+    license: public web page (referenced)
+    access_date: "2026-08-22"
+  - id: src_pib_repm
+    name: PIB — assessment of rare earth permanent magnet scheme / Sintered NdFeB status
+    publisher: Press Information Bureau, Government of India
+    url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2299078"
+    source_type: government_release
+    license: public domain (Government of India)
+    access_date: "2026-08-22"
+  - id: src_swarajya_minerals
+    name: Swarajya — How India Is Confronting Its Vulnerability In Critical Mineral Supply Chains
+    publisher: Swarajya (Kovai Media)
+    url: "https://swarajyamag.com/economy/how-india-is-confronting-its-vulnerability-in-critical-mineral-supply-chains"
+    source_type: secondary_reporting
+    license: public article (referenced)
+    access_date: "2026-08-22"
+    notes: MEDIA-REPORTED claims require primary corroboration before parameter use
+  - id: src_pib_semicon2
+    name: PIB — Cabinet approves Semicon 2.0
+    publisher: Press Information Bureau, Government of India
+    url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284784"
+    source_type: government_release
+    license: public domain (Government of India)
+    access_date: "2026-08-22"
+  - id: src_pib_acc_pli
+    name: PIB — PLI scheme for Advanced Chemistry Cells
+    publisher: Press Information Bureau, Government of India
+    url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2224542"
+    source_type: government_release
+    license: public domain (Government of India)
+    access_date: "2026-08-22"
+  - id: src_mhi_capitalgoods
+    name: Ministry of Heavy Industries — Capital Goods Scheme Phase II
+    publisher: Government of India
+    url: "https://heavyindustries.gov.in/en/scheme-enhancement-competitiveness-indian-capital-goods-sector-phase-ii"
+    source_type: government_programme
+    license: public
+    access_date: "2026-08-22"
+  - id: src_addverb
+    name: Addverb press release — India enters humanoid race (wheeled platform)
+    publisher: Addverb Technologies
+    url: "https://addverb.com/press-release/addverb-thrusts-india-into-humanoid-race/"
+    source_type: company_announcement
+    license: public release (referenced)
+    access_date: "2026-08-22"
+  - id: src_iea_ree
+    name: IEA — Rare Earth Elements analysis / Global Critical Minerals Outlook
+    publisher: International Energy Agency
+    url: "https://www.iea.org/reports/rare-earth-elements/executive-summary"
+    source_type: intergovernmental_analysis
+    license: CC BY 4.0 (per IEA data products)
+    access_date: "2026-08-22"
+  - id: src_mckinsey_humanoid
+    name: McKinsey — Turning humanoid supply chain constraints into billion-dollar wins
+    publisher: McKinsey & Company
+    url: "https://www.mckinsey.com/industries/industrials/our-insights/turning-humanoid-supply-chain-constraints-into-billion-dollar-wins"
+    source_type: consultancy_analysis
+    license: public article (referenced)
+    access_date: "2026-08-22"
+  - id: src_dod_mrl
+    name: DoD Manufacturing Readiness Level deskbook
+    publisher: US Department of Defense
+    url: "https://dodmrl.com/"
+    source_type: government_framework
+    license: public domain
+    access_date: "2026-08-22"
+  - id: src_bcg_aero
+    name: BCG — Fixing aerospace's supply chain (qualification/casting lead times)
+    publisher: Boston Consulting Group
+    url: ""
+    source_type: industry_report
+    license: commercial summary referenced
+    access_date: "2026-08-22"
+  - id: src_ieee_synrm
+    name: IEEE Spectrum — EV motors without rare earths
+    publisher: IEEE Spectrum
+    url: "https://spectrum.ieee.org/ev-motor"
+    source_type: technical_journalism
+    license: public article (referenced)
+    access_date: "2026-08-22"
+  - id: src_corpus_streams
+    name: FORGE WORLD Wide Research Package + stream notes 06/11 (supplied corpus)
+    publisher: Supplied research corpus
+    url: ""
+    source_type: research_corpus
+    license: supplied-for-project use only
+    access_date: "2026-08-22"
+    notes: Aggregated commercial estimates relayed by the corpus; percentages are not independently verified
+
+evidence:
+  - claim_id: ev_g1_config
+    subject: unitree_g1
+    predicate: joint_motor_configuration
+    epistemic_class: REPORTED
+    value_text: "~35 kg class; configurations with 23-43 joint motors; industrial-grade crossed-roller bearings; dual encoders"
+    source_ids: [src_unitree_g1]
+    publication_date: "2025-06-01"
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.8, directness: 0.9, recency: 0.9, technical_specificity: 0.85}
+    quote_or_caveat: Manufacturer-published configuration; exact reducer counts per joint not published
+  - claim_id: ev_h1_battery
+    subject: unitree_h1
+    predicate: battery_energy
+    epistemic_class: REPORTED
+    value_quantity: [864, "Wh"]
+    value_text: "864 Wh replaceable battery; ~47 kg mass"
+    source_ids: [src_unitree_h1]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.8, directness: 0.95, recency: 0.9}
+  - claim_id: ev_figure03_pack
+    subject: figure_03
+    predicate: battery_and_mass
+    epistemic_class: REPORTED
+    value_quantity: [2.3, "kWh"]
+    value_text: "61 kg; payload 20 kg; F.03 battery 2.3 kWh; ~5 h runtime"
+    source_ids: [src_figure03]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.75, directness: 0.9, recency: 0.95}
+  - claim_id: ev_figure_yield
+    subject: figure_manufacturing
+    predicate: first_pass_yield_eol
+    epistemic_class: REPORTED
+    value_quantity: [80, "%"]
+    value_text: "company-reported EOL first-pass yield >80%; battery line FPY 99.3%; 9,000+ actuators across 10+ SKUs; 1/day to 1/hr in <120 days"
+    source_ids: [src_figure03]
+    publication_date: "2026-01-01"
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.6, directness: 0.7, corroboration: 0.3, recency: 0.95}
+    quote_or_caveat: COMPANY-REPORTED, not independently verified; demonstrates that throughput/yield/SKU mix are separate state variables
+  - claim_id: ev_addverb_wheeled
+    subject: addverb_elixis_w
+    predicate: platform_status
+    epistemic_class: REPORTED
+    value_text: "India's first commercial WHEELED humanoid announced Feb 2026; pilot rollout of ~100 units; not a bipedal general-purpose humanoid"
+    source_ids: [src_addverb]
+    publication_date: "2026-02-01"
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.7, directness: 0.85, recency: 0.95}
+  - claim_id: ev_repm_scheme
+    subject: india_repm_programme
+    predicate: target_capacity
+    epistemic_class: REPORTED
+    value_quantity: [6000, "t_product/yr"]
+    value_text: "INR 7,280 cr programme for integrated domestic sintered NdFeB capacity (oxide->metal->alloy->magnet); 20 bids received by 13 Aug 2026; current demand met via imports"
+    source_ids: [src_pib_repm, src_swarajya_minerals]
+    publication_date: "2026-07-17"
+    effective_date: "2026-07-17"
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.9, directness: 0.85, corroboration: 0.7, recency: 0.95}
+    quote_or_caveat: Scheme TARGET is observed; realized capacity, grade compatibility and yields are future/UNKNOWN states
+  - claim_id: ev_ndfeb_imports
+    subject: india_ndfeb_imports
+    predicate: annual_imports_fy2024_25
+    epistemic_class: REPORTED
+    value_quantity: [54000, "t_product/yr"]
+    value_text: "India imported approximately 54,000 t of rare-earth permanent magnets in FY 2024-25"
+    source_ids: [src_swarajya_minerals]
+    publication_date: "2025-12-18"
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.5, directness: 0.6, corroboration: 0.4, geographic_specificity: 0.9}
+    quote_or_caveat: MEDIA-REPORTED; pair with DGCI&S HS 8505 data before decision use
+  - claim_id: ev_china_processing
+    subject: global_rare_earth_processing
+    predicate: china_share
+    epistemic_class: REPORTED
+    value_quantity: [90, "%"]
+    value_text: "China controls ~90% of global rare-earth processing (refining/metal/alloy/magnet stages)"
+    source_ids: [src_swarajya_minerals, src_iea_ree]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.75, directness: 0.65, corroboration: 0.85}
+    quote_or_caveat: Broad direction strongly corroborated by IEA; precise share requires date/scope definition
+  - claim_id: ev_cn_export_controls
+    subject: china_rare_earth_exports
+    predicate: export_control_state
+    epistemic_class: REPORTED
+    value_text: "Apr 2025 dual-use export controls covering seven medium/heavy REEs and related magnets; further items Oct 2025"
+    source_ids: [src_swarajya_minerals]
+    publication_date: "2025-04-04"
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.7, directness: 0.7, recency: 0.9}
+  - claim_id: ev_semicon_projects
+    subject: india_semiconductor_pipeline
+    predicate: approved_projects
+    epistemic_class: REPORTED
+    value_text: "12 semiconductor manufacturing projects approved as of Jul 2026 under first programme: 1 silicon fab (~50,000 wsp target, PSMC technology partner), 1 compound-semiconductor fab, 1 micro-LED/GaN fab, 9 ATMP/OSAT facilities; Semicon 2.0 outlay INR 1,27,500 cr approved 15 Jul 2026 including design/IP pillar"
+    source_ids: [src_pib_semicon2]
+    publication_date: "2026-07-15"
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.95, directness: 0.9, recency: 0.95}
+    quote_or_caveat: APPROVED projects are not operating capacity (C7); node/process compatibility with humanoid compute is UNKNOWN
+  - claim_id: ev_acc_pli
+    subject: india_acc_pli
+    predicate: awarded_capacity
+    epistemic_class: REPORTED
+    value_quantity: [40, "GWh/yr"]
+    value_text: "ACC PLI targets 50 GWh domestic cell manufacturing; ~40 GWh awarded to four beneficiaries by early 2026"
+    source_ids: [src_pib_acc_pli]
+    publication_date: "2025-11-01"
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.9, directness: 0.85, recency: 0.9}
+    quote_or_caveat: Awarded ≠ commissioned; chemistry/form-factor compatibility with humanoids UNKNOWN
+  - claim_id: ev_capital_goods
+    subject: india_capital_goods_phase2
+    predicate: programme_outlay
+    epistemic_class: REPORTED
+    value_text: "Phase II capital-goods competitiveness scheme INR 1,207 cr; includes Centre of Excellence on Machine Tools Design (IIT BHU/HMT)"
+    source_ids: [src_mhi_capitalgoods]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.9, directness: 0.85}
+  - claim_id: ev_qual_latency_aero
+    subject: supplier_qualification_aerospace
+    predicate: latency_months
+    epistemic_class: REPORTED
+    value_quantity: [6, "mo"]
+    value_text: "new aerospace/defense supplier qualification typically 6-24 months under AS9100-class systems"
+    source_ids: [src_bcg_aero, src_dod_mrl]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.7, corroboration: 0.7, completeness: 0.5}
+    quote_or_caveat: Planning range, not a universal law; robot-sector customer qualification may be shorter but volume-grade approval is unproven
+  - claim_id: ev_learning_curve
+    subject: manufacturing_learning_curves
+    predicate: progress_ratio_range
+    epistemic_class: REPORTED
+    value_text: "complex-system learning-curve progress ratios ~71-85% per cumulative doubling (econometric studies)"
+    source_ids: [src_dod_mrl]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.75, corroboration: 0.75, completeness: 0.55}
+  - claim_id: ev_humanoid_envelope
+    subject: humanoid_architecture_envelope
+    predicate: components_per_robot_range
+    epistemic_class: ESTIMATED
+    value_text: "class-level ranges 20-40 actuators / 30-50 reducers / 20-30 BLDC motors per robot (corpus stream estimates)"
+    source_ids: [src_mckinsey_humanoid]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.5, directness: 0.4, corroboration: 0.5, technical_specificity: 0.35}
+    quote_or_caveat: MODEL/ESTIMATE only; architecture-dependent; never present as measured requirement
+  - claim_id: ev_bldc_market_india
+    subject: india_bldc_market
+    predicate: market_value_2025
+    epistemic_class: ESTIMATED
+    value_quantity: [487.7, "MUSD"]
+    value_text: "India BLDC motor market ~USD 488M (2025) projected ~779M by 2030 (commercial market research)"
+    source_ids: [src_corpus_streams]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.4, directness: 0.3, corroboration: 0.4}
+    quote_or_caveat: Market VALUE is not unit capacity and says nothing about servo/humanoid grade
+  - claim_id: ev_machine_tool_concentration
+    subject: cnc_controls_market
+    predicate: concentration
+    epistemic_class: REPORTED
+    value_text: "high-end CNC controls/drives dominated by FANUC (JP) and Siemens (DE); top-5 CNC vendors ~38% of global revenue (2025, commercial aggregation)"
+    source_ids: [src_corpus_streams]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.5, corroboration: 0.6, completeness: 0.4}
+    quote_or_caveat: Commercial market-research estimate; structural direction robust, percentages are not
+  - claim_id: ev_synrm_tradeoff
+    subject: synrm_actuation_substitution
+    predicate: performance_tradeoff
+    epistemic_class: REPORTED
+    value_text: "synchronous-reluctance/ferrite-assisted motors remove heavy-REE dependence at cost of lower torque density and higher inverter/control demands"
+    source_ids: [src_ieee_synrm, src_iea_ree]
+    retrieval_date: "2026-08-22"
+    confidence: {authority: 0.75, directness: 0.7, corroboration: 0.75}
+
+organizations:
+  - id: org_unitree
+    name: Unitree Robotics
+    countries: [CHN]
+  - id: org_figure
+    name: Figure AI
+    countries: [USA]
+  - id: org_addverb
+    name: Addverb Technologies
+    countries: [IND]
+  - id: org_harmonicdrive
+    name: Harmonic Drive Systems
+    countries: [JPN]
+  - id: org_nabtesco
+    name: Nabtesco
+    countries: [JPN]
+  - id: org_fanuc
+    name: FANUC
+    countries: [JPN]
+  - id: org_siemens
+    name: Siemens
+    countries: [DEU]
+
+parts:
+  - id: actuator_rotary_body
+    name: Body rotary joint actuator (motor+reducer+encoder integrated)
+    part_class: component
+    spec: "torque class 60-200 Nm, sub-arcmin backlash, dual absolute encoding"
+    supplied_by_countries: [CHN]
+    lead_time: [6, "mo"]
+    notes: "Integrated actuator assemblies dominate humanoid actuation BOM; China-dominant supply today (REPORTED/consensus)"
+  - id: micro_actuator_hand
+    name: Dexterous-hand miniature actuator
+    part_class: component
+    supplied_by_countries: [CHN]
+  - id: hand_assembly
+    name: Dexterous hand assembly
+    part_class: subassembly
+  - id: harmonic_reducer
+    name: Precision harmonic/cycloidal reducer (robot grade)
+    part_class: component
+    spec: "backlash < 1 arcmin, fatigue-rated flexspline"
+    supplied_by_countries: [JPN, CHN]
+    concentration_hhi: 0.62
+    lead_time: [9, "mo"]
+  - id: bldc_servo_motor
+    name: BLDC/PMSM servo motor (joint grade)
+    part_class: component
+    supplied_by_countries: [CHN, JPN]
+  - id: crossed_roller_bearing
+    name: Crossed-roller bearing (robot joint grade)
+    part_class: component
+    supplied_by_countries: [JPN, DEU, CHN]
+  - id: absolute_encoder
+    name: Absolute encoder (dual, high-res)
+    part_class: component
+    supplied_by_countries: [JPN, DEU, CHE]
+  - id: motor_driver_inverter
+    name: Motor driver / inverter stage
+    part_class: component
+  - id: edge_compute_module
+    name: Edge-AI compute module (SoC + memory + PMIC)
+    part_class: subassembly
+    supplied_by_countries: [TWN, KOR]
+    lead_time: [12, "wk"]
+  - id: battery_pack_robot
+    name: Robot battery pack (~2.3 kWh, pack level)
+    part_class: subassembly
+  - id: battery_cell_liion
+    name: Li-ion cell (robot-compatible form factor)
+    part_class: component
+  - id: bms_board
+    name: Battery management board
+    part_class: component
+  - id: structure_castings_set
+    name: Structural casting set (torso/limbs)
+    part_class: component
+    mass: [22, "kg_product"]
+  - id: structure_machined_set
+    name: Machined structural set
+    part_class: component
+    mass: [10, "kg_product"]
+  - id: fasteners_set
+    name: Fastener set
+    part_class: component
+    mass: [2, "kg_product"]
+  - id: wiring_harness_set
+    name: Wiring harness set
+    part_class: component
+    mass: [3, "kg_product"]
+  - id: thermal_management_set
+    name: Thermal management set
+    part_class: component
+    mass: [2, "kg_product"]
+  - id: depth_camera
+    name: Depth/vision camera module
+    part_class: component
+    supplied_by_countries: [CHN, JPN]
+  - id: imu_module
+    name: IMU module
+    part_class: component
+    supplied_by_countries: [USA, JPN, CHE]
+  - id: foot_sensor
+    name: Foot force sensor
+    part_class: component
+  - id: tactile_sensor_array
+    name: Tactile sensor array (hand)
+    part_class: component
+  - id: joint_motor_unit_compact
+    name: Compact integrated joint motor unit (quasi-direct drive)
+    part_class: component
+    supplied_by_countries: [CHN]
+  - id: battery_pack_small
+    name: Small robot battery pack (~0.9 kWh)
+    part_class: subassembly
+  - id: ndfeb_magnet
+    name: Sintered NdFeB magnet (heavy-REE containing)
+    part_class: component
+    supplied_by_countries: [CHN]
+    concentration_hhi: 0.9
+    lead_time: [12, "wk"]
+  - id: sic_power_stage
+    name: SiC power stage (rare-earth-reduced architecture)
+    part_class: component
+    supplied_by_countries: [ITA, USA, CHN]
+  - id: hq_electrical_steel
+    name: High-grade electrical steel laminations
+    part_class: component
+    supplied_by_countries: [JPN, KOR, IND]
+  - id: copper_magnet_wire
+    name: Copper magnet wire
+    part_class: component
+    mass: [1, "kg_product"]
+  - id: soc_ai_chip
+    name: Edge-AI SoC (advanced node)
+    part_class: component
+    supplied_by_countries: [TWN, KOR]
+  - id: dram_chip
+    name: LPDRAM
+    part_class: component
+    supplied_by_countries: [KOR, TWN]
+  - id: reo_ndpr_oxide
+    name: NdPr oxide (+Dy/Tb) REO feed
+    part_class: component
+    mass: [1, "kg_oxide"]
+    supplied_by_countries: [CHN]
+    concentration_hhi: 0.88
+  - id: specialty_steel_flexspline
+    name: Specialty alloy steel for flexspline
+    part_class: component
+    mass: [1, "kg_product"]
+  - id: bearing_steel
+    name: Bearing steel (through-hardening)
+    part_class: component
+    mass: [1, "kg_product"]
+  - id: alu_ingot
+    name: Aluminium ingot/billet
+    part_class: component
+    mass: [1, "kg_product"]
+  - id: lithium_carbonate
+    name: Battery-grade lithium carbonate
+    part_class: component
+    mass: [1, "kg_product"]
+    supplied_by_countries: [CHL, ARG, CHN]
+  - id: iron_phosphate
+    name: Battery-grade iron phosphate
+    part_class: component
+    mass: [1, "kg_product"]
+
+product_variants:
+  - id: hv2_industrial
+    name: HV-2 industrial bipedal humanoid (50-60 kg class)
+    anchor_evidence: [ev_figure03_pack, ev_g1_config, ev_humanoid_envelope]
+    mass_kg: 58
+    battery_kwh: 2.3
+    notes: >
+      Reference architecture anchored to published industrial-class platforms
+      (Figure 03 energy/mass; G1 bearing/encoding practice). Joint counts follow the
+      corpus envelope mid-range plus dexterous hands (7 active joints per hand,
+      Dex3-1-style). This is a REFERENCE variant, not a canonical humanoid.
+    functional_requirements:
+      - metric: payload_kg
+        min: 15
+        max: 25
+        unit: kg
+      - metric: powered_joints
+        min: 30
+        max: 50
+        unit: count
+      - metric: runtime_h
+        min: 4
+        max: 8
+        unit: h
+      - metric: torque_density_nm_kg
+        min: 140
+        max: 300
+        unit: N.m/kg
+      - metric: backlash_arcmin
+        min: 0
+        max: 1
+        unit: arcmin
+    bom:
+      - part: actuator_rotary_body
+        qty: 30
+      - part: hand_assembly
+        qty: 2
+        bom:
+          - part: micro_actuator_hand
+            qty: 7
+          - part: tactile_sensor_array
+            qty: 1
+      - part: crossed_roller_bearing
+        qty: 64
+      - part: absolute_encoder
+        qty: 60
+      - part: motor_driver_inverter
+        qty: 44
+      - part: edge_compute_module
+        qty: 1
+      - part: battery_pack_robot
+        qty: 1
+      - part: bms_board
+        qty: 1
+      - part: structure_castings_set
+        qty: 1
+      - part: structure_machined_set
+        qty: 1
+      - part: fasteners_set
+        qty: 1
+      - part: wiring_harness_set
+        qty: 1
+      - part: thermal_management_set
+        qty: 1
+      - part: depth_camera
+        qty: 2
+      - part: imu_module
+        qty: 1
+      - part: foot_sensor
+        qty: 2
+
+  - id: hv1_compact
+    name: HV-1 compact humanoid (G1-class, ~35 kg)
+    anchor_evidence: [ev_g1_config, ev_h1_battery]
+    mass_kg: 35
+    battery_kwh: 0.9
+    notes: >
+      Anchored to Unitree G1 published minimum configuration (23 joint motors).
+      No dexterous hands in base configuration.
+    functional_requirements:
+      - metric: payload_kg
+        min: 2
+        max: 8
+        unit: kg
+      - metric: powered_joints
+        min: 23
+        max: 43
+        unit: count
+      - metric: runtime_h
+        min: 2
+        max: 5
+        unit: h
+    bom:
+      - part: joint_motor_unit_compact
+        qty: 23
+      - part: crossed_roller_bearing
+        qty: 46
+      - part: absolute_encoder
+        qty: 46
+      - part: edge_compute_module
+        qty: 1
+      - part: battery_pack_small
+        qty: 1
+      - part: bms_board
+        qty: 1
+      - part: depth_camera
+        qty: 3
+      - part: imu_module
+        qty: 1
+      - part: wiring_harness_set
+        qty: 1
+      - part: fasteners_set
+        qty: 1
+
+recipes:
+  - id: rec_joint_actuator_body
+    name: Body rotary actuator assembly (global primary route)
+    output_part: actuator_rotary_body
+    output_quantity: [1, "pcs"]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    steps:
+      - id: stator_winding
+        name: stator winding
+        equipment_classes: [winding_line]
+        yield_fraction: 0.97
+      - id: gearbox_assembly
+        name: precision gearbox integration
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.92
+      - id: cal_test
+        name: calibration + EOL test
+        equipment_classes: [eol_dyno_tester]
+        cycle_time_per_unit: [0.15, "h"]
+        yield_fraction: 0.95
+    inputs:
+      - id: bldc_servo_motor
+        quantity: [1, "pcs"]
+      - id: harmonic_reducer
+        quantity: [1, "pcs"]
+      - id: crossed_roller_bearing
+        quantity: [2, "pcs"]
+      - id: absolute_encoder
+        quantity: [2, "pcs"]
+    evidence_ids: [ev_humanoid_envelope, ev_figure_yield]
+
+  - id: rec_joint_actuator_india_candidate
+    name: Body rotary actuator assembly (INDIA candidate route)
+    output_part: actuator_rotary_body
+    output_quantity: [1, "pcs"]
+    route_type: secondary
+    maturity: prototype
+    applicable_geographies: [INDIA]
+    requires_qualification: [qual_actuator_robot_grade]
+    steps:
+      - id: stator_winding_in
+        name: stator winding
+        equipment_classes: [winding_line]
+        yield_fraction: 0.94
+      - id: gearbox_assembly_in
+        name: precision gearbox integration
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.86
+      - id: cal_test_in
+        name: calibration + EOL test
+        equipment_classes: [eol_dyno_tester]
+        yield_fraction: 0.9
+    inputs:
+      - id: bldc_servo_motor
+        quantity: [1, "pcs"]
+      - id: harmonic_reducer
+        quantity: [1, "pcs"]
+      - id: crossed_roller_bearing
+        quantity: [2, "pcs"]
+      - id: absolute_encoder
+        quantity: [2, "pcs"]
+    evidence_ids: [ev_humanoid_envelope, ev_addverb_wheeled]
+
+  - id: rec_micro_actuator_hand
+    name: Hand micro-actuator
+    output_part: micro_actuator_hand
+    output_quantity: [1, "pcs"]
+    maturity: series
+    steps:
+      - id: micro_gearbox
+        name: micro gearbox assembly
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.9
+    inputs:
+      - id: bldc_servo_motor
+        quantity: [1, "pcs"]
+      - id: harmonic_reducer
+        quantity: [0.34, "pcs"]
+    evidence_ids: []
+
+  - id: rec_harmonic_reducer
+    name: Harmonic reducer (flexspline route)
+    output_part: harmonic_reducer
+    output_quantity: [1, "pcs"]
+    maturity: series
+    steps:
+      - id: flex_form
+        name: flexspline forming
+        yield_fraction: 0.95
+      - id: gear_grind
+        name: profile grinding
+        equipment_classes: [precision_gear_grinder]
+        cycle_time_per_unit: [0.02, "h"]
+        yield_fraction: 0.92
+      - id: heat_treat
+        name: vacuum heat treatment
+        equipment_classes: [vacuum_furnace]
+        yield_fraction: 0.98
+      - id: assemble_lap
+        name: assembly + lapping
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.96
+      - id: inspect
+        name: backlash/tolerance inspection
+        equipment_classes: [metrology_cmm]
+        yield_fraction: 0.99
+    inputs:
+      - id: specialty_steel_flexspline
+        quantity: [0.9, "kg_product"]
+      - id: bearing_steel
+        quantity: [0.4, "kg_product"]
+    evidence_ids: []
+
+  - id: rec_bldc_servo_motor
+    name: BLDC/PMSM servo motor
+    output_part: bldc_servo_motor
+    output_quantity: [1, "pcs"]
+    maturity: series
+    steps:
+      - id: laminate
+        name: lamination stamping
+        yield_fraction: 0.97
+      - id: winding
+        name: winding
+        equipment_classes: [winding_line]
+        yield_fraction: 0.96
+      - id: magnet_insert
+        name: magnet insertion + balance
+        yield_fraction: 0.98
+      - id: motor_test
+        name: test
+        yield_fraction: 0.97
+    inputs:
+      - id: hq_electrical_steel
+        quantity: [0.8, "kg_product"]
+      - id: ndfeb_magnet
+        quantity: [0.12, "kg_product"]
+      - id: copper_magnet_wire
+        quantity: [0.35, "kg_product"]
+    evidence_ids: [ev_bldc_market_india]
+
+  - id: rec_bldc_servo_synrm
+    name: SynRM/ferrite-assisted servo motor (rare-earth-reduced route)
+    output_part: bldc_servo_motor
+    output_quantity: [1, "pcs"]
+    route_type: secondary
+    maturity: pilot
+    steps:
+      - id: laminate_synrm
+        name: lamination stamping (flux-guiding rotor)
+        yield_fraction: 0.96
+      - id: winding_synrm
+        name: winding
+        equipment_classes: [winding_line]
+        yield_fraction: 0.95
+      - id: test_synrm
+        name: extended thermal/EOL test
+        equipment_classes: [eol_dyno_tester]
+        yield_fraction: 0.93
+    inputs:
+      - id: hq_electrical_steel
+        quantity: [1.3, "kg_product"]
+      - id: copper_magnet_wire
+        quantity: [0.45, "kg_product"]
+    evidence_ids: [ev_synrm_tradeoff]
+
+  - id: rec_ndfeb_magnet
+    name: Sintered NdFeB magnet (integrated oxide-to-magnet route)
+    output_part: ndfeb_magnet
+    output_quantity: [1, "kg_product"]
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    steps:
+      - id: strip_cast
+        name: strip casting
+        equipment_classes: [vacuum_furnace]
+        yield_fraction: 0.98
+      - id: mill
+        name: HD/jet milling
+        yield_fraction: 0.97
+      - id: sinter
+        name: press + vacuum sinter + age
+        equipment_classes: [vacuum_furnace]
+        yield_fraction: 0.94
+      - id: coat_qc
+        name: cutting/coating/magnetize/QC
+        yield_fraction: 0.96
+    inputs:
+      - id: reo_ndpr_oxide
+        quantity: [1.6, "kg_oxide"]
+    evidence_ids: [ev_repm_scheme, ev_china_processing]
+
+  - id: rec_crossed_roller_bearing
+    name: Crossed-roller bearing (joint grade)
+    output_part: crossed_roller_bearing
+    output_quantity: [1, "pcs"]
+    maturity: series
+    steps:
+      - id: race_grind
+        name: raceway grinding
+        equipment_classes: [precision_bearing_grinder]
+        yield_fraction: 0.94
+      - id: bearing_asm
+        name: assembly/preload
+        yield_fraction: 0.96
+    inputs:
+      - id: bearing_steel
+        quantity: [0.25, "kg_product"]
+
+  - id: rec_absolute_encoder
+    name: Absolute encoder
+    output_part: absolute_encoder
+    output_quantity: [1, "pcs"]
+    maturity: series
+    steps:
+      - id: enc_asm
+        name: optics+ASIC assembly/calibration
+        equipment_classes: [cleanroom_bench]
+        yield_fraction: 0.95
+    inputs:
+      - id: dram_chip
+        quantity: [0.05, "pcs"]
+
+  - id: rec_edge_compute
+    name: Edge-AI compute module (imported SoC route)
+    output_part: edge_compute_module
+    output_quantity: [1, "pcs"]
+    maturity: series
+    steps:
+      - id: smt
+        name: SMT + test
+        equipment_classes: [ems_line]
+        yield_fraction: 0.98
+    inputs:
+      - id: soc_ai_chip
+        quantity: [1, "pcs"]
+      - id: dram_chip
+        quantity: [2, "pcs"]
+
+  - id: rec_battery_pack_robot
+    name: Robot battery pack 2.3 kWh
+    output_part: battery_pack_robot
+    output_quantity: [1, "pcs"]
+    maturity: pilot
+    requires_qualification: [qual_battery_pack]
+    steps:
+      - id: pack_asm
+        name: module/pack assembly + weld
+        equipment_classes: [pack_line]
+        yield_fraction: 0.97
+      - id: pack_test
+        name: safety/EOL test
+        yield_fraction: 0.99
+    inputs:
+      - id: battery_cell_liion
+        quantity: [260, "pcs"]
+      - id: bms_board
+        quantity: [1, "pcs"]
+
+  - id: rec_battery_pack_small
+    name: Small battery pack 0.9 kWh
+    output_part: battery_pack_small
+    output_quantity: [1, "pcs"]
+    maturity: pilot
+    steps:
+      - id: small_pack_asm
+        name: pack assembly
+        equipment_classes: [pack_line]
+        yield_fraction: 0.97
+    inputs:
+      - id: battery_cell_liion
+        quantity: [100, "pcs"]
+
+  - id: rec_battery_cell
+    name: Li-ion cell (robot-compatible cylindrical/prismatic)
+    output_part: battery_cell_liion
+    output_quantity: [1, "pcs"]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: electrode
+        name: electrode coating + calendering
+        equipment_classes: [coating_line]
+        yield_fraction: 0.96
+      - id: cell_asm
+        name: cell assembly + formation
+        equipment_classes: [formation_bank]
+        yield_fraction: 0.93
+    inputs:
+      - id: lithium_carbonate
+        quantity: [0.55, "kg_product"]
+      - id: iron_phosphate
+        quantity: [0.9, "kg_product"]
+
+  - id: rec_structure_casting
+    name: Structural castings set
+    output_part: structure_castings_set
+    output_quantity: [1, "pcs"]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: die_cast
+        name: HP die casting
+        equipment_classes: [die_casting_cell]
+        yield_fraction: 0.93
+      - id: finish_mach
+        name: finish machining
+        equipment_classes: [five_axis_cnc]
+        yield_fraction: 0.97
+    inputs:
+      - id: alu_ingot
+        quantity: [30, "kg_product"]
+    evidence_ids: []
+
+  - id: rec_structure_machined
+    name: Machined structures set
+    output_part: structure_machined_set
+    output_quantity: [1, "pcs"]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: cnc_mach
+        name: multi-axis machining
+        equipment_classes: [five_axis_cnc]
+        yield_fraction: 0.95
+    inputs:
+      - id: alu_ingot
+        quantity: [14, "kg_product"]
+
+capacity_segments:
+  - id: seg_india_alu
+    item_id: alu_ingot
+    geography: INDIA
+    nameplate_annual: [4000000, "t_product/yr"]
+    availability: 0.9
+    utilization: 0.85
+    yield_fraction: 0.99
+    qualification_fraction: 0.95
+    valid_from: 2023
+    epistemic_class: ESTIMATED
+    notes: >
+      Order-of-magnitude prior: India is among the world's largest primary aluminium
+      producers (public industry reporting); robot demand is a negligible fraction of
+      national supply. Not a measured allocation (C13).
+    evidence_ids: []
+  - id: seg_india_structures
+    item_id: structure_castings_set
+    geography: INDIA
+    nameplate_annual: [150000, "pcs/yr"]
+    availability: 0.85
+    utilization: 0.75
+    yield_fraction: 0.93
+    qualification_fraction: 0.85
+    valid_from: 2024
+    epistemic_class: ESTIMATED
+    notes: >
+      ORDER-OF-MAGNITUDE ESTIMATE: robot-structure sets are <0.01% of India's automotive-
+      grade casting/machining capacity (public industry scale), allocated conservatively.
+      Not a measured factory capacity (C13). Basis: corpus note that India has strong
+      automotive ancillaries/CNC machining foundations.
+    evidence_ids: []
+  - id: seg_india_copper_wire
+    item_id: copper_magnet_wire
+    geography: INDIA
+    nameplate_annual: [150000, "t_product/yr"]
+    availability: 0.9
+    utilization: 0.8
+    yield_fraction: 0.98
+    qualification_fraction: 0.95
+    epistemic_class: ESTIMATED
+    notes: Order-of-magnitude prior for magnet-wire supply vs national wire industry scale.
+
+projects:
+  - id: prj_repm_6000t
+    name: India integrated NdFeB magnet programme (REPM scheme)
+    item_id: ndfeb_magnet
+    state: announced
+    state_date: "2026-08-13"
+    earliest_start_year: 2026
+    years_to_commission: [3.0, 4.5]
+    design_capacity_annual: [6000, "t_product/yr"]
+    ramp_points: [[0, 0.25], [2, 0.8], [4, 1.0]]
+    capex: [870, "MUSD"]
+    notes: >
+      Scheme target 6,000 t/y OBSERVED (PIB); 20 bids received Aug 2026 -> project state
+      ANNOUNCED (pre-allocation). Commissioning/ramp/yield/grade-compatibility UNKNOWN.
+      Capex converted from INR 7,280 cr at scenario FX (ASSUMPTION).
+    evidence_ids: [ev_repm_scheme]
+  - id: prj_acc_cells
+    name: ACC PLI cell capacity (awarded tranche)
+    item_id: battery_cell_liion
+    state: approved
+    state_date: "2026-02-01"
+    earliest_start_year: 2026
+    years_to_commission: [2.0, 4.0]
+    design_capacity_annual: [40000, "MWh/yr"]
+    ramp_points: [[0, 0.3], [2, 0.85], [4, 1.0]]
+    notes: >
+      40 GWh AWARDED to four beneficiaries (REPORTED). Awarded != commissioned (C7);
+      form-factor compatibility with robots UNKNOWN.
+    evidence_ids: [ev_acc_pli]
+  - id: prj_atmp_osat
+    name: India ATMP/OSAT packaging cluster (approved projects)
+    item_id: motor_driver_inverter
+    state: approved
+    state_date: "2026-07-15"
+    earliest_start_year: 2027
+    years_to_commission: [2.0, 3.5]
+    design_capacity_annual: [30000000, "pcs/yr"]
+    ramp_points: [[0, 0.3], [2, 0.9], [3, 1.0]]
+    notes: >
+      Nine ATMP/OSAT approvals REPORTED Jul 2026. Packaging capacity does NOT equal
+      advanced-node compute; counted only against driver/inverter boards, flagged
+      conditional.
+    evidence_ids: [ev_semicon_projects]
+
+capability_claims:
+  - id: cc_india_auto_adjacency
+    capability_item: structure_castings_set
+    geography: INDIA
+    vector:
+      manufacturing_maturity: high_volume
+      design_ownership: domestic
+      process_ownership: domestic
+      qualified_effective_capacity: "large in aggregate; robot-set allocation ESTIMATED"
+      metrology_test: series
+      precursor_dependence: low
+    claim_vs_assessment: assessment
+    notes: Adjacent automotive capability is REAL but is not proof of humanoid-spec parts without product/process evidence
+    evidence_ids: []
+  - id: cc_addverb_builder
+    capability_item: actuator_rotary_body
+    org_id: org_addverb
+    geography: INDIA
+    vector:
+      manufacturing_maturity: prototype
+      design_ownership: licensed
+      workforce_knowhow: developing
+    claim_vs_assessment: claim
+    notes: Wheeled logistics humanoid builder; bipedal actuation at volume UNPROVEN
+    evidence_ids: [ev_addverb_wheeled]
+  - id: cc_india_reducer_unknown
+    capability_item: harmonic_reducer
+    geography: INDIA
+    vector:
+      manufacturing_maturity: none
+      qualified_effective_capacity: UNKNOWN
+      tooling_autonomy: external
+    claim_vs_assessment: assessment
+    notes: >
+      Corpus verdict: major evidence gap. Generic gear production must not be read as
+      sub-arcminute fatigue-rated flexspline capability. Remains UNKNOWN pending
+      supplier-level audit.
+    evidence_ids: []
+  - id: cc_india_encoder_unknown
+    capability_item: absolute_encoder
+    geography: INDIA
+    vector:
+      manufacturing_maturity: none
+      qualified_effective_capacity: UNKNOWN
+    claim_vs_assessment: assessment
+    evidence_ids: []
+  - id: cc_india_semicon_pipeline
+    capability_item: motor_driver_inverter
+    geography: INDIA
+    vector:
+      manufacturing_maturity: pilot
+      design_ownership: licensed
+      qualification_state: certification_pending
+    claim_vs_assessment: assessment
+    evidence_ids: [ev_semicon_projects]
+
+qualifications:
+  - id: qual_actuator_robot_grade
+    item_id: actuator_rotary_body
+    qualifier: customer
+    standard_ref: "ISO 10218 / ISO TS 15066 (human-shared workspaces)"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_qual_latency_aero]
+  - id: qual_battery_pack
+    item_id: battery_pack_robot
+    qualifier: regulator
+    standard_ref: "cell+pack safety (BIS/UN38.3 class)"
+    status: study
+    latency_months: [12, 24]
+  - id: qual_reducer_grade
+    item_id: harmonic_reducer
+    qualifier: customer
+    standard_ref: "fatigue/backlash acceptance protocol"
+    status: not_started
+    latency_months: [12, 24]
+
+demand_pools:
+  - id: dp_ndfeb_global
+    resource_id: ndfeb_magnet
+    baseline_annual: [250000, "t_product/yr"]
+    contestable_fraction: 0.2
+    growth_pa: 0.08
+    note: >
+      Global sintered NdFeB production order-of-magnitude prior (ASSUMPTION from public
+      industry reporting ranges); contestable share deliberately conservative.
+  - id: dp_soc_advanced
+    resource_id: soc_ai_chip
+    baseline_annual: [60000000, "pcs/yr"]
+    contestable_fraction: 0.05
+    note: Advanced-node edge-AI allocation pool (ASSUMPTION prior; allocation regimes apply)
+
+shocks:
+  - id: shk_cn_ree_minus80
+    name: Chinese REE/magnet exports -80%
+    description: Export-control tightening cuts eligible magnet imports to 20% of normal
+    evidence_ids: [ev_cn_export_controls]
+    edits:
+      - type: import_eligibility
+        origin: CHN
+        fraction: 0.2
+  - id: shk_oil_150
+    name: Oil at USD 150/bbl
+    description: Energy/freight cost pass-through on imported content
+    edits:
+      - type: cost_multiplier
+        item: "*"
+        side: import
+        factor: 1.35
+  - id: shk_cu_double
+    name: Copper price doubles
+    description: Copper-bearing input costs double
+    edits:
+      - type: cost_multiplier
+        item: copper_magnet_wire
+        factor: 2.0
+        side: both
+  - id: shk_semi_half
+    name: Advanced semiconductor availability -50%
+    description: Eligible advanced-node chip supply halved
+    edits:
+      - type: import_eligibility
+        origin: TWN
+        fraction: 0.5
+      - type: import_eligibility
+        origin: KOR
+        fraction: 0.5
+  - id: shk_atmp_fire
+    name: Major ATMP site impairment
+    description: Packaging project impaired for the horizon
+    edits:
+      - type: project_impair
+        project_id: prj_atmp_osat
+
+substitutions:
+  - id: sub_ree_free_actuation
+    name: Rare-earth-reduced body actuation (SynRM/ferrite-assisted)
+    replaces_part: bldc_servo_motor
+    alternative_recipe: rec_bldc_servo_synrm
+    level: component
+    functional_envelope:
+      torque_density_nm_kg: [150, 220]
+      powered_joints: [30, 50]
+      runtime_h: [4, 8]
+      payload_kg: [15, 25]
+    performance_delta:
+      torque_density: "-15% vs NdFeB PMSM (REPORTED tradeoff)"
+      inverter_demand: "+SiC stages required"
+      mass: "+4-6% actuator mass"
+    changed_bom:
+      - part: sic_power_stage
+        qty: 44
+    new_equipment: []
+    new_skills: [advanced_motor_control_software]
+    maturity: pilot
+    transition_months: [18, 36]
+    transition_cost_usd: 250000000
+    evidence_ids: [ev_synrm_tradeoff]
+    notes: >
+      Validated contract: envelope covers HV-2 requirements; removes NdFeB content from
+      body motors (hand/micro actuators unchanged); adds SiC dependency — substitution
+      trades one concentrated input for another (corpus lesson).
+
+resource_classes:
+  - id: reo_supply_chain
+    category: raw_material
+    unit: t_oxide
+    supplied_by_countries: [CHN]
+    concentration_hhi: 0.88
+    lead_time: [24, "wk"]
+
+crosswalks:
+  - from_class: HS
+    from_code: "8501"
+    to_entity: bldc_servo_motor
+    confidence: 0.25
+    note: HS 8501 spans all motors; far broader than servo/joint grade
+  - from_class: HS
+    from_code: "8505.11"
+    to_entity: ndfeb_magnet
+    confidence: 0.6
+    note: metal/magnet-specific heading; grade still unresolved
+  - from_class: HS
+    from_code: "8483.40"
+    to_entity: harmonic_reducer
+    confidence: 0.3
+    note: transmission/gears family; robot-grade harmonic units not separable in HS
+  - from_class: ISIC
+    from_code: "2815"
+    to_entity: harmonic_reducer
+    confidence: 0.2
+    note: generic metal-forming machinery sector
+  - from_class: CPC_PATENT
+    from_code: "H02K"
+    to_entity: bldc_servo_motor
+    confidence: 0.25
+    note: patent class proves inventive activity, not production capability
