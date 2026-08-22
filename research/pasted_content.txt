@@ -1,0 +1,691 @@
+# WIDE RESEARCH MISSION — FORGE WORLD
+
+Conduct an extremely broad, parallel research investigation to build the knowledge foundation for an ambitious future project called **FORGE WORLD**.
+
+Do NOT build the software.
+
+Do NOT design its UI.
+
+Do NOT narrow the research into one company, one sector, Swarajya, IndiaBUILD, robotics, or India.
+
+Those are inputs into a much larger problem.
+
+## THE PROJECT
+
+FORGE WORLD is intended to become a computational system where a user can specify a physical objective such as:
+
+> India manufactures 1,000,000 humanoid robots/year by 2030.
+
+> Europe manufactures 5 million humanoids/year without Chinese critical inputs.
+
+> India manufactures 10,000 satellites/year.
+
+> Africa develops 500 GW/year of solar manufacturing capacity.
+
+> Earth produces 100 reusable launch vehicles/year.
+
+The system should eventually determine:
+
+* what products/components are required;
+* what manufacturing processes are required;
+* what machine tools and production equipment are required;
+* what raw materials/resources are required;
+* what factories and infrastructure are required;
+* what technology/IP/process know-how is required;
+* which countries/companies possess those capabilities;
+* what capacity already exists;
+* what capacity is missing;
+* what must be built;
+* how long it takes;
+* what it costs where defensible;
+* what trade/logistics are required;
+* what energy is required;
+* which capabilities are chokepoints;
+* how industrial shocks propagate;
+* what substitutions are possible;
+* whether the final target can actually be achieved.
+
+It should eventually work at:
+
+country → multi-country → continent → global scale.
+
+The flagship benchmark is **India producing 1M humanoids/year by 2030**, but the architecture must ultimately support essentially any physical industry.
+
+---
+
+# YOUR ROLE
+
+Use Wide Research aggressively.
+
+Split the investigation across many parallel subagents/topics where useful.
+
+Prioritize **coverage, discovery, source collection, structured extraction and unexpected connections**.
+
+We will later perform a separate synthesis/architecture pass.
+
+Do not merely return a long narrative essay.
+
+Build an evidence-rich research package.
+
+---
+
+# PART A — INDIA BUILD: DEEP EXTRACTION
+
+Thoroughly investigate:
+
+https://indiabuild.wiki/
+
+Explore as much of the useful public site as technically and legally possible.
+
+Do not limit yourself to the homepage.
+
+Investigate:
+
+* all sectors;
+* capability pages;
+* dependencies;
+* foundational capabilities;
+* blockers/chokepoints;
+* maturity levels;
+* builders;
+* companies;
+* schemes;
+* investors;
+* collections;
+* capability history;
+* “what moved” or recent changes;
+* methodology;
+* engine/research methodology;
+* sources/citations;
+* suggestions/ledger where relevant;
+* capability hierarchy.
+
+Extract the conceptual framework IndiaBUILD uses.
+
+Identify ideas useful to FORGE WORLD such as:
+
+* capability maturity;
+* capability dependency;
+* downstream unlocks;
+* naked gaps;
+* technological sovereignty;
+* licensed vs own technology;
+* process know-how;
+* builder maturity;
+* bottleneck identification.
+
+Where practical, create structured tables/JSON/CSV-style appendices of useful entities and relationships.
+
+Do NOT attempt to republish proprietary material if the site's terms prohibit it.
+
+Check licensing/terms/API/export availability.
+
+If a public API/export exists, identify it.
+
+If bulk reuse is unclear, document that.
+
+IndiaBUILD is a research input, not the product we are building.
+
+---
+
+# PART B — SWARAJYA INDUSTRIAL INTELLIGENCE
+
+Deeply investigate the public output of:
+
+https://x.com/SwarajyaMag
+
+and relevant industrial/technology reporting on Swarajya's own website.
+
+Do NOT attempt to summarize every unrelated political/news post.
+
+Mine the corpus specifically for material relevant to the physical economy and FORGE WORLD.
+
+Topics include:
+
+* industrial capability;
+* manufacturing;
+* machine tools;
+* process technology;
+* industrial bottlenecks;
+* supply chains;
+* technology dependence;
+* semiconductors;
+* electronics;
+* robotics;
+* motors;
+* magnets;
+* batteries;
+* chemicals;
+* materials;
+* steel/alloys;
+* aerospace;
+* space;
+* energy;
+* infrastructure;
+* logistics;
+* ports;
+* rail;
+* industrial policy;
+* manufacturing clusters;
+* technology transfer;
+* domestic value addition;
+* IP;
+* supplier qualification;
+* industrial substitution;
+* new factories;
+* capacity expansion;
+* critical imports.
+
+Reconstruct valuable threads where possible.
+
+Follow useful links from those posts to:
+
+* government sources;
+* company announcements;
+* papers;
+* policy documents;
+* industry reports;
+* technical sources.
+
+Do not treat Swarajya claims as automatically true.
+
+Preserve:
+
+claim → source → evidence → confidence.
+
+The objective is industrial intelligence discovery, not an archive of the account.
+
+---
+
+# PART C — FIND GLOBAL ANALOGUES TO INDIA BUILD
+
+Search worldwide for datasets/platforms/maps that describe:
+
+* what countries can manufacture;
+* productive capabilities;
+* technological capabilities;
+* industrial maturity;
+* strategic dependencies;
+* production networks;
+* supply-chain capabilities;
+* economic complexity;
+* technological sovereignty.
+
+Investigate at minimum:
+
+* WIPO Innovation Capabilities Navigator;
+* Harvard Atlas of Economic Complexity;
+* OECD;
+* UNIDO;
+* national industrial-capability databases;
+* defence industrial-base mapping where public;
+* European strategic-dependency work;
+* Japanese/Korean industrial capability studies;
+* Chinese industrial capability research where accessible;
+* World Bank;
+* academic datasets.
+
+Find obscure but valuable sources.
+
+---
+
+# PART D — FIND THE BEST PHYSICAL-ECONOMY DATA
+
+Search for APIs, bulk datasets and structured sources covering:
+
+## Materials/minerals
+
+* production;
+* reserves;
+* resources;
+* refining;
+* processing;
+* prices;
+* supply concentration;
+* project pipeline.
+
+Include USGS, IEA and alternatives.
+
+## Trade
+
+* bilateral commodity flows;
+* intermediate goods;
+* tariffs;
+* restrictions;
+* customs classifications.
+
+Include UN Comtrade, DGCI&S, WITS, BACI/CEPII and alternatives.
+
+## Manufacturing
+
+* factory output;
+* establishments;
+* employment;
+* capital;
+* industrial capacity;
+* product-level production.
+
+Include UNIDO, MoSPI ASI and alternatives.
+
+## Input-output networks
+
+* country-industry dependencies;
+* multi-region input-output models.
+
+Include OECD ICIO, Eora, WIOD, EXIOBASE and alternatives.
+
+## Physical facilities
+
+Find high-quality geolocated datasets for:
+
+* power plants;
+* mines;
+* refineries;
+* steel;
+* aluminium;
+* cement;
+* chemicals;
+* semiconductor fabs;
+* battery plants;
+* automotive plants;
+* ports;
+* industrial parks;
+* data centers;
+* major factories.
+
+Investigate Global Energy Monitor and alternatives.
+
+## Energy
+
+* generation;
+* fuel;
+* electricity prices;
+* grid constraints;
+* industrial energy use;
+* power projects.
+
+## Logistics
+
+* ports;
+* shipping routes;
+* maritime chokepoints;
+* rail;
+* road;
+* container traffic;
+* freight prices;
+* shipping rates.
+
+## Prices
+
+* oil;
+* gas;
+* electricity;
+* metals;
+* minerals;
+* freight;
+* currencies;
+* interest rates.
+
+## Technology/IP
+
+* patents;
+* publications;
+* technology ownership;
+* licensing;
+* company R&D;
+* capability indicators.
+
+## Policy
+
+* subsidies;
+* tariffs;
+* local-content rules;
+* PLI-type incentives;
+* export controls;
+* sanctions;
+* industrial policies.
+
+For every strong source, record:
+
+* source name;
+* URL;
+* variables;
+* geography;
+* temporal coverage;
+* granularity;
+* API/bulk availability;
+* price;
+* license;
+* update frequency;
+* major limitations;
+* usefulness to FORGE WORLD.
+
+---
+
+# PART E — INDUSTRY DECOMPOSITION SOURCES
+
+Find strong public sources for decomposing complex products into:
+
+product → subsystem → component → process → material → machine/tool → resource.
+
+Investigate:
+
+* bills of materials;
+* teardown datasets;
+* manufacturing process databases;
+* life-cycle inventory datasets;
+* customs classification relationships;
+* academic engineering datasets;
+* product ontologies;
+* knowledge graphs;
+* patents;
+* procurement catalogs;
+* standards;
+* technical manuals.
+
+Focus particularly on industries such as:
+
+* humanoid robotics;
+* industrial robots;
+* semiconductors;
+* satellites;
+* launch vehicles;
+* aircraft;
+* EVs;
+* batteries;
+* power grids;
+* solar;
+* wind;
+* machine tools;
+* heavy industry.
+
+Identify which relationships can be sourced and which will require modelling/inference.
+
+---
+
+# PART F — FACTORIES THAT BUILD FACTORIES
+
+Research foundational industrial capabilities.
+
+Specifically investigate:
+
+* machine tools;
+* CNC systems;
+* precision bearings;
+* spindles;
+* industrial motors;
+* drives;
+* control systems;
+* metrology;
+* furnaces;
+* vacuum systems;
+* lithography/process equipment;
+* chemical-process equipment;
+* robotics;
+* industrial automation;
+* tooling;
+* dies;
+* molds;
+* precision grinding;
+* heat treatment;
+* specialty steels.
+
+Find evidence for which countries/companies dominate these foundational capabilities.
+
+Identify capabilities that unlock many downstream industries.
+
+This is important because FORGE WORLD must understand the recursion:
+
+**products require factories, factories require machinery, machinery requires other industries.**
+
+---
+
+# PART G — SUPPLIER QUALIFICATION / INDUSTRIAL KNOW-HOW
+
+Research factors conventional supply-chain tools often miss:
+
+* supplier qualification time;
+* automotive/aerospace certification;
+* process yield;
+* quality systems;
+* learning curves;
+* production ramp;
+* process recipes;
+* tacit knowledge;
+* IP/licensing;
+* technology transfer;
+* export-control restrictions;
+* standards compliance;
+* customer qualification;
+* manufacturing readiness levels.
+
+Find quantitative examples.
+
+This should help distinguish:
+
+**factory installed**
+
+from
+
+**real industrial capability.**
+
+---
+
+# PART H — INDUSTRIAL SHOCK CASE STUDIES
+
+Find real historical cases where one disruption propagated across several industries.
+
+Examples:
+
+* 1970s oil shocks;
+* 2011 Japan earthquake;
+* 2020–22 semiconductor shortage;
+* Suez blockage;
+* Red Sea disruption;
+* rare-earth restrictions;
+* graphite restrictions;
+* COVID supply-chain shock;
+* European gas crisis;
+* Chinese export controls;
+* copper shortages;
+* container-price spikes.
+
+For each case extract:
+
+event → first-order effects → second-order effects → substitutions → recovery → timing.
+
+These examples will help calibrate FORGE WORLD's event engine.
+
+---
+
+# PART I — TECHNOLOGY SUBSTITUTION CASES
+
+Find strong real examples where an industrial constraint was solved not by increasing supply but by redesigning technology.
+
+Examples:
+
+* rare-earth-free motors;
+* battery chemistry changes;
+* material substitution;
+* redesigned semiconductors;
+* recycling;
+* process substitution;
+* alternate manufacturing methods;
+* local redesign around unavailable components.
+
+Extract:
+
+bottleneck → alternative → tradeoffs → new dependencies.
+
+---
+
+# PART J — EXISTING PRODUCTS / RESEARCH
+
+Find every serious adjacent system.
+
+Search for:
+
+* supply-chain digital twins;
+* industrial planning software;
+* manufacturing graph systems;
+* product-to-supply-chain engines;
+* economic complexity platforms;
+* critical-mineral simulators;
+* strategic supply-chain tools;
+* manufacturing copilot systems;
+* industrial-policy simulation;
+* factory-generating AI;
+* national economy twins;
+* scenario simulators;
+* geoeconomic models.
+
+Include commercial, government, academic and open-source systems.
+
+Do not frame them merely as competition.
+
+Extract:
+
+**What should FORGE WORLD copy, learn from, integrate or avoid?**
+
+---
+
+# PART K — 1 MILLION HUMANOIDS/YEAR INDIA 2030
+
+Run a dedicated research stream on the flagship benchmark.
+
+Question:
+
+> What would physically and industrially be required for India to manufacture 1,000,000 humanoid robots per year by 2030?
+
+Research:
+
+* humanoid architecture;
+* actuator count/types;
+* motors;
+* reducers;
+* bearings;
+* encoders;
+* sensors;
+* cameras;
+* compute;
+* semiconductors;
+* batteries;
+* BMS;
+* power electronics;
+* structures;
+* thermal;
+* wiring/connectors;
+* machining;
+* casting;
+* electronics assembly;
+* testing.
+
+Estimate ranges where credible sources exist.
+
+Identify:
+
+* current global producers;
+* Indian capabilities;
+* missing capabilities;
+* likely long-lead-time bottlenecks;
+* rare-earth dependence;
+* semiconductor dependence;
+* machine-tool dependence;
+* battery requirements;
+* power demand;
+* supplier qualification issues;
+* plausible substitution routes.
+
+Avoid fake precision.
+
+Unknown must remain unknown.
+
+---
+
+# PART L — FIND THINGS WE HAVE NOT THOUGHT OF
+
+Use a dedicated group of research agents to challenge the current FORGE WORLD thesis.
+
+Ask:
+
+> What critical dimensions would a serious industrial planner, manufacturing engineer, economist, supply-chain expert, geologist, energy expert, policymaker or factory operator say are missing?
+
+Only retain genuinely consequential discoveries.
+
+---
+
+# OUTPUT REQUIREMENTS
+
+Produce a structured **FORGE WORLD Wide Research Package**.
+
+Do not produce only a narrative report.
+
+Include:
+
+## 1. Executive synthesis
+
+The most important discoveries.
+
+## 2. Source map
+
+Hundreds of useful sources categorized by domain where warranted.
+
+## 3. Dataset/API matrix
+
+Structured table.
+
+## 4. IndiaBUILD findings
+
+Concepts, capability relationships, useful structures, licensing/access notes.
+
+## 5. Swarajya industrial-intelligence findings
+
+High-value threads/claims/sources rather than irrelevant account material.
+
+## 6. Existing-system landscape
+
+What already exists and what we can learn from it.
+
+## 7. Capability model discoveries
+
+## 8. Industrial-time / qualification discoveries
+
+## 9. Foundational machine-tool / factory recursion findings
+
+## 10. Shock/event case studies
+
+## 11. Substitution case studies
+
+## 12. India 1M-humanoid benchmark dossier
+
+## 13. Unexpected findings
+
+## 14. Recommendations for improving FORGE WORLD
+
+## 15. Risks / missing data / things that cannot currently be modelled reliably
+
+## 16. Machine-readable appendices where feasible
+
+Use tables / CSV / JSON / structured files for large collections instead of putting everything into prose.
+
+Preserve source URLs.
+
+Prefer primary sources where possible.
+
+Clearly label:
+
+FACT
+
+DERIVED INTERPRETATION
+
+MODEL/ESTIMATE
+
+UNCERTAIN CLAIM
+
+UNKNOWN
+
+Do not invent missing information.
+
+Do not build FORGE WORLD yet.
+
+The purpose of this task is to collect the broadest, strongest possible knowledge foundation so that a later architecture and autonomous coding mission can be dramatically better informed.

@@ -1,0 +1,19 @@
+parameter,low,base,high,unit,status,derivation_or_caveat
+annual_robot_output,1000000,1000000,1000000,robots/year,USER-DEFINED TARGET,Scenario target from supplied brief; not evidence of feasibility
+actuators_per_robot,20,36,40,actuators/robot,MODEL/ESTIMATE,Range from stream research; architecture-dependent and not a standard
+reducers_per_robot,30,40,50,reducers/robot,MODEL/ESTIMATE,Range from stream research; reducer type and actuator architecture matter
+bldc_motors_per_robot,20,25,30,motors/robot,MODEL/ESTIMATE,Range from stream research; some actuator designs integrate motor/gearbox differently
+annual_actuators,20000000,36000000,40000000,actuators/year,DERIVED ARITHMETIC,annual output multiplied by actuators per robot
+annual_reducers,30000000,40000000,50000000,reducers/year,DERIVED ARITHMETIC,annual output multiplied by reducers per robot
+annual_bldc_motors,20000000,25000000,30000000,motors/year,DERIVED ARITHMETIC,annual output multiplied by motors per robot
+hub_throughput,5000,10000,20000,robots/year/hub,MODEL/ESTIMATE,Planning sensitivity assumption; no validated public benchmark found
+assembly_hubs,50,100,200,hubs,DERIVED ARITHMETIC,ceil(annual output / hub throughput); excludes upstream component factories
+average_electrical_power,0.5,1.0,2.0,kW/robot,MODEL/ESTIMATE,Must distinguish peak from average; source note reports peak-like range, not validated duty-cycle average
+operating_hours_per_day,8,12,16,hours/day,MODEL/ESTIMATE,Scenario assumption
+energy_throughput_low_case,4,12,32,GWh/day,DERIVED MODEL,average power multiplied by operating hours and one million robots; values are scenario bounds, not measured demand
+annual_energy_low_case,1460,4380,11680,GWh/year,DERIVED MODEL,daily energy multiplied by 365; excludes charging losses and standby
+reducer_unit_cost,200,350,500,USD/reducer,MODEL/ESTIMATE,Stream-note volume estimate; requires supplier quotes and architecture-specific BOM
+edge_compute_unit_cost,500,1000,1500,USD/robot,MODEL/ESTIMATE,Stream-note estimate; model choice and integration dominate
+robot_definition,wheeled or bipedal,bipedal industrial,bipedal general-purpose,classification,UNKNOWN,Target is ambiguous; wheeled platforms should not be counted as equivalent to bipedal humanoids
+manufacturing_definition,final assembly,integrated domestic production,sovereign end-to-end,classification,UNKNOWN,Imported kits can satisfy assembly volume but not capability sovereignty
+qualification_time,6,12,24,months,MODEL/ESTIMATE,Industrial qualification range from stream research; sector and component criticality vary widely
