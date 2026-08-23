@@ -12,16 +12,39 @@ interface OptionRow {
   explanation: string;
 }
 
+let optionValueRequest: Promise<OptionRow[]> | null = null;
+
+function loadGlobalOptionValues(): Promise<OptionRow[]> {
+  if (!optionValueRequest) {
+    optionValueRequest = fetch("/api/optionvalue")
+      .then((response) => {
+        if (!response.ok) throw new Error(`option value: ${response.status}`);
+        return response.json() as Promise<OptionRow[]>;
+      })
+      .catch((error) => {
+        optionValueRequest = null;
+        throw error;
+      });
+  }
+  return optionValueRequest;
+}
+
 export default function FrontierView({ resp, onSelect }: {
   resp: SolveResponse;
   onSelect: (s: Selection) => void;
 }) {
   const [options, setOptions] = useState<OptionRow[] | null>(null);
+  const [optionError, setOptionError] = useState(false);
   useEffect(() => {
-    fetch("/api/optionvalue")
-      .then((r) => r.json())
-      .then(setOptions)
-      .catch(() => setOptions(null));
+    let active = true;
+    void loadGlobalOptionValues()
+      .then((rows) => {
+        if (active) setOptions(rows);
+      })
+      .catch(() => {
+        if (active) setOptionError(true);
+      });
+    return () => { active = false; };
   }, []);
   const pts = resp.frontier;
   const W = 640, H = 260, PAD = 52;
@@ -31,11 +54,11 @@ export default function FrontierView({ resp, onSelect }: {
   const x = (v: number) => PAD + ((v - minX) / Math.max(maxX - minX, 0.01)) * (W - PAD - 24);
 
   return (
-    <div style={{ padding: "20px 26px" }}>
-      <div className="grid2" style={{ gridTemplateColumns: "1.2fr 1fr", gap: 16 }}>
+    <div className="legacy-view">
+      <div className="grid2 frontier-grid">
         <div className="card">
           <h4>Industrial closure frontier — localization vs feasibility</h4>
-          <svg className="frontier-svg" width={W} height={H}>
+          <svg className="frontier-svg" width={W} height={H} viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Domestic value-addition feasibility frontier">
             <defs>
               <linearGradient id="cliffgrad" x1="0" y1="1" x2="0" y2="0">
                 <stop offset="0%" stopColor="rgba(255,106,61,0.03)" />
@@ -54,8 +77,6 @@ export default function FrontierView({ resp, onSelect }: {
                   r={7}
                   fill={p.feasible ? "var(--green)" : "var(--molten)"}
                   fillOpacity={0.9}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => onSelect({ kind: "proof", id: "" })}
                 />
                 <text x={x(p.dva_target) - 12} y={H - 18}>{(p.dva_target * 100).toFixed(0)}%</text>
               </g>
@@ -69,8 +90,23 @@ export default function FrontierView({ resp, onSelect }: {
           </svg>
           <div className="small" style={{ marginTop: 4 }}>
             Each point is a full re-solve with the domestic-share constraint pinned to the axis
-            value. The shaded region is where the objective stops closing — the cliff is measured,
-            not drawn.
+            value. The shaded region begins at the first non-closing discrete MODELLED point; it
+            is not a measured continuous boundary.
+          </div>
+          <div className="frontier-point-list" aria-label="Inspectable frontier points">
+            {pts.map((point) => (
+              <button
+                type="button"
+                key={point.dva_target}
+                disabled={point.binding.length === 0}
+                onClick={() => onSelect({ kind: "item", id: point.binding[0] })}
+                title={point.binding.length ? `Inspect ${point.binding[0]}` : "No binding item returned"}
+              >
+                <strong>{(point.dva_target * 100).toFixed(0)}% DVA</strong>
+                <span>{point.result_class.replace(/_/g, " ")}</span>
+                <small>{point.binding[0] ?? "no binding item returned"}</small>
+              </button>
+            ))}
           </div>
           {pts.some((p) => p.binding.length > 0 && !p.feasible) && (
             <>
@@ -91,7 +127,7 @@ export default function FrontierView({ resp, onSelect }: {
                   <div>
                     <div className="small">no localization constraint</div>
                     <div className="bignum" style={{ color: "var(--steel)" }}>
-                      {(resp.reverse.max_units_per_year / 1000).toFixed(0)}k
+                      {formatCompact(resp.reverse.max_units_per_year)}
                     </div>
                     <span className={`chip ${resp.reverse.class_at_max === "CONDITIONALLY_FEASIBLE" ? "warn" : "ok"}`}>
                       {resp.reverse.class_at_max.replace(/_/g, " ")}
@@ -105,7 +141,7 @@ export default function FrontierView({ resp, onSelect }: {
                       className="bignum"
                       style={{ color: resp.reverse.max_units_localized_at_dva > 0 ? "var(--green)" : "var(--molten)" }}
                     >
-                      {(resp.reverse.max_units_localized_at_dva / 1000).toFixed(0)}k
+                      {formatCompact(resp.reverse.max_units_localized_at_dva)}
                     </div>
                     <span className={`chip ${resp.reverse.class_localized === "INFEASIBLE_UNDER_MODEL" ? "binding" : "ok"}`}>
                       {resp.reverse.class_localized.replace(/_/g, " ")}
@@ -126,13 +162,14 @@ export default function FrontierView({ resp, onSelect }: {
             <h4>Classification crosswalks (confidence-bearing)</h4>
             <table className="data">
               <thead>
-                <tr><th>code</th><th>entity</th><th className="r">conf</th></tr>
+                <tr><th>code</th><th>entity</th><th>mapping note</th><th className="r">conf</th></tr>
               </thead>
               <tbody>
                 {resp.crosswalks.map((c) => (
                   <tr key={c.from_class + c.from_code}>
                     <td>{c.from_class} {c.from_code}</td>
                     <td>{c.to_entity}</td>
+                    <td>{c.note || "UNKNOWN · no mapping caveat returned"}</td>
                     <td className="r">{c.confidence.toFixed(2)}</td>
                   </tr>
                 ))}
@@ -145,8 +182,9 @@ export default function FrontierView({ resp, onSelect }: {
           </div>
 
           <div className="card" style={{ marginTop: 14 }}>
-            <h4>Option value — which evidenced investments unlock the most futures?</h4>
-            {!options && <div className="small">Measuring marginal relief across domain objectives…</div>}
+            <h4>Global benchmark option value — fixed all-pack objective set</h4>
+            {!options && !optionError && <div className="small">Running cached marginal-relief solves across benchmark objectives…</div>}
+            {optionError && <div className="small" role="alert">UNKNOWN · global option-value benchmark unavailable.</div>}
             {options && options.length === 0 && (
               <div className="small">No evidenced investments available.</div>
             )}
@@ -173,8 +211,8 @@ export default function FrontierView({ resp, onSelect }: {
             })}
             {options && (
               <div className="small">
-                Measured as reduction of normalized infeasibility at each objective's deadline,
-                through full re-solves — never centrality alone.
+                MODELLED as reduction of normalized infeasibility through full re-solves over
+                server-declared fixed objectives. This panel is global, not local to the active scenario.
               </div>
             )}
           </div>
@@ -195,4 +233,11 @@ export default function FrontierView({ resp, onSelect }: {
       </div>
     </div>
   );
+}
+
+function formatCompact(value: number): string {
+  if (Math.abs(value) >= 1e9) return `${(value / 1e9).toFixed(2)}B`;
+  if (Math.abs(value) >= 1e6) return `${(value / 1e6).toFixed(1)}M`;
+  if (Math.abs(value) >= 1e3) return `${(value / 1e3).toFixed(1)}k`;
+  return value.toFixed(0);
 }

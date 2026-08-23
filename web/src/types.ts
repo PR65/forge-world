@@ -4,6 +4,8 @@ export type ResultClass =
   | "INFEASIBLE_UNDER_MODEL"
   | "NOT_ADJUDICABLE";
 
+export type ProductMode = "ANALYZE" | "DESIGN" | "EXECUTE" | "DISCOVER" | "LEARN";
+
 export interface ItemGap {
   item: string;
   demand: number;
@@ -201,13 +203,87 @@ export interface ObjectiveConfig {
 }
 
 export interface Selection {
-  kind: "item" | "proof" | "action" | "evidence";
+  kind: "item" | "proof" | "action" | "evidence" | "world" | "capability";
   id: string;
+}
+
+/**
+ * Canonical registry records are deliberately small at the shell boundary.
+ * The registry can add richer fields in metadata without forcing the workbench
+ * to invent a domain-specific schema.
+ */
+export interface WorldNode {
+  id: string;
+  name: string;
+  kind: string;
+  pack_id?: string | null;
+  canonical_id?: string | null;
+  epistemic_class: string;
+  evidence_ids: string[];
+  metadata: Record<string, unknown>;
+}
+
+export interface WorldEdge {
+  src: string;
+  relation: string;
+  dst: string;
+  meta: Record<string, unknown>;
+}
+
+export interface WorldSlice {
+  nodes: WorldNode[];
+  edges: WorldEdge[];
+  root: string | null;
+  truncated: boolean;
+}
+
+export interface WorldSummary {
+  nodes: number;
+  edges: number;
+  capabilities: number;
+  packs: number;
+  snapshot_id?: string | null;
+  hash?: string | null;
+  epistemic_counts?: Record<string, number>;
+  unavailable?: boolean;
+}
+
+export interface CapabilityRecord extends WorldNode {
+  mapping_count: number;
+  mapped_pack_ids: string[];
+  mapped_entity_ids: string[];
+  evidence_task_ids: string[];
+}
+
+export interface WorldEvidenceRecord {
+  evidence_id: string;
+  local_claim_id: string;
+  pack_id: string | null;
+  subject: string;
+  predicate: string;
+  epistemic_class: string;
+  value_text: string;
+  quote_or_caveat: string;
+  source_ids: string[];
+  confidence: Record<string, number | null>;
+  source_snapshots: {
+    snapshot_id: string;
+    source_id: string;
+    content_hash: string;
+    hash_scope: string;
+    raw_payload_stored: boolean;
+    access_date: string;
+    license: string;
+    storage_posture: string;
+    url: string;
+    metadata: Record<string, unknown>;
+  }[];
 }
 
 export interface PackDetail {
   pack_id: string;
   title: string;
+  id_scope: "pack_local_with_registry_ids";
   variants: {
     id: string;
     name: string;
@@ -226,6 +302,12 @@ export interface PackDetail {
     state_date: string;
     design_capacity: string | null;
     commission_window_years: number[];
+    notes: string;
+    evidence_ids: string[];
+    registry_evidence_ids: string[];
+    epistemic_class: string;
+    epistemic_role: string | null;
+    control_role: "context" | "scenario" | "fundable";
   }[];
   evidence: {
     claim_id: string;
@@ -236,6 +318,7 @@ export interface PackDetail {
     source_ids: string[];
     quote_or_caveat: string;
     confidence: Record<string, number | null>;
+    registry_evidence_id: string;
   }[];
   sources: {
     id: string;
@@ -244,5 +327,6 @@ export interface PackDetail {
     url: string;
     license: string;
     access_date: string;
+    registry_source_id: string;
   }[];
 }

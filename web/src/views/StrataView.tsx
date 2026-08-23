@@ -102,18 +102,6 @@ export default function StrataView({ resp, onSelect }: {
     });
 
     const byId = new Map(nodes.map((n) => [n.id, n]));
-    resp.explosion.items.forEach((it) => {
-      if (!it.recipe) return;
-      const from = positions.get(it.item);
-      if (!from) return;
-      ctx.strokeStyle = "rgba(110,166,200,0.14)";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(from.x + from.w, from.y + NODE_H / 2);
-      ctx.bezierCurveTo(from.x + from.w + 60, from.y + NODE_H / 2, from.x + from.w + 60, from.y + NODE_H / 2, from.x + from.w + 60, from.y + NODE_H / 2);
-      ctx.stroke();
-    });
-
     for (const [id, p] of positions) {
       const n = byId.get(id)!;
       const c = colors[n.status];
@@ -177,9 +165,20 @@ export default function StrataView({ resp, onSelect }: {
         <span><span className="dot" style={{ background: "#ffb454" }} />import-dependent</span>
         <span><span className="dot" style={{ background: "#6ea6c8" }} />domestic capacity</span>
         <span><span className="dot" style={{ background: "#55c98d" }} />satisfied</span>
-        <span style={{ marginLeft: "auto" }}>node width ∝ log demand · click to inspect · year {year}</span>
+        <span style={{ marginLeft: "auto" }}>layer = explosion depth · no dependency edges implied · year {year}</span>
       </div>
-      <canvas ref={canvasRef} style={{ cursor: "crosshair" }} />
+      <div className="strata-scroll" tabIndex={0} aria-label="Scrollable visual requirement strata">
+        <canvas ref={canvasRef} aria-hidden="true" style={{ cursor: "crosshair" }} />
+      </div>
+      <div className="strata-node-list" aria-label="Inspectable requirement strata nodes">
+        {nodes.map((node) => (
+          <button type="button" key={node.id} onClick={() => onSelect({ kind: "item", id: node.id })}>
+            <span className={`node-status-dot node-status-${node.status === "binding" ? "conflicted" : node.status === "unknown" ? "unknown" : node.status === "import" ? "uncertain" : "evidenced"}`} aria-hidden="true" />
+            <strong>{node.label}</strong>
+            <small>depth {node.col} · {fmtDemand(node.demand)} {node.unit}/yr · {node.status}</small>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
