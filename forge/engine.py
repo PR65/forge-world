@@ -350,6 +350,7 @@ class ForgeEngine:
             },
             "capacity_envelopes": _envelope_rows(w_eff, ex, years, opts_eff),
             "result": _result_to_json(sr, ex),
+            "condition_ledger": sr.condition_ledger,
             "dva": {
                 "fraction": dva.fraction,
                 "total_cost_usd": dva.total_cost_usd,
