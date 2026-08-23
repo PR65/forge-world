@@ -258,13 +258,9 @@ class ForgeEngine:
         )
 
         def eval_with(overrides: Dict[str, Tuple[float, float]]) -> SolveResult:
-            o2 = ScenarioOptions(
-                funded_project_ids=set(opts_eff.funded_project_ids),
-                capacity_overrides={**opts_eff.capacity_overrides, **overrides},
-                geography=opts_eff.geography,
-                min_domestic_share=opts_eff.min_domestic_share,
-                qualification_boosts=set(opts_eff.qualification_boosts),
-            )
+            # F15 fixed: FULL scenario clone + only the requested override.
+            o2 = opts_eff.clone()
+            o2.capacity_overrides = {**opts_eff.capacity_overrides, **overrides}
             return solve_objective(w_eff, pg, ex, years, o2)
 
         voi_tasks = []
@@ -284,12 +280,8 @@ class ForgeEngine:
 
         if include_deep:
             def eval_dva(theta: float) -> SolveResult:
-                o2 = ScenarioOptions(
-                    funded_project_ids=set(opts_eff.funded_project_ids),
-                    capacity_overrides=dict(opts_eff.capacity_overrides),
-                    geography=opts_eff.geography,
-                    min_domestic_share=theta,
-                )
+                o2 = opts_eff.clone()
+                o2.min_domestic_share = theta
                 return solve_objective(w_eff, pg, ex, years, o2)
 
             frontier_points = closure_frontier([0.0, 0.5, 0.7, 0.85, 0.95], evaluate_at=eval_dva)

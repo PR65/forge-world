@@ -56,6 +56,7 @@ def test_plan_engine_search_verifies_through_solver():
 
 
 def test_voi_ranks_decision_critical_unknowns():
+    """V0.1 semantics: HIGH requires a genuine ResultClass flip between bounds."""
     from forge.voi import value_of_information
 
     pk = _humanoid()
@@ -72,7 +73,33 @@ def test_voi_ranks_decision_critical_unknowns():
                                                  "crossed_roller_bearing": (0, 9e7)})
     impacts = {t.unknown_id: t.decision_impact for t in tasks}
     assert set(impacts.values()) <= {"HIGH", "MEDIUM", "LOW"}
-    assert any(v == "HIGH" for v in impacts.values())
+    highs = [t for t in tasks if t.decision_impact == "HIGH"]
+    # every HIGH must be a real class flip — no same-class "flips conclusion" labels
+    for t in highs:
+        assert t.class_pessimistic != t.class_optimistic
+        assert t.flip_behavior.startswith("flips conclusion")
+    # at this demand the world is infeasible under BOTH bounds (honest LOW/MEDIUM);
+    # a HIGH here would be a V0-style fake flip. The ranking must still be
+    # meaningful: swing ordering decides MEDIUM vs LOW.
+
+
+def test_voi_never_labels_same_class_as_flip():
+    """P5 regression guard: identical classes must NEVER read 'flips conclusion'."""
+    from forge.voi import value_of_information
+    pk = _humanoid()
+    pg = ProofGraph()
+    ex = explode_variant(pk.world, pg, "hv2_industrial", 50_000, [2029])
+
+    def evaluate(overrides):
+        opts = ScenarioOptions(min_domestic_share=0.7, capacity_overrides=dict(overrides))
+        return solve_objective(pk.world, pg, ex, [2029], opts)
+
+    unknown_items = ["absolute_encoder", "crossed_roller_bearing"]
+    bounds = {it: (0.0, ex.get(it).gross_annual.value * 1.5) for it in unknown_items}
+    tasks = value_of_information(unknown_items, evaluate, bounds_by_item=bounds)
+    for t in tasks:
+        if t.class_pessimistic == t.class_optimistic:
+            assert not t.flip_behavior.startswith("flips conclusion")
 
 
 def test_engine_full_run_smoke_all_packs():
