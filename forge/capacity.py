@@ -156,14 +156,20 @@ def capacity_envelope(
     geography: str = "INDIA",
     count_unproven_projects: bool = True,
     qualification_boost: bool = False,
+    qualification_start_year: Optional[int] = None,
+    exclude_unproven_projects: bool = False,
 ) -> CapacityEnvelope:
     """Assemble effective-capacity envelope for one item/year (C6).
 
     UNKNOWN when no evidence-bearing segment/claim/project defines capacity.
     Unproven projects contribute only to the optimistic edge of the interval and flag
     the result as conditional (C7: announced != operating).
-    `qualification_boost` models a completed QUALIFY action: existing segments count at
-    full qualification for this item (it does NOT create capacity that has no evidence).
+    `exclude_unproven_projects=True` removes that optimistic contribution NUMERICALLY
+    (count_unproven_projects=False semantics) instead of prose-only (F9/K2).
+    `qualification_boost` models a QUALIFY action for this item; it takes effect only
+    from `qualification_start_year` onward (latency honored — F11). Before that year
+    the boost contributes nothing; after it, existing segments count at full
+    qualification (it does NOT create capacity without evidence).
     """
     funded = funded_project_ids or set()
     elig_map = import_eligibility or {}
@@ -176,6 +182,11 @@ def capacity_envelope(
     proj_ids: List[str] = []
     proven_only = True
 
+    # Qualification latency: a boost issued with start_year S affects years >= S.
+    boost_active = bool(qualification_boost) and (
+        qualification_start_year is None or year >= qualification_start_year
+    )
+
     for ent in w.entities.values():
         if not isinstance(ent, CapacitySegment):
             continue
@@ -184,7 +195,7 @@ def capacity_envelope(
             continue
         if seg.geography not in (geography, "GLOBAL"):
             continue
-        eff_frac = 1.0 if qualification_boost else seg.qualification_fraction
+        eff_frac = 1.0 if boost_active else seg.qualification_fraction
         f = seg.availability * seg.utilization * seg.yield_fraction * eff_frac
         if seg.nameplate_annual is None:
             continue
@@ -215,6 +226,9 @@ def capacity_envelope(
         if prj.state in (ProjectState.RAMPING, ProjectState.MATURE):
             lo_vals.append(annual_scalar(pess))
             hi_vals.append(annual_scalar(opt))
+        elif exclude_unproven_projects:
+            reasons.append(f"project {prj.id}: excluded (count_unproven_projects=False)")
+            continue
         else:
             proven_only = False
             hi_vals.append(annual_scalar(opt))
@@ -224,12 +238,10 @@ def capacity_envelope(
         dom = Interval(None, None)
         reasons.append(f"no qualified-capacity evidence found for {item_id} @ {geography} {year}")
     else:
-        lo = min(lo_vals) if lo_vals else 0.0
+        # lo: segments + operating projects (proven contributions); 0 if none proven.
+        # hi: everything on the optimistic edge. (J2 semantics.)
+        lo = sum(lo_vals) if lo_vals else 0.0
         hi = sum(hi_vals) if hi_vals else 0.0
-        if len(seg_ids) == 0 and proj_ids:
-            lo = 0.0
-        elif lo_vals:
-            lo = sum(lo_vals)
         dom = Interval(min(lo, hi), hi)
 
     ent_item = w.entities.get(item_id)

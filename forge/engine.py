@@ -42,6 +42,14 @@ class ObjectiveSpecInput:
     funded_projects: List[str] = field(default_factory=list)
     allowed_substitutions: List[str] = field(default_factory=list)
     analyst_capacity_assumptions: Dict[str, Tuple[float, float]] = field(default_factory=dict)
+    # Declared economic parameters (USD per canonical unit). Absent entries fall
+    # back to solver defaults; every default use is surfaced as an ASSUMPTION.
+    cost_domestic: Dict[str, float] = field(default_factory=dict)
+    cost_import: Dict[str, float] = field(default_factory=dict)
+    # RT4/F2': "strict" (default) refuses adjudication when delivery leans on
+    # imports with UNKNOWN absolute foreign capacity; "unbounded_assumption"
+    # proceeds conditionally with the assumption recorded. Explicit, never silent.
+    foreign_supply_policy: str = "strict"
 
 
 def _variant_list(pk: KnowledgePack) -> List[Dict]:
@@ -148,17 +156,57 @@ class ForgeEngine:
         if obj.deadline_year not in years:
             years.append(obj.deadline_year)
 
+        # ---- W4.1: evidence nodes enter the runtime proof graph ----------------
+        # Every EvidenceRecord in the pack becomes an evidence node; parameter
+        # derivations link to the records behind the entities they consumed
+        # (via each entity's evidence_ids). C15 becomes mechanically true.
+        evidence_node_ids = {}
+        for rec in self.pk.evidence.values():
+            evidence_node_ids[rec.claim_id] = pg.evidence_node(rec)
+
+        scenario_node = pg.scenario_node(
+            f"Objective: {obj.annual_units:g}/yr {obj.variant_id} in {obj.geography} "
+            f"by {obj.deadline_year}, DVA>={obj.min_dva:.0%}",
+            {"objective": obj.__dict__ | {"funded_projects": list(obj.funded_projects)},
+             "shocks": shock_ids or []},
+        )
+
         opts = ScenarioOptions(
             import_eligibility={},
             funded_project_ids=set(obj.funded_projects),
             capacity_overrides=dict(obj.analyst_capacity_assumptions),
+            cost_domestic=dict(obj.cost_domestic),
+            cost_import=dict(obj.cost_import),
             geography=obj.geography,
             min_domestic_share=obj.min_dva,
             funded_pipeline=("selected_only" if obj.funded_projects else "optimistic"),
+            foreign_supply_policy=obj.foreign_supply_policy,
         )
+        opts_node = pg.derive([scenario_node], "ScenarioOptions assembled",
+                              {"geography": obj.geography,
+                               "min_domestic_share": obj.min_dva,
+                               "funded_pipeline": opts.funded_pipeline})
 
         ex = explode_variant(self.w, pg, obj.variant_id, obj.annual_units, years)
         mass_warn = check_mass_balance(self.w, ex)
+
+        # Link explosion lines to the evidence behind their recipes/BOM parts.
+        for item in ex.items():
+            line = ex.lines[item]
+            src_ids = []
+            ent = self.w.entities.get(item)
+            if ent is not None:
+                src_ids.extend(getattr(ent, "evidence_ids", ()) or ())
+            if line.via_recipe:
+                rec_ent = self.w.entities.get(line.via_recipe)
+                if rec_ent is not None:
+                    src_ids.extend(getattr(rec_ent, "evidence_ids", ()) or ())
+            node = ex.proof_node_ids.get(item)
+            if node and src_ids:
+                for cid in sorted(set(src_ids)):
+                    ev_nid = evidence_node_ids.get(cid)
+                    if ev_nid:
+                        pg.add_edge(ev_nid, node)
 
         if shock_ids:
             w_eff, opts_eff, shock_report = apply_shocks(self.w, pg, shock_ids, opts)
@@ -173,9 +221,34 @@ class ForgeEngine:
             decision_year=obj.deadline_year,
         )
 
+        def _plan_explosion(ww, pgg, v, u):
+            exx = explode_variant(ww, pgg, v, u, years)
+            # G1: plan re-explosion line nodes link to pack evidence + scenario node,
+            # so planner/portfolio verdicts remain evidence-connected (no new roots).
+            for item in exx.items():
+                node = exx.proof_node_ids.get(item)
+                if not node:
+                    continue
+                pg.add_edge(opts_node, node)
+                src_ids = []
+                ent = ww.entities.get(item)
+                if ent is not None:
+                    src_ids.extend(getattr(ent, "evidence_ids", ()) or ())
+                via = exx.lines[item].via_recipe if exx.get(item) else ""
+                if via:
+                    rec_ent = ww.entities.get(via)
+                    if rec_ent is not None:
+                        src_ids.extend(getattr(rec_ent, "evidence_ids", ()) or ())
+                for cid in sorted(set(src_ids)):
+                    ev_nid = evidence_node_ids.get(cid)
+                    if ev_nid:
+                        pg.add_edge(ev_nid, node)
+            return exx
+
         plan_engine = PlanEngine(
-            w_eff, pg, lambda ww, pgg, v, u: explode_variant(ww, pgg, v, u, years),
+            w_eff, pg, _plan_explosion,
             obj.variant_id, obj.annual_units, years, opts_eff, shock_ids=None,
+            provenance_root=opts_node,
         )
         plan_engine.set_substitution_contracts(self.pk.substitutions)
 
@@ -196,13 +269,9 @@ class ForgeEngine:
         )
 
         def eval_with(overrides: Dict[str, Tuple[float, float]]) -> SolveResult:
-            o2 = ScenarioOptions(
-                funded_project_ids=set(opts_eff.funded_project_ids),
-                capacity_overrides={**opts_eff.capacity_overrides, **overrides},
-                geography=opts_eff.geography,
-                min_domestic_share=opts_eff.min_domestic_share,
-                qualification_boosts=set(opts_eff.qualification_boosts),
-            )
+            # F15 fixed: FULL scenario clone + only the requested override.
+            o2 = opts_eff.clone()
+            o2.capacity_overrides = {**opts_eff.capacity_overrides, **overrides}
             return solve_objective(w_eff, pg, ex, years, o2)
 
         voi_tasks = []
@@ -222,12 +291,8 @@ class ForgeEngine:
 
         if include_deep:
             def eval_dva(theta: float) -> SolveResult:
-                o2 = ScenarioOptions(
-                    funded_project_ids=set(opts_eff.funded_project_ids),
-                    capacity_overrides=dict(opts_eff.capacity_overrides),
-                    geography=opts_eff.geography,
-                    min_domestic_share=theta,
-                )
+                o2 = opts_eff.clone()
+                o2.min_domestic_share = theta
                 return solve_objective(w_eff, pg, ex, years, o2)
 
             frontier_points = closure_frontier([0.0, 0.5, 0.7, 0.85, 0.95], evaluate_at=eval_dva)
@@ -256,6 +321,21 @@ class ForgeEngine:
             scenario={"shocks": shock_ids or [], "funded_projects": obj.funded_projects},
             data_snapshot_payload=self.pk.summary(),
             assumptions=sorted(set(dva.assumptions_used)),
+            world=self.w,                       # FULL snapshot hash (F21/G3)
+            scenario_opts=opts_eff,
+        )
+        # W0.3/G3-4: outputs recorded on the run (finish() semantics made real).
+        run.finish(
+            {
+                "result_class": sr.result_class.value,
+                "worst_year": sr.max_shortfall_year,
+                "dva_fraction": dva.fraction,
+                "dva_certificate": sr.dva_certificate,
+                "plan_actions": [a.action_id for a in plan.actions],
+            },
+            warnings=list(mass_warn) + [
+                f"explosion note: {w}" for w in ex.flows.warnings
+            ],
         )
 
         response: Dict[str, Any] = {
@@ -279,14 +359,16 @@ class ForgeEngine:
                 ],
                 "mass_balance_warnings": mass_warn,
             },
-            "capacity_envelopes": _envelope_rows(self.w, ex, years, opts_eff),
+            "capacity_envelopes": _envelope_rows(w_eff, ex, years, opts_eff),
             "result": _result_to_json(sr, ex),
+            "condition_ledger": sr.condition_ledger,
             "dva": {
                 "fraction": dva.fraction,
                 "total_cost_usd": dva.total_cost_usd,
                 "imported_cost_usd": dva.imported_cost_usd,
                 "assumptions": dva.assumptions_used,
                 "per_item_top": dict(list(sorted(dva.per_item.items()))[:24]),
+                "certificate": sr.dva_certificate,
             },
             "actions": [a.to_json() for a in actions],
             "plan": plan.to_json(),

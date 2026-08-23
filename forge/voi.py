@@ -1,3 +1,11 @@
+"""V0.1 VOI: ResultClass flips are the only HIGH trigger; magnitude is separate.
+
+V0 defects corrected: (F14) any shortfall swing flipped the rank tuple and got
+labeled "flips conclusion" even when both classes were identical; (F15) the engine's
+counterfactual evaluator dropped active scenario fields. The evaluator contract is
+now "clone the full ScenarioOptions, apply only the override" — see
+engine.eval_with which uses ScenarioOptions.clone().
+"""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -12,7 +20,10 @@ class ResearchTask:
     unknown_id: str
     description: str
     decision_impact: str  # HIGH | MEDIUM | LOW
-    flip_behavior: str
+    flip_behavior: str    # class-flip description OR magnitude description
+    shortfall_swing: float = 0.0
+    class_pessimistic: str = ""
+    class_optimistic: str = ""
     next_evidence: List[str] = field(default_factory=list)
 
     def to_json(self) -> Dict:
@@ -21,8 +32,28 @@ class ResearchTask:
             description=self.description,
             decision_impact=self.decision_impact,
             flip_behavior=self.flip_behavior,
+            shortfall_swing=round(self.shortfall_swing, 3),
+            class_pessimistic=self.class_pessimistic,
+            class_optimistic=self.class_optimistic,
             next_evidence=self.next_evidence,
         )
+
+
+_CLASS_ORDER = {
+    ResultClass.NOT_ADJUDICABLE: 0,
+    ResultClass.INFEASIBLE_UNDER_MODEL: 1,
+    ResultClass.INFEASIBLE_WRT_DVA: 1,
+    ResultClass.CONDITIONALLY_FEASIBLE: 2,
+    ResultClass.FEASIBLE: 3,
+}
+
+
+def _worst_shortfall(sr: SolveResult) -> float:
+    """Normalized service deficit of the worst year — dimensionless ranking basis."""
+    wy = sr.worst_year()
+    if wy is None or wy not in sr.years:
+        return 0.0
+    return sr.years[wy].normalized_deficit
 
 
 def value_of_information(
@@ -34,12 +65,17 @@ def value_of_information(
     """Feasibility-flip detection over declared UNKNOWNs.
 
     For each unknown, re-solve under pessimistic and optimistic capacity assumptions
-    while holding other unknowns at their base state. A flip between result classes
-    (or a large shortfall swing) marks decision-critical evidence.
+    while holding other unknowns at their base state AND preserving the full active
+    scenario (the caller's evaluate() must clone its base options).
+
+    Semantics (V0.1):
+      HIGH   = pessimistic and optimistic land in DIFFERENT ResultClasses.
+      MEDIUM = same class but normalized deficit swings materially (>25% absolute).
+      LOW    = little effect within plausible bounds.
     """
     bounds_by_item = bounds_by_item or {}
     base = evaluate({})
-    base_short = base.years[base.worst_year()].total_shortfall if base.worst_year() is not None and base.years else 0.0
+    base_short = _worst_shortfall(base)
     tasks: List[ResearchTask] = []
 
     for item in unknown_items:
@@ -47,32 +83,24 @@ def value_of_information(
         pessimistic = evaluate({item: (lo_b, lo_b)})
         optimistic = evaluate({item: (hi_b, hi_b)})
 
-        def rank(r: SolveResult) -> Tuple[int, float]:
-            order = {
-                ResultClass.NOT_ADJUDICABLE: 0,
-                ResultClass.INFEASIBLE_UNDER_MODEL: 1,
-                ResultClass.CONDITIONALLY_FEASIBLE: 2,
-                ResultClass.FEASIBLE: 3,
-            }
-            short = r.years[r.worst_year()].total_shortfall if r.worst_year() is not None and r.years else 0.0
-            return (order[r.result_class], -short)
+        r_p = pessimistic.result_class
+        r_o = optimistic.result_class
+        short_p = _worst_shortfall(pessimistic)
+        short_o = _worst_shortfall(optimistic)
+        swing = abs(short_o - short_p)
 
-        r_p, r_o = rank(pessimistic), rank(optimistic)
-        flip = r_p != r_o
-        short_p = pessimistic.years[pessimistic.worst_year()].total_shortfall if pessimistic.worst_year() is not None and pessimistic.years else 0.0
-        short_o = optimistic.years[optimistic.worst_year()].total_shortfall if optimistic.worst_year() is not None and optimistic.years else 0.0
-        swing = abs(short_p - short_o)
-        base_rank = rank(base)
-
-        if flip:
+        if r_p != r_o:
             impact = "HIGH"
             behavior = (
-                f"flips conclusion: pessimistic={pessimistic.result_class.value}, "
-                f"optimistic={optimistic.result_class.value}"
+                f"flips conclusion: {r_p.value} at pessimistic bound vs "
+                f"{r_o.value} at optimistic bound"
             )
-        elif swing > max(base_short * 0.25, 1.0):
+        elif swing > max(base_short * 0.25, 0.05):
             impact = "MEDIUM"
-            behavior = f"shortfall swings {swing:,.0f} units/yr between bounds"
+            behavior = (
+                f"no class flip; normalized deficit swings "
+                f"{short_p:.2f} -> {short_o:.2f} between bounds"
+            )
         else:
             impact = "LOW"
             behavior = "little effect on conclusion within plausible bounds"
@@ -82,6 +110,9 @@ def value_of_information(
             description=f"Qualified domestic capacity of {item} is UNKNOWN",
             decision_impact=impact,
             flip_behavior=behavior,
+            shortfall_swing=swing,
+            class_pessimistic=r_p.value,
+            class_optimistic=r_o.value,
             next_evidence=[
                 "supplier audit: machine fleet, cycle times, yields",
                 "customer qualification status and annual qualified output",
@@ -90,5 +121,5 @@ def value_of_information(
         ))
 
     order = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
-    tasks.sort(key=lambda t: order[t.decision_impact])
+    tasks.sort(key=lambda t: (order[t.decision_impact], -t.shortfall_swing))
     return tasks

@@ -19,6 +19,13 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
 
+# Explicit single-package declaration. Flat-layout auto-discovery fails here
+# because docs/packs/research/scripts/server/tests/web are non-Python or
+# path-run directories; only forge/ is an importable distribution package
+# (server/app.py and scripts/forge_cli.py are executed by path, never installed).
+[tool.setuptools]
+packages = ["forge"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"

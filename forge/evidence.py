@@ -187,6 +187,50 @@ class ProofGraph:
         )
 
 
+def world_snapshot(w: World) -> Dict:
+    """Canonicalized, hashable snapshot of solver-relevant world state.
+
+    Captures every entity's dataclass fields (numeric values included) plus the
+    typed edge list. Order-independent (sorted); excludes nothing that can change
+    a solve. Used by ModelRun identity — V0 hashed only pack summary counts, so a
+    100,000x capacity change left the run hash byte-identical (F21/P7b).
+    """
+    ents: Dict[str, Dict] = {}
+    for eid in sorted(w.entities.keys()):
+        e = w.entities[eid]
+        d: Dict = {"kind": e.kind}
+        for f in e.__dataclass_fields__:
+            if f in ("id", "kind"):
+                continue
+            v = getattr(e, f)
+            if hasattr(v, "to_json"):
+                v = v.to_json()
+            elif hasattr(v, "value") and hasattr(v, "unit"):
+                v = [v.value, v.unit]
+            elif isinstance(v, tuple):
+                v = [_tup_item(x) for x in v]
+            elif isinstance(v, list):
+                v = [_tup_item(x) for x in v]
+            elif isinstance(v, dict):
+                v = {k: _tup_item(x) for k, x in sorted(v.items())}
+            d[f] = v
+        ents[eid] = d
+    edges = sorted((e.src, e.relation, e.dst) for e in w.edges)
+    return {"entities": ents, "edges": edges}
+
+
+def _tup_item(x):
+    if hasattr(x, "value") and hasattr(x, "unit"):
+        return [x.value, x.unit]
+    if hasattr(x, "to_json"):
+        return x.to_json()
+    if isinstance(x, (tuple, list)):
+        return [_tup_item(i) for i in x]
+    if isinstance(x, dict):
+        return {k: _tup_item(v) for k, v in sorted(x.items())}
+    return x
+
+
 def snapshot_hash(payload) -> str:
     blob = json.dumps(payload, sort_keys=True, default=str).encode("utf-8")
     return hashlib.sha256(blob).hexdigest()

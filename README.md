@@ -43,8 +43,27 @@ python -m uvicorn server.app:app --port 8000
   blocking unknowns (`NOT_ADJUDICABLE`), with a value-of-information ranking telling you which
   audit would change the conclusion.
 - **Computation, not scripts:** verdicts, gaps, plans, frontiers, and option values are outputs
-  of a typed explosion → effective-capacity → allocation-LP pipeline (HiGHS). No scenario
-  outcomes are hardcoded; the shock engine edits constraints and re-solves.
+  of a typed requirement-flow graph → effective-capacity → allocation-LP pipeline (HiGHS).
+  No scenario outcomes are hardcoded; the shock engine edits constraints and re-solves.
+
+## V0.1 correctness release (this branch)
+
+V0.1 is a **correctness foundation**: the mathematics now means what it says.
+
+- Requirement explosion is a linear, order-invariant flow graph — shared upstreams are
+  counted exactly once (hand-derived oracles pin the numbers).
+- `min_dva` means **aggregate recursive DVA** of the delivered mix, enforced by a
+  certified loop with an exposed certificate — not per-item import caps.
+- Shortfalls carry their physical units; cross-item rankings use a dimensionless
+  normalized deficit. Import eligibility never creates supply: evidenced foreign
+  capacity ceilings bound imports.
+- Projects, qualifications, and plan actions obey the physical clock; scenario state
+  survives every re-solve; displayed envelopes equal solved envelopes.
+- Every consequential output traces to evidence nodes in a runtime proof DAG;
+  `ModelRun` identity hashes the full world snapshot (deterministic).
+
+See `docs/VALIDATION_REPORT_V2.md` for verified claims, modeled assumptions, and
+deferred items. V0 history: see `docs/` (specification documents preserved).
 
 ## The five questions FORGE answers (V0 scope)
 

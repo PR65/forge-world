@@ -10,9 +10,10 @@ from .evidence import EvidenceRecord, Source
 from .epistemics import Confidence, EpistemicClass
 from .model import (
     CapacitySegment, CapabilityClaim, CapabilityVector, DemandPool, EquipmentClass,
-    Facility, GeoNode, MaterialGrade, Organization, Part, ProcessStep, ProductionRecipe,
-    Project, ProjectState, Qualification, Restriction, Shock, Skill, StandardRef,
-    Substitution as SubstitutionEntity, TechnologyRight, TransportCorridor, World,
+    Facility, ForeignSupplySegment, GeoNode, MaterialGrade, Organization, Part,
+    ProcessStep, ProductionRecipe, Project, ProjectState, Qualification, Restriction,
+    Shock, Skill, StandardRef, Substitution as SubstitutionEntity, TechnologyRight,
+    TransportCorridor, World,
 )
 from .units import Quantity, UnitError, register_unit
 
@@ -373,6 +374,22 @@ def build_pack(raw: dict, path: str = "") -> KnowledgePack:
         if seg.facility_id and w.has(seg.facility_id):
             w.link(seg.id, "located_at", seg.facility_id)
 
+    for fd in raw.get("foreign_supply_segments", []) or []:
+        seg = ForeignSupplySegment(
+            id=str(fd["id"]), name=str(fd.get("name", fd["id"])),
+            kind="foreign_supply_segment",
+            notes=str(fd.get("notes", "")), evidence_ids=_tup(fd.get("evidence_ids")),
+            item_id=str(fd["item_id"]), origin_country=str(fd.get("origin_country", "")),
+            nameplate_annual=_opt_qty(fd.get("nameplate_annual")),
+            availability=float(fd.get("availability", 1.0)),
+            export_availability_fraction=float(fd.get("export_availability_fraction", 1.0)),
+            valid_from=int(fd.get("valid_from", 1900)),
+            valid_to=int(fd.get("valid_to", 2100)),
+            epistemic_class=str(fd.get("epistemic_class", "REPORTED")),
+        )
+        w.add(seg)
+        w.link(seg.id, "has_capacity", seg.item_id)
+
     for prd in raw.get("projects", []) or []:
         try:
             st = ProjectState(prd.get("state", "concept"))
@@ -489,10 +506,27 @@ def _validate_pack_integrity(pk: KnowledgePack):
                 raise PackValidationError(f"recipe '{r.id}' step '{st.id}' yield out of (0,1]")
             if not (0.0 <= st.scrap_fraction < 1.0):
                 raise PackValidationError(f"recipe '{r.id}' step '{st.id}' scrap out of [0,1)")
+    # RT finding: one item must be denominated in ONE unit family across all
+    # capacity segments; mixed pcs/tonnes segments would silently conflate.
+    by_item: Dict[str, set] = {}
+    for seg in w.of_kind("capacity_segment"):
+        if seg.nameplate_annual is not None:
+            fam = seg.nameplate_annual.unit.split("/")[0]
+            by_item.setdefault(seg.item_id, set()).add(fam)
+    for item_id, fams in by_item.items():
+        if len(fams) > 1:
+            raise PackValidationError(
+                f"item '{item_id}' has capacity segments in multiple unit families "
+                f"{sorted(fams)}; split into distinct items or normalize units"
+            )
     for seg in w.of_kind("capacity_segment"):
         for f in (seg.availability, seg.utilization, seg.yield_fraction, seg.qualification_fraction):
             if not (0.0 <= f <= 1.0):
                 raise PackValidationError(f"capacity segment '{seg.id}' factor out of [0,1]")
+    for seg in w.of_kind("foreign_supply_segment"):
+        for f in (seg.availability, seg.export_availability_fraction):
+            if not (0.0 <= f <= 1.0):
+                raise PackValidationError(f"foreign supply segment '{seg.id}' factor out of [0,1]")
     for prj in w.of_kind("project"):
         if prj.design_capacity_annual is not None and prj.design_capacity_annual.value < 0:
             raise PackValidationError(f"project '{prj.id}' negative capacity")
