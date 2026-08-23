@@ -132,8 +132,14 @@ def apply_substitution(
             "maturity": contract.get("maturity"),
             "transition_months": list(contract.get("transition_months", [])),
             "performance_delta": contract.get("performance_delta", {}),
+            "evidence_ids": list(contract.get("evidence_ids", [])),
         },
     )
+    # G1: the substitution decision derives from its declared evidence records.
+    for cid in contract.get("evidence_ids", []) or []:
+        ev_nid = f"ev.{cid}"
+        if ev_nid in pg.nodes:
+            pg.add_edge(ev_nid, sub_node)
 
     variant_id = explosion.flows.variant_id
     annual_units = explosion.annual_units

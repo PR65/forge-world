@@ -148,6 +148,21 @@ class ForgeEngine:
         if obj.deadline_year not in years:
             years.append(obj.deadline_year)
 
+        # ---- W4.1: evidence nodes enter the runtime proof graph ----------------
+        # Every EvidenceRecord in the pack becomes an evidence node; parameter
+        # derivations link to the records behind the entities they consumed
+        # (via each entity's evidence_ids). C15 becomes mechanically true.
+        evidence_node_ids = {}
+        for rec in self.pk.evidence.values():
+            evidence_node_ids[rec.claim_id] = pg.evidence_node(rec)
+
+        scenario_node = pg.scenario_node(
+            f"Objective: {obj.annual_units:g}/yr {obj.variant_id} in {obj.geography} "
+            f"by {obj.deadline_year}, DVA>={obj.min_dva:.0%}",
+            {"objective": obj.__dict__ | {"funded_projects": list(obj.funded_projects)},
+             "shocks": shock_ids or []},
+        )
+
         opts = ScenarioOptions(
             import_eligibility={},
             funded_project_ids=set(obj.funded_projects),
@@ -156,9 +171,31 @@ class ForgeEngine:
             min_domestic_share=obj.min_dva,
             funded_pipeline=("selected_only" if obj.funded_projects else "optimistic"),
         )
+        opts_node = pg.derive([scenario_node], "ScenarioOptions assembled",
+                              {"geography": obj.geography,
+                               "min_domestic_share": obj.min_dva,
+                               "funded_pipeline": opts.funded_pipeline})
 
         ex = explode_variant(self.w, pg, obj.variant_id, obj.annual_units, years)
         mass_warn = check_mass_balance(self.w, ex)
+
+        # Link explosion lines to the evidence behind their recipes/BOM parts.
+        for item in ex.items():
+            line = ex.lines[item]
+            src_ids = []
+            ent = self.w.entities.get(item)
+            if ent is not None:
+                src_ids.extend(getattr(ent, "evidence_ids", ()) or ())
+            if line.via_recipe:
+                rec_ent = self.w.entities.get(line.via_recipe)
+                if rec_ent is not None:
+                    src_ids.extend(getattr(rec_ent, "evidence_ids", ()) or ())
+            node = ex.proof_node_ids.get(item)
+            if node and src_ids:
+                for cid in sorted(set(src_ids)):
+                    ev_nid = evidence_node_ids.get(cid)
+                    if ev_nid:
+                        pg.add_edge(ev_nid, node)
 
         if shock_ids:
             w_eff, opts_eff, shock_report = apply_shocks(self.w, pg, shock_ids, opts)
@@ -173,9 +210,34 @@ class ForgeEngine:
             decision_year=obj.deadline_year,
         )
 
+        def _plan_explosion(ww, pgg, v, u):
+            exx = explode_variant(ww, pgg, v, u, years)
+            # G1: plan re-explosion line nodes link to pack evidence + scenario node,
+            # so planner/portfolio verdicts remain evidence-connected (no new roots).
+            for item in exx.items():
+                node = exx.proof_node_ids.get(item)
+                if not node:
+                    continue
+                pg.add_edge(opts_node, node)
+                src_ids = []
+                ent = ww.entities.get(item)
+                if ent is not None:
+                    src_ids.extend(getattr(ent, "evidence_ids", ()) or ())
+                via = exx.lines[item].via_recipe if exx.get(item) else ""
+                if via:
+                    rec_ent = ww.entities.get(via)
+                    if rec_ent is not None:
+                        src_ids.extend(getattr(rec_ent, "evidence_ids", ()) or ())
+                for cid in sorted(set(src_ids)):
+                    ev_nid = evidence_node_ids.get(cid)
+                    if ev_nid:
+                        pg.add_edge(ev_nid, node)
+            return exx
+
         plan_engine = PlanEngine(
-            w_eff, pg, lambda ww, pgg, v, u: explode_variant(ww, pgg, v, u, years),
+            w_eff, pg, _plan_explosion,
             obj.variant_id, obj.annual_units, years, opts_eff, shock_ids=None,
+            provenance_root=opts_node,
         )
         plan_engine.set_substitution_contracts(self.pk.substitutions)
 
@@ -256,6 +318,21 @@ class ForgeEngine:
             scenario={"shocks": shock_ids or [], "funded_projects": obj.funded_projects},
             data_snapshot_payload=self.pk.summary(),
             assumptions=sorted(set(dva.assumptions_used)),
+            world=self.w,                       # FULL snapshot hash (F21/G3)
+            scenario_opts=opts_eff,
+        )
+        # W0.3/G3-4: outputs recorded on the run (finish() semantics made real).
+        run.finish(
+            {
+                "result_class": sr.result_class.value,
+                "worst_year": sr.max_shortfall_year,
+                "dva_fraction": dva.fraction,
+                "dva_certificate": sr.dva_certificate,
+                "plan_actions": [a.action_id for a in plan.actions],
+            },
+            warnings=list(mass_warn) + [
+                f"explosion note: {w}" for w in ex.flows.warnings
+            ],
         )
 
         response: Dict[str, Any] = {

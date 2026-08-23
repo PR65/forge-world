@@ -119,14 +119,30 @@ def candidate_actions(
             if getattr(s, "kind", "") == "capacity_segment"
         )
         if has_unqualified_segments:
+            # W3.2/F2: qualification lead time comes from any evidenced Qualification
+            # entity for this item; default window otherwise. The boost must not
+            # apply before decision + latency completes.
+            lat_lo, lat_hi = 12.0, 24.0
+            qual_ref = None
+            for q in w.entities.values():
+                if getattr(q, "kind", "") == "qualification" and getattr(q, "item_id", "") == item:
+                    lm = getattr(q, "latency_months", None) or (12.0, 24.0)
+                    lat_lo, lat_hi = float(lm[0]) / 12.0, float(lm[1]) / 12.0
+                    qual_ref = getattr(q, "id", None)
+                    break
             actions.append(Action(
                 action_id=f"qualify:{item}",
                 kind="QUALIFY",
                 label=f"Supplier-qualification programme: {item}",
                 capex_usd=2e7,
-                lead_time_years=(1.0, 2.0),
+                lead_time_years=(lat_lo, lat_hi),
                 resolves_unknown=item,
-                rationale="turn adjacent installed capacity into qualified usable capacity",
+                evidence_ids=(qual_ref,) if qual_ref else (),
+                rationale=(
+                    "turn adjacent installed capacity into qualified usable capacity; "
+                    f"qualification latency {lat_lo:.1f}-{lat_hi:.1f} yr"
+                    + (f" per {qual_ref}" if qual_ref else " (assumed window)")
+                ),
             ))
         if getattr(ent, "kind", "") in ("part", "resource_class"):
             actions.append(Action(
@@ -155,6 +171,7 @@ class PlanEngine:
         years: Sequence[int],
         base_opts: ScenarioOptions,
         shock_ids: Optional[List[str]] = None,
+        provenance_root: Optional[str] = None,
     ):
         self.world = world
         self.pg = pg
@@ -164,6 +181,9 @@ class PlanEngine:
         self.years = list(years)
         self.base_opts = base_opts
         self.shock_ids = shock_ids or []
+        # G1: plan-search derivations chain to the engine's scenario node so no
+        # planner verdict is evidence-disconnected.
+        self.provenance_root = provenance_root
 
     def evaluate(self, opts: ScenarioOptions, active_substitutions: List[str]) -> SolveResult:
         w = self.world
@@ -172,6 +192,15 @@ class PlanEngine:
             contract = self._contract(sid)
             if contract is not None:
                 ex = apply_substitution(w, self.pg, ex, contract)
+                # G1: substitution derivations chain to the provenance root when present.
+                if self.provenance_root:
+                    sub_nodes = [nid for nid, n in self.pg.nodes.items()
+                                 if n.kind == "derived"
+                                 and contract.get("id", "?") in n.label
+                                 and nid not in getattr(self, "_linked_subs", set())]
+                    for nid in sub_nodes:
+                        self.pg.add_edge(self.provenance_root, nid)
+                    self._linked_subs = getattr(self, "_linked_subs", set()) | set(sub_nodes)
         if self.shock_ids:
             w2, o2, rep = apply_shocks(w, self.pg, self.shock_ids, opts)
             return solve_objective(w2, self.pg, ex, self.years, o2)
@@ -206,6 +235,7 @@ class PlanEngine:
             min_domestic_share=self.base_opts.min_domestic_share,
             per_item_import_cap=dict(self.base_opts.per_item_import_cap),
             qualification_boosts=set(self.base_opts.qualification_boosts),
+            qualification_online_year=dict(self.base_opts.qualification_online_year),
             competing_demand_cuts=dict(self.base_opts.competing_demand_cuts),
             enforce_dva=self.base_opts.enforce_dva,
             # N4/N6: preserve the base pipeline mode across clones.
@@ -225,6 +255,12 @@ class PlanEngine:
                 subs.append(a.effect_substitution)
             if a.kind == "QUALIFY" and a.resolves_unknown:
                 opts.qualification_boosts.add(a.resolves_unknown)
+                # W3.2/F2: boost counts only after decision + latency window.
+                lo, hi = a.lead_time_years
+                online = int(min(self.years) + max(lo, 0.0))
+                prev = opts.qualification_online_year.get(a.resolves_unknown)
+                opts.qualification_online_year[a.resolves_unknown] = (
+                    min(prev, online) if prev is not None else online)
         # N6: FUND actions must be numerically meaningful. Under the optimistic
         # pipeline every evidenced project already counts, so adding an id is a
         # no-op; a plan that funds projects therefore evaluates the

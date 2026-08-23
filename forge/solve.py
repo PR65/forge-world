@@ -651,8 +651,24 @@ def solve_objective(
     sr = _classify(results, blocking, conditional, adjudicable)
     sr.condition_ledger = ledger
     sr.dva_certificate = dva_certificate
+    # Verdict derives from year-result nodes; each year node derives from the
+    # item-level requirement/allocation nodes (no disconnected roots — G1).
+    verdict_parents: List[str] = []
+    for y in sorted(results.keys()):
+        year_node = pg.add_node(
+            "derived", f"YearResult {y}: deficit={results[y].normalized_deficit:.4f}",
+            {"year": y,
+             "shortfall_vector": results[y].shortfall_vector.to_json(),
+             "normalized_deficit": results[y].normalized_deficit},
+            node_id=f"derived.year.{explosion.variant_id}.{y}",
+        )
+        for g in results[y].allocations:
+            line_node = explosion.proof_node_ids.get(g.item_id)
+            if line_node and line_node in pg.nodes:
+                pg.add_edge(line_node, year_node)
+        verdict_parents.append(year_node)
     sr.proof_root = pg.output(
-        [],
+        verdict_parents,
         f"Solve {explosion.variant_id}: {sr.result_class.value}",
         {
             "result_class": sr.result_class.value,
