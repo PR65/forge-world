@@ -348,7 +348,7 @@ class ForgeEngine:
                 ],
                 "mass_balance_warnings": mass_warn,
             },
-            "capacity_envelopes": _envelope_rows(self.w, ex, years, opts_eff),
+            "capacity_envelopes": _envelope_rows(w_eff, ex, years, opts_eff),
             "result": _result_to_json(sr, ex),
             "dva": {
                 "fraction": dva.fraction,
