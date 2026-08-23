@@ -175,11 +175,14 @@ class ScenarioOptions:
     competing_demand_cuts: Dict[str, float] = field(default_factory=dict)
     min_domestic_share: float = 0.0
     qualification_boosts: Set[str] = field(default_factory=set)
+    # W3.2/F2: item -> first year its completed qualification counts.
+    qualification_online_year: Dict[str, int] = field(default_factory=dict)
     global_import_cost_mult: float = 1.0
     global_domestic_cost_mult: float = 1.0
     funded_pipeline: str = "optimistic"
     enforce_dva: bool = True          # V0.1: min_domestic_share interpreted as aggregate DVA
     per_item_import_cap: Dict[str, float] = field(default_factory=dict)
+    raw_material_import_share: float = 0.0   # origin-UNKNOWN default; explicit ASSUMPTION
     action_active_years: Dict[str, Tuple[int, int]] = field(default_factory=dict)
     decision_year: int = 2030
 
@@ -204,6 +207,7 @@ class ScenarioOptions:
             funded_pipeline=self.funded_pipeline,
             enforce_dva=self.enforce_dva,
             per_item_import_cap=dict(self.per_item_import_cap),
+            raw_material_import_share=self.raw_material_import_share,
             action_active_years=dict(self.action_active_years),
             decision_year=self.decision_year,
         )
@@ -306,7 +310,10 @@ def solve_year(
             import_eligibility=opts.import_eligibility,
             funded_project_ids=opts.funded_arg(),
             geography=opts.geography,
-            qualification_boost=(it in opts.qualification_boosts),
+            qualification_boost=(
+                it in opts.qualification_boosts
+                and year >= opts.qualification_online_year.get(it, 0)
+            ),
         )
         envelopes[it] = env
         if it in opts.capacity_overrides:
