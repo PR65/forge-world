@@ -1,0 +1,306 @@
+registry_version: "0.1.0"
+title: "FORGE WORLD canonical cross-pack registry"
+notes: >
+  Explicit ontology bindings for the alpha read model. Mappings are ASSUMPTION
+  records about reusable concepts; they do not assert qualified production,
+  effective capacity, supply, or builder capability. Evidence work remains
+  open where the checked-in packs preserve UNKNOWN.
+
+canonical_capabilities:
+  - id: "cap:precision-grinding"
+    name: "Precision grinding"
+    description: "Grinding processes and equipment for tight geometric and surface specifications."
+    aliases: ["precision_grinding", "ultra_precision_grinding", "precision gear grinding"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [precision_gear_grinder, precision_bearing_grinder]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The pack names precision grinding equipment; capability qualification is not asserted."
+      - pack_id: cnc_machining_india
+        entity_ids: [precision_surface_grinder, ball_screw_grinder, precision_bearing_grinder]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The CNC pack names grinding routes/equipment; no qualified Indian output is inferred."
+
+  - id: "cap:metrology"
+    name: "Industrial metrology"
+    description: "Measurement, inspection, calibration, and test capability supporting qualified production."
+    aliases: ["industrial metrology", "metrology_test", "measurement and inspection"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [metrology_cmm]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "CMM equipment reference is not evidence of a qualified metrology service."
+      - pack_id: smallsat_india
+        entity_ids: [metrology_cmm]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The satellite pack references CMM inspection; facility status remains UNKNOWN."
+      - pack_id: cnc_machining_india
+        entity_ids: [metrology_cmm, metrology_acceptance_kit, ball_screw_metrology_station]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The CNC pack references acceptance metrology; traceability and throughput remain UNKNOWN."
+      - pack_id: nuclear_buildout_india
+        entity_ids: [large_metrology_lab, nuclear_calibration_lab, cc_india_nuclear_metrology_unknown]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The nuclear pack references metrology/labs and an explicit evidence gap; qualified throughput remains UNKNOWN."
+
+  - id: "cap:power-electronics"
+    name: "Power electronics"
+    description: "Power conversion, motor drives, inverter stages, and related control hardware."
+    aliases: ["power electronics", "motor drives", "inverter stage"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [motor_driver_inverter, sic_power_stage]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Parts are mapped to a reusable domain concept; qualified production is not inferred."
+      - pack_id: cnc_machining_india
+        entity_ids: [servo_drive, control_power_module, rec_servo_drive]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The CNC pack names servo-drive/power routes; qualification and effective supply remain UNKNOWN."
+
+  - id: "cap:battery-cell"
+    name: "Battery-cell manufacturing"
+    description: "Cell chemistry, electrode, assembly, formation, aging, and screened-cell routes."
+    aliases: ["battery cell", "battery_cell", "cell manufacturing"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: battery_gwh_india
+        entity_ids: [battery_cell_ncm, battery_cell_lfp, rec_cell_ncm, rec_cell_lfp]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Battery chemistry routes are present; awarded/project capacity is not treated as operating supply."
+      - pack_id: humanoid_india
+        entity_ids: [battery_cell_liion, rec_battery_cell]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Robot cell references reuse the canonical cell concept; grade and volume remain unresolved."
+      - pack_id: smallsat_india
+        entity_ids: [battery_cell_liion_space, rec_battery_pack_satellite]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Screened space-cell route is a related cell capability, not proof of common qualification."
+
+  - id: "cap:rare-earth-magnet"
+    name: "Rare-earth permanent magnet chain"
+    description: "Rare-earth oxide, metal/alloy, sintered magnet, and associated qualification chain."
+    aliases: ["rare earth magnet", "rare-earth magnet", "NdFeB magnet", "ndfeb_magnet"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [ndfeb_magnet, reo_ndpr_oxide, rec_ndfeb_magnet]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The pack models a rare-earth route and a proposed programme; realized qualified output is UNKNOWN."
+      - pack_id: cnc_machining_india
+        entity_ids: [permanent_magnet]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The CNC pack includes a permanent-magnet material input; grade-compatible supply is UNKNOWN."
+
+  - id: "cap:hirel-qualification"
+    name: "High-reliability (HiRel) qualification"
+    description: "Screening, environmental, radiation, lot acceptance, and customer/regulatory qualification."
+    aliases: ["HiRel", "HiRel qualification", "space-grade qualification", "high reliability test"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: smallsat_india
+        entity_ids: [qual_space_battery]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "A qualification gate is mapped to the reusable concept; completion and facility capability remain UNKNOWN."
+
+  - id: "cap:heavy-forging"
+    name: "Heavy forging"
+    description: "Large-scale forging, heat treatment, inspection, and qualified heavy-component production."
+    aliases: ["heavy forging", "large forging", "forging press capability"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [heavy_forging_press, forging_manipulator, large_forged_shell, rec_large_forged_shell, qual_large_forging, cc_india_heavy_forging_unknown]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The nuclear pack models heavy-forging dependencies and an UNKNOWN capability claim; no qualified capacity is inferred."
+
+  - id: "cap:cnc-controls"
+    name: "CNC controls"
+    description: "CNC numerical control, servo drives, feedback, PLC/I/O, and machine-control integration."
+    aliases: ["CNC controls", "cnc_controls", "numerical controls", "machine tool controls"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_ids: [cnc_controller, rec_cnc_controller, qual_control_system]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The CNC pack explicitly models controller integration and qualification gates; no supplier capability is asserted."
+
+aliases:
+  - id: "alias:precision-grinding"
+    alias: "precision grinding"
+    canonical_id: "cap:precision-grinding"
+    kind: capability_alias
+    mapping_source: ASSUMPTION
+  - id: "alias:metrology"
+    alias: "metrology"
+    canonical_id: "cap:metrology"
+    kind: capability_alias
+    mapping_source: ASSUMPTION
+  - id: "alias:power-electronics"
+    alias: "power electronics"
+    canonical_id: "cap:power-electronics"
+    kind: capability_alias
+    mapping_source: ASSUMPTION
+  - id: "alias:battery-cell"
+    alias: "battery-cell"
+    canonical_id: "cap:battery-cell"
+    kind: capability_alias
+    mapping_source: ASSUMPTION
+  - id: "alias:rare-earth-magnet"
+    alias: "rare-earth-magnet"
+    canonical_id: "cap:rare-earth-magnet"
+    kind: capability_alias
+    mapping_source: ASSUMPTION
+  - id: "alias:hirel"
+    alias: "HiRel"
+    canonical_id: "cap:hirel-qualification"
+    kind: capability_alias
+    mapping_source: ASSUMPTION
+  - id: "alias:heavy-forging"
+    alias: "heavy-forging"
+    canonical_id: "cap:heavy-forging"
+    kind: capability_alias
+    mapping_source: ASSUMPTION
+  - id: "alias:cnc-controls"
+    alias: "cnc-controls"
+    canonical_id: "cap:cnc-controls"
+    kind: capability_alias
+    mapping_source: ASSUMPTION
+
+builders:
+  - id: "builder:addverb"
+    name: "Addverb Technologies"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "The pack evidences a wheeled platform announcement; bipedal production capability remains UNKNOWN."
+    mappings:
+      - pack_id: humanoid_india
+        entity_id: org_addverb
+        mapping_source: ASSUMPTION
+    evidence_ids: ["humanoid_india:ev_addverb_wheeled"]
+  - id: "builder:unitree"
+    name: "Unitree Robotics"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Pack product evidence is not a general capability or qualified supply claim."
+    mappings:
+      - pack_id: humanoid_india
+        entity_id: org_unitree
+        mapping_source: ASSUMPTION
+  - id: "builder:harmonic-drive"
+    name: "Harmonic Drive Systems"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Organization identity is separated from a pack-local supplier qualification claim."
+    mappings:
+      - pack_id: humanoid_india
+        entity_id: org_harmonicdrive
+        mapping_source: ASSUMPTION
+
+evidence_tasks:
+  - id: "task:precision-grinding-qualified-output"
+    title: "Verify qualified precision-grinding output"
+    question: "Which facilities can deliver the required grinding specification, yield, metrology, and qualified annual output?"
+    target_canonical_id: "cap:precision-grinding"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [facility_audit, certification, supplier_disclosure, customer_qualification]
+  - id: "task:metrology-traceability"
+    title: "Verify metrology traceability and throughput"
+    question: "Which metrology facilities can measure the relevant tolerances at the required throughput and traceability?"
+    target_canonical_id: "cap:metrology"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [calibration_record, facility_audit, certification, supplier_disclosure]
+  - id: "task:power-electronics-qualification"
+    title: "Verify qualified power-electronics production"
+    question: "Which suppliers can produce the required inverter/drive specification with qualification and scalable yield?"
+    target_canonical_id: "cap:power-electronics"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [datasheet, certification, supplier_disclosure, customer_qualification]
+  - id: "task:battery-cell-grade-fit"
+    title: "Resolve battery-cell grade and qualification fit"
+    question: "Which cell chemistry, form factor, and qualification route satisfies the pack-specific energy and life envelope?"
+    target_canonical_id: "cap:battery-cell"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [cell_datasheet, test_report, plant_disclosure, customer_qualification]
+  - id: "task:rare-earth-magnet-qualified-supply"
+    title: "Verify rare-earth magnet chain output"
+    question: "What qualified, grade-compatible rare-earth magnet output exists by geography and date, including oxide-to-magnet yields?"
+    target_canonical_id: "cap:rare-earth-magnet"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [government_release, plant_disclosure, certification, customs_record]
+  - id: "task:hirel-space-qualification"
+    title: "Verify HiRel qualification route"
+    question: "Which laboratories and suppliers can complete HiRel screening, environmental, radiation, and lot-acceptance qualification?"
+    target_canonical_id: "cap:hirel-qualification"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [qualification_standard, laboratory_record, certification, customer_qualification]
+  - id: "task:heavy-forging-qualified-capacity"
+    title: "Identify qualified heavy-forging capacity"
+    question: "Which facilities have demonstrated heavy-forging envelope, heat treatment, inspection, and available qualified throughput?"
+    target_canonical_id: "cap:heavy-forging"
+    status: OPEN
+    priority: medium
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [facility_audit, certification, tender, supplier_disclosure]
+  - id: "task:cnc-controls-qualification"
+    title: "Identify qualified CNC-controls capability"
+    question: "Which organizations can supply CNC controls, servo integration, feedback, and support for the target machine specification?"
+    target_canonical_id: "cap:cnc-controls"
+    status: OPEN
+    priority: medium
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [product_datasheet, certification, supplier_disclosure, customer_reference]

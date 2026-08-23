@@ -1,0 +1,1111 @@
+pack_id: nuclear_buildout_india
+title: "Alpha benchmark: India annualized 1-GW-equivalent nuclear reactor-island kit"
+version: 1.0.0
+geography_focus: INDIA
+notes: >
+  Honest manufacturing/build-rate slice toward the long-run 200 GW scenario. The
+  current solver models annual production flows of a transparent one-kit/year
+  reference architecture; it does not model cumulative installed generation,
+  fleet retirements, construction-site concurrency, grid dispatch, financing,
+  fuel-cycle inventories, or reactor operations. One reactor-island kit is a
+  scenario unit representing approximately 1 GW of nameplate capacity, not a
+  reported Indian reactor design or a government 200 GW commitment. Public
+  programme/project observations are retained as context, while no project is
+  promoted to operating capacity and no qualified capacity segments are asserted
+  where evidence is absent.
+
+sources:
+  - id: src_pib_nuclear_100gwe
+    name: "PIB — Government nuclear expansion programme / 100 GWe by 2047"
+    publisher: Press Information Bureau, Government of India
+    url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2198951"
+    source_type: government_release
+    license: public domain (Government of India)
+    access_date: "2026-08-24"
+    notes: Official policy context; 100 GWe by 2047 is not the 200 GW FORGE scenario.
+  - id: src_pib_smrs
+    name: "PIB — Indian SMR/BSMR development and deployment context"
+    publisher: Press Information Bureau, Government of India
+    url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298208"
+    source_type: government_release
+    license: public domain (Government of India)
+    access_date: "2026-08-24"
+    notes: Official technology/policy context; development targets are not operating reactor capacity.
+  - id: src_npcil_fleet
+    name: "NPCIL — About NPCIL / fleet-mode 700 MWe PHWR context"
+    publisher: Nuclear Power Corporation of India Limited
+    url: "https://npcil.nic.in/content/328_1_AboutNPCIL.aspx"
+    source_type: company_disclosure
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: NPCIL project/fleet context; approvals and plans are not annual qualified supply.
+  - id: src_bhel_products
+    name: "BHEL — nuclear steam generators, reactor headers, turbines, and generators"
+    publisher: Bharat Heavy Electricals Limited
+    url: "https://bhel.com/product-services"
+    source_type: company_product_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Product/standard scope is evidence of a claimed capability envelope, not annual effective capacity.
+  - id: src_bhel_order
+    name: "BHEL — NPCIL steam-generator/reactor-header order report"
+    publisher: Bharat Heavy Electricals Limited
+    url: "https://tenders.bhel.com/bhel-bags-order-nuclear-steam-generators-npcil-against-stiff-competition"
+    source_type: company_disclosure
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Order quantity is procurement/order evidence, not operating capacity or recurring annual supply.
+  - id: src_aerb_qa
+    name: "AERB — codes and guides for manufacturing, construction, commissioning, and QA"
+    publisher: Atomic Energy Regulatory Board
+    url: "https://aerb.gov.in/english/publications/codes-guides"
+    source_type: regulator_guidance
+    license: public guidance
+    access_date: "2026-08-24"
+    notes: Regulatory and quality-assurance gate context; does not establish supplier throughput.
+  - id: src_dod_mrl
+    name: "Manufacturing Readiness Levels Deskbook"
+    publisher: US Department of Defense
+    url: "https://dodmrl.com/"
+    source_type: government_framework
+    license: public domain
+    access_date: "2026-08-24"
+    notes: Generic readiness vocabulary used only to make maturity gates explicit.
+  - id: src_research_06
+    name: "FORGE WORLD research stream 06 — foundational industrial recursion"
+    publisher: Supplied FORGE WORLD research corpus
+    url: ""
+    source_type: research_corpus
+    license: supplied-for-project use only
+    access_date: "2026-08-24"
+    notes: Nuclear pressure-vessel/large-forging/machine-tool recursion is a research direction, not a plant-rate dataset.
+  - id: src_research_07
+    name: "FORGE WORLD research stream 07 — supplier qualification and know-how"
+    publisher: Supplied FORGE WORLD research corpus
+    url: ""
+    source_type: research_corpus
+    license: supplied-for-project use only
+    access_date: "2026-08-24"
+    notes: Qualification ranges are planning ranges, not universal nuclear project laws.
+
+evidence:
+  - claim_id: ev_nuclear_100gwe_policy
+    subject: india_nuclear_programme
+    predicate: policy_target
+    epistemic_class: REPORTED
+    value_quantity: [100, GW]
+    value_text: "Government policy material reports a 100 GWe nuclear expansion ambition by 2047; this pack's 200 GW question is a FORGE scenario, not that reported target."
+    source_ids: [src_pib_nuclear_100gwe]
+    publication_date: "2025-12-01"
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.85, recency: 0.85}
+    quote_or_caveat: Policy ambition is not commissioned capacity and does not validate a 200 GW schedule.
+  - claim_id: ev_nuclear_700mwe_phwr
+    subject: india_phwr_architecture
+    predicate: reference_reactor_scale
+    epistemic_class: REPORTED
+    value_quantity: [700, MW]
+    value_text: "Official programme material references 700 MWe PHWR units alongside other reactor technologies; this is an architecture/scale context, not a measured annual build rate."
+    source_ids: [src_pib_nuclear_100gwe, src_npcil_fleet]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.8, corroboration: 0.8}
+    quote_or_caveat: Unit nameplate and fleet programme evidence do not establish component capacity or construction throughput.
+  - claim_id: ev_nuclear_smrs_context
+    subject: india_small_modular_reactors
+    predicate: development_context
+    epistemic_class: REPORTED
+    value_text: "PIB material describes BSMR/SMR development and deployment targets, including indigenous development work; development targets are not operating capacity or a validated 1-GW kit design."
+    source_ids: [src_pib_smrs]
+    publication_date: "2026-07-01"
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.8, recency: 0.9}
+    quote_or_caveat: Technology programme context only; this pack chooses a simplified PHWR-like island boundary for arithmetic.
+  - claim_id: ev_npcil_fleet_10x700
+    subject: npc_build_programme
+    predicate: fleet_mode_approval_context
+    epistemic_class: REPORTED
+    value_quantity: [10, pcs]
+    value_text: "NPCIL public material describes ten 700 MWe PHWR fleet-mode units approved/under programme context; this is retained as a project observation and is not converted into annual supply."
+    source_ids: [src_npcil_fleet]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.85, directness: 0.75, recency: 0.75}
+    quote_or_caveat: Approval/programme state is not construction completion, qualification, or effective annual capacity.
+  - claim_id: ev_bhel_nuclear_scope
+    subject: bhel_nuclear_products
+    predicate: product_and_standard_scope
+    epistemic_class: REPORTED
+    value_text: "BHEL's public product material reports nuclear steam generators/reactor headers to ASME Section III NB Class 1 and turbine/generator offerings up to the 700 MWe class; no annual effective capacity is stated here."
+    source_ids: [src_bhel_products]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.8, directness: 0.85, technical_specificity: 0.8}
+    quote_or_caveat: Product page and standard scope are not a demonstrated delivery rate, current utilization, yield, or customer allocation.
+  - claim_id: ev_bhel_order_context
+    subject: bhel_npcil_order
+    predicate: order_quantity
+    epistemic_class: REPORTED
+    value_quantity: [12, pcs]
+    value_text: "BHEL public order reporting references 12 nuclear steam generators and 32 reactor-header assemblies for NPCIL fleet-mode orders; an order is not operating capacity or a recurring annual rate."
+    source_ids: [src_bhel_order]
+    publication_date: "2021-01-01"
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.8, directness: 0.8, recency: 0.55}
+    quote_or_caveat: Procurement/order evidence only; customer qualification, completion, and effective capacity remain unresolved.
+  - claim_id: ev_aerb_qa_gates
+    subject: nuclear_component_qualification
+    predicate: regulatory_qa
+    epistemic_class: REPORTED
+    value_text: "AERB publishes codes and guides spanning manufacturing, site construction, commissioning, and quality assurance for nuclear facilities."
+    source_ids: [src_aerb_qa]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.9, technical_specificity: 0.85}
+    quote_or_caveat: A regulatory guide defines gates; it does not prove that a named supplier has passed them for this kit.
+  - claim_id: ev_nuclear_qualification_window
+    subject: nuclear_supplier_qualification
+    predicate: planning_latency
+    epistemic_class: REPORTED
+    value_text: "Advanced-manufacturing supplier/process qualification often spans approximately 6–24 months in the supplied research; nuclear component and regulator/customer gates can be longer and remain component-specific."
+    source_ids: [src_research_07, src_aerb_qa]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.7, directness: 0.55, corroboration: 0.65}
+    quote_or_caveat: Planning range only; no universal nuclear qualification law is asserted.
+  - claim_id: ev_nuclear_kit_architecture
+    subject: reactor_island_1gw_kit
+    predicate: scenario_definition
+    epistemic_class: SCENARIO
+    value_quantity: [1, GW]
+    value_text: "FORGE scenario definition: one reactor-island kit is treated as one approximately 1 GW nameplate-equivalent annualized kit for flow arithmetic. The boundary includes reactor island, turbine-generator balance of plant, and site civil package."
+    source_ids: [src_pib_nuclear_100gwe, src_npcil_fleet]
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.45}
+    quote_or_caveat: This is a transparent model architecture, not a reported reactor design, plant bill of materials, or policy commitment.
+  - claim_id: ev_nuclear_bom_quantities
+    subject: reactor_island_1gw_kit
+    predicate: scenario_bom_coefficients
+    epistemic_class: ASSUMPTION
+    value_text: "All top-level BOM and recursive recipe-input quantities are alpha engineering assumptions chosen to expose physical flow; examples include four steam generators, four primary coolant pumps, 392 pressure tubes, 500 t of heavy water, and route-level material/service coefficients."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.35}
+    quote_or_caveat: Values are not inferred from NPCIL/BHEL project announcements.
+  - claim_id: ev_nuclear_process_yields
+    subject: nuclear_component_routes
+    predicate: scenario_process_and_input_coefficients
+    epistemic_class: ASSUMPTION
+    value_text: "Per-step yields and recursive route-input quantities are transparent alpha assumptions used to expose gross-up and upstream requirements; measured nuclear manufacturing route data are not publicly inserted."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.3}
+    quote_or_caveat: Replace yields and every recursive coefficient with route-specific qualified data after process and supplier audits.
+  - claim_id: ev_nuclear_schedule_ranges
+    subject: nuclear_alpha_schedule
+    predicate: qualification_and_project_windows
+    epistemic_class: ASSUMPTION
+    value_text: "Qualification latencies and project windows in this pack are broad alpha schedule assumptions used to expose temporal gating; they are not measured supplier or project forecasts."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.25, completeness: 0.2}
+    quote_or_caveat: Replace every range with component-, supplier-, site-, and regulator-specific evidence before execution.
+  - claim_id: ev_nuclear_200gw_scenario
+    subject: india_200gw_nuclear_question
+    predicate: objective_framing
+    epistemic_class: SCENARIO
+    value_text: "The 200 GW question is an explicit FORGE scenario. The official policy context cited here is 100 GWe by 2047; this pack does not claim that India has adopted a 200 GW target."
+    source_ids: [src_pib_nuclear_100gwe]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.9}
+    quote_or_caveat: Scenario scaling is not evidence of projects, financing, sites, or supply.
+  - claim_id: ev_nuclear_capacity_unknown
+    subject: india_nuclear_manufacturing_capacity
+    predicate: qualified_effective_capacity
+    epistemic_class: UNKNOWN
+    value_text: "This pack has no public evidence sufficient to assign qualified effective annual capacity for the full reactor-island kit or most decision-sensitive nuclear components."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {completeness: 0.15}
+    quote_or_caveat: Product pages, approvals, and orders are retained as evidence context but not promoted to capacity segments.
+  - claim_id: ev_nuclear_cumulative_unknown
+    subject: nuclear_buildout_solver_boundary
+    predicate: cumulative_generation_model
+    epistemic_class: UNKNOWN
+    value_text: "The current solver does not model cumulative installed GW, fleet retirements, reactor construction-site concurrency, grid dispatch, fuel-cycle stocks, or commissioning-to-grid timing."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {completeness: 0.9}
+    quote_or_caveat: Annual kit flow output must not be displayed as cumulative generation capability.
+
+organizations:
+  - id: org_npcil
+    name: Nuclear Power Corporation of India Limited
+    countries: [IND]
+    org_type: utility
+    evidence_ids: [ev_npcil_fleet_10x700]
+    notes: Public fleet/programme context; this pack does not assign it a component capacity.
+  - id: org_bhel
+    name: Bharat Heavy Electricals Limited
+    countries: [IND]
+    org_type: manufacturer
+    evidence_ids: [ev_bhel_nuclear_scope, ev_bhel_order_context]
+    notes: Public nuclear product/order context; effective annual capacity remains UNKNOWN.
+  - id: org_aerb
+    name: Atomic Energy Regulatory Board
+    countries: [IND]
+    org_type: regulator
+    evidence_ids: [ev_aerb_qa_gates]
+    notes: Qualification/regulatory authority context, not a manufacturing supplier.
+
+parts:
+  - id: reactor_island_1gw_kit
+    name: One 1-GW-equivalent reactor-island kit (annualized scenario unit)
+    part_class: subassembly
+    spec: "Scenario boundary: PHWR-like reactor island plus turbine-generator BOP and site civil package"
+  - id: reactor_pressure_boundary
+    name: Reactor pressure boundary and headers
+    part_class: subassembly
+    spec: "Nuclear-grade pressure boundary with qualified welds, NDT, hydrotest, and traceability"
+  - id: large_forged_shell
+    name: Large nuclear-grade forged pressure-boundary shell
+    part_class: component
+    spec: "Large forging with chemistry, heat treatment, ultrasonic inspection, and traceability"
+  - id: reactor_header
+    name: Reactor header assembly
+    part_class: component
+    spec: "Nuclear-grade header with qualified weld and pressure test"
+  - id: calandria_and_core
+    name: Calandria/core pressure-channel assembly
+    part_class: subassembly
+  - id: pressure_tube_set
+    name: Pressure-tube/fuel-channel set
+    part_class: subassembly
+  - id: steam_generator
+    name: Nuclear steam generator
+    part_class: subassembly
+    spec: "ASME Section III-style nuclear pressure component; exact design remains scenario-level"
+  - id: primary_coolant_pump
+    name: Primary coolant pump
+    part_class: component
+  - id: reactor_shutdown_system
+    name: Independent reactor shutdown systems
+    part_class: subassembly
+  - id: safety_injection_system
+    name: Safety injection and emergency core cooling system
+    part_class: subassembly
+  - id: containment_liner
+    name: Containment liner and penetration package
+    part_class: subassembly
+  - id: nuclear_instrumentation_set
+    name: Nuclear instrumentation and protection set
+    part_class: subassembly
+  - id: turbine_generator_set
+    name: Turbine-generator set (balance-of-plant)
+    part_class: subassembly
+  - id: condenser_feedwater_set
+    name: Condenser and feedwater train
+    part_class: subassembly
+  - id: site_civil_works_package
+    name: Nuclear-grade civil and heavy-lift site package
+    part_class: subassembly
+  - id: fuel_channel_inspection_kit
+    name: Fuel-channel inspection and commissioning kit
+    part_class: subassembly
+  - id: heavy_water_inventory
+    name: Heavy water inventory (scenario input)
+    part_class: component
+  - id: pressure_tube_seal_set
+    name: Pressure-tube seal set
+    part_class: component
+  - id: zirconium_alloy_tube
+    name: Nuclear-grade zirconium-alloy pressure tube stock
+    part_class: component
+  - id: end_fitting
+    name: Pressure-tube end fitting
+    part_class: component
+  - id: fuel_channel_seal
+    name: Fuel-channel seal and inspection element
+    part_class: component
+  - id: nuclear_grade_steel_ingot
+    name: Nuclear-grade steel ingot/plate stock
+    part_class: component
+  - id: nuclear_grade_steel_plate
+    name: Nuclear-grade plate and shell stock
+    part_class: component
+  - id: nuclear_weld_material
+    name: Qualified nuclear weld consumables
+    part_class: component
+  - id: forging_die
+    name: Large forging die/tooling set
+    part_class: component
+  - id: tool_steel
+    name: Tool-steel stock for forging dies
+    part_class: component
+  - id: steam_generator_tube_bundle
+    name: Steam-generator tube bundle
+    part_class: component
+  - id: tube_sheet
+    name: Steam-generator tube sheet
+    part_class: component
+  - id: pump_body_forging
+    name: Primary-pump body forging
+    part_class: component
+  - id: nuclear_motor
+    name: Nuclear-service pump motor
+    part_class: component
+  - id: mechanical_seal
+    name: Nuclear-service mechanical seal
+    part_class: component
+  - id: control_rod_drive
+    name: Control-rod drive unit
+    part_class: component
+  - id: shutdown_logic
+    name: Independent shutdown logic set
+    part_class: component
+  - id: safety_valve_set
+    name: Safety and isolation valve set
+    part_class: component
+  - id: qualified_sensor_set
+    name: Qualified nuclear sensor set
+    part_class: component
+  - id: safety_control_logic
+    name: Safety control and protection logic
+    part_class: component
+  - id: radiation_hard_electronics
+    name: Radiation-tolerant instrumentation electronics
+    part_class: component
+  - id: turbine_rotor_forging
+    name: Turbine rotor forging
+    part_class: component
+  - id: generator_stator
+    name: Generator stator
+    part_class: component
+  - id: turbine_bearing_set
+    name: Turbine bearing set
+    part_class: component
+  - id: condenser_bundle
+    name: Condenser tube bundle
+    part_class: component
+  - id: feedwater_pump_set
+    name: Feedwater pump set
+    part_class: component
+  - id: nuclear_grade_concrete
+    name: Nuclear-grade concrete package
+    part_class: component
+  - id: rebar_package
+    name: Reinforcing-steel package
+    part_class: component
+  - id: heavy_lift_crane_service
+    name: Heavy-lift crane/service allocation
+    part_class: component
+  - id: ultrasonic_ndt_service
+    name: Ultrasonic NDT service allocation
+    part_class: component
+  - id: radiography_service
+    name: Radiography/NDT service allocation
+    part_class: component
+  - id: calibration_artifact
+    name: Nuclear calibration artifact and reference standards
+    part_class: component
+
+product_variants:
+  - id: reactor_island_1gw_annual
+    name: "One 1-GW-equivalent reactor-island kit/year (annualized slice)"
+    anchor_evidence: [ev_nuclear_kit_architecture, ev_nuclear_bom_quantities, ev_nuclear_200gw_scenario]
+    notes: >
+      Annual objective framing: 1 kit/year is a flow proxy for approximately 1 GW
+      nameplate-equivalent reactor-island manufacturing. It is not 1 GW cumulative
+      installed generation, and the 200 GW question is not a policy claim. The
+      simplified BOM intentionally exposes pressure-boundary, heavy-forging,
+      steam-generator, channel, safety, turbine, civil, inspection, and
+      qualification dependencies.
+    functional_requirements:
+      - metric: annualized_nameplate_capacity_per_kit
+        min: 0.9
+        max: 1.1
+        unit: GW
+      - metric: annual_kit_flow
+        min: 1
+        max: 1
+        unit: units/yr
+      - metric: architecture_class
+        min: 1
+        max: 1
+        unit: PHWR_like_scenario
+      - metric: cumulative_installed_generation
+        min: 0
+        max: 0
+        unit: NOT_MODELED
+    bom:
+      - part: reactor_pressure_boundary
+        qty: 1
+      - part: calandria_and_core
+        qty: 1
+      - part: pressure_tube_set
+        qty: 1
+      - part: steam_generator
+        qty: 4
+      - part: primary_coolant_pump
+        qty: 4
+      - part: reactor_shutdown_system
+        qty: 2
+      - part: safety_injection_system
+        qty: 1
+      - part: containment_liner
+        qty: 1
+      - part: nuclear_instrumentation_set
+        qty: 1
+      - part: turbine_generator_set
+        qty: 1
+      - part: condenser_feedwater_set
+        qty: 1
+      - part: site_civil_works_package
+        qty: 1
+      - part: fuel_channel_inspection_kit
+        qty: 1
+
+recipes:
+  - id: rec_reactor_pressure_boundary
+    name: Reactor pressure boundary, header, weld, NDT, and hydrotest route
+    output_part: reactor_pressure_boundary
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_pressure_boundary]
+    evidence_ids: [ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: pressure_forging
+        name: Large shell forging and heat treatment
+        equipment_classes: [heavy_forging_press, vacuum_induction_melt_furnace, vacuum_heat_treatment_furnace]
+        cycle_time_per_unit: [120, h]
+        yield_fraction: 0.9
+      - id: pressure_machine
+        name: Large-bore machining and datum preparation
+        equipment_classes: [large_bore_cnc, heavy_precision_lathe]
+        cycle_time_per_unit: [80, h]
+        yield_fraction: 0.94
+      - id: pressure_weld
+        name: Qualified nuclear welding and heat treatment
+        equipment_classes: [nuclear_welding_cell, vacuum_heat_treatment_furnace]
+        cycle_time_per_unit: [60, h]
+        yield_fraction: 0.95
+      - id: pressure_ndt
+        name: Volumetric NDT and hydrostatic pressure test
+        equipment_classes: [ultrasonic_ndt_station, radiography_cell, hydrostatic_test_loop]
+        cycle_time_per_unit: [40, h]
+        yield_fraction: 0.97
+    inputs:
+      - id: large_forged_shell
+        quantity: [1, pcs]
+      - id: reactor_header
+        quantity: [8, pcs]
+      - id: nuclear_weld_material
+        quantity: [1.5, t_product]
+
+  - id: rec_large_forged_shell
+    name: Large nuclear-grade pressure-boundary forging
+    output_part: large_forged_shell
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_large_forging]
+    evidence_ids: [ev_nuclear_process_yields, ev_nuclear_capacity_unknown]
+    steps:
+      - id: ingot_melt
+        name: Vacuum melt, refine, and cast ingot
+        equipment_classes: [vacuum_induction_melt_furnace, vacuum_arc_remelt_furnace]
+        cycle_time_per_unit: [80, h]
+        yield_fraction: 0.9
+      - id: ingot_forge
+        name: Heavy forging and upset/close-die operations
+        equipment_classes: [heavy_forging_press, forging_manipulator]
+        cycle_time_per_unit: [100, h]
+        yield_fraction: 0.92
+      - id: ingot_heat_treat
+        name: Vacuum heat treatment and tempering
+        equipment_classes: [vacuum_heat_treatment_furnace]
+        cycle_time_per_unit: [48, h]
+        yield_fraction: 0.96
+      - id: ingot_ndt
+        name: Forging ultrasonic and dimensional acceptance
+        equipment_classes: [ultrasonic_ndt_station, large_metrology_lab]
+        yield_fraction: 0.95
+    inputs:
+      - id: nuclear_grade_steel_ingot
+        quantity: [180, t_product]
+      - id: forging_die
+        quantity: [1, pcs]
+
+  - id: rec_reactor_header
+    name: Reactor header forging and qualified weld route
+    output_part: reactor_header
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_pressure_boundary]
+    evidence_ids: [ev_nuclear_process_yields, ev_bhel_nuclear_scope]
+    steps:
+      - id: header_forge
+        name: Header forging and heat treatment
+        equipment_classes: [heavy_forging_press, vacuum_heat_treatment_furnace]
+        yield_fraction: 0.92
+      - id: header_machine
+        name: Header bore and flange machining
+        equipment_classes: [large_bore_cnc]
+        yield_fraction: 0.94
+      - id: header_test
+        name: NDT and hydrotest
+        equipment_classes: [ultrasonic_ndt_station, hydrostatic_test_loop]
+        yield_fraction: 0.96
+    inputs:
+      - id: nuclear_grade_steel_ingot
+        quantity: [35, t_product]
+      - id: forging_die
+        quantity: [0.1, pcs]
+      - id: nuclear_weld_material
+        quantity: [0.25, t_product]
+
+  - id: rec_forging_die
+    name: Large forging die/tooling route
+    output_part: forging_die
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_large_forging]
+    evidence_ids: [ev_nuclear_process_yields, ev_nuclear_capacity_unknown]
+    steps:
+      - id: die_machine
+        name: Heavy die machining
+        equipment_classes: [large_bore_cnc, five_axis_toolroom_cnc]
+        cycle_time_per_unit: [80, h]
+        yield_fraction: 0.94
+      - id: die_heat_treat
+        name: Die heat treatment and surface conditioning
+        equipment_classes: [vacuum_heat_treatment_furnace]
+        yield_fraction: 0.95
+      - id: die_inspect
+        name: Die metrology and surface inspection
+        equipment_classes: [large_metrology_lab]
+        yield_fraction: 0.97
+    inputs:
+      - id: tool_steel
+        quantity: [15, t_product]
+
+  - id: rec_calandria_and_core
+    name: Calandria/core and heavy-water channel route
+    output_part: calandria_and_core
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_reactor_island_integration]
+    evidence_ids: [ev_nuclear_process_yields, ev_nuclear_bom_quantities]
+    steps:
+      - id: calandria_fabrication
+        name: Calandria shell fabrication and dimensional control
+        equipment_classes: [nuclear_welding_cell, large_metrology_lab]
+        yield_fraction: 0.94
+      - id: calandria_channel_install
+        name: Channel and seal installation
+        equipment_classes: [precision_assembly_cell, fuel_channel_inspection_system]
+        yield_fraction: 0.96
+      - id: heavy_water_load
+        name: Heavy-water fill, leak, and chemistry verification
+        equipment_classes: [heavy_water_test_loop, nuclear_chemistry_lab]
+        yield_fraction: 0.99
+    inputs:
+      - id: nuclear_grade_steel_plate
+        quantity: [40, t_product]
+      - id: heavy_water_inventory
+        quantity: [500, t_product]
+      - id: pressure_tube_seal_set
+        quantity: [392, pcs]
+
+  - id: rec_pressure_tube_set
+    name: Pressure-tube/fuel-channel set
+    output_part: pressure_tube_set
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_pressure_tube]
+    evidence_ids: [ev_nuclear_process_yields, ev_nuclear_bom_quantities]
+    steps:
+      - id: tube_form
+        name: Tube forming, sizing, and surface preparation
+        equipment_classes: [precision_tube_forming_line]
+        yield_fraction: 0.95
+      - id: tube_ndt
+        name: Eddy-current, ultrasonic, and dimensional inspection
+        equipment_classes: [ultrasonic_ndt_station, fuel_channel_inspection_system]
+        yield_fraction: 0.97
+      - id: tube_fit
+        name: End-fitting and seal acceptance
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.96
+    inputs:
+      - id: zirconium_alloy_tube
+        quantity: [392, pcs]
+      - id: end_fitting
+        quantity: [392, pcs]
+      - id: fuel_channel_seal
+        quantity: [392, pcs]
+
+  - id: rec_steam_generator
+    name: Nuclear steam generator
+    output_part: steam_generator
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_steam_generator]
+    evidence_ids: [ev_nuclear_process_yields, ev_bhel_nuclear_scope, ev_bhel_order_context]
+    steps:
+      - id: sg_shell
+        name: Shell and head fabrication
+        equipment_classes: [heavy_precision_lathe, nuclear_welding_cell]
+        yield_fraction: 0.94
+      - id: sg_tube_roll
+        name: Tube-bundle insertion and joining
+        equipment_classes: [tube_bundle_assembly_cell]
+        yield_fraction: 0.95
+      - id: sg_ndt
+        name: NDT, pressure, and leak test
+        equipment_classes: [ultrasonic_ndt_station, radiography_cell, hydrostatic_test_loop]
+        yield_fraction: 0.97
+    inputs:
+      - id: nuclear_grade_steel_plate
+        quantity: [20, t_product]
+      - id: steam_generator_tube_bundle
+        quantity: [1, pcs]
+      - id: tube_sheet
+        quantity: [2, pcs]
+      - id: nuclear_weld_material
+        quantity: [0.2, t_product]
+
+  - id: rec_primary_coolant_pump
+    name: Primary coolant pump
+    output_part: primary_coolant_pump
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_primary_coolant_pump]
+    evidence_ids: [ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: pump_assemble
+        name: Nuclear-service pump assembly
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.95
+      - id: pump_test
+        name: Hydraulic, vibration, and seal test
+        equipment_classes: [pump_test_loop, nuclear_test_loop]
+        yield_fraction: 0.96
+    inputs:
+      - id: pump_body_forging
+        quantity: [1, pcs]
+      - id: nuclear_motor
+        quantity: [1, pcs]
+      - id: mechanical_seal
+        quantity: [1, pcs]
+
+  - id: rec_reactor_shutdown_system
+    name: Independent reactor shutdown system
+    output_part: reactor_shutdown_system
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_safety_system]
+    evidence_ids: [ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: shutdown_integrate
+        name: Control-rod drive and independent logic integration
+        equipment_classes: [nuclear_instrumentation_lab, safety_system_test_bench]
+        yield_fraction: 0.96
+      - id: shutdown_test
+        name: Fail-safe and trip-response test
+        equipment_classes: [nuclear_test_loop]
+        yield_fraction: 0.98
+    inputs:
+      - id: control_rod_drive
+        quantity: [8, pcs]
+      - id: shutdown_logic
+        quantity: [1, pcs]
+
+  - id: rec_safety_injection_system
+    name: Safety injection and emergency cooling system
+    output_part: safety_injection_system
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_safety_system]
+    evidence_ids: [ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: safety_valve_assemble
+        name: Safety valve and piping assembly
+        equipment_classes: [nuclear_welding_cell, precision_assembly_cell]
+        yield_fraction: 0.95
+      - id: safety_hydrotest
+        name: Pressure, flow, and isolation test
+        equipment_classes: [hydrostatic_test_loop, nuclear_test_loop]
+        yield_fraction: 0.97
+    inputs:
+      - id: safety_valve_set
+        quantity: [30, pcs]
+      - id: nuclear_instrumentation_set
+        quantity: [1, pcs]
+
+  - id: rec_containment_liner
+    name: Containment liner and penetration package
+    output_part: containment_liner
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_containment]
+    evidence_ids: [ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: liner_fabricate
+        name: Plate forming, welding, and penetration fabrication
+        equipment_classes: [nuclear_welding_cell, heavy_plate_forming_press]
+        yield_fraction: 0.94
+      - id: liner_ndt
+        name: Weld NDT and leak test
+        equipment_classes: [ultrasonic_ndt_station, radiography_cell, leak_test_cell]
+        yield_fraction: 0.97
+    inputs:
+      - id: nuclear_grade_steel_plate
+        quantity: [80, t_product]
+      - id: nuclear_weld_material
+        quantity: [0.8, t_product]
+      - id: ultrasonic_ndt_service
+        quantity: [1, pcs]
+
+  - id: rec_nuclear_instrumentation_set
+    name: Nuclear instrumentation and protection set
+    output_part: nuclear_instrumentation_set
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_instrumentation]
+    evidence_ids: [ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: instrumentation_assemble
+        name: Qualified sensor and protection logic assembly
+        equipment_classes: [nuclear_instrumentation_lab, cleanroom_bench]
+        yield_fraction: 0.95
+      - id: instrumentation_calibrate
+        name: Calibration and environmental qualification
+        equipment_classes: [nuclear_calibration_lab, environmental_test_chamber]
+        yield_fraction: 0.94
+    inputs:
+      - id: qualified_sensor_set
+        quantity: [1, pcs]
+      - id: safety_control_logic
+        quantity: [1, pcs]
+      - id: radiation_hard_electronics
+        quantity: [1, pcs]
+
+  - id: rec_turbine_generator_set
+    name: Turbine-generator set
+    output_part: turbine_generator_set
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_turbine_generator]
+    evidence_ids: [ev_nuclear_process_yields, ev_bhel_nuclear_scope]
+    steps:
+      - id: turbine_rotor_assemble
+        name: Rotor, stator, and bearing integration
+        equipment_classes: [heavy_precision_lathe, turbine_balancing_machine, precision_assembly_cell]
+        yield_fraction: 0.95
+      - id: turbine_test
+        name: Overspeed, balance, vibration, and generator test
+        equipment_classes: [turbine_test_bench, generator_test_bench]
+        yield_fraction: 0.96
+    inputs:
+      - id: turbine_rotor_forging
+        quantity: [1, pcs]
+      - id: generator_stator
+        quantity: [1, pcs]
+      - id: turbine_bearing_set
+        quantity: [1, pcs]
+
+  - id: rec_condenser_feedwater_set
+    name: Condenser and feedwater train
+    output_part: condenser_feedwater_set
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_turbine_generator]
+    evidence_ids: [ev_nuclear_process_yields]
+    steps:
+      - id: condenser_assemble
+        name: Condenser, pumps, and feedwater assembly
+        equipment_classes: [precision_assembly_cell, nuclear_welding_cell]
+        yield_fraction: 0.96
+      - id: condenser_test
+        name: Vacuum, leak, and flow test
+        equipment_classes: [hydrostatic_test_loop, fluid_test_bench]
+        yield_fraction: 0.97
+    inputs:
+      - id: condenser_bundle
+        quantity: [1, pcs]
+      - id: feedwater_pump_set
+        quantity: [4, pcs]
+
+  - id: rec_site_civil_works_package
+    name: Nuclear-grade civil and heavy-lift site package
+    output_part: site_civil_works_package
+    output_quantity: [1, pcs]
+    maturity: study
+    applicable_geographies: [INDIA]
+    requires_qualification: [qual_site_qa]
+    evidence_ids: [ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: civil_concrete
+        name: Nuclear-grade concrete placement and curing
+        equipment_classes: [nuclear_concrete_batching_plant, civil_quality_lab]
+        yield_fraction: 0.97
+      - id: civil_heavy_lift
+        name: Heavy-lift and installation readiness
+        equipment_classes: [heavy_lift_crane, lift_engineering_cell]
+        yield_fraction: 0.98
+    inputs:
+      - id: nuclear_grade_concrete
+        quantity: [80000, t_product]
+      - id: rebar_package
+        quantity: [10000, t_product]
+      - id: heavy_lift_crane_service
+        quantity: [1, pcs]
+
+  - id: rec_fuel_channel_inspection_kit
+    name: Fuel-channel inspection and commissioning kit
+    output_part: fuel_channel_inspection_kit
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_site_qa]
+    evidence_ids: [ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: channel_inspection
+        name: Channel metrology and NDT procedure qualification
+        equipment_classes: [fuel_channel_inspection_system, ultrasonic_ndt_station, nuclear_calibration_lab]
+        yield_fraction: 0.95
+      - id: channel_commission
+        name: Commissioning acceptance and records
+        equipment_classes: [nuclear_qa_records_system, commissioning_test_bench]
+        yield_fraction: 0.98
+    inputs:
+      - id: ultrasonic_ndt_service
+        quantity: [1, pcs]
+      - id: radiography_service
+        quantity: [1, pcs]
+      - id: calibration_artifact
+        quantity: [1, pcs]
+
+qualifications:
+  - id: qual_large_forging
+    item_id: large_forged_shell
+    qualifier: regulator
+    standard_ref: "Nuclear-grade chemistry, forging, heat treatment, NDT, traceability, and supplier QA"
+    status: not_started
+    latency_months: [24, 60]
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_pressure_boundary
+    item_id: reactor_pressure_boundary
+    qualifier: regulator
+    standard_ref: "ASME Section III-style pressure boundary, qualified welds, NDT, and hydrotest"
+    status: not_started
+    latency_months: [24, 60]
+    evidence_ids: [ev_aerb_qa_gates, ev_bhel_nuclear_scope, ev_nuclear_schedule_ranges]
+  - id: qual_reactor_island_integration
+    item_id: calandria_and_core
+    qualifier: regulator
+    standard_ref: "Reactor-island design verification, leak/chemistry control, and integration acceptance"
+    status: not_started
+    latency_months: [24, 60]
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_pressure_tube
+    item_id: pressure_tube_set
+    qualifier: regulator
+    standard_ref: "Zirconium-alloy pressure-tube material, dimensional, NDT, and channel acceptance"
+    status: not_started
+    latency_months: [18, 48]
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_steam_generator
+    item_id: steam_generator
+    qualifier: regulator
+    standard_ref: "Nuclear steam-generator pressure boundary, tube integrity, NDT, and leak acceptance"
+    status: not_started
+    latency_months: [24, 60]
+    evidence_ids: [ev_aerb_qa_gates, ev_bhel_nuclear_scope, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_primary_coolant_pump
+    item_id: primary_coolant_pump
+    qualifier: regulator
+    standard_ref: "Primary coolant pump hydraulic, seismic, vibration, and reliability qualification"
+    status: not_started
+    latency_months: [18, 48]
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_safety_system
+    item_id: safety_injection_system
+    qualifier: regulator
+    standard_ref: "Safety-system independence, fail-safe response, pressure, and functional qualification"
+    status: not_started
+    latency_months: [24, 60]
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_containment
+    item_id: containment_liner
+    qualifier: regulator
+    standard_ref: "Containment fabrication, weld/NDT, leak-rate, and penetration acceptance"
+    status: not_started
+    latency_months: [18, 48]
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_instrumentation
+    item_id: nuclear_instrumentation_set
+    qualifier: regulator
+    standard_ref: "Nuclear instrumentation, protection logic, environmental, EMC, and calibration qualification"
+    status: not_started
+    latency_months: [18, 48]
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_turbine_generator
+    item_id: turbine_generator_set
+    qualifier: customer
+    standard_ref: "Turbine/generator overspeed, balance, vibration, electrical, and grid-interface acceptance"
+    status: not_started
+    latency_months: [18, 48]
+    evidence_ids: [ev_bhel_nuclear_scope, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_site_qa
+    item_id: site_civil_works_package
+    qualifier: regulator
+    standard_ref: "Nuclear civil construction, concrete QA, heavy-lift, commissioning, and records acceptance"
+    status: not_started
+    latency_months: [24, 60]
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+
+projects:
+  - id: prj_npcil_fleet_context
+    name: "NPCIL ten-unit 700 MWe PHWR fleet-mode context (not an annual capacity segment)"
+    item_id: reactor_pressure_boundary
+    geography: INDIA
+    state: approved
+    state_date: ""
+    earliest_start_year: 2026
+    years_to_commission: [4, 10]
+    notes: >
+      Context-only project observation. NPCIL public material is retained to anchor
+      the fleet-mode programme, but design_capacity_annual is intentionally omitted:
+      approval/programme scope is not annual manufacturing supply, construction
+      completion, qualified output, or operating generation.
+    evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
+  - id: prj_bhel_order_context
+    name: "BHEL/NPCIL steam-generator order context (order, not capacity)"
+    item_id: steam_generator
+    geography: INDIA
+    state: announced
+    state_date: "2021-07-09"
+    earliest_start_year: 2021
+    years_to_commission: [0, 6]
+    notes: >
+      Context-only order record. The reported order quantity is not inserted as a
+      capacity segment because order booking does not prove operating rate, yield,
+      qualification, or current allocation.
+    evidence_ids: [ev_bhel_order_context, ev_nuclear_schedule_ranges]
+  - id: prj_200gw_annualized_scenario
+    name: "FORGE 200 GW question — annualized one-kit manufacturing scenario"
+    item_id: reactor_island_1gw_kit
+    geography: INDIA
+    state: concept
+    state_date: "2026-08-24"
+    earliest_start_year: 2030
+    years_to_commission: [4, 8]
+    design_capacity_annual: [1, "pcs/yr"]
+    ramp_points: [[0, 0.0], [3, 0.35], [5, 0.8], [7, 1.0]]
+    notes: >
+      Explicit SCENARIO object used to exercise project timing and annualized flow
+      semantics. It is not a government project, financed facility, or operating
+      capacity claim and is outside cumulative fleet/grid modeling.
+    evidence_ids: [ev_nuclear_200gw_scenario, ev_nuclear_schedule_ranges]
+  - id: prj_heavy_forging_qualification_scenario
+    name: "FORGE heavy-forging qualification work package (scenario)"
+    item_id: large_forged_shell
+    geography: INDIA
+    state: concept
+    state_date: "2026-08-24"
+    earliest_start_year: 2027
+    years_to_commission: [3, 7]
+    notes: >
+      Scenario work package for evidence collection, tooling, process qualification,
+      and supplier audit; no design capacity is asserted until a facility and route
+      are evidenced.
+    evidence_ids: [ev_nuclear_200gw_scenario, ev_nuclear_capacity_unknown, ev_nuclear_schedule_ranges]
+
+capability_claims:
+  - id: cc_bhel_nuclear_product_scope
+    capability_item: steam_generator
+    org_id: org_bhel
+    geography: INDIA
+    vector:
+      manufacturing_maturity: series
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: UNKNOWN
+      process_ownership: UNKNOWN
+      qualification_state: "ASME Section III NB Class 1 scope reported; kit-specific regulator/customer state UNKNOWN"
+      metrology_test: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: claim
+    notes: Product/standard scope is retained as a sourced claim; no annual capacity is inferred.
+    evidence_ids: [ev_bhel_nuclear_scope, ev_bhel_order_context]
+  - id: cc_india_heavy_forging_unknown
+    capability_item: large_forged_shell
+    geography: INDIA
+    vector:
+      manufacturing_maturity: UNKNOWN
+      qualified_effective_capacity: UNKNOWN
+      tooling_autonomy: UNKNOWN
+      precursor_dependence: UNKNOWN
+      qualification_state: not_started
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Large-forging recursion is decision-sensitive; no public evidence in this pack proves 1-GW-kit-compatible qualified annual output.
+    evidence_ids: [ev_nuclear_capacity_unknown, ev_nuclear_qualification_window]
+  - id: cc_india_pressure_boundary_unknown
+    capability_item: reactor_pressure_boundary
+    geography: INDIA
+    vector:
+      manufacturing_maturity: UNKNOWN
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: UNKNOWN
+      process_ownership: UNKNOWN
+      tooling_autonomy: UNKNOWN
+      qualification_state: not_started
+      metrology_test: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Reactor pressure-boundary capability cannot be concluded from fleet approvals or a component order.
+    evidence_ids: [ev_nuclear_capacity_unknown, ev_aerb_qa_gates]
+  - id: cc_india_nuclear_metrology_unknown
+    capability_item: fuel_channel_inspection_kit
+    geography: INDIA
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: not_started
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: QA guides establish required gates, not demonstrated inspection throughput or qualified service capacity.
+    evidence_ids: [ev_nuclear_capacity_unknown, ev_aerb_qa_gates]
+
+crosswalks:
+  - from_class: HS
+    from_code: "8401"
+    to_entity: reactor_pressure_boundary
+    confidence: 0.25
+    note: Nuclear-reactor heading is broad and does not identify component, grade, qualification, or domestic production capability.
+  - from_class: HS
+    from_code: "8406"
+    to_entity: turbine_generator_set
+    confidence: 0.35
+    note: Steam turbine heading is a trade proxy, not a nuclear-service turbine qualification or annual capacity record.
+  - from_class: HS
+    from_code: "7309"
+    to_entity: containment_liner
+    confidence: 0.2
+    note: Broad reservoir/tank category; not a nuclear containment capability mapping.
+  - from_class: ISIC
+    from_code: "2511"
+    to_entity: large_forged_shell
+    confidence: 0.2
+    note: Structural-metal adjacency only; does not establish nuclear-grade forging.

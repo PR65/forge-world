@@ -13,6 +13,7 @@ from pydantic import BaseModel, Field
 
 from forge.engine import ForgeEngine, ObjectiveSpecInput
 from forge.pack import load_pack
+from forge.registry import CanonicalRegistry, load_registry
 
 ROOT = Path(__file__).resolve().parent.parent
 PACKS_DIR = ROOT / "packs"
@@ -27,6 +28,7 @@ app.add_middleware(
 )
 
 _PACK_CACHE: Dict[str, Any] = {}
+_REGISTRY_CACHE: Optional[CanonicalRegistry] = None
 
 
 def get_pack(pack_id: str):
@@ -38,6 +40,14 @@ def get_pack(pack_id: str):
     pk = load_pack(str(path))
     _PACK_CACHE[pack_id] = pk
     return pk
+
+
+def get_registry() -> CanonicalRegistry:
+    """Load the deterministic file-backed registry once per API process."""
+    global _REGISTRY_CACHE
+    if _REGISTRY_CACHE is None:
+        _REGISTRY_CACHE = load_registry(PACKS_DIR, ROOT / "data" / "registry" / "manifest.yaml")
+    return _REGISTRY_CACHE
 
 
 class ObjectiveIn(BaseModel):
@@ -115,6 +125,102 @@ def pack_detail(pack_id: str):
     s["evidence"] = [r.to_json() for r in pk.evidence.values()]
     s["sources"] = [src.to_json() for src in pk.sources.values()]
     return s
+
+
+@app.get("/api/world/summary")
+def world_summary():
+    """Summary of the shared canonical read projection."""
+    return get_registry().summary()
+
+
+@app.get("/api/world/search")
+def world_search(
+    q: str = "",
+    kind: Optional[str] = None,
+    pack_id: Optional[str] = None,
+    limit: int = 25,
+):
+    """Search namespaced pack entities and explicit canonical records."""
+    registry = get_registry()
+    return {
+        "query": q,
+        "kind": kind,
+        "pack_id": pack_id,
+        "limit": limit,
+        "results": registry.search(q, kind=kind, pack_id=pack_id, limit=limit),
+        "snapshot_id": registry.snapshot_id,
+    }
+
+
+@app.get("/api/world/entities/{entity_id:path}")
+def world_entity(entity_id: str):
+    """Return one canonical or namespaced pack entity."""
+    entity = get_registry().get_entity(entity_id)
+    if entity is None:
+        raise HTTPException(404, f"world entity '{entity_id}' not found")
+    return entity
+
+
+@app.get("/api/world/slice")
+def world_slice(
+    pack_id: Optional[str] = None,
+    root: Optional[str] = None,
+    depth: int = 2,
+    limit: int = 100,
+):
+    """Return a bounded deterministic dependency slice."""
+    result = get_registry().slice(pack_id=pack_id, root=root, depth=depth, limit=limit)
+    if root and result.get("root") is None:
+        raise HTTPException(404, f"world entity '{root}' not found")
+    return result
+
+
+@app.get("/api/world/capabilities")
+def world_capabilities(
+    pack_id: Optional[str] = None,
+    limit: int = 200,
+):
+    registry = get_registry()
+    return {
+        "capabilities": registry.capabilities(pack_id=pack_id, limit=limit),
+        "snapshot_id": registry.snapshot_id,
+    }
+
+
+@app.get("/api/world/builders")
+def world_builders(limit: int = 200):
+    registry = get_registry()
+    return {
+        "builders": registry.builders(limit=limit),
+        "snapshot_id": registry.snapshot_id,
+    }
+
+
+@app.get("/api/world/evidence/{evidence_id:path}")
+def world_evidence(evidence_id: str):
+    evidence = get_registry().evidence_for(evidence_id)
+    if evidence is None:
+        raise HTTPException(404, f"world evidence '{evidence_id}' not found")
+    return evidence
+
+
+@app.get("/api/world/evidence-tasks")
+def world_evidence_tasks(
+    pack_id: Optional[str] = None,
+    limit: int = 200,
+):
+    registry = get_registry()
+    tasks = registry.tasks(pack_id=pack_id, limit=limit)
+    return {
+        "evidence_tasks": tasks,
+        "tasks": tasks,
+        "snapshot_id": registry.snapshot_id,
+    }
+
+
+@app.get("/api/world/snapshots")
+def world_snapshots():
+    return get_registry().snapshots()
 
 
 @app.post("/api/solve")
