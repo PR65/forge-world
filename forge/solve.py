@@ -111,6 +111,9 @@ class YearResult:
     binding_constraints: List[str] = field(default_factory=list)
     import_value_usd: float = 0.0
     domestic_value_usd: float = 0.0
+    # RT4/F2': items whose delivered imports leaned on UNKNOWN foreign capacity
+    # (eligibility held, but no evidenced ForeignSupplySegment bounded supply).
+    foreign_supply_unknown: List[str] = field(default_factory=list)
 
     @property
     def total_shortfall(self) -> float:
@@ -183,6 +186,11 @@ class ScenarioOptions:
     enforce_dva: bool = True          # V0.1: min_domestic_share interpreted as aggregate DVA
     per_item_import_cap: Dict[str, float] = field(default_factory=dict)
     raw_material_import_share: float = 0.0   # origin-UNKNOWN default; explicit ASSUMPTION
+    # RT4/F2': how to treat imports whose absolute foreign capacity is UNKNOWN.
+    #   "strict"     (default): delivery leaning on them => NOT_ADJUDICABLE.
+    #   "unbounded_assumption": proceed CONDITIONALLY, recording a named ASSUMPTION
+    #                that foreign supply is treated as unbounded. Never silent.
+    foreign_supply_policy: str = "strict"
     action_active_years: Dict[str, Tuple[int, int]] = field(default_factory=dict)
     decision_year: int = 2030
 
@@ -203,6 +211,7 @@ class ScenarioOptions:
             min_domestic_share=self.min_domestic_share,
             qualification_boosts=set(self.qualification_boosts),
             qualification_online_year=dict(self.qualification_online_year),
+            foreign_supply_policy=self.foreign_supply_policy,
             global_import_cost_mult=self.global_import_cost_mult,
             global_domestic_cost_mult=self.global_domestic_cost_mult,
             funded_pipeline=self.funded_pipeline,
@@ -226,8 +235,47 @@ class ScenarioOptions:
 
 def _unit_cost(opts: ScenarioOptions, item: str) -> Tuple[float, float]:
     cd = opts.cost_domestic.get(item, 1.0) * opts.global_domestic_cost_mult
-    ci = opts.cost_import.get(item, 1.08) * opts.global_import_cost_mult
+    ci_declared = opts.cost_import.get(item)
+    if ci_declared is not None:
+        ci = ci_declared * opts.global_import_cost_mult
+    elif item in opts.cost_domestic:
+        # RT4: a declared domestic price with an undeclared import price must not
+        # silently offer a flat fictional $1.08 import — assume import parity.
+        ci = cd * 1.08
+    else:
+        ci = 1.08 * opts.global_import_cost_mult
     return (cd, ci)
+
+
+def _recipe_input_value(w: World, rec, opts: ScenarioOptions,
+                        depth: int = 0) -> Tuple[float, float]:
+    """(input_value_total, input_value_imported) per ONE unit of recipe output.
+
+    Shallow valuation for LP pricing defaults: declared prices where present,
+    recursive recipe input value otherwise (bounded depth).
+    """
+    if depth > 6:
+        return (0.0, 0.0)
+    total = 0.0
+    imported = 0.0
+    scale = 1.0 / (rec.output_quantity.value or 1.0)
+    for iname, iq in rec.inputs:
+        need = iq.value * scale
+        sub_rec = primary_recipe(w, iname, geography=opts.geography)
+        cd = opts.cost_domestic.get(iname)
+        ci = opts.cost_import.get(iname)
+        if sub_rec is not None and cd is None:
+            t_sub, i_sub = _recipe_input_value(w, sub_rec, opts, depth + 1)
+            proc_key = f"processing:{iname}"
+            proc = opts.cost_domestic.get(proc_key, 0.35 * max(t_sub, 0.5))
+            total += need * (t_sub + proc)
+            imported += need * i_sub
+        else:
+            v_dom = cd if cd is not None else (ci if ci is not None else 1.0)
+            total += need * v_dom
+            if ci is not None and cd is None:
+                imported += need * ci
+    return (total, imported)
 
 
 def _importable(w: World, item_id: str) -> bool:
@@ -328,7 +376,14 @@ def solve_year(
             cap_hi[k] = hi
         elif env.domestic.is_unknown():
             unknown_flags.append(it)
-            cap_hi[k] = 0.0
+            # RT4 (review follow-up): an item with an applicable production recipe
+            # has MODEL-IMPLIED assembly capability — its domestic bound is the
+            # demand itself (bounded by input availability through the LP), not a
+            # fabricated zero. Items without any route keep the UNKNOWN->0 rule.
+            if primary_recipe(w, it, geography=opts.geography) is not None:
+                cap_hi[k] = demand[k]
+            else:
+                cap_hi[k] = 0.0
         else:
             use = env.domestic.hi if opts.assume_capacity_hi else env.domestic.lo
             cap_hi[k] = use or 0.0
@@ -355,12 +410,39 @@ def solve_year(
             elig_frac = 1.0 if elig_frac > 1.0 else elig_frac
         fcap = _foreign_supply_cap(w, it, year)
         if fcap is None:
-            fcap_frac = 1.0   # no evidenced foreign capacity object: eligibility-only world
+            # RT4/F2': no evidenced foreign capacity. Eligibility alone must NOT
+            # manufacture supply: we explore the optimistic edge (imports allowed)
+            # but the item is flagged; solve_objective refuses adjudication when
+            # the DELIVERED mix leans on these unevidenced volumes (imports > 0).
+            fcap_frac = 1.0
+            if elig_frac > 0 and demand[k] > 1e-12:
+                yr.foreign_supply_unknown.append(it)
         else:
             fcap_frac = min(fcap / demand[k], 1.0) if demand[k] > 1e-12 else 0.0
-        loc_cap = 1.0 - opts.min_domestic_share
+        # RT4/F1': min_domestic_share is AGGREGATE recursive DVA — it never caps
+        # individual items here. Per-item localization exists only via the
+        # explicit per_item_import_cap field (analyst policy) and the certified
+        # DVA loop's tightening map (which pursues the aggregate target).
         tight_k = min(tighten.get(it, 1.0), opts.per_item_import_cap.get(it, 1.0), 1.0)
-        imp_frac[k] = min(elig_frac, fcap_frac, max(loc_cap, 0.0)) * tight_k
+        imp_frac[k] = min(elig_frac, fcap_frac) * tight_k
+
+    # RT4 (review follow-up): an item with a production recipe must not be
+    # importable at a flat fictional default price — that lets the LP "import"
+    # finished assemblies for ~$1 and bypass the whole domestic chain. If no
+    # import price is declared, import cost defaults to the item's DOMESTIC
+    # production basis: declared domestic price, else its recipe input value,
+    # else the flat fallback.
+    from .explode import primary_recipe as _primary_recipe
+    for k, it in enumerate(items):
+        if it in opts.cost_import:
+            continue
+        cd, _ci = _unit_cost(opts, it)
+        rec = _primary_recipe(w, it, geography=opts.geography)
+        if cd != 1.0 or rec is None:
+            continue  # declared price, or genuinely unknown-cost raw material
+        t_in, i_in = _recipe_input_value(w, rec, opts)
+        if t_in > 0:
+            opts.cost_import.setdefault(it, t_in * 1.08)
 
     A_eq = np.zeros((n, n * 3))
     b_eq = np.zeros(n)
@@ -512,6 +594,13 @@ def solve_objective(
         )
         ledger.append({"type": "unknown_import_dependent", "item": it})
 
+    # ---- RT4/F2': unevidenced foreign supply must not silently back a verdict ----
+    # If the delivered mix leans on imports whose absolute foreign capacity is
+    # UNKNOWN (no ForeignSupplySegment), the verdict is CONDITIONAL at best and
+    # NOT_ADJUDICABLE when those imports carry the delivery (no shortfall headroom
+    # elsewhere would survive removing them). We re-examine after solving below.
+    foreign_unknown_items: set = set()
+
     # ---- project conditionality ledger (F8/F9): structured, numeric-aware ----
     unproven = collect_unproven_funded(w, opts.funded_project_ids, opts.funded_pipeline)
     if opts.count_unproven_projects is False and opts.funded_pipeline == "optimistic":
@@ -563,6 +652,59 @@ def solve_objective(
     results = run_pass(tighten)
     iterations = 0
 
+    # ---- RT4/F2' epistemic gate on unevidenced foreign supply -----------------
+    # After the first pass, inspect which items actually DELIVERED on imports with
+    # UNKNOWN absolute foreign capacity (flagged only when imports were possible;
+    # here we keep only items whose solved mix actually used them).
+    for yr in results.values():
+        for g in yr.allocations:
+            if g.imports_used > 1e-6 and g.item_id in yr.foreign_supply_unknown:
+                foreign_unknown_items.add(g.item_id)
+    for it in sorted(foreign_unknown_items):
+        ledger.append({
+            "type": "foreign_supply_capacity_unknown",
+            "item": it,
+            "imports_delivered_on_unknown": True,
+            "note": ("eligibility held but no evidenced ForeignSupplySegment; "
+                      "delivered import volume is unevidenced"),
+        })
+    if foreign_unknown_items:
+        conditional.append(
+            "import volumes delivered without evidenced foreign capacity for: "
+            + ", ".join(sorted(foreign_unknown_items))
+            + " — verdict leans on unevidenced supply"
+        )
+        # Decision-critical unknown: would the verdict survive capping those
+        # imports at zero? If not, the result is NOT adjudicable from evidence.
+        def _survives_without_unevidenced_imports(res_map) -> bool:
+            for yr2 in res_map.values():
+                for g in yr2.allocations:
+                    if g.item_id in foreign_unknown_items and \
+                            (g.shortfall > 1e-6 or g.imports_used <= 1e-6):
+                        continue
+                    if g.item_id in foreign_unknown_items and g.imports_used > 1e-6:
+                        # imports carried demand: removing them creates shortfall
+                        return False
+            return True
+        if not _survives_without_unevidenced_imports(results):
+            if opts.foreign_supply_policy == "strict":
+                adjudicable = False
+                blocking.append(
+                    "delivery depends on imports with UNKNOWN foreign capacity: "
+                    + ", ".join(sorted(foreign_unknown_items))
+                    + " — NOT_ADJUDICABLE until ForeignSupplySegments are evidenced"
+                )
+            else:
+                conditional.append(
+                    "ASSUMPTION: foreign supply treated as unbounded for "
+                    + ", ".join(sorted(foreign_unknown_items))
+                    + " (foreign_supply_policy=unbounded_assumption; no evidenced capacity)"
+                )
+                ledger.append({
+                    "type": "foreign_supply_unbounded_assumed",
+                    "items": sorted(foreign_unknown_items),
+                })
+
     if adjudicable and target_dva > 0:
         while iterations < DVA_LOOP_MAX_ITER:
             iterations += 1
@@ -584,6 +726,23 @@ def solve_objective(
             # If the shortfall already blocks delivery, DVA cannot be certified by
             # tightening import caps — record and stop (infeasibility dominates).
             if any(not yr.shortfall_vector.is_zero() for yr in results.values()):
+                # RT4/F1' honesty: distinguish shortfall that EXISTS PHYSICALLY
+                # (present before any DVA tightening) from shortfall the loop
+                # itself manufactured by capping imports. Only the former is
+                # INFEASIBLE_UNDER_MODEL; the latter is a policy failure — the
+                # aggregate DVA target is unattainable and forcing item caps
+                # must not masquerade as a physical shortage.
+                if tighten:
+                    dva_certificate = {
+                        "status": "infeasible_wrt_dva",
+                        "target_dva": target_dva,
+                        "achieved_dva_on_delivered": round(achieved, 6),
+                        "iterations": iterations,
+                        "tightened_items": {k: round(v, 4) for k, v in tighten.items()},
+                        "convention": br.convention,
+                        "assumptions": sorted(set(br.assumptions_used)),
+                    }
+                    break
                 dva_certificate = {
                     "status": "infeasible_delivery_shortfall",
                     "target_dva": target_dva,
@@ -651,6 +810,19 @@ def solve_objective(
     sr = _classify(results, blocking, conditional, adjudicable)
     sr.condition_ledger = ledger
     sr.dva_certificate = dva_certificate
+    # RT4/F1' honesty: when the DVA loop manufactured shortfall by tightening item
+    # caps (physical first pass was clean), the verdict is a DVA-policy failure,
+    # not physical infeasibility. Reclassify so the two are never conflated.
+    if (dva_certificate is not None
+            and dva_certificate.get("status") == "infeasible_wrt_dva"
+            and sr.result_class == ResultClass.INFEASIBLE_UNDER_MODEL):
+        first_pass_clean = True  # recomputed below from the untightened state
+        # Re-run one clean pass to verify the physical world delivers fully.
+        clean = run_pass({})
+        first_pass_clean = all(yr.shortfall_vector.is_zero() for yr in clean.values())
+        if first_pass_clean:
+            sr.result_class = ResultClass.INFEASIBLE_WRT_DVA
+            sr.years = clean
     # Verdict derives from year-result nodes; each year node derives from the
     # item-level requirement/allocation nodes (no disconnected roots — G1).
     verdict_parents: List[str] = []

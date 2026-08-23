@@ -156,12 +156,29 @@ def test_not_adjudicable_when_imports_blocked_and_capacity_unknown():
 
 
 def test_min_domestic_share_binds_lp():
+    """RT4-updated: min_domestic_share is AGGREGATE recursive DVA. It must never
+    create per-item shortfall directly; an unattainable aggregate target must
+    surface as a DVA certification failure (INFEASIBLE_WRT_DVA or an explicit
+    uncertified-DVA ledger entry), not as artificial physical shortage."""
     pk = _pack("smallsat_india")
     pg = ProofGraph()
     ex = explode_variant(pk.world, pg, "eo_smallsat_300kg", 50, [2030])
-    loose = solve_objective(pk.world, pg, ex, [2030], ScenarioOptions(min_domestic_share=0.0))
-    tight = solve_objective(pk.world, pg, ex, [2030], ScenarioOptions(min_domestic_share=0.99))
-    assert tight.years[2030].total_shortfall > loose.years[2030].total_shortfall
+    loose = solve_objective(pk.world, pg, ex, [2030],
+                            ScenarioOptions(min_domestic_share=0.0,
+                                            foreign_supply_policy="unbounded_assumption"))
+    tight = solve_objective(pk.world, pg, ex, [2030],
+                            ScenarioOptions(min_domestic_share=0.99,
+                                            foreign_supply_policy="unbounded_assumption"))
+    # no per-item artificial shortfall may appear purely from raising theta:
+    tight_short = tight.years[2030].total_shortfall
+    loose_short = loose.years[2030].total_shortfall
+    if tight_short > 0:
+        # shortfall only allowed if the DVA certificate says the constraint failed
+        cert = tight.dva_certificate or {}
+        assert cert.get("status") in ("infeasible_wrt_dva", "infeasible_no_tightening_leverage",
+                                      "infeasible_delivery_shortfall"), cert
+    assert tight.dva_certificate is not None
+    assert tight.dva_certificate.get("target_dva") == 0.99
 
 
 def test_dva_embedded_imports_count():

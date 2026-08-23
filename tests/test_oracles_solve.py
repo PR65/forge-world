@@ -118,14 +118,19 @@ def test_oracle_a_unit_representation_invariance():
 
 
 def test_min_dva_semantics_aggregate_not_localization():
-    """E2 anti-regression: 90/10 world passes at theta=0.70 AND fails at 0.95."""
+    """E2 anti-regression (RT4-strengthened): a 90%-domestic-value world whose
+    imported item is itself 100% imported must be FEASIBLE w.r.t. DVA at
+    theta=0.70 with NO artificial per-item shortfall, and must FAIL DVA
+    certification at theta=0.95. The old loc_cap = 1 - min_dva per-item cap made
+    the theta=0.70 case infeasible; this test fails on that implementation."""
     from forge.engine import ForgeEngine, ObjectiveSpecInput
     raw = _base_raw("loc90")
     raw["parts"] = [{"id": k} for k in ("D", "I")]
+    # value: D=9 x cost_domestic 10 => 90 USD of the 100 USD product;
+    # I=1 x cost_import 10 => 10 USD, fully imported. True aggregate DVA = 90%.
     raw["product_variants"] = [
         {"id": "PV", "bom": [{"part": "D", "qty": 9}, {"part": "I", "qty": 1}]},
     ]
-    # D has a domestic route with a domestic capacity segment; I has none (imports).
     raw["recipes"] = [{
         "id": "rec_D", "output_part": "D", "output_quantity": [1, "pcs"],
         "steps": [{"id": "s", "yield_fraction": 1.0}], "inputs": [],
@@ -136,27 +141,53 @@ def test_min_dva_semantics_aggregate_not_localization():
         "nameplate_annual": [10_000_000, "pcs/yr"],
         "epistemic_class": "ESTIMATED",
     }]
+    # I is evidenced importable: absolute foreign capacity declared so the run is
+    # adjudicable under strict foreign-supply epistemics (RT4/F2').
+    raw["foreign_supply_segments"] = [{
+        "id": "fss_I", "item_id": "I", "origin_country": "CHN",
+        "nameplate_annual": [10_000_000, "pcs/yr"],
+        "epistemic_class": "ASSUMPTION",
+    }]
     pk = build_pack(raw)
     eng = ForgeEngine(pk)
 
     resp70 = eng.run_scenario(ObjectiveSpecInput(variant_id="PV", annual_units=100_000,
-                                                 min_dva=0.70, deadline_year=2030),
+                                                 min_dva=0.70, deadline_year=2030,
+                                                 cost_domestic={"D": 10.0},
+                                                 cost_import={"I": 10.0}),
                               include_deep=False)
-    # measured aggregate DVA must be ~90% and the constraint must be satisfiable:
-    assert resp70["result"]["result_class"] in ("FEASIBLE", "CONDITIONALLY_FEASIBLE",
-                                                 "INFEASIBLE_UNDER_MODEL")
-    # the certificate must NOT claim DVA failure at 70% when true DVA is 90%
+    res70 = resp70["result"]
+    # MUST be feasible w.r.t. delivery AND DVA at 70% — no artificial shortfall:
+    assert res70["result_class"] in ("FEASIBLE", "CONDITIONALLY_FEASIBLE"), (
+        f"per-item localization still binding? class={res70['result_class']}"
+    )
     cert = resp70["dva"].get("certificate") or {}
-    if resp70["result"]["result_class"] in ("FEASIBLE", "CONDITIONALLY_FEASIBLE"):
-        assert cert.get("status") != "infeasible_no_tightening_leverage"
+    assert cert.get("status") == "satisfied"
+    assert abs(cert.get("achieved_dva", 0.0) - 0.9) < 0.02, \
+        f"measured DVA should be ~0.90, got {cert.get('achieved_dva')}"
+    # no item may carry shortfall at theta=.70:
+    for g in _iter_gaps(res70):
+        assert g["shortfall"] <= 1e-6, (
+            f"artificial shortfall on {g['item']} — per-item cap leaked back in"
+        )
 
-    # at theta=0.95 the same world must NOT be certified feasible (true DVA 90% < 95%)
+    # at theta=0.95 the same world must NOT be certified feasible (true DVA 90% < 95%);
+    # with delivery fully satisfied the certified loop must report the DVA failure.
     resp95 = eng.run_scenario(ObjectiveSpecInput(variant_id="PV", annual_units=100_000,
-                                                 min_dva=0.95, deadline_year=2030),
+                                                 min_dva=0.95, deadline_year=2030,
+                                                 cost_domestic={"D": 10.0},
+                                                 cost_import={"I": 10.0}),
                               include_deep=False)
-    assert resp95["result"]["result_class"] in ("INFEASIBLE_WRT_DVA",
-                                                 "INFEASIBLE_UNDER_MODEL",
-                                                 "NOT_ADJUDICABLE")
+    res95 = resp95["result"]
+    assert res95["result_class"] == "INFEASIBLE_WRT_DVA", (
+        f"expected INFEASIBLE_WRT_DVA, got {res95['result_class']}"
+    )
+
+
+def _iter_gaps(result_json):
+    for y in result_json["years"].values():
+        for g in y.get("allocations", []):
+            yield g
 
 
 # ------------------------------------------------------------------ Oracle D

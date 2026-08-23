@@ -15,6 +15,15 @@ V0 defects corrected here (F2 class):
 Convention (C18): DVA = 1 − imported_content_cost / ex_works_cost over DELIVERED
 units. Shortfall exits both numerator and denominator (P22) and is reported
 separately so nobody reads delivered-mix DVA as economy-wide performance.
+
+RT4 review fixes in this module:
+- No class-scope monkey patching: `measure_dva` calls the pure calculation path
+  (`dva_fraction(..., emit_proof=False)`), safe under concurrent execution.
+- No module-global assumption dedup state: `_noted_raw_shares` removed; every run
+  collects its own assumptions, so repeated identical runs return identical
+  provenance regardless of process history.
+- The DVA proof node is no longer a disconnected `derive([])` root: it derives
+  from allocation, basis, embedded-content, price and origin-assumption nodes.
 """
 from __future__ import annotations
 
@@ -39,9 +48,6 @@ class DVABreakdown:
     per_item: Dict[str, Dict] = field(default_factory=dict)
     assumptions_used: List[str] = field(default_factory=list)
     shortfall_note: str = ""
-
-
-_noted_raw_shares: set = set()
 
 
 def _has_domestic_supply(w: World, item_id: str, year: int, geography: str) -> bool:
@@ -69,7 +75,7 @@ def _embedded_import_content(
       - if it is a raw material WITH evidenced domestic supply, price it at the
         domestic cost — zero embedded import by default;
       - otherwise its origin is UNKNOWN: apply opts.raw_material_import_share
-        (explicit ASSUMPTION recorded once).
+        (explicit ASSUMPTION recorded once PER RUN — no cross-run memory).
     """
     if depth > 8 or rec.id in seen:
         return (0.0, 0.0)
@@ -77,6 +83,7 @@ def _embedded_import_content(
     imported = 0.0
     scale = 1.0 / (rec.output_quantity.value or 1.0)
     geo = opts.geography
+    noted_in_run: set = set()  # per-call dedup only (RT4/F3')
     for iname, iq in rec.inputs:
         need = iq.value * scale
         sub_rec = primary_recipe(w, iname, geography=geo)
@@ -106,8 +113,8 @@ def _embedded_import_content(
             total += need * price
             imported += need * price * share
             key = f"raw_share:{iname}"
-            if key not in _noted_raw_shares:
-                _noted_raw_shares.add(key)
+            if key not in noted_in_run:
+                noted_in_run.add(key)
                 assumptions.append(
                     f"origin UNKNOWN for {iname}; raw_material_import_share="
                     f"{share:.2f} applied (ASSUMPTION)"
@@ -122,7 +129,13 @@ def dva_fraction(
     opts: ScenarioOptions,
     allocations_by_year: Optional[Dict[int, list]] = None,
     decision_year: Optional[int] = None,
+    emit_proof: bool = True,
 ) -> DVABreakdown:
+    """Measure recursive DVA on the delivered mix.
+
+    emit_proof=False runs the pure calculation without touching the proof graph
+    (used inside the certified loop and by concurrent callers).
+    """
     br = DVABreakdown(fraction=0.0, total_cost_usd=0.0, imported_cost_usd=0.0)
     assumptions: List[str] = []
     alloc_map: Dict[str, Tuple[float, float]] = {}
@@ -158,6 +171,36 @@ def dva_fraction(
     grand_total = 0.0
     grand_imported = 0.0
     grand_shortfall_qty = 0.0
+
+    # provenance parents (populated when emit_proof=True)
+    alloc_node = basis_node = embed_node = price_node = origin_node = year_node = None
+    alloc_shares_json: Dict[str, List[float]] = {}
+    prices_json: Dict[str, Dict] = {}
+
+    if emit_proof:
+        alloc_node = pg.add_node(
+            "derived", f"DVA input: solved allocation/delivery mix @{target_year or 2030}",
+            {}, node_id=f"dva.in.alloc.{explosion.variant_id}.{target_year or 2030}")
+        basis_node = pg.add_node(
+            "derived", "DVA input: product/BOM basis (delivered parts counted once)",
+            {"basis_items": sorted(basis_items)},
+            node_id=f"dva.in.basis.{explosion.variant_id}")
+        embed_node = pg.add_node(
+            "derived", "DVA input: recursive embedded-import computation",
+            {"convention": br.convention},
+            node_id=f"dva.in.embedded.{explosion.variant_id}")
+        price_node = pg.add_node(
+            "derived", "DVA input: declared/derived unit prices",
+            {}, node_id=f"dva.in.prices.{explosion.variant_id}.{target_year or 2030}")
+        origin_node = pg.add_node(
+            "assumption", "DVA input: raw-material origin epistemics "
+            "(evidenced domestic supply vs explicit raw_material_import_share)",
+            {"raw_material_import_share": opts.raw_material_import_share},
+            node_id=f"dva.in.origin.{explosion.variant_id}")
+        year_node = pg.add_node(
+            "derived", f"DVA measured for target year {target_year or 2030} "
+            f"(variant {explosion.variant_id})",
+            {}, node_id=f"dva.in.year.{explosion.variant_id}.{target_year or 2030}")
 
     for item in explosion.items():
         line = explosion.get(item)
@@ -242,6 +285,12 @@ def dva_fraction(
                                             if dom_unit_imported is not None else None),
             "unit_cost_import_landed": round(imp_unit, 6),
         }
+        if emit_proof:
+            alloc_shares_json[item] = [round(dom_share, 6), round(imp_share, 6)]
+            prices_json[item] = {
+                "domestic": dom_unit_total,
+                "import_landed": round(imp_unit, 6),
+            }
 
     br.total_cost_usd = grand_total
     br.imported_cost_usd = grand_imported
@@ -253,17 +302,35 @@ def dva_fraction(
         )
     br.assumptions_used = sorted(set(assumptions))
 
-    pg.derive(
-        [],
-        f"DVA = {br.fraction:.1%} of delivered ex-works value",
-        {
-            "total_cost_usd": grand_total,
-            "imported_cost_usd": grand_imported,
-            "convention": br.convention,
-            "assumptions": br.assumptions_used,
-            "shortfall_excluded": True,
-        },
-    )
+    if emit_proof:
+        # RT4/F4': real causal lineage — the DVA output derives from each input
+        # family; assumption strings hang off the origin/price nodes so the path
+        # from output to EvidenceRecord/ASSUMPTION traverses computational deps.
+        pg.nodes[f"dva.in.alloc.{explosion.variant_id}.{target_year or 2030}"].detail.update(
+            {"delivery_shares": alloc_shares_json})
+        pg.nodes[f"dva.in.prices.{explosion.variant_id}.{target_year or 2030}"].detail.update(
+            {"prices_usd_per_unit": prices_json})
+        pg.nodes[f"dva.in.origin.{explosion.variant_id}"].detail.update(
+            {"assumption_strings": br.assumptions_used})
+        dva_parents = [n for n in (alloc_node, basis_node, embed_node, price_node,
+                                   origin_node, year_node) if n]
+        # link the scenario's evidence-bearing line nodes into the allocation input
+        for item in explosion.items():
+            line_node = explosion.proof_node_ids.get(item)
+            if line_node and line_node in pg.nodes:
+                pg.add_edge(line_node, alloc_node, relation="dva_delivery_input")
+        pg.derive(
+            dva_parents,
+            f"DVA = {br.fraction:.1%} of delivered ex-works value",
+            {
+                "total_cost_usd": grand_total,
+                "imported_cost_usd": grand_imported,
+                "convention": br.convention,
+                "assumptions": br.assumptions_used,
+                "shortfall_excluded": True,
+            },
+            relation="dva_computation",
+        )
     return br
 
 
@@ -275,16 +342,14 @@ def measure_dva(
     allocations_by_year: Optional[Dict[int, list]] = None,
     decision_year: Optional[int] = None,
 ) -> DVABreakdown:
-    """Measure DVA without emitting a proof node (used inside the certified loop)."""
-    saved = ProofGraph.derive
+    """Pure DVA measurement WITHOUT proof emission (certified-loop inner step).
 
-    def _silent(self, *a, **k):
-        return ""
-
-    ProofGraph.derive = _silent  # type: ignore[method-assign]
-    try:
-        return dva_fraction(w, pg, explosion, opts,
-                            allocations_by_year=allocations_by_year,
-                            decision_year=decision_year)
-    finally:
-        ProofGraph.derive = saved  # type: ignore[method-assign]
+    RT4/F3': the old implementation monkey-patched ProofGraph.derive at CLASS
+    scope to suppress nodes — unsafe with concurrent runs sharing the class.
+    The pure path is now an explicit parameter, so no global state is touched
+    and concurrent calls cannot interfere.
+    """
+    return dva_fraction(w, pg, explosion, opts,
+                        allocations_by_year=allocations_by_year,
+                        decision_year=decision_year,
+                        emit_proof=False)

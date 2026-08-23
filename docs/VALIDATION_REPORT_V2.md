@@ -1,5 +1,19 @@
 # FORGE WORLD V0.1 — VALIDATION REPORT v2 (post-correctness)
 
+> **RT4 review amendment (this branch, post independent review):** the four
+> review findings were fixed and re-verified. Consequences for the numbers
+> below: (a) the flagship's default run is now **NOT_ADJUDICABLE** under strict
+> foreign-supply epistemics — 23 items delivered on imports whose absolute
+> foreign capacity is UNKNOWN; with the explicit
+> `foreign_supply_policy="unbounded_assumption"` the run is
+> **CONDITIONALLY_FEASIBLE** with delivered-mix recursive DVA **90.6%**
+> certified. The earlier "21.2% DVA / INFEASIBLE" row described the interim
+> implementation, not tuned data; the honest current headline is the one in
+> this note. (b) `min_dva` no longer applies any per-item cap; an
+> unattainable θ yields `INFEASIBLE_WRT_DVA`, never manufactured shortage.
+> (c) DVA proof nodes derive from allocation/basis/embedded/price/origin input
+> nodes; `measure_dva` is a pure path (no monkey patching, no cross-run state).
+
 All numbers below were produced by the V0.1 code on this worktree (2026-08-22,
 Python 3.12.10). Reproduce via `python -m pytest tests/` and
 `python scripts/forge_cli.py run …`. This report SUPERSEDES VALIDATION_REPORT.md;
@@ -7,8 +21,10 @@ its claims are scoped to what executable behavior now demonstrates.
 
 ## 1. Test suite
 
-**85 passed + 1 skipped** (skip = fundable-project fixture absent in pack).
-Includes 3 oracle modules that FAILED on the preserved V0 implementation:
+**93 passed + 1 skipped** (skip = fundable-project fixture absent in pack).
+Includes 4 oracle modules that FAILED on the preserved V0 implementation, plus
+`test_oracles_review.py` whose 5 finding-specific oracles were verified to fail
+on the pre-review-fix implementation and pass after.
 
 | Oracle module | Gates | V0 behavior killed |
 |---|---|---|

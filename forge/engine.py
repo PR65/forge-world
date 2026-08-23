@@ -42,6 +42,14 @@ class ObjectiveSpecInput:
     funded_projects: List[str] = field(default_factory=list)
     allowed_substitutions: List[str] = field(default_factory=list)
     analyst_capacity_assumptions: Dict[str, Tuple[float, float]] = field(default_factory=dict)
+    # Declared economic parameters (USD per canonical unit). Absent entries fall
+    # back to solver defaults; every default use is surfaced as an ASSUMPTION.
+    cost_domestic: Dict[str, float] = field(default_factory=dict)
+    cost_import: Dict[str, float] = field(default_factory=dict)
+    # RT4/F2': "strict" (default) refuses adjudication when delivery leans on
+    # imports with UNKNOWN absolute foreign capacity; "unbounded_assumption"
+    # proceeds conditionally with the assumption recorded. Explicit, never silent.
+    foreign_supply_policy: str = "strict"
 
 
 def _variant_list(pk: KnowledgePack) -> List[Dict]:
@@ -167,9 +175,12 @@ class ForgeEngine:
             import_eligibility={},
             funded_project_ids=set(obj.funded_projects),
             capacity_overrides=dict(obj.analyst_capacity_assumptions),
+            cost_domestic=dict(obj.cost_domestic),
+            cost_import=dict(obj.cost_import),
             geography=obj.geography,
             min_domestic_share=obj.min_dva,
             funded_pipeline=("selected_only" if obj.funded_projects else "optimistic"),
+            foreign_supply_policy=obj.foreign_supply_policy,
         )
         opts_node = pg.derive([scenario_node], "ScenarioOptions assembled",
                               {"geography": obj.geography,
