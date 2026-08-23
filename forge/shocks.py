@@ -42,28 +42,10 @@ def apply_shocks(
       demand_add          {item, quantity_per_year}  -> competing demand subtracts from supply
     """
     w2 = copy.deepcopy(base_world)
-    o2 = ScenarioOptions(
-        import_eligibility=dict(opts.import_eligibility),
-        funded_project_ids=set(opts.funded_project_ids),
-        capacity_overrides=dict(opts.capacity_overrides),
-        cost_domestic=dict(opts.cost_domestic),
-        cost_import=dict(opts.cost_import),
-        assume_capacity_hi=opts.assume_capacity_hi,
-        count_unproven_projects=opts.count_unproven_projects,
-        equipment_hour_limits=dict(opts.equipment_hour_limits),
-        equipment_hours_per_unit={
-            k: dict(v) for k, v in opts.equipment_hours_per_unit.items()
-        },
-        geography=opts.geography,
-        competing_demand_cuts=dict(opts.competing_demand_cuts),
-        min_domestic_share=opts.min_domestic_share,
-        qualification_boosts=set(opts.qualification_boosts),
-        global_import_cost_mult=opts.global_import_cost_mult,
-        global_domestic_cost_mult=opts.global_domestic_cost_mult,
-    )
+    o2 = opts.clone()   # FULL clone: every scenario field survives (F16/N4 fixed)
     report = ShockReport(shock_ids=list(shock_ids))
 
-    demand_cuts: Dict[str, float] = {}
+    demand_adds: Dict[str, float] = {}
 
     for sid in shock_ids:
         sh = w2.entities.get(sid)
@@ -151,7 +133,7 @@ def apply_shocks(
                 if q is None:
                     report.rejected_edits.append(f"{sid}: demand_add missing quantity")
                 else:
-                    demand_cuts[item] = demand_cuts.get(item, 0.0) + annual_scalar(q)
+                    demand_adds[item] = demand_adds.get(item, 0.0) + annual_scalar(q)
                     report.applied_edits.append(
                         {"shock": sid, "edit": "demand_add", "item": item,
                          "quantity_per_year": str(q)}
@@ -159,7 +141,9 @@ def apply_shocks(
             else:
                 report.rejected_edits.append(f"{sid}: unsupported edit type '{et}'")
 
-    o2.competing_demand_cuts = dict(demand_cuts)
+    # demand_add MERGES onto pre-existing cuts (I3); never replaces them (F16).
+    for item, add in demand_adds.items():
+        o2.competing_demand_cuts[item] = o2.competing_demand_cuts.get(item, 0.0) + add
 
     pg.derive(
         [],

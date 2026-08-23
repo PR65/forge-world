@@ -175,7 +175,7 @@ class ScenarioOptions:
     competing_demand_cuts: Dict[str, float] = field(default_factory=dict)
     min_domestic_share: float = 0.0
     qualification_boosts: Set[str] = field(default_factory=set)
-    # W3.2/F2: item -> first year its completed qualification counts.
+    # W3.2/F11: item -> first year its completed qualification counts (latency-honored).
     qualification_online_year: Dict[str, int] = field(default_factory=dict)
     global_import_cost_mult: float = 1.0
     global_domestic_cost_mult: float = 1.0
@@ -202,6 +202,7 @@ class ScenarioOptions:
             competing_demand_cuts=dict(self.competing_demand_cuts),
             min_domestic_share=self.min_domestic_share,
             qualification_boosts=set(self.qualification_boosts),
+            qualification_online_year=dict(self.qualification_online_year),
             global_import_cost_mult=self.global_import_cost_mult,
             global_domestic_cost_mult=self.global_domestic_cost_mult,
             funded_pipeline=self.funded_pipeline,
@@ -213,8 +214,13 @@ class ScenarioOptions:
         )
 
     def funded_arg(self) -> Optional[Set[str]]:
+        """Project set passed to capacity_envelope.
+
+        optimistic  -> None (every evidenced project counts, flagged conditional)
+        selected    -> the funded set
+        """
         if self.funded_pipeline == "selected_only":
-            return self.funded_project_ids
+            return set(self.funded_project_ids)
         return self.funded_project_ids or None
 
 
@@ -314,6 +320,7 @@ def solve_year(
                 it in opts.qualification_boosts
                 and year >= opts.qualification_online_year.get(it, 0)
             ),
+            exclude_unproven_projects=not opts.count_unproven_projects,
         )
         envelopes[it] = env
         if it in opts.capacity_overrides:
