@@ -506,6 +506,19 @@ def _validate_pack_integrity(pk: KnowledgePack):
                 raise PackValidationError(f"recipe '{r.id}' step '{st.id}' yield out of (0,1]")
             if not (0.0 <= st.scrap_fraction < 1.0):
                 raise PackValidationError(f"recipe '{r.id}' step '{st.id}' scrap out of [0,1)")
+    # RT finding: one item must be denominated in ONE unit family across all
+    # capacity segments; mixed pcs/tonnes segments would silently conflate.
+    by_item: Dict[str, set] = {}
+    for seg in w.of_kind("capacity_segment"):
+        if seg.nameplate_annual is not None:
+            fam = seg.nameplate_annual.unit.split("/")[0]
+            by_item.setdefault(seg.item_id, set()).add(fam)
+    for item_id, fams in by_item.items():
+        if len(fams) > 1:
+            raise PackValidationError(
+                f"item '{item_id}' has capacity segments in multiple unit families "
+                f"{sorted(fams)}; split into distinct items or normalize units"
+            )
     for seg in w.of_kind("capacity_segment"):
         for f in (seg.availability, seg.utilization, seg.yield_fraction, seg.qualification_fraction):
             if not (0.0 <= f <= 1.0):
