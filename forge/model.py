@@ -123,6 +123,16 @@ class FunctionalRequirement(Entity):
     envelope_max: Optional[float] = None
     unit: str = ""
 
+    def to_json(self):
+        base = super().to_json()
+        base.update(
+            metric=self.metric,
+            envelope_min=self.envelope_min,
+            envelope_max=self.envelope_max,
+            unit=self.unit,
+        )
+        return base
+
 
 @dataclass
 class Part(Entity):
@@ -353,6 +363,17 @@ class Qualification(Entity):
     status: str = "not_started"
     latency_months: Tuple[float, float] = (6.0, 24.0)
     evidence_ids: Tuple[str, ...] = ()
+
+    def to_json(self):
+        base = super().to_json()
+        base.update(
+            item_id=self.item_id,
+            qualifier=self.qualifier,
+            standard_ref=self.standard_ref,
+            status=self.status,
+            latency_months=list(self.latency_months),
+        )
+        return base
 
 
 @dataclass

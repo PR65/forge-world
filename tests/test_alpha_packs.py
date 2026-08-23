@@ -34,6 +34,13 @@ def test_alpha_packs_load_with_licensed_sources_and_evidence(pack_id):
             assert source_id in pk.sources
         if evidence.epistemic_class.value in {"MEASURED", "REPORTED"}:
             assert evidence.source_ids, evidence.claim_id
+            assert evidence.license != "UNSPECIFIED", evidence.claim_id
+            for source_id in evidence.source_ids:
+                assert pk.sources[source_id].license in evidence.license
+
+    for entity in pk.world.entities.values():
+        for evidence_id in getattr(entity, "evidence_ids", ()):
+            assert evidence_id in pk.evidence, f"{entity.id}: {evidence_id}"
 
 
 @pytest.mark.parametrize(
@@ -180,3 +187,13 @@ def test_nuclear_project_capacity_is_explicit_scenario_or_context_only():
         classes = {pk.evidence[e].epistemic_class.value for e in project.evidence_ids}
         assert classes & {"ASSUMPTION", "SCENARIO"}
         assert "not a government project" in project.notes.lower() or "scenario" in project.notes.lower()
+
+
+def test_cnc_item_specific_qualification_schedules_are_explicit_assumptions():
+    pk = _pack("cnc_machining_india")
+    qualifications = pk.world.of_kind("qualification")
+    assert qualifications
+
+    for qualification in qualifications:
+        classes = {pk.evidence[e].epistemic_class.value for e in qualification.evidence_ids}
+        assert "ASSUMPTION" in classes, qualification.id

@@ -376,14 +376,11 @@ def solve_year(
             cap_hi[k] = hi
         elif env.domestic.is_unknown():
             unknown_flags.append(it)
-            # RT4 (review follow-up): an item with an applicable production recipe
-            # has MODEL-IMPLIED assembly capability — its domestic bound is the
-            # demand itself (bounded by input availability through the LP), not a
-            # fabricated zero. Items without any route keep the UNKNOWN->0 rule.
-            if primary_recipe(w, it, geography=opts.geography) is not None:
-                cap_hi[k] = demand[k]
-            else:
-                cap_hi[k] = 0.0
+            # A recipe proves only that the route is represented in the model. It
+            # is not evidence of installed, effective, or qualified throughput.
+            # UNKNOWN domestic capacity therefore contributes no admissible
+            # supply unless the analyst supplied an explicit capacity override.
+            cap_hi[k] = 0.0
         else:
             use = env.domestic.hi if opts.assume_capacity_hi else env.domestic.lo
             cap_hi[k] = use or 0.0

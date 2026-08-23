@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import os
+import re
 from pathlib import Path
+from threading import Lock
 from typing import Any, Dict, List, Optional
 
 from fastapi import FastAPI, HTTPException
@@ -29,24 +31,37 @@ app.add_middleware(
 
 _PACK_CACHE: Dict[str, Any] = {}
 _REGISTRY_CACHE: Optional[CanonicalRegistry] = None
+_PACK_CACHE_LOCK = Lock()
+_REGISTRY_CACHE_LOCK = Lock()
+_PACK_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*$")
 
 
 def get_pack(pack_id: str):
+    if not _PACK_ID.fullmatch(pack_id):
+        raise HTTPException(404, f"pack '{pack_id}' not found")
     if pack_id in _PACK_CACHE:
         return _PACK_CACHE[pack_id]
-    path = PACKS_DIR / f"{pack_id}.yaml"
-    if not path.exists():
-        raise HTTPException(404, f"pack '{pack_id}' not found")
-    pk = load_pack(str(path))
-    _PACK_CACHE[pack_id] = pk
-    return pk
+    with _PACK_CACHE_LOCK:
+        if pack_id in _PACK_CACHE:
+            return _PACK_CACHE[pack_id]
+        packs_root = PACKS_DIR.resolve()
+        path = (packs_root / f"{pack_id}.yaml").resolve()
+        if path.parent != packs_root or not path.exists():
+            raise HTTPException(404, f"pack '{pack_id}' not found")
+        pk = load_pack(str(path))
+        if pk.pack_id != pack_id:
+            raise HTTPException(404, f"pack '{pack_id}' not found")
+        _PACK_CACHE[pack_id] = pk
+        return pk
 
 
 def get_registry() -> CanonicalRegistry:
     """Load the deterministic file-backed registry once per API process."""
     global _REGISTRY_CACHE
     if _REGISTRY_CACHE is None:
-        _REGISTRY_CACHE = load_registry(PACKS_DIR, ROOT / "data" / "registry" / "manifest.yaml")
+        with _REGISTRY_CACHE_LOCK:
+            if _REGISTRY_CACHE is None:
+                _REGISTRY_CACHE = load_registry(PACKS_DIR, ROOT / "data" / "registry" / "manifest.yaml")
     return _REGISTRY_CACHE
 
 
@@ -110,8 +125,19 @@ def pack_detail(pack_id: str):
         }
         for sid, c in pk.substitutions.items()
     ]
-    s["projects"] = [
-        {
+    registry = get_registry()
+    projects = []
+    for e in pk.world.of_kind("project"):
+        registry_node = registry.get_entity(f"pack:{pack_id}:{e.id}") or {}
+        metadata = registry_node.get("metadata", {})
+        epistemic_role = metadata.get("epistemic_role")
+        if e.design_capacity_annual is None:
+            control_role = "context"
+        elif epistemic_role == "SCENARIO":
+            control_role = "scenario"
+        else:
+            control_role = "fundable"
+        projects.append({
             "id": e.id,
             "name": e.name,
             "item_id": e.item_id,
@@ -119,11 +145,23 @@ def pack_detail(pack_id: str):
             "state_date": e.state_date,
             "design_capacity": str(e.design_capacity_annual) if e.design_capacity_annual else None,
             "commission_window_years": list(e.years_to_commission),
-        }
-        for e in pk.world.of_kind("project")
+            "notes": e.notes,
+            "evidence_ids": list(e.evidence_ids),
+            "registry_evidence_ids": list(registry_node.get("evidence_ids", ())),
+            "epistemic_class": registry_node.get("epistemic_class", "UNKNOWN"),
+            "epistemic_role": epistemic_role,
+            "control_role": control_role,
+        })
+    s["projects"] = projects
+    s["id_scope"] = "pack_local_with_registry_ids"
+    s["evidence"] = [
+        {**record.to_json(), "registry_evidence_id": f"pack:{pack_id}:evidence:{record.claim_id}"}
+        for record in pk.evidence.values()
     ]
-    s["evidence"] = [r.to_json() for r in pk.evidence.values()]
-    s["sources"] = [src.to_json() for src in pk.sources.values()]
+    s["sources"] = [
+        {**source.to_json(), "registry_source_id": f"pack:{pack_id}:source:{source.id}"}
+        for source in pk.sources.values()
+    ]
     return s
 
 

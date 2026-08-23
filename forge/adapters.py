@@ -11,10 +11,11 @@ import json
 import urllib.request
 from dataclasses import dataclass
 from datetime import date
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 from .evidence import EvidenceRecord, Source, snapshot_hash
-from .epistemics import Confidence, EpistemicClass, confidence as _conf
+from .epistemics import EpistemicClass
+from .ingestion import Observation, Promotion, SourceSnapshot, promote_observation
 
 
 class AdapterError(Exception):
@@ -24,7 +25,10 @@ class AdapterError(Exception):
 @dataclass
 class AdapterResult:
     source: Source
+    source_snapshot: SourceSnapshot
+    observations: List[Observation]
     records: List[EvidenceRecord]
+    promotions: List[Promotion]
     raw_payload_hash: str
     fetched_at: str
     notes: List[str]
@@ -80,46 +84,73 @@ class WorldBankAdapter:
             notes="Fetched via public API; observation-level provenance preserved",
         )
 
+        payload_hash = snapshot_hash(payload)
+        source_snapshot = SourceSnapshot(
+            source_id=src.id,
+            content_hash=payload_hash,
+            hash_scope="raw_payload",
+            raw_payload_stored=False,
+            access_date=src.access_date,
+            license=src.license,
+            storage_posture="hash_only",
+            url=src.url,
+            source_type=src.source_type,
+            metadata={"name": src.name, "publisher": src.publisher, "notes": src.notes},
+        )
+        observations: List[Observation] = []
         records: List[EvidenceRecord] = []
+        promotions: List[Promotion] = []
         notes: List[str] = []
         for row in rows:
             if row.get("value") is None:
                 continue
             yr = str(row.get("date"))
             val = float(row["value"])
-            records.append(
-                EvidenceRecord(
-                    claim_id=f"wb.{self.country_iso}.{code}.{yr}",
-                    subject=f"{self.country_iso}.{indicator_key}",
-                    predicate="observed_value",
-                    epistemic_class=EpistemicClass.MEASURED,
-                    value_text=f"{val:.0f} ({label}, {yr})",
-                    source_ids=(src.id,),
-                    publication_date=str(yr),
-                    retrieval_date=date.today().isoformat(),
-                    geographic_scope=self.country_iso,
-                    technical_scope="national accounts aggregate",
-                    extraction_method="world_bank_api_v2",
-                    confidence=_conf(
-                        authority=0.95,
-                        directness=1.0,
-                        recency=0.9,
-                        geographic_specificity=1.0,
-                        technical_specificity=0.7,
-                        completeness=0.8,
-                    ),
-                    license=src.license,
-                    quote_or_caveat="Official statistical series; revision lag applies",
-                )
+            observation = Observation(
+                observation_id=f"obs.wb.{self.country_iso}.{code}.{yr}",
+                source_snapshot_id=source_snapshot.snapshot_id,
+                subject=f"{self.country_iso}.{indicator_key}",
+                predicate="observed_value",
+                epistemic_class=EpistemicClass.MEASURED,
+                value_text=f"{val:.0f} ({label}, {yr})",
+                observed_at=yr,
+                geographic_scope=self.country_iso,
+                technical_scope="national accounts aggregate",
+                caveat="Official statistical series; revision lag applies",
+                metadata={
+                    "publication_date": yr,
+                    "extraction_method": "world_bank_api_v2",
+                    "confidence": {
+                        "authority": 0.95,
+                        "directness": 1.0,
+                        "recency": 0.9,
+                        "geographic_specificity": 1.0,
+                        "technical_specificity": 0.7,
+                        "completeness": 0.8,
+                    },
+                },
             )
+            record, promotion = promote_observation(
+                observation,
+                source_snapshot,
+                claim_id=f"wb.{self.country_iso}.{code}.{yr}",
+                reviewer="world_bank_adapter",
+                promoted_at=date.today().isoformat(),
+                rationale="Deterministic API row normalization; no model-state mutation",
+            )
+            observations.append(observation)
+            records.append(record)
+            promotions.append(promotion)
         if not records:
             notes.append("no non-null rows returned")
 
-        blob = json.dumps(payload, sort_keys=True).encode()
         return AdapterResult(
             source=src,
+            source_snapshot=source_snapshot,
+            observations=observations,
             records=records,
-            raw_payload_hash=snapshot_hash(payload),
+            promotions=promotions,
+            raw_payload_hash=payload_hash,
             fetched_at=date.today().isoformat(),
             notes=notes,
         )
@@ -132,7 +163,10 @@ def run_adapter_demo(country: str = "IND") -> Dict[str, Any]:
         res = wb.fetch_indicator(key, years=3)
         out["series"][key] = {
             "source": res.source.to_json(),
+            "source_snapshot": res.source_snapshot.to_json(),
+            "observations": [observation.to_json() for observation in res.observations],
             "records": [r.to_json() for r in res.records],
+            "promotions": [promotion.to_json() for promotion in res.promotions],
             "payload_hash": res.raw_payload_hash,
             "notes": res.notes,
         }

@@ -45,6 +45,8 @@ that a builder has that capability, that a facility is qualified, or that supply
 ### 2.1 Canonical identity
 
 - Pack entities are addressed as `pack:<pack_id>:<entity_id>`.
+- Pack, entity, source, and evidence IDs use a validated delimiter-safe alphabet;
+  duplicate pack/public identities are rejected before registry construction.
 - Cross-sector capabilities use stable `cap:*` identifiers.
 - Aliases are explicit registry records, never fuzzy overwrites.
 - Conflicting observations coexist and remain `CONFLICTED` until reconciled.
@@ -69,8 +71,8 @@ live mirror of IndiaBUILD or any licensed source.
 Every adapter follows the same boundary:
 
 ```text
-source reference
-  -> immutable SourceSnapshot (hash, access time, license, storage posture)
+source reference or licensed API payload
+  -> immutable SourceSnapshot (declared hash scope, access date, license, storage posture)
   -> normalized Observation
   -> validation and reconciliation
   -> explicit promotion to EvidenceRecord
@@ -80,21 +82,28 @@ source reference
 ```
 
 Promotion is an explicit act. Fetching, parsing, or matching a source cannot mutate
-solver state on its own. Raw third-party pages are not mirrored unless their rights
-permit it; a content or metadata hash plus the minimal attributed claim is sufficient
-for referenced sources. `MEASURED` and `REPORTED` observations require a real source.
-Model mappings and engineering coefficients must remain `MODELLED` or `ASSUMPTION`.
+solver state on its own. Raw third-party pages and API payloads are not mirrored in
+this alpha; each snapshot declares whether its hash covers reference metadata or a
+retrieved payload and whether the payload is stored. `MEASURED` and `REPORTED`
+observations require an identified, licensed source, and the promoted record inherits
+every applicable source-license posture. Model mappings and engineering coefficients
+must remain `MODELLED` or `ASSUMPTION`.
+
+A represented production recipe is a candidate route, not qualified throughput. When
+domestic capacity is `UNKNOWN`, the solver admits zero domestic supply unless a
+capacity segment, eligible project contribution, or explicit analyst override provides
+a bound. The route remains visible and the missing capacity remains decision-sensitive.
 
 ## 4. Workbench contract
 
 The primary surface is an industrial debugger with three persistent regions:
 
 - **Case rail:** objective interpretation, active architecture, geography, deadline,
-  DVA/autonomy constraint, scenario branch, funded projects, shocks, and assumptions.
+  DVA/autonomy constraint, scenario branch, funded projects, and shocks.
 - **World Plane:** a semantic two-dimensional dependency space with typed edges,
-  epistemic state, year-local capacity state, bottleneck paths, and lazy recursion.
-- **WHY inspector:** WHAT, WHY, HOW DO WE KNOW, WHAT IS UNKNOWN, WHAT WOULD CHANGE THE
-  ANSWER, and the currently valid research/design/execution verbs.
+  epistemic state, bounded slices, and lazy recursion.
+- **WHY inspector:** selected-record metadata, proof chains, evidence records, source
+  snapshot posture, and decision-sensitive UNKNOWNs where the active run returns them.
 
 The five modes are lenses over the same run, scenario, year, selection, and evidence
 snapshot:
@@ -102,7 +111,8 @@ snapshot:
 - **ANALYZE:** verdict, binding gaps, UNKNOWNs, causal path, shocks, and tradeoffs.
 - **DESIGN:** architecture and substitution comparisons as dependency-graph rewrites.
 - **EXECUTE:** verified transformations, project/qualification gates, and evidence work.
-- **DISCOVER:** canonical capability-to-objective reuse and measured option value.
+- **DISCOVER:** explicit canonical capability reuse across packs. The alpha does not
+  claim that those ontology mappings are a measured option-value ranking.
 - **LEARN:** progressive explanation of the selected physical chain, down to evidence.
 
 Existing V0.1 views become ANALYZE lenses rather than competing product modes.
@@ -119,11 +129,12 @@ decision. Geographic 3D is gated on coordinate-backed facilities and corridors.
 ### 4.2 Scenario and decision discipline
 
 - A baseline run is immutable.
-- A scenario is a named delta and produces a new run/hash.
+- A scenario is an explicit input delta and produces a new run/hash.
 - A substitution rewrites dependencies and must pass its functional envelope.
 - An approval may authorize research, procurement, testing, or an assumption; it may
   not turn UNKNOWN into supply.
-- Rollback selects an earlier branch/snapshot rather than mutating history.
+- The alpha can restore its preserved baseline run and inputs rather than mutating that
+  baseline. General multi-branch history is deferred.
 - Only operations supported by the backend are enabled.
 
 ## 5. The three clocks

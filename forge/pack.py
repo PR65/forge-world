@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
@@ -25,6 +27,16 @@ SUBSTITUTION_REQUIRED_FIELDS = (
 
 class PackValidationError(Exception):
     pass
+
+
+_PUBLIC_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*$")
+
+
+def _validate_public_id(value: str, kind: str) -> None:
+    if not _PUBLIC_ID.fullmatch(value):
+        raise PackValidationError(
+            f"{kind} id '{value}' must use only letters, digits, '_', '-', or '.'"
+        )
 
 
 def _qty(spec) -> Quantity:
@@ -114,6 +126,30 @@ def _build_evidence(d: dict, pack_sources: Dict[str, Source]) -> EvidenceRecord:
         raise PackValidationError(
             f"{klass.value} evidence '{d.get('claim_id')}' requires at least one source (C21)"
         )
+    source_licenses = []
+    for source_id in src_ids:
+        source_license = pack_sources[source_id].license.strip()
+        if klass in (EpistemicClass.MEASURED, EpistemicClass.REPORTED) and (
+            not source_license or source_license.upper() == "UNSPECIFIED"
+        ):
+            raise PackValidationError(
+                f"{klass.value} evidence '{d.get('claim_id')}' references source "
+                f"'{source_id}' without a declared license (C19)"
+            )
+        source_licenses.append(source_license or "UNSPECIFIED")
+
+    declared_license = str(d.get("license", "")).strip()
+    inherited_licenses = sorted(set(source_licenses))
+    if declared_license and declared_license.upper() != "UNSPECIFIED":
+        inherited_licenses = sorted(set([declared_license, *inherited_licenses]))
+    if len(inherited_licenses) == 1:
+        evidence_license = inherited_licenses[0]
+    elif inherited_licenses:
+        # A scalar field cannot encode a license lattice. Preserve every
+        # applicable posture and require consumers to honor all of them.
+        evidence_license = "MULTIPLE LICENSES (apply all): " + " | ".join(inherited_licenses)
+    else:
+        evidence_license = "UNSPECIFIED"
     conf_raw = d.get("confidence") or {}
     conf = Confidence({k: (float(v) if v is not None else None) for k, v in conf_raw.items()})
     vq = None
@@ -136,7 +172,7 @@ def _build_evidence(d: dict, pack_sources: Dict[str, Source]) -> EvidenceRecord:
         technical_scope=str(d.get("technical_scope", "")),
         extraction_method=str(d.get("extraction_method", "manual")),
         confidence=conf,
-        license=str(d.get("license", "UNSPECIFIED")),
+        license=evidence_license,
         derived_from=_tup(d.get("derived_from")),
         supersedes=d.get("supersedes"),
         review_status=str(d.get("review_status", "unreviewed")),
@@ -231,15 +267,23 @@ def load_pack(path: str) -> KnowledgePack:
 
 
 def load_pack_dir(pack_id: str, packs_root: str = "packs") -> KnowledgePack:
-    path = os.path.join(packs_root, f"{pack_id}.yaml")
-    if not os.path.exists(path):
+    _validate_public_id(str(pack_id), "pack")
+    root = Path(packs_root).resolve()
+    path = (root / f"{pack_id}.yaml").resolve()
+    if path.parent != root or not path.exists():
         raise FileNotFoundError(f"pack not found: {path}")
-    return load_pack(path)
+    pack = load_pack(str(path))
+    if pack.pack_id != pack_id:
+        raise PackValidationError(
+            f"requested pack '{pack_id}' does not match file pack_id '{pack.pack_id}'"
+        )
+    return pack
 
 
 def build_pack(raw: dict, path: str = "") -> KnowledgePack:
     if not raw.get("pack_id"):
         raise PackValidationError("pack_id required")
+    _validate_public_id(str(raw["pack_id"]), "pack")
     pk = KnowledgePack(
         pack_id=str(raw["pack_id"]),
         title=str(raw.get("title", raw["pack_id"])),
@@ -258,10 +302,16 @@ def build_pack(raw: dict, path: str = "") -> KnowledgePack:
             license=str(sd.get("license", "UNSPECIFIED")),
             access_date=str(sd.get("access_date", "")), notes=str(sd.get("notes", "")),
         )
+        _validate_public_id(src.id, "source")
+        if src.id in pk.sources:
+            raise PackValidationError(f"duplicate source id '{src.id}'")
         pk.sources[src.id] = src
 
     for ed in raw.get("evidence", []) or []:
         rec = _build_evidence(ed, pk.sources)
+        _validate_public_id(rec.claim_id, "evidence")
+        if rec.claim_id in pk.evidence:
+            raise PackValidationError(f"duplicate evidence id '{rec.claim_id}'")
         pk.evidence[rec.claim_id] = rec
 
     for md in raw.get("materials", []) or []:
@@ -500,6 +550,31 @@ def ResourceClassStub(rid: str):
 
 def _validate_pack_integrity(pk: KnowledgePack):
     w = pk.world
+    _validate_public_id(pk.pack_id, "pack")
+    for entity_id in w.entities:
+        _validate_public_id(entity_id, "entity")
+    for evidence in pk.evidence.values():
+        for parent_id in evidence.derived_from:
+            if parent_id not in pk.evidence:
+                raise PackValidationError(
+                    f"evidence '{evidence.claim_id}' derives from unknown evidence '{parent_id}'"
+                )
+        if evidence.supersedes:
+            if evidence.supersedes not in pk.evidence:
+                raise PackValidationError(
+                    f"evidence '{evidence.claim_id}' supersedes unknown evidence "
+                    f"'{evidence.supersedes}'"
+                )
+            if evidence.supersedes == evidence.claim_id:
+                raise PackValidationError(
+                    f"evidence '{evidence.claim_id}' cannot supersede itself"
+                )
+    for entity in w.entities.values():
+        for evidence_id in getattr(entity, "evidence_ids", ()):
+            if evidence_id not in pk.evidence:
+                raise PackValidationError(
+                    f"entity '{entity.id}' references unknown evidence '{evidence_id}'"
+                )
     for r in w.of_kind("recipe"):
         for st in r.steps:
             if not (0.0 < st.yield_fraction <= 1.0):

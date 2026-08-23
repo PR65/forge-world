@@ -125,6 +125,15 @@ evidence:
     retrieval_date: "2026-08-24"
     confidence: {authority: 0.7, directness: 0.6, corroboration: 0.7}
     quote_or_caveat: Planning range only; this pack does not convert it into an automatic operating-capacity factor.
+  - claim_id: ev_cnc_qualification_schedule_assumption
+    subject: cnc_component_qualification_plan
+    predicate: item_specific_latency_and_acceptance_scope
+    epistemic_class: ASSUMPTION
+    value_text: "Every item-specific latency_months range and acceptance protocol in this pack is a transparent alpha planning assumption within the broader reported qualification envelope."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.45}
+    quote_or_caveat: Do not treat these ranges as observed supplier schedules; replace them with supplier-, process-, and customer-specific qualification plans.
   - claim_id: ev_cnc_reference_architecture
     subject: cnc_vmc_reference_architecture
     predicate: engineering_envelope
@@ -974,84 +983,84 @@ qualifications:
     standard_ref: "Production-intent casting, stress relief, geometric acceptance, and process audit"
     status: not_started
     latency_months: [12, 24]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_spindle_acceptance
     item_id: spindle_cartridge
     qualifier: customer
     standard_ref: "Spindle runout, balance, thermal growth, and endurance acceptance protocol"
     status: not_started
     latency_months: [12, 24]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_precision_bearing
     item_id: spindle_bearing
     qualifier: customer
     standard_ref: "Bearing grade, preload, life, runout, and traceability acceptance"
     status: not_started
     latency_months: [12, 24]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_ball_screw
     item_id: ball_screw_set
     qualifier: customer
     standard_ref: "Lead error, preload, backlash, life, and thermal compensation acceptance"
     status: not_started
     latency_months: [12, 24]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_linear_guide
     item_id: linear_guide_set
     qualifier: customer
     standard_ref: "Straightness, preload, runout, and life acceptance"
     status: not_started
     latency_months: [12, 24]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_servo_axis
     item_id: servo_motor_axis
     qualifier: customer
     standard_ref: "Axis torque, thermal, encoder interface, and repeatability acceptance"
     status: not_started
     latency_months: [9, 18]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_encoder
     item_id: absolute_encoder_axis
     qualifier: customer
     standard_ref: "Encoder calibration, repeatability, environmental, and traceability acceptance"
     status: not_started
     latency_months: [12, 24]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_control_system
     item_id: cnc_controller
     qualifier: customer
     standard_ref: "CNC/PLC/servo integration, EMC, functional safety, and software release acceptance"
     status: not_started
     latency_months: [12, 24]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_atc
     item_id: atc_magazine
     qualifier: customer
     standard_ref: "Automatic tool-change cycle, interlock, and reliability acceptance"
     status: not_started
     latency_months: [6, 18]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_tooling
     item_id: tool_holder
     qualifier: customer
     standard_ref: "Taper/runout, balance, retention, and tool-life acceptance"
     status: not_started
     latency_months: [6, 18]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_probe
     item_id: touch_probe
     qualifier: customer
     standard_ref: "Probe calibration, repeatability, and machine-interface acceptance"
     status: not_started
     latency_months: [6, 18]
-    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
   - id: qual_machine_acceptance
     item_id: metrology_acceptance_kit
     qualifier: customer
     standard_ref: "Final machine geometric, volumetric, spindle, and cutting-test acceptance"
     status: not_started
     latency_months: [6, 18]
-    evidence_ids: [ev_cnc_mrl_framework, ev_nasa_systems]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
 
 capability_claims:
   - id: cc_india_machine_tool_programme_context

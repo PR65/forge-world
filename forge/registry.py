@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections import deque
 from dataclasses import dataclass, field
 from pathlib import Path
 from types import MappingProxyType
@@ -41,6 +42,8 @@ def _jsonable(value: Any) -> Any:
 
     if hasattr(value, "to_json"):
         return _jsonable(value.to_json())
+    if hasattr(value, "value") and hasattr(value, "unit"):
+        return [_jsonable(value.value), str(value.unit)]
     if isinstance(value, Mapping):
         return {str(k): _jsonable(value[k]) for k in sorted(value, key=lambda x: str(x))}
     if isinstance(value, (tuple, list)):
@@ -54,6 +57,36 @@ def _jsonable(value: Any) -> Any:
         # arbitrary numeric objects unless they also expose a unit.
         return _jsonable(value.value)
     return value
+
+
+def _canonical_manifest(value: Any) -> Any:
+    """Canonicalize manifest collections, whose list order has no semantics."""
+
+    if isinstance(value, Mapping):
+        return {
+            str(key): _canonical_manifest(value[key])
+            for key in sorted(value, key=lambda item: str(item))
+        }
+    if isinstance(value, (tuple, list)):
+        rows = [_canonical_manifest(item) for item in value]
+        return sorted(rows, key=_canonical_json)
+    return _jsonable(value)
+
+
+def _canonical_pack_raw(value: Any) -> Any:
+    """Sort named record collections without reordering sequential data."""
+
+    if isinstance(value, Mapping):
+        return {
+            str(key): _canonical_pack_raw(value[key])
+            for key in sorted(value, key=lambda item: str(item))
+        }
+    if isinstance(value, (tuple, list)):
+        rows = [_canonical_pack_raw(item) for item in value]
+        if rows and all(isinstance(item, Mapping) and item.get("id") is not None for item in rows):
+            return sorted(rows, key=lambda item: str(item.get("id")))
+        return rows
+    return _jsonable(value)
 
 
 def _canonical_json(value: Any) -> str:
@@ -122,19 +155,36 @@ class SourceSnapshot:
             content_hash = _sha256(
                 {
                     "source_id": self.source_id,
+                    "hash_scope": self.hash_scope,
+                    "raw_payload_stored": self.raw_payload_stored,
                     "access_date": self.access_date,
                     "license": self.license,
+                    "storage_posture": self.storage_posture,
                     "url": self.url,
                     "source_type": self.source_type,
                     "metadata": self.metadata,
                 }
             )
             object.__setattr__(self, "content_hash", content_hash)
+        identity_hash = _sha256(
+            {
+                "source_id": self.source_id,
+                "content_hash": content_hash,
+                "hash_scope": self.hash_scope,
+                "raw_payload_stored": self.raw_payload_stored,
+                "access_date": self.access_date,
+                "license": self.license,
+                "storage_posture": self.storage_posture,
+                "url": self.url,
+                "source_type": self.source_type,
+                "metadata": self.metadata,
+            }
+        )
         if not self.snapshot_id:
             object.__setattr__(
                 self,
                 "snapshot_id",
-                f"source-snapshot:{self.source_id}:{content_hash[:16]}",
+                f"source-snapshot:{self.source_id}:{identity_hash[:16]}",
             )
         object.__setattr__(self, "metadata", _freeze_mapping(self.metadata))
 
@@ -267,6 +317,29 @@ def promote_observation(
             raise ValueError(f"{observation.epistemic_class.value} promotion requires a source id")
         if not source_snapshot.license.strip() or source_snapshot.license.strip().upper() == "UNSPECIFIED":
             raise ValueError(f"{observation.epistemic_class.value} promotion requires a declared source license")
+        if not source_snapshot.content_hash.strip():
+            raise ValueError(f"{observation.epistemic_class.value} promotion requires a source hash")
+        if source_snapshot.hash_scope not in {"reference_metadata", "raw_payload", "content"}:
+            raise ValueError(f"unsupported source hash scope '{source_snapshot.hash_scope}'")
+        publisher = str(source_snapshot.metadata.get("publisher", "")).strip()
+        if not source_snapshot.url.strip() and not publisher:
+            raise ValueError(
+                f"{observation.epistemic_class.value} promotion requires a source URL or publisher"
+            )
+    metadata = observation.metadata
+    derived_from_raw = metadata.get("derived_from", ())
+    if isinstance(derived_from_raw, str):
+        derived_from_raw = (derived_from_raw,)
+    derived_from = tuple(str(item) for item in derived_from_raw or ())
+    supersedes_raw = metadata.get("supersedes")
+    confidence_raw = metadata.get("confidence", {})
+    from .epistemics import Confidence
+    confidence = Confidence(
+        {
+            str(key): (float(value) if value is not None else None)
+            for key, value in confidence_raw.items()
+        }
+    ) if isinstance(confidence_raw, Mapping) else Confidence()
     cid = str(claim_id or observation.observation_id)
     rec = EvidenceRecord(
         claim_id=cid,
@@ -276,12 +349,16 @@ def promote_observation(
         value_text=observation.value_text,
         value_quantity=observation.value_quantity,
         source_ids=(source_snapshot.source_id,),
+        publication_date=str(metadata.get("publication_date", observation.observed_at)),
         effective_date=observation.observed_at,
         retrieval_date=source_snapshot.access_date,
         geographic_scope=observation.geographic_scope,
         technical_scope=observation.technical_scope,
-        extraction_method="promoted_observation",
+        extraction_method=str(metadata.get("extraction_method", "promoted_observation")),
+        confidence=confidence,
         license=source_snapshot.license,
+        derived_from=derived_from,
+        supersedes=(str(supersedes_raw) if supersedes_raw else None),
         review_status="promoted",
         quote_or_caveat=observation.caveat,
     )
@@ -406,26 +483,120 @@ class RegistrySnapshot:
         }
 
 
-def _normalise_epistemic(value: Any, default: str = EpistemicClass.UNKNOWN.value) -> str:
+def _normalise_epistemic(
+    value: Any,
+    default: str = EpistemicClass.UNKNOWN.value,
+    *,
+    strict: bool = False,
+) -> str:
     if isinstance(value, EpistemicClass):
         return value.value
     candidate = str(value or default).upper()
-    return candidate if candidate in _VALID_EPISTEMIC else default
+    if candidate in _VALID_EPISTEMIC:
+        return candidate
+    if strict:
+        raise ValueError(f"unknown epistemic class '{candidate}'")
+    return default
 
 
 def _value_signature(rec: EvidenceRecord) -> Tuple[Any, ...]:
     return (rec.value_text, rec.value_quantity, rec.unit_note)
 
 
-def _has_unknown_marker(entity: Any) -> bool:
-    fields: List[Any] = []
-    for name in getattr(entity, "__dataclass_fields__", {}):
-        try:
-            fields.append(getattr(entity, name))
-        except Exception:
-            continue
-    blob = _canonical_json(fields).upper()
-    return "UNKNOWN" in blob
+def _claim_scope(rec: EvidenceRecord) -> Tuple[str, str, str]:
+    return (
+        rec.geographic_scope.strip().upper(),
+        rec.technical_scope.strip().casefold(),
+        rec.effective_date.strip(),
+    )
+
+
+def _summarise_evidence(
+    records: Sequence[EvidenceRecord],
+    *,
+    all_records: Optional[Mapping[str, EvidenceRecord]] = None,
+    explicit_class: str = "",
+    structured_unknown_dimensions: Sequence[str] = (),
+) -> Tuple[str, Dict[str, Any]]:
+    lookup = dict(all_records or {record.claim_id: record for record in records})
+    superseded_claim_ids: set[str] = set()
+    for record in records:
+        target = record.supersedes
+        chain_seen: set[str] = set()
+        while target and target not in chain_seen:
+            chain_seen.add(target)
+            superseded_claim_ids.add(target)
+            parent = lookup.get(target)
+            target = parent.supersedes if parent else None
+
+    active_records = [
+        record for record in records if record.claim_id not in superseded_claim_ids
+    ]
+    classes = sorted({record.epistemic_class.value for record in active_records})
+    details: Dict[str, Any] = {"epistemic_classes": classes}
+    if superseded_claim_ids:
+        details["superseded_claim_ids"] = sorted(superseded_claim_ids)
+    if structured_unknown_dimensions:
+        details["unknown_dimensions"] = sorted(set(structured_unknown_dimensions))
+    if EpistemicClass.SCENARIO.value in classes:
+        details["epistemic_role"] = EpistemicClass.SCENARIO.value
+
+    by_scoped_claim: Dict[Tuple[str, str, str, str, str], List[EvidenceRecord]] = {}
+    for record in active_records:
+        geo, technical, effective = _claim_scope(record)
+        by_scoped_claim.setdefault(
+            (record.subject, record.predicate, geo, technical, effective), []
+        ).append(record)
+    conflicts: List[str] = []
+    for same_scope in by_scoped_claim.values():
+        signatures = {_value_signature(record) for record in same_scope}
+        if len(signatures) > 1:
+            conflicts.extend(record.claim_id for record in same_scope)
+
+    if conflicts or any(
+        record.epistemic_class == EpistemicClass.CONFLICTED
+        for record in active_records
+    ):
+        if conflicts:
+            details["conflicting_claim_ids"] = sorted(set(conflicts))
+        klass = EpistemicClass.CONFLICTED.value
+    elif explicit_class:
+        klass = explicit_class
+    elif structured_unknown_dimensions:
+        klass = EpistemicClass.UNKNOWN.value
+    elif not active_records:
+        klass = EpistemicClass.UNKNOWN.value
+    elif EpistemicClass.UNKNOWN.value in classes:
+        klass = EpistemicClass.UNKNOWN.value
+    elif EpistemicClass.SCENARIO.value in classes:
+        klass = EpistemicClass.SCENARIO.value
+    elif EpistemicClass.ASSUMPTION.value in classes:
+        klass = EpistemicClass.ASSUMPTION.value
+    elif EpistemicClass.ESTIMATED.value in classes:
+        klass = EpistemicClass.ESTIMATED.value
+    elif EpistemicClass.MODELLED.value in classes:
+        klass = EpistemicClass.MODELLED.value
+    elif EpistemicClass.DERIVED.value in classes:
+        klass = EpistemicClass.DERIVED.value
+    elif EpistemicClass.REPORTED.value in classes:
+        klass = EpistemicClass.REPORTED.value
+    else:
+        klass = EpistemicClass.MEASURED.value
+    return klass, details
+
+
+def _structured_unknown_dimensions(entity: Any) -> List[str]:
+    """Return UNKNOWN capability-vector dimensions, never prose markers."""
+
+    if getattr(entity, "kind", "") != "capability_claim":
+        return []
+    vector = getattr(entity, "vector", None)
+    values = vector.to_json() if hasattr(vector, "to_json") else {}
+    return sorted(
+        str(key)
+        for key, value in values.items()
+        if "UNKNOWN" in str(value).upper()
+    )
 
 
 class CanonicalRegistry:
@@ -438,6 +609,10 @@ class CanonicalRegistry:
         *,
         manifest_path: str = "",
     ) -> None:
+        pack_ids = [pack.pack_id for pack in packs]
+        if len(pack_ids) != len(set(pack_ids)):
+            duplicates = sorted({pack_id for pack_id in pack_ids if pack_ids.count(pack_id) > 1})
+            raise ValueError(f"duplicate registry pack id(s): {duplicates}")
         self.packs: Tuple[KnowledgePack, ...] = tuple(sorted(packs, key=lambda p: p.pack_id))
         self.manifest: Dict[str, Any] = dict(_jsonable(manifest or {}))
         self.manifest_path = str(manifest_path)
@@ -489,7 +664,35 @@ class CanonicalRegistry:
         self._index_pack_entities()
         self._index_manifest()
         self._sort_edges()
+        adjacency: Dict[str, List[Tuple[str, int]]] = {}
+        for index, edge in enumerate(self.edges):
+            adjacency.setdefault(edge.source, []).append((edge.target, index))
+            adjacency.setdefault(edge.target, []).append((edge.source, index))
+        self._adjacency = MappingProxyType(
+            {
+                node_id: tuple(sorted(rows, key=lambda row: (row[0], row[1])))
+                for node_id, rows in adjacency.items()
+            }
+        )
         self._snapshot = self._make_snapshot()
+        # The snapshot and its public read projection must be one immutable
+        # state. Mutating a container after hashing would invalidate every API
+        # reproducibility claim.
+        self.manifest = _freeze_mapping(self.manifest)
+        self.nodes = MappingProxyType(dict(self.nodes))
+        self.edges = tuple(self.edges)
+        self.sources = MappingProxyType(dict(self.sources))
+        self.evidence = MappingProxyType(dict(self.evidence))
+        self.source_snapshots = MappingProxyType(dict(self.source_snapshots))
+        self.pack_snapshots = MappingProxyType(dict(self.pack_snapshots))
+        self.aliases = MappingProxyType(
+            {key: _freeze(value) for key, value in self.aliases.items()}
+        )
+        self.evidence_tasks = MappingProxyType(
+            {key: _freeze(value) for key, value in self.evidence_tasks.items()}
+        )
+        self._canonical_alias_lookup = MappingProxyType(dict(self._canonical_alias_lookup))
+        self._local_to_public = MappingProxyType(dict(self._local_to_public))
 
     def _index_pack_metadata(self, pk: KnowledgePack) -> None:
         source_ids: List[str] = []
@@ -510,7 +713,7 @@ class CanonicalRegistry:
             "title": pk.title,
             "version": pk.version,
             "geography_focus": pk.geography_focus,
-            "raw": pk.raw,
+            "raw": _canonical_pack_raw(pk.raw),
             "typed_world": world_snapshot(pk.world),
             "sources": {k: v.to_json() for k, v in sorted(pk.sources.items())},
             "evidence": {k: v.to_json() for k, v in sorted(pk.evidence.items())},
@@ -536,55 +739,25 @@ class CanonicalRegistry:
         explicit = getattr(entity, "epistemic_class", None)
         explicit_class = _normalise_epistemic(explicit, "") if explicit else ""
         recs = [self.evidence[eid] for eid in evidence_ids if eid in self.evidence]
-        superseded_claim_ids = {str(r.supersedes) for r in recs if r.supersedes}
-        active_recs = [r for r in recs if r.claim_id not in superseded_claim_ids]
-        classes = sorted({r.epistemic_class.value for r in active_recs})
-        details: Dict[str, Any] = {
-            "epistemic_classes": classes,
-            "local_evidence_ids": [x.split(":evidence:", 1)[-1] for x in evidence_ids],
-        }
-        if superseded_claim_ids:
+        klass, details = _summarise_evidence(
+            recs,
+            all_records=pk.evidence,
+            explicit_class=explicit_class,
+            structured_unknown_dimensions=_structured_unknown_dimensions(entity),
+        )
+        details["local_evidence_ids"] = [
+            x.split(":evidence:", 1)[-1] for x in evidence_ids
+        ]
+        superseded = details.pop("superseded_claim_ids", [])
+        if superseded:
             details["superseded_evidence_ids"] = sorted(
-                evidence_namespace(pk.pack_id, claim_id) for claim_id in superseded_claim_ids
+                evidence_namespace(pk.pack_id, claim_id) for claim_id in superseded
             )
-
-        # Detect contradictions before applying a typed entity's summary class.
-        # A pack may carry an explicit REPORTED label while two linked records
-        # disagree; flattening that disagreement would violate C17.
-        by_subject_predicate: Dict[Tuple[str, str], List[EvidenceRecord]] = {}
-        for rec in active_recs:
-            by_subject_predicate.setdefault((rec.subject, rec.predicate), []).append(rec)
-        conflicts: List[str] = []
-        for same_key in by_subject_predicate.values():
-            signatures = {_value_signature(r) for r in same_key}
-            if len(signatures) > 1:
-                conflicts.extend(evidence_namespace(pk.pack_id, r.claim_id) for r in same_key)
-        if conflicts or any(r.epistemic_class == EpistemicClass.CONFLICTED for r in active_recs):
-            if conflicts:
-                details["conflicting_evidence_ids"] = sorted(set(conflicts))
-            klass = EpistemicClass.CONFLICTED.value
-        # A typed capacity segment's own epistemic class is authoritative for
-        # that parameter when there is no contradiction. Unknown markers in a
-        # capability vector are likewise retained even when the claim has no
-        # linked source.
-        elif explicit_class:
-            klass = explicit_class
-        elif _has_unknown_marker(entity):
-            klass = EpistemicClass.UNKNOWN.value
-        elif not active_recs:
-            klass = EpistemicClass.UNKNOWN.value
-        else:
-            if len(classes) == 1:
-                klass = classes[0]
-            elif EpistemicClass.UNKNOWN.value in classes:
-                # An unresolved observation keeps the aggregate unresolved; the
-                # full class set remains visible in metadata.
-                klass = EpistemicClass.UNKNOWN.value
-            else:
-                # The aggregate is not a numerical parameter.  Preserve a
-                # conservative modelled status rather than claiming the most
-                # authoritative record dominates all others.
-                klass = EpistemicClass.MODELLED.value
+        conflicts = details.pop("conflicting_claim_ids", [])
+        if conflicts:
+            details["conflicting_evidence_ids"] = sorted(
+                evidence_namespace(pk.pack_id, claim_id) for claim_id in conflicts
+            )
         return klass, details
 
     def _index_pack_entities(self) -> None:
@@ -607,7 +780,11 @@ class CanonicalRegistry:
                 try:
                     typed = entity.to_json()
                     if isinstance(typed, dict):
-                        metadata["typed"] = _jsonable(typed)
+                        typed_payload = _jsonable(typed)
+                        if isinstance(typed_payload, dict) and "evidence_ids" in typed_payload:
+                            typed_payload["local_evidence_ids"] = list(typed_payload["evidence_ids"])
+                            typed_payload["evidence_ids"] = list(evidence_ids)
+                        metadata["typed"] = typed_payload
                 except Exception:
                     pass
                 self.nodes[public_id] = RegistryNode(
@@ -658,15 +835,25 @@ class CanonicalRegistry:
             # Manifest IDs are explicit and duplicate definitions should fail
             # loudly instead of silently merging unsupported assertions.
             raise ValueError(f"duplicate registry node id '{node_id}'")
+        explicit_class = _normalise_epistemic(epistemic_class, strict=True)
+        records = [self.evidence[evidence_id] for evidence_id in evidence_ids]
+        resolved_class, evidence_meta = _summarise_evidence(
+            records,
+            all_records={record.claim_id: record for record in self.evidence.values()},
+            explicit_class=explicit_class,
+        )
+        merged_metadata = dict(metadata or {})
+        if evidence_meta.get("epistemic_classes"):
+            merged_metadata.update(evidence_meta)
         self.nodes[node_id] = RegistryNode(
             id=node_id,
             name=name,
             kind=kind,
             pack_id=None,
             canonical_id=node_id,
-            epistemic_class=_normalise_epistemic(epistemic_class),
+            epistemic_class=resolved_class,
             evidence_ids=tuple(evidence_ids),
-            metadata=metadata or {},
+            metadata=merged_metadata,
         )
 
     def _manifest_evidence_ids(self, refs: Sequence[Any], default_pack: Optional[str] = None) -> Tuple[str, ...]:
@@ -677,8 +864,9 @@ class CanonicalRegistry:
                 out.append(raw)
                 continue
             if raw.startswith("pack:") and raw.count(":") >= 3:
-                out.append(raw)
-                continue
+                if raw in self.evidence:
+                    out.append(raw)
+                    continue
             if ":" in raw:
                 pid, cid = raw.split(":", 1)
                 candidate = evidence_namespace(pid, cid)
@@ -690,8 +878,7 @@ class CanonicalRegistry:
                 if candidate in self.evidence:
                     out.append(candidate)
                     continue
-            # Retain an explicit unresolved reference in metadata via caller;
-            # do not turn it into an invented evidence record.
+            raise ValueError(f"manifest references unknown evidence '{raw}'")
         return tuple(dict.fromkeys(out))
 
     def _manifest_bindings(self, entry: Mapping[str, Any]) -> Sequence[Mapping[str, Any]]:
@@ -732,12 +919,25 @@ class CanonicalRegistry:
             self._canonical_alias_lookup[cid] = cid
             for alias in entry.get("aliases", ()) or ():
                 alias_text = str(alias)
+                prior = self._canonical_alias_lookup.get(alias_text)
+                if prior and prior != cid:
+                    raise ValueError(
+                        f"registry alias '{alias_text}' maps to both '{prior}' and '{cid}'"
+                    )
                 self._canonical_alias_lookup[alias_text] = cid
                 # Accept explicit cap:-prefixed spellings in both kebab and
                 # snake forms while retaining one canonical node identity.
                 alias_slug = _slug(alias_text)
-                self._canonical_alias_lookup[f"cap:{alias_slug}"] = cid
-                self._canonical_alias_lookup[f"cap:{alias_slug.replace('-', '_')}"] = cid
+                for spelling in (
+                    f"cap:{alias_slug}",
+                    f"cap:{alias_slug.replace('-', '_')}",
+                ):
+                    prior = self._canonical_alias_lookup.get(spelling)
+                    if prior and prior != cid:
+                        raise ValueError(
+                            f"registry alias '{spelling}' maps to both '{prior}' and '{cid}'"
+                        )
+                    self._canonical_alias_lookup[spelling] = cid
 
             for binding in self._manifest_bindings(entry):
                 pack_id = str(binding.get("pack_id", ""))
@@ -793,7 +993,7 @@ class CanonicalRegistry:
                         name=existing.name,
                         kind=existing.kind,
                         pack_id=existing.pack_id,
-                        canonical_id=cid if not existing.canonical_id else existing.canonical_id,
+                        canonical_id=(canonical_ids[0] if len(canonical_ids) == 1 else None),
                         epistemic_class=existing.epistemic_class,
                         evidence_ids=existing.evidence_ids,
                         metadata=merged,
@@ -854,8 +1054,15 @@ class CanonicalRegistry:
                     "evidence_ids": list(self._manifest_evidence_ids(row.get("evidence_ids", ()), row.get("pack_id"))),
                     "metadata": {"mapping_source": str(row.get("mapping_source", "ASSUMPTION"))},
                 }
+                if alias_id in self.aliases:
+                    raise ValueError(f"duplicate registry alias id '{alias_id}'")
                 self.aliases[alias_id] = record
                 if alias:
+                    prior = self._canonical_alias_lookup.get(alias)
+                    if prior and prior != canonical:
+                        raise ValueError(
+                            f"registry alias '{alias}' maps to both '{prior}' and '{canonical}'"
+                        )
                     self._canonical_alias_lookup[alias] = canonical
                 if canonical in self.nodes:
                     aliases_for_node = list(self.nodes[canonical].metadata.get("aliases", []))
@@ -957,7 +1164,9 @@ class CanonicalRegistry:
                 "target_canonical_id": target,
                 "status": str(row.get("status", "OPEN")),
                 "priority": str(row.get("priority", "medium")),
-                "epistemic_class": _normalise_epistemic(row.get("epistemic_class", "UNKNOWN")),
+                "epistemic_class": _normalise_epistemic(
+                    row.get("epistemic_class", "UNKNOWN"), strict=True
+                ),
                 "evidence_ids": list(self._manifest_evidence_ids(row.get("evidence_ids", ()), row.get("pack_id"))),
                 "suggested_source_types": [str(x) for x in row.get("suggested_source_types", ()) or ()],
                 "metadata": {
@@ -965,6 +1174,8 @@ class CanonicalRegistry:
                     "notes": str(row.get("notes", "")),
                 },
             }
+            if tid in self.evidence_tasks:
+                raise ValueError(f"duplicate evidence task id '{tid}'")
             self.evidence_tasks[tid] = task
             if target in self.nodes:
                 meta = dict(self.nodes[target].metadata)
@@ -980,7 +1191,7 @@ class CanonicalRegistry:
         self.edges.sort(key=lambda e: (e.source, e.target, e.relation, _canonical_json(e.metadata)))
 
     def _make_snapshot(self) -> RegistrySnapshot:
-        manifest_hash = _sha256(self.manifest)
+        manifest_hash = _sha256(_canonical_manifest(self.manifest))
         pack_rows = tuple(self.pack_snapshots[k] for k in sorted(self.pack_snapshots))
         source_rows = tuple(self.source_snapshots[k] for k in sorted(self.source_snapshots))
         payload = {
@@ -1181,22 +1392,16 @@ class CanonicalRegistry:
         if resolved_root is None:
             return {"nodes": [], "edges": [], "root": None, "truncated": False}
 
-        adjacency: Dict[str, List[str]] = {}
-        for edge in self.edges:
-            adjacency.setdefault(edge.source, []).append(edge.target)
-            adjacency.setdefault(edge.target, []).append(edge.source)
-        for values in adjacency.values():
-            values.sort()
-
         visited = {resolved_root}
-        frontier = [resolved_root]
+        frontier = deque([resolved_root])
         levels = {resolved_root: 0}
-        while frontier:
-            current = frontier.pop(0)
+        visit_budget = max(cap + 1, 1)
+        while frontier and len(visited) < visit_budget:
+            current = frontier.popleft()
             current_depth = levels[current]
             if current_depth >= max_depth:
                 continue
-            for neighbor in adjacency.get(current, []):
+            for neighbor, _edge_index in self._adjacency.get(current, ()):
                 if neighbor in visited or neighbor not in self.nodes:
                     continue
                 # A pack filter constrains pack-local nodes, but canonical nodes
@@ -1206,6 +1411,8 @@ class CanonicalRegistry:
                 visited.add(neighbor)
                 levels[neighbor] = current_depth + 1
                 frontier.append(neighbor)
+                if len(visited) >= visit_budget:
+                    break
 
         ordered_ids = sorted(visited, key=lambda nid: (levels.get(nid, 0), nid))
         truncated = False
@@ -1214,13 +1421,13 @@ class CanonicalRegistry:
             ordered_ids = ordered_ids[:cap]
         keep = set(ordered_ids)
         rows = [self.nodes[nid].to_json() for nid in ordered_ids]
-        edge_rows = [
-            e.to_json() for e in self.edges
-            if e.source in keep and e.target in keep
-        ]
-        # A node limit can remove edges even when BFS did not exhaust depth.
-        if len(edge_rows) < sum(1 for e in self.edges if e.source in visited and e.target in visited):
-            truncated = True
+        edge_indexes = {
+            edge_index
+            for node_id in keep
+            for neighbor, edge_index in self._adjacency.get(node_id, ())
+            if neighbor in keep
+        }
+        edge_rows = [self.edges[index].to_json() for index in sorted(edge_indexes)]
         return {"nodes": rows, "edges": edge_rows, "root": resolved_root, "truncated": truncated}
 
     def snapshots(self) -> Dict[str, Any]:
