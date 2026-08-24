@@ -1,0 +1,145 @@
+catalog_version: "1.0.0"
+as_of: "2026-08-24"
+notes: >
+  Deterministic, manually reviewed extractions from primary public sources. These
+  observations exercise the same snapshot -> observation -> promotion boundary as
+  live adapters. A subject binding makes the record discoverable; it does not turn
+  mine production, a policy target, a project, an order, or product scope into
+  qualified effective supply.
+
+sources:
+  - id: usgs_mcs_2026_rare_earths
+    name: "USGS Mineral Commodity Summaries 2026 — Rare Earths"
+    publisher: U.S. Geological Survey, National Minerals Information Center
+    url: "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-rare-earths.pdf"
+    source_type: government_mineral_statistics
+    license: "U.S. Government work / public domain; source attribution retained"
+    access_date: "2026-08-24"
+    notes: >
+      Mine-production and reserve statistics. These are not separated-oxide,
+      alloy, magnet, qualification, or available-capacity observations.
+  - id: pib_nuclear_100gwe_2047
+    name: "Government of India policy context — 100 GWe nuclear capacity by 2047"
+    publisher: Government of India, Press Information Bureau
+    url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2198951"
+    source_type: government_policy_release
+    license: "Government of India public information; reference-only extraction"
+    access_date: "2026-08-24"
+    notes: Policy objective, not an operating fleet or industrial delivery rate.
+  - id: mhi_strategic_plan_machine_tools
+    name: "Department of Heavy Industry Strategic Plan — machine-tool components"
+    publisher: Government of India, Department of Heavy Industry
+    url: "https://www.heavyindustries.gov.in/sites/default/files/2023-07/Strategic_Plan_dhi.pdf"
+    source_type: government_strategy
+    license: "Government of India public information; reference-only extraction"
+    access_date: "2026-08-24"
+    notes: Strategic priority does not prove present qualified capability or capacity.
+  - id: bhel_npcil_fleet_orders
+    name: "BHEL NPCIL fleet-mode nuclear equipment order announcement"
+    publisher: Bharat Heavy Electricals Limited
+    url: "https://tenders.bhel.com/bhel-bags-order-nuclear-steam-generators-npcil-against-stiff-competition"
+    source_type: government_owned_company_disclosure
+    license: "BHEL public disclosure; reference-only extraction"
+    access_date: "2026-08-24"
+    notes: Order quantity is not recurring annual effective capacity or completed delivery.
+
+observations:
+  - id: obs.usgs.rare_earths.india.mine_production.2025
+    claim_id: usgs.rare_earths.india.mine_production.2025
+    source_id: usgs_mcs_2026_rare_earths
+    subject: "cap:rare-earth-magnet"
+    predicate: upstream_mine_production
+    epistemic_class: REPORTED
+    value_text: "USGS reports 2025 Indian rare-earth mine production of 2,900 metric tons REO equivalent."
+    value_quantity: [2900, t_product]
+    publication_date: "2026-02-06"
+    effective_date: "2025"
+    geographic_scope: IND
+    technical_scope: rare-earth mine production, REO equivalent
+    caveat: >
+      Mine output is not evidence of separated NdPr oxide, metal/alloy, sintered
+      magnet, product-grade compatibility, or qualified available supply.
+    confidence: {authority: 0.95, directness: 0.95, geographic_specificity: 1.0, technical_specificity: 0.75}
+  - id: obs.usgs.rare_earths.china.mine_production.2025
+    claim_id: usgs.rare_earths.china.mine_production.2025
+    source_id: usgs_mcs_2026_rare_earths
+    subject: "cap:rare-earth-magnet"
+    predicate: upstream_mine_production
+    epistemic_class: REPORTED
+    value_text: "USGS reports 2025 Chinese rare-earth mine production of 270,000 metric tons REO equivalent; the table notes this is a production quota and excludes undocumented production."
+    value_quantity: [270000, t_product]
+    publication_date: "2026-02-06"
+    effective_date: "2025"
+    geographic_scope: CHN
+    technical_scope: rare-earth mine production quota, REO equivalent
+    caveat: >
+      Mine quota is not separated-oxide, metal/alloy, magnet capacity, export
+      availability, or qualified component supply.
+    confidence: {authority: 0.95, directness: 0.95, geographic_specificity: 1.0, technical_specificity: 0.75}
+  - id: obs.usgs.rare_earths.world.mine_production.2025
+    claim_id: usgs.rare_earths.world.mine_production.2025
+    source_id: usgs_mcs_2026_rare_earths
+    subject: "cap:rare-earth-magnet"
+    predicate: upstream_mine_production
+    epistemic_class: REPORTED
+    value_text: "USGS reports rounded 2025 world rare-earth mine production of 390,000 metric tons REO equivalent."
+    value_quantity: [390000, t_product]
+    publication_date: "2026-02-06"
+    effective_date: "2025"
+    geographic_scope: GLOBAL
+    technical_scope: rare-earth mine production, REO equivalent
+    caveat: World mine production cannot be used as a downstream separated-material or magnet capacity ceiling.
+    confidence: {authority: 0.95, directness: 0.95, geographic_specificity: 0.8, technical_specificity: 0.75}
+  - id: obs.usgs.rare_earths.china.reserves.2025
+    claim_id: usgs.rare_earths.china.reserves.2025
+    source_id: usgs_mcs_2026_rare_earths
+    subject: "cap:rare-earth-magnet"
+    predicate: geological_reserves
+    epistemic_class: REPORTED
+    value_text: "USGS lists Chinese rare-earth reserves of 44 million metric tons REO equivalent in the 2026 summary."
+    value_quantity: [44000000, t_product]
+    publication_date: "2026-02-06"
+    effective_date: "2025"
+    geographic_scope: CHN
+    technical_scope: geological reserves, REO equivalent
+    caveat: Mineral reserve is not usable industrial material, annual output, refining capacity, or magnet supply.
+    confidence: {authority: 0.95, directness: 0.95, geographic_specificity: 1.0, technical_specificity: 0.8}
+  - id: obs.pib.india.nuclear_policy_target.2047
+    claim_id: pib.india.nuclear_policy_target.2047
+    source_id: pib_nuclear_100gwe_2047
+    subject: "pack:nuclear_buildout_india:reactor_island_1gw_kit"
+    predicate: policy_target_context
+    epistemic_class: REPORTED
+    value_text: "The Government of India policy context states a target of 100 GWe nuclear capacity by 2047."
+    value_quantity: [100, GW]
+    publication_date: "2025-12-03"
+    effective_date: "2047"
+    geographic_scope: IND
+    technical_scope: national nuclear installed-capacity policy objective
+    caveat: A policy target is not an approved site pipeline, construction schedule, financing plan, or achievable industrial rate.
+    confidence: {authority: 0.95, directness: 0.95, geographic_specificity: 1.0, technical_specificity: 0.85}
+  - id: obs.mhi.cnc.strategic_components
+    claim_id: mhi.cnc.strategic_components
+    source_id: mhi_strategic_plan_machine_tools
+    subject: "cap:cnc-controls"
+    predicate: strategic_dependency_context
+    epistemic_class: REPORTED
+    value_text: "The Department of Heavy Industry strategic plan identifies linear guideways, ball screws, precision bearings, CNC controls, servomotors, and controllers as critical machine-tool component areas."
+    publication_date: "2015-01-01"
+    geographic_scope: IND
+    technical_scope: national machine-tool capability strategy
+    caveat: Strategic prioritization is not evidence of current domestic product-grade capability, yield, qualification, or capacity.
+    confidence: {authority: 0.9, directness: 0.85, geographic_specificity: 1.0, technical_specificity: 0.75}
+  - id: obs.bhel.npcil.steam_generator_order
+    claim_id: bhel.npcil.steam_generator_order
+    source_id: bhel_npcil_fleet_orders
+    subject: "pack:nuclear_buildout_india:steam_generator"
+    predicate: order_quantity
+    epistemic_class: REPORTED
+    value_text: "BHEL reports an NPCIL fleet-mode order covering 12 nuclear steam generators."
+    value_quantity: [12, pcs]
+    publication_date: "2021-01-01"
+    geographic_scope: IND
+    technical_scope: NPCIL fleet-mode steam-generator procurement order
+    caveat: An order is not completed delivery, annual recurring throughput, current allocation, yield, or qualified effective capacity.
+    confidence: {authority: 0.8, directness: 0.85, geographic_specificity: 1.0, technical_specificity: 0.8}

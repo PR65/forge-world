@@ -151,6 +151,8 @@ class ForgeEngine:
 
     def run_scenario(self, obj: ObjectiveSpecInput, shock_ids: Optional[List[str]] = None,
                      include_deep: bool = True) -> Dict[str, Any]:
+        if obj.variant_id not in self.pk.variants or not self.w.has(obj.variant_id):
+            raise KeyError(f"unknown product variant '{obj.variant_id}'")
         pg = ProofGraph()
         years = [y for y in DEFAULT_YEARS if y <= obj.deadline_year]
         if obj.deadline_year not in years:
@@ -396,6 +398,8 @@ class ForgeEngine:
 
     def _reverse_eval(self, volume: int, obj: ObjectiveSpecInput, shock_ids: Optional[List[str]],
                       min_domestic_share: float = 0.0):
+        if obj.variant_id not in self.pk.variants or not self.w.has(obj.variant_id):
+            raise KeyError(f"unknown product variant '{obj.variant_id}'")
         pg2 = ProofGraph()
         years = [2026, 2028, 2030]
         opts = ScenarioOptions(

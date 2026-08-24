@@ -391,16 +391,33 @@ def build_pack(raw: dict, path: str = "") -> KnowledgePack:
                            org_type=str(od.get("org_type", "company")),
                            countries=_tup(od.get("countries"))))
 
+    geography_rows = list(raw.get("geographies", []) or []) + list(raw.get("locations", []) or [])
+    for gd in geography_rows:
+        w.add(GeoNode(
+            id=str(gd["id"]), name=str(gd.get("name", gd["id"])), kind="geo_node",
+            notes=str(gd.get("notes", "")), evidence_ids=_tup(gd.get("evidence_ids")),
+            level=str(gd.get("level", "country")), iso=str(gd.get("iso", "")),
+        ))
+
     for fd in raw.get("facilities", []) or []:
-        w.add(Facility(id=str(fd["id"]), name=str(fd.get("name", fd["id"])), kind="facility",
-                       notes=str(fd.get("notes", "")), evidence_ids=_tup(fd.get("evidence_ids")),
-                       geo_id=str(fd.get("geo_id", "UNKNOWN")),
-                       country=str(fd.get("country", "UNKNOWN")),
-                       lat=(float(fd["lat"]) if fd.get("lat") is not None else None),
-                       lon=(float(fd["lon"]) if fd.get("lon") is not None else None),
-                       owner_org=str(fd.get("owner_org", "")),
-                       operator_org=str(fd.get("operator_org", "")),
-                       status=str(fd.get("status", "operating"))))
+        facility = Facility(
+            id=str(fd["id"]), name=str(fd.get("name", fd["id"])), kind="facility",
+            notes=str(fd.get("notes", "")), evidence_ids=_tup(fd.get("evidence_ids")),
+            geo_id=str(fd.get("geo_id", "UNKNOWN")),
+            country=str(fd.get("country", "UNKNOWN")),
+            lat=(float(fd["lat"]) if fd.get("lat") is not None else None),
+            lon=(float(fd["lon"]) if fd.get("lon") is not None else None),
+            owner_org=str(fd.get("owner_org", "")),
+            operator_org=str(fd.get("operator_org", "")),
+            status=str(fd.get("status", "operating")),
+        )
+        w.add(facility)
+        if facility.geo_id and w.has(facility.geo_id):
+            w.link(facility.id, "located_at", facility.geo_id)
+        if facility.owner_org and w.has(facility.owner_org):
+            w.link(facility.id, "owned_by", facility.owner_org)
+        if facility.operator_org and w.has(facility.operator_org):
+            w.link(facility.id, "operated_by", facility.operator_org)
 
     for cd in raw.get("capacity_segments", []) or []:
         seg = CapacitySegment(
@@ -538,6 +555,70 @@ def build_pack(raw: dict, path: str = "") -> KnowledgePack:
         if "from_code" not in cwd or "to_entity" not in cwd:
             raise PackValidationError(f"crosswalk missing fields: {cwd}")
         pk.crosswalks.append(dict(cwd))
+
+    # Supplier links are candidate relationships with explicit status metadata,
+    # never capacity or qualification assertions. They make the path
+    # item -> organisation -> facility -> evidence inspectable in EXECUTE.
+    for link in raw.get("supplier_links", []) or []:
+        item_id = str(link.get("item_id", ""))
+        organization_id = str(link.get("organization_id", ""))
+        facility_id = str(link.get("facility_id", ""))
+        if not item_id or not w.has(item_id):
+            raise PackValidationError(
+                f"supplier link '{link.get('id')}' references unknown item '{item_id}'"
+            )
+        if not organization_id or not w.has(organization_id):
+            raise PackValidationError(
+                f"supplier link '{link.get('id')}' references unknown organization '{organization_id}'"
+            )
+        for evidence_id in _tup(link.get("evidence_ids")):
+            pk.evidence_or_fail(evidence_id)
+        metadata = {
+            "link_id": str(link.get("id", "")),
+            "supplier_relation": str(link.get("relation", "supplier_lead")),
+            "status": str(link.get("status", "RESEARCH_REQUIRED")),
+            "facility_id": facility_id,
+            "capability_claim_id": str(link.get("capability_claim_id", "")),
+            "evidence_ids": list(_tup(link.get("evidence_ids"))),
+            "note": str(link.get("note", "")),
+            "qualified_supply_asserted": False,
+        }
+        w.link(item_id, "supplied_by", organization_id, **metadata)
+        if facility_id:
+            if not w.has(facility_id):
+                raise PackValidationError(
+                    f"supplier link '{link.get('id')}' references unknown facility '{facility_id}'"
+                )
+            w.link(organization_id, "located_at", facility_id, **metadata)
+
+    # Optional generic typed relationships represent material, geography,
+    # infrastructure, and machine recursion without vertical-specific loaders.
+    relationship_rows: List[dict] = []
+    for key in ("relationships", "dependency_links", "material_chain_links"):
+        rows = raw.get(key, []) or []
+        if isinstance(rows, list):
+            relationship_rows.extend(row for row in rows if isinstance(row, dict))
+    for link in relationship_rows:
+        source_id = str(link.get("source", link.get("src", link.get("from", ""))))
+        target_id = str(link.get("target", link.get("dst", link.get("to", ""))))
+        relation = str(link.get("relation", ""))
+        if not source_id or not target_id or not relation:
+            raise PackValidationError(f"typed relationship missing fields: {link}")
+        if not w.has(source_id) or not w.has(target_id):
+            raise PackValidationError(
+                f"typed relationship endpoint missing: {source_id} -[{relation}]-> {target_id}"
+            )
+        for evidence_id in _tup(link.get("evidence_ids")):
+            pk.evidence_or_fail(evidence_id)
+        w.link(
+            source_id,
+            relation,
+            target_id,
+            link_id=str(link.get("id", "")),
+            epistemic_class=str(link.get("epistemic_class", "ASSUMPTION")),
+            evidence_ids=list(_tup(link.get("evidence_ids"))),
+            note=str(link.get("note", "")),
+        )
 
     _validate_pack_integrity(pk)
     return pk

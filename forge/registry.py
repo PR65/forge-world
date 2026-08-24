@@ -28,7 +28,7 @@ from .epistemics import EpistemicClass
 from .pack import KnowledgePack, load_pack
 
 
-REGISTRY_VERSION = "0.1.0"
+REGISTRY_VERSION = "0.2.0"
 _VALID_EPISTEMIC = {e.value for e in EpistemicClass}
 
 

@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PACKS_DIR = ROOT / "packs"
 WEB_DIST = ROOT / "web" / "dist"
 
-app = FastAPI(title="FORGE WORLD API", version="0.1.0")
+app = FastAPI(title="FORGE WORLD API", version="0.2.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -73,10 +73,39 @@ class ObjectiveIn(BaseModel):
     deadline_year: int = 2030
     min_dva: float = 0.70
     budget_usd: Optional[float] = None
-    funded_projects: List[str] = []
-    shocks: List[str] = []
-    analyst_capacity_assumptions: Dict[str, List[float]] = {}
+    funded_projects: List[str] = Field(default_factory=list)
+    shocks: List[str] = Field(default_factory=list)
+    analyst_capacity_assumptions: Dict[str, List[float]] = Field(default_factory=dict)
     include_deep: bool = True
+
+
+class DesignIn(ObjectiveIn):
+    substitution_id: str
+
+
+class ResearchResolveIn(BaseModel):
+    objective: ObjectiveIn
+    task: Dict[str, Any]
+    capture: Dict[str, Any]
+    reviewer: str = Field(min_length=1)
+    approve_for_scenario: bool = False
+
+
+def _objective_spec(obj: ObjectiveIn) -> ObjectiveSpecInput:
+    assumptions = {
+        key: (float(value[0]), float(value[1]))
+        for key, value in obj.analyst_capacity_assumptions.items()
+    }
+    return ObjectiveSpecInput(
+        variant_id=obj.variant_id,
+        annual_units=obj.annual_units,
+        geography=obj.geography,
+        deadline_year=obj.deadline_year,
+        min_dva=obj.min_dva,
+        budget_usd=obj.budget_usd,
+        funded_projects=obj.funded_projects,
+        analyst_capacity_assumptions=assumptions,
+    )
 
 
 @app.get("/api/health")
@@ -161,6 +190,42 @@ def pack_detail(pack_id: str):
     s["sources"] = [
         {**source.to_json(), "registry_source_id": f"pack:{pack_id}:source:{source.id}"}
         for source in pk.sources.values()
+    ]
+    s["scenario_presets"] = list(pk.raw.get("scenario_presets", ()) or ())
+    s["research_tasks"] = list(
+        pk.raw.get("research_tasks", ())
+        or (pk.raw.get("execution_model", {}) or {}).get("research_tasks", ())
+        or ()
+    )
+    s["execution_model"] = dict(pk.raw.get("execution_model", {}) or {})
+    s["program_model"] = dict(pk.raw.get("program_model", {}) or {})
+    s["supplier_links"] = list(pk.raw.get("supplier_links", ()) or ())
+    s["facilities"] = [
+        {
+            "id": entity.id,
+            "name": entity.name,
+            "country": entity.country,
+            "geo_id": entity.geo_id,
+            "lat": entity.lat,
+            "lon": entity.lon,
+            "owner_org": entity.owner_org,
+            "operator_org": entity.operator_org,
+            "status": entity.status,
+            "notes": entity.notes,
+            "evidence_ids": list(entity.evidence_ids),
+        }
+        for entity in pk.world.of_kind("facility")
+    ]
+    s["organizations"] = [
+        {
+            "id": entity.id,
+            "name": entity.name,
+            "org_type": entity.org_type,
+            "countries": list(entity.countries),
+            "notes": entity.notes,
+            "evidence_ids": list(entity.evidence_ids),
+        }
+        for entity in pk.world.of_kind("organization")
     ]
     return s
 
@@ -264,19 +329,7 @@ def world_snapshots():
 @app.post("/api/solve")
 def solve(obj: ObjectiveIn):
     pk = get_pack(obj.pack_id)
-    assumptions = {
-        k: (float(v[0]), float(v[1])) for k, v in obj.analyst_capacity_assumptions.items()
-    }
-    spec = ObjectiveSpecInput(
-        variant_id=obj.variant_id,
-        annual_units=obj.annual_units,
-        geography=obj.geography,
-        deadline_year=obj.deadline_year,
-        min_dva=obj.min_dva,
-        budget_usd=obj.budget_usd,
-        funded_projects=obj.funded_projects,
-        analyst_capacity_assumptions=assumptions,
-    )
+    spec = _objective_spec(obj)
     eng = ForgeEngine(pk)
     try:
         resp = eng.run_scenario(spec, shock_ids=obj.shocks or None,
@@ -284,6 +337,122 @@ def solve(obj: ObjectiveIn):
     except KeyError as e:
         raise HTTPException(400, f"unknown entity in objective: {e}")
     return resp
+
+
+@app.post("/api/workbench/case")
+def operational_case(obj: ObjectiveIn):
+    """One progressively disclosed operational projection over a single run."""
+    from forge.operations import (
+        build_case_brief,
+        build_execution_plan,
+        build_research_queue,
+        capability_leverage,
+        program_timeline,
+        reverse_buildability_report,
+        shock_impact,
+    )
+
+    pk = get_pack(obj.pack_id)
+    spec = _objective_spec(obj)
+    try:
+        solve_response = ForgeEngine(pk).run_scenario(
+            spec,
+            shock_ids=obj.shocks or None,
+            include_deep=obj.include_deep,
+        )
+        research_queue = build_research_queue(pk, spec, solve_response)
+        execution = build_execution_plan(pk, spec, solve_response, research_queue)
+        brief = build_case_brief(pk, spec, solve_response, research_queue)
+        reverse = reverse_buildability_report(pk, spec, shock_ids=obj.shocks or None)
+        shock = shock_impact(pk, spec, obj.shocks) if obj.shocks else None
+    except (KeyError, ValueError) as exc:
+        raise HTTPException(400, str(exc))
+    return {
+        "brief": brief,
+        "analysis": solve_response,
+        "research": {"tasks": research_queue, "count": len(research_queue)},
+        "execution": execution,
+        "reverse_buildability": reverse,
+        "shock_impact": shock,
+        "program": program_timeline(pk),
+        "discover": capability_leverage(get_registry(), limit=20),
+        "registry_snapshot_id": get_registry().snapshot_id,
+    }
+
+
+@app.post("/api/design/compare")
+def design_compare(body: DesignIn):
+    from forge.operations import compare_design
+
+    try:
+        return compare_design(
+            get_pack(body.pack_id),
+            _objective_spec(body),
+            body.substitution_id,
+            shock_ids=body.shocks or None,
+        )
+    except KeyError as exc:
+        raise HTTPException(404, str(exc))
+    except ValueError as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.post("/api/research/resolve")
+def research_resolve(body: ResearchResolveIn):
+    from forge.research import process_research_capture
+
+    pk = get_pack(body.objective.pack_id)
+    try:
+        return process_research_capture(
+            pk,
+            _objective_spec(body.objective),
+            body.task,
+            body.capture,
+            reviewer=body.reviewer,
+            approve_for_scenario=body.approve_for_scenario,
+        )
+    except (KeyError, ValueError) as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.get("/api/discover/capabilities")
+def discover_capabilities(limit: int = 50):
+    from forge.operations import capability_leverage
+
+    return capability_leverage(get_registry(), limit=limit)
+
+
+@app.post("/api/reverse-buildability")
+def reverse_buildability_api(obj: ObjectiveIn):
+    from forge.operations import reverse_buildability_report
+
+    try:
+        return reverse_buildability_report(
+            get_pack(obj.pack_id),
+            _objective_spec(obj),
+            shock_ids=obj.shocks or None,
+        )
+    except (KeyError, ValueError) as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.post("/api/shocks/impact")
+def shock_impact_api(obj: ObjectiveIn):
+    from forge.operations import shock_impact
+
+    if not obj.shocks:
+        raise HTTPException(400, "at least one shock is required")
+    try:
+        return shock_impact(get_pack(obj.pack_id), _objective_spec(obj), obj.shocks)
+    except (KeyError, ValueError) as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.get("/api/program/{pack_id}")
+def program_api(pack_id: str):
+    from forge.operations import program_timeline
+
+    return program_timeline(get_pack(pack_id))
 
 
 @app.post("/api/parse")
@@ -305,6 +474,125 @@ def adapter_demo(country: str = "IND"):
         return run_adapter_demo(country.upper())
     except AdapterError as e:
         raise HTTPException(502, str(e))
+
+
+def _adapter_result_json(result) -> Dict[str, Any]:
+    return {
+        "source": result.source.to_json(),
+        "source_snapshot": result.source_snapshot.to_json(),
+        "observations": [row.to_json() for row in result.observations],
+        "records": [row.to_json() for row in result.records],
+        "promotions": [row.to_json() for row in result.promotions],
+        "payload_hash": result.raw_payload_hash,
+        "fetched_at": result.fetched_at,
+        "notes": result.notes,
+    }
+
+
+@app.get("/api/adapter/comtrade")
+def comtrade_adapter(
+    reporter_code: int = 699,
+    hs_code: str = "8458",
+    period: int = 2024,
+    flow_code: str = "M",
+    partner_code: int = 0,
+):
+    """Live official trade flow; explicitly not a capability/capacity claim."""
+    from forge.adapters import AdapterError, UNComtradeAdapter
+
+    try:
+        return _adapter_result_json(
+            UNComtradeAdapter().fetch_trade(
+                reporter_code=reporter_code,
+                hs_code=hs_code,
+                period=period,
+                flow_code=flow_code,
+                partner_code=partner_code,
+            )
+        )
+    except AdapterError as exc:
+        raise HTTPException(502, str(exc))
+
+
+@app.get("/api/adapter/official")
+def official_record_adapter():
+    """Deterministic primary-document extraction pathway with entity resolution."""
+    from forge.adapters import AdapterError, OfficialRecordCatalogAdapter
+
+    try:
+        results = OfficialRecordCatalogAdapter(
+            ROOT / "data" / "ingestion" / "official_observations.yaml"
+        ).load()
+    except AdapterError as exc:
+        raise HTTPException(500, str(exc))
+    registry = get_registry()
+    rows = []
+    for result in results:
+        payload = _adapter_result_json(result)
+        payload["entity_bindings"] = [
+            {
+                "observation_id": observation.observation_id,
+                "subject": observation.subject,
+                "resolved_entity": registry.get_entity(observation.subject),
+                "automatic_model_mutation": False,
+            }
+            for observation in result.observations
+        ]
+        rows.append(payload)
+    return {
+        "pathway": "CHECKED_IN_OFFICIAL_RECORD_CATALOG",
+        "registry_snapshot_id": registry.snapshot_id,
+        "results": rows,
+    }
+
+
+@app.get("/api/ingestion/status")
+def ingestion_status():
+    """Show which operational pathways reach resolvable world entities."""
+    from forge.adapters import OfficialRecordCatalogAdapter
+
+    results = OfficialRecordCatalogAdapter(
+        ROOT / "data" / "ingestion" / "official_observations.yaml"
+    ).load()
+    registry = get_registry()
+    observations = [observation for result in results for observation in result.observations]
+    resolved = [observation for observation in observations if registry.get_entity(observation.subject)]
+    return {
+        "pathways": [
+            {
+                "id": "world_bank_api",
+                "mode": "LIVE_JSON_API",
+                "operational": True,
+                "model_role": "national statistical context",
+            },
+            {
+                "id": "un_comtrade_api",
+                "mode": "LIVE_JSON_API",
+                "operational": True,
+                "model_role": "trade context only; never capability or capacity",
+            },
+            {
+                "id": "official_record_catalog",
+                "mode": "DETERMINISTIC_CHECKED_IN_EXTRACTION",
+                "operational": True,
+                "model_role": "primary document observation and explicit entity binding",
+            },
+            {
+                "id": "research_resolution",
+                "mode": "HUMAN_REVIEWED_CAPTURE_TO_SCENARIO_OVERLAY",
+                "operational": True,
+                "model_role": "UNKNOWN resolution without silent persistent mutation",
+            },
+        ],
+        "official_catalog_observations": len(observations),
+        "resolved_world_subjects": len(resolved),
+        "unresolved_world_subjects": sorted(
+            observation.subject
+            for observation in observations
+            if registry.get_entity(observation.subject) is None
+        ),
+        "registry_snapshot_id": registry.snapshot_id,
+    }
 
 
 @app.get("/api/optionvalue")

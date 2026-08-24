@@ -1,18 +1,20 @@
 pack_id: nuclear_buildout_india
-title: "Alpha benchmark: India annualized 1-GW-equivalent nuclear reactor-island kit"
-version: 1.0.0
+title: "Alpha benchmark: India multi-year nuclear buildout and PHWR industrial programme"
+version: 1.1.0
 geography_focus: INDIA
 notes: >
-  Honest manufacturing/build-rate slice toward the long-run 200 GW scenario. The
-  current solver models annual production flows of a transparent one-kit/year
-  reference architecture; it does not model cumulative installed generation,
-  fleet retirements, construction-site concurrency, grid dispatch, financing,
-  fuel-cycle inventories, or reactor operations. One reactor-island kit is a
-  scenario unit representing approximately 1 GW of nameplate capacity, not a
-  reported Indian reactor design or a government 200 GW commitment. Public
-  programme/project observations are retained as context, while no project is
-  promoted to operating capacity and no qualified capacity segments are asserted
-  where evidence is absent.
+  Honest multi-year industrial/build-rate representation toward the long-run 200 GW
+  FORGE scenario. The recipe solver still models annual production flows of a
+  transparent one-kit/year reference architecture; the program_model section adds
+  explicit 2026-2047 tranches, site pipeline, system gates, and stock-versus-flow
+  accounting for a generic program layer. It does not claim reactor operations,
+  dispatch, inventory/WIP dynamics, financing closure, or a complete grid model.
+  One reactor-island kit is a scenario unit representing approximately 1 GW of
+  nameplate capacity, not a reported Indian reactor design or a government 200 GW
+  commitment. The Government of India's 100 GWe by 2047 policy context remains
+  separate from the 200 GW FORGE scenario. Public programme/project observations
+  are retained as context, while no project is promoted to operating capacity and
+  no qualified capacity segments are asserted where evidence is absent.
 
 sources:
   - id: src_pib_nuclear_100gwe
@@ -87,6 +89,102 @@ sources:
     license: supplied-for-project use only
     access_date: "2026-08-24"
     notes: Qualification ranges are planning ranges, not universal nuclear project laws.
+  - id: src_pib_capacity_878
+    name: "PIB — present installed nuclear capacity and 2031-32 roadmap"
+    publisher: Press Information Bureau, Government of India
+    url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291078&lang=1&reg=1"
+    source_type: government_release
+    license: public domain (Government of India)
+    access_date: "2026-08-24"
+    notes: Official 29 July 2026 parliamentary answer; reported 8.78 GW installed capacity and project-status context, not manufacturing throughput.
+  - id: src_npcil_project_status
+    name: "NPCIL — project construction status"
+    publisher: Nuclear Power Corporation of India Limited
+    url: "https://npcil.nic.in/content/297_1_ProjectConstructionStatus.aspx"
+    source_type: company_disclosure
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official project-state listing; expected dates and project status do not establish qualified annual equipment supply.
+  - id: src_dae_constituents
+    name: "DAE — activities and constituent establishments"
+    publisher: Department of Atomic Energy, Government of India
+    url: "https://dae.gov.in/activities/"
+    source_type: government_release
+    license: public domain (Government of India)
+    access_date: "2026-08-24"
+    notes: Official organization and mandate context for BARC, NFC, HWB, NPCIL, BHAVINI, UCIL, and ECIL; no facility throughput inferred.
+  - id: src_nfc_overview
+    name: "NFC — overview and production facilities"
+    publisher: Nuclear Fuel Complex, Department of Atomic Energy
+    url: "https://www.nfc.gov.in/overview.html"
+    source_type: government_unit_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official scope for zirconium, fuel, tube, and core-component facilities; no annual capacity inferred.
+  - id: src_nfc_products
+    name: "NFC — products including PHWR fuel and zirconium components"
+    publisher: Nuclear Fuel Complex, Department of Atomic Energy
+    url: "https://www.nfc.gov.in/products.html"
+    source_type: government_unit_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official product-class evidence; product listing is not a qualified annual capacity record.
+  - id: src_nfc_zirconium
+    name: "NFC — Zirconium Complex, Pazhayakayal"
+    publisher: Nuclear Fuel Complex, Department of Atomic Energy
+    url: "https://www.nfc.gov.in/zirconium-complex.html"
+    source_type: government_unit_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official facility existence and commissioning context; rated-capacity operation is not converted to a numeric segment.
+  - id: src_hwb_about
+    name: "HWB — mandate, heavy-water plants, and specialty materials"
+    publisher: Heavy Water Board, Department of Atomic Energy
+    url: "https://www.hwb.gov.in/about-hwb-1"
+    source_type: government_unit_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official heavy-water production mandate and seven-unit network; no usable annual D2O capacity inferred.
+  - id: src_hwb_plants
+    name: "HWB — heavy-water plant network"
+    publisher: Heavy Water Board, Department of Atomic Energy
+    url: "https://www.hwb.gov.in/particulars-any-arrangement-exists-consultation-members-public-relation-0"
+    source_type: government_unit_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official list of Baroda, Hazira, Kota, Manuguru, Talcher, Thal, and Tuticorin plants; plant status/capacity remains component-specific.
+  - id: src_ucil_mines
+    name: "UCIL — operating uranium mines and process plants"
+    publisher: Uranium Corporation of India Limited
+    url: "https://www.ucil.gov.in/public/uploads/latest_news/latest_news_2026-04-06-17-04-08.pdf"
+    source_type: company_disclosure
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official mine/process-plant scope; ore reserves, product yields, and available fuel-cycle throughput are not inferred.
+  - id: src_ucil_jaduguda
+    name: "UCIL — Jaduguda uranium mill process"
+    publisher: Uranium Corporation of India Limited
+    url: "https://www.ucil.gov.in/public/about_jaduguda_mill.php"
+    source_type: company_disclosure
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official front-end process description from ore to yellowcake; no numeric mine or mill capacity inferred.
+  - id: src_barc_reprocessing
+    name: "BARC — reprocessing and nuclear waste management"
+    publisher: Bhabha Atomic Research Centre, Department of Atomic Energy
+    url: "https://www.barc.gov.in/randd/rwm.html"
+    source_type: government_research_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official PHWR spent-fuel reprocessing and waste-management scope; proposed design rates are not used as current capacity.
+  - id: src_barc_nuclear_recycle
+    name: "BARC — Nuclear Recycle Board mandate"
+    publisher: Bhabha Atomic Research Centre, Department of Atomic Energy
+    url: "https://barc.gov.in/group/51_0.html"
+    source_type: government_research_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official spent-fuel storage, reprocessing, waste, and fuel-fabrication mandate context; no annual capacity inferred.
 
 evidence:
   - claim_id: ev_nuclear_100gwe_policy
@@ -232,6 +330,109 @@ evidence:
     retrieval_date: "2026-08-24"
     confidence: {completeness: 0.9}
     quote_or_caveat: Annual kit flow output must not be displayed as cumulative generation capability.
+  - claim_id: ev_nuclear_current_capacity_878
+    subject: india_operating_nuclear_fleet
+    predicate: installed_capacity
+    epistemic_class: REPORTED
+    value_quantity: [8.78, GW]
+    value_text: "A 29 July 2026 PIB parliamentary answer reports 8.78 GW of installed nuclear capacity as of the stated reporting date. This is existing installed nameplate context, not available manufacturing supply."
+    source_ids: [src_pib_capacity_878]
+    publication_date: "2026-07-29"
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.95, directness: 0.95, recency: 0.95}
+    quote_or_caveat: Existing nameplate stock is not the same as annual build flow, effective generation, or available industrial capacity.
+  - claim_id: ev_nuclear_project_status_2026
+    subject: india_nuclear_project_pipeline
+    predicate: project_status
+    epistemic_class: REPORTED
+    value_text: "Official project-status material reports active construction/commissioning context for RAPP-8, GHAVP-1&2, and KKNPP-3&6, while other 700 MWe fleet-mode units remain in pre-project activities."
+    source_ids: [src_pib_capacity_878, src_npcil_project_status]
+    publication_date: "2026-07-29"
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.85, recency: 0.9}
+    quote_or_caveat: Project status and expected dates do not prove commissioning, equipment throughput, or grid-connected operation.
+  - claim_id: ev_dae_constituents
+    subject: dae_nuclear_industrial_system
+    predicate: constituent_organizations
+    epistemic_class: REPORTED
+    value_text: "DAE lists BARC, NFC, HWB, NPCIL, BHAVINI, UCIL, and ECIL among its research, industrial, public-sector, and service establishments supporting the nuclear programme."
+    source_ids: [src_dae_constituents]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.95, directness: 0.95}
+    quote_or_caveat: Organization existence and mandate do not establish a component-specific qualified capacity vector.
+  - claim_id: ev_nfc_fuel_zirconium_scope
+    subject: nfc_fuel_and_zirconium_system
+    predicate: product_and_process_scope
+    epistemic_class: REPORTED
+    value_text: "NFC describes uranium-oxide fuel processing/fabrication, PHWR fuel bundles, zirconium sponge/alloys, Zircaloy tubes, steam-generator tubes, and PHWR core components."
+    source_ids: [src_nfc_overview, src_nfc_products]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.9, technical_specificity: 0.9}
+    quote_or_caveat: Product and process scope is evidence of activity, not current qualified annual throughput or spare capacity.
+  - claim_id: ev_nfc_zirconium_facility
+    subject: nfc_zirconium_complex
+    predicate: facility_scope
+    epistemic_class: REPORTED
+    value_text: "NFC's Zirconium Complex at Pazhayakayal is described as a commissioned facility for zirconium oxide and sponge production with materials testing support."
+    source_ids: [src_nfc_zirconium]
+    publication_date: "2009-11-01"
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.9, technical_specificity: 0.85}
+    quote_or_caveat: The official page does not disclose a numeric current qualified output envelope used by this pack.
+  - claim_id: ev_ucil_front_end_scope
+    subject: ucil_uranium_front_end
+    predicate: mining_milling_scope
+    epistemic_class: REPORTED
+    value_text: "UCIL reports uranium mines and process plants in Jharkhand and Andhra Pradesh; its Jaduguda mill describes hydrometallurgical processing from ore to yellowcake for downstream fuel fabrication."
+    source_ids: [src_ucil_mines, src_ucil_jaduguda]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.85, technical_specificity: 0.85}
+    quote_or_caveat: Mine/process-plant existence and route description do not establish usable uranium feed, conversion, or fuel-fabrication throughput.
+  - claim_id: ev_hwb_heavy_water_scope
+    subject: hwb_heavy_water_system
+    predicate: heavy_water_production_scope
+    epistemic_class: REPORTED
+    value_text: "HWB describes its mandate to produce and supply nuclear-grade heavy water and lists seven heavy-water plants across India."
+    source_ids: [src_hwb_about, src_hwb_plants]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.9, technical_specificity: 0.85}
+    quote_or_caveat: Plant network and mandate do not establish available D2O inventory or annual spare capacity for a new fleet.
+  - claim_id: ev_barc_reprocessing_scope
+    subject: phwr_spent_fuel_backend
+    predicate: reprocessing_and_waste_scope
+    epistemic_class: REPORTED
+    value_text: "BARC describes PHWR spent-fuel reprocessing at Tarapur and Kalpakkam, recovery/recycling of nuclear materials, and associated high-level-waste management/vitrification."
+    source_ids: [src_barc_reprocessing, src_barc_nuclear_recycle]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.85, technical_specificity: 0.9}
+    quote_or_caveat: Existing back-end capability does not establish throughput available to support a 200 GW scenario.
+  - claim_id: ev_bhavini_pfbr_context
+    subject: bhavini_fast_reactor_system
+    predicate: organization_and_reactor_context
+    epistemic_class: REPORTED
+    value_text: "DAE identifies BHAVINI among the public-sector nuclear organizations and official programme material retains fast-reactor/PFBR activity as a separate second-stage context."
+    source_ids: [src_dae_constituents, src_barc_nuclear_recycle]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.85, directness: 0.75, technical_specificity: 0.7}
+    quote_or_caveat: This pack does not convert fast-reactor programme context into operating fleet or manufacturing capacity.
+  - claim_id: ev_nuclear_program_model
+    subject: india_200gw_program_model
+    predicate: multi_year_scenario_structure
+    epistemic_class: SCENARIO
+    value_text: "The program_model section is a transparent FORGE scenario representation of a 2026-2047 nuclear buildout: evidence-backed project context is separated from assumed timing, gates, residual capacity, and annual flow ramps."
+    source_ids: [src_pib_capacity_878, src_pib_nuclear_100gwe, src_npcil_fleet]
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.55}
+    quote_or_caveat: Scenario rows are not government commitments, financed projects, or qualified supplier output.
+  - claim_id: ev_nuclear_shock_scenarios
+    subject: india_nuclear_program_shocks
+    predicate: causal_shock_scenarios
+    epistemic_class: ASSUMPTION
+    value_text: "Facility outage, heavy-water/material disruption, and project qualification delay shocks are transparent stress scenarios that edit causal constraints rather than headline risk scores."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.35}
+    quote_or_caveat: Shock magnitudes are scenario inputs and require incident-, supplier-, and inventory-specific evidence before execution.
 
 organizations:
   - id: org_npcil
@@ -252,6 +453,245 @@ organizations:
     org_type: regulator
     evidence_ids: [ev_aerb_qa_gates]
     notes: Qualification/regulatory authority context, not a manufacturing supplier.
+  - id: org_dae
+    name: Department of Atomic Energy
+    countries: [IND]
+    org_type: government_programme_owner
+    evidence_ids: [ev_dae_constituents, ev_nuclear_100gwe_policy]
+    notes: Programme and constituent-organization context; no direct component capacity assigned.
+  - id: org_barc
+    name: Bhabha Atomic Research Centre
+    countries: [IND]
+    org_type: research_centre
+    evidence_ids: [ev_dae_constituents, ev_barc_reprocessing_scope]
+    notes: Research, fuel-cycle, reprocessing, waste-management, and qualification knowledge context; no annual production capacity inferred.
+  - id: org_nfc
+    name: Nuclear Fuel Complex
+    countries: [IND]
+    org_type: industrial_organization
+    evidence_ids: [ev_dae_constituents, ev_nfc_fuel_zirconium_scope]
+    notes: Official fuel, zirconium, tube, and core-component product scope; qualified spare capacity remains UNKNOWN.
+  - id: org_hwb
+    name: Heavy Water Board
+    countries: [IND]
+    org_type: industrial_organization
+    evidence_ids: [ev_dae_constituents, ev_hwb_heavy_water_scope]
+    notes: Heavy-water and specialty-materials mandate; available D2O inventory and annual spare capacity remain UNKNOWN.
+  - id: org_ucil
+    name: Uranium Corporation of India Limited
+    countries: [IND]
+    org_type: mining_and_milling_company
+    evidence_ids: [ev_dae_constituents, ev_ucil_front_end_scope]
+    notes: Uranium mining/milling scope; usable feed, conversion, and fuel-cycle throughput remain UNKNOWN.
+  - id: org_bhavini
+    name: Bharatiya Nabhikiya Vidyut Nigam Limited
+    countries: [IND]
+    org_type: reactor_utility
+    evidence_ids: [ev_bhavini_pfbr_context]
+    notes: Fast-reactor/PFBR programme context; this PHWR-focused pack assigns no operating or manufacturing capacity.
+  - id: org_ecil
+    name: Electronics Corporation of India Limited
+    countries: [IND]
+    org_type: nuclear_electronics_company
+    evidence_ids: [ev_dae_constituents]
+    notes: DAE constituent organization relevant to instrumentation/electronics; nuclear-service qualification and throughput remain UNKNOWN.
+
+facilities:
+  - id: fac_npcil_raps_rawatbhata
+    name: "NPCIL Rajasthan Atomic Power Station / Project site, Rawatbhata"
+    geo_id: IN-RJ-RAWATBHATA
+    country: IND
+    owner_org: org_npcil
+    operator_org: org_npcil
+    status: operating_and_project_site
+    evidence_ids: [ev_nuclear_project_status_2026, ev_npcil_fleet_10x700]
+    notes: Site identity and project context only; no construction or component throughput is inferred.
+  - id: fac_npcil_ghavp_haryana
+    name: "NPCIL Gorakhpur Haryana Anu Vidyut Pariyojana site"
+    geo_id: IN-HR-GORAKHPUR
+    country: IND
+    owner_org: org_npcil
+    operator_org: org_npcil
+    status: construction_and_pre_project
+    evidence_ids: [ev_nuclear_project_status_2026, ev_npcil_fleet_10x700]
+    notes: Official project/site context; no commissioning or annual equipment capacity inferred.
+  - id: fac_npcil_kudankulam
+    name: "NPCIL Kudankulam Nuclear Power Project site"
+    geo_id: IN-TN-KUDANKULAM
+    country: IND
+    owner_org: org_npcil
+    operator_org: org_npcil
+    status: operating_and_construction
+    evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_700mwe_phwr]
+    notes: Existing VVER site and construction pipeline context; this pack does not turn project status into supply.
+  - id: fac_npcil_kaiga
+    name: "NPCIL Kaiga Generating Station / fleet-mode site"
+    geo_id: IN-KA-KAIGA
+    country: IND
+    owner_org: org_npcil
+    operator_org: org_npcil
+    status: operating_and_pre_project
+    evidence_ids: [ev_npcil_fleet_10x700]
+    notes: Official station and approved fleet-mode site context; no new-unit throughput inferred.
+  - id: fac_npcil_chutka
+    name: "NPCIL Chutka Madhya Pradesh Atomic Power Project site"
+    geo_id: IN-MP-CHUTKA
+    country: IND
+    owner_org: org_npcil
+    operator_org: org_npcil
+    status: pre_project
+    evidence_ids: [ev_npcil_fleet_10x700]
+    notes: Official approved fleet-mode site context; site readiness, financing, and construction clocks remain scenario inputs.
+  - id: fac_npcil_mahi_banswara
+    name: "NPCIL Mahi Banswara Rajasthan Atomic Power Project site"
+    geo_id: IN-RJ-MAHI-BANSWARA
+    country: IND
+    owner_org: org_npcil
+    operator_org: org_npcil
+    status: pre_project
+    evidence_ids: [ev_npcil_fleet_10x700]
+    notes: Official approved fleet-mode site context; no construction or equipment throughput inferred.
+  - id: fac_nfc_hyderabad
+    name: "Nuclear Fuel Complex, Hyderabad"
+    geo_id: IN-TG-HYDERABAD
+    country: IND
+    owner_org: org_dae
+    operator_org: org_nfc
+    status: operating
+    evidence_ids: [ev_nfc_fuel_zirconium_scope]
+    notes: Official facility/product scope for fuel, zirconium, tubes, and core components; qualified available capacity remains UNKNOWN.
+  - id: fac_nfc_zirconium_tuticorin
+    name: "NFC Zirconium Complex, Pazhayakayal/Tuticorin"
+    geo_id: IN-TN-PAZHAYAKAYAL
+    country: IND
+    owner_org: org_dae
+    operator_org: org_nfc
+    status: operating
+    evidence_ids: [ev_nfc_zirconium_facility]
+    notes: Official commissioned zirconium-oxide/sponge facility context; no numeric annual capacity assigned.
+  - id: fac_nfc_kota
+    name: "Nuclear Fuel Complex - Kota Project, Rawatbhata"
+    geo_id: IN-RJ-RAWATBHATA-NFC
+    country: IND
+    owner_org: org_dae
+    operator_org: org_nfc
+    status: project_or_operating_state_unknown
+    evidence_ids: [ev_nfc_fuel_zirconium_scope]
+    notes: Official NFC contact/facility context; project maturity and output envelope are not asserted.
+  - id: fac_ucil_jaduguda
+    name: "UCIL Jaduguda mines and mill"
+    geo_id: IN-JH-JADUGUDA
+    country: IND
+    owner_org: org_dae
+    operator_org: org_ucil
+    status: operating
+    evidence_ids: [ev_ucil_front_end_scope]
+    notes: Official uranium mining/milling facility context; ore grade, recovery, and available feed remain UNKNOWN.
+  - id: fac_ucil_tummalapalle
+    name: "UCIL Tummalapalle uranium mine and process plant"
+    geo_id: IN-AP-TUMMALAPALLE
+    country: IND
+    owner_org: org_dae
+    operator_org: org_ucil
+    status: operating
+    evidence_ids: [ev_ucil_front_end_scope]
+    notes: Official mine/process-plant existence context; no usable capacity is inferred.
+  - id: fac_hwb_network
+    name: "Heavy Water Board seven-plant network"
+    geo_id: IN-MULTI
+    country: IND
+    owner_org: org_dae
+    operator_org: org_hwb
+    status: operating_with_site_specific_unknowns
+    evidence_ids: [ev_hwb_heavy_water_scope]
+    notes: Aggregate network identity only; plant-by-plant availability, inventory, and spare capacity remain UNKNOWN.
+  - id: fac_barc_trombay_recycle
+    name: "BARC Trombay Nuclear Recycle / waste-management facilities"
+    geo_id: IN-MH-TROMBAY
+    country: IND
+    owner_org: org_dae
+    operator_org: org_barc
+    status: operating
+    evidence_ids: [ev_barc_reprocessing_scope]
+    notes: Official research/reprocessing/waste-management context; no annual capacity inferred.
+  - id: fac_barc_tarapur_prefre
+    name: "BARC Tarapur PHWR spent-fuel reprocessing facilities"
+    geo_id: IN-MH-TARAPUR
+    country: IND
+    owner_org: org_dae
+    operator_org: org_barc
+    status: operating
+    evidence_ids: [ev_barc_reprocessing_scope]
+    notes: Official PHWR reprocessing context; current available throughput remains UNKNOWN.
+  - id: fac_barc_kalpakkam_karp
+    name: "BARC Kalpakkam PHWR reprocessing and waste facilities"
+    geo_id: IN-TN-KALPAKKAM
+    country: IND
+    owner_org: org_dae
+    operator_org: org_barc
+    status: operating
+    evidence_ids: [ev_barc_reprocessing_scope]
+    notes: Official PHWR back-end context; no annual capacity inferred.
+  - id: fac_bhavini_kalpakkam
+    name: "BHAVINI Kalpakkam fast-reactor programme site"
+    geo_id: IN-TN-KALPAKKAM-BHAVINI
+    country: IND
+    owner_org: org_bhavini
+    operator_org: org_bhavini
+    status: project_or_commissioning_state_unknown
+    evidence_ids: [ev_bhavini_pfbr_context]
+    notes: Fast-reactor context is retained as an alternative architecture dependency; no operating or manufacturing capacity inferred.
+
+materials:
+  - id: mat_natural_uranium_concentrate
+    name: Natural uranium concentrate / yellowcake feed
+    family: nuclear_fuel_feedstock
+    form: concentrate
+    grade_spec: "Uranium concentrate for conversion to natural-UO2 fuel route"
+    evidence_ids: [ev_ucil_front_end_scope]
+    notes: Resource, mine output, conversion feed, and usable supply are not interchangeable.
+  - id: mat_zircon_concentrate
+    name: Zircon mineral concentrate
+    family: zirconium_feedstock
+    form: concentrate
+    grade_spec: "Zircon feed for nuclear-grade zirconium processing"
+    evidence_ids: [ev_nfc_zirconium_facility]
+    notes: Upstream mineral availability and nuclear-grade purification are not quantified here.
+  - id: mat_zirconium_alloying_additives
+    name: Zirconium-alloying additive package
+    family: nuclear_materials
+    form: alloying_additives
+    grade_spec: "Scenario input for qualified Zr-2.5Nb-style pressure-tube route"
+    evidence_ids: [ev_nfc_fuel_zirconium_scope]
+    notes: Scenario input; exact alloy route and supplier qualification remain unresolved.
+  - id: mat_heavy_water_feedstock
+    name: Heavy-water production feed and process inputs
+    family: heavy_water
+    form: process_feed
+    grade_spec: "Feed/process input for nuclear-grade D2O production"
+    evidence_ids: [ev_hwb_heavy_water_scope]
+    notes: This is not a claim of available heavy-water inventory or spare annual capacity.
+  - id: mat_zirconium_alloy
+    name: Nuclear-grade zirconium alloy stock
+    family: nuclear_cladding_and_channel_material
+    form: alloy_stock
+    grade_spec: "Qualified zirconium alloy for PHWR fuel/channel components"
+    evidence_ids: [ev_nfc_fuel_zirconium_scope]
+    notes: Product-class evidence exists; compatible annual qualified output remains UNKNOWN.
+  - id: mat_reprocessing_solvent
+    name: Nuclear reprocessing solvent/process-chemical package
+    family: nuclear_fuel_cycle_chemicals
+    form: process_chemical
+    grade_spec: "Scenario input for PHWR spent-fuel reprocessing route"
+    evidence_ids: [ev_barc_reprocessing_scope]
+    notes: Exact consumption, inventories, and qualified supply are not modeled.
+  - id: mat_glass_former
+    name: Vitrification glass-former package
+    family: radioactive_waste_management
+    form: glass_former
+    grade_spec: "Scenario input for high-level-waste vitrification"
+    evidence_ids: [ev_barc_reprocessing_scope]
+    notes: Scenario input; waste-form qualification and plant throughput remain UNKNOWN.
 
 parts:
   - id: reactor_island_1gw_kit
@@ -403,6 +843,80 @@ parts:
   - id: calibration_artifact
     name: Nuclear calibration artifact and reference standards
     part_class: component
+  - id: fuel_cycle_and_back_end_package
+    name: PHWR front-end and back-end fuel-cycle readiness package
+    part_class: subassembly
+    spec: "Scenario package covering startup fuel, spent-fuel handling, reprocessing, and waste-form readiness"
+    evidence_ids: [ev_barc_reprocessing_scope, ev_nfc_fuel_zirconium_scope, ev_nuclear_bom_quantities]
+  - id: phwr_fuel_bundle
+    name: PHWR natural-uranium fuel bundle
+    part_class: subassembly
+    spec: "Qualified natural-UO2 / zirconium-clad PHWR fuel bundle; exact bundle design remains scenario-level"
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_nuclear_bom_quantities]
+  - id: uranium_dioxide_powder
+    name: Nuclear-grade uranium dioxide powder
+    part_class: material_component
+    spec: "Natural-uranium UO2 powder for PHWR pellet fabrication"
+    evidence_ids: [ev_ucil_front_end_scope, ev_nfc_fuel_zirconium_scope]
+  - id: uranium_oxide_fuel_pellet
+    name: Sintered natural-uranium oxide fuel pellet
+    part_class: component
+    spec: "PHWR fuel pellet with dimensional, density, and traceability acceptance"
+    evidence_ids: [ev_nfc_fuel_zirconium_scope]
+  - id: zirconium_sponge
+    name: Nuclear-grade zirconium sponge
+    part_class: material_component
+    spec: "Purified zirconium sponge feed for alloy melt and tube fabrication"
+    evidence_ids: [ev_nfc_zirconium_facility, ev_nfc_fuel_zirconium_scope]
+  - id: zirconium_alloy_stock
+    name: Nuclear-grade zirconium alloy stock
+    part_class: material_component
+    spec: "Qualified zirconium alloy stock for PHWR pressure/fuel-channel components"
+    evidence_ids: [ev_nfc_fuel_zirconium_scope]
+  - id: fuel_bundle_end_fitting
+    name: PHWR fuel-bundle end fitting and spacer hardware
+    part_class: component
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_nuclear_bom_quantities]
+  - id: spent_fuel_storage_and_handling
+    name: Spent-fuel storage and remote-handling package
+    part_class: subassembly
+    spec: "Pool/cask/remote handling package for PHWR spent fuel before reprocessing"
+    evidence_ids: [ev_barc_reprocessing_scope]
+  - id: spent_fuel_reprocessing
+    name: PHWR spent-fuel reprocessing service/package
+    part_class: subassembly
+    spec: "Chop-leach/PUREX-style reprocessing boundary with nuclear material recovery and records"
+    evidence_ids: [ev_barc_reprocessing_scope]
+  - id: vitrified_high_level_waste
+    name: Vitrified high-level-waste package
+    part_class: subassembly
+    spec: "Qualified vitrification and interim-storage package for reprocessing waste"
+    evidence_ids: [ev_barc_reprocessing_scope]
+  - id: plant_electrical_system
+    name: Nuclear plant electrical and grid-interface system
+    part_class: subassembly
+    spec: "Generator step-up, nuclear switchgear/protection, emergency power, DC battery, and grid-interface package"
+    evidence_ids: [ev_dae_constituents, ev_nuclear_bom_quantities]
+  - id: generator_step_up_transformer
+    name: Generator step-up transformer package
+    part_class: component
+    spec: "High-voltage generator transformer and protection interface; exact rating remains scenario-level"
+    evidence_ids: [ev_nuclear_bom_quantities]
+  - id: nuclear_switchgear_and_protection
+    name: Nuclear switchgear and electrical protection package
+    part_class: component
+    spec: "Qualified medium/high-voltage switchgear, protection, isolation, and records"
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_bom_quantities]
+  - id: emergency_diesel_generator
+    name: Emergency diesel generator package
+    part_class: component
+    spec: "Safety-related emergency AC supply package; qualification and redundancy remain scenario-level"
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_bom_quantities]
+  - id: battery_backup_system
+    name: Safety-related DC battery and UPS system
+    part_class: component
+    spec: "Qualified DC/UPS backup for I&C and safety loads"
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_bom_quantities]
 
 product_variants:
   - id: reactor_island_1gw_annual
@@ -453,11 +967,15 @@ product_variants:
         qty: 1
       - part: turbine_generator_set
         qty: 1
+      - part: plant_electrical_system
+        qty: 1
       - part: condenser_feedwater_set
         qty: 1
       - part: site_civil_works_package
         qty: 1
       - part: fuel_channel_inspection_kit
+        qty: 1
+      - part: fuel_cycle_and_back_end_package
         qty: 1
 
 recipes:
@@ -845,6 +1363,40 @@ recipes:
       - id: feedwater_pump_set
         quantity: [4, pcs]
 
+  - id: rec_plant_electrical_system
+    name: Nuclear plant electrical and grid-interface route
+    output_part: plant_electrical_system
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_electrical_system]
+    evidence_ids: [ev_aerb_qa_gates, ev_dae_constituents, ev_nuclear_process_yields, ev_nuclear_bom_quantities]
+    steps:
+      - id: electrical_assembly
+        name: Transformer, switchgear, emergency power, and DC system integration
+        equipment_classes: [high_voltage_test_bench, nuclear_switchgear_test_cell, precision_assembly_cell]
+        cycle_time_per_unit: [480, h]
+        yield_fraction: 0.97
+      - id: electrical_qualification
+        name: Protection, insulation, seismic, EMC, and safety-load acceptance
+        equipment_classes: [high_voltage_test_bench, nuclear_calibration_lab, environmental_test_chamber]
+        cycle_time_per_unit: [240, h]
+        yield_fraction: 0.96
+      - id: grid_interface_test
+        name: Grid-interface, islanding, and records acceptance
+        equipment_classes: [grid_interface_test_bench, nuclear_qa_records_system]
+        cycle_time_per_unit: [160, h]
+        yield_fraction: 0.98
+    inputs:
+      - id: generator_step_up_transformer
+        quantity: [1, pcs]
+      - id: nuclear_switchgear_and_protection
+        quantity: [1, pcs]
+      - id: emergency_diesel_generator
+        quantity: [2, pcs]
+      - id: battery_backup_system
+        quantity: [2, pcs]
+
   - id: rec_site_civil_works_package
     name: Nuclear-grade civil and heavy-lift site package
     output_part: site_civil_works_package
@@ -894,6 +1446,274 @@ recipes:
         quantity: [1, pcs]
       - id: calibration_artifact
         quantity: [1, pcs]
+
+  - id: rec_zirconium_sponge
+    name: Zircon mineral to nuclear-grade zirconium sponge route
+    output_part: zirconium_sponge
+    output_quantity: [1, t_product]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_zirconium_material]
+    evidence_ids: [ev_nfc_zirconium_facility, ev_nfc_fuel_zirconium_scope, ev_nuclear_process_yields]
+    steps:
+      - id: zirconium_oxide
+        name: Zircon decomposition and zirconium-oxide purification
+        equipment_classes: [zirconium_oxide_plant, nuclear_chemistry_lab]
+        cycle_time_per_unit: [80, h]
+        yield_fraction: 0.86
+      - id: zirconium_sponge_reduction
+        name: Nuclear-grade zirconium sponge reduction and vacuum handling
+        equipment_classes: [zirconium_sponge_line, vacuum_reduction_furnace]
+        cycle_time_per_unit: [120, h]
+        yield_fraction: 0.92
+      - id: zirconium_sponge_acceptance
+        name: Chemical, metallurgical, and traceability acceptance
+        equipment_classes: [nuclear_materials_lab, nuclear_calibration_lab]
+        yield_fraction: 0.97
+    inputs:
+      - id: mat_zircon_concentrate
+        quantity: [1.55, t_product]
+
+  - id: rec_zirconium_alloy_stock
+    name: Zirconium sponge to qualified zirconium-alloy stock route
+    output_part: zirconium_alloy_stock
+    output_quantity: [1, t_product]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_zirconium_material]
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_nuclear_process_yields]
+    steps:
+      - id: alloy_melt
+        name: Zirconium-alloy melt, vacuum refining, and ingot preparation
+        equipment_classes: [zirconium_alloy_melt_shop, vacuum_induction_melt_furnace]
+        cycle_time_per_unit: [72, h]
+        yield_fraction: 0.93
+      - id: alloy_heat_treat
+        name: Alloy homogenization and heat treatment
+        equipment_classes: [vacuum_heat_treatment_furnace]
+        cycle_time_per_unit: [36, h]
+        yield_fraction: 0.96
+      - id: alloy_acceptance
+        name: Composition, texture, and dimensional acceptance
+        equipment_classes: [nuclear_materials_lab, large_metrology_lab]
+        yield_fraction: 0.98
+    inputs:
+      - id: zirconium_sponge
+        quantity: [1.03, t_product]
+      - id: mat_zirconium_alloying_additives
+        quantity: [0.04, t_product]
+
+  - id: rec_zirconium_alloy_tube
+    name: Qualified zirconium-alloy pressure-tube route
+    output_part: zirconium_alloy_tube
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_zirconium_material, qual_pressure_tube]
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: tube_extrusion
+        name: Alloy billet extrusion, piercing, and sizing
+        equipment_classes: [zirconium_extrusion_press, precision_tube_forming_line]
+        cycle_time_per_unit: [16, h]
+        yield_fraction: 0.94
+      - id: tube_pilger
+        name: Cold pilgering, straightening, and surface conditioning
+        equipment_classes: [pilger_tube_mill, precision_tube_forming_line]
+        cycle_time_per_unit: [24, h]
+        yield_fraction: 0.95
+      - id: tube_qualification
+        name: Eddy-current, ultrasonic, dimensional, and traceability acceptance
+        equipment_classes: [fuel_channel_inspection_system, ultrasonic_ndt_station, nuclear_materials_lab]
+        cycle_time_per_unit: [8, h]
+        yield_fraction: 0.97
+    inputs:
+      - id: zirconium_alloy_stock
+        quantity: [0.03, t_product]
+
+  - id: rec_uranium_dioxide_powder
+    name: Uranium concentrate to natural-uranium dioxide powder route
+    output_part: uranium_dioxide_powder
+    output_quantity: [1, t_product]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_front_end_fuel]
+    evidence_ids: [ev_ucil_front_end_scope, ev_nfc_fuel_zirconium_scope, ev_nuclear_process_yields]
+    steps:
+      - id: uranium_conversion
+        name: Concentrate purification/conversion to uranium dioxide feed
+        equipment_classes: [uranium_conversion_line, nuclear_chemistry_lab]
+        cycle_time_per_unit: [72, h]
+        yield_fraction: 0.9
+      - id: uo2_powder_acceptance
+        name: Powder chemistry, particle-size, and nuclear traceability acceptance
+        equipment_classes: [nuclear_materials_lab, nuclear_calibration_lab]
+        yield_fraction: 0.97
+    inputs:
+      - id: mat_natural_uranium_concentrate
+        quantity: [1.18, t_product]
+
+  - id: rec_uranium_oxide_fuel_pellet
+    name: Natural-uranium dioxide pellet fabrication route
+    output_part: uranium_oxide_fuel_pellet
+    output_quantity: [1, t_product]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_front_end_fuel]
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_nuclear_process_yields]
+    steps:
+      - id: pellet_press
+        name: Powder conditioning, compaction, and green-pellet pressing
+        equipment_classes: [fuel_pellet_press, fuel_powder_blending_cell]
+        cycle_time_per_unit: [24, h]
+        yield_fraction: 0.96
+      - id: pellet_sinter
+        name: Controlled-atmosphere pellet sintering and sizing
+        equipment_classes: [fuel_pellet_sintering_furnace, pellet_grinding_line]
+        cycle_time_per_unit: [36, h]
+        yield_fraction: 0.95
+      - id: pellet_acceptance
+        name: Density, dimensions, surface, and traceability acceptance
+        equipment_classes: [fuel_inspection_lab, nuclear_calibration_lab]
+        yield_fraction: 0.98
+    inputs:
+      - id: uranium_dioxide_powder
+        quantity: [1.04, t_product]
+
+  - id: rec_phwr_fuel_bundle
+    name: PHWR fuel-bundle fabrication and inspection route
+    output_part: phwr_fuel_bundle
+    output_quantity: [1, pcs]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_fuel_bundle]
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_nuclear_bom_quantities, ev_nuclear_process_yields]
+    steps:
+      - id: bundle_load
+        name: Pellet loading into qualified zirconium-alloy cladding
+        equipment_classes: [fuel_bundle_assembly_line, cleanroom_bench]
+        cycle_time_per_unit: [0.8, h]
+        yield_fraction: 0.98
+      - id: bundle_join
+        name: End-fitting, spacer, and bundle joining
+        equipment_classes: [fuel_bundle_assembly_line, nuclear_welding_cell]
+        cycle_time_per_unit: [0.5, h]
+        yield_fraction: 0.98
+      - id: bundle_acceptance
+        name: Fuel-bundle dimensional, leak, and records acceptance
+        equipment_classes: [fuel_inspection_lab, ultrasonic_ndt_station]
+        cycle_time_per_unit: [0.4, h]
+        yield_fraction: 0.99
+    inputs:
+      - id: uranium_oxide_fuel_pellet
+        quantity: [0.0002, t_product]
+      - id: mat_zirconium_alloy
+        quantity: [0.00004, t_product]
+      - id: fuel_bundle_end_fitting
+        quantity: [1, pcs]
+
+  - id: rec_fuel_cycle_and_back_end_package
+    name: PHWR front-end and back-end fuel-cycle readiness package
+    output_part: fuel_cycle_and_back_end_package
+    output_quantity: [1, pcs]
+    maturity: study
+    applicable_geographies: [INDIA]
+    requires_qualification: [qual_fuel_bundle, qual_reprocessing]
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_barc_reprocessing_scope, ev_nuclear_schedule_ranges]
+    steps:
+      - id: startup_fuel_acceptance
+        name: Startup-fuel loading plan and batch records
+        equipment_classes: [fuel_inspection_lab, nuclear_qa_records_system]
+        yield_fraction: 0.97
+      - id: backend_readiness
+        name: Spent-fuel handling, reprocessing, and waste-form readiness review
+        equipment_classes: [remote_spent_fuel_handling_cell, reprocessing_hot_cell, waste_vitrification_cell]
+        yield_fraction: 0.95
+    inputs:
+      - id: phwr_fuel_bundle
+        quantity: [4704, pcs]
+      - id: spent_fuel_storage_and_handling
+        quantity: [1, pcs]
+      - id: spent_fuel_reprocessing
+        quantity: [1, pcs]
+      - id: vitrified_high_level_waste
+        quantity: [1, pcs]
+
+  - id: rec_spent_fuel_storage_and_handling
+    name: Spent-fuel storage and remote-handling route
+    output_part: spent_fuel_storage_and_handling
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_reprocessing]
+    evidence_ids: [ev_barc_reprocessing_scope, ev_aerb_qa_gates, ev_nuclear_process_yields]
+    steps:
+      - id: spent_fuel_storage
+        name: Pool/cask storage, shielding, and remote handling integration
+        equipment_classes: [spent_fuel_storage_pool, remote_spent_fuel_handling_cell]
+        cycle_time_per_unit: [160, h]
+        yield_fraction: 0.97
+      - id: spent_fuel_records
+        name: Radiation protection, safeguards, and records acceptance
+        equipment_classes: [nuclear_qa_records_system, radiation_monitoring_lab]
+        yield_fraction: 0.98
+    inputs:
+      - id: phwr_fuel_bundle
+        quantity: [4704, pcs]
+
+  - id: rec_spent_fuel_reprocessing
+    name: PHWR spent-fuel reprocessing route
+    output_part: spent_fuel_reprocessing
+    output_quantity: [1, pcs]
+    maturity: series
+    applicable_geographies: [INDIA]
+    requires_qualification: [qual_reprocessing]
+    evidence_ids: [ev_barc_reprocessing_scope, ev_nuclear_process_yields, ev_aerb_qa_gates]
+    steps:
+      - id: reprocessing_head_end
+        name: Shielded receipt, shearing/chop-leach, and dissolution boundary
+        equipment_classes: [reprocessing_head_end_cell, remote_spent_fuel_handling_cell]
+        cycle_time_per_unit: [240, h]
+        yield_fraction: 0.94
+      - id: reprocessing_purex
+        name: Solvent-extraction separation and nuclear-material recovery
+        equipment_classes: [reprocessing_hot_cell, nuclear_chemistry_lab]
+        cycle_time_per_unit: [360, h]
+        yield_fraction: 0.96
+      - id: reprocessing_records
+        name: Safeguards, accountancy, and waste-stream acceptance
+        equipment_classes: [nuclear_qa_records_system, radiation_monitoring_lab]
+        yield_fraction: 0.98
+    inputs:
+      - id: spent_fuel_storage_and_handling
+        quantity: [1, pcs]
+      - id: mat_reprocessing_solvent
+        quantity: [0.2, t_product]
+
+  - id: rec_vitrified_high_level_waste
+    name: High-level-waste vitrification and interim-storage route
+    output_part: vitrified_high_level_waste
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA]
+    requires_qualification: [qual_reprocessing]
+    evidence_ids: [ev_barc_reprocessing_scope, ev_aerb_qa_gates, ev_nuclear_process_yields]
+    steps:
+      - id: waste_vitrify
+        name: High-level-waste conditioning and vitrification
+        equipment_classes: [waste_vitrification_cell, joule_heated_ceramic_melter]
+        cycle_time_per_unit: [240, h]
+        yield_fraction: 0.95
+      - id: waste_acceptance
+        name: Canister, radiological, and records acceptance
+        equipment_classes: [waste_form_test_lab, nuclear_qa_records_system]
+        cycle_time_per_unit: [80, h]
+        yield_fraction: 0.98
+    inputs:
+      - id: spent_fuel_reprocessing
+        quantity: [1, pcs]
+      - id: mat_glass_former
+        quantity: [0.5, t_product]
 
 qualifications:
   - id: qual_large_forging
@@ -973,6 +1793,41 @@ qualifications:
     status: not_started
     latency_months: [24, 60]
     evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_zirconium_material
+    item_id: zirconium_alloy_stock
+    qualifier: regulator
+    standard_ref: "Nuclear-grade zirconium chemistry, sponge/alloy traceability, tube-process control, and material acceptance"
+    status: not_started
+    latency_months: [18, 48]
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_nfc_zirconium_facility, ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+  - id: qual_front_end_fuel
+    item_id: uranium_dioxide_powder
+    qualifier: regulator
+    standard_ref: "Natural-uranium feed qualification, conversion chemistry, UO2 powder/pellet specifications, and nuclear material accountancy"
+    status: not_started
+    latency_months: [24, 60]
+    evidence_ids: [ev_ucil_front_end_scope, ev_nfc_fuel_zirconium_scope, ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+  - id: qual_fuel_bundle
+    item_id: phwr_fuel_bundle
+    qualifier: regulator
+    standard_ref: "PHWR fuel-bundle design, cladding, leak testing, dimensional acceptance, safeguards, and records qualification"
+    status: not_started
+    latency_months: [24, 60]
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+  - id: qual_reprocessing
+    item_id: spent_fuel_reprocessing
+    qualifier: regulator
+    standard_ref: "Spent-fuel receipt/storage, remote handling, reprocessing, nuclear-material accountancy, waste, and safeguards qualification"
+    status: not_started
+    latency_months: [36, 84]
+    evidence_ids: [ev_barc_reprocessing_scope, ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+  - id: qual_electrical_system
+    item_id: plant_electrical_system
+    qualifier: regulator
+    standard_ref: "Safety-related AC/DC electrical systems, protection, seismic/EMC, emergency power, and grid-interface acceptance"
+    status: not_started
+    latency_months: [18, 48]
+    evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
 
 projects:
   - id: prj_npcil_fleet_context
@@ -1030,6 +1885,96 @@ projects:
       and supplier audit; no design capacity is asserted until a facility and route
       are evidenced.
     evidence_ids: [ev_nuclear_200gw_scenario, ev_nuclear_capacity_unknown, ev_nuclear_schedule_ranges]
+  - id: prj_rapp8_current
+    name: "Rajasthan Atomic Power Project Unit-8 project context"
+    item_id: site_civil_works_package
+    geography: INDIA
+    state: construction
+    state_date: "2026-06-30"
+    earliest_start_year: 2026
+    years_to_commission: [0, 2]
+    owner_org: org_npcil
+    notes: >
+      Official project-status context; design_capacity_annual is intentionally omitted
+      because a power-plant project is not a manufacturing capacity segment.
+    evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+  - id: prj_ghavp_1_2_current
+    name: "Gorakhpur Haryana Anu Vidyut Pariyojana Units-1&2 context"
+    item_id: site_civil_works_package
+    geography: INDIA
+    state: construction
+    state_date: "2026-06-30"
+    earliest_start_year: 2026
+    years_to_commission: [4, 8]
+    owner_org: org_npcil
+    notes: Official project context; no power-plant or equipment manufacturing rate inferred.
+    evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+  - id: prj_kknpp_3_4_current
+    name: "Kudankulam Nuclear Power Project Units-3&4 context"
+    item_id: site_civil_works_package
+    geography: INDIA
+    state: construction
+    state_date: "2026-06-30"
+    earliest_start_year: 2026
+    years_to_commission: [1, 3]
+    owner_org: org_npcil
+    notes: Official VVER project context; this PHWR-like kit does not claim technology equivalence.
+    evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+  - id: prj_kknpp_5_6_current
+    name: "Kudankulam Nuclear Power Project Units-5&6 context"
+    item_id: site_civil_works_package
+    geography: INDIA
+    state: construction
+    state_date: "2026-06-30"
+    earliest_start_year: 2026
+    years_to_commission: [3, 6]
+    owner_org: org_npcil
+    notes: Official VVER project context; no construction-site concurrency or manufacturing throughput inferred.
+    evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+  - id: prj_kaiga_5_6_pipeline
+    name: "Kaiga Units-5&6 700 MWe fleet-mode pipeline context"
+    item_id: reactor_pressure_boundary
+    geography: INDIA
+    state: approved
+    state_date: "2025-12-04"
+    earliest_start_year: 2026
+    years_to_commission: [6, 12]
+    owner_org: org_npcil
+    notes: Officially approved/pre-project fleet context; no annual equipment supply or operating capacity inferred.
+    evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
+  - id: prj_ghavp_3_4_pipeline
+    name: "Gorakhpur Haryana Units-3&4 700 MWe fleet-mode pipeline context"
+    item_id: reactor_pressure_boundary
+    geography: INDIA
+    state: approved
+    state_date: "2025-12-04"
+    earliest_start_year: 2026
+    years_to_commission: [6, 12]
+    owner_org: org_npcil
+    notes: Officially approved/pre-project fleet context; no annual equipment supply inferred.
+    evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
+  - id: prj_chutka_1_2_pipeline
+    name: "Chutka Units-1&2 700 MWe fleet-mode pipeline context"
+    item_id: reactor_pressure_boundary
+    geography: INDIA
+    state: approved
+    state_date: "2025-12-04"
+    earliest_start_year: 2026
+    years_to_commission: [6, 12]
+    owner_org: org_npcil
+    notes: Officially approved/pre-project fleet context; no annual equipment supply inferred.
+    evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
+  - id: prj_mahi_banswara_1_4_pipeline
+    name: "Mahi Banswara Units-1 to 4 700 MWe fleet-mode pipeline context"
+    item_id: reactor_pressure_boundary
+    geography: INDIA
+    state: approved
+    state_date: "2025-12-04"
+    earliest_start_year: 2026
+    years_to_commission: [6, 12]
+    owner_org: org_npcil
+    notes: Officially approved/pre-project fleet context; no annual equipment supply inferred.
+    evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
 
 capability_claims:
   - id: cc_bhel_nuclear_product_scope
@@ -1087,6 +2032,158 @@ capability_claims:
     claim_vs_assessment: assessment
     notes: QA guides establish required gates, not demonstrated inspection throughput or qualified service capacity.
     evidence_ids: [ev_nuclear_capacity_unknown, ev_aerb_qa_gates]
+  - id: cc_nfc_fuel_zirconium_scope
+    capability_item: phwr_fuel_bundle
+    org_id: org_nfc
+    geography: INDIA
+    vector:
+      manufacturing_maturity: series
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: domestic
+      process_ownership: domestic
+      precursor_dependence: UNKNOWN
+      qualification_state: "PHWR fuel/zirconium product scope reported; target programme qualification and spare capacity UNKNOWN"
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: claim
+    notes: NFC's official product/facility scope is retained without converting product listing into annual qualified output.
+    evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_nfc_zirconium_facility]
+  - id: cc_ucil_uranium_front_end
+    capability_item: mat_natural_uranium_concentrate
+    org_id: org_ucil
+    geography: INDIA
+    vector:
+      manufacturing_maturity: series
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: domestic
+      process_ownership: domestic
+      precursor_dependence: UNKNOWN
+      qualification_state: "Mine/mill route reported; usable feed, conversion, and fuel-cycle allocation UNKNOWN"
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: claim
+    notes: UCIL mine and mill existence is not equivalent to usable natural-uranium fuel supply for an incremental fleet.
+    evidence_ids: [ev_ucil_front_end_scope]
+  - id: cc_hwb_heavy_water_scope
+    capability_item: heavy_water_inventory
+    org_id: org_hwb
+    geography: INDIA
+    vector:
+      manufacturing_maturity: series
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: domestic
+      process_ownership: domestic
+      precursor_dependence: UNKNOWN
+      qualification_state: "HWB production mandate and plant network reported; programme allocation and spare D2O inventory UNKNOWN"
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: claim
+    notes: Heavy Water Board scope is evidence-backed; no D2O tonnes/year are inserted.
+    evidence_ids: [ev_hwb_heavy_water_scope]
+  - id: cc_barc_reprocessing_scope
+    capability_item: spent_fuel_reprocessing
+    org_id: org_barc
+    geography: INDIA
+    vector:
+      manufacturing_maturity: series
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: domestic
+      process_ownership: domestic
+      precursor_dependence: UNKNOWN
+      qualification_state: "PHWR reprocessing and waste-management scope reported; available incremental throughput UNKNOWN"
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: claim
+    notes: BARC's official back-end scope is retained, but no current spare annual reprocessing capacity is asserted.
+    evidence_ids: [ev_barc_reprocessing_scope]
+  - id: cc_ecil_nuclear_instrumentation_unknown
+    capability_item: nuclear_instrumentation_set
+    org_id: org_ecil
+    geography: INDIA
+    vector:
+      manufacturing_maturity: UNKNOWN
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: UNKNOWN
+      process_ownership: UNKNOWN
+      qualification_state: UNKNOWN
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: DAE constituent status does not prove target-specific nuclear I&C qualification or throughput.
+    evidence_ids: [ev_dae_constituents, ev_nuclear_capacity_unknown]
+  - id: cc_india_plant_electrical_unknown
+    capability_item: plant_electrical_system
+    org_id: org_ecil
+    geography: INDIA
+    vector:
+      manufacturing_maturity: UNKNOWN
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: UNKNOWN
+      process_ownership: UNKNOWN
+      qualification_state: UNKNOWN
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Nuclear electrical-system capacity and safety qualification are not inferred from DAE organization existence.
+    evidence_ids: [ev_dae_constituents, ev_aerb_qa_gates, ev_nuclear_capacity_unknown]
+
+shocks:
+  - id: shk_nuclear_forging_facility_outage
+    name: "Heavy-forging facility outage / qualification hold"
+    description: >
+      Causal stress scenario: a heavy-forging facility or its qualification cell is
+      unavailable, constraining large shell/header and pump-body routes and therefore
+      pressure-boundary completion. The edit acts on equipment-hour capacity rather
+      than multiplying a displayed verdict.
+    facility_ids: [fac_nfc_hyderabad]
+    target_entity_ids: [large_forged_shell, reactor_pressure_boundary, steam_generator]
+    causal_chain: [facility_outage, heavy_forging_press, pressure_boundary_route, reactor_island_completion]
+    evidence_ids: [ev_nuclear_shock_scenarios, ev_nuclear_capacity_unknown]
+    edits:
+      - type: equipment_limit
+        equipment_class: heavy_forging_press
+        hours_per_year: 0
+  - id: shk_nuclear_heavy_water_material_disruption
+    name: "Heavy-water/material supply disruption"
+    description: >
+      Causal stress scenario: heavy-water feed or allocation is disrupted while the
+      PHWR fleet is expanding. This adds contestable demand to the explicit heavy-water
+      node; it does not fabricate a domestic or foreign supply ceiling.
+    material_ids: [heavy_water_inventory, mat_heavy_water_feedstock]
+    target_entity_ids: [calandria_and_core, heavy_water_inventory, fuel_cycle_and_back_end_package]
+    causal_chain: [material_disruption, heavy_water_inventory, phwr_core_readiness, commissioning_gate]
+    evidence_ids: [ev_nuclear_shock_scenarios, ev_hwb_heavy_water_scope]
+    edits:
+      - type: demand_add
+        item: heavy_water_inventory
+        quantity_per_year: [500, t_product]
+  - id: shk_nuclear_project_qualification_delay
+    name: "Pressure-boundary qualification project delay"
+    description: >
+      Causal stress scenario: the heavy-forging qualification work package is impaired
+      pending regulator/customer evidence, blocking the pressure-boundary route and
+      delaying the annualized scenario project. Project state is edited explicitly so
+      the timeline cannot treat an announced work package as available capacity.
+    project_ids: [prj_heavy_forging_qualification_scenario]
+    target_entity_ids: [qual_large_forging, large_forged_shell, reactor_pressure_boundary]
+    causal_chain: [project_delay, qualification_hold, large_forged_shell, reactor_pressure_boundary]
+    evidence_ids: [ev_nuclear_shock_scenarios, ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+    edits:
+      - type: project_delay
+        project_id: prj_heavy_forging_qualification_scenario
+        years: 2
+      - type: qualification_delay
+        qualification_id: qual_large_forging
+        months: 24
+      - type: equipment_limit
+        equipment_class: heavy_forging_press
+        hours_per_year: 0
 
 crosswalks:
   - from_class: HS
@@ -1109,3 +2206,482 @@ crosswalks:
     to_entity: large_forged_shell
     confidence: 0.2
     note: Structural-metal adjacency only; does not establish nuclear-grade forging.
+
+# Generic program-layer input.  The annual recipe solver above remains the
+# one-kit flow benchmark; this section is intentionally explicit about which
+# rows are reported project context versus scenario timing/scale assumptions.
+program_model:
+  id: india_nuclear_buildout_2026_2047
+  schema_version: forge.program_model.v1
+  name: "India nuclear multi-year industrial buildout model"
+  epistemic_class: SCENARIO
+  limitations:
+    - "The residual fleet required to close 200 GW is UNKNOWN and is intentionally excluded from numeric tranche arithmetic."
+    - "Cumulative installed capacity is a programme-layer stock calculation, not an operating-generation, dispatch, or retirements model."
+    - "Project/site rows do not create qualified equipment supply; capacity segments remain absent unless independently evidenced."
+  notes: >
+    This is a FORGE scenario program model. Reported installed capacity and project
+    observations are retained as context, while construction/commissioning windows,
+    residual capacity, and system-gate durations are transparent assumptions. The
+    program layer distinguishes annual production/commissioning flow from cumulative
+    installed nameplate stock; it does not claim operating generation or financing
+    closure.
+  timeline_semantics:
+    construction_years: "Duration range from tranche/site start_year to construction completion."
+    commissioning_years: "Duration range after construction completion before commissioning; it is not an operating-capacity guarantee."
+    commissioning_window: "Optional inclusive calendar-year window retained for official/context rows."
+    earliest_year: "Decision/availability anchor for the row, not proof that work started."
+  objective:
+    id: forge_200gw_nuclear_scenario
+    target_gw: 200.0
+    start_year: 2026
+    target_year: 2047
+    epistemic_class: SCENARIO
+    evidence_ids: [ev_nuclear_200gw_scenario, ev_nuclear_program_model]
+    existing_capacity_gw: 8.78
+    existing_capacity_gw_metadata:
+      unit: GWe
+      epistemic_class: REPORTED
+      evidence_ids: [ev_nuclear_current_capacity_878]
+      notes: Existing installed nameplate context; not annual manufacturing supply.
+    policy_comparator:
+      id: government_100gwe_policy_context
+      target_gw: 100.0
+      target_year: 2047
+      epistemic_class: REPORTED
+      evidence_ids: [ev_nuclear_100gwe_policy]
+      notes: Government policy context is distinct from the 200 GW FORGE scenario.
+    accounting:
+      annual_production_flow:
+        semantic_class: FLOW
+        unit: kits/yr
+        represented_by: reactor_island_1gw_annual
+        meaning: "Manufacturing/assembly output of reference kit units in a year."
+        epistemic_class: SCENARIO
+        evidence_ids: [ev_nuclear_kit_architecture]
+      annual_nameplate_addition:
+        semantic_class: FLOW
+        unit: GWe/yr
+        meaning: "Nameplate capacity commissioned in a year after site and qualification gates."
+        epistemic_class: MODELLED
+        notes: "Requires tranche commissioning and project-layer timing; not equal to recipe output."
+      cumulative_installed_capacity:
+        semantic_class: STOCK
+        unit: GWe
+        formula: "existing_capacity_gw + sum(commissioned tranche unit_capacity_gw * units) - retired_capacity_gw"
+        epistemic_class: MODELLED
+        notes: "Stock accounting is not a claim that the annual recipe solver models retirements or grid dispatch."
+      operational_generation:
+        semantic_class: FLOW
+        unit: TWh/yr
+        epistemic_class: UNKNOWN
+        notes: "Capacity factor, outages, dispatch, and fuel availability are outside this pack's executable boundary."
+  tranches:
+    - id: tr_active_700mwe_phwr_context
+      name: "Active/commissioning 700 MWe PHWR project context"
+      reactor_family: PHWR_700
+      units: 3
+      unit_capacity_gw: 0.7
+      start_year: 2026
+      construction_years: [4, 8]
+      commissioning_years: [0, 2]
+      commissioning_window: [2026, 2032]
+      phase: construction_or_commissioning
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+      entity_ids: [prj_rapp8_current, prj_ghavp_1_2_current, fac_npcil_raps_rawatbhata, fac_npcil_ghavp_haryana]
+      counts_toward_200gw_scenario: true
+      notes: Project existence/status is official context; schedule range is a planning assumption and no manufacturing capacity is implied.
+    - id: tr_active_vver_1000_context
+      name: "Kudankulam VVER Units-3 to 6 project context"
+      reactor_family: LWR_VVER_1000
+      units: 4
+      unit_capacity_gw: 1.0
+      start_year: 2026
+      construction_years: [4, 8]
+      commissioning_years: [0, 2]
+      commissioning_window: [2027, 2032]
+      phase: construction
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+      entity_ids: [prj_kknpp_3_4_current, prj_kknpp_5_6_current, fac_npcil_kudankulam]
+      counts_toward_200gw_scenario: true
+      notes: Mixed-fleet context; VVER project rows are not treated as PHWR component equivalence.
+    - id: tr_approved_700mwe_phwr_fleet
+      name: "Ten-unit 700 MWe PHWR fleet-mode pipeline"
+      reactor_family: PHWR_700
+      units: 10
+      unit_capacity_gw: 0.7
+      start_year: 2026
+      construction_years: [6, 12]
+      commissioning_years: [0, 2]
+      commissioning_window: [2032, 2042]
+      phase: pre_project_and_approved
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
+      entity_ids: [prj_kaiga_5_6_pipeline, prj_ghavp_3_4_pipeline, prj_chutka_1_2_pipeline, prj_mahi_banswara_1_4_pipeline, fac_npcil_kaiga, fac_npcil_chutka, fac_npcil_mahi_banswara]
+      counts_toward_200gw_scenario: true
+      notes: Official approval and site allocation are retained; no unit is treated as commissioned or as annual equipment supply.
+    # Unknown residual capacity is deliberately outside numeric tranche arithmetic.
+    # Generic readers may surface this row as an unresolved closure candidate.
+  capacity_unknowns:
+    - id: tr_residual_200gw_scale_unknown
+      name: "Residual capacity required to close the explicit 200 GW scenario"
+      reactor_family: MIXED_FLEET
+      units: UNKNOWN
+      unit_capacity_gw: UNKNOWN
+      start_year: 2030
+      construction_years: [5, 12]
+      commissioning_years: [0, 2]
+      commissioning_window: [2035, 2047]
+      phase: scenario_residual
+      epistemic_class: UNKNOWN
+      evidence_ids: [ev_nuclear_capacity_unknown, ev_nuclear_program_model]
+      entity_ids: [reactor_island_1gw_kit, large_forged_shell, spent_fuel_reprocessing]
+      counts_toward_200gw_scenario: UNKNOWN
+      notes: "Residual fleet mix, sites, financing, qualified supplier throughput, and commissioning sequence are decision-sensitive UNKNOWNs; no numeric residual is fabricated."
+  system_gates:
+    - id: gate_program_authority_and_finance
+      name: "Programme authority, ownership, and finance commitments"
+      category: policy_finance
+      earliest_year: 2026
+      duration_years: [1, 3]
+      depends_on: []
+      entity_ids: [org_dae, org_npcil]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_nuclear_program_model]
+      notes: "Funding closure is not implied by policy ambition or project approval."
+    - id: gate_site_screening_and_land
+      name: "Site screening, land, environmental, water, and local-infrastructure readiness"
+      category: site_pipeline
+      earliest_year: 2026
+      duration_years: [2, 6]
+      depends_on: [gate_program_authority_and_finance]
+      entity_ids: [fac_npcil_kaiga, fac_npcil_chutka, fac_npcil_mahi_banswara, fac_npcil_ghavp_haryana]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_nuclear_program_model, ev_aerb_qa_gates]
+      notes: "Named project sites are not proof of complete site readiness or construction concurrency."
+    - id: gate_grid_connection_and_transmission
+      name: "Grid connection, evacuation, and transmission readiness"
+      category: grid_infrastructure
+      earliest_year: 2027
+      duration_years: [3, 8]
+      depends_on: [gate_site_screening_and_land]
+      entity_ids: [org_npcil, site_civil_works_package]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_nuclear_program_model]
+      notes: "Grid dispatch and adequacy are not solved by the annual kit recipe."
+    - id: gate_pressure_boundary_and_heavy_forging
+      name: "Large forging, pressure boundary, weld, NDT, and hydrotest qualification"
+      category: reactor_island
+      earliest_year: 2027
+      duration_years: [3, 7]
+      depends_on: [gate_program_authority_and_finance]
+      entity_ids: [large_forged_shell, reactor_pressure_boundary, qual_large_forging, qual_pressure_boundary, fac_nfc_hyderabad]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_aerb_qa_gates, ev_nuclear_capacity_unknown, ev_nuclear_schedule_ranges]
+      notes: "This is the pressure-boundary recursion bottleneck; no qualified annual capacity is asserted."
+    - id: gate_steam_generators_pumps_valves_piping
+      name: "Steam-generator, pump, valve, piping, and heat-exchanger supplier qualification"
+      category: reactor_island
+      earliest_year: 2027
+      duration_years: [2, 6]
+      depends_on: [gate_pressure_boundary_and_heavy_forging]
+      entity_ids: [steam_generator, primary_coolant_pump, safety_valve_set, condenser_feedwater_set, qual_steam_generator, qual_primary_coolant_pump]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_bhel_nuclear_scope, ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+      notes: "BHEL product scope and order context do not prove current spare qualified throughput."
+    - id: gate_civil_welding_ndt_and_heavy_lift
+      name: "Nuclear civil works, containment, welding, NDT, and heavy lifting"
+      category: construction
+      earliest_year: 2026
+      duration_years: [4, 9]
+      depends_on: [gate_site_screening_and_land]
+      entity_ids: [site_civil_works_package, containment_liner, nuclear_weld_material, ultrasonic_ndt_service, heavy_lift_crane_service, qual_site_qa]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+      notes: "Civil and installation services are capacity/qualification gates, not merely bill-of-material quantities."
+    - id: gate_front_end_uranium_mining_and_conversion
+      name: "Uranium mining, milling, conversion, and UO2 powder qualification"
+      category: fuel_cycle_front_end
+      earliest_year: 2026
+      duration_years: [4, 10]
+      depends_on: [gate_program_authority_and_finance]
+      entity_ids: [org_ucil, fac_ucil_jaduguda, mat_natural_uranium_concentrate, uranium_dioxide_powder, qual_front_end_fuel]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_ucil_front_end_scope, ev_nfc_fuel_zirconium_scope, ev_nuclear_schedule_ranges]
+      notes: "Mine and mill existence is not usable fuel supply; conversion/fabrication and allocation remain unresolved."
+    - id: gate_zirconium_and_cladding
+      name: "Zirconium sponge, alloy, pressure-tube, and cladding qualification"
+      category: fuel_cycle_materials
+      earliest_year: 2026
+      duration_years: [2, 6]
+      depends_on: [gate_program_authority_and_finance]
+      entity_ids: [org_nfc, fac_nfc_zirconium_tuticorin, zirconium_sponge, zirconium_alloy_stock, zirconium_alloy_tube, qual_zirconium_material, qual_pressure_tube]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_nfc_zirconium_facility, ev_nfc_fuel_zirconium_scope, ev_nuclear_schedule_ranges]
+      notes: "Official NFC scope supports process identity, not spare annual qualified capacity."
+    - id: gate_heavy_water_production_and_allocation
+      name: "Heavy-water production, inventory, purification, and allocation"
+      category: fuel_cycle_materials
+      earliest_year: 2026
+      duration_years: [2, 6]
+      depends_on: [gate_program_authority_and_finance]
+      entity_ids: [org_hwb, fac_hwb_network, heavy_water_inventory, qual_reactor_island_integration]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_hwb_heavy_water_scope, ev_nuclear_schedule_ranges]
+      notes: "HWB network is real; incremental D2O availability for a large fleet remains UNKNOWN."
+    - id: gate_fuel_bundle_fabrication
+      name: "PHWR fuel-bundle fabrication, inspection, safeguards, and records"
+      category: fuel_cycle_front_end
+      earliest_year: 2028
+      duration_years: [2, 5]
+      depends_on: [gate_front_end_uranium_mining_and_conversion, gate_zirconium_and_cladding]
+      entity_ids: [org_nfc, phwr_fuel_bundle, uranium_oxide_fuel_pellet, qual_fuel_bundle, fac_nfc_hyderabad]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_nfc_fuel_zirconium_scope, ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+      notes: "Fuel-bundle product scope is evidenced; target-fleet qualification and throughput remain UNKNOWN."
+    - id: gate_spent_fuel_reprocessing_and_waste
+      name: "Spent-fuel storage, reprocessing, material recovery, and vitrified waste"
+      category: fuel_cycle_back_end
+      earliest_year: 2030
+      duration_years: [4, 10]
+      depends_on: [gate_fuel_bundle_fabrication, gate_civil_welding_ndt_and_heavy_lift]
+      entity_ids: [org_barc, fac_barc_tarapur_prefre, fac_barc_kalpakkam_karp, spent_fuel_storage_and_handling, spent_fuel_reprocessing, vitrified_high_level_waste, qual_reprocessing]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_barc_reprocessing_scope, ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+      notes: "Existing closed-cycle capability is real, but additional fleet-scale back-end capacity is not established."
+    - id: gate_instrumentation_electrical_and_safety
+      name: "I&C, radiation-hard electronics, electrical systems, and safety qualification"
+      category: control_and_electrical
+      earliest_year: 2027
+      duration_years: [2, 6]
+      depends_on: [gate_pressure_boundary_and_heavy_forging]
+      entity_ids: [org_ecil, nuclear_instrumentation_set, radiation_hard_electronics, plant_electrical_system, nuclear_switchgear_and_protection, qual_instrumentation, qual_safety_system, qual_electrical_system]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_dae_constituents, ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+      notes: "Organization existence is not target-specific nuclear I&C qualification or annual supply."
+    - id: gate_workforce_and_quality_records
+      name: "Nuclear welding, NDT, commissioning, regulator, and workforce ramp"
+      category: workforce_qualification
+      earliest_year: 2026
+      duration_years: [2, 8]
+      depends_on: [gate_program_authority_and_finance]
+      entity_ids: [org_aerb, ultrasonic_ndt_service, radiography_service, nuclear_qa_records_system, qual_site_qa]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_aerb_qa_gates, ev_nuclear_qualification_window, ev_nuclear_schedule_ranges]
+      notes: "Qualification and tacit know-how are endogenous clocks; no workforce count is fabricated."
+    - id: gate_integrated_commissioning_and_grid
+      name: "Integrated commissioning, fuel loading, hot testing, and grid acceptance"
+      category: commissioning
+      earliest_year: 2030
+      duration_years: [2, 6]
+      depends_on: [gate_steam_generators_pumps_valves_piping, gate_civil_welding_ndt_and_heavy_lift, gate_fuel_bundle_fabrication, gate_spent_fuel_reprocessing_and_waste, gate_instrumentation_electrical_and_safety, gate_grid_connection_and_transmission, gate_workforce_and_quality_records]
+      entity_ids: [reactor_island_1gw_kit, fuel_channel_inspection_kit, qual_reactor_island_integration, qual_site_qa, org_npcil]
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_aerb_qa_gates, ev_nuclear_schedule_ranges]
+      notes: "Commissioning is a physical/qualification gate; annual kit completion is not grid-connected generation."
+  site_pipeline:
+    - id: site_rapp8
+      name: RAPP-8
+      project_id: prj_rapp8_current
+      facility_id: fac_npcil_raps_rawatbhata
+      reactor_family: PHWR_700
+      units: 1
+      unit_capacity_gw: 0.7
+      phase: advanced_commissioning
+      earliest_start_year: 2026
+      construction_years: [0, 2]
+      commissioning_years: [0, 1]
+      commissioning_window: [2026, 2027]
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+    - id: site_ghavp_1_2
+      name: GHAVP-1&2
+      project_id: prj_ghavp_1_2_current
+      facility_id: fac_npcil_ghavp_haryana
+      reactor_family: PHWR_700
+      units: 2
+      unit_capacity_gw: 0.7
+      phase: construction
+      earliest_start_year: 2026
+      construction_years: [4, 8]
+      commissioning_years: [0, 2]
+      commissioning_window: [2030, 2036]
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+    - id: site_kknpp_3_4
+      name: KKNPP-3&4
+      project_id: prj_kknpp_3_4_current
+      facility_id: fac_npcil_kudankulam
+      reactor_family: LWR_VVER_1000
+      units: 2
+      unit_capacity_gw: 1.0
+      phase: construction
+      earliest_start_year: 2026
+      construction_years: [4, 6]
+      commissioning_years: [0, 1]
+      commissioning_window: [2027, 2028]
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+    - id: site_kknpp_5_6
+      name: KKNPP-5&6
+      project_id: prj_kknpp_5_6_current
+      facility_id: fac_npcil_kudankulam
+      reactor_family: LWR_VVER_1000
+      units: 2
+      unit_capacity_gw: 1.0
+      phase: construction
+      earliest_start_year: 2026
+      construction_years: [4, 8]
+      commissioning_years: [0, 2]
+      commissioning_window: [2029, 2032]
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_nuclear_project_status_2026, ev_nuclear_schedule_ranges]
+    - id: site_kaiga_5_6
+      name: Kaiga-5&6
+      project_id: prj_kaiga_5_6_pipeline
+      facility_id: fac_npcil_kaiga
+      reactor_family: PHWR_700
+      units: 2
+      unit_capacity_gw: 0.7
+      phase: pre_project
+      earliest_start_year: 2026
+      construction_years: [6, 12]
+      commissioning_years: [0, 2]
+      commissioning_window: [2032, 2040]
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
+    - id: site_ghavp_3_4
+      name: GHAVP-3&4
+      project_id: prj_ghavp_3_4_pipeline
+      facility_id: fac_npcil_ghavp_haryana
+      reactor_family: PHWR_700
+      units: 2
+      unit_capacity_gw: 0.7
+      phase: pre_project
+      earliest_start_year: 2026
+      construction_years: [6, 12]
+      commissioning_years: [0, 2]
+      commissioning_window: [2032, 2040]
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
+    - id: site_chutka_1_2
+      name: Chutka-1&2
+      project_id: prj_chutka_1_2_pipeline
+      facility_id: fac_npcil_chutka
+      reactor_family: PHWR_700
+      units: 2
+      unit_capacity_gw: 0.7
+      phase: pre_project
+      earliest_start_year: 2026
+      construction_years: [6, 12]
+      commissioning_years: [0, 2]
+      commissioning_window: [2033, 2041]
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
+    - id: site_mahi_banswara_1_4
+      name: Mahi Banswara-1 to 4
+      project_id: prj_mahi_banswara_1_4_pipeline
+      facility_id: fac_npcil_mahi_banswara
+      reactor_family: PHWR_700
+      units: 4
+      unit_capacity_gw: 0.7
+      phase: pre_project
+      earliest_start_year: 2026
+      construction_years: [6, 12]
+      commissioning_years: [0, 2]
+      commissioning_window: [2033, 2042]
+      epistemic_class: REPORTED
+      schedule_epistemic_class: ASSUMPTION
+      evidence_ids: [ev_npcil_fleet_10x700, ev_nuclear_schedule_ranges]
+  fleet_architectures:
+    - id: arch_phwr_heavy_700mwe
+      name: "PHWR-heavy indigenous 700 MWe fleet"
+      reactor_family: PHWR_700
+      unit_capacity_gw: 0.7
+      epistemic_class: REPORTED
+      evidence_ids: [ev_nuclear_700mwe_phwr, ev_npcil_fleet_10x700]
+      capacity_status: UNKNOWN
+      shared_entity_ids: [reactor_pressure_boundary, calandria_and_core, pressure_tube_set, steam_generator, primary_coolant_pump, nuclear_instrumentation_set, plant_electrical_system, turbine_generator_set, site_civil_works_package]
+      distinctive_entity_ids: [heavy_water_inventory, phwr_fuel_bundle, zirconium_alloy_tube, spent_fuel_reprocessing]
+      notes: "Programme-supported architecture context; reactor-unit throughput and fleet ramp remain unknown."
+    - id: arch_mixed_phwr_lwr
+      name: "Mixed indigenous PHWR plus imported/partnered LWR fleet"
+      reactor_family: MIXED_PHWR_LWR
+      unit_capacity_gw: UNKNOWN
+      epistemic_class: SCENARIO
+      evidence_ids: [ev_nuclear_100gwe_policy, ev_nuclear_700mwe_phwr, ev_nuclear_program_model]
+      capacity_status: UNKNOWN
+      shared_entity_ids: [reactor_pressure_boundary, steam_generator, primary_coolant_pump, containment_liner, nuclear_instrumentation_set, plant_electrical_system, turbine_generator_set, site_civil_works_package]
+      distinctive_entity_ids: [heavy_water_inventory, phwr_fuel_bundle, zirconium_alloy_tube, spent_fuel_reprocessing]
+      notes: "The official policy describes indigenous PHWRs alongside large imported reactors; the mixed architecture is a connected FORGE scenario, not a declared fleet schedule."
+    - id: arch_smr_development_context
+      name: "SMR development context (not yet a qualified fleet option)"
+      reactor_family: SMR_DEVELOPMENT
+      unit_capacity_gw: UNKNOWN
+      epistemic_class: REPORTED
+      evidence_ids: [ev_nuclear_smrs_context]
+      capacity_status: UNKNOWN
+      shared_entity_ids: [nuclear_instrumentation_set, plant_electrical_system, site_civil_works_package, fuel_cycle_and_back_end_package]
+      distinctive_entity_ids: [reactor_pressure_boundary, containment_liner]
+      notes: "BSMR/SMR designs are retained as development context; no operating or manufacturing capacity is asserted."
+  industrial_dependency_edges:
+    - from_entity: reactor_island_1gw_kit
+      relation: requires_component
+      to_entity: reactor_pressure_boundary
+    - from_entity: reactor_island_1gw_kit
+      relation: requires_component
+      to_entity: fuel_cycle_and_back_end_package
+    - from_entity: reactor_island_1gw_kit
+      relation: requires_component
+      to_entity: plant_electrical_system
+    - from_entity: reactor_pressure_boundary
+      relation: recurses_to
+      to_entity: large_forged_shell
+    - from_entity: large_forged_shell
+      relation: recurses_to
+      to_entity: nuclear_grade_steel_ingot
+    - from_entity: large_forged_shell
+      relation: requires_process_capability
+      to_entity: heavy_forging_press
+    - from_entity: pressure_tube_set
+      relation: consumes
+      to_entity: zirconium_alloy_tube
+    - from_entity: zirconium_alloy_tube
+      relation: recurses_to
+      to_entity: zirconium_alloy_stock
+    - from_entity: zirconium_alloy_stock
+      relation: recurses_to
+      to_entity: zirconium_sponge
+    - from_entity: zirconium_sponge
+      relation: recurses_to
+      to_entity: mat_zircon_concentrate
+    - from_entity: phwr_fuel_bundle
+      relation: consumes
+      to_entity: uranium_oxide_fuel_pellet
+    - from_entity: uranium_oxide_fuel_pellet
+      relation: recurses_to
+      to_entity: uranium_dioxide_powder
+    - from_entity: uranium_dioxide_powder
+      relation: recurses_to
+      to_entity: mat_natural_uranium_concentrate
+    - from_entity: fuel_cycle_and_back_end_package
+      relation: requires
+      to_entity: spent_fuel_storage_and_handling
+    - from_entity: spent_fuel_storage_and_handling
+      relation: feeds
+      to_entity: spent_fuel_reprocessing
+    - from_entity: spent_fuel_reprocessing
+      relation: outputs
+      to_entity: vitrified_high_level_waste

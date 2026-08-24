@@ -108,6 +108,38 @@ sources:
     source_type: technical_journalism
     license: public article (referenced)
     access_date: "2026-08-22"
+  - id: src_harmonicdrive_precision
+    name: Harmonic Drive — Gear Units product page
+    publisher: Harmonic Drive LLC
+    url: "https://www.harmonicdrive.net/products/gear-units/"
+    source_type: manufacturer_product_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official product scope only; no current humanoid-qualified annual capacity is stated.
+  - id: src_nabtesco_rv
+    name: Nabtesco Precision Equipment — RV-N reduction gear product page
+    publisher: Nabtesco Precision Equipment Company
+    url: "https://precision.nabtesco.com/en/products/detail/rv-n"
+    source_type: manufacturer_product_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official product scope and historical shipment statement; not an annual humanoid-capacity disclosure.
+  - id: src_nsk_crossroller
+    name: NSK — Crossed Roller Bearing catalogue
+    publisher: NSK Ltd.
+    url: "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+    source_type: manufacturer_catalogue
+    license: public PDF (referenced)
+    access_date: "2026-08-24"
+    notes: Official product/application scope; no robot-grade qualified annual capacity is stated.
+  - id: src_renishaw_resolute
+    name: Renishaw — RESOLUTE optical absolute encoder series
+    publisher: Renishaw plc
+    url: "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+    source_type: manufacturer_product_page
+    license: public web page (referenced)
+    access_date: "2026-08-24"
+    notes: Official product/specification scope; no humanoid-qualified annual capacity is stated.
   - id: src_corpus_streams
     name: FORGE WORLD Wide Research Package + stream notes 06/11 (supplied corpus)
     publisher: Supplied research corpus
@@ -291,6 +323,103 @@ evidence:
     source_ids: [src_ieee_synrm, src_iea_ree]
     retrieval_date: "2026-08-22"
     confidence: {authority: 0.75, directness: 0.7, corroboration: 0.75}
+  - claim_id: ev_harmonicdrive_scope
+    subject: harmonicdrive_precision_gear_units
+    predicate: product_scope
+    epistemic_class: REPORTED
+    value_text: "Harmonic Drive's official gear-unit page describes zero-backlash precision gear units, accuracy below 1 arc-min, and cross-roller output bearings; it does not disclose current humanoid-qualified annual capacity"
+    source_ids: [src_harmonicdrive_precision]
+    retrieval_date: "2026-08-24"
+    geographic_scope: GLOBAL
+    technical_scope: "precision harmonic gear units and integrated motion-control products"
+    confidence: {authority: 0.9, directness: 0.95, recency: 0.9, technical_specificity: 0.9}
+    quote_or_caveat: Product identity and specification scope are evidenced; factory allocation, yield, customer qualification, and annual capacity remain UNKNOWN
+  - claim_id: ev_nabtesco_rv_scope
+    subject: nabtesco_rv_reducer
+    predicate: product_scope
+    epistemic_class: REPORTED
+    value_text: "Nabtesco's official RV-N page describes precision RV reduction gears used in robotics, with backlash and lost motion below 1 arc-min; the page reports a historical 7.0 million-unit shipment figure but not current humanoid-qualified annual capacity"
+    source_ids: [src_nabtesco_rv]
+    retrieval_date: "2026-08-24"
+    geographic_scope: JPN
+    technical_scope: "RV precision reduction gears for robotics and motion equipment"
+    confidence: {authority: 0.9, directness: 0.95, recency: 0.9, technical_specificity: 0.9}
+    quote_or_caveat: Historical shipped units are not current nameplate, effective, exportable, or humanoid-qualified supply
+  - claim_id: ev_nsk_crossroller_scope
+    subject: nsk_crossed_roller_bearing
+    predicate: product_scope
+    epistemic_class: REPORTED
+    value_text: "NSK's official catalogue describes crossed-roller bearings for high rigidity and says they are widely used in rotating joints of robots; annual qualified capacity and humanoid-specific acceptance remain undisclosed"
+    source_ids: [src_nsk_crossroller]
+    retrieval_date: "2026-08-24"
+    geographic_scope: JPN
+    technical_scope: "crossed-roller bearings for robot joints and precision mechanisms"
+    confidence: {authority: 0.9, directness: 0.95, recency: 0.75, technical_specificity: 0.9}
+    quote_or_caveat: Application scope is not evidence of available volume or customer qualification for this benchmark
+  - claim_id: ev_renishaw_encoder_scope
+    subject: renishaw_resolute_encoder
+    predicate: product_scope
+    epistemic_class: REPORTED
+    value_text: "Renishaw's official RESOLUTE page describes true-absolute optical encoders for fine-resolution position measurement with multiple industrial serial interfaces; humanoid-grade annual capacity and customer qualification are not disclosed"
+    source_ids: [src_renishaw_resolute]
+    retrieval_date: "2026-08-24"
+    geographic_scope: GBR
+    technical_scope: "absolute optical encoders and position feedback systems"
+    confidence: {authority: 0.9, directness: 0.95, recency: 0.85, technical_specificity: 0.9}
+    quote_or_caveat: Product specification does not establish robot-joint qualification, allocation, yield, or annual throughput
+  - claim_id: ev_precision_motion_capacity_unknown
+    subject: precision_motion_capacity
+    predicate: qualified_effective_capacity
+    epistemic_class: UNKNOWN
+    value_text: "The cited official supplier pages establish product/application scope but do not establish current qualified effective annual capacity for humanoid-grade reducers, crossed-roller bearings, high-resolution encoders, or joint motors"
+    source_ids: [src_harmonicdrive_precision, src_nabtesco_rv, src_nsk_crossroller, src_renishaw_resolute]
+    retrieval_date: "2026-08-24"
+    geographic_scope: GLOBAL
+    technical_scope: "humanoid-grade precision motion components"
+    confidence: {authority: 0.85, directness: 0.8, corroboration: 0.85, completeness: 0.25}
+    quote_or_caveat: UNKNOWN is intentional; supplier audit, line allocation, yield, qualification, and exportable-share evidence are required before a capacity number can be used
+  - claim_id: ev_material_chain_unknown
+    subject: humanoid_material_chains
+    predicate: grade_compatible_upstream_supply
+    epistemic_class: UNKNOWN
+    value_text: "Public policy and critical-minerals sources identify rare-earth, battery, and specialty-material chain exposure, but do not establish grade-compatible, qualified, exportable feedstock volumes for this humanoid architecture"
+    source_ids: [src_pib_repm, src_iea_ree, src_pib_acc_pli]
+    retrieval_date: "2026-08-24"
+    geographic_scope: GLOBAL
+    technical_scope: "NdFeB magnet feed, battery-grade lithium/phosphate inputs, and specialty reducer/bearing steel"
+    confidence: {authority: 0.85, directness: 0.65, corroboration: 0.75, completeness: 0.3}
+    quote_or_caveat: Reserve, project, import, or commodity evidence must not be promoted to qualified component-grade supply
+  - claim_id: ev_chain_conversion_assumption
+    subject: illustrative_material_chain_coefficients
+    predicate: scenario_coefficients
+    epistemic_class: ASSUMPTION
+    value_text: "Illustrative upstream conversion quantities in this pack are MODELLED scenario coefficients to keep the dependency graph executable; they are not measured yields, plant capacities, or reserves"
+    source_ids: [src_corpus_streams]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.2, directness: 0.1, completeness: 0.1}
+    quote_or_caveat: Replace with measured mass balances and grade-specific process data before using for procurement or feasibility claims
+  - claim_id: ev_robot_cell_form_factor_unknown
+    subject: battery_cell_liion
+    predicate: robot_form_factor_qualification
+    epistemic_class: UNKNOWN
+    value_text: "India's ACC policy and awarded capacity establish a cell-manufacturing policy pipeline, not a commissioned, robot-compatible cell format, yield, safety, or annual allocation"
+    source_ids: [src_pib_acc_pli]
+    retrieval_date: "2026-08-24"
+    geographic_scope: INDIA
+    technical_scope: "Li-ion cell chemistry, form factor, pack safety and allocation for humanoids"
+    confidence: {authority: 0.9, directness: 0.8, corroboration: 0.7, completeness: 0.25}
+    quote_or_caveat: Awarded GWh is not commissioned qualified robot-cell supply
+  - claim_id: ev_robot_compute_compat_unknown
+    subject: edge_compute_module
+    predicate: robot_compute_supply
+    epistemic_class: UNKNOWN
+    value_text: "India's semiconductor programme reports approved projects and packaging/fabrication pipeline, but node compatibility, yield, qualified edge-AI allocation, memory pairing, and annual humanoid supply remain UNKNOWN"
+    source_ids: [src_pib_semicon2]
+    retrieval_date: "2026-08-24"
+    geographic_scope: INDIA
+    technical_scope: "edge-AI SoC, memory, PMIC, package and board qualification"
+    confidence: {authority: 0.95, directness: 0.85, corroboration: 0.8, completeness: 0.25}
+    quote_or_caveat: Approved or packaged semiconductor projects are not evidence of a suitable operating node or allocated robot volume
 
 organizations:
   - id: org_unitree
@@ -305,15 +434,64 @@ organizations:
   - id: org_harmonicdrive
     name: Harmonic Drive Systems
     countries: [JPN]
+    evidence_ids: [ev_harmonicdrive_scope]
   - id: org_nabtesco
     name: Nabtesco
     countries: [JPN]
+    evidence_ids: [ev_nabtesco_rv_scope]
+  - id: org_nsk
+    name: NSK Ltd.
+    countries: [JPN]
+    evidence_ids: [ev_nsk_crossroller_scope]
+  - id: org_renishaw
+    name: Renishaw plc
+    countries: [GBR]
+    evidence_ids: [ev_renishaw_encoder_scope]
   - id: org_fanuc
     name: FANUC
     countries: [JPN]
   - id: org_siemens
     name: Siemens
     countries: [DEU]
+
+materials:
+  - id: mat_ndpr_oxide_grade
+    name: NdPr oxide grade for magnet feed
+    family: rare_earth_oxide
+    grade_spec: "Nd/Pr oxide with Dy/Tb additions as required by magnet design; assay and impurity limits UNKNOWN"
+    form: oxide_powder
+    evidence_ids: [ev_material_chain_unknown]
+    notes: Grade compatibility and qualified exportable supply are UNKNOWN.
+  - id: mat_ndpr_mixed_carbonate
+    name: NdPr mixed carbonate intermediate
+    family: rare_earth_intermediate
+    grade_spec: "mixed rare-earth carbonate; composition, recovery, and impurity envelope UNKNOWN"
+    form: precipitate
+    evidence_ids: [ev_material_chain_unknown]
+  - id: mat_rare_earth_concentrate
+    name: Rare-earth mineral concentrate for NdPr separation
+    family: rare_earth_mineral
+    grade_spec: "beneficiated concentrate; mineralogy, recovery, and route suitability UNKNOWN"
+    form: concentrate
+    evidence_ids: [ev_material_chain_unknown]
+  - id: mat_lithium_brine_intermediate
+    name: Lithium-bearing intermediate for battery-grade carbonate
+    family: lithium_feed
+    grade_spec: "feedstock to carbonate refining; impurity, recovery, and origin UNKNOWN"
+    form: concentrate
+    evidence_ids: [ev_material_chain_unknown, ev_robot_cell_form_factor_unknown]
+  - id: mat_iron_phosphate_precursor
+    name: Iron-phosphate precursor
+    family: battery_cathode_precursor
+    grade_spec: "battery-grade precursor; phase purity, particle-size distribution, and qualification UNKNOWN"
+    form: powder
+    evidence_ids: [ev_robot_cell_form_factor_unknown]
+  - id: mat_phosphate_rock
+    name: Phosphate mineral feed
+    family: phosphate_mineral
+    grade_spec: "phosphate rock feed; beneficiation and battery-grade conversion UNKNOWN"
+    form: ore
+    evidence_ids: [ev_material_chain_unknown]
 
 parts:
   - id: actuator_rotary_body
@@ -337,20 +515,79 @@ parts:
     supplied_by_countries: [JPN, CHN]
     concentration_hhi: 0.62
     lead_time: [9, "mo"]
+    evidence_ids: [ev_harmonicdrive_scope, ev_precision_motion_capacity_unknown]
+    notes: Product family is evidenced; current humanoid-qualified effective capacity is UNKNOWN.
+  - id: rv_reducer
+    name: Precision RV/cycloidal reducer (alternative body-joint family)
+    part_class: component
+    spec: "backlash < 1 arcmin target; integrated main-bearing and fatigue-life qualification UNKNOWN"
+    supplied_by_countries: [JPN]
+    concentration_hhi: 0.78
+    lead_time: [9, "mo"]
+    evidence_ids: [ev_nabtesco_rv_scope, ev_precision_motion_capacity_unknown]
+    notes: Official RV product scope does not establish current humanoid allocation, annual capacity, or customer qualification.
   - id: bldc_servo_motor
     name: BLDC/PMSM servo motor (joint grade)
     part_class: component
     supplied_by_countries: [CHN, JPN]
+    evidence_ids: [ev_precision_motion_capacity_unknown]
+    notes: Broad motor origin set is an eligibility prior, not a qualified humanoid-grade supply observation.
   - id: crossed_roller_bearing
     name: Crossed-roller bearing (robot joint grade)
     part_class: component
     supplied_by_countries: [JPN, DEU, CHN]
+    evidence_ids: [ev_nsk_crossroller_scope, ev_precision_motion_capacity_unknown]
+    notes: Robot-joint application scope is evidenced; annual qualified capacity remains UNKNOWN.
   - id: absolute_encoder
     name: Absolute encoder (dual, high-res)
     part_class: component
     supplied_by_countries: [JPN, DEU, CHE]
+    evidence_ids: [ev_renishaw_encoder_scope, ev_precision_motion_capacity_unknown]
+    notes: Absolute-encoder product scope is evidenced; humanoid-joint qualification and effective capacity remain UNKNOWN.
   - id: motor_driver_inverter
     name: Motor driver / inverter stage
+    part_class: component
+  - id: silicon_power_stage
+    name: Silicon MOSFET/IGBT power stage (baseline inverter route)
+    part_class: component
+    notes: Architecture placeholder; supplier, voltage class, yield, and qualified annual supply are UNKNOWN.
+  - id: gate_driver_ic
+    name: Isolated gate-driver IC
+    part_class: component
+    notes: Architecture placeholder; source and qualified humanoid allocation are UNKNOWN.
+  - id: dc_link_capacitor
+    name: DC-link capacitor set
+    part_class: component
+    notes: Architecture placeholder; lifetime, ripple-current qualification, and annual supply are UNKNOWN.
+  - id: power_distribution_unit
+    name: Robot power-distribution and protection unit
+    part_class: subassembly
+    notes: Includes contactors, fusing, current sensing, and busbars; architecture-level demand only.
+  - id: dc_dc_converter
+    name: Isolated DC-DC converter stage
+    part_class: component
+    notes: Architecture-level demand only; power-density, isolation, and qualification evidence are UNKNOWN.
+  - id: safety_controller
+    name: Safety-rated motion/supervisory controller
+    part_class: component
+    notes: Safety architecture placeholder; certification path and annual capacity are UNKNOWN.
+  - id: joint_temperature_sensor
+    name: Joint temperature sensor
+    part_class: component
+  - id: force_torque_sensor
+    name: Foot/wrist force-torque sensor module
+    part_class: component
+  - id: hall_current_sensor
+    name: Phase and DC-link current sensor
+    part_class: component
+  - id: charging_interface
+    name: Robot charging/swapping interface
+    part_class: component
+  - id: cooling_pump
+    name: Closed-loop actuator cooling pump
+    part_class: component
+  - id: heat_spreader_set
+    name: Motor/inverter heat-spreader set
     part_class: component
   - id: edge_compute_module
     name: Edge-AI compute module (SoC + memory + PMIC)
@@ -400,6 +637,23 @@ parts:
   - id: tactile_sensor_array
     name: Tactile sensor array (hand)
     part_class: component
+  - id: encoder_asic
+    name: Encoder readhead ASIC/electronics
+    part_class: component
+    notes: Encoder silicon, optics, and calibration chain are not separately capacity-evidenced.
+  - id: encoder_scale_glass
+    name: Encoder optical scale and substrate
+    part_class: component
+    notes: Precision scale material/process and robot-grade yield are UNKNOWN.
+  - id: stereo_camera
+    name: Stereo/RGB camera module
+    part_class: component
+  - id: joint_driver_board
+    name: Joint driver PCB and sensing board
+    part_class: component
+  - id: cable_flex_set
+    name: High-flex joint cable set
+    part_class: component
   - id: joint_motor_unit_compact
     name: Compact integrated joint motor unit (quasi-direct drive)
     part_class: component
@@ -439,14 +693,34 @@ parts:
     mass: [1, "kg_oxide"]
     supplied_by_countries: [CHN]
     concentration_hhi: 0.88
+    evidence_ids: [ev_material_chain_unknown]
+    notes: Oxide-to-magnet feed node; grade-compatible qualified supply is UNKNOWN.
+  - id: ndpr_mixed_carbonate
+    name: NdPr mixed carbonate intermediate
+    part_class: component
+    mass: [1, "kg_oxide"]
+    supplied_by_countries: [CHN, AUS, USA]
+    notes: Candidate upstream intermediate only; origin and qualified conversion capacity are UNKNOWN.
+  - id: monazite_mineral_feed
+    name: Monazite/rare-earth mineral feed
+    part_class: component
+    mass: [1, "kg_ore"]
+    notes: Mineral feed is not a reserve or usable separated oxide; mine, beneficiation, and permitting states are UNKNOWN.
+  - id: monazite_ore_raw
+    name: Raw monazite-bearing ore boundary
+    part_class: component
+    mass: [1, "kg_ore"]
+    notes: Raw ore boundary only; reserve, mine output, permitting, and recovery are UNKNOWN.
   - id: specialty_steel_flexspline
     name: Specialty alloy steel for flexspline
     part_class: component
     mass: [1, "kg_product"]
+    evidence_ids: [ev_material_chain_unknown]
   - id: bearing_steel
     name: Bearing steel (through-hardening)
     part_class: component
     mass: [1, "kg_product"]
+    evidence_ids: [ev_material_chain_unknown]
   - id: alu_ingot
     name: Aluminium ingot/billet
     part_class: component
@@ -456,10 +730,33 @@ parts:
     part_class: component
     mass: [1, "kg_product"]
     supplied_by_countries: [CHL, ARG, CHN]
+    evidence_ids: [ev_robot_cell_form_factor_unknown, ev_material_chain_unknown]
   - id: iron_phosphate
     name: Battery-grade iron phosphate
     part_class: component
     mass: [1, "kg_product"]
+    evidence_ids: [ev_robot_cell_form_factor_unknown, ev_material_chain_unknown]
+  - id: phosphate_rock
+    name: Phosphate rock feed
+    part_class: component
+    mass: [1, "kg_ore"]
+    notes: Upstream mineral feed; grade conversion and qualified battery supply are UNKNOWN.
+  - id: lithium_mineral_feed
+    name: Lithium-bearing mineral/brine feed
+    part_class: component
+    mass: [1, "kg_ore"]
+    supplied_by_countries: [CHL, ARG, AUS, CHN]
+    notes: Feedstock origin and conversion route are architecture assumptions, not supply evidence.
+  - id: rv_pin_steel
+    name: RV pin and gear alloy steel
+    part_class: component
+    mass: [1, "kg_product"]
+    evidence_ids: [ev_material_chain_unknown]
+  - id: rv_case_steel
+    name: RV reducer case steel/casting
+    part_class: component
+    mass: [1, "kg_product"]
+    evidence_ids: [ev_material_chain_unknown]
 
 product_variants:
   - id: hv2_industrial
@@ -509,6 +806,16 @@ product_variants:
         qty: 60
       - part: motor_driver_inverter
         qty: 44
+      - part: power_distribution_unit
+        qty: 1
+      - part: dc_dc_converter
+        qty: 2
+      - part: safety_controller
+        qty: 1
+      - part: joint_temperature_sensor
+        qty: 30
+      - part: hall_current_sensor
+        qty: 44
       - part: edge_compute_module
         qty: 1
       - part: battery_pack_robot
@@ -525,12 +832,24 @@ product_variants:
         qty: 1
       - part: thermal_management_set
         qty: 1
+      - part: cooling_pump
+        qty: 1
+      - part: heat_spreader_set
+        qty: 1
+      - part: charging_interface
+        qty: 1
       - part: depth_camera
+        qty: 2
+      - part: stereo_camera
         qty: 2
       - part: imu_module
         qty: 1
       - part: foot_sensor
         qty: 2
+      - part: force_torque_sensor
+        qty: 2
+      - part: cable_flex_set
+        qty: 1
 
   - id: hv1_compact
     name: HV-1 compact humanoid (G1-class, ~35 kg)
@@ -566,8 +885,16 @@ product_variants:
         qty: 1
       - part: bms_board
         qty: 1
+      - part: power_distribution_unit
+        qty: 1
+      - part: dc_dc_converter
+        qty: 1
+      - part: safety_controller
+        qty: 1
       - part: depth_camera
         qty: 3
+      - part: stereo_camera
+        qty: 1
       - part: imu_module
         qty: 1
       - part: wiring_harness_set
@@ -640,6 +967,43 @@ recipes:
         quantity: [2, "pcs"]
     evidence_ids: [ev_humanoid_envelope, ev_addverb_wheeled]
 
+  - id: rec_joint_actuator_rv
+    name: Body rotary actuator assembly (RV/cycloidal reducer route)
+    output_part: actuator_rotary_body
+    output_quantity: [1, "pcs"]
+    route_type: secondary
+    maturity: pilot
+    applicable_geographies: [GLOBAL]
+    requires_qualification: [qual_actuator_robot_grade, qual_rv_reducer_robot_grade]
+    notes: >
+      Architecture alternative for body joints only. It preserves the actuator interface
+      while replacing the harmonic/flexspline dependency with an RV reducer family;
+      integration, life, thermal, and customer qualification are not demonstrated for humanoids.
+    steps:
+      - id: rv_stator_winding
+        name: stator winding and rotor balance
+        equipment_classes: [winding_line, rotor_balance_cell]
+        yield_fraction: 0.94
+      - id: rv_reducer_integration
+        name: RV reducer integration and preload setting
+        equipment_classes: [rv_reducer_assembly_cell]
+        yield_fraction: 0.88
+      - id: rv_cal_test
+        name: calibration, backlash, thermal, and EOL dyno test
+        equipment_classes: [eol_dyno_tester, backlash_test_bench]
+        cycle_time_per_unit: [0.2, "h"]
+        yield_fraction: 0.88
+    inputs:
+      - id: bldc_servo_motor
+        quantity: [1, "pcs"]
+      - id: rv_reducer
+        quantity: [1, "pcs"]
+      - id: crossed_roller_bearing
+        quantity: [2, "pcs"]
+      - id: absolute_encoder
+        quantity: [2, "pcs"]
+    evidence_ids: [ev_nabtesco_rv_scope, ev_precision_motion_capacity_unknown]
+
   - id: rec_micro_actuator_hand
     name: Hand micro-actuator
     output_part: micro_actuator_hand
@@ -656,6 +1020,40 @@ recipes:
       - id: harmonic_reducer
         quantity: [0.34, "pcs"]
     evidence_ids: []
+
+  - id: rec_micro_actuator_hand_ree_free
+    name: Hand micro-actuator (rare-earth-reduced direct motor route)
+    output_part: micro_actuator_hand
+    output_quantity: [1, "pcs"]
+    route_type: secondary
+    maturity: pilot
+    applicable_geographies: [GLOBAL]
+    requires_qualification: [qual_hand_actuator_robot_grade]
+    notes: >
+      Architecture alternative for dexterous-hand micro-actuators. It removes the
+      BLDC+harmonic micro-chain and substitutes electrical steel, copper, and a
+      higher-control-burden inverter route; hand force, heat, life, and yield remain UNKNOWN.
+    steps:
+      - id: hand_synrm_lamination
+        name: flux-guiding lamination and winding
+        equipment_classes: [micro_lamination_press, winding_line]
+        yield_fraction: 0.93
+      - id: hand_synrm_assembly
+        name: micro-motor assembly and balance
+        equipment_classes: [micro_precision_assembly_cell, micro_balance_cell]
+        yield_fraction: 0.88
+      - id: hand_synrm_test
+        name: thermal, force, and EOL test
+        equipment_classes: [micro_eol_dyno]
+        yield_fraction: 0.9
+    inputs:
+      - id: hq_electrical_steel
+        quantity: [0.45, "kg_product"]
+      - id: copper_magnet_wire
+        quantity: [0.2, "kg_product"]
+      - id: sic_power_stage
+        quantity: [1, "pcs"]
+    evidence_ids: [ev_synrm_tradeoff, ev_precision_motion_capacity_unknown]
 
   - id: rec_harmonic_reducer
     name: Harmonic reducer (flexspline route)
@@ -689,6 +1087,49 @@ recipes:
       - id: bearing_steel
         quantity: [0.4, "kg_product"]
     evidence_ids: []
+
+  - id: rec_rv_reducer
+    name: RV/cycloidal reducer (pin-and-case route)
+    output_part: rv_reducer
+    output_quantity: [1, "pcs"]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    requires_qualification: [qual_rv_reducer_robot_grade]
+    notes: >
+      Functional reducer-family route used by the architecture substitution. Exact
+      material grades, line allocation, robot qualification, yield, and effective capacity
+      are UNKNOWN; coefficients are explicit scenario assumptions.
+    steps:
+      - id: rv_pin_form
+        name: pin/gear precision forming and turning
+        equipment_classes: [precision_gear_hobbing_cell, five_axis_cnc]
+        yield_fraction: 0.93
+      - id: rv_profile_grind
+        name: profile and raceway grinding
+        equipment_classes: [precision_gear_grinder, precision_bearing_grinder]
+        cycle_time_per_unit: [0.03, "h"]
+        yield_fraction: 0.9
+      - id: rv_heat_treat
+        name: vacuum carburizing and tempering
+        equipment_classes: [vacuum_furnace]
+        yield_fraction: 0.97
+      - id: rv_case_machine
+        name: case machining and runout inspection
+        equipment_classes: [five_axis_cnc, metrology_cmm]
+        yield_fraction: 0.95
+      - id: rv_life_test
+        name: backlash, runout, and fatigue-life screening
+        equipment_classes: [backlash_test_bench, reducer_life_test_cell]
+        yield_fraction: 0.96
+    inputs:
+      - id: rv_pin_steel
+        quantity: [0.85, "kg_product"]
+      - id: rv_case_steel
+        quantity: [0.65, "kg_product"]
+      - id: bearing_steel
+        quantity: [0.35, "kg_product"]
+    evidence_ids: [ev_nabtesco_rv_scope, ev_chain_conversion_assumption, ev_precision_motion_capacity_unknown]
 
   - id: rec_bldc_servo_motor
     name: BLDC/PMSM servo motor
@@ -743,6 +1184,96 @@ recipes:
         quantity: [0.45, "kg_product"]
     evidence_ids: [ev_synrm_tradeoff]
 
+  - id: rec_motor_driver_inverter
+    name: Baseline motor-driver inverter board
+    output_part: motor_driver_inverter
+    output_quantity: [1, "pcs"]
+    maturity: series
+    applicable_geographies: [GLOBAL, INDIA]
+    steps:
+      - id: driver_smt
+        name: SMT, power-stage assembly, and conformal coat
+        equipment_classes: [ems_line, inverter_test_bench]
+        yield_fraction: 0.97
+      - id: driver_eol
+        name: current/voltage isolation and EOL test
+        equipment_classes: [inverter_test_bench]
+        yield_fraction: 0.98
+    inputs:
+      - id: silicon_power_stage
+        quantity: [1, "pcs"]
+      - id: gate_driver_ic
+        quantity: [3, "pcs"]
+      - id: dc_link_capacitor
+        quantity: [1, "pcs"]
+    notes: Baseline power-stage route; exact voltage class, supplier allocation, and qualified capacity are UNKNOWN.
+
+  - id: rec_power_distribution_unit
+    name: Power-distribution and protection unit
+    output_part: power_distribution_unit
+    output_quantity: [1, "pcs"]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: pdu_busbar
+        name: busbar, fuse, contactor, and current-sensor assembly
+        equipment_classes: [busbar_fabrication_cell, ems_line]
+        yield_fraction: 0.96
+      - id: pdu_test
+        name: insulation, thermal, and fault-injection test
+        equipment_classes: [power_safety_test_bench]
+        yield_fraction: 0.98
+    inputs:
+      - id: hall_current_sensor
+        quantity: [4, "pcs"]
+      - id: dc_link_capacitor
+        quantity: [2, "pcs"]
+    notes: Architecture-level route; component grade, test envelope, and capacity are UNKNOWN.
+
+  - id: rec_dc_dc_converter
+    name: Isolated DC-DC converter
+    output_part: dc_dc_converter
+    output_quantity: [1, "pcs"]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: dcdc_assembly
+        name: magnetics, power stage, and controller assembly
+        equipment_classes: [ems_line, inverter_test_bench]
+        yield_fraction: 0.96
+      - id: dcdc_test
+        name: isolation and thermal cycling test
+        equipment_classes: [power_safety_test_bench]
+        yield_fraction: 0.97
+    inputs:
+      - id: silicon_power_stage
+        quantity: [2, "pcs"]
+      - id: gate_driver_ic
+        quantity: [1, "pcs"]
+      - id: dc_link_capacitor
+        quantity: [1, "pcs"]
+
+  - id: rec_safety_controller
+    name: Safety-rated controller and supervisory board
+    output_part: safety_controller
+    output_quantity: [1, "pcs"]
+    maturity: prototype
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: safety_smt
+        name: controller SMT and secure firmware load
+        equipment_classes: [ems_line, secure_flash_bench]
+        yield_fraction: 0.97
+      - id: safety_test
+        name: fault-injection and safety I/O test
+        equipment_classes: [functional_safety_test_bench]
+        yield_fraction: 0.95
+    inputs:
+      - id: gate_driver_ic
+        quantity: [2, "pcs"]
+      - id: dram_chip
+        quantity: [1, "pcs"]
+
   - id: rec_ndfeb_magnet
     name: Sintered NdFeB magnet (integrated oxide-to-magnet route)
     output_part: ndfeb_magnet
@@ -769,6 +1300,74 @@ recipes:
         quantity: [1.6, "kg_oxide"]
     evidence_ids: [ev_repm_scheme, ev_china_processing]
 
+  - id: rec_ndpr_oxide_grade
+    name: NdPr oxide separation and calcination (modelled upstream route)
+    output_part: reo_ndpr_oxide
+    output_quantity: [1, "kg_oxide"]
+    maturity: pilot
+    applicable_geographies: [GLOBAL, INDIA]
+    steps:
+      - id: ndpr_leach
+        name: leach and impurity removal
+        equipment_classes: [hydrometallurgy_leach_line, solvent_extraction_line]
+        yield_fraction: 0.86
+      - id: ndpr_precipitation
+        name: selective precipitation and calcination
+        equipment_classes: [chemical_precipitation_line, calcination_furnace]
+        yield_fraction: 0.9
+    inputs:
+      - id: ndpr_mixed_carbonate
+        quantity: [1.25, "kg_oxide"]
+    evidence_ids: [ev_material_chain_unknown, ev_chain_conversion_assumption]
+
+  - id: rec_ndpr_mixed_carbonate
+    name: Mixed-carbonate purification (modelled upstream route)
+    output_part: ndpr_mixed_carbonate
+    output_quantity: [1, "kg_oxide"]
+    maturity: study
+    applicable_geographies: [GLOBAL, INDIA]
+    steps:
+      - id: ndpr_impurity_removal
+        name: beneficiation, leach, and impurity removal
+        equipment_classes: [hydrometallurgy_leach_line, impurity_removal_line]
+        yield_fraction: 0.8
+    inputs:
+      - id: mat_rare_earth_concentrate
+        quantity: [2, "kg_oxide"]
+    evidence_ids: [ev_material_chain_unknown, ev_chain_conversion_assumption]
+
+  - id: rec_rare_earth_concentrate
+    name: Rare-earth mineral beneficiation (modelled upstream route)
+    output_part: mat_rare_earth_concentrate
+    output_quantity: [1, "kg_oxide"]
+    maturity: study
+    applicable_geographies: [GLOBAL, INDIA]
+    steps:
+      - id: re_beneficiation
+        name: mineral separation and concentrate handling
+        equipment_classes: [mineral_beneficiation_plant, concentrate_filter_cell]
+        yield_fraction: 0.75
+    inputs:
+      - id: monazite_mineral_feed
+        quantity: [4, "kg_ore"]
+    evidence_ids: [ev_material_chain_unknown, ev_chain_conversion_assumption]
+
+  - id: rec_monazite_mineral_feed
+    name: Mineral feed preparation (modelled chain boundary)
+    output_part: monazite_mineral_feed
+    output_quantity: [1, "kg_ore"]
+    maturity: study
+    applicable_geographies: [GLOBAL, INDIA]
+    steps:
+      - id: re_mine_prep
+        name: ore preparation and wet concentration
+        equipment_classes: [ore_preparation_plant, wet_concentration_cell]
+        yield_fraction: 0.9
+    inputs:
+      - id: monazite_ore_raw
+        quantity: [1.3, "kg_ore"]
+    evidence_ids: [ev_material_chain_unknown, ev_chain_conversion_assumption]
+
   - id: rec_crossed_roller_bearing
     name: Crossed-roller bearing (joint grade)
     output_part: crossed_roller_bearing
@@ -794,11 +1393,14 @@ recipes:
     steps:
       - id: enc_asm
         name: optics+ASIC assembly/calibration
-        equipment_classes: [cleanroom_bench]
+        equipment_classes: [cleanroom_bench, encoder_calibration_bench]
         yield_fraction: 0.95
     inputs:
-      - id: dram_chip
-        quantity: [0.05, "pcs"]
+      - id: encoder_asic
+        quantity: [1, "pcs"]
+      - id: encoder_scale_glass
+        quantity: [1, "pcs"]
+    evidence_ids: [ev_renishaw_encoder_scope, ev_precision_motion_capacity_unknown]
 
   - id: rec_edge_compute
     name: Edge-AI compute module (imported SoC route)
@@ -870,6 +1472,79 @@ recipes:
         quantity: [0.55, "kg_product"]
       - id: iron_phosphate
         quantity: [0.9, "kg_product"]
+    evidence_ids: [ev_robot_cell_form_factor_unknown, ev_chain_conversion_assumption]
+
+  - id: rec_lithium_carbonate_refine
+    name: Battery-grade lithium carbonate refining (modelled upstream route)
+    output_part: lithium_carbonate
+    output_quantity: [1, "kg_product"]
+    maturity: pilot
+    applicable_geographies: [GLOBAL, INDIA]
+    steps:
+      - id: lithium_leach
+        name: leach, purification, and carbonate precipitation
+        equipment_classes: [hydrometallurgy_leach_line, carbonate_precipitation_line]
+        yield_fraction: 0.8
+      - id: lithium_dry
+        name: drying, milling, and assay
+        equipment_classes: [powder_drying_line, chemical_assay_lab]
+        yield_fraction: 0.95
+    inputs:
+      - id: mat_lithium_brine_intermediate
+        quantity: [1.5, "kg_ore"]
+    evidence_ids: [ev_material_chain_unknown, ev_robot_cell_form_factor_unknown, ev_chain_conversion_assumption]
+
+  - id: rec_lithium_brine_intermediate
+    name: Lithium-bearing feed preparation (modelled upstream route)
+    output_part: mat_lithium_brine_intermediate
+    output_quantity: [1, "kg_ore"]
+    maturity: study
+    applicable_geographies: [GLOBAL, INDIA]
+    steps:
+      - id: lithium_feed_prep
+        name: brine/mineral concentration and impurity removal
+        equipment_classes: [mineral_beneficiation_plant, impurity_removal_line]
+        yield_fraction: 0.85
+    inputs:
+      - id: lithium_mineral_feed
+        quantity: [2, "kg_ore"]
+    evidence_ids: [ev_material_chain_unknown, ev_chain_conversion_assumption]
+
+  - id: rec_iron_phosphate
+    name: Battery-grade iron phosphate synthesis (modelled upstream route)
+    output_part: iron_phosphate
+    output_quantity: [1, "kg_product"]
+    maturity: pilot
+    applicable_geographies: [GLOBAL, INDIA]
+    steps:
+      - id: lfp_precursor_synthesis
+        name: iron-phosphate precipitation and drying
+        equipment_classes: [chemical_precipitation_line, powder_drying_line]
+        yield_fraction: 0.9
+      - id: lfp_assay
+        name: phase-purity and particle-size assay
+        equipment_classes: [chemical_assay_lab]
+        yield_fraction: 0.97
+    inputs:
+      - id: mat_iron_phosphate_precursor
+        quantity: [1.1, "kg_product"]
+    evidence_ids: [ev_material_chain_unknown, ev_robot_cell_form_factor_unknown, ev_chain_conversion_assumption]
+
+  - id: rec_iron_phosphate_precursor
+    name: Iron-phosphate precursor feed (modelled upstream route)
+    output_part: mat_iron_phosphate_precursor
+    output_quantity: [1, "kg_product"]
+    maturity: study
+    applicable_geographies: [GLOBAL, INDIA]
+    steps:
+      - id: phosphate_feed_conversion
+        name: phosphate conversion and iron-source blending
+        equipment_classes: [chemical_precipitation_line, powder_blending_cell]
+        yield_fraction: 0.85
+    inputs:
+      - id: mat_phosphate_rock
+        quantity: [1.5, "kg_ore"]
+    evidence_ids: [ev_material_chain_unknown, ev_chain_conversion_assumption]
 
   - id: rec_structure_casting
     name: Structural castings set
@@ -905,6 +1580,111 @@ recipes:
     inputs:
       - id: alu_ingot
         quantity: [14, "kg_product"]
+
+  - id: rec_power_distribution_unit_detail
+    name: Power-distribution unit detail route
+    output_part: power_distribution_unit
+    output_quantity: [1, "pcs"]
+    route_type: secondary
+    maturity: prototype
+    applicable_geographies: [INDIA]
+    steps:
+      - id: pdu_harness
+        name: busbar and protection assembly
+        equipment_classes: [busbar_fabrication_cell, harness_assembly_cell]
+        yield_fraction: 0.94
+      - id: pdu_eol
+        name: insulation and fault test
+        equipment_classes: [power_safety_test_bench]
+        yield_fraction: 0.97
+    inputs:
+      - id: hall_current_sensor
+        quantity: [4, "pcs"]
+      - id: dc_link_capacitor
+        quantity: [2, "pcs"]
+
+  - id: rec_cooling_pump
+    name: Closed-loop actuator cooling pump
+    output_part: cooling_pump
+    output_quantity: [1, "pcs"]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: pump_assembly
+        name: pump and manifold assembly
+        equipment_classes: [fluid_component_assembly_cell]
+        yield_fraction: 0.96
+      - id: pump_test
+        name: pressure, flow, and leak test
+        equipment_classes: [fluid_test_bench]
+        yield_fraction: 0.98
+    inputs:
+      - id: alu_ingot
+        quantity: [0.7, "kg_product"]
+      - id: wiring_harness_set
+        quantity: [0.05, "pcs"]
+
+  - id: rec_heat_spreader
+    name: Motor/inverter heat-spreader set
+    output_part: heat_spreader_set
+    output_quantity: [1, "pcs"]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    steps:
+      - id: spreader_machine
+        name: high-conductivity plate machining and joining
+        equipment_classes: [five_axis_cnc, thermal_joining_cell]
+        yield_fraction: 0.97
+    inputs:
+      - id: alu_ingot
+        quantity: [1.5, "kg_product"]
+
+facilities:
+  - id: fac_harmonicdrive_scope_unknown
+    name: Harmonic Drive precision-gear product scope (site allocation unresolved)
+    geo_id: UNKNOWN
+    country: UNKNOWN
+    owner_org: org_harmonicdrive
+    operator_org: org_harmonicdrive
+    status: operating
+    evidence_ids: [ev_harmonicdrive_scope, ev_precision_motion_capacity_unknown]
+    notes: Official group product scope is known; manufacturing site, line allocation, yield, and humanoid qualification are unresolved.
+  - id: fac_nabtesco_rv_scope_unknown
+    name: Nabtesco RV precision-reducer product scope (site allocation unresolved)
+    geo_id: UNKNOWN
+    country: JPN
+    owner_org: org_nabtesco
+    operator_org: org_nabtesco
+    status: operating
+    evidence_ids: [ev_nabtesco_rv_scope, ev_precision_motion_capacity_unknown]
+    notes: Japan identity and RV product scope are evidenced; exact facility and humanoid-qualified capacity are UNKNOWN.
+  - id: fac_nsk_crossroller_scope_unknown
+    name: NSK crossed-roller bearing product scope (site allocation unresolved)
+    geo_id: UNKNOWN
+    country: JPN
+    owner_org: org_nsk
+    operator_org: org_nsk
+    status: operating
+    evidence_ids: [ev_nsk_crossroller_scope, ev_precision_motion_capacity_unknown]
+    notes: Official catalogue establishes robot-joint application scope; facility and annual qualified allocation are UNKNOWN.
+  - id: fac_renishaw_encoder_scope_unknown
+    name: Renishaw absolute-encoder product scope (site allocation unresolved)
+    geo_id: UNKNOWN
+    country: GBR
+    owner_org: org_renishaw
+    operator_org: org_renishaw
+    status: operating
+    evidence_ids: [ev_renishaw_encoder_scope, ev_precision_motion_capacity_unknown]
+    notes: Official encoder product scope is known; robot-joint qualification, site, yield, and effective capacity are UNKNOWN.
+  - id: fac_addverb_india_scope_unknown
+    name: Addverb Indian robotics product scope (bipedal actuator capacity unresolved)
+    geo_id: UNKNOWN
+    country: IND
+    owner_org: org_addverb
+    operator_org: org_addverb
+    status: prototype
+    evidence_ids: [ev_addverb_wheeled]
+    notes: Official release establishes a wheeled logistics platform and pilot intent; it does not establish bipedal humanoid actuator volume.
 
 capacity_segments:
   - id: seg_india_alu
@@ -948,6 +1728,56 @@ capacity_segments:
     qualification_fraction: 0.95
     epistemic_class: ESTIMATED
     notes: Order-of-magnitude prior for magnet-wire supply vs national wire industry scale.
+  - id: seg_harmonicdrive_capacity_unknown
+    item_id: harmonic_reducer
+    facility_id: fac_harmonicdrive_scope_unknown
+    org_id: org_harmonicdrive
+    geography: GLOBAL
+    valid_from: 2026
+    epistemic_class: UNKNOWN
+    notes: >
+      Official product scope exists, but no absolute current qualified annual capacity,
+      robot allocation, yield, exportable share, or customer-qualification record is
+      promoted into the model. Nameplate deliberately omitted.
+    evidence_ids: [ev_precision_motion_capacity_unknown]
+  - id: seg_rv_capacity_unknown
+    item_id: rv_reducer
+    facility_id: fac_nabtesco_rv_scope_unknown
+    org_id: org_nabtesco
+    geography: GLOBAL
+    valid_from: 2026
+    epistemic_class: UNKNOWN
+    notes: >
+      Historical shipped-unit/product claims do not establish current effective or
+      humanoid-qualified RV capacity. Nameplate deliberately omitted.
+    evidence_ids: [ev_precision_motion_capacity_unknown]
+  - id: seg_crossroller_capacity_unknown
+    item_id: crossed_roller_bearing
+    facility_id: fac_nsk_crossroller_scope_unknown
+    org_id: org_nsk
+    geography: GLOBAL
+    valid_from: 2026
+    epistemic_class: UNKNOWN
+    notes: Robot-joint application evidence is not an annual qualified-capacity observation; nameplate deliberately omitted.
+    evidence_ids: [ev_precision_motion_capacity_unknown]
+  - id: seg_encoder_capacity_unknown
+    item_id: absolute_encoder
+    facility_id: fac_renishaw_encoder_scope_unknown
+    org_id: org_renishaw
+    geography: GLOBAL
+    valid_from: 2026
+    epistemic_class: UNKNOWN
+    notes: Absolute encoder product scope is known; humanoid-grade capacity, allocation, and qualification are UNKNOWN.
+    evidence_ids: [ev_precision_motion_capacity_unknown]
+  - id: seg_india_actuator_capacity_unknown
+    item_id: actuator_rotary_body
+    facility_id: fac_addverb_india_scope_unknown
+    org_id: org_addverb
+    geography: INDIA
+    valid_from: 2026
+    epistemic_class: UNKNOWN
+    notes: Wheeled pilot evidence does not establish bipedal actuator production; nameplate deliberately omitted.
+    evidence_ids: [ev_addverb_wheeled, ev_precision_motion_capacity_unknown]
 
 projects:
   - id: prj_repm_6000t
@@ -1048,6 +1878,78 @@ capability_claims:
       qualification_state: certification_pending
     claim_vs_assessment: assessment
     evidence_ids: [ev_semicon_projects]
+  - id: cc_harmonicdrive_product_scope
+    capability_item: harmonic_reducer
+    org_id: org_harmonicdrive
+    geography: JPN
+    vector:
+      technical_demonstration: product_catalogue
+      manufacturing_maturity: series
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: product_scope_only
+      metrology_test: product_specification
+      supplier_concentration: concentrated
+      export_control_exposure: UNKNOWN
+    claim_vs_assessment: claim
+    notes: Product family and precision envelope are official; current humanoid allocation, yield, and qualification are UNKNOWN.
+    evidence_ids: [ev_harmonicdrive_scope, ev_precision_motion_capacity_unknown]
+  - id: cc_nabtesco_rv_product_scope
+    capability_item: rv_reducer
+    org_id: org_nabtesco
+    geography: JPN
+    vector:
+      technical_demonstration: product_catalogue
+      manufacturing_maturity: series
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: product_scope_only
+      metrology_test: product_specification
+      supplier_concentration: concentrated
+      export_control_exposure: UNKNOWN
+    claim_vs_assessment: claim
+    notes: Official RV reducer product/application scope; historical shipment statement is not current supply capacity.
+    evidence_ids: [ev_nabtesco_rv_scope, ev_precision_motion_capacity_unknown]
+  - id: cc_nsk_crossroller_product_scope
+    capability_item: crossed_roller_bearing
+    org_id: org_nsk
+    geography: JPN
+    vector:
+      technical_demonstration: product_catalogue
+      manufacturing_maturity: series
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: product_scope_only
+      metrology_test: product_specification
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: claim
+    notes: Official catalogue links crossed-roller bearings to robot joints; no humanoid-grade allocation or annual capacity is disclosed.
+    evidence_ids: [ev_nsk_crossroller_scope, ev_precision_motion_capacity_unknown]
+  - id: cc_renishaw_encoder_product_scope
+    capability_item: absolute_encoder
+    org_id: org_renishaw
+    geography: GBR
+    vector:
+      technical_demonstration: product_catalogue
+      manufacturing_maturity: series
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: product_scope_only
+      metrology_test: product_specification
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: claim
+    notes: Official absolute-encoder product scope; robot-joint qualification, allocation, yield, and effective capacity remain UNKNOWN.
+    evidence_ids: [ev_renishaw_encoder_scope, ev_precision_motion_capacity_unknown]
+  - id: cc_india_rv_route_unknown
+    capability_item: rv_reducer
+    geography: INDIA
+    vector:
+      manufacturing_maturity: none
+      qualified_effective_capacity: UNKNOWN
+      tooling_autonomy: external
+      precursor_dependence: UNKNOWN
+      qualification_state: not_started
+      metrology_test: UNKNOWN
+      workforce_knowhow: developing
+    claim_vs_assessment: assessment
+    notes: India candidate route is represented for design comparison; no facility, yield, or qualified capacity is asserted.
+    evidence_ids: [ev_precision_motion_capacity_unknown]
 
 qualifications:
   - id: qual_actuator_robot_grade
@@ -1069,6 +1971,35 @@ qualifications:
     standard_ref: "fatigue/backlash acceptance protocol"
     status: not_started
     latency_months: [12, 24]
+    evidence_ids: [ev_harmonicdrive_scope, ev_qual_latency_aero]
+  - id: qual_rv_reducer_robot_grade
+    item_id: rv_reducer
+    qualifier: customer
+    standard_ref: "backlash/lost-motion, fatigue-life, thermal, noise, and robot-joint acceptance protocol"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_nabtesco_rv_scope, ev_qual_latency_aero]
+  - id: qual_hand_actuator_robot_grade
+    item_id: micro_actuator_hand
+    qualifier: customer
+    standard_ref: "dexterity, force, thermal, life, ingress, and human-contact acceptance protocol"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_qual_latency_aero, ev_synrm_tradeoff]
+  - id: qual_encoder_robot_grade
+    item_id: absolute_encoder
+    qualifier: customer
+    standard_ref: "absolute position accuracy, vibration, thermal, safety, and lifetime acceptance protocol"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_renishaw_encoder_scope, ev_qual_latency_aero]
+  - id: qual_motor_robot_grade
+    item_id: bldc_servo_motor
+    qualifier: customer
+    standard_ref: "joint torque, thermal, demagnetization, vibration, life, and EOL-dyno acceptance protocol"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_precision_motion_capacity_unknown, ev_qual_latency_aero]
 
 demand_pools:
   - id: dp_ndfeb_global
@@ -1084,6 +2015,23 @@ demand_pools:
     baseline_annual: [60000000, "pcs/yr"]
     contestable_fraction: 0.05
     note: Advanced-node edge-AI allocation pool (ASSUMPTION prior; allocation regimes apply)
+  - id: dp_harmonic_global_unknown
+    resource_id: harmonic_reducer
+    geography: GLOBAL
+    contestable_fraction: 0.0
+    note: >
+      Competing demand exists conceptually, but no public absolute annual pool is promoted;
+      baseline remains UNKNOWN so this row cannot create supply.
+  - id: dp_rv_global_unknown
+    resource_id: rv_reducer
+    geography: GLOBAL
+    contestable_fraction: 0.0
+    note: No public absolute annual RV capacity/allocation pool is promoted; baseline UNKNOWN.
+  - id: dp_encoder_global_unknown
+    resource_id: absolute_encoder
+    geography: GLOBAL
+    contestable_fraction: 0.0
+    note: No public absolute annual robot-grade encoder capacity/allocation pool is promoted; baseline UNKNOWN.
 
 shocks:
   - id: shk_cn_ree_minus80
@@ -1094,6 +2042,35 @@ shocks:
       - type: import_eligibility
         origin: CHN
         fraction: 0.2
+  - id: shk_exclude_china
+    name: Exclude China from eligible imports
+    description: Scenario policy sets all CHN-origin import eligibility to zero; it does not assert alternate supply or instant substitution.
+    evidence_ids: [ev_cn_export_controls]
+    edits:
+      - type: import_eligibility
+        origin: CHN
+        fraction: 0.0
+  - id: shk_no_chinese_permanent_magnets
+    name: No Chinese permanent magnets
+    description: >
+      Country/material constraint used with rare-earth-reduced motor and hand-actuator
+      rewrites. CHN-origin import eligibility is zeroed; the graph must still show any
+      unreplaced magnet dependency and report that residual explicitly.
+    evidence_ids: [ev_cn_export_controls, ev_material_chain_unknown]
+    edits:
+      - type: import_eligibility
+        origin: CHN
+        fraction: 0.0
+  - id: shk_ndfeb_material_cut
+    name: NdFeB project material shock -80%
+    description: >
+      Causal material shock cuts the design capacity of the announced integrated NdFeB
+      project to 20%; the project state, ramp, and grade qualification remain unchanged.
+    evidence_ids: [ev_repm_scheme, ev_material_chain_unknown]
+    edits:
+      - type: capacity_multiplier
+        item: ndfeb_magnet
+        factor: 0.2
   - id: shk_oil_150
     name: Oil at USD 150/bbl
     description: Energy/freight cost pass-through on imported content
@@ -1156,6 +2133,60 @@ substitutions:
       Validated contract: envelope covers HV-2 requirements; removes NdFeB content from
       body motors (hand/micro actuators unchanged); adds SiC dependency — substitution
       trades one concentrated input for another (corpus lesson).
+  - id: sub_body_actuator_rv_reducer
+    name: "Body actuator rewrite: harmonic route to RV/cycloidal reducer family"
+    replaces_part: actuator_rotary_body
+    alternative_recipe: rec_joint_actuator_rv
+    level: component
+    functional_envelope:
+      torque_density_nm_kg: [140, 260]
+      powered_joints: [30, 50]
+      runtime_h: [4, 8]
+      payload_kg: [15, 25]
+      backlash_arcmin: [0.5, 1.0]
+    performance_delta:
+      backlash: "same target envelope; fatigue/life qualification is OPEN"
+      mass: "+6-12% body actuator mass (MODELLED; validate by design)"
+      thermal: "different reducer losses and lubrication envelope (MODELLED)"
+      qualification: "new reducer-family integration and customer life testing required"
+    changed_bom: []
+    new_equipment: [rv_reducer_assembly_cell, reducer_life_test_cell, backlash_test_bench]
+    new_skills: [cycloidal_profile_design, reducer_fatigue_life_testing]
+    maturity: pilot
+    transition_months: [18, 36]
+    transition_cost_usd: 180000000
+    evidence_ids: [ev_nabtesco_rv_scope, ev_precision_motion_capacity_unknown]
+    notes: >
+      Genuine graph rewrite for body actuators: the body route replaces harmonic_reducer
+      and its flexspline/bearing-steel dependency with rv_reducer, RV pin/case steels,
+      and a different grinding/life-test chain. Hand micro-actuators remain on their
+      baseline route unless a separate hand rewrite is selected.
+  - id: sub_ree_free_hand_actuation
+    name: "Dexterous-hand rewrite: micro BLDC/harmonic route to rare-earth-reduced motor"
+    replaces_part: micro_actuator_hand
+    alternative_recipe: rec_micro_actuator_hand_ree_free
+    level: component
+    functional_envelope:
+      torque_density_nm_kg: [120, 220]
+      powered_joints: [30, 50]
+      runtime_h: [4, 8]
+      payload_kg: [15, 25]
+      backlash_arcmin: [0.5, 1.0]
+    performance_delta:
+      torque_density: "-15% vs NdFeB micro-motor route (MODELLED tradeoff)"
+      inverter_demand: "+SiC stage and control-bandwidth burden"
+      hand_force: "qualification required; no public humanoid evidence"
+    changed_bom: []
+    new_equipment: [micro_lamination_press, micro_eol_dyno]
+    new_skills: [advanced_motor_control_software, dexterous_hand_thermal_design]
+    maturity: pilot
+    transition_months: [18, 36]
+    transition_cost_usd: 90000000
+    evidence_ids: [ev_synrm_tradeoff, ev_precision_motion_capacity_unknown]
+    notes: >
+      Removes the BLDC and harmonic-reducer path from hand micro-actuators and adds
+      electrical steel, copper, and SiC power-stage demand. Select with sub_ree_free_actuation
+      when the scenario requires no Chinese permanent magnets across both body and hands.
 
 resource_classes:
   - id: reo_supply_chain
@@ -1191,3 +2222,186 @@ crosswalks:
     to_entity: bldc_servo_motor
     confidence: 0.25
     note: patent class proves inventive activity, not production capability
+
+scenario_presets:
+  - id: sc_world_hv2_1m_2030
+    name: WORLD — HV-2 industrial reference at 1M/yr
+    objective: "Can the world deliver 1,000,000 HV-2-class humanoids/year by 2030?"
+    geography: GLOBAL
+    variant_id: hv2_industrial
+    annual_units: 1000000
+    target_year: 2030
+    min_dva: 0.0
+    shock_ids: []
+    substitution_ids: []
+    epistemic_class: SCENARIO
+    notes: Final assembly and component demand are modeled; unsupported foreign capacities remain conditional/UNKNOWN.
+  - id: sc_india_dva70_hv2_1m_2030
+    name: INDIA — HV-2 at 1M/yr with >=70% recursive DVA
+    objective: "Can India deliver 1,000,000 HV-2-class humanoids/year by 2030 at >=70% recursive DVA?"
+    geography: INDIA
+    variant_id: hv2_industrial
+    annual_units: 1000000
+    target_year: 2030
+    min_dva: 0.70
+    shock_ids: []
+    substitution_ids: []
+    epistemic_class: SCENARIO
+    notes: DVA is a recursive value boundary, not a per-item localization cap; UNKNOWN capacities are not silently zeroed.
+  - id: sc_exclude_china_hv2_1m_2030
+    name: INDIA — HV-2 with China excluded
+    objective: "Can India deliver 1,000,000 HV-2-class humanoids/year by 2030 with CHN-origin imports excluded?"
+    geography: INDIA
+    variant_id: hv2_industrial
+    annual_units: 1000000
+    target_year: 2030
+    min_dva: 0.70
+    shock_ids: [shk_exclude_china]
+    substitution_ids: []
+    epistemic_class: SCENARIO
+    notes: Eligibility removal is a policy shock; it does not create alternate qualified supply.
+  - id: sc_no_chinese_magnets_hv2_1m_2030
+    name: INDIA — HV-2 with no Chinese permanent magnets
+    objective: "Can India deliver 1,000,000 HV-2-class humanoids/year by 2030 without Chinese permanent magnets?"
+    geography: INDIA
+    variant_id: hv2_industrial
+    annual_units: 1000000
+    target_year: 2030
+    min_dva: 0.70
+    shock_ids: [shk_no_chinese_permanent_magnets]
+    substitution_ids: [sub_ree_free_actuation, sub_ree_free_hand_actuation]
+    epistemic_class: SCENARIO
+    notes: Both body and hand rewrites are selected; any residual magnet-chain edge must remain visible and block/condition the result.
+  - id: sc_india_rv_reducer_design_hv2_1m_2030
+    name: INDIA — HV-2 body-actuator RV reducer redesign
+    objective: "Compare the body-actuator RV/cycloidal route against harmonic reducers under the same HV-2 target."
+    geography: INDIA
+    variant_id: hv2_industrial
+    annual_units: 1000000
+    target_year: 2030
+    min_dva: 0.70
+    shock_ids: []
+    substitution_ids: [sub_body_actuator_rv_reducer]
+    epistemic_class: SCENARIO
+    notes: Genuine dependency-graph rewrite; hand micro-actuators remain on baseline route unless separately rewritten.
+
+research_tasks:
+  - id: rt_humanoid_definition
+    title: Lock the physical humanoid definition
+    question: "Which mass, payload, duty cycle, mobility, safety, and dexterous-hand requirements define the counted unit?"
+    target_entity_id: hv2_industrial
+    missing_variable: definition_and_duty_cycle
+    decision: "Determine whether the 1M/year target is bipedal industrial, general-purpose, or includes wheeled platforms."
+    priority: critical
+    suggested_source_types: [system_requirements, customer_duty_cycle, safety_standard, fleet_trial]
+    capture_fields: [mass_kg, payload_kg, powered_joints, runtime_h, duty_cycle, mobility_class, hand_configuration, safety_envelope]
+    status: UNKNOWN
+  - id: rt_harmonic_capacity
+    title: Audit robot-grade harmonic reducer capacity
+    question: "What current qualified effective annual capacity is available for sub-arcminute harmonic/cycloidal reducers by size, geography, and customer allocation?"
+    target_entity_id: harmonic_reducer
+    missing_variable: qualified_effective_capacity_annual
+    decision: "Quantify the dominant body/hand reducer bottleneck before accepting a 1M/year architecture."
+    priority: critical
+    suggested_source_types: [audited_filing, supplier_audit, line_walk, customer_qualification_record, export_allocation]
+    capture_fields: [facility_id, line_count, nameplate_units_per_year, availability, utilization, yield, qualification_fraction, product_size_mix, exportable_share, committed_demand]
+    evidence_ids: [ev_precision_motion_capacity_unknown]
+    status: UNKNOWN
+  - id: rt_rv_capacity
+    title: Verify RV reducer alternative route
+    question: "Can an RV/cycloidal supplier qualify the torque, backlash, thermal, noise, and life envelope required by HV-2 body joints, and at what effective rate?"
+    target_entity_id: rv_reducer
+    missing_variable: qualified_effective_capacity_and_envelope
+    decision: "Decide whether the reducer-family redesign is a real closure option or only a catalog-level alternative."
+    priority: critical
+    suggested_source_types: [supplier_qualification, dynamometer_test, fatigue_test, process_capability_study, audited_filing]
+    capture_fields: [torque_speed_map, backlash, lost_motion, life_cycles, thermal_loss, acoustic_limit, yield, line_rate, customer_acceptance]
+    evidence_ids: [ev_nabtesco_rv_scope, ev_precision_motion_capacity_unknown]
+    status: UNKNOWN
+  - id: rt_joint_motor_capacity
+    title: Establish humanoid-grade servo-motor capacity
+    question: "Which motor plants can supply the joint torque-density, thermal, demagnetization, balance, life, and EOL-test envelope, and what is their uncommitted rate?"
+    target_entity_id: bldc_servo_motor
+    missing_variable: qualified_effective_capacity_annual
+    decision: "Separate broad BLDC market activity from robot-joint-grade production."
+    priority: critical
+    suggested_source_types: [supplier_audit, product_test_report, customer_qualification_record, audited_filing]
+    capture_fields: [motor_topology, torque_density, peak_continuous_torque, thermal_class, magnet_grade, balance_class, yield, test_cycle_time, annual_rate, committed_demand]
+    evidence_ids: [ev_precision_motion_capacity_unknown]
+    status: UNKNOWN
+  - id: rt_magnet_chain
+    title: Resolve NdFeB grade and upstream chain
+    question: "What mine-to-oxide-to-alloy-to-sintered-magnet chain can deliver the required grade, yield, and non-CHN qualified volume by 2030?"
+    target_entity_id: ndfeb_magnet
+    missing_variable: grade_compatible_non_china_supply
+    decision: "Determine whether permanent-magnet body or hand routes survive the no-Chinese-magnets scenario."
+    priority: critical
+    suggested_source_types: [government_material_balance, refinery_audit, magnet_supplier_qualification, assay_certificate, customs_primary_data]
+    capture_fields: [ore_origin, beneficiation_recovery, separation_recovery, oxide_grade, metal_yield, alloy_yield, magnet_yield, heavy_ree_content, facility_country, exportable_share, qualification_status]
+    evidence_ids: [ev_material_chain_unknown, ev_precision_motion_capacity_unknown]
+    status: UNKNOWN
+  - id: rt_bearing_capacity
+    title: Quantify crossed-roller bearing allocation
+    question: "What qualified crossed-roller bearing volume, size mix, preload class, and allocation is available for 60M+ joint/bearing demand?"
+    target_entity_id: crossed_roller_bearing
+    missing_variable: qualified_effective_capacity_annual
+    decision: "Test whether bearing supply or raceway-grinding/metrology capacity binds before actuator assembly."
+    priority: critical
+    suggested_source_types: [supplier_audit, bearing_life_test, process_capability_study, customer_qualification_record]
+    capture_fields: [bearing_size_mix, preload_class, runout, life_cycles, grinding_cycle_time, yield, line_rate, robot_allocation, exportable_share]
+    evidence_ids: [ev_nsk_crossroller_scope, ev_precision_motion_capacity_unknown]
+    status: UNKNOWN
+  - id: rt_encoder_capacity
+    title: Verify absolute encoder supply and qualification
+    question: "What annual volume of dual/high-resolution absolute encoders is qualified for joint vibration, thermal, safety, and lifetime requirements?"
+    target_entity_id: absolute_encoder
+    missing_variable: qualified_effective_capacity_annual
+    decision: "Resolve the encoder bottleneck instead of treating product catalogue presence as supply."
+    priority: critical
+    suggested_source_types: [supplier_audit, calibration_record, environmental_test, customer_qualification_record, audited_filing]
+    capture_fields: [resolution, accuracy, interface, vibration_class, thermal_range, safety_level, yield, calibration_cycle_time, annual_rate, robot_allocation]
+    evidence_ids: [ev_renishaw_encoder_scope, ev_precision_motion_capacity_unknown]
+    status: UNKNOWN
+  - id: rt_battery_robot_cells
+    title: Qualify robot-compatible battery cells and packs
+    question: "Which cell format, chemistry, pack architecture, safety test, cycle life, and allocation can support HV-2 duty at the stated annual output?"
+    target_entity_id: battery_cell_liion
+    missing_variable: commissioned_robot_compatible_cell_supply
+    decision: "Translate ACC policy/project capacity into usable robot-cell and pack capacity without treating awards as output."
+    priority: high
+    suggested_source_types: [cell_supplier_audit, pack_validation, UN38_3_test, BIS_certification, PLI_project_status]
+    capture_fields: [chemistry, form_factor, energy_density, cycle_life, thermal_runaway_test, yield, commissioned_capacity, robot_allocation, qualification_date]
+    evidence_ids: [ev_robot_cell_form_factor_unknown]
+    status: UNKNOWN
+  - id: rt_edge_compute_supply
+    title: Resolve edge-AI compute and memory allocation
+    question: "Which node/package/memory/PMIC stack is required and what qualified annual allocation is available to humanoids by 2030?"
+    target_entity_id: edge_compute_module
+    missing_variable: qualified_edge_compute_supply
+    decision: "Distinguish approved semiconductor projects and OSAT scope from an operating, allocated robot compute supply."
+    priority: high
+    suggested_source_types: [foundry_qualification, OSAT_capacity_audit, component_bom, allocation_letter, reliability_report]
+    capture_fields: [process_node, package, memory_type, accelerator_throughput, thermal_design_power, yield, annual_units, committed_allocation, qualification_status]
+    evidence_ids: [ev_robot_compute_compat_unknown]
+    status: UNKNOWN
+  - id: rt_process_equipment_fleet
+    title: Audit the machine, tooling, and metrology fleet
+    question: "How many qualified winding, gear-grinding, heat-treatment, CNC, balancing, calibration, EOL-dyno, and life-test assets are available and what rate can they sustain?"
+    target_entity_id: precision_gear_grinder
+    missing_variable: equipment_fleet_and_bottleneck_hours
+    decision: "Determine whether process equipment and metrology, rather than part nameplate, cap the ramp."
+    priority: critical
+    suggested_source_types: [asset_register, machine_tool_audit, calibration_records, cycle_time_study, maintenance_log]
+    capture_fields: [equipment_class, installed_count, available_hours_per_year, cycle_time, utilization, downtime, maintenance_window, metrology_uncertainty, tool_life, facility_id]
+    status: UNKNOWN
+  - id: rt_india_supplier_qualification
+    title: Establish Indian supplier qualification and ramp path
+    question: "Which Indian facilities can move from adjacent automotive/electronics capability to qualified humanoid component production by 2030?"
+    target_entity_id: actuator_rotary_body
+    missing_variable: india_supplier_maturity_and_time_to_qualification
+    decision: "Separate adjacent capability and pilot announcements from a qualified, scalable, sovereign production route."
+    priority: critical
+    suggested_source_types: [supplier_audit, PPAP_or_FAIR, MRL_assessment, customer_acceptance, pilot_line_yield]
+    capture_fields: [facility_id, process_scope, product_specification, equipment, tooling, metrology, workforce, yield, qualification_state, ramp_curve, ownership, imported_content]
+    evidence_ids: [ev_addverb_wheeled, ev_precision_motion_capacity_unknown]
+    status: UNKNOWN

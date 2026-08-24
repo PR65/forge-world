@@ -1,11 +1,20 @@
 from __future__ import annotations
 
 import copy
+import math
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
 from .evidence import ProofGraph
-from .model import CapacitySegment, Project, ProjectState, Shock, World
+from .model import (
+    CapacitySegment,
+    ForeignSupplySegment,
+    Project,
+    ProjectState,
+    Qualification,
+    Shock,
+    World,
+)
 from .solve import ScenarioOptions
 from .units import Quantity, annual_scalar
 
@@ -40,6 +49,12 @@ def apply_shocks(
       cost_multiplier     {item, factor, side: domestic|import|both}
       equipment_limit     {equipment_class, hours_per_year}
       demand_add          {item, quantity_per_year}  -> competing demand subtracts from supply
+      remove_country      {country, fraction=0}       -> country-wide import eligibility
+      foreign_supply_multiplier {item, origin?, factor}
+      material_embargo    {item, origin, factor=0}    -> evidenced foreign segments only
+      facility_outage     {facility_id, factor=0}     -> matching capacity segments
+      project_delay       {project_id, years}         -> physical commission window
+      qualification_delay {qualification_id, months} -> timeline/gate state only
     """
     w2 = copy.deepcopy(base_world)
     o2 = opts.clone()   # FULL clone: every scenario field survives (F16/N4 fixed)
@@ -60,6 +75,79 @@ def apply_shocks(
                     {"shock": sid, "edit": "import_eligibility", "origin": edit["origin"],
                      "fraction": edit.get("fraction", 0.0)}
                 )
+            elif et == "remove_country":
+                country = str(edit.get("country", edit.get("origin", "")))
+                if not country:
+                    report.rejected_edits.append(f"{sid}: remove_country missing country")
+                    continue
+                fraction = float(edit.get("fraction", 0.0))
+                o2.import_eligibility[country] = fraction
+                report.applied_edits.append(
+                    {
+                        "shock": sid,
+                        "edit": "remove_country",
+                        "country": country,
+                        "fraction": fraction,
+                    }
+                )
+            elif et in {"foreign_supply_multiplier", "material_embargo"}:
+                item = str(edit.get("item", ""))
+                origin = str(edit.get("origin", edit.get("country", "")))
+                factor = float(
+                    edit.get("factor", 0.0 if et == "material_embargo" else 1.0)
+                )
+                matched = []
+                for segment in w2.entities.values():
+                    if not isinstance(segment, ForeignSupplySegment):
+                        continue
+                    if item and segment.item_id != item:
+                        continue
+                    if origin and segment.origin_country != origin:
+                        continue
+                    if segment.nameplate_annual is not None:
+                        segment.nameplate_annual = segment.nameplate_annual * factor
+                    matched.append(segment.id)
+                if not matched:
+                    report.rejected_edits.append(
+                        f"{sid}: {et} matched no evidenced foreign supply segment"
+                    )
+                else:
+                    report.applied_edits.append(
+                        {
+                            "shock": sid,
+                            "edit": et,
+                            "item": item,
+                            "origin": origin,
+                            "factor": factor,
+                            "segments": matched,
+                        }
+                    )
+            elif et == "facility_outage":
+                facility_id = str(edit.get("facility_id", ""))
+                factor = float(edit.get("factor", 0.0))
+                matched = []
+                for segment in w2.entities.values():
+                    if not isinstance(segment, CapacitySegment):
+                        continue
+                    if segment.facility_id != facility_id:
+                        continue
+                    if segment.nameplate_annual is not None:
+                        segment.nameplate_annual = segment.nameplate_annual * factor
+                    matched.append(segment.id)
+                if not matched:
+                    report.rejected_edits.append(
+                        f"{sid}: facility_outage matched no capacity segment at '{facility_id}'"
+                    )
+                else:
+                    report.applied_edits.append(
+                        {
+                            "shock": sid,
+                            "edit": "facility_outage",
+                            "facility_id": facility_id,
+                            "factor": factor,
+                            "segments": matched,
+                        }
+                    )
             elif et == "capacity_multiplier":
                 item = str(edit["item"])
                 f = float(edit.get("factor", 1.0))
@@ -100,6 +188,45 @@ def apply_shocks(
                     )
                 else:
                     report.rejected_edits.append(f"{sid}: unknown project '{pid}'")
+            elif et == "project_delay":
+                pid = str(edit["project_id"])
+                years = float(edit.get("years", 1.0))
+                prj = w2.entities.get(pid)
+                if isinstance(prj, Project):
+                    lo, hi = prj.years_to_commission
+                    prj.years_to_commission = (lo + years, hi + years)
+                    if prj.commission_year_estimate is not None:
+                        prj.commission_year_estimate += int(math.ceil(years))
+                    report.applied_edits.append(
+                        {
+                            "shock": sid,
+                            "edit": "project_delay",
+                            "project": pid,
+                            "years": years,
+                        }
+                    )
+                else:
+                    report.rejected_edits.append(f"{sid}: unknown project '{pid}'")
+            elif et == "qualification_delay":
+                qid = str(edit.get("qualification_id", ""))
+                months = float(edit.get("months", 0.0))
+                qualification = w2.entities.get(qid)
+                if isinstance(qualification, Qualification):
+                    lo, hi = qualification.latency_months
+                    qualification.latency_months = (lo + months, hi + months)
+                    report.applied_edits.append(
+                        {
+                            "shock": sid,
+                            "edit": "qualification_delay",
+                            "qualification": qid,
+                            "months": months,
+                            "solver_effect": "timeline_only",
+                        }
+                    )
+                else:
+                    report.rejected_edits.append(
+                        f"{sid}: unknown qualification '{qid}'"
+                    )
             elif et == "cost_multiplier":
                 item = str(edit.get("item", "*"))
                 f = float(edit.get("factor", 1.0))

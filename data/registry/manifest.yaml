@@ -1,4 +1,4 @@
-registry_version: "0.1.0"
+registry_version: "0.2.0"
 title: "FORGE WORLD canonical cross-pack registry"
 notes: >
   Explicit ontology bindings for the alpha read model. Mappings are ASSUMPTION
@@ -159,6 +159,415 @@ canonical_capabilities:
         mapping_source: ASSUMPTION
         rationale: "The CNC pack explicitly models controller integration and qualification gates; no supplier capability is asserted."
 
+  - id: "cap:precision-motion-components"
+    name: "Precision motion components"
+    description: "Ball screws, linear guides, preload, accuracy grading, and motion-component qualification."
+    aliases: ["precision motion", "ball screw manufacturing", "linear motion components"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_ids: [ball_screw_set, linear_guide_set, qual_ball_screw, qual_linear_guide]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The pack models the component and its acceptance gates; effective qualified output is not inferred."
+
+  - id: "cap:precision-bearings"
+    name: "Precision bearing manufacturing"
+    description: "Bearing steel conversion, race grinding, cage/rolling-element assembly, preload, and life/runout qualification."
+    aliases: ["precision bearings", "spindle bearings", "crossed-roller bearings"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_ids: [spindle_bearing, rec_bearing_ring_set, qual_precision_bearing, cc_india_precision_bearing_unknown]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "CNC spindle-bearing dependencies are mapped without treating a named global product as Indian supply."
+      - pack_id: humanoid_india
+        entity_ids: [crossed_roller_bearing, rec_crossed_roller_bearing]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Robot crossed-roller bearing requirements reuse the bearing capability concept; grade-qualified capacity remains UNKNOWN."
+
+  - id: "cap:precision-reducers"
+    name: "Precision reducer manufacturing"
+    description: "Harmonic and RV reducer design, precision gear forming, heat treatment, assembly, life test, and qualification."
+    aliases: ["robot reducers", "harmonic reducers", "RV reducers"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [harmonic_reducer, rv_reducer, rec_harmonic_reducer, rec_rv_reducer, cc_india_reducer_unknown]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Reducer routes and explicit capability unknowns are reusable; organization/product existence is not qualified production."
+
+  - id: "cap:electric-motors"
+    name: "Precision electric-motor manufacturing"
+    description: "Motor electromagnetic design, laminations, winding, rotor assembly, balancing, controls integration, and acceptance test."
+    aliases: ["servo motors", "BLDC motors", "motor winding"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [bldc_servo_motor, rec_bldc_servo_motor, qual_motor_robot_grade]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Humanoid joint motor requirements map to the generic precision-motor chain."
+      - pack_id: cnc_machining_india
+        entity_ids: [spindle_motor, servo_motor_axis, rec_spindle_motor, rec_servo_motor_axis]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Machine-tool spindle and feed motors share motor-production primitives but not necessarily qualification."
+
+  - id: "cap:encoders-position-sensing"
+    name: "Encoder and position-sensing systems"
+    description: "Encoder ASIC/scale, sensing head, calibration, integration, and environment-specific qualification."
+    aliases: ["encoders", "absolute position sensing", "position feedback"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [absolute_encoder, encoder_asic, encoder_scale_glass, rec_absolute_encoder, cc_india_encoder_unknown]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The robot encoder route and explicit Indian unknown are mapped without supplier qualification."
+      - pack_id: cnc_machining_india
+        entity_ids: [absolute_encoder_axis, encoder_scale, rec_absolute_encoder_axis, qual_encoder]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Machine-axis feedback shares encoder primitives while retaining pack-specific accuracy gates."
+
+  - id: "cap:structural-castings"
+    name: "Structural casting and stabilization"
+    description: "Large/precision casting, stress relief, reference machining, and geometric acceptance."
+    aliases: ["machine castings", "structural castings", "stress-relieved castings"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_ids: [machine_bed_casting, machine_column_casting, rec_machine_bed_casting, qual_structural_casting]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Machine-tool structural casting and qualification are explicitly represented."
+      - pack_id: humanoid_india
+        entity_ids: [structure_castings_set, rec_structure_casting]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Robot structural castings reuse foundry primitives but require a different weight/strength envelope."
+
+  - id: "cap:precision-assembly-calibration"
+    name: "Precision assembly and calibration"
+    description: "Controlled assembly, alignment, compensation, calibration, run-in, and final acceptance."
+    aliases: ["precision assembly", "machine alignment", "calibration and acceptance"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_ids: [machine_alignment_calibration, rec_machine_alignment_calibration, qual_machine_acceptance, qual_alignment_calibration]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The CNC route makes alignment and acceptance explicit; facility throughput and traceability remain UNKNOWN."
+      - pack_id: humanoid_india
+        entity_ids: [actuator_rotary_body, hand_assembly]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Robot actuator and hand assembly are mapped only at the reusable process-family level."
+
+  - id: "cap:tooling-fixtures"
+    name: "Production tooling and fixtures"
+    description: "Cutting-tool interfaces, dies, jigs, fixtures, reference artifacts, and their controlled manufacture."
+    aliases: ["toolmaking", "fixtures", "toolholding"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_ids: [tool_holder, ball_screw_grinding_fixture, bed_alignment_fixture, qual_tooling]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The CNC pack contains specific tooling and fixture dependencies; availability is not inferred."
+      - pack_id: nuclear_buildout_india
+        entity_ids: [forging_die, tool_steel]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Heavy-forging tooling is a distinct scale envelope mapped to the same reusable tooling family."
+
+  - id: "cap:battery-pack-integration"
+    name: "Battery-pack integration"
+    description: "Cell screening, module/pack assembly, BMS, thermal/safety integration, and duty-cycle qualification."
+    aliases: ["battery pack", "BMS integration", "pack assembly"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [battery_pack_robot, battery_pack_small, bms_board, rec_battery_pack_robot, qual_battery_pack]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The humanoid pack exposes pack-level integration and qualification separately from cell supply."
+
+  - id: "cap:industrial-electronics"
+    name: "Industrial electronics manufacturing"
+    description: "Control boards, gate drivers, power distribution, safety controllers, industrial networking, and production test."
+    aliases: ["industrial electronics", "control electronics", "electronics manufacturing services"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [joint_driver_board, safety_controller, gate_driver_ic, power_distribution_unit]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Robot-control electronics map to the common production/test family; component provenance remains pack-specific."
+      - pack_id: cnc_machining_india
+        entity_ids: [controller_board, industrial_ethernet_module, electrical_cabinet, control_power_module]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Machine-control electronics share assembly and test primitives without implying common qualification."
+      - pack_id: nuclear_buildout_india
+        entity_ids: [radiation_hard_electronics, safety_control_logic]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Nuclear safety electronics require a stricter qualification envelope; this is ontology reuse only."
+
+  - id: "cap:wiring-harnesses"
+    name: "Wiring-harness manufacturing"
+    description: "Cable selection, termination, routing, shielding, inspection, and environment-specific qualification."
+    aliases: ["wiring harness", "cable harness", "electrical interconnect"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [wiring_harness_set, cable_flex_set]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Robot harness and flex-cable requirements identify the capability family; volume/yield remain UNKNOWN."
+
+  - id: "cap:thermal-management"
+    name: "Thermal-management systems"
+    description: "Thermal design, heat spreading, coolant circulation, sensing, sealing, and integrated thermal validation."
+    aliases: ["thermal management", "cooling systems", "heat spreading"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [thermal_management_set, cooling_pump, heat_spreader_set, rec_cooling_pump]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Humanoid thermal subsystems map to the reusable thermal capability family."
+      - pack_id: cnc_machining_india
+        entity_ids: [coolant_lubrication_unit, thermal_sensor_set]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Machine-tool thermal control shares sensing/circulation primitives but a different performance envelope."
+
+  - id: "cap:mineral-beneficiation"
+    name: "Strategic-mineral beneficiation"
+    description: "Ore/feed preparation, concentration, impurity control, tailings handling, and consistent intermediate production."
+    aliases: ["mineral beneficiation", "ore concentration", "strategic minerals processing"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [monazite_ore_raw, monazite_mineral_feed, lithium_mineral_feed, phosphate_rock, rec_rare_earth_concentrate]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Material-chain nodes expose beneficiation dependencies; reserves or ore occurrence are not usable supply."
+
+  - id: "cap:rare-earth-separation"
+    name: "Rare-earth separation and metal/alloy conversion"
+    description: "Mixed concentrate cracking/leaching, solvent separation, oxide finishing, metal/alloy conversion, and purity control."
+    aliases: ["rare-earth separation", "NdPr oxide separation", "rare-earth refining"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [ndpr_mixed_carbonate, reo_ndpr_oxide, mat_ndpr_mixed_carbonate, mat_ndpr_oxide_grade]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Intermediate and oxide-grade nodes map the separation chain; qualified annual output remains UNKNOWN."
+
+  - id: "cap:lithium-refining"
+    name: "Battery-grade lithium refining"
+    description: "Feed preparation, leaching/purification, precipitation, drying, impurity control, and battery-grade qualification."
+    aliases: ["lithium refining", "battery-grade lithium carbonate", "lithium conversion"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [lithium_mineral_feed, lithium_carbonate, rec_lithium_carbonate_refine, rec_lithium_brine_intermediate]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The pack recursively models lithium conversion; resource announcements are not treated as battery-grade output."
+
+  - id: "cap:cathode-precursors"
+    name: "Cathode-material precursor production"
+    description: "Mineral-to-precursor conversion, stoichiometry/impurity control, calcination inputs, and cell-grade qualification."
+    aliases: ["cathode precursors", "iron phosphate precursor", "battery materials"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [iron_phosphate, mat_iron_phosphate_precursor, rec_iron_phosphate, rec_iron_phosphate_precursor]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The precursor chain is explicit; its purity, yield, and effective capacity remain UNKNOWN."
+
+  - id: "cap:nuclear-welding-ndt"
+    name: "Nuclear-grade welding and NDT"
+    description: "Qualified welding procedures/personnel, consumables control, ultrasonic/radiographic examination, records, and repair closure."
+    aliases: ["nuclear welding", "nuclear NDT", "pressure-boundary inspection"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [nuclear_weld_material, ultrasonic_ndt_service, radiography_service, qual_pressure_boundary]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The nuclear pack models process inputs and qualification gates; certified throughput remains UNKNOWN."
+
+  - id: "cap:nuclear-pressure-boundary"
+    name: "Nuclear pressure-boundary manufacturing"
+    description: "Large forgings/plates, forming, machining, welding, heat treatment, inspection, documentation, and code qualification."
+    aliases: ["reactor pressure boundary", "nuclear pressure vessels", "nuclear heavy components"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [reactor_pressure_boundary, rec_reactor_pressure_boundary, qual_pressure_boundary, cc_india_pressure_boundary_unknown]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The modeled route and explicit capability gap are mapped without inferring domestic qualified capacity."
+
+  - id: "cap:steam-generators"
+    name: "Nuclear steam-generator manufacturing"
+    description: "Tube/tubesheet manufacture, precision drilling, forming, welding, cleanliness, examination, and nuclear qualification."
+    aliases: ["steam generator manufacturing", "nuclear heat exchangers", "SG fabrication"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [steam_generator, steam_generator_tube_bundle, tube_sheet, rec_steam_generator, qual_steam_generator]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Orders and product scope are context, not annual qualified delivery capacity."
+
+  - id: "cap:nuclear-pumps-valves"
+    name: "Nuclear-grade pumps and valves"
+    description: "Safety-class hydraulic design, forgings/castings, seals/motors, precision manufacture, testing, documentation, and qualification."
+    aliases: ["nuclear pumps", "nuclear valves", "primary coolant pumps"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [primary_coolant_pump, pump_body_forging, mechanical_seal, safety_valve_set, rec_primary_coolant_pump, qual_primary_coolant_pump]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The complete pump dependency and qualification gate are represented; available throughput remains UNKNOWN."
+
+  - id: "cap:nuclear-instrumentation-control"
+    name: "Nuclear instrumentation and control"
+    description: "Safety-class sensing, logic, radiation-tolerant electronics, calibration, verification, configuration control, and qualification."
+    aliases: ["nuclear I&C", "safety-class instrumentation", "reactor control systems"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [nuclear_instrumentation_set, qualified_sensor_set, safety_control_logic, radiation_hard_electronics, rec_nuclear_instrumentation_set, cc_ecil_nuclear_instrumentation_unknown]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Organization scope and modeled requirements do not establish full-system qualification or scalable delivery."
+
+  - id: "cap:turbine-generators"
+    name: "Large turbine-generator manufacturing"
+    description: "Large rotor forging/machining, blading, stator manufacture, bearings, balancing, integration, and performance acceptance."
+    aliases: ["turbine generators", "large rotating equipment", "power-island equipment"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [turbine_generator_set, turbine_rotor_forging, generator_stator, turbine_bearing_set, rec_turbine_generator_set, qual_turbine_generator]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The equipment route is mapped while qualified annual output and schedule availability remain UNKNOWN."
+
+  - id: "cap:nuclear-construction-qa"
+    name: "Nuclear construction and site QA"
+    description: "Nuclear-grade civil works, heavy lift, installation sequencing, inspection/test plans, records, and site acceptance."
+    aliases: ["nuclear construction", "site QA", "nuclear EPC"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [site_civil_works_package, heavy_lift_crane_service, rec_site_civil_works_package, qual_site_qa]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Project activity is not transformed into a fleet-rate construction capability claim."
+
+  - id: "cap:nuclear-fuel-cycle"
+    name: "Nuclear fuel-cycle and back-end systems"
+    description: "Uranium conversion/fuel fabrication, bundle assembly, handling/storage, reprocessing, waste conditioning, safeguards, and qualification."
+    aliases: ["nuclear fuel cycle", "PHWR fuel fabrication", "spent-fuel back end"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [fuel_cycle_and_back_end_package, phwr_fuel_bundle, rec_fuel_cycle_and_back_end_package, rec_spent_fuel_reprocessing, qual_front_end_fuel, qual_fuel_bundle]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Institutional scope and physical routes are reusable evidence, not proof of capacity for the scenario target."
+
+  - id: "cap:zirconium-metallurgy"
+    name: "Nuclear-grade zirconium metallurgy"
+    description: "Zircon concentration-to-sponge conversion, alloying, extrusion/drawing, heat treatment, inspection, and pressure-tube/cladding qualification."
+    aliases: ["zirconium metallurgy", "nuclear zirconium", "pressure-tube material"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [zirconium_sponge, zirconium_alloy_stock, zirconium_alloy_tube, rec_zirconium_sponge, rec_zirconium_alloy_stock, rec_zirconium_alloy_tube, qual_zirconium_material]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The recursive material chain and qualification gate are mapped; effective capacity remains UNKNOWN."
+
+  - id: "cap:heavy-water"
+    name: "Heavy-water production and stewardship"
+    description: "Feed preparation, isotope separation, purification, inventory management, loss replacement, quality control, and safe handling."
+    aliases: ["heavy water", "D2O production", "heavy-water management"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_ids: [heavy_water_inventory, mat_heavy_water_feedstock, cc_hwb_heavy_water_scope]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Institutional role and inventory requirements are distinct from target-year usable supply."
+
 aliases:
   - id: "alias:precision-grinding"
     alias: "precision grinding"
@@ -229,6 +638,159 @@ builders:
     mappings:
       - pack_id: humanoid_india
         entity_id: org_harmonicdrive
+        mapping_source: ASSUMPTION
+
+  - id: "builder:jyoti-cnc"
+    name: "Jyoti CNC Automation"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Official manufacturing-footprint context is retained separately from model-specific qualification and available capacity."
+    capability_ids: ["cap:precision-assembly-calibration", "cap:cnc-controls"]
+    capability_rationale: "Association reflects relevant product/process scope only; it is not a qualified-supply determination."
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_id: org_jyoti_cnc
+        mapping_source: ASSUMPTION
+
+  - id: "builder:micromatic"
+    name: "Micromatic Grinding Technologies"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Official grinding-product context supports discovery; ball-screw-grinder delivery, acceptance, and throughput require verification."
+    capability_ids: ["cap:precision-grinding", "cap:precision-motion-components"]
+    capability_rationale: "Association is a research lead, not a qualification or supply assertion."
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_id: org_micromatic_official
+        mapping_source: ASSUMPTION
+
+  - id: "builder:hmt"
+    name: "HMT Machine Tools"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Historical/current product-scope evidence does not establish target-grade ball-screw output or available capacity."
+    capability_ids: ["cap:precision-motion-components", "cap:tooling-fixtures"]
+    capability_rationale: "Association preserves a candidate research path only."
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_id: org_hmt
+        mapping_source: ASSUMPTION
+
+  - id: "builder:nsk"
+    name: "NSK"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Product-family evidence is not geography-specific qualified supply for either benchmark."
+    capability_ids: ["cap:precision-bearings"]
+    capability_rationale: "Association reflects published product scope only."
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_id: org_nsk
+        mapping_source: ASSUMPTION
+      - pack_id: humanoid_india
+        entity_id: org_nsk
+        mapping_source: ASSUMPTION
+
+  - id: "builder:renishaw"
+    name: "Renishaw"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Metrology/encoder product scope is reusable discovery context; grade fit, origin, and availability remain unresolved."
+    capability_ids: ["cap:metrology", "cap:encoders-position-sensing"]
+    capability_rationale: "Association is product-scope context, not qualified capacity."
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_id: org_renishaw
+        mapping_source: ASSUMPTION
+      - pack_id: humanoid_india
+        entity_id: org_renishaw
+        mapping_source: ASSUMPTION
+
+  - id: "builder:siemens"
+    name: "Siemens"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Published controls scope does not settle target configuration, exportability, origin, support, or effective supply."
+    capability_ids: ["cap:cnc-controls", "cap:industrial-electronics"]
+    capability_rationale: "Association reflects relevant catalog scope only."
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_id: org_siemens
+        mapping_source: ASSUMPTION
+      - pack_id: humanoid_india
+        entity_id: org_siemens
+        mapping_source: ASSUMPTION
+
+  - id: "builder:nabtesco"
+    name: "Nabtesco"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "RV-product evidence does not establish an India-qualified source, allocation, or effective capacity."
+    capability_ids: ["cap:precision-reducers"]
+    capability_rationale: "Association reflects published product scope only."
+    mappings:
+      - pack_id: humanoid_india
+        entity_id: org_nabtesco
+        mapping_source: ASSUMPTION
+
+  - id: "builder:npcil"
+    name: "Nuclear Power Corporation of India"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Fleet/programme ownership is distinct from manufacturing capacity and component qualification."
+    capability_ids: ["cap:nuclear-construction-qa"]
+    capability_rationale: "Association denotes programme/owner relevance, not supplier status."
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_id: org_npcil
+        mapping_source: ASSUMPTION
+
+  - id: "builder:bhel"
+    name: "Bharat Heavy Electricals Limited"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Official product/order scope is retained, while qualified annual capacity and delivery windows stay UNKNOWN."
+    capability_ids: ["cap:steam-generators", "cap:turbine-generators", "cap:nuclear-pumps-valves"]
+    capability_rationale: "Association identifies product-scope research targets and does not assert deliverable capacity."
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_id: org_bhel
+        mapping_source: ASSUMPTION
+
+  - id: "builder:nfc"
+    name: "Nuclear Fuel Complex"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Official mandate/product scope is distinct from target-compatible spare capacity and qualification status."
+    capability_ids: ["cap:nuclear-fuel-cycle", "cap:zirconium-metallurgy"]
+    capability_rationale: "Association reflects institutional product scope only."
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_id: org_nfc
+        mapping_source: ASSUMPTION
+
+  - id: "builder:heavy-water-board"
+    name: "Heavy Water Board"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Mandate and facility existence do not establish available D2O inventory or target-year effective capacity."
+    capability_ids: ["cap:heavy-water"]
+    capability_rationale: "Association reflects official institutional scope only."
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_id: org_hwb
+        mapping_source: ASSUMPTION
+
+  - id: "builder:ecil"
+    name: "Electronics Corporation of India"
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    notes: "Institutional relevance does not establish safety-class qualification, subsystem coverage, or scalable throughput."
+    capability_ids: ["cap:nuclear-instrumentation-control"]
+    capability_rationale: "Association is a candidate-evidence link, not a capability verdict."
+    mappings:
+      - pack_id: nuclear_buildout_india
+        entity_id: org_ecil
         mapping_source: ASSUMPTION
 
 evidence_tasks:
@@ -304,3 +866,93 @@ evidence_tasks:
     epistemic_class: UNKNOWN
     mapping_source: ASSUMPTION
     suggested_source_types: [product_datasheet, certification, supplier_disclosure, customer_reference]
+  - id: "task:precision-motion-effective-capacity"
+    title: "Verify precision-motion effective capacity"
+    question: "Which facilities can repeatedly produce the specified ball-screw and guide accuracy classes, with measured yield, traceable metrology, qualification state, and available annual throughput?"
+    target_canonical_id: "cap:precision-motion-components"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [facility_audit, process_capability_study, calibration_record, customer_qualification]
+  - id: "task:precision-bearing-effective-capacity"
+    title: "Verify precision-bearing effective capacity"
+    question: "Which facilities can deliver spindle or crossed-roller bearings at the required runout, preload, life, cleanliness, yield, and annual volume?"
+    target_canonical_id: "cap:precision-bearings"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [facility_audit, test_report, process_capability_study, customer_qualification]
+  - id: "task:reducer-grade-capacity"
+    title: "Resolve robot-reducer grade and capacity"
+    question: "Which suppliers and facilities can meet the required backlash, stiffness, life, mass, yield, and ramp profile for harmonic or RV reducers?"
+    target_canonical_id: "cap:precision-reducers"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [supplier_disclosure, endurance_test, facility_audit, customer_qualification]
+  - id: "task:rare-earth-separation-throughput"
+    title: "Verify separated rare-earth throughput"
+    question: "What facility-level NdPr separation, oxide purity, yield, operating status, and available throughput exists by year and geography?"
+    target_canonical_id: "cap:rare-earth-separation"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [government_statistic, facility_disclosure, environmental_filing, audited_production_record]
+  - id: "task:nuclear-pressure-boundary-throughput"
+    title: "Verify nuclear pressure-boundary delivery capacity"
+    question: "Which qualified facilities can complete forgings, fabrication, heat treatment, code inspection, documentation, and delivery for the target reactor cadence?"
+    target_canonical_id: "cap:nuclear-pressure-boundary"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [regulator_record, facility_audit, code_certificate, delivery_record]
+  - id: "task:steam-generator-delivery-cadence"
+    title: "Verify steam-generator delivery cadence"
+    question: "What qualified annual steam-generator throughput, tube/tubesheet bottleneck, work-in-process, yield, and committed-versus-available capacity exists?"
+    target_canonical_id: "cap:steam-generators"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [order_delivery_record, facility_audit, supplier_disclosure, regulator_record]
+  - id: "task:nuclear-ic-qualification-coverage"
+    title: "Map nuclear I&C qualification coverage"
+    question: "Which safety-class sensing, logic, calibration, cybersecurity, verification, and obsolescence-management functions are qualified domestically, at what throughput and lead time?"
+    target_canonical_id: "cap:nuclear-instrumentation-control"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [regulator_record, qualification_report, supplier_disclosure, project_acceptance_record]
+  - id: "task:nuclear-site-fleet-rate"
+    title: "Test nuclear construction fleet-rate capability"
+    question: "How many concurrent sites can the evidenced civil, heavy-lift, installation, QA, commissioning, and regulator-review system support without hidden shared-resource conflicts?"
+    target_canonical_id: "cap:nuclear-construction-qa"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [project_schedule, workforce_record, contractor_disclosure, regulator_milestone_record]
+  - id: "task:fuel-cycle-scenario-balance"
+    title: "Close nuclear fuel-cycle mass and capacity balance"
+    question: "What qualified front-end, fabrication, storage, reprocessing, waste-conditioning, and safeguards throughput is available for each programme tranche and date?"
+    target_canonical_id: "cap:nuclear-fuel-cycle"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [operator_record, regulator_record, facility_disclosure, material_accountancy_record]
+  - id: "task:heavy-water-programme-balance"
+    title: "Close heavy-water inventory and production balance"
+    question: "What operating inventory, purity, loss rate, replenishment capacity, committed demand, and available supply exists for each PHWR tranche?"
+    target_canonical_id: "cap:heavy-water"
+    status: OPEN
+    priority: high
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    suggested_source_types: [operator_inventory_record, facility_disclosure, government_statistic, quality_record]
