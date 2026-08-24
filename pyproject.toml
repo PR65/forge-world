@@ -17,7 +17,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0"]
+dev = [
+  "pytest>=8.0",
+  "httpx2",
+]
 
 # Explicit single-package declaration. Flat-layout auto-discovery fails here
 # because docs/packs/research/scripts/server/tests/web are non-Python or
