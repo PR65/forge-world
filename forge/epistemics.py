@@ -2,7 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Dict, Optional
+from types import MappingProxyType
+from typing import Dict, Mapping, Optional
 
 
 class EpistemicClass(str, Enum):
@@ -38,7 +39,7 @@ CONFIDENCE_DIMENSIONS = (
 
 @dataclass(frozen=True)
 class Confidence:
-    values: Dict[str, Optional[float]] = field(default_factory=dict)
+    values: Mapping[str, Optional[float]] = field(default_factory=dict)
 
     def __post_init__(self):
         for k, v in self.values.items():
@@ -46,6 +47,7 @@ class Confidence:
                 raise ValueError(f"unknown confidence dimension '{k}'")
             if v is not None and not (0.0 <= v <= 1.0):
                 raise ValueError(f"confidence dimension '{k}' must be in [0,1] or None")
+        object.__setattr__(self, "values", MappingProxyType(dict(self.values)))
 
     def get(self, dim: str) -> Optional[float]:
         return self.values.get(dim)

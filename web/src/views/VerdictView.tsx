@@ -64,9 +64,9 @@ export default function VerdictView({ resp, onSelect }: {
             <span className="chip ok">DVA {(resp.dva.fraction * 100).toFixed(1)}%</span>
           )}
           {r.blocking_unknowns.slice(0, 4).map((u) => (
-            <span key={u} className="chip unknown" onClick={() => onSelect({ kind: "item", id: u })}>
+            <button type="button" key={u} className="chip unknown chip-button" onClick={() => onSelect({ kind: "item", id: u })}>
               UNKNOWN · {u}
-            </span>
+            </button>
           ))}
           {r.binding_summary.slice(0, 3).map((b) => (
             <span key={b} className="chip binding">{b}</span>
@@ -84,10 +84,10 @@ export default function VerdictView({ resp, onSelect }: {
             <div className="small">No shortfall in the worst modeled year.</div>
           )}
           {shortfalls.map((s) => (
-            <div
+            <button
+              type="button"
               key={s.item}
-              className="bar-row clickable"
-              style={{ cursor: "pointer" }}
+              className="bar-row clickable data-button"
               onClick={() => onSelect({ kind: "item", id: s.item })}
             >
               <span className="bar-label" title={s.item}>{s.item}</span>
@@ -106,7 +106,7 @@ export default function VerdictView({ resp, onSelect }: {
                 {fmt(s.shortfall)}
                 {s.unknown ? " ?cap" : ""}
               </span>
-            </div>
+            </button>
           ))}
         </div>
 
@@ -116,10 +116,11 @@ export default function VerdictView({ resp, onSelect }: {
             <div className="small">No closure actions required (or none available in pack).</div>
           )}
           {resp.plan.actions.map((a) => (
-            <div
+            <button
+              type="button"
               key={a.action_id}
-              className="bar-row clickable"
-              style={{ gridTemplateColumns: "230px 1fr 90px", cursor: "pointer" }}
+              className="bar-row clickable data-button"
+              style={{ gridTemplateColumns: "230px 1fr 90px" }}
               onClick={() => onSelect({ kind: "action", id: a.action_id })}
             >
               <span className="bar-label" title={a.label}>{a.kind} · {a.label}</span>
@@ -127,7 +128,7 @@ export default function VerdictView({ resp, onSelect }: {
               <span className="bar-val num">
                 {a.capex_usd > 0 ? `$${fmt(a.capex_usd)}` : "—"}
               </span>
-            </div>
+            </button>
           ))}
           <div className="small" style={{ marginTop: 8 }}>
             Portfolio capex ${fmt(resp.plan.total_capex_usd)} → verified{" "}
@@ -144,10 +145,11 @@ export default function VerdictView({ resp, onSelect }: {
             .sort((a, b) => ({ HIGH: 0, MEDIUM: 1, LOW: 2 })[a.decision_impact] - ({ HIGH: 0, MEDIUM: 1, LOW: 2 })[b.decision_impact])
             .slice(0, 5)
             .map((t) => (
-              <div
+              <button
+                type="button"
                 key={t.unknown_id}
-                className="bar-row clickable"
-                style={{ gridTemplateColumns: "200px 80px 1fr", cursor: "pointer" }}
+                className="bar-row clickable data-button"
+                style={{ gridTemplateColumns: "200px 80px 1fr" }}
                 onClick={() => onSelect({ kind: "item", id: t.unknown_id })}
               >
                 <span className="bar-label">{t.unknown_id}</span>
@@ -159,7 +161,7 @@ export default function VerdictView({ resp, onSelect }: {
                 <span className="small" style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                   {t.flip_behavior}
                 </span>
-              </div>
+              </button>
             ))}
         </div>
       </div>

@@ -1,0 +1,2192 @@
+pack_id: cnc_machining_india
+title: "Alpha benchmark: India 100 high-quality CNC machining centers/year"
+version: 1.1.0
+geography_focus: INDIA
+notes: >
+  Annual-flow execution benchmark for 100 production-intent vertical machining
+  centers per year. The reference architecture is a transparent engineering
+  assumption, not a claim that any named Indian supplier can deliver this rate.
+  No qualified capacity segments are asserted for the finished machine or its
+  decision-sensitive subcomponents; absent supplier/facility evidence remains
+  UNKNOWN. The graph recurses into castings, grinding, bearings, motion systems,
+  controls, tooling, calibration, and the equipment classes needed by those
+  processes. Market presence, government programme participation, and trade
+  headings are not treated as supply.
+
+sources:
+  - id: src_mhi_capital_goods
+    name: "Ministry of Heavy Industries — Capital Goods Scheme Phase I"
+    publisher: Government of India, Ministry of Heavy Industries
+    url: "https://heavyindustries.gov.in/en/scheme-enhancement-competitiveness-indian-capital-goods-sector-phase-i"
+    source_type: government_programme
+    license: public
+    access_date: "2026-08-24"
+    notes: Government machine-tool programme context; does not publish qualified 100/year VMC capacity.
+  - id: src_mhi_projects
+    name: "Ministry of Heavy Industries — projects approved under the Capital Goods Scheme"
+    publisher: Government of India, Ministry of Heavy Industries
+    url: "https://heavyindustries.gov.in/en/projects-approved-under-scheme"
+    source_type: government_programme
+    license: public
+    access_date: "2026-08-24"
+    notes: Lists Centre-of-Excellence/industry partners; listing is not product qualification or throughput evidence.
+  - id: src_mhi_strategic_plan
+    name: "Department of Heavy Industry — Strategic Plan"
+    publisher: Government of India, Department of Heavy Industry
+    url: "https://www.heavyindustries.gov.in/sites/default/files/2023-07/Strategic_Plan_dhi.pdf"
+    source_type: government_strategy
+    license: public
+    access_date: "2026-08-24"
+    notes: Identifies linear guideways, ball screws, precision bearings, CNC controls, servomotors/controllers as strategic components; no capacity claim.
+  - id: src_dod_mrl
+    name: "Manufacturing Readiness Levels Deskbook"
+    publisher: US Department of Defense
+    url: "https://dodmrl.com/"
+    source_type: government_framework
+    license: public domain
+    access_date: "2026-08-24"
+    notes: Readiness vocabulary, not an Indian supplier or throughput observation.
+  - id: src_pri_nadcap
+    name: "Nadcap accreditation overview"
+    publisher: Performance Review Institute
+    url: "https://www.p-r-i.org/nadcap/getting-started"
+    source_type: accreditation_guidance
+    license: public guidance
+    access_date: "2026-08-24"
+    notes: Special-process qualification context; CNC customer acceptance remains customer-specific.
+  - id: src_nasa_systems
+    name: "NASA Systems Engineering Handbook"
+    publisher: NASA
+    url: "https://www.nasa.gov/reference/systems-engineering-handbook/"
+    source_type: government_handbook
+    license: public domain / referenced
+    access_date: "2026-08-24"
+    notes: Requirements, verification, and validation context; not a machine-rate source.
+  - id: src_research_06
+    name: "FORGE WORLD research stream 06 — foundational industrial recursion"
+    publisher: Supplied FORGE WORLD research corpus
+    url: ""
+    source_type: research_corpus
+    license: supplied-for-project use only
+    access_date: "2026-08-24"
+    notes: Identifies machine tools, precision bearings, grinding, metrology, and exact capacity as decision-sensitive layers; secondary market claims are not hard parameters.
+  - id: src_research_07
+    name: "FORGE WORLD research stream 07 — supplier qualification and know-how"
+    publisher: Supplied FORGE WORLD research corpus
+    url: ""
+    source_type: research_corpus
+    license: supplied-for-project use only
+    access_date: "2026-08-24"
+    notes: Qualification ranges are planning ranges, not universal laws.
+  - id: src_jyoti_facilities
+    name: "Jyoti CNC Automation — investor presentation / manufacturing facilities"
+    publisher: Jyoti CNC Automation Ltd.
+    url: "https://jyoti.co.in/wp-content/uploads/2024/02/Investor-Presentation_Q3_F2024-.pdf?v=1.2"
+    source_type: company_disclosure
+    license: public
+    access_date: "2026-08-24"
+    notes: Company-reported facility and installed-capacity context; not an independent qualified-effective-capacity observation.
+  - id: src_micromatic_grinding_official
+    name: "Micromatic Grinding Technologies — company profile and plants"
+    publisher: Micromatic Grinding Technologies Pvt. Ltd.
+    url: "https://www.micromaticgrinding.com/"
+    source_type: company_website
+    license: public
+    access_date: "2026-08-24"
+    notes: Official product and plant identity context; company delivery/market statements are not converted into qualified component capacity.
+  - id: src_hmt_machine_tools_official
+    name: "HMT Limited — machine tools profile"
+    publisher: HMT Limited, Ministry of Heavy Industries
+    url: "https://www.hmtindia.com/wp-content/uploads/2021/07/mbxprofile-2.pdf"
+    source_type: government_owned_company_website
+    license: public
+    access_date: "2026-08-24"
+    notes: Official organization and product-scope context; no current product-specific throughput or qualification is asserted.
+  - id: src_thk_ball_screw_official
+    name: "THK — precision ball screw product information"
+    publisher: THK Co., Ltd.
+    url: "https://www.thk.com/eu/en/products/ball_screw/full_ball/"
+    source_type: manufacturer_product_page
+    license: public
+    access_date: "2026-08-24"
+    notes: Official product documentation supports the C3/C5, ground-shaft, preload, and ISO/JIS vocabulary; it does not establish Indian supply or capacity.
+  - id: src_nsk_spindle_bearing_official
+    name: "NSK — super-precision angular-contact bearings"
+    publisher: NSK Ltd.
+    url: "https://www.nsk.com/products/super-precision-bearings/precision-angular-contact-bearings/"
+    source_type: manufacturer_product_page
+    license: public
+    access_date: "2026-08-24"
+    notes: Official machine-tool spindle-bearing product context; no allocation, grade qualification, or India capacity is asserted.
+  - id: src_renishaw_machine_tool_metrology
+    name: "Renishaw — probing and machine-tool calibration systems"
+    publisher: Renishaw plc
+    url: "https://www.renishaw.com/en/machine-tool-probes-and-software--6073"
+    source_type: manufacturer_product_page
+    license: public
+    access_date: "2026-08-24"
+    notes: Official probing, in-cycle measurement, and calibration-system scope; no Indian acceptance-service throughput is asserted.
+  - id: src_siemens_sinumerik_official
+    name: "Siemens — SINUMERIK CNC systems"
+    publisher: Siemens AG
+    url: "https://www.siemens.com/en-us/products/sinumerik/"
+    source_type: manufacturer_product_page
+    license: public
+    access_date: "2026-08-24"
+    notes: Official CNC/PLC/tool-management product scope; no India supply allocation, software license terms, or qualification is asserted.
+
+evidence:
+  - claim_id: ev_mhi_machine_tool_programme
+    subject: india_machine_tools
+    predicate: programme_context
+    epistemic_class: REPORTED
+    value_text: "The Ministry of Heavy Industries Capital Goods Scheme includes machine-tool development and a Machine Tool Park/Tumakuru context; the programme does not establish qualified output of 100 high-quality VMCs per year."
+    source_ids: [src_mhi_capital_goods]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.9, recency: 0.7}
+    quote_or_caveat: Programme participation and infrastructure are not evidence of a product-specific, qualified, effective capacity.
+  - claim_id: ev_mhi_coe_partners
+    subject: india_cnc_ecosystem
+    predicate: listed_partners
+    epistemic_class: REPORTED
+    value_text: "Government project pages list Indian machine-tool and CNC ecosystem partners including Jyoti CNC, Micromatic, and Ace Designers; the listing does not prove a 100/year high-quality machining-center line or customer qualification."
+    source_ids: [src_mhi_projects]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.8, recency: 0.7}
+    quote_or_caveat: Builder/project listing only; no capacity is promoted into the solver.
+  - claim_id: ev_cnc_critical_components
+    subject: cnc_machining_center
+    predicate: strategic_component_dependencies
+    epistemic_class: REPORTED
+    value_text: "The Department of Heavy Industry strategic plan identifies linear guideways, ball screws, precision bearings, CNC controls, servomotors, and controllers as critical machine-tool components requiring domestic capability attention."
+    source_ids: [src_mhi_strategic_plan]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.8, recency: 0.7}
+    quote_or_caveat: Strategic priority is not proof of present qualified supply, grade, yield, or effective capacity.
+  - claim_id: ev_cnc_mrl_framework
+    subject: cnc_manufacturing_readiness
+    predicate: readiness_framework
+    epistemic_class: REPORTED
+    value_text: "Manufacturing Readiness Levels provide a ten-level framework covering process, tooling, test equipment, workforce, and production maturity."
+    source_ids: [src_dod_mrl]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.9, directness: 0.9, technical_specificity: 0.9}
+    quote_or_caveat: MRL is a framework and does not provide Indian CNC capacity.
+  - claim_id: ev_cnc_qualification_window
+    subject: precision_manufacturing_supplier
+    predicate: qualification_latency
+    epistemic_class: REPORTED
+    value_text: "Supplier/process qualification in advanced manufacturing is commonly reported in planning ranges such as 6–24 months; the actual CNC customer-acceptance gate is customer and process specific."
+    source_ids: [src_research_07, src_pri_nadcap]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.7, directness: 0.6, corroboration: 0.7}
+    quote_or_caveat: Planning range only; this pack does not convert it into an automatic operating-capacity factor.
+  - claim_id: ev_cnc_qualification_schedule_assumption
+    subject: cnc_component_qualification_plan
+    predicate: item_specific_latency_and_acceptance_scope
+    epistemic_class: ASSUMPTION
+    value_text: "Every item-specific latency_months range and acceptance protocol in this pack is a transparent alpha planning assumption within the broader reported qualification envelope."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.45}
+    quote_or_caveat: Do not treat these ranges as observed supplier schedules; replace them with supplier-, process-, and customer-specific qualification plans.
+  - claim_id: ev_cnc_reference_architecture
+    subject: cnc_vmc_reference_architecture
+    predicate: engineering_envelope
+    epistemic_class: ASSUMPTION
+    value_text: "Pack assumption: a high-quality three-axis vertical machining center with production-intent spindle, direct linear motion, closed-loop servo control, automatic tool change, probing, and laser/CMM acceptance."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.55}
+    quote_or_caveat: Architecture is a scenario choice for an auditable alpha benchmark, not a measured industry standard.
+  - claim_id: ev_cnc_bom_quantities
+    subject: cnc_vmc_reference_architecture
+    predicate: bom_coefficients
+    epistemic_class: ASSUMPTION
+    value_text: "All top-level BOM and recursive recipe-input quantities are explicit engineering assumptions for the alpha architecture; examples include three axis motion sets, one spindle cartridge, and the route-level material, tooling, and metrology coefficients."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.55}
+    quote_or_caveat: Coefficients are linear planning inputs and require design review before procurement.
+  - claim_id: ev_cnc_process_yields
+    subject: cnc_process_routes
+    predicate: process_and_input_coefficients
+    epistemic_class: ASSUMPTION
+    value_text: "Per-step yields and recursive route-input quantities in the recipes are transparent alpha assumptions to expose gross-up and upstream requirements; they are not observed Indian line data."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.4}
+    quote_or_caveat: Replace yields and every recursive coefficient with measured route data during supplier/process qualification.
+  - claim_id: ev_cnc_capacity_unknown
+    subject: india_cnc_machining_center_capacity
+    predicate: qualified_effective_capacity
+    epistemic_class: UNKNOWN
+    value_text: "Public evidence reviewed for this pack does not establish a qualified, effective Indian capacity for this exact high-quality VMC architecture or its bottleneck subcomponents at the required rate."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {completeness: 0.2}
+    quote_or_caveat: Factory existence, programme participation, trade, or generic machine-tool capability must not be promoted to this capacity claim.
+  - claim_id: ev_cnc_recursive_capacity_unknown
+    subject: india_precision_motion_and_metrology
+    predicate: qualified_recursive_capacity
+    epistemic_class: UNKNOWN
+    value_text: "Exact Indian capacity, yield, and customer qualification for ground ball screws, robot/machine-grade bearings, precision grinding, high-resolution encoders, and acceptance metrology are not publicly resolved in this pack."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {completeness: 0.2}
+    quote_or_caveat: Strategic component lists identify where to investigate, not how much qualified supply exists.
+  - claim_id: ev_jyoti_facilities
+    subject: org_jyoti_cnc
+    predicate: manufacturing_facilities_and_installed_capacity
+    epistemic_class: REPORTED
+    value_text: "Jyoti CNC's public investor presentation states that it operates three manufacturing facilities (two in Rajkot, India and one in Strasbourg, France) and reports 6,000 machines per year as installed capacity. This is company-reported installed/nameplate context, not qualified effective capacity for the reference VMC."
+    source_ids: [src_jyoti_facilities]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.7, directness: 0.9, recency: 0.65}
+    quote_or_caveat: Do not map the reported installed figure to this pack's 100/year saleable high-quality VMC objective without product mix, utilization, yield, qualification, and allocation evidence.
+  - claim_id: ev_micromatic_grinding_supplier
+    subject: org_micromatic
+    predicate: grinding_machine_supplier_and_facilities
+    epistemic_class: REPORTED
+    value_text: "Micromatic Grinding Technologies' official site describes CNC cylindrical, centerless, and profile grinding products and identifies plants in Ghaziabad and Bengaluru. The page is supplier/facility identity evidence only; it does not establish qualified production of ball screws, spindle bearings, or an available machine-hour allocation."
+    source_ids: [src_micromatic_grinding_official]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.75, directness: 0.9, recency: 0.8}
+    quote_or_caveat: Grinding-machine capability is not the same as a qualified ball-screw grinding service or component capacity.
+  - claim_id: ev_hmt_machine_tools_scope
+    subject: org_hmt
+    predicate: machine_tool_and_precision_ballscrew_product_scope
+    epistemic_class: REPORTED
+    value_text: "HMT's official company material identifies machine-tool activities and lists products including CNC machines, machining centres, precision ballscrews, and CNC control systems. Current grade-specific output, plant utilization, customer qualification, and effective capacity remain unresolved."
+    source_ids: [src_hmt_machine_tools_official]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.8, directness: 0.75, recency: 0.65}
+    quote_or_caveat: Product-scope listing is not evidence of an operating qualified route for this architecture.
+  - claim_id: ev_thk_ball_screw_grade
+    subject: ball_screw_set
+    predicate: precision_grade_and_process_vocabulary
+    epistemic_class: REPORTED
+    value_text: "THK's official ball-screw documentation describes precision-ground screw shafts, preload variants, and accuracy classes including C3 and C5 under JIS/ISO terminology. The reference pack therefore exposes grade selection and lead-error verification as explicit engineering gates; no supplier allocation is inferred."
+    source_ids: [src_thk_ball_screw_official]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.85, directness: 0.9, recency: 0.8}
+    quote_or_caveat: A manufacturer's grade vocabulary does not prove that an Indian route can make or qualify the selected grade.
+  - claim_id: ev_nsk_spindle_bearing_scope
+    subject: spindle_bearing
+    predicate: machine_tool_spindle_bearing_product_scope
+    epistemic_class: REPORTED
+    value_text: "NSK's official product pages describe super-precision angular-contact bearings and preload use for machine-tool spindles. The product family is a credible supplier lead; machine-specific grade, life, traceability, allocation, and Indian qualification are UNKNOWN in this pack."
+    source_ids: [src_nsk_spindle_bearing_official]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.85, directness: 0.9, recency: 0.8}
+    quote_or_caveat: Product existence and application fit do not establish available qualified supply.
+  - claim_id: ev_renishaw_metrology_scope
+    subject: metrology_acceptance_kit
+    predicate: machine_tool_probing_and_calibration_scope
+    epistemic_class: REPORTED
+    value_text: "Renishaw's official machine-tool pages describe workpiece/tool probing, in-cycle gauging, tool setting, and process-control systems. The pack treats Renishaw as a supplier lead for probe/calibration work, not as evidence of an India-side acceptance-service throughput."
+    source_ids: [src_renishaw_machine_tool_metrology]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.85, directness: 0.9, recency: 0.8}
+    quote_or_caveat: Compatibility with the selected controller, calibration chain, and customer acceptance still requires a technical offer and audit.
+  - claim_id: ev_siemens_controller_scope
+    subject: cnc_controller
+    predicate: cnc_control_and_tool_management_scope
+    epistemic_class: REPORTED
+    value_text: "Siemens' official SINUMERIK pages describe CNC systems for turning, milling, grinding, tool management, measurement cycles, and machine-tool networking. This is a controller supplier/product-scope lead, not evidence of an India allocation, open software rights, or qualification for this reference machine."
+    source_ids: [src_siemens_sinumerik_official]
+    retrieval_date: "2026-08-24"
+    confidence: {authority: 0.85, directness: 0.9, recency: 0.8}
+    quote_or_caveat: Controller selection remains a system-integration and licensing decision.
+  - claim_id: ev_cnc_synrm_alternative
+    subject: servo_motor_axis_synrm
+    predicate: architecture_alternative
+    epistemic_class: ASSUMPTION
+    value_text: "Scenario alternative: evaluate a synchronous-reluctance axis motor route to reduce permanent-magnet dependence. Torque density, thermal behaviour, drive compatibility, efficiency, acoustic performance, and customer acceptance are unresolved until a prototype and test plan exist."
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {technical_specificity: 0.35}
+    quote_or_caveat: This is a graph rewrite candidate, not a claim that the alternative already meets the reference VMC envelope.
+  - claim_id: ev_cnc_capacity_research_question
+    subject: cnc_vmc_high_quality
+    predicate: exact_research_question
+    epistemic_class: UNKNOWN
+    value_text: "Research question: Which Indian facility can demonstrate 100 saleable machines per year of this exact three-axis VMC architecture, with product mix, machine-hours, yield, customer acceptance, and allocation disclosed for the target year?"
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {completeness: 0.1}
+    quote_or_caveat: Do not replace UNKNOWN with a country-level machine-tool total or a company-installed/nameplate figure.
+  - claim_id: ev_cnc_ballscrew_research_question
+    subject: ball_screw_set
+    predicate: exact_research_question
+    epistemic_class: UNKNOWN
+    value_text: "Research question: For the selected axis travel, lead, preload, and thermal-error budget, which supplier/facility can deliver ground ball screws at the selected C3 or C5 accuracy class with lot-level lead-error maps, runout, life, and traceability data?"
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {completeness: 0.1}
+    quote_or_caveat: THK grade vocabulary is useful for the RFQ; it is not Indian route qualification.
+  - claim_id: ev_cnc_grinder_research_question
+    subject: ball_screw_grinder
+    predicate: exact_research_question
+    epistemic_class: UNKNOWN
+    value_text: "Research question: Which Indian facility owns or can procure a thread/ball-screw grinder, dressing system, temperature-controlled metrology, and trained process owner, and what qualified machine-hours can be reserved for this programme?"
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {completeness: 0.1}
+    quote_or_caveat: A grinding-machine builder or general grinding shop is not automatically a qualified ball-screw process route.
+  - claim_id: ev_cnc_metrology_research_question
+    subject: metrology_acceptance_kit
+    predicate: exact_research_question
+    epistemic_class: UNKNOWN
+    value_text: "Research question: Which India-based lab or service team can execute traceable laser interferometer, ballbar, spindle thermal, CMM, and cutting-test acceptance for 100 machines per year, with calibration intervals and uncertainty budgets?"
+    source_ids: []
+    retrieval_date: "2026-08-24"
+    confidence: {completeness: 0.1}
+    quote_or_caveat: Equipment presence alone does not prove machine-specific acceptance throughput or traceability.
+
+organizations:
+  - id: org_mhi
+    name: Ministry of Heavy Industries
+    countries: [IND]
+    org_type: government
+    evidence_ids: [ev_mhi_machine_tool_programme]
+    notes: Programme sponsor/context only; not a CNC manufacturer.
+  - id: org_jyoti_cnc
+    name: Jyoti CNC Automation Ltd.
+    countries: [IND]
+    evidence_ids: [ev_mhi_coe_partners]
+    notes: Government partner-list context; this pack makes no product-specific capacity claim.
+  - id: org_micromatic
+    name: Micromatic Grinding Technologies
+    countries: [IND]
+    evidence_ids: [ev_mhi_coe_partners]
+    notes: Government partner-list context; this pack makes no product-specific capacity claim.
+  - id: org_ace_designers
+    name: Ace Designers
+    countries: [IND]
+    evidence_ids: [ev_mhi_coe_partners]
+    notes: Government partner-list context; this pack makes no product-specific capacity claim.
+  - id: org_hmt
+    name: HMT Limited / HMT Machine Tools Limited
+    countries: [IND]
+    org_type: government_owned_company
+    evidence_ids: [ev_hmt_machine_tools_scope]
+    notes: Official product-scope lead for machine tools and precision ballscrews; current grade-specific qualified output is UNKNOWN.
+  - id: org_micromatic_official
+    name: Micromatic Grinding Technologies Pvt. Ltd.
+    countries: [IND]
+    org_type: company
+    evidence_ids: [ev_micromatic_grinding_supplier]
+    notes: Official grinding-machine supplier identity; not evidence of a qualified ball-screw or spindle-bearing component route.
+  - id: org_thk
+    name: THK Co., Ltd.
+    countries: [JPN]
+    org_type: company
+    evidence_ids: [ev_thk_ball_screw_grade]
+    notes: Global supplier lead for precision-ground ball screws; India allocation and qualification are UNKNOWN.
+  - id: org_nsk
+    name: NSK Ltd.
+    countries: [JPN]
+    org_type: company
+    evidence_ids: [ev_nsk_spindle_bearing_scope]
+    notes: Global supplier lead for super-precision spindle bearings; machine-specific allocation and India qualification are UNKNOWN.
+  - id: org_renishaw
+    name: Renishaw plc
+    countries: [GBR]
+    org_type: company
+    evidence_ids: [ev_renishaw_metrology_scope]
+    notes: Supplier lead for machine-tool probing/calibration; India acceptance-service capacity is UNKNOWN.
+  - id: org_siemens
+    name: Siemens AG
+    countries: [DEU]
+    org_type: company
+    evidence_ids: [ev_siemens_controller_scope]
+    notes: Controller supplier/product-scope lead; local integration, licensing, and qualification are UNKNOWN.
+
+facilities:
+  - id: fac_jyoti_rajkot_1
+    name: "Jyoti CNC Rajkot manufacturing facility 1 (company-reported)"
+    geo_id: RAJKOT_GUJARAT
+    country: IND
+    owner_org: org_jyoti_cnc
+    operator_org: org_jyoti_cnc
+    status: operating
+    evidence_ids: [ev_jyoti_facilities]
+    notes: Facility identity from company disclosure; no product-specific VMC capacity segment is asserted.
+  - id: fac_jyoti_rajkot_2
+    name: "Jyoti CNC Rajkot manufacturing facility 2 (company-reported)"
+    geo_id: RAJKOT_GUJARAT
+    country: IND
+    owner_org: org_jyoti_cnc
+    operator_org: org_jyoti_cnc
+    status: operating
+    evidence_ids: [ev_jyoti_facilities]
+    notes: Facility identity from company disclosure; no product-specific VMC capacity segment is asserted.
+  - id: fac_micromatic_ghaziabad
+    name: "Micromatic Grinding Technologies Ghaziabad plant"
+    geo_id: GHAZIABAD_UTTAR_PRADESH
+    country: IND
+    owner_org: org_micromatic_official
+    operator_org: org_micromatic_official
+    status: operating
+    evidence_ids: [ev_micromatic_grinding_supplier]
+    notes: Official plant identity and grinding-machine scope; no ball-screw grinder fleet hours or qualified component capacity asserted.
+  - id: fac_micromatic_bengaluru
+    name: "Micromatic Grinding Technologies Bengaluru plant"
+    geo_id: DOBASPET_KARNATAKA
+    country: IND
+    owner_org: org_micromatic_official
+    operator_org: org_micromatic_official
+    status: operating
+    evidence_ids: [ev_micromatic_grinding_supplier]
+    notes: Official plant identity and grinding-machine scope; no ball-screw grinder fleet hours or qualified component capacity asserted.
+  - id: fac_hmt_bengaluru
+    name: "HMT Machine Tools Bengaluru (company site context)"
+    geo_id: BENGALURU_KARNATAKA
+    country: IND
+    owner_org: org_hmt
+    operator_org: org_hmt
+    status: operating
+    evidence_ids: [ev_hmt_machine_tools_scope]
+    notes: Official organization/location context; current product mix, utilization, qualification, and available allocation are UNKNOWN.
+
+parts:
+  - id: cnc_vmc_high_quality
+    name: High-quality vertical machining center (reference product)
+    part_class: subassembly
+    spec: "Production-intent VMC; closed-loop axes; spindle, ATC, probe, and acceptance record"
+  - id: machine_bed_casting
+    name: Meehanite-class machine bed casting and finished guideways
+    part_class: subassembly
+    spec: "Vibration-damping bed with stress relief and precision-ground datum surfaces"
+  - id: machine_column_casting
+    name: Machine column casting and finished mounting faces
+    part_class: subassembly
+  - id: saddle_table_set
+    name: Saddle/table and guideway mounting set
+    part_class: subassembly
+  - id: spindle_cartridge
+    name: High-speed spindle cartridge
+    part_class: subassembly
+    spec: "Runout, thermal growth, preload, and balance acceptance required"
+  - id: spindle_bearing
+    name: Precision angular-contact spindle bearing
+    part_class: component
+    spec: "Machine-tool grade bearing; grade and life evidence required"
+  - id: spindle_motor
+    name: High-speed spindle motor
+    part_class: component
+    spec: "Integrated motor with thermal and balance acceptance"
+  - id: ball_screw_set
+    name: Ground ball-screw set (three axes)
+    part_class: subassembly
+    spec: "Preload and lead-error acceptance at the selected accuracy grade"
+  - id: ball_screw_shaft_blank
+    name: Ball-screw shaft blank
+    part_class: component
+  - id: ball_screw_nut
+    name: Ball-screw nut with recirculating elements
+    part_class: component
+  - id: linear_guide_set
+    name: Linear guide rail/block set (three axes)
+    part_class: subassembly
+    spec: "Preload, straightness, and life acceptance"
+  - id: guide_rail_blank
+    name: Linear-guide rail blank
+    part_class: component
+  - id: linear_guide_block
+    name: Linear-guide block
+    part_class: component
+  - id: servo_motor_axis
+    name: Closed-loop axis servo motor
+    part_class: component
+  - id: servo_drive
+    name: Axis servo drive
+    part_class: component
+  - id: absolute_encoder_axis
+    name: High-resolution axis encoder
+    part_class: component
+  - id: cnc_controller
+    name: CNC numerical controller
+    part_class: subassembly
+  - id: controller_board
+    name: Industrial controller board
+    part_class: component
+  - id: industrial_processor
+    name: Industrial processor/FPGA module
+    part_class: component
+  - id: industrial_ethernet_module
+    name: Deterministic industrial network module
+    part_class: component
+  - id: control_power_module
+    name: Control power and safety I/O module
+    part_class: component
+  - id: atc_magazine
+    name: Automatic tool changer and magazine
+    part_class: subassembly
+  - id: tool_holder
+    name: Precision tool holder set member
+    part_class: component
+  - id: atc_drive
+    name: Automatic tool changer drive/indexer
+    part_class: component
+  - id: coolant_lubrication_unit
+    name: Coolant, chip evacuation, and centralized lubrication unit
+    part_class: subassembly
+  - id: coolant_pump
+    name: Coolant/lubrication pump
+    part_class: component
+  - id: coolant_filter
+    name: Coolant filtration module
+    part_class: component
+  - id: electrical_cabinet
+    name: Electrical cabinet and harness
+    part_class: subassembly
+  - id: cabinet_panel_sheet
+    name: Electrical cabinet panel stock
+    part_class: component
+  - id: safety_enclosure
+    name: Machine enclosure and safety interlock set
+    part_class: subassembly
+  - id: touch_probe
+    name: Spindle touch probe and workpiece probing set
+    part_class: component
+  - id: probe_sensor
+    name: Probe sensor element
+    part_class: component
+  - id: metrology_acceptance_kit
+    name: Calibration and acceptance metrology kit/service
+    part_class: subassembly
+  - id: granite_reference_artifact
+    name: Granite/reference artifact for calibration
+    part_class: component
+  - id: calibration_ball
+    name: Precision calibration sphere/artifact
+    part_class: component
+  - id: laser_interferometer_service
+    name: Laser interferometer acceptance service
+    part_class: component
+  - id: precision_cmm_service
+    name: CMM dimensional acceptance service
+    part_class: component
+  - id: cast_iron_machine_bed_blank
+    name: Cast-iron bed blank
+    part_class: component
+  - id: cast_iron_column_blank
+    name: Cast-iron column blank
+    part_class: component
+  - id: saddle_casting_blank
+    name: Saddle/table casting blank
+    part_class: component
+  - id: bearing_steel
+    name: Bearing-grade steel stock
+    part_class: component
+  - id: electrical_steel
+    name: Electrical steel lamination stock
+    part_class: component
+  - id: copper_magnet_wire
+    name: Copper magnet wire
+    part_class: component
+  - id: permanent_magnet
+    name: Permanent-magnet material for servo/spindle motor
+    part_class: component
+  - id: guideway_steel
+    name: Hardenable guideway steel stock
+    part_class: component
+  - id: spindle_shaft_blank
+    name: Spindle shaft blank
+    part_class: component
+  - id: tool_steel_blank
+    name: Tool-holder/tooling steel blank
+    part_class: component
+  - id: cbn_grinding_wheel
+    name: CBN grinding wheel and dressing stock
+    part_class: component
+  - id: encoder_scale
+    name: Precision encoder scale
+    part_class: component
+  - id: sensor_chip
+    name: Position/probe sensor chip
+    part_class: component
+  - id: ball_screw_grade_spec
+    name: "Ball-screw accuracy-grade specification and acceptance record"
+    part_class: specification
+    spec: "Select C3 or C5 against the axis lead-error, backlash, thermal-error, and cost budget; final grade is not pre-qualified."
+    evidence_ids: [ev_thk_ball_screw_grade, ev_cnc_ballscrew_research_question]
+  - id: ball_screw_grinding_fixture
+    name: Ball-screw thread-grinding fixture and steady rest
+    part_class: tooling
+    spec: "Dedicated datum, support, dressing, and temperature-control fixture for the selected shaft geometry"
+    evidence_ids: [ev_cnc_process_yields]
+  - id: ball_screw_lead_error_artifact
+    name: Ball-screw lead-error calibration artifact
+    part_class: metrology_artifact
+    spec: "Traceable artifact/reference used to verify lead, pitch variation, runout, and backlash"
+    evidence_ids: [ev_cnc_ballscrew_research_question]
+  - id: bearing_ring_set
+    name: Precision spindle-bearing ring set
+    part_class: component
+    spec: "Heat-treated race rings; grade, residual stress, roundness, and traceability require qualification"
+    evidence_ids: [ev_nsk_spindle_bearing_scope, ev_cnc_recursive_capacity_unknown]
+  - id: bearing_ball_cage_set
+    name: Spindle-bearing rolling-element and cage set
+    part_class: component
+    spec: "Matched rolling elements/cage set; material, grade, preload, and contamination control require qualification"
+    evidence_ids: [ev_nsk_spindle_bearing_scope, ev_cnc_recursive_capacity_unknown]
+  - id: spindle_test_bar
+    name: Spindle test bar and gauge set
+    part_class: tooling
+    spec: "Traceable reference for spindle taper/runout, thermal drift, and repeatability checks"
+    evidence_ids: [ev_cnc_process_yields]
+  - id: spindle_balance_fixture
+    name: Spindle dynamic-balance fixture and adapter
+    part_class: tooling
+    spec: "Rotor/cartridge balancing and runout fixture matched to the spindle interface"
+    evidence_ids: [ev_cnc_process_yields]
+  - id: bed_alignment_fixture
+    name: Bed/column datum and alignment fixture
+    part_class: tooling
+    spec: "Stable datum frame for guideway alignment, squareness, and thermal soak measurements"
+    evidence_ids: [ev_cnc_process_yields]
+  - id: thermal_sensor_set
+    name: Machine thermal-growth sensor set
+    part_class: metrology_artifact
+    spec: "Temperature and displacement sensors for spindle/axis thermal characterization"
+    evidence_ids: [ev_cnc_process_yields]
+  - id: machine_alignment_calibration
+    name: Geometric alignment, volumetric compensation, and cutting-test package
+    part_class: subassembly
+    spec: "Final alignment and compensation record tied to traceable laser/CMM/ballbar measurements"
+    evidence_ids: [ev_renishaw_metrology_scope, ev_cnc_metrology_research_question]
+  - id: pneumatic_clamp_unit
+    name: Pneumatic tool-clamp and unclamp unit
+    part_class: subassembly
+    spec: "Air preparation, valve manifold, pressure monitoring, and fail-safe tool-clamp actuation"
+    evidence_ids: [ev_cnc_process_yields]
+  - id: pneumatic_valve_manifold
+    name: Pneumatic valve manifold and pressure switch
+    part_class: component
+    evidence_ids: [ev_cnc_process_yields]
+  - id: air_filter_regulator
+    name: Compressed-air filter/regulator assembly
+    part_class: component
+    evidence_ids: [ev_cnc_process_yields]
+  - id: cbn_abrasive_grit
+    name: CBN abrasive grit stock
+    part_class: material
+    spec: "Abrasive grade and concentration to match dressing and workpiece material; source and batch data required"
+    evidence_ids: [ev_cnc_process_yields]
+  - id: grinding_wheel_bond
+    name: Grinding-wheel bond and backing stock
+    part_class: material
+    spec: "Bond system selected for wheel stiffness, porosity, dressing, and coolant compatibility"
+    evidence_ids: [ev_cnc_process_yields]
+  - id: servo_motor_axis_synrm
+    name: Synchronous-reluctance axis motor alternative
+    part_class: component
+    spec: "Scenario alternative with no permanent-magnet input; torque/thermal/drive acceptance remains UNKNOWN"
+    evidence_ids: [ev_cnc_synrm_alternative]
+
+product_variants:
+  - id: cnc_vmc_100_per_year
+    name: "100 high-quality CNC vertical machining centers/year"
+    anchor_evidence: [ev_cnc_reference_architecture, ev_cnc_bom_quantities]
+    notes: >
+      Objective is annual saleable machine output, not installed nameplate or
+      historical market demand. A 100-unit objective is multiplied through the
+      per-machine BOM and recipe yields. Product/customer acceptance, supplier
+      allocation, and effective capacity remain separate unknowns.
+    functional_requirements:
+      - metric: annual_units
+        min: 100
+        max: 100
+        unit: units/yr
+      - metric: positioning_accuracy
+        min: 0.005
+        max: 0.02
+        unit: mm
+      - metric: spindle_speed
+        min: 12000
+        max: 24000
+        unit: rpm
+      - metric: axis_count
+        min: 3
+        max: 3
+        unit: count
+      - metric: saleable_status
+        min: 1
+        max: 1
+        unit: qualified_units
+    bom:
+      - part: machine_bed_casting
+        qty: 1
+      - part: machine_column_casting
+        qty: 1
+      - part: saddle_table_set
+        qty: 1
+      - part: spindle_cartridge
+        qty: 1
+      - part: ball_screw_set
+        qty: 3
+      - part: linear_guide_set
+        qty: 3
+      - part: servo_motor_axis
+        qty: 3
+      - part: servo_drive
+        qty: 3
+      - part: absolute_encoder_axis
+        qty: 3
+      - part: cnc_controller
+        qty: 1
+      - part: atc_magazine
+        qty: 1
+      - part: coolant_lubrication_unit
+        qty: 1
+      - part: electrical_cabinet
+        qty: 1
+      - part: safety_enclosure
+        qty: 1
+      - part: touch_probe
+        qty: 1
+      - part: metrology_acceptance_kit
+        qty: 1
+
+recipes:
+  - id: rec_machine_bed_casting
+    name: Machine bed casting, stress relief, machining, and grinding
+    output_part: machine_bed_casting
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_structural_casting]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: bed_cast
+        name: Cast and inspect bed blank
+        equipment_classes: [large_casting_cell]
+        yield_fraction: 0.94
+      - id: bed_stress_relief
+        name: Stress relief and stabilization
+        equipment_classes: [stress_relief_furnace]
+        cycle_time_per_unit: [12, h]
+        yield_fraction: 0.98
+      - id: bed_rough_machine
+        name: Rough and semi-finish machining
+        equipment_classes: [large_bed_cnc]
+        cycle_time_per_unit: [8, h]
+        yield_fraction: 0.96
+      - id: bed_precision_grind
+        name: Precision guideway grinding and scraping
+        equipment_classes: [precision_surface_grinder]
+        cycle_time_per_unit: [6, h]
+        yield_fraction: 0.93
+      - id: bed_alignment
+        name: Datum alignment, scraping, and thermal soak verification
+        equipment_classes: [bed_alignment_fixture, metrology_cmm, laser_interferometer_station]
+        cycle_time_per_unit: [3, h]
+        yield_fraction: 0.98
+      - id: bed_metrology
+        name: Datum and straightness acceptance
+        equipment_classes: [metrology_cmm, laser_interferometer_station]
+        yield_fraction: 0.98
+    inputs:
+      - id: cast_iron_machine_bed_blank
+        quantity: [1.25, t_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.02, kg_product]
+      - id: granite_reference_artifact
+        quantity: [0.01, pcs]
+
+  - id: rec_machine_column_casting
+    name: Machine column casting and finish machining
+    output_part: machine_column_casting
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_structural_casting]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: column_cast
+        name: Cast and inspect column blank
+        equipment_classes: [large_casting_cell]
+        yield_fraction: 0.94
+      - id: column_stabilize
+        name: Stress relief and stabilization
+        equipment_classes: [stress_relief_furnace]
+        yield_fraction: 0.98
+      - id: column_machine
+        name: Large-format machining
+        equipment_classes: [large_bed_cnc]
+        cycle_time_per_unit: [7, h]
+        yield_fraction: 0.95
+      - id: column_accept
+        name: Dimensional acceptance
+        equipment_classes: [metrology_cmm]
+        yield_fraction: 0.98
+    inputs:
+      - id: cast_iron_column_blank
+        quantity: [0.9, t_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.01, kg_product]
+
+  - id: rec_saddle_table_set
+    name: Saddle/table and guideway mounting set
+    output_part: saddle_table_set
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_structural_casting]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: saddle_cast
+        name: Cast and stabilize saddle/table blanks
+        equipment_classes: [large_casting_cell, stress_relief_furnace]
+        yield_fraction: 0.94
+      - id: saddle_machine
+        name: Finish machine and grind guideway interfaces
+        equipment_classes: [large_bed_cnc, precision_surface_grinder]
+        cycle_time_per_unit: [5, h]
+        yield_fraction: 0.94
+      - id: saddle_inspect
+        name: Straightness and interface inspection
+        equipment_classes: [metrology_cmm]
+        yield_fraction: 0.98
+    inputs:
+      - id: saddle_casting_blank
+        quantity: [0.55, t_product]
+      - id: guideway_steel
+        quantity: [15, kg_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.01, kg_product]
+
+  - id: rec_spindle_cartridge
+    name: Spindle cartridge integration and thermal acceptance
+    output_part: spindle_cartridge
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_spindle_acceptance]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: spindle_fit
+        name: Bearing preload and shaft fit
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.95
+      - id: spindle_balance
+        name: High-speed balance and runout test
+        equipment_classes: [spindle_balance_tester, spindle_balance_fixture]
+        yield_fraction: 0.96
+      - id: spindle_thermal
+        name: Thermal growth characterization
+        equipment_classes: [spindle_test_bench, spindle_test_bar, thermal_sensor_set]
+        cycle_time_per_unit: [4, h]
+        yield_fraction: 0.95
+    inputs:
+      - id: spindle_bearing
+        quantity: [2, pcs]
+      - id: spindle_motor
+        quantity: [1, pcs]
+      - id: spindle_shaft_blank
+        quantity: [0.12, t_product]
+      - id: spindle_test_bar
+        quantity: [0.01, pcs]
+
+  - id: rec_spindle_bearing
+    name: Precision spindle bearing route
+    output_part: spindle_bearing
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_precision_bearing]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_recursive_capacity_unknown]
+    steps:
+      - id: bearing_heat_treat
+        name: Bearing steel heat treatment
+        equipment_classes: [vacuum_heat_treatment_furnace]
+        yield_fraction: 0.97
+      - id: bearing_race_grind
+        name: Raceway grinding and superfinish
+        equipment_classes: [precision_bearing_grinder]
+        cycle_time_per_unit: [0.5, h]
+        yield_fraction: 0.9
+      - id: bearing_metrology
+        name: Roundness, preload, and runout inspection
+        equipment_classes: [bearing_metrology_station, metrology_cmm]
+        yield_fraction: 0.97
+    inputs:
+      - id: bearing_ring_set
+        quantity: [1, pcs]
+      - id: bearing_ball_cage_set
+        quantity: [1, pcs]
+      - id: bearing_steel
+        quantity: [0.45, kg_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.015, kg_product]
+
+  - id: rec_bearing_ring_set
+    name: Precision spindle-bearing ring set
+    output_part: bearing_ring_set
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_precision_bearing]
+    evidence_ids: [ev_cnc_process_yields, ev_nsk_spindle_bearing_scope, ev_cnc_recursive_capacity_unknown]
+    steps:
+      - id: bearing_ring_heat_treat
+        name: Ring hardening, tempering, and stabilization
+        equipment_classes: [vacuum_heat_treatment_furnace]
+        yield_fraction: 0.95
+      - id: bearing_ring_grind
+        name: Raceway and face grinding/superfinish
+        equipment_classes: [precision_bearing_grinder]
+        cycle_time_per_unit: [0.6, h]
+        yield_fraction: 0.9
+      - id: bearing_ring_measure
+        name: Roundness, waviness, raceway geometry, and traceability inspection
+        equipment_classes: [bearing_metrology_station, metrology_cmm]
+        yield_fraction: 0.97
+    inputs:
+      - id: bearing_steel
+        quantity: [0.35, kg_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.01, kg_product]
+
+  - id: rec_bearing_ball_cage_set
+    name: Matched spindle-bearing rolling-element and cage set
+    output_part: bearing_ball_cage_set
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_precision_bearing]
+    evidence_ids: [ev_cnc_process_yields, ev_nsk_spindle_bearing_scope, ev_cnc_recursive_capacity_unknown]
+    steps:
+      - id: bearing_ball_grade
+        name: Grade, size, and batch matching of rolling elements
+        equipment_classes: [bearing_metrology_station]
+        yield_fraction: 0.97
+      - id: bearing_cage_form
+        name: Cage forming, deburring, and clean assembly
+        equipment_classes: [precision_assembly_cell, cleanroom_bench]
+        yield_fraction: 0.96
+      - id: bearing_match_test
+        name: Preload, torque, vibration, and contamination-control check
+        equipment_classes: [bearing_metrology_station, bearing_test_bench]
+        yield_fraction: 0.97
+    inputs:
+      - id: bearing_steel
+        quantity: [0.1, kg_product]
+
+  - id: rec_spindle_motor
+    name: High-speed spindle motor
+    output_part: spindle_motor
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_spindle_acceptance]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: spindle_lamination
+        name: Lamination stamping and stack
+        equipment_classes: [electrical_steel_stamping_press]
+        yield_fraction: 0.96
+      - id: spindle_winding
+        name: Stator winding and impregnation
+        equipment_classes: [motor_winding_line]
+        yield_fraction: 0.95
+      - id: spindle_motor_test
+        name: Thermal, vibration, and electrical test
+        equipment_classes: [motor_test_bench]
+        yield_fraction: 0.96
+    inputs:
+      - id: electrical_steel
+        quantity: [0.8, kg_product]
+      - id: copper_magnet_wire
+        quantity: [0.35, kg_product]
+      - id: permanent_magnet
+        quantity: [0.12, kg_product]
+
+  - id: rec_ball_screw_set
+    name: Three-axis ground ball-screw set
+    output_part: ball_screw_set
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_ball_screw]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_recursive_capacity_unknown]
+    steps:
+      - id: ball_screw_grind
+        name: Select C3/C5 grade; thread grind and correct lead error
+        equipment_classes: [ball_screw_grinder, ball_screw_grinding_fixture]
+        cycle_time_per_unit: [1.5, h]
+        yield_fraction: 0.9
+      - id: ball_screw_preload
+        name: Nut assembly and preload
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.96
+      - id: ball_screw_measure
+        name: Lead, backlash, preload, and grade-conformance measurement
+        equipment_classes: [ball_screw_metrology_station, ball_screw_lead_error_artifact]
+        yield_fraction: 0.97
+    inputs:
+      - id: ball_screw_shaft_blank
+        quantity: [3, pcs]
+      - id: ball_screw_nut
+        quantity: [3, pcs]
+      - id: ball_screw_grade_spec
+        quantity: [1, pcs]
+      - id: ball_screw_grinding_fixture
+        quantity: [0.1, pcs]
+      - id: ball_screw_lead_error_artifact
+        quantity: [0.01, pcs]
+      - id: bearing_steel
+        quantity: [0.2, kg_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.015, kg_product]
+
+  - id: rec_ball_screw_shaft_blank
+    name: Ball-screw shaft blank, hardening, thread grinding, and lead-error map
+    output_part: ball_screw_shaft_blank
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_ball_screw]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_recursive_capacity_unknown, ev_thk_ball_screw_grade]
+    notes: >
+      The selected C3/C5 grade is a specification gate. The route exposes the
+      thread grinder, fixture, temperature control, and metrology chain but does
+      not assert that any Indian facility has qualified effective capacity.
+    steps:
+      - id: shaft_turn
+        name: Turn shaft blank, centers, and datum ends
+        equipment_classes: [large_bed_cnc, shaft_turning_cell]
+        yield_fraction: 0.96
+      - id: shaft_harden
+        name: Induction harden or carburize effective thread zone
+        equipment_classes: [vacuum_heat_treatment_furnace, induction_hardening_cell]
+        yield_fraction: 0.94
+      - id: shaft_thread_grind
+        name: Thread grind to selected C3/C5 grade
+        equipment_classes: [ball_screw_grinder, ball_screw_grinding_fixture]
+        cycle_time_per_unit: [1.5, h]
+        yield_fraction: 0.9
+      - id: shaft_lead_map
+        name: Traceable lead-error, pitch, runout, and thermal map
+        equipment_classes: [ball_screw_metrology_station, ball_screw_lead_error_artifact]
+        yield_fraction: 0.97
+    inputs:
+      - id: bearing_steel
+        quantity: [0.9, kg_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.012, kg_product]
+      - id: ball_screw_grinding_fixture
+        quantity: [0.1, pcs]
+      - id: ball_screw_grade_spec
+        quantity: [1, pcs]
+
+  - id: rec_ball_screw_grinder_machine
+    name: Ball-screw/thread grinder machine-build route
+    output_part: ball_screw_grinder
+    output_quantity: [1, pcs]
+    route_type: secondary
+    maturity: prototype
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_ball_screw_grinder_machine]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_grinder_research_question, ev_micromatic_grinding_supplier]
+    notes: >
+      Machine-builds-machine recursion: this route is a bounded scenario
+      representation of a grinder assembled from a precision spindle, linear
+      stage, controller, fixture, and metrology package. It is not a claim that
+      the named supplier owns this exact machine or that the route is currently
+      buildable in India.
+    steps:
+      - id: grinder_structure
+        name: Machine base, thermal stabilization, and guideway preparation
+        equipment_classes: [large_bed_cnc, precision_surface_grinder, metrology_cmm]
+        yield_fraction: 0.9
+      - id: grinder_spindle_integration
+        name: Grinding spindle, wheel dressing, and balance integration
+        equipment_classes: [precision_assembly_cell, spindle_balance_tester]
+        yield_fraction: 0.92
+      - id: grinder_control_integration
+        name: Axis servo, CNC, dressing, and safety integration
+        equipment_classes: [controller_hardware_in_loop_bench, ems_line]
+        yield_fraction: 0.94
+      - id: grinder_geometry_acceptance
+        name: Axis geometry, thermal drift, and wheel-path acceptance
+        equipment_classes: [ball_screw_metrology_station, laser_interferometer_station, metrology_cmm]
+        yield_fraction: 0.95
+    inputs:
+      - id: grinder_spindle
+        quantity: [1, pcs]
+      - id: grinder_linear_stage
+        quantity: [1, pcs]
+      - id: grinder_controller
+        quantity: [1, pcs]
+      - id: ball_screw_grinding_fixture
+        quantity: [1, pcs]
+      - id: ball_screw_lead_error_artifact
+        quantity: [1, pcs]
+
+  - id: rec_ball_screw_metrology_station
+    name: Ball-screw metrology station and traceability route
+    output_part: ball_screw_metrology_station
+    output_quantity: [1, pcs]
+    route_type: secondary
+    maturity: prototype
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_ball_screw_metrology_station]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_metrology_research_question, ev_renishaw_metrology_scope]
+    notes: >
+      The metrology station is a capability dependency for the grade/process
+      chain, not a claimed Indian facility or service capacity.
+    steps:
+      - id: ballscrew_metrology_fixture
+        name: Datum, support, and temperature-controlled setup
+        equipment_classes: [metrology_cmm, calibration_lab]
+        yield_fraction: 0.98
+      - id: ballscrew_metrology_calibration
+        name: Calibrate laser/encoder/reference artifact chain
+        equipment_classes: [laser_interferometer_station, encoder_calibration_lab]
+        yield_fraction: 0.97
+      - id: ballscrew_metrology_acceptance
+        name: Lead-error, pitch, runout, backlash, and preload report
+        equipment_classes: [ball_screw_metrology_station, metrology_cmm]
+        cycle_time_per_unit: [2, h]
+        yield_fraction: 0.96
+    inputs:
+      - id: laser_interferometer_service
+        quantity: [1, pcs]
+      - id: ball_screw_lead_error_artifact
+        quantity: [1, pcs]
+      - id: granite_reference_artifact
+        quantity: [1, pcs]
+
+  - id: rec_ball_screw_nut
+    name: Ball-screw nut and recirculating-element route
+    output_part: ball_screw_nut
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_ball_screw]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: nut_harden
+        name: Nut heat treatment
+        equipment_classes: [vacuum_heat_treatment_furnace]
+        yield_fraction: 0.97
+      - id: nut_grind
+        name: Nut raceway grinding
+        equipment_classes: [precision_surface_grinder]
+        yield_fraction: 0.9
+      - id: nut_measure
+        name: Nut preload and lead inspection
+        equipment_classes: [ball_screw_metrology_station]
+        yield_fraction: 0.97
+    inputs:
+      - id: bearing_steel
+        quantity: [0.2, kg_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.005, kg_product]
+
+  - id: rec_linear_guide_set
+    name: Three-axis linear guide set
+    output_part: linear_guide_set
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_linear_guide]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_recursive_capacity_unknown]
+    steps:
+      - id: rail_harden
+        name: Rail hardening and straightening
+        equipment_classes: [vacuum_heat_treatment_furnace]
+        yield_fraction: 0.96
+      - id: rail_grind
+        name: Rail and block grinding
+        equipment_classes: [precision_surface_grinder]
+        yield_fraction: 0.91
+      - id: rail_measure
+        name: Straightness and preload inspection
+        equipment_classes: [metrology_cmm]
+        yield_fraction: 0.97
+    inputs:
+      - id: guide_rail_blank
+        quantity: [3, pcs]
+      - id: linear_guide_block
+        quantity: [6, pcs]
+      - id: guideway_steel
+        quantity: [8, kg_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.01, kg_product]
+
+  - id: rec_servo_motor_axis
+    name: Closed-loop axis servo motor
+    output_part: servo_motor_axis
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_servo_axis]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_recursive_capacity_unknown]
+    steps:
+      - id: axis_lamination
+        name: Lamination stamping and stack
+        equipment_classes: [electrical_steel_stamping_press]
+        yield_fraction: 0.96
+      - id: axis_winding
+        name: Stator winding and impregnation
+        equipment_classes: [motor_winding_line]
+        yield_fraction: 0.95
+      - id: axis_test
+        name: Torque, thermal, and encoder-interface test
+        equipment_classes: [motor_test_bench]
+        yield_fraction: 0.96
+    inputs:
+      - id: electrical_steel
+        quantity: [0.55, kg_product]
+      - id: copper_magnet_wire
+        quantity: [0.22, kg_product]
+      - id: permanent_magnet
+        quantity: [0.08, kg_product]
+
+  - id: rec_servo_motor_axis_synrm
+    name: Synchronous-reluctance axis motor alternative (scenario)
+    output_part: servo_motor_axis_synrm
+    output_quantity: [1, pcs]
+    route_type: secondary
+    maturity: prototype
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_servo_axis_synrm]
+    evidence_ids: [ev_cnc_synrm_alternative, ev_cnc_process_yields]
+    notes: >
+      Graph-connected design alternative for later generic substitution. It
+      removes the permanent-magnet input from this axis-motor route, but does
+      not assert that the resulting torque, thermal, acoustic, efficiency, or
+      drive envelope meets the reference VMC until prototype tests close the
+      stated qualification gate.
+    steps:
+      - id: synrm_lamination
+        name: Electrical-steel lamination stamping and rotor/stator stack
+        equipment_classes: [electrical_steel_stamping_press]
+        yield_fraction: 0.94
+      - id: synrm_winding
+        name: Stator winding, impregnation, and insulation test
+        equipment_classes: [motor_winding_line, motor_test_bench]
+        yield_fraction: 0.93
+      - id: synrm_balance
+        name: Rotor balance, torque ripple, thermal, and drive-interface test
+        equipment_classes: [motor_test_bench, spindle_balance_tester]
+        yield_fraction: 0.92
+    inputs:
+      - id: electrical_steel
+        quantity: [0.65, kg_product]
+      - id: copper_magnet_wire
+        quantity: [0.3, kg_product]
+
+  - id: rec_servo_drive
+    name: Axis servo drive
+    output_part: servo_drive
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_control_system]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: drive_smt
+        name: SMT and power-stage assembly
+        equipment_classes: [ems_line]
+        yield_fraction: 0.97
+      - id: drive_burnin
+        name: Burn-in, EMC, and functional test
+        equipment_classes: [drive_test_bench]
+        yield_fraction: 0.96
+    inputs:
+      - id: control_power_module
+        quantity: [1, pcs]
+      - id: industrial_processor
+        quantity: [0.1, pcs]
+      - id: controller_board
+        quantity: [1, pcs]
+
+  - id: rec_absolute_encoder_axis
+    name: High-resolution axis encoder
+    output_part: absolute_encoder_axis
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_encoder]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_recursive_capacity_unknown]
+    steps:
+      - id: encoder_assemble
+        name: Scale, sensor, and electronics assembly
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.95
+      - id: encoder_calibrate
+        name: Multi-point calibration
+        equipment_classes: [encoder_calibration_lab]
+        yield_fraction: 0.94
+    inputs:
+      - id: encoder_scale
+        quantity: [1, pcs]
+      - id: sensor_chip
+        quantity: [1, pcs]
+      - id: controller_board
+        quantity: [0.1, pcs]
+
+  - id: rec_cnc_controller
+    name: CNC numerical controller
+    output_part: cnc_controller
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_control_system]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_critical_components]
+    steps:
+      - id: controller_integration
+        name: Controller board, processor, and deterministic network integration
+        equipment_classes: [ems_line, cleanroom_bench]
+        yield_fraction: 0.97
+      - id: controller_system_test
+        name: CNC/PLC/servo integration and safety test
+        equipment_classes: [controller_hardware_in_loop_bench]
+        yield_fraction: 0.95
+    inputs:
+      - id: controller_board
+        quantity: [1, pcs]
+      - id: industrial_processor
+        quantity: [1, pcs]
+      - id: industrial_ethernet_module
+        quantity: [1, pcs]
+      - id: control_power_module
+        quantity: [1, pcs]
+
+  - id: rec_controller_board
+    name: Industrial controller board
+    output_part: controller_board
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_control_system]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: board_smt
+        name: Board assembly and inspection
+        equipment_classes: [ems_line]
+        yield_fraction: 0.97
+      - id: board_test
+        name: Boundary scan and functional test
+        equipment_classes: [electronics_test_bench]
+        yield_fraction: 0.97
+    inputs:
+      - id: industrial_processor
+        quantity: [0.25, pcs]
+      - id: control_power_module
+        quantity: [1, pcs]
+
+  - id: rec_atc_magazine
+    name: Automatic tool changer and magazine
+    output_part: atc_magazine
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_atc]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: atc_assembly
+        name: Magazine, gripper, and indexer assembly
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.95
+      - id: atc_cycle_test
+        name: Tool-change cycle test
+        equipment_classes: [atc_test_bench]
+        yield_fraction: 0.97
+    inputs:
+      - id: tool_holder
+        quantity: [24, pcs]
+      - id: atc_drive
+        quantity: [1, pcs]
+      - id: pneumatic_clamp_unit
+        quantity: [1, pcs]
+      - id: sensor_chip
+        quantity: [1, pcs]
+
+  - id: rec_pneumatic_clamp_unit
+    name: Pneumatic tool-clamp and unclamp unit
+    output_part: pneumatic_clamp_unit
+    output_quantity: [1, pcs]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: pneumatic_prepare
+        name: Filter/regulator, valve manifold, and pressure instrumentation assembly
+        equipment_classes: [fluid_test_bench, precision_assembly_cell]
+        yield_fraction: 0.98
+      - id: pneumatic_function
+        name: Clamp force, leak, cycle, and fail-safe function test
+        equipment_classes: [fluid_test_bench, atc_test_bench]
+        cycle_time_per_unit: [0.5, h]
+        yield_fraction: 0.99
+    inputs:
+      - id: pneumatic_valve_manifold
+        quantity: [1, pcs]
+      - id: air_filter_regulator
+        quantity: [1, pcs]
+
+  - id: rec_tool_holder
+    name: Precision tool-holder route
+    output_part: tool_holder
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_tooling]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: holder_turn
+        name: Turn and heat-treat tool-holder blank
+        equipment_classes: [toolroom_cnc, vacuum_heat_treatment_furnace]
+        yield_fraction: 0.95
+      - id: holder_grind
+        name: Taper grinding and runout inspection
+        equipment_classes: [tool_grinder, toolholder_metrology_station]
+        yield_fraction: 0.94
+    inputs:
+      - id: tool_steel_blank
+        quantity: [0.35, kg_product]
+      - id: cbn_grinding_wheel
+        quantity: [0.005, kg_product]
+
+  - id: rec_coolant_lubrication_unit
+    name: Coolant, chip evacuation, and centralized lubrication unit
+    output_part: coolant_lubrication_unit
+    output_quantity: [1, pcs]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: coolant_assemble
+        name: Pump, filter, and lubrication assembly
+        equipment_classes: [precision_assembly_cell]
+        yield_fraction: 0.98
+      - id: coolant_test
+        name: Leak and flow test
+        equipment_classes: [fluid_test_bench]
+        yield_fraction: 0.99
+    inputs:
+      - id: coolant_pump
+        quantity: [1, pcs]
+      - id: coolant_filter
+        quantity: [1, pcs]
+
+  - id: rec_electrical_cabinet
+    name: Electrical cabinet and harness
+    output_part: electrical_cabinet
+    output_quantity: [1, pcs]
+    maturity: series
+    applicable_geographies: [INDIA, GLOBAL]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: cabinet_build
+        name: Panel, drive, PLC, and harness integration
+        equipment_classes: [electrical_panel_line]
+        yield_fraction: 0.98
+      - id: cabinet_test
+        name: Insulation, safety, and I/O test
+        equipment_classes: [electrical_test_bench]
+        yield_fraction: 0.99
+    inputs:
+      - id: cabinet_panel_sheet
+        quantity: [2, kg_product]
+      - id: controller_board
+        quantity: [1, pcs]
+      - id: control_power_module
+        quantity: [1, pcs]
+
+  - id: rec_touch_probe
+    name: Spindle touch probe and probing set
+    output_part: touch_probe
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_probe]
+    evidence_ids: [ev_cnc_process_yields]
+    steps:
+      - id: probe_build
+        name: Probe assembly and calibration
+        equipment_classes: [precision_assembly_cell, encoder_calibration_lab]
+        yield_fraction: 0.95
+    inputs:
+      - id: probe_sensor
+        quantity: [1, pcs]
+      - id: controller_board
+        quantity: [0.1, pcs]
+
+  - id: rec_machine_alignment_calibration
+    name: Geometric alignment, thermal map, volumetric compensation, and cutting test
+    output_part: machine_alignment_calibration
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_alignment_calibration]
+    evidence_ids: [ev_cnc_process_yields, ev_renishaw_metrology_scope, ev_cnc_metrology_research_question]
+    notes: >
+      This route is the execution record that turns metrology into a saleable
+      machine acceptance decision. It requires traceability, thermal soak,
+      compensation review, and a representative cutting test; equipment
+      existence alone does not establish throughput.
+    steps:
+      - id: machine_geometric_align
+        name: Level, square, align guideways, and establish machine datums
+        equipment_classes: [metrology_cmm, laser_interferometer_station, bed_alignment_fixture]
+        cycle_time_per_unit: [4, h]
+        yield_fraction: 0.97
+      - id: machine_thermal_map
+        name: Thermal soak and axis/spindle growth map
+        equipment_classes: [spindle_test_bench, thermal_sensor_set, laser_interferometer_station]
+        cycle_time_per_unit: [6, h]
+        yield_fraction: 0.96
+      - id: machine_compensation
+        name: Apply volumetric and pitch compensation; lock revision-controlled parameters
+        equipment_classes: [controller_hardware_in_loop_bench, metrology_cmm]
+        cycle_time_per_unit: [2, h]
+        yield_fraction: 0.98
+      - id: machine_cutting_accept
+        name: Cutting test, surface finish check, and customer acceptance record
+        equipment_classes: [large_bed_cnc, metrology_cmm, spindle_test_bench]
+        cycle_time_per_unit: [8, h]
+        yield_fraction: 0.95
+    inputs:
+      - id: laser_interferometer_service
+        quantity: [1, pcs]
+      - id: precision_cmm_service
+        quantity: [1, pcs]
+      - id: thermal_sensor_set
+        quantity: [1, pcs]
+      - id: spindle_test_bar
+        quantity: [1, pcs]
+
+  - id: rec_cbn_grinding_wheel
+    name: CBN grinding-wheel and dressing-stock route
+    output_part: cbn_grinding_wheel
+    output_quantity: [1, kg_product]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_recursive_capacity_unknown]
+    notes: >
+      Tooling route included to expose abrasive, bond, pressing, dressing, and
+      wheel-balance dependencies; no Indian qualified wheel allocation is claimed.
+    steps:
+      - id: wheel_mix_press
+        name: Mix CBN abrasive and bond; press/form wheel blank
+        equipment_classes: [grinding_wheel_press]
+        yield_fraction: 0.95
+      - id: wheel_cure
+        name: Cure/sinter, dress, and balance wheel
+        equipment_classes: [wheel_cure_furnace, tool_grinder, wheel_balance_tester]
+        yield_fraction: 0.94
+      - id: wheel_inspect
+        name: Grade, runout, balance, and traceability inspection
+        equipment_classes: [toolholder_metrology_station]
+        yield_fraction: 0.97
+    inputs:
+      - id: cbn_abrasive_grit
+        quantity: [0.65, kg_product]
+      - id: grinding_wheel_bond
+        quantity: [0.35, kg_product]
+
+  - id: rec_metrology_acceptance_kit
+    name: Calibration and acceptance metrology kit/service
+    output_part: metrology_acceptance_kit
+    output_quantity: [1, pcs]
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    requires_qualification: [qual_machine_acceptance]
+    evidence_ids: [ev_cnc_process_yields, ev_cnc_recursive_capacity_unknown]
+    steps:
+      - id: metrology_prepare
+        name: Reference artifact and acceptance plan preparation
+        equipment_classes: [metrology_cmm, calibration_lab]
+        yield_fraction: 0.99
+      - id: metrology_execute
+        name: Laser, CMM, spindle, thermal, volumetric, and cutting-test acceptance
+        equipment_classes: [laser_interferometer_station, metrology_cmm, spindle_test_bench, machine_alignment_calibration]
+        cycle_time_per_unit: [10, h]
+        yield_fraction: 0.95
+    inputs:
+      - id: granite_reference_artifact
+        quantity: [1, pcs]
+      - id: calibration_ball
+        quantity: [1, pcs]
+      - id: laser_interferometer_service
+        quantity: [1, pcs]
+      - id: precision_cmm_service
+        quantity: [1, pcs]
+      - id: machine_alignment_calibration
+        quantity: [1, pcs]
+
+qualifications:
+  - id: qual_structural_casting
+    item_id: machine_bed_casting
+    qualifier: customer
+    standard_ref: "Production-intent casting, stress relief, geometric acceptance, and process audit"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_spindle_acceptance
+    item_id: spindle_cartridge
+    qualifier: customer
+    standard_ref: "Spindle runout, balance, thermal growth, and endurance acceptance protocol"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_precision_bearing
+    item_id: spindle_bearing
+    qualifier: customer
+    standard_ref: "Bearing grade, preload, life, runout, and traceability acceptance"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_ball_screw
+    item_id: ball_screw_set
+    qualifier: customer
+    standard_ref: "Lead error, preload, backlash, life, and thermal compensation acceptance"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_linear_guide
+    item_id: linear_guide_set
+    qualifier: customer
+    standard_ref: "Straightness, preload, runout, and life acceptance"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_servo_axis
+    item_id: servo_motor_axis
+    qualifier: customer
+    standard_ref: "Axis torque, thermal, encoder interface, and repeatability acceptance"
+    status: not_started
+    latency_months: [9, 18]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_encoder
+    item_id: absolute_encoder_axis
+    qualifier: customer
+    standard_ref: "Encoder calibration, repeatability, environmental, and traceability acceptance"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_control_system
+    item_id: cnc_controller
+    qualifier: customer
+    standard_ref: "CNC/PLC/servo integration, EMC, functional safety, and software release acceptance"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_atc
+    item_id: atc_magazine
+    qualifier: customer
+    standard_ref: "Automatic tool-change cycle, interlock, and reliability acceptance"
+    status: not_started
+    latency_months: [6, 18]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_tooling
+    item_id: tool_holder
+    qualifier: customer
+    standard_ref: "Taper/runout, balance, retention, and tool-life acceptance"
+    status: not_started
+    latency_months: [6, 18]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_probe
+    item_id: touch_probe
+    qualifier: customer
+    standard_ref: "Probe calibration, repeatability, and machine-interface acceptance"
+    status: not_started
+    latency_months: [6, 18]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_machine_acceptance
+    item_id: metrology_acceptance_kit
+    qualifier: customer
+    standard_ref: "Final machine geometric, volumetric, spindle, and cutting-test acceptance"
+    status: not_started
+    latency_months: [6, 18]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_qualification_window, ev_cnc_qualification_schedule_assumption]
+  - id: qual_ball_screw_grinder_machine
+    item_id: ball_screw_grinder
+    qualifier: internal_customer
+    standard_ref: "Thread-grinder geometry, thermal stability, wheel dressing, axis interpolation, and process capability demonstration"
+    status: not_started
+    latency_months: [18, 36]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_grinder_research_question, ev_cnc_qualification_schedule_assumption]
+  - id: qual_ball_screw_metrology_station
+    item_id: ball_screw_metrology_station
+    qualifier: internal_customer
+    standard_ref: "Traceable lead-error, pitch, runout, preload, temperature, and uncertainty-budget acceptance"
+    status: not_started
+    latency_months: [12, 24]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_metrology_research_question, ev_cnc_qualification_schedule_assumption]
+  - id: qual_alignment_calibration
+    item_id: machine_alignment_calibration
+    qualifier: customer
+    standard_ref: "Machine geometry, thermal growth, volumetric compensation, cutting-test, and revision-controlled acceptance record"
+    status: not_started
+    latency_months: [6, 18]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_metrology_research_question, ev_cnc_qualification_schedule_assumption]
+  - id: qual_servo_axis_synrm
+    item_id: servo_motor_axis_synrm
+    qualifier: customer
+    standard_ref: "Torque-speed, thermal, acoustic, efficiency, encoder-interface, drive, and repeatability acceptance for the alternative motor"
+    status: not_started
+    latency_months: [18, 36]
+    evidence_ids: [ev_cnc_mrl_framework, ev_cnc_synrm_alternative, ev_cnc_qualification_schedule_assumption]
+
+capability_claims:
+  - id: cc_india_machine_tool_programme_context
+    capability_item: cnc_vmc_high_quality
+    geography: INDIA
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: UNKNOWN
+      process_ownership: UNKNOWN
+      tooling_autonomy: UNKNOWN
+      qualification_state: evidence_gap
+      metrology_test: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Government machine-tool programme/partner evidence is useful context but does not establish this product's qualified rate.
+    evidence_ids: [ev_mhi_machine_tool_programme, ev_mhi_coe_partners, ev_cnc_capacity_unknown]
+  - id: cc_india_precision_motion_unknown
+    capability_item: ball_screw_set
+    geography: INDIA
+    vector:
+      manufacturing_maturity: UNKNOWN
+      qualified_effective_capacity: UNKNOWN
+      process_ownership: UNKNOWN
+      tooling_autonomy: UNKNOWN
+      qualification_state: not_started
+      metrology_test: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Adjacent machining or generic gear production must not be read as qualified ground ball-screw supply.
+    evidence_ids: [ev_cnc_recursive_capacity_unknown]
+  - id: cc_india_precision_bearing_unknown
+    capability_item: spindle_bearing
+    geography: INDIA
+    vector:
+      manufacturing_maturity: UNKNOWN
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: not_started
+      metrology_test: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Exact machine-tool spindle-bearing grade, yield, and effective capacity are unresolved.
+    evidence_ids: [ev_cnc_recursive_capacity_unknown]
+  - id: cc_india_metrology_unknown
+    capability_item: metrology_acceptance_kit
+    geography: INDIA
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: not_started
+      metrology_test: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Metrology equipment may exist in the country, but machine-specific acceptance throughput and calibration traceability are not established here.
+    evidence_ids: [ev_cnc_recursive_capacity_unknown]
+  - id: cc_jyoti_manufacturing_context
+    capability_item: cnc_vmc_high_quality
+    org_id: org_jyoti_cnc
+    geography: INDIA
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: UNKNOWN
+      process_ownership: UNKNOWN
+      tooling_autonomy: UNKNOWN
+      qualification_state: evidence_gap
+      metrology_test: UNKNOWN
+      lead_time_to_additional_output: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Company-reported facilities and installed capacity are supplier-discovery context only; product mix, allocation, yield, and customer qualification for this VMC remain UNKNOWN.
+    evidence_ids: [ev_jyoti_facilities, ev_cnc_capacity_research_question]
+  - id: cc_micromatic_precision_grinding_context
+    capability_item: precision_surface_grinder
+    org_id: org_micromatic_official
+    geography: INDIA
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      process_ownership: UNKNOWN
+      tooling_autonomy: UNKNOWN
+      qualification_state: evidence_gap
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Official grinding-machine supplier identity and plant locations support a supplier lead; they do not prove a thread-grinding route for C3/C5 ballscrews or available machine hours.
+    evidence_ids: [ev_micromatic_grinding_supplier, ev_cnc_grinder_research_question]
+  - id: cc_micromatic_ball_screw_grinder_lead
+    capability_item: ball_screw_grinder
+    org_id: org_micromatic_official
+    geography: INDIA
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      capital_equipment_dependence: UNKNOWN
+      qualification_state: supplier_contact_required
+      metrology_test: UNKNOWN
+      workforce_knowhow: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Micromatic is a grinding-machine supplier lead for the bounded recursion; the exact thread/ball-screw grinder, facility, process owner, and reserved hours require an audit.
+    evidence_ids: [ev_micromatic_grinding_supplier, ev_cnc_grinder_research_question]
+  - id: cc_hmt_precision_ballscrew_context
+    capability_item: ball_screw_set
+    org_id: org_hmt
+    geography: INDIA
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      design_ownership: UNKNOWN
+      process_ownership: UNKNOWN
+      tooling_autonomy: UNKNOWN
+      qualification_state: not_started
+      metrology_test: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: HMT product-scope material is a lead for supplier contact; selected grade, current output, qualification, and allocation must be established by an audit/RFQ.
+    evidence_ids: [ev_hmt_machine_tools_scope, ev_cnc_ballscrew_research_question]
+  - id: cc_thk_ball_screw_global_lead
+    capability_item: ball_screw_set
+    org_id: org_thk
+    geography: GLOBAL
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: supplier_contact_required
+      metrology_test: UNKNOWN
+      supplier_concentration: UNKNOWN
+      export_control_exposure: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Official precision-ground C3/C5 product vocabulary makes THK a global RFQ lead; no India allocation, import ceiling, or customer qualification is assumed.
+    evidence_ids: [ev_thk_ball_screw_grade, ev_cnc_ballscrew_research_question]
+  - id: cc_nsk_spindle_bearing_global_lead
+    capability_item: spindle_bearing
+    org_id: org_nsk
+    geography: GLOBAL
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: supplier_contact_required
+      metrology_test: UNKNOWN
+      supplier_concentration: UNKNOWN
+      export_control_exposure: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Official spindle-bearing product scope makes NSK a supplier lead; exact machine-tool grade, allocation, and qualification remain UNKNOWN.
+    evidence_ids: [ev_nsk_spindle_bearing_scope, ev_cnc_recursive_capacity_unknown]
+  - id: cc_renishaw_machine_metrology_lead
+    capability_item: metrology_acceptance_kit
+    org_id: org_renishaw
+    geography: GLOBAL
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: supplier_contact_required
+      metrology_test: UNKNOWN
+      supplier_concentration: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Official probing and calibration product scope supports a supplier lead; service-team availability and 100-machine/year India throughput are UNKNOWN.
+    evidence_ids: [ev_renishaw_metrology_scope, ev_cnc_metrology_research_question]
+  - id: cc_siemens_cnc_controller_global_lead
+    capability_item: cnc_controller
+    org_id: org_siemens
+    geography: GLOBAL
+    vector:
+      manufacturing_maturity: study
+      qualified_effective_capacity: UNKNOWN
+      qualification_state: supplier_contact_required
+      metrology_test: UNKNOWN
+      supplier_concentration: UNKNOWN
+      export_control_exposure: UNKNOWN
+    claim_vs_assessment: assessment
+    notes: Official SINUMERIK product scope supports a controller RFQ lead; integration, licensing, software lifecycle, and qualification for this machine remain UNKNOWN.
+    evidence_ids: [ev_siemens_controller_scope, ev_cnc_critical_components]
+
+crosswalks:
+  - from_class: HS
+    from_code: "8457"
+    to_entity: cnc_vmc_high_quality
+    confidence: 0.45
+    note: Machining-center trade heading; trade flow is not qualified domestic production capability.
+  - from_class: HS
+    from_code: "8482"
+    to_entity: spindle_bearing
+    confidence: 0.35
+    note: Bearing heading spans many grades and applications; it cannot prove machine-tool spindle-grade supply.
+  - from_class: HS
+    from_code: "8460"
+    to_entity: precision_surface_grinder
+    confidence: 0.25
+    note: Generic grinding machinery proxy only; equipment-class identity is not a facility-capacity observation.
+  - from_class: ISIC
+    from_code: "2822"
+    to_entity: ball_screw_set
+    confidence: 0.2
+    note: Broad lifting/handling/machine-tool adjacency; not a component qualification mapping.
+
+shocks:
+  - id: shk_ball_screw_grinder_loss
+    name: "Ball-screw grinder allocation loss / export-control review"
+    description: >
+      Scenario shock that removes the assumed annual machine-hour window for
+      the ball-screw grinder and sets Japan import eligibility to zero. The
+      shock targets the ball-screw-set -> thread-grinding -> grinder ->
+      metrology chain; numerical output remains UNKNOWN until equipment-hour
+      maps and foreign supply ceilings are supplied.
+    evidence_ids: [ev_cnc_grinder_research_question, ev_cnc_ballscrew_research_question]
+    edits:
+      - type: equipment_limit
+        equipment_class: ball_screw_grinder
+        hours_per_year: 0
+      - type: import_eligibility
+        origin: JPN
+        fraction: 0.0
+
+substitutions:
+  - id: sub_servo_axis_synrm
+    name: "Evaluate synchronous-reluctance axis motor route"
+    replaces_part: servo_motor_axis
+    alternative_recipe: rec_servo_motor_axis_synrm
+    level: component
+    functional_envelope:
+      annual_units: [100, 100]
+      positioning_accuracy: [0.005, 0.02]
+      spindle_speed: [12000, 24000]
+      axis_count: [3, 3]
+      saleable_status: [1, 1]
+    performance_delta:
+      permanent_magnet_dependency: "removed from this axis-motor route (ASSUMPTION)"
+      torque_density: UNKNOWN
+      thermal_and_efficiency: UNKNOWN
+      acoustic_performance: UNKNOWN
+      drive_compatibility: "requires prototype and controller/drive review"
+    changed_bom:
+      - part: servo_motor_axis_synrm
+        qty: 2
+    new_equipment: [motor_test_bench, spindle_balance_tester]
+    new_skills: [synchronous_reluctance_motor_design, torque_ripple_characterization]
+    maturity: prototype
+    transition_months: [18, 36]
+    evidence_ids: [ev_cnc_synrm_alternative]
+    notes: >
+      The replacement route is graph-connected and preserves the reference
+      machine's stated functional envelope as a design requirement, not as a
+      demonstrated equivalence. The two changed-BOM entries plus the automatic
+      alternative-recipe entry preserve three axis motors in the rewrite.
+
+execution_model:
+  work_packages:
+    - id: wp_architecture_and_tolerance_budget
+      name: "Freeze VMC architecture, axis error budget, and grade decisions"
+      phase: design
+      entity_ids: [cnc_vmc_high_quality, machine_bed_casting, ball_screw_set, spindle_cartridge]
+      depends_on: []
+      acceptance_criteria:
+        - "Positioning and repeatability requirements decomposed into structure, guideway, screw, spindle, encoder, thermal, and controller budgets"
+        - "Ball-screw C3/C5 choice recorded with explicit tradeoff and supplier RFQ envelope"
+      epistemic_class: ASSUMPTION
+      evidence_ids: [ev_cnc_reference_architecture, ev_thk_ball_screw_grade, ev_cnc_ballscrew_research_question]
+      human_approval_required: true
+    - id: wp_bed_structure_route
+      name: "Qualify cast bed/column, stress relief, datum machining, and alignment"
+      phase: process_qualification
+      entity_ids: [machine_bed_casting, machine_column_casting, saddle_table_set, bed_alignment_fixture]
+      depends_on: [wp_architecture_and_tolerance_budget]
+      acceptance_criteria:
+        - "Casting chemistry, shrinkage/defect inspection, stress-relief records, datum geometry, and thermal stabilization are traceable by serial/heat"
+        - "Supplier process audit and first-article geometric acceptance complete"
+      epistemic_class: ASSUMPTION
+      evidence_ids: [ev_cnc_process_yields, ev_cnc_qualification_schedule_assumption]
+      human_approval_required: true
+    - id: wp_ball_screw_recursive_chain
+      name: "Close ball-screw grade -> grinding -> grinder -> metrology chain"
+      phase: supplier_and_capital_equipment
+      entity_ids: [ball_screw_set, ball_screw_shaft_blank, ball_screw_grinder, ball_screw_metrology_station, ball_screw_grade_spec]
+      depends_on: [wp_architecture_and_tolerance_budget]
+      acceptance_criteria:
+        - "Supplier quote includes C3/C5 grade, lead-error map, preload, runout, life, traceability, and allocation"
+        - "Grinder and metrology machine-hour map is measured or explicitly left UNKNOWN"
+        - "No supplier is marked qualified on product-page evidence alone"
+      epistemic_class: UNKNOWN
+      evidence_ids: [ev_thk_ball_screw_grade, ev_cnc_grinder_research_question, ev_cnc_metrology_research_question]
+      human_approval_required: true
+    - id: wp_spindle_bearing_and_thermal_route
+      name: "Qualify spindle rings, bearing set, preload, balance, and thermal growth"
+      phase: process_qualification
+      entity_ids: [spindle_cartridge, spindle_bearing, bearing_ring_set, bearing_ball_cage_set, spindle_test_bar, thermal_sensor_set]
+      depends_on: [wp_architecture_and_tolerance_budget]
+      acceptance_criteria:
+        - "Bearing grade, matched preload, runout, vibration, lubrication, life, and traceability records accepted"
+        - "Spindle thermal map and speed/endurance test meet the signed design envelope"
+      epistemic_class: UNKNOWN
+      evidence_ids: [ev_nsk_spindle_bearing_scope, ev_cnc_recursive_capacity_unknown, ev_cnc_qualification_schedule_assumption]
+      human_approval_required: true
+    - id: wp_controls_servo_and_atc_integration
+      name: "Integrate controller, servo/encoder loop, ATC, pneumatics, and safety"
+      phase: integration
+      entity_ids: [cnc_controller, servo_motor_axis, servo_drive, absolute_encoder_axis, atc_magazine, pneumatic_clamp_unit, electrical_cabinet]
+      depends_on: [wp_architecture_and_tolerance_budget]
+      acceptance_criteria:
+        - "Controller/drive/encoder firmware and parameter revisions are configuration-controlled"
+        - "ATC cycle, clamp pressure, interlocks, EMC, safe stop, and fault recovery tests pass"
+      epistemic_class: UNKNOWN
+      evidence_ids: [ev_siemens_controller_scope, ev_cnc_critical_components, ev_cnc_process_yields]
+      human_approval_required: true
+    - id: wp_final_metrology_and_customer_acceptance
+      name: "Execute alignment, thermal, volumetric, spindle, and cutting acceptance"
+      phase: customer_qualification
+      entity_ids: [machine_alignment_calibration, metrology_acceptance_kit, laser_interferometer_service, precision_cmm_service, touch_probe]
+      depends_on: [wp_bed_structure_route, wp_ball_screw_recursive_chain, wp_spindle_bearing_and_thermal_route, wp_controls_servo_and_atc_integration]
+      acceptance_criteria:
+        - "Traceable laser/CMM/ballbar/spindle records identify instrument, uncertainty, calibration date, machine serial, and software revision"
+        - "Representative cutting test and customer sign-off complete before saleable status"
+      epistemic_class: UNKNOWN
+      evidence_ids: [ev_renishaw_metrology_scope, ev_cnc_metrology_research_question, ev_cnc_qualification_schedule_assumption]
+      human_approval_required: true
+
+  research_tasks:
+    - id: rq_vmc_qualified_effective_capacity
+      title: "Verify qualified effective output of the exact reference VMC"
+      question: "Which Indian facility can demonstrate 100 saleable units/year of this exact three-axis VMC architecture, after availability, utilization, yield, supplier allocation, and customer qualification?"
+      target_entity_id: cnc_vmc_high_quality
+      missing_variable: qualified_effective_capacity
+      decision: "Whether the 100/year objective is executable without treating installed/nameplate capacity as supply"
+      priority: HIGH
+      suggested_source_types: [supplier_audit, audited_filing, customer_acceptance_records, production_schedule]
+      capture_fields: [facility_id, product_compat, machine_hours, availability, utilization, yield, qualification_fraction, valid_from, valid_to]
+    - id: rq_ballscrew_grade_and_supplier
+      title: "Resolve ball-screw grade and supplier qualification"
+      question: "For the selected travel/lead/preload and thermal budget, who can quote C3 or C5 ground ball screws with lot-level lead-error maps, runout, life, and traceability?"
+      target_entity_id: ball_screw_set
+      missing_variable: grade_specific_qualified_supply
+      decision: "Select a grade/supplier route or redesign the axis error budget"
+      priority: HIGH
+      suggested_source_types: [technical_RFI, supplier_capability_audit, first_article_test, calibration_records]
+      capture_fields: [grade, lead, preload, lead_error_map, runout, life_test, lot_traceability, allocation, lead_time, qualification_status]
+    - id: rq_ballscrew_grinder_machine_hours
+      title: "Verify grinder ownership, process envelope, and machine-hour allocation"
+      question: "Which Indian facility owns or can procure a thread/ball-screw grinder, dressing system, temperature control, and qualified process owner, and what machine-hours are reservable for this programme?"
+      target_entity_id: ball_screw_grinder
+      missing_variable: qualified_machine_hours
+      decision: "Fund/build/partner for a grinder or keep the route external"
+      priority: HIGH
+      suggested_source_types: [site_visit, equipment_register, supplier_audit, maintenance_logs, process_capability_study]
+      capture_fields: [equipment_id, facility_id, axis_envelope, dressing_system, thermal_control, availability, utilization, process_capability, operator_skill, reserved_hours]
+    - id: rq_ballscrew_metrology_throughput
+      title: "Verify traceable ball-screw metrology throughput"
+      question: "Which lab/service team can measure lead error, pitch, runout, backlash, preload, and thermal drift for 300 axis sets/year, with traceable calibration and uncertainty budgets?"
+      target_entity_id: ball_screw_metrology_station
+      missing_variable: metrology_throughput_and_traceability
+      decision: "Qualify an internal station, supplier service, or additional metrology investment"
+      priority: HIGH
+      suggested_source_types: [calibration_scope, lab_audit, equipment_register, uncertainty_budget, sample_report]
+      capture_fields: [instrument_id, calibration_scope, uncertainty, cycle_time, annual_capacity, environmental_control, traceability, customer_acceptance]
+    - id: rq_spindle_bearing_machine_tool_grade
+      title: "Resolve machine-tool spindle-bearing grade and allocation"
+      question: "Which supplier can deliver the selected angular-contact spindle-bearing grade, preload pair, life, runout, lubrication, and serial traceability with an allocation for 100 machines/year?"
+      target_entity_id: spindle_bearing
+      missing_variable: grade_specific_qualified_capacity
+      decision: "Make/buy/qualify spindle bearings and freeze spindle design"
+      priority: HIGH
+      suggested_source_types: [supplier_RFI, quality_agreement, bearing_test_report, customer_reference, allocation_letter]
+      capture_fields: [bearing_grade, preload_class, speed_rating, runout, life, lubrication, traceability, allocation, qualification_status]
+    - id: rq_final_acceptance_service
+      title: "Verify 100-machine/year acceptance and calibration service"
+      question: "Which India-based lab or service team can execute traceable laser interferometer, ballbar, spindle thermal, CMM, and cutting-test acceptance for 100 machines/year?"
+      target_entity_id: metrology_acceptance_kit
+      missing_variable: machine_acceptance_throughput
+      decision: "Build an internal metrology cell, contract a service, or change the ramp plan"
+      priority: HIGH
+      suggested_source_types: [calibration_scope, service_quote, sample_acceptance_record, instrument_certificate, customer_audit]
+      capture_fields: [service_provider, instrument_ids, calibration_dates, uncertainty, cycle_time, annual_capacity, travel_window, customer_acceptance]
+    - id: rq_synrm_architecture_alternative
+      title: "Prototype the magnet-lean synchronous-reluctance axis alternative"
+      question: "Can a synchronous-reluctance axis motor and compatible drive meet the signed torque-speed, thermal, acoustic, efficiency, encoder, and positioning envelope without permanent magnets?"
+      target_entity_id: servo_motor_axis_synrm
+      missing_variable: alternative_architecture_equivalence
+      decision: "Retain the PM motor route or execute the graph rewrite and requalify the axis"
+      priority: MEDIUM
+      suggested_source_types: [prototype_test, dyno_test, thermal_test, controller_HIL, customer_acceptance]
+      capture_fields: [torque_speed_curve, thermal_map, efficiency, acoustic, torque_ripple, encoder_compatibility, drive_revision, qualification_status]
+
+supplier_links:
+  - id: sl_ball_screw_grinder_micromatic_bengaluru
+    item_id: ball_screw_grinder
+    organization_id: org_micromatic_official
+    facility_id: fac_micromatic_bengaluru
+    capability_claim_id: cc_micromatic_ball_screw_grinder_lead
+    relation: supplier_lead_not_qualified
+    status: RESEARCH_REQUIRED
+    evidence_ids: [ev_micromatic_grinding_supplier, ev_cnc_grinder_research_question]
+    note: Official facility/product identity supports contact; no exact grinder, qualification, or machine-hour capacity is asserted.
+  - id: sl_ball_screw_hmt_bengaluru
+    item_id: ball_screw_set
+    organization_id: org_hmt
+    facility_id: fac_hmt_bengaluru
+    capability_claim_id: cc_hmt_precision_ballscrew_context
+    relation: supplier_lead_not_qualified
+    status: RESEARCH_REQUIRED
+    evidence_ids: [ev_hmt_machine_tools_scope, ev_cnc_ballscrew_research_question]
+    note: HMT product-scope context is a supplier lead; selected grade, current route, and effective capacity remain UNKNOWN.
+  - id: sl_spindle_bearing_nsk_global
+    item_id: spindle_bearing
+    organization_id: org_nsk
+    facility_id: ""
+    capability_claim_id: cc_nsk_spindle_bearing_global_lead
+    relation: global_supplier_lead_not_qualified
+    status: RESEARCH_REQUIRED
+    evidence_ids: [ev_nsk_spindle_bearing_scope, ev_cnc_recursive_capacity_unknown]
+    note: Product-family evidence supports an RFQ lead only; no origin allocation or India qualification is claimed.
+
+# This is a deliberately hypothetical planning envelope, not a statement of
+# current Indian capacity. It exists so an operator can exercise reverse
+# buildability while the evidenced baseline correctly remains UNKNOWN. Every
+# synthetic capacity cell and its generation rule is returned in the API ledger.
+reverse_buildability_scenarios:
+  - id: cnc_declared_qualification_envelope
+    title: "Declared CNC qualification envelope — scenario, not evidence"
+    description: >
+      Bounds annual output if four decision-sensitive qualified cells fall within
+      the declared ranges, every other unresolved dependency has 20% headroom at
+      a 250-machine planning basis, and imports are unavailable. Replace these
+      assumptions through the research workflow before using the result as a plan.
+    variant_id: cnc_vmc_100_per_year
+    geography: INDIA
+    deadline_year: 2030
+    search_upper_bound: 250
+    min_dva: 0.70
+    foreign_supply_policy: strict
+    import_policy:
+      type: DOMESTIC_ONLY
+    unresolved_capacity_policy:
+      type: REQUIREMENT_HEADROOM
+      basis_units_per_year: 250
+      multiplier: 1.20
+    capacity_assumptions:
+      machine_bed_casting:
+        range: [105, 125]
+        unit: pcs/year
+        rationale: "Hypothetical qualified casting-and-finish cell range selected for decision-sensitivity analysis; not a supplier or facility claim."
+      ball_screw_set:
+        range: [320, 360]
+        unit: pcs/year
+        rationale: "Hypothetical three-axis ball-screw allocation range; grade, route, metrology, yield, and supplier qualification remain unresolved."
+      spindle_cartridge:
+        range: [105, 120]
+        unit: pcs/year
+        rationale: "Hypothetical qualified spindle integration range; bearing allocation and thermal acceptance remain unresolved."
+      metrology_acceptance_kit:
+        range: [100, 110]
+        unit: pcs/year
+        rationale: "Hypothetical final-acceptance service range; instrument availability, traceability, cycle time, and customer acceptance remain unresolved."
+    assumption_notes:
+      - "ASSUMPTION only: no range in this scenario is promoted to baseline evidence."
+      - "The requirement-headroom policy generates exact item-level assumptions from the exploded gross demand and returns every generated value."
+      - "DOMESTIC_ONLY is a scenario boundary, not a claim that domestic supply exists."
+      - "The conservative and optimistic edges use the low and high ends of the declared ranges respectively."

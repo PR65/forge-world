@@ -1,24 +1,28 @@
 """FORGE WORLD API server (FastAPI). Serves the computational core to the console."""
 from __future__ import annotations
 
+import math
 import os
+import re
 from pathlib import Path
+from threading import Lock
 from typing import Any, Dict, List, Optional
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 from forge.engine import ForgeEngine, ObjectiveSpecInput
 from forge.pack import load_pack
+from forge.registry import CanonicalRegistry, load_registry
 
 ROOT = Path(__file__).resolve().parent.parent
 PACKS_DIR = ROOT / "packs"
 WEB_DIST = ROOT / "web" / "dist"
 
-app = FastAPI(title="FORGE WORLD API", version="0.1.0")
+app = FastAPI(title="FORGE WORLD API", version="0.2.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -27,31 +31,114 @@ app.add_middleware(
 )
 
 _PACK_CACHE: Dict[str, Any] = {}
+_REGISTRY_CACHE: Optional[CanonicalRegistry] = None
+_PACK_CACHE_LOCK = Lock()
+_REGISTRY_CACHE_LOCK = Lock()
+_PACK_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*$")
 
 
 def get_pack(pack_id: str):
+    if not _PACK_ID.fullmatch(pack_id):
+        raise HTTPException(404, f"pack '{pack_id}' not found")
     if pack_id in _PACK_CACHE:
         return _PACK_CACHE[pack_id]
-    path = PACKS_DIR / f"{pack_id}.yaml"
-    if not path.exists():
-        raise HTTPException(404, f"pack '{pack_id}' not found")
-    pk = load_pack(str(path))
-    _PACK_CACHE[pack_id] = pk
-    return pk
+    with _PACK_CACHE_LOCK:
+        if pack_id in _PACK_CACHE:
+            return _PACK_CACHE[pack_id]
+        packs_root = PACKS_DIR.resolve()
+        path = (packs_root / f"{pack_id}.yaml").resolve()
+        if path.parent != packs_root or not path.exists():
+            raise HTTPException(404, f"pack '{pack_id}' not found")
+        pk = load_pack(str(path))
+        if pk.pack_id != pack_id:
+            raise HTTPException(404, f"pack '{pack_id}' not found")
+        _PACK_CACHE[pack_id] = pk
+        return pk
+
+
+def get_registry() -> CanonicalRegistry:
+    """Load the deterministic file-backed registry once per API process."""
+    global _REGISTRY_CACHE
+    if _REGISTRY_CACHE is None:
+        with _REGISTRY_CACHE_LOCK:
+            if _REGISTRY_CACHE is None:
+                _REGISTRY_CACHE = load_registry(PACKS_DIR, ROOT / "data" / "registry" / "manifest.yaml")
+    return _REGISTRY_CACHE
 
 
 class ObjectiveIn(BaseModel):
     pack_id: str
     variant_id: str
-    annual_units: float = Field(gt=0)
+    annual_units: float = Field(gt=0, allow_inf_nan=False)
     geography: str = "INDIA"
-    deadline_year: int = 2030
-    min_dva: float = 0.70
-    budget_usd: Optional[float] = None
-    funded_projects: List[str] = []
-    shocks: List[str] = []
-    analyst_capacity_assumptions: Dict[str, List[float]] = {}
+    deadline_year: int = Field(default=2030, ge=2026, le=2200)
+    min_dva: float = Field(default=0.70, ge=0.0, le=1.0, allow_inf_nan=False)
+    budget_usd: Optional[float] = Field(default=None, ge=0.0, allow_inf_nan=False)
+    funded_projects: List[str] = Field(default_factory=list)
+    shocks: List[str] = Field(default_factory=list)
+    analyst_capacity_assumptions: Dict[str, tuple[float, float]] = Field(default_factory=dict)
+    per_item_import_cap: Dict[str, float] = Field(default_factory=dict)
     include_deep: bool = True
+
+    @field_validator("analyst_capacity_assumptions")
+    @classmethod
+    def validate_capacity_assumptions(
+        cls, value: Dict[str, tuple[float, float]]
+    ) -> Dict[str, tuple[float, float]]:
+        for item_id, (lo, hi) in value.items():
+            if not item_id.strip():
+                raise ValueError("capacity assumption item id must not be blank")
+            if not math.isfinite(lo) or not math.isfinite(hi):
+                raise ValueError(f"capacity assumption for '{item_id}' must be finite")
+            if lo < 0 or hi < lo:
+                raise ValueError(
+                    f"capacity assumption for '{item_id}' must satisfy 0 <= lo <= hi"
+                )
+        return value
+
+    @field_validator("per_item_import_cap")
+    @classmethod
+    def validate_import_caps(cls, value: Dict[str, float]) -> Dict[str, float]:
+        for item_id, cap in value.items():
+            if not item_id.strip():
+                raise ValueError("import-cap item id must not be blank")
+            if not math.isfinite(cap) or not 0.0 <= cap <= 1.0:
+                raise ValueError(
+                    f"per-item import cap for '{item_id}' must be a finite fraction in [0, 1]"
+                )
+        return value
+
+
+class DesignIn(ObjectiveIn):
+    substitution_id: str
+
+
+class ResearchResolveIn(BaseModel):
+    objective: ObjectiveIn
+    task: Dict[str, Any]
+    capture: Dict[str, Any]
+    reviewer: str = Field(min_length=1)
+    approve_for_scenario: bool = False
+
+
+def _objective_spec(obj: ObjectiveIn) -> ObjectiveSpecInput:
+    assumptions = {
+        key: (float(value[0]), float(value[1]))
+        for key, value in obj.analyst_capacity_assumptions.items()
+    }
+    return ObjectiveSpecInput(
+        variant_id=obj.variant_id,
+        annual_units=obj.annual_units,
+        geography=obj.geography,
+        deadline_year=obj.deadline_year,
+        min_dva=obj.min_dva,
+        budget_usd=obj.budget_usd,
+        funded_projects=obj.funded_projects,
+        analyst_capacity_assumptions=assumptions,
+        per_item_import_cap={
+            key: float(value) for key, value in obj.per_item_import_cap.items()
+        },
+    )
 
 
 @app.get("/api/health")
@@ -100,8 +187,19 @@ def pack_detail(pack_id: str):
         }
         for sid, c in pk.substitutions.items()
     ]
-    s["projects"] = [
-        {
+    registry = get_registry()
+    projects = []
+    for e in pk.world.of_kind("project"):
+        registry_node = registry.get_entity(f"pack:{pack_id}:{e.id}") or {}
+        metadata = registry_node.get("metadata", {})
+        epistemic_role = metadata.get("epistemic_role")
+        if e.design_capacity_annual is None:
+            control_role = "context"
+        elif epistemic_role == "SCENARIO":
+            control_role = "scenario"
+        else:
+            control_role = "fundable"
+        projects.append({
             "id": e.id,
             "name": e.name,
             "item_id": e.item_id,
@@ -109,30 +207,165 @@ def pack_detail(pack_id: str):
             "state_date": e.state_date,
             "design_capacity": str(e.design_capacity_annual) if e.design_capacity_annual else None,
             "commission_window_years": list(e.years_to_commission),
-        }
-        for e in pk.world.of_kind("project")
+            "notes": e.notes,
+            "evidence_ids": list(e.evidence_ids),
+            "registry_evidence_ids": list(registry_node.get("evidence_ids", ())),
+            "epistemic_class": registry_node.get("epistemic_class", "UNKNOWN"),
+            "epistemic_role": epistemic_role,
+            "control_role": control_role,
+        })
+    s["projects"] = projects
+    s["id_scope"] = "pack_local_with_registry_ids"
+    s["evidence"] = [
+        {**record.to_json(), "registry_evidence_id": f"pack:{pack_id}:evidence:{record.claim_id}"}
+        for record in pk.evidence.values()
     ]
-    s["evidence"] = [r.to_json() for r in pk.evidence.values()]
-    s["sources"] = [src.to_json() for src in pk.sources.values()]
+    s["sources"] = [
+        {**source.to_json(), "registry_source_id": f"pack:{pack_id}:source:{source.id}"}
+        for source in pk.sources.values()
+    ]
+    s["scenario_presets"] = list(pk.raw.get("scenario_presets", ()) or ())
+    s["research_tasks"] = list(
+        pk.raw.get("research_tasks", ())
+        or (pk.raw.get("execution_model", {}) or {}).get("research_tasks", ())
+        or ()
+    )
+    s["execution_model"] = dict(pk.raw.get("execution_model", {}) or {})
+    s["program_model"] = dict(pk.raw.get("program_model", {}) or {})
+    s["reverse_buildability_scenarios"] = list(
+        pk.raw.get("reverse_buildability_scenarios", ()) or ()
+    )
+    s["supplier_links"] = list(pk.raw.get("supplier_links", ()) or ())
+    s["facilities"] = [
+        {
+            "id": entity.id,
+            "name": entity.name,
+            "country": entity.country,
+            "geo_id": entity.geo_id,
+            "lat": entity.lat,
+            "lon": entity.lon,
+            "owner_org": entity.owner_org,
+            "operator_org": entity.operator_org,
+            "status": entity.status,
+            "notes": entity.notes,
+            "evidence_ids": list(entity.evidence_ids),
+        }
+        for entity in pk.world.of_kind("facility")
+    ]
+    s["organizations"] = [
+        {
+            "id": entity.id,
+            "name": entity.name,
+            "org_type": entity.org_type,
+            "countries": list(entity.countries),
+            "notes": entity.notes,
+            "evidence_ids": list(entity.evidence_ids),
+        }
+        for entity in pk.world.of_kind("organization")
+    ]
     return s
+
+
+@app.get("/api/world/summary")
+def world_summary():
+    """Summary of the shared canonical read projection."""
+    return get_registry().summary()
+
+
+@app.get("/api/world/search")
+def world_search(
+    q: str = "",
+    kind: Optional[str] = None,
+    pack_id: Optional[str] = None,
+    limit: int = 25,
+):
+    """Search namespaced pack entities and explicit canonical records."""
+    registry = get_registry()
+    return {
+        "query": q,
+        "kind": kind,
+        "pack_id": pack_id,
+        "limit": limit,
+        "results": registry.search(q, kind=kind, pack_id=pack_id, limit=limit),
+        "snapshot_id": registry.snapshot_id,
+    }
+
+
+@app.get("/api/world/entities/{entity_id:path}")
+def world_entity(entity_id: str):
+    """Return one canonical or namespaced pack entity."""
+    entity = get_registry().get_entity(entity_id)
+    if entity is None:
+        raise HTTPException(404, f"world entity '{entity_id}' not found")
+    return entity
+
+
+@app.get("/api/world/slice")
+def world_slice(
+    pack_id: Optional[str] = None,
+    root: Optional[str] = None,
+    depth: int = 2,
+    limit: int = 100,
+):
+    """Return a bounded deterministic dependency slice."""
+    result = get_registry().slice(pack_id=pack_id, root=root, depth=depth, limit=limit)
+    if root and result.get("root") is None:
+        raise HTTPException(404, f"world entity '{root}' not found")
+    return result
+
+
+@app.get("/api/world/capabilities")
+def world_capabilities(
+    pack_id: Optional[str] = None,
+    limit: int = 200,
+):
+    registry = get_registry()
+    return {
+        "capabilities": registry.capabilities(pack_id=pack_id, limit=limit),
+        "snapshot_id": registry.snapshot_id,
+    }
+
+
+@app.get("/api/world/builders")
+def world_builders(limit: int = 200):
+    registry = get_registry()
+    return {
+        "builders": registry.builders(limit=limit),
+        "snapshot_id": registry.snapshot_id,
+    }
+
+
+@app.get("/api/world/evidence/{evidence_id:path}")
+def world_evidence(evidence_id: str):
+    evidence = get_registry().evidence_for(evidence_id)
+    if evidence is None:
+        raise HTTPException(404, f"world evidence '{evidence_id}' not found")
+    return evidence
+
+
+@app.get("/api/world/evidence-tasks")
+def world_evidence_tasks(
+    pack_id: Optional[str] = None,
+    limit: int = 200,
+):
+    registry = get_registry()
+    tasks = registry.tasks(pack_id=pack_id, limit=limit)
+    return {
+        "evidence_tasks": tasks,
+        "tasks": tasks,
+        "snapshot_id": registry.snapshot_id,
+    }
+
+
+@app.get("/api/world/snapshots")
+def world_snapshots():
+    return get_registry().snapshots()
 
 
 @app.post("/api/solve")
 def solve(obj: ObjectiveIn):
     pk = get_pack(obj.pack_id)
-    assumptions = {
-        k: (float(v[0]), float(v[1])) for k, v in obj.analyst_capacity_assumptions.items()
-    }
-    spec = ObjectiveSpecInput(
-        variant_id=obj.variant_id,
-        annual_units=obj.annual_units,
-        geography=obj.geography,
-        deadline_year=obj.deadline_year,
-        min_dva=obj.min_dva,
-        budget_usd=obj.budget_usd,
-        funded_projects=obj.funded_projects,
-        analyst_capacity_assumptions=assumptions,
-    )
+    spec = _objective_spec(obj)
     eng = ForgeEngine(pk)
     try:
         resp = eng.run_scenario(spec, shock_ids=obj.shocks or None,
@@ -140,6 +373,122 @@ def solve(obj: ObjectiveIn):
     except KeyError as e:
         raise HTTPException(400, f"unknown entity in objective: {e}")
     return resp
+
+
+@app.post("/api/workbench/case")
+def operational_case(obj: ObjectiveIn):
+    """One progressively disclosed operational projection over a single run."""
+    from forge.operations import (
+        build_case_brief,
+        build_execution_plan,
+        build_research_queue,
+        capability_leverage,
+        program_timeline,
+        reverse_buildability_report,
+        shock_impact,
+    )
+
+    pk = get_pack(obj.pack_id)
+    spec = _objective_spec(obj)
+    try:
+        solve_response = ForgeEngine(pk).run_scenario(
+            spec,
+            shock_ids=obj.shocks or None,
+            include_deep=obj.include_deep,
+        )
+        research_queue = build_research_queue(pk, spec, solve_response)
+        execution = build_execution_plan(pk, spec, solve_response, research_queue)
+        brief = build_case_brief(pk, spec, solve_response, research_queue)
+        reverse = reverse_buildability_report(pk, spec, shock_ids=obj.shocks or None)
+        shock = shock_impact(pk, spec, obj.shocks) if obj.shocks else None
+    except (KeyError, ValueError) as exc:
+        raise HTTPException(400, str(exc))
+    return {
+        "brief": brief,
+        "analysis": solve_response,
+        "research": {"tasks": research_queue, "count": len(research_queue)},
+        "execution": execution,
+        "reverse_buildability": reverse,
+        "shock_impact": shock,
+        "program": program_timeline(pk),
+        "discover": capability_leverage(get_registry(), limit=20),
+        "registry_snapshot_id": get_registry().snapshot_id,
+    }
+
+
+@app.post("/api/design/compare")
+def design_compare(body: DesignIn):
+    from forge.operations import compare_design
+
+    try:
+        return compare_design(
+            get_pack(body.pack_id),
+            _objective_spec(body),
+            body.substitution_id,
+            shock_ids=body.shocks or None,
+        )
+    except KeyError as exc:
+        raise HTTPException(404, str(exc))
+    except ValueError as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.post("/api/research/resolve")
+def research_resolve(body: ResearchResolveIn):
+    from forge.research import process_research_capture
+
+    pk = get_pack(body.objective.pack_id)
+    try:
+        return process_research_capture(
+            pk,
+            _objective_spec(body.objective),
+            body.task,
+            body.capture,
+            reviewer=body.reviewer,
+            approve_for_scenario=body.approve_for_scenario,
+        )
+    except (KeyError, ValueError) as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.get("/api/discover/capabilities")
+def discover_capabilities(limit: int = 50):
+    from forge.operations import capability_leverage
+
+    return capability_leverage(get_registry(), limit=limit)
+
+
+@app.post("/api/reverse-buildability")
+def reverse_buildability_api(obj: ObjectiveIn):
+    from forge.operations import reverse_buildability_report
+
+    try:
+        return reverse_buildability_report(
+            get_pack(obj.pack_id),
+            _objective_spec(obj),
+            shock_ids=obj.shocks or None,
+        )
+    except (KeyError, ValueError) as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.post("/api/shocks/impact")
+def shock_impact_api(obj: ObjectiveIn):
+    from forge.operations import shock_impact
+
+    if not obj.shocks:
+        raise HTTPException(400, "at least one shock is required")
+    try:
+        return shock_impact(get_pack(obj.pack_id), _objective_spec(obj), obj.shocks)
+    except (KeyError, ValueError) as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.get("/api/program/{pack_id}")
+def program_api(pack_id: str):
+    from forge.operations import program_timeline
+
+    return program_timeline(get_pack(pack_id))
 
 
 @app.post("/api/parse")
@@ -161,6 +510,125 @@ def adapter_demo(country: str = "IND"):
         return run_adapter_demo(country.upper())
     except AdapterError as e:
         raise HTTPException(502, str(e))
+
+
+def _adapter_result_json(result) -> Dict[str, Any]:
+    return {
+        "source": result.source.to_json(),
+        "source_snapshot": result.source_snapshot.to_json(),
+        "observations": [row.to_json() for row in result.observations],
+        "records": [row.to_json() for row in result.records],
+        "promotions": [row.to_json() for row in result.promotions],
+        "payload_hash": result.raw_payload_hash,
+        "fetched_at": result.fetched_at,
+        "notes": result.notes,
+    }
+
+
+@app.get("/api/adapter/comtrade")
+def comtrade_adapter(
+    reporter_code: int = 699,
+    hs_code: str = "8458",
+    period: int = 2024,
+    flow_code: str = "M",
+    partner_code: int = 0,
+):
+    """Live official trade flow; explicitly not a capability/capacity claim."""
+    from forge.adapters import AdapterError, UNComtradeAdapter
+
+    try:
+        return _adapter_result_json(
+            UNComtradeAdapter().fetch_trade(
+                reporter_code=reporter_code,
+                hs_code=hs_code,
+                period=period,
+                flow_code=flow_code,
+                partner_code=partner_code,
+            )
+        )
+    except AdapterError as exc:
+        raise HTTPException(502, str(exc))
+
+
+@app.get("/api/adapter/official")
+def official_record_adapter():
+    """Deterministic primary-document extraction pathway with entity resolution."""
+    from forge.adapters import AdapterError, OfficialRecordCatalogAdapter
+
+    try:
+        results = OfficialRecordCatalogAdapter(
+            ROOT / "data" / "ingestion" / "official_observations.yaml"
+        ).load()
+    except AdapterError as exc:
+        raise HTTPException(500, str(exc))
+    registry = get_registry()
+    rows = []
+    for result in results:
+        payload = _adapter_result_json(result)
+        payload["entity_bindings"] = [
+            {
+                "observation_id": observation.observation_id,
+                "subject": observation.subject,
+                "resolved_entity": registry.get_entity(observation.subject),
+                "automatic_model_mutation": False,
+            }
+            for observation in result.observations
+        ]
+        rows.append(payload)
+    return {
+        "pathway": "CHECKED_IN_OFFICIAL_RECORD_CATALOG",
+        "registry_snapshot_id": registry.snapshot_id,
+        "results": rows,
+    }
+
+
+@app.get("/api/ingestion/status")
+def ingestion_status():
+    """Show which operational pathways reach resolvable world entities."""
+    from forge.adapters import OfficialRecordCatalogAdapter
+
+    results = OfficialRecordCatalogAdapter(
+        ROOT / "data" / "ingestion" / "official_observations.yaml"
+    ).load()
+    registry = get_registry()
+    observations = [observation for result in results for observation in result.observations]
+    resolved = [observation for observation in observations if registry.get_entity(observation.subject)]
+    return {
+        "pathways": [
+            {
+                "id": "world_bank_api",
+                "mode": "LIVE_JSON_API",
+                "operational": True,
+                "model_role": "national statistical context",
+            },
+            {
+                "id": "un_comtrade_api",
+                "mode": "LIVE_JSON_API",
+                "operational": True,
+                "model_role": "trade context only; never capability or capacity",
+            },
+            {
+                "id": "official_record_catalog",
+                "mode": "DETERMINISTIC_CHECKED_IN_EXTRACTION",
+                "operational": True,
+                "model_role": "primary document observation and explicit entity binding",
+            },
+            {
+                "id": "research_resolution",
+                "mode": "HUMAN_REVIEWED_CAPTURE_TO_SCENARIO_OVERLAY",
+                "operational": True,
+                "model_role": "UNKNOWN resolution without silent persistent mutation",
+            },
+        ],
+        "official_catalog_observations": len(observations),
+        "resolved_world_subjects": len(resolved),
+        "unresolved_world_subjects": sorted(
+            observation.subject
+            for observation in observations
+            if registry.get_entity(observation.subject) is None
+        ),
+        "registry_snapshot_id": registry.snapshot_id,
+    }
 
 
 @app.get("/api/optionvalue")

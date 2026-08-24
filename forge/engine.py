@@ -42,6 +42,10 @@ class ObjectiveSpecInput:
     funded_projects: List[str] = field(default_factory=list)
     allowed_substitutions: List[str] = field(default_factory=list)
     analyst_capacity_assumptions: Dict[str, Tuple[float, float]] = field(default_factory=dict)
+    # Explicit per-item import ceilings. A value of 0.0 means the declared
+    # scenario requires that item to be supplied domestically; it is not
+    # inferred from a DVA target or from supplier labels.
+    per_item_import_cap: Dict[str, float] = field(default_factory=dict)
     # Declared economic parameters (USD per canonical unit). Absent entries fall
     # back to solver defaults; every default use is surfaced as an ASSUMPTION.
     cost_domestic: Dict[str, float] = field(default_factory=dict)
@@ -50,6 +54,30 @@ class ObjectiveSpecInput:
     # imports with UNKNOWN absolute foreign capacity; "unbounded_assumption"
     # proceeds conditionally with the assumption recorded. Explicit, never silent.
     foreign_supply_policy: str = "strict"
+
+
+def _scenario_options(
+    obj: ObjectiveSpecInput,
+    *,
+    min_domestic_share: Optional[float] = None,
+) -> ScenarioOptions:
+    """Translate one objective into solver options without dropping policy fields."""
+
+    return ScenarioOptions(
+        import_eligibility={},
+        funded_project_ids=set(obj.funded_projects),
+        capacity_overrides=dict(obj.analyst_capacity_assumptions),
+        cost_domestic=dict(obj.cost_domestic),
+        cost_import=dict(obj.cost_import),
+        geography=obj.geography,
+        min_domestic_share=(
+            obj.min_dva if min_domestic_share is None else min_domestic_share
+        ),
+        funded_pipeline=("selected_only" if obj.funded_projects else "optimistic"),
+        per_item_import_cap=dict(obj.per_item_import_cap),
+        foreign_supply_policy=obj.foreign_supply_policy,
+        decision_year=obj.deadline_year,
+    )
 
 
 def _variant_list(pk: KnowledgePack) -> List[Dict]:
@@ -151,6 +179,8 @@ class ForgeEngine:
 
     def run_scenario(self, obj: ObjectiveSpecInput, shock_ids: Optional[List[str]] = None,
                      include_deep: bool = True) -> Dict[str, Any]:
+        if obj.variant_id not in self.pk.variants or not self.w.has(obj.variant_id):
+            raise KeyError(f"unknown product variant '{obj.variant_id}'")
         pg = ProofGraph()
         years = [y for y in DEFAULT_YEARS if y <= obj.deadline_year]
         if obj.deadline_year not in years:
@@ -171,17 +201,7 @@ class ForgeEngine:
              "shocks": shock_ids or []},
         )
 
-        opts = ScenarioOptions(
-            import_eligibility={},
-            funded_project_ids=set(obj.funded_projects),
-            capacity_overrides=dict(obj.analyst_capacity_assumptions),
-            cost_domestic=dict(obj.cost_domestic),
-            cost_import=dict(obj.cost_import),
-            geography=obj.geography,
-            min_domestic_share=obj.min_dva,
-            funded_pipeline=("selected_only" if obj.funded_projects else "optimistic"),
-            foreign_supply_policy=obj.foreign_supply_policy,
-        )
+        opts = _scenario_options(obj)
         opts_node = pg.derive([scenario_node], "ScenarioOptions assembled",
                               {"geography": obj.geography,
                                "min_domestic_share": obj.min_dva,
@@ -396,13 +416,13 @@ class ForgeEngine:
 
     def _reverse_eval(self, volume: int, obj: ObjectiveSpecInput, shock_ids: Optional[List[str]],
                       min_domestic_share: float = 0.0):
+        if obj.variant_id not in self.pk.variants or not self.w.has(obj.variant_id):
+            raise KeyError(f"unknown product variant '{obj.variant_id}'")
         pg2 = ProofGraph()
-        years = [2026, 2028, 2030]
-        opts = ScenarioOptions(
-            funded_project_ids=set(obj.funded_projects),
-            min_domestic_share=min_domestic_share,
-            funded_pipeline=("selected_only" if obj.funded_projects else "optimistic"),
-        )
+        years = [year for year in DEFAULT_YEARS if year <= obj.deadline_year]
+        if obj.deadline_year not in years:
+            years.append(obj.deadline_year)
+        opts = _scenario_options(obj, min_domestic_share=min_domestic_share)
         ex = explode_variant(self.w, pg2, obj.variant_id, volume, years)
         w2, o2, _ = (
             apply_shocks(self.w, pg2, shock_ids, opts) if shock_ids else (self.w, opts, None)

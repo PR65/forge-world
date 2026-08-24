@@ -3,7 +3,7 @@ import os
 import pytest
 
 from forge.evidence import ProofGraph
-from forge.engine import ForgeEngine, ObjectiveSpecInput
+from forge.engine import ForgeEngine, ObjectiveSpecInput, _scenario_options
 from forge.explode import explode_variant
 from forge.pack import load_pack
 from forge.planner import PlanEngine, candidate_actions
@@ -16,6 +16,37 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def _humanoid():
     return load_pack(os.path.join(ROOT, "packs", "humanoid_india.yaml"))
+
+
+def test_objective_policy_fields_reach_main_and_reverse_solver_options():
+    objective = ObjectiveSpecInput(
+        variant_id="hv1_compact",
+        annual_units=10,
+        geography="GLOBAL",
+        deadline_year=2032,
+        min_dva=0.65,
+        funded_projects=["project-a"],
+        analyst_capacity_assumptions={"motor": (8.0, 12.0)},
+        per_item_import_cap={"motor": 0.25},
+        cost_domestic={"motor": 9.0},
+        cost_import={"motor": 11.0},
+        foreign_supply_policy="unbounded_assumption",
+    )
+
+    main = _scenario_options(objective)
+    reverse = _scenario_options(objective, min_domestic_share=0.0)
+
+    for options in (main, reverse):
+        assert options.capacity_overrides == {"motor": (8.0, 12.0)}
+        assert options.per_item_import_cap == {"motor": 0.25}
+        assert options.cost_domestic == {"motor": 9.0}
+        assert options.cost_import == {"motor": 11.0}
+        assert options.geography == "GLOBAL"
+        assert options.foreign_supply_policy == "unbounded_assumption"
+        assert options.funded_project_ids == {"project-a"}
+        assert options.decision_year == 2032
+    assert main.min_domestic_share == 0.65
+    assert reverse.min_domestic_share == 0.0
 
 
 def test_substitution_rewrites_requirements():

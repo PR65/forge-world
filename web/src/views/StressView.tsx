@@ -7,12 +7,12 @@ export default function StressView({ resp, base, onSelect }: {
   onSelect: (s: Selection) => void;
 }) {
   const activeShocks = resp.shock_report.applied.length > 0;
+  const hasComparableBase = Boolean(base);
   const worstYearR = resp.result.max_shortfall_year || Object.keys(resp.result.years)[0];
   const yr = resp.result.years[String(worstYearR)];
-  const yrBase = base?.result.years[String(base.result.max_shortfall_year || worstYearR)];
+  const yrBase = base?.result.years[String(worstYearR)];
 
   const items = new Map<string, { now: number; before: number; unknown: boolean }>();
-  const maxV = Math.max(1);
   for (const g of yr?.shortfalls ?? []) {
     items.set(g.item, { now: g.shortfall, before: 0, unknown: g.unknown });
   }
@@ -28,18 +28,24 @@ export default function StressView({ resp, base, onSelect }: {
     <div style={{ padding: "20px 26px" }}>
       {!activeShocks && (
         <div className="flashnote">
-          No shocks active. Toggle shock scenarios in the left rail — each re-run propagates
-          constraint edits through the full pipeline (never hand-multiplied downstream).
+          No shock is active. This lens still compares compatible architecture or project
+          branches; every declared edit is propagated by a full re-solve.
+        </div>
+      )}
+      {!hasComparableBase && (
+        <div className="flashnote">
+          Baseline comparison is UNKNOWN for these core inputs. Compile an unedited branch at
+          the same output, geography, deadline, DVA target, budget, and assumptions first.
         </div>
       )}
       <div className="grid2" style={{ marginTop: 14 }}>
         <div className="card">
-          <h4>Shock propagation — shortfall by item (now vs unshocked baseline)</h4>
+          <h4>{hasComparableBase ? "Branch propagation — shortfall by item (branch vs baseline)" : "Current branch — shortfall by item"}</h4>
           {rows.length === 0 && (
             <div className="small">No shortfalls in either scenario.</div>
           )}
           {rows.map(([item, v]) => (
-            <div key={item} style={{ marginBottom: 10, cursor: "pointer" }} onClick={() => onSelect({ kind: "item", id: item })}>
+            <button type="button" className="selectable-block" key={item} onClick={() => onSelect({ kind: "item", id: item })}>
               <div className="bar-label" style={{ marginBottom: 3 }}>{item}</div>
               <div className="bar-track" style={{ height: 9, marginBottom: 2 }}>
                 <div className="bar-fill" style={{ width: `${(v.before / maxBar) * 100}%`, background: "#3d5a70" }} />
@@ -53,11 +59,11 @@ export default function StressView({ resp, base, onSelect }: {
                   }}
                 />
               </div>
-            </div>
+            </button>
           ))}
           <div className="legend" style={{ padding: "8px 0 0" }}>
-            <span><span className="dot" style={{ background: "#3d5a70" }} />baseline</span>
-            <span><span className="dot" style={{ background: "var(--molten)" }} />under shock</span>
+            {hasComparableBase && <span><span className="dot" style={{ background: "#3d5a70" }} />baseline · {worstYearR}</span>}
+            <span><span className="dot" style={{ background: "var(--molten)" }} />branch · {worstYearR}</span>
           </div>
         </div>
 
@@ -92,14 +98,14 @@ export default function StressView({ resp, base, onSelect }: {
           <div className="card" style={{ marginTop: 14 }}>
             <h4>Aggregate exposure</h4>
             <div className="kv">
-              <span className="k">import value (worst yr)</span>
+              <span className="k">branch import value · {worstYearR}</span>
               <span className="v">${fmtM(yr?.import_value_usd)}</span>
-              <span className="k">baseline import value</span>
-              <span className="v">${fmtM(yrBase?.import_value_usd)}</span>
-              <span className="k">domestic value (worst yr)</span>
+              <span className="k">baseline import value · same year</span>
+              <span className="v">{hasComparableBase ? `$${fmtM(yrBase?.import_value_usd)}` : "UNKNOWN"}</span>
+              <span className="k">branch domestic value · {worstYearR}</span>
               <span className="v">${fmtM(yr?.domestic_value_usd)}</span>
               <span className="k">total shortfall Δ</span>
-              <span className="v">{fmtBig((yr?.total_shortfall ?? 0) - (yrBase?.total_shortfall ?? 0))}</span>
+              <span className="v">{hasComparableBase ? fmtBig((yr?.total_shortfall ?? 0) - (yrBase?.total_shortfall ?? 0)) : "UNKNOWN"}</span>
             </div>
             <div className="small" style={{ marginTop: 8 }}>
               Shocks edit constraints (eligibility, capacity, costs, project states); everything
@@ -113,7 +119,7 @@ export default function StressView({ resp, base, onSelect }: {
 }
 
 function fmtM(v?: number): string {
-  if (!v) return "—";
+  if (v === undefined || v === null) return "—";
   return (v / 1e6).toFixed(0) + "M";
 }
 function fmtBig(v: number): string {

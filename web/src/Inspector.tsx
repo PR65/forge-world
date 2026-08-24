@@ -1,7 +1,9 @@
-import { useMemo } from "react";
-import type { EnvelopeYear, Selection, SolveResponse } from "./types";
+import { useEffect, useMemo, useState } from "react";
+import { fetchWorldEvidence } from "./api";
+import type { EnvelopeYear, Selection, SolveResponse, WorldEvidenceRecord, WorldNode } from "./types";
+import { epistemicChipClass, epistemicLabel } from "./epistemics";
 
-export default function Inspector({ sel, resp, packDetail, onSelect }: {
+export default function Inspector({ sel, resp, packDetail, onSelect, worldNode }: {
   sel: Selection | null;
   resp: SolveResponse | null;
   packDetail: {
@@ -13,9 +15,29 @@ export default function Inspector({ sel, resp, packDetail, onSelect }: {
     sources: { id: string; name: string; publisher: string; url: string; license: string; access_date: string }[];
   } | null;
   onSelect: (s: Selection) => void;
+  worldNode?: WorldNode | null;
 }) {
   const pg = resp?.proof_graph;
   const sid = sel?.id ?? "";
+  const [worldEvidence, setWorldEvidence] = useState<WorldEvidenceRecord | null>(null);
+  const [worldEvidenceLoading, setWorldEvidenceLoading] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    if (sel?.kind !== "evidence" || !sid.startsWith("pack:")) {
+      setWorldEvidence(null);
+      setWorldEvidenceLoading(false);
+      return () => { active = false; };
+    }
+    setWorldEvidence(null);
+    setWorldEvidenceLoading(true);
+    void fetchWorldEvidence(sid).then((record) => {
+      if (!active) return;
+      setWorldEvidence(record);
+      setWorldEvidenceLoading(false);
+    });
+    return () => { active = false; };
+  }, [sel?.kind, sid]);
 
   const sub = useMemo(() => {
     if (!pg || !sid) return null;
@@ -48,14 +70,11 @@ export default function Inspector({ sel, resp, packDetail, onSelect }: {
   const expl = sid ? resp?.explosion.items.find((i) => i.item === sid) ?? null : null;
   const voi = sid ? resp?.voi.find((v) => v.unknown_id === sid) ?? null : null;
   const action = sid ? resp?.actions.find((a) => a.action_id === sid) ?? null : null;
-  const evidenceRecs = useMemo(() => {
-    if (!sub || !packDetail) return [];
-    const ids = new Set(sub.chain.filter((c) => c.node.kind === "evidence").map((c) => c.node.node_id.replace("ev.", "")));
-    return packDetail.evidence.filter((e) => ids.has(e.claim_id));
-  }, [sub, packDetail]);
+  const localEvidenceId = sid.includes(":evidence:") ? sid.split(":evidence:").pop() ?? sid : sid;
+  const localEvidence = packDetail?.evidence.filter((record) => record.claim_id === localEvidenceId) ?? [];
 
   return (
-    <aside className="inspector">
+    <aside className="inspector" aria-label="WHY inspector">
       {!sel && (
         <div className="insp-head">
           <div className="insp-title">Inspector</div>
@@ -70,8 +89,31 @@ export default function Inspector({ sel, resp, packDetail, onSelect }: {
 
       {sel && (
         <div className="insp-head">
-          <div className="insp-title">{sel.kind === "item" ? sel.id : sel.id || "selection"}</div>
+          <div className="insp-title">{sel.kind === "item" ? sel.id : (worldNode?.name ?? sel.id) || "selection"}</div>
           <div className="insp-kind">{sel.kind}</div>
+        </div>
+      )}
+
+      {(sel?.kind === "world" || sel?.kind === "capability") && worldNode && (
+        <div className="insp-body">
+          <div className="card" style={{ padding: 12 }}>
+            <h4>World record</h4>
+            <div className="kv">
+              <span className="k">canonical id</span><span className="v">{worldNode.canonical_id ?? "UNKNOWN"}</span>
+              <span className="k">kind</span><span className="v">{worldNode.kind}</span>
+              <span className="k">epistemic class</span><span className="v"><EpistemicChip cls={worldNode.epistemic_class} /></span>
+              <span className="k">pack</span><span className="v">{worldNode.pack_id ?? "UNKNOWN"}</span>
+            </div>
+            <div className="small inspector-why-note">WHY remains attached to the selected record. No capability is inferred from a label alone.</div>
+          </div>
+          <div className="card" style={{ padding: 12, marginTop: 12 }}>
+            <h4>Registry metadata</h4>
+            {Object.keys(worldNode.metadata).length === 0 ? <div className="small">UNKNOWN · no metadata returned.</div> : <div className="metadata-list">{Object.entries(worldNode.metadata).slice(0, 18).map(([key, value]) => <div className="metadata-row" key={key}><span>{key}</span><strong>{formatMetadata(value)}</strong></div>)}</div>}
+          </div>
+          <div className="card" style={{ padding: 12, marginTop: 12 }}>
+            <h4>Evidence ids</h4>
+            {worldNode.evidence_ids.length ? worldNode.evidence_ids.map((id) => <button type="button" className="evidence-link" key={id} onClick={() => onSelect({ kind: "evidence", id })}>{id} ↗</button>) : <div className="small">UNKNOWN · no evidence ids returned.</div>}
+          </div>
         </div>
       )}
 
@@ -161,60 +203,76 @@ export default function Inspector({ sel, resp, packDetail, onSelect }: {
                 <div className="ev-src">sources: {node.sources.join(", ")}</div>
               )}
               {node.kind === "evidence" && (
-                <div
-                  style={{ cursor: "pointer", marginTop: 4 }}
+                <button
+                  type="button"
+                  className="evidence-link"
+                  style={{ marginTop: 4 }}
                   onClick={() => onSelect({ kind: "evidence", id: node.node_id.replace("ev.", "") })}
                 >
-                  <span className="chip">open evidence record →</span>
-                </div>
+                  open evidence record →
+                </button>
               )}
             </div>
           ))}
         </div>
       )}
 
-      {sel?.kind === "evidence" && packDetail && (
+      {sel?.kind === "evidence" && (
         <div className="insp-body">
-          {packDetail.evidence
-            .filter((e) => e.claim_id === sel.id)
-            .map((e) => (
-              <div key={e.claim_id} className="ev-card">
-                <span className={`ev-class ${e.epistemic_class}`}>{e.epistemic_class}</span>
-                <div className="num small" style={{ marginTop: 6 }}>
-                  {e.subject} · {e.predicate}
-                </div>
-                <div className="ev-quote">{e.value_text || "(qualitative claim)"}</div>
-                {e.quote_or_caveat && <div className="ev-caveat">⚠ {e.quote_or_caveat}</div>}
-                <div className="ev-src">
-                  {e.source_ids.map((sid) => {
-                    const s = packDetail.sources.find((x) => x.id === sid);
-                    return s ? (
-                      <div key={sid}>
-                        {s.publisher} — {s.name}
-                        {s.url ? (
-                          <>
-                            {" "}
-                            <a href={s.url} target="_blank" rel="noreferrer" style={{ color: "var(--steel)" }}>[link]</a>
-                          </>
-                        ) : null}{" "}
-                        · {s.license} · accessed {s.access_date}
-                      </div>
-                    ) : (
-                      <div key={sid}>{sid}</div>
-                    );
-                  })}
-                </div>
-                {Object.keys(e.confidence).length > 0 && (
-                  <div className="small" style={{ marginTop: 6 }}>
-                    confidence:{" "}
-                    {Object.entries(e.confidence)
-                      .filter(([, v]) => v !== null)
-                      .map(([k, v]) => `${k} ${((v as number) * 100).toFixed(0)}%`)
-                      .join(" · ")}
-                  </div>
-                )}
+          {worldEvidenceLoading && <div className="small" role="status">Loading immutable evidence record…</div>}
+          {worldEvidence && (
+            <div className="ev-card">
+              <span className={`ev-class ${worldEvidence.epistemic_class}`}>{worldEvidence.epistemic_class}</span>
+              <div className="num small" style={{ marginTop: 6 }}>
+                {worldEvidence.subject} · {worldEvidence.predicate}
               </div>
-            ))}
+              <div className="ev-quote">{worldEvidence.value_text || "(qualitative claim)"}</div>
+              {worldEvidence.quote_or_caveat && <div className="ev-caveat">⚠ {worldEvidence.quote_or_caveat}</div>}
+              <div className="ev-src">
+                {worldEvidence.source_snapshots.map((source) => (
+                  <div key={source.snapshot_id || source.source_id}>
+                    {formatMetadata(source.metadata.publisher)} — {formatMetadata(source.metadata.name)}
+                    {source.url ? <>{" "}<a href={source.url} target="_blank" rel="noreferrer" style={{ color: "var(--steel)" }}>[link]</a></> : null}{" "}
+                    · {source.license} · accessed {source.access_date || "UNKNOWN"}
+                    <div>snapshot {source.content_hash.slice(0, 16)} · hash scope {source.hash_scope} · raw payload {source.raw_payload_stored ? "stored" : "not stored"}</div>
+                  </div>
+                ))}
+                {worldEvidence.source_snapshots.length === 0 && <div>UNKNOWN · no source snapshot resolved.</div>}
+              </div>
+            </div>
+          )}
+          {!worldEvidence && !worldEvidenceLoading && localEvidence.map((e) => (
+            <div key={e.claim_id} className="ev-card">
+              <span className={`ev-class ${e.epistemic_class}`}>{e.epistemic_class}</span>
+              <div className="num small" style={{ marginTop: 6 }}>
+                {e.subject} · {e.predicate}
+              </div>
+              <div className="ev-quote">{e.value_text || "(qualitative claim)"}</div>
+              {e.quote_or_caveat && <div className="ev-caveat">⚠ {e.quote_or_caveat}</div>}
+              <div className="ev-src">
+                {e.source_ids.map((sourceId) => {
+                  const source = packDetail?.sources.find((candidate) => candidate.id === sourceId);
+                  return source ? (
+                    <div key={sourceId}>
+                      {source.publisher} — {source.name}
+                      {source.url ? <>{" "}<a href={source.url} target="_blank" rel="noreferrer" style={{ color: "var(--steel)" }}>[link]</a></> : null}{" "}
+                      · {source.license} · accessed {source.access_date}
+                    </div>
+                  ) : <div key={sourceId}>{sourceId}</div>;
+                })}
+              </div>
+              {Object.keys(e.confidence).length > 0 && (
+                <div className="small" style={{ marginTop: 6 }}>
+                  confidence:{" "}
+                  {Object.entries(e.confidence)
+                    .filter(([, value]) => value !== null)
+                    .map(([key, value]) => `${key} ${((value as number) * 100).toFixed(0)}%`)
+                    .join(" · ")}
+                </div>
+              )}
+            </div>
+          ))}
+          {!worldEvidenceLoading && !worldEvidence && localEvidence.length === 0 && <div className="small">UNKNOWN · the selected evidence record was not returned.</div>}
         </div>
       )}
     </aside>
@@ -229,15 +287,16 @@ function fmt(n: number | null | undefined): string {
   return n.toFixed(0);
 }
 
+function formatMetadata(value: unknown): string {
+  if (value === null || value === undefined) return "UNKNOWN";
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") return String(value);
+  try {
+    return JSON.stringify(value);
+  } catch {
+    return "UNKNOWN";
+  }
+}
+
 export function EpistemicChip({ cls }: { cls: string }) {
-  const upper = cls.toUpperCase();
-  if (upper.includes("MEASURED"))
-    return <span className="chip ok">MEASURED</span>;
-  if (upper.includes("ESTIMATED") || upper.includes("ASSUMPTION"))
-    return <span className="chip warn" title="Order-of-magnitude planning estimate, not a measured capacity">{cls}</span>;
-  if (upper.includes("REPORTED"))
-    return <span className="chip">{cls}</span>;
-  if (upper.includes("PROJECT"))
-    return <span className="chip warn">projects only</span>;
-  return <span className="chip">{cls || "reported"}</span>;
+  return <span className={`chip ${epistemicChipClass(cls)}`}>{epistemicLabel(cls)}</span>;
 }

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import type { SolveResponse } from "../types";
 import type { Selection } from "../types";
 
@@ -8,6 +8,7 @@ export default function TimeView({ resp, onSelect }: {
 }) {
   const years = resp.years;
   const [item, setItem] = useState<string>("");
+  const bandId = `capacity-band-${useId().replace(/:/g, "")}`;
 
   const shortfallItems = useMemo(() => {
     const m = new Map<string, number>();
@@ -29,17 +30,27 @@ export default function TimeView({ resp, onSelect }: {
     }
   }
   const gross = env ? env.gross_demand_annual : 0;
+  const unknownYears = env
+    ? years.filter((year) => {
+      const point = env.by_year[String(year)];
+      return point?.unknown || point?.lo === null || point?.hi === null;
+    })
+    : [];
   const maxV = Math.max(gross, ...vals, 1);
 
   const x = (i: number) => PAD + (i * (W - PAD - 16)) / Math.max(years.length - 1, 1);
   const yv = (v: number) => H - 30 - (v / maxV) * (H - 60);
 
   return (
-    <div style={{ padding: "18px 26px" }}>
-      <div className="grid2" style={{ gridTemplateColumns: "1fr 320px", gap: 16 }}>
+    <div className="legacy-view">
+      <div className="grid2 time-grid">
         <div className="card">
           <h4>Capacity vs requirement through time</h4>
+          <label className="sr-only" htmlFor="time-envelope-item">Capacity-envelope item</label>
           <select
+            id="time-envelope-item"
+            name="time-envelope-item"
+            autoComplete="off"
             value={selected}
             onChange={(e) => setItem(e.target.value)}
             style={{ marginBottom: 10, maxWidth: 420 }}
@@ -50,9 +61,9 @@ export default function TimeView({ resp, onSelect }: {
               ))}
           </select>
           {env ? (
-            <svg className="frontier-svg" width={W} height={H}>
+            <svg className="frontier-svg" width={W} height={H} viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Capacity envelope and gross annual requirement for ${selected}`}>
               <defs>
-                <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id={bandId} x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="rgba(110,166,200,0.35)" />
                   <stop offset="100%" stopColor="rgba(110,166,200,0.08)" />
                 </linearGradient>
@@ -64,22 +75,43 @@ export default function TimeView({ resp, onSelect }: {
                 </g>
               ))}
               {(() => {
-                const loPts: string[] = [];
-                const hiPts: string[] = [];
+                const segments: { lo: string[]; hi: string[] }[] = [];
+                let current: { lo: string[]; hi: string[] } | null = null;
                 years.forEach((yy, i) => {
                   const e = env.by_year[String(yy)];
                   const lo = e?.lo;
                   const hi = e?.hi;
-                  if (hi !== null && hi !== undefined) hiPts.push(`${x(i)},${yv(hi)}`);
-                  if (lo !== null && lo !== undefined) loPts.push(`${x(i)},${yv(lo)}`);
+                  if (hi === null || hi === undefined || lo === null || lo === undefined) {
+                    current = null;
+                    return;
+                  }
+                  if (!current) {
+                    current = { lo: [], hi: [] };
+                    segments.push(current);
+                  }
+                  current.hi.push(`${x(i)},${yv(hi)}`);
+                  current.lo.push(`${x(i)},${yv(lo)}`);
                 });
-                const band = hiPts.length > 0
-                  ? `M${hiPts.join("L")}L${[...loPts].reverse().join("L")}Z`
-                  : null;
                 const grossY = yv(gross);
                 return (
                   <>
-                    {band && <path d={band} fill="url(#band)" stroke="none" />}
+                    {segments.map((segment, index) => (
+                      <path
+                        key={index}
+                        d={`M${segment.hi.join("L")}L${[...segment.lo].reverse().join("L")}Z`}
+                        fill={`url(#${bandId})`}
+                        stroke="none"
+                      />
+                    ))}
+                    {years.map((year, index) => {
+                      if (!unknownYears.includes(year)) return null;
+                      return (
+                        <g key={`unknown-${year}`}>
+                          <line x1={x(index)} x2={x(index)} y1={24} y2={H - 30} stroke="var(--violet)" strokeDasharray="3 4" opacity={0.7} />
+                          <circle cx={x(index)} cy={24} r={3} fill="var(--violet)"><title>{`${year}: capacity UNKNOWN`}</title></circle>
+                        </g>
+                      );
+                    })}
                     <line x1={PAD} x2={W - 16} y1={grossY} y2={grossY} stroke="#ff6a3d" strokeWidth={1.6} strokeDasharray="6 4" />
                     <text x={W - 120} y={grossY - 6} fill="#ff6a3d">gross requirement</text>
                   </>
@@ -95,8 +127,8 @@ export default function TimeView({ resp, onSelect }: {
           <div className="small" style={{ marginTop: 6 }}>
             Band = domestic qualified effective-capacity envelope (lo–hi across evidence and
             unproven projects). Dashed = gross annual requirement incl. yield losses.
-            {env?.by_year[String(years[years.length - 1])]?.unknown && (
-              <span style={{ color: "var(--violet)" }}> Capacity is UNKNOWN — no admissible domestic estimate exists.</span>
+            {unknownYears.length > 0 && (
+              <span style={{ color: "var(--violet)" }}> Capacity is UNKNOWN in {unknownYears.join(", ")}; gaps are not connected or interpolated.</span>
             )}
           </div>
         </div>
@@ -185,16 +217,17 @@ function ProjectList({ resp, onSelect }: { resp: SolveResponse; onSelect: (s: Se
   return (
     <>
       {rows.map((r) => (
-        <div
+        <button
+          type="button"
           key={r.id}
-          className="bar-row clickable"
-          style={{ gridTemplateColumns: "150px 90px 1fr", cursor: "pointer" }}
+          className="bar-row clickable data-button"
+          style={{ gridTemplateColumns: "150px 90px 1fr" }}
           onClick={() => onSelect({ kind: "item", id: r.id })}
         >
           <span className="bar-label">{r.label}</span>
           <span className="chip warn">{r.state}</span>
           <span className="bar-val num">{r.cap} @ {r.window}</span>
-        </div>
+        </button>
       ))}
     </>
   );

@@ -4,7 +4,7 @@ import pytest
 
 from forge.evidence import ProofGraph
 from forge.explode import check_mass_balance, explode_variant, primary_recipe
-from forge.pack import PackValidationError, load_pack
+from forge.pack import PackValidationError, build_pack, load_pack
 from forge.solve import ScenarioOptions, solve_objective
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,6 +31,68 @@ def test_every_variant_has_bom():
         pk = _pack(pid)
         for vid, vd in pk.variants.items():
             assert vd.get("bom"), vid
+
+
+def test_entity_evidence_references_must_resolve():
+    raw = {
+        "pack_id": "bad_evidence_reference",
+        "parts": [{"id": "part", "evidence_ids": ["missing_claim"]}],
+        "product_variants": [{"id": "variant", "bom": [{"part": "part", "qty": 1}]}],
+    }
+    with pytest.raises(PackValidationError, match="references unknown evidence"):
+        build_pack(raw)
+
+
+def test_evidence_inherits_source_licenses_and_rejects_missing_license():
+    pack = build_pack({
+        "pack_id": "licensed_evidence",
+        "sources": [
+            {"id": "public", "license": "public"},
+            {"id": "internal", "license": "supplied-for-project use only"},
+        ],
+        "evidence": [{
+            "claim_id": "claim",
+            "subject": "part",
+            "predicate": "status",
+            "epistemic_class": "REPORTED",
+            "source_ids": ["public", "internal"],
+        }],
+    })
+    assert pack.evidence["claim"].license.startswith("MULTIPLE LICENSES")
+    assert "public" in pack.evidence["claim"].license
+    assert "supplied-for-project use only" in pack.evidence["claim"].license
+
+    with pytest.raises(PackValidationError, match="declared license"):
+        build_pack({
+            "pack_id": "missing_source_license",
+            "sources": [{"id": "source"}],
+            "evidence": [{
+                "claim_id": "claim",
+                "subject": "part",
+                "predicate": "status",
+                "epistemic_class": "REPORTED",
+                "source_ids": ["source"],
+            }],
+        })
+
+
+def test_pack_rejects_duplicate_and_dangling_evidence_lineage():
+    with pytest.raises(PackValidationError, match="duplicate source"):
+        build_pack({
+            "pack_id": "duplicate_source",
+            "sources": [{"id": "source"}, {"id": "source"}],
+        })
+    with pytest.raises(PackValidationError, match="supersedes unknown evidence"):
+        build_pack({
+            "pack_id": "bad_supersedes",
+            "evidence": [{
+                "claim_id": "new",
+                "subject": "part",
+                "predicate": "status",
+                "epistemic_class": "ASSUMPTION",
+                "supersedes": "missing",
+            }],
+        })
 
 
 def test_substitution_contract_gate_rejects_incomplete():
@@ -115,9 +177,37 @@ def test_unknown_capacity_never_becomes_supply():
         "NOT_ADJUDICABLE",
         "CONDITIONALLY_FEASIBLE",
     )
-    for gap in sr.years[2028].shortfalls:
+    for gap in sr.years[2028].allocations:
         if gap.unknown:
             assert gap.domestic_used == 0.0
+
+
+def test_recipe_without_capacity_never_becomes_domestic_supply():
+    raw = {
+        "pack_id": "recipe_without_capacity",
+        "parts": [{"id": "input"}, {"id": "assembly"}],
+        "recipes": [{
+            "id": "rec_assembly",
+            "output_part": "assembly",
+            "output_quantity": [1, "pcs"],
+            "inputs": [{"id": "input", "quantity": [1, "pcs"]}],
+            "steps": [{"id": "assemble", "yield_fraction": 1.0}],
+            "applicable_geographies": ["INDIA"],
+        }],
+        "product_variants": [{"id": "variant", "bom": [{"part": "assembly", "qty": 1}]}],
+    }
+    pk = build_pack(raw)
+    ex = explode_variant(pk.world, ProofGraph(), "variant", 100, [2030])
+    result = solve_objective(
+        pk.world,
+        ProofGraph(),
+        ex,
+        [2030],
+        ScenarioOptions(foreign_supply_policy="unbounded_assumption"),
+    )
+    assembly = next(g for g in result.years[2030].allocations if g.item_id == "assembly")
+    assert assembly.unknown is True
+    assert assembly.domestic_used == 0.0
 
 
 def test_not_adjudicable_when_imports_blocked_and_capacity_unknown():

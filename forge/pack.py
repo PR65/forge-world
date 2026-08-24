@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
@@ -25,6 +27,16 @@ SUBSTITUTION_REQUIRED_FIELDS = (
 
 class PackValidationError(Exception):
     pass
+
+
+_PUBLIC_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*$")
+
+
+def _validate_public_id(value: str, kind: str) -> None:
+    if not _PUBLIC_ID.fullmatch(value):
+        raise PackValidationError(
+            f"{kind} id '{value}' must use only letters, digits, '_', '-', or '.'"
+        )
 
 
 def _qty(spec) -> Quantity:
@@ -114,6 +126,30 @@ def _build_evidence(d: dict, pack_sources: Dict[str, Source]) -> EvidenceRecord:
         raise PackValidationError(
             f"{klass.value} evidence '{d.get('claim_id')}' requires at least one source (C21)"
         )
+    source_licenses = []
+    for source_id in src_ids:
+        source_license = pack_sources[source_id].license.strip()
+        if klass in (EpistemicClass.MEASURED, EpistemicClass.REPORTED) and (
+            not source_license or source_license.upper() == "UNSPECIFIED"
+        ):
+            raise PackValidationError(
+                f"{klass.value} evidence '{d.get('claim_id')}' references source "
+                f"'{source_id}' without a declared license (C19)"
+            )
+        source_licenses.append(source_license or "UNSPECIFIED")
+
+    declared_license = str(d.get("license", "")).strip()
+    inherited_licenses = sorted(set(source_licenses))
+    if declared_license and declared_license.upper() != "UNSPECIFIED":
+        inherited_licenses = sorted(set([declared_license, *inherited_licenses]))
+    if len(inherited_licenses) == 1:
+        evidence_license = inherited_licenses[0]
+    elif inherited_licenses:
+        # A scalar field cannot encode a license lattice. Preserve every
+        # applicable posture and require consumers to honor all of them.
+        evidence_license = "MULTIPLE LICENSES (apply all): " + " | ".join(inherited_licenses)
+    else:
+        evidence_license = "UNSPECIFIED"
     conf_raw = d.get("confidence") or {}
     conf = Confidence({k: (float(v) if v is not None else None) for k, v in conf_raw.items()})
     vq = None
@@ -136,7 +172,7 @@ def _build_evidence(d: dict, pack_sources: Dict[str, Source]) -> EvidenceRecord:
         technical_scope=str(d.get("technical_scope", "")),
         extraction_method=str(d.get("extraction_method", "manual")),
         confidence=conf,
-        license=str(d.get("license", "UNSPECIFIED")),
+        license=evidence_license,
         derived_from=_tup(d.get("derived_from")),
         supersedes=d.get("supersedes"),
         review_status=str(d.get("review_status", "unreviewed")),
@@ -231,15 +267,23 @@ def load_pack(path: str) -> KnowledgePack:
 
 
 def load_pack_dir(pack_id: str, packs_root: str = "packs") -> KnowledgePack:
-    path = os.path.join(packs_root, f"{pack_id}.yaml")
-    if not os.path.exists(path):
+    _validate_public_id(str(pack_id), "pack")
+    root = Path(packs_root).resolve()
+    path = (root / f"{pack_id}.yaml").resolve()
+    if path.parent != root or not path.exists():
         raise FileNotFoundError(f"pack not found: {path}")
-    return load_pack(path)
+    pack = load_pack(str(path))
+    if pack.pack_id != pack_id:
+        raise PackValidationError(
+            f"requested pack '{pack_id}' does not match file pack_id '{pack.pack_id}'"
+        )
+    return pack
 
 
 def build_pack(raw: dict, path: str = "") -> KnowledgePack:
     if not raw.get("pack_id"):
         raise PackValidationError("pack_id required")
+    _validate_public_id(str(raw["pack_id"]), "pack")
     pk = KnowledgePack(
         pack_id=str(raw["pack_id"]),
         title=str(raw.get("title", raw["pack_id"])),
@@ -258,10 +302,16 @@ def build_pack(raw: dict, path: str = "") -> KnowledgePack:
             license=str(sd.get("license", "UNSPECIFIED")),
             access_date=str(sd.get("access_date", "")), notes=str(sd.get("notes", "")),
         )
+        _validate_public_id(src.id, "source")
+        if src.id in pk.sources:
+            raise PackValidationError(f"duplicate source id '{src.id}'")
         pk.sources[src.id] = src
 
     for ed in raw.get("evidence", []) or []:
         rec = _build_evidence(ed, pk.sources)
+        _validate_public_id(rec.claim_id, "evidence")
+        if rec.claim_id in pk.evidence:
+            raise PackValidationError(f"duplicate evidence id '{rec.claim_id}'")
         pk.evidence[rec.claim_id] = rec
 
     for md in raw.get("materials", []) or []:
@@ -341,16 +391,33 @@ def build_pack(raw: dict, path: str = "") -> KnowledgePack:
                            org_type=str(od.get("org_type", "company")),
                            countries=_tup(od.get("countries"))))
 
+    geography_rows = list(raw.get("geographies", []) or []) + list(raw.get("locations", []) or [])
+    for gd in geography_rows:
+        w.add(GeoNode(
+            id=str(gd["id"]), name=str(gd.get("name", gd["id"])), kind="geo_node",
+            notes=str(gd.get("notes", "")), evidence_ids=_tup(gd.get("evidence_ids")),
+            level=str(gd.get("level", "country")), iso=str(gd.get("iso", "")),
+        ))
+
     for fd in raw.get("facilities", []) or []:
-        w.add(Facility(id=str(fd["id"]), name=str(fd.get("name", fd["id"])), kind="facility",
-                       notes=str(fd.get("notes", "")), evidence_ids=_tup(fd.get("evidence_ids")),
-                       geo_id=str(fd.get("geo_id", "UNKNOWN")),
-                       country=str(fd.get("country", "UNKNOWN")),
-                       lat=(float(fd["lat"]) if fd.get("lat") is not None else None),
-                       lon=(float(fd["lon"]) if fd.get("lon") is not None else None),
-                       owner_org=str(fd.get("owner_org", "")),
-                       operator_org=str(fd.get("operator_org", "")),
-                       status=str(fd.get("status", "operating"))))
+        facility = Facility(
+            id=str(fd["id"]), name=str(fd.get("name", fd["id"])), kind="facility",
+            notes=str(fd.get("notes", "")), evidence_ids=_tup(fd.get("evidence_ids")),
+            geo_id=str(fd.get("geo_id", "UNKNOWN")),
+            country=str(fd.get("country", "UNKNOWN")),
+            lat=(float(fd["lat"]) if fd.get("lat") is not None else None),
+            lon=(float(fd["lon"]) if fd.get("lon") is not None else None),
+            owner_org=str(fd.get("owner_org", "")),
+            operator_org=str(fd.get("operator_org", "")),
+            status=str(fd.get("status", "operating")),
+        )
+        w.add(facility)
+        if facility.geo_id and w.has(facility.geo_id):
+            w.link(facility.id, "located_at", facility.geo_id)
+        if facility.owner_org and w.has(facility.owner_org):
+            w.link(facility.id, "owned_by", facility.owner_org)
+        if facility.operator_org and w.has(facility.operator_org):
+            w.link(facility.id, "operated_by", facility.operator_org)
 
     for cd in raw.get("capacity_segments", []) or []:
         seg = CapacitySegment(
@@ -489,6 +556,70 @@ def build_pack(raw: dict, path: str = "") -> KnowledgePack:
             raise PackValidationError(f"crosswalk missing fields: {cwd}")
         pk.crosswalks.append(dict(cwd))
 
+    # Supplier links are candidate relationships with explicit status metadata,
+    # never capacity or qualification assertions. They make the path
+    # item -> organisation -> facility -> evidence inspectable in EXECUTE.
+    for link in raw.get("supplier_links", []) or []:
+        item_id = str(link.get("item_id", ""))
+        organization_id = str(link.get("organization_id", ""))
+        facility_id = str(link.get("facility_id", ""))
+        if not item_id or not w.has(item_id):
+            raise PackValidationError(
+                f"supplier link '{link.get('id')}' references unknown item '{item_id}'"
+            )
+        if not organization_id or not w.has(organization_id):
+            raise PackValidationError(
+                f"supplier link '{link.get('id')}' references unknown organization '{organization_id}'"
+            )
+        for evidence_id in _tup(link.get("evidence_ids")):
+            pk.evidence_or_fail(evidence_id)
+        metadata = {
+            "link_id": str(link.get("id", "")),
+            "supplier_relation": str(link.get("relation", "supplier_lead")),
+            "status": str(link.get("status", "RESEARCH_REQUIRED")),
+            "facility_id": facility_id,
+            "capability_claim_id": str(link.get("capability_claim_id", "")),
+            "evidence_ids": list(_tup(link.get("evidence_ids"))),
+            "note": str(link.get("note", "")),
+            "qualified_supply_asserted": False,
+        }
+        w.link(item_id, "supplied_by", organization_id, **metadata)
+        if facility_id:
+            if not w.has(facility_id):
+                raise PackValidationError(
+                    f"supplier link '{link.get('id')}' references unknown facility '{facility_id}'"
+                )
+            w.link(organization_id, "located_at", facility_id, **metadata)
+
+    # Optional generic typed relationships represent material, geography,
+    # infrastructure, and machine recursion without vertical-specific loaders.
+    relationship_rows: List[dict] = []
+    for key in ("relationships", "dependency_links", "material_chain_links"):
+        rows = raw.get(key, []) or []
+        if isinstance(rows, list):
+            relationship_rows.extend(row for row in rows if isinstance(row, dict))
+    for link in relationship_rows:
+        source_id = str(link.get("source", link.get("src", link.get("from", ""))))
+        target_id = str(link.get("target", link.get("dst", link.get("to", ""))))
+        relation = str(link.get("relation", ""))
+        if not source_id or not target_id or not relation:
+            raise PackValidationError(f"typed relationship missing fields: {link}")
+        if not w.has(source_id) or not w.has(target_id):
+            raise PackValidationError(
+                f"typed relationship endpoint missing: {source_id} -[{relation}]-> {target_id}"
+            )
+        for evidence_id in _tup(link.get("evidence_ids")):
+            pk.evidence_or_fail(evidence_id)
+        w.link(
+            source_id,
+            relation,
+            target_id,
+            link_id=str(link.get("id", "")),
+            epistemic_class=str(link.get("epistemic_class", "ASSUMPTION")),
+            evidence_ids=list(_tup(link.get("evidence_ids"))),
+            note=str(link.get("note", "")),
+        )
+
     _validate_pack_integrity(pk)
     return pk
 
@@ -500,6 +631,31 @@ def ResourceClassStub(rid: str):
 
 def _validate_pack_integrity(pk: KnowledgePack):
     w = pk.world
+    _validate_public_id(pk.pack_id, "pack")
+    for entity_id in w.entities:
+        _validate_public_id(entity_id, "entity")
+    for evidence in pk.evidence.values():
+        for parent_id in evidence.derived_from:
+            if parent_id not in pk.evidence:
+                raise PackValidationError(
+                    f"evidence '{evidence.claim_id}' derives from unknown evidence '{parent_id}'"
+                )
+        if evidence.supersedes:
+            if evidence.supersedes not in pk.evidence:
+                raise PackValidationError(
+                    f"evidence '{evidence.claim_id}' supersedes unknown evidence "
+                    f"'{evidence.supersedes}'"
+                )
+            if evidence.supersedes == evidence.claim_id:
+                raise PackValidationError(
+                    f"evidence '{evidence.claim_id}' cannot supersede itself"
+                )
+    for entity in w.entities.values():
+        for evidence_id in getattr(entity, "evidence_ids", ()):
+            if evidence_id not in pk.evidence:
+                raise PackValidationError(
+                    f"entity '{entity.id}' references unknown evidence '{evidence_id}'"
+                )
     for r in w.of_kind("recipe"):
         for st in r.steps:
             if not (0.0 < st.yield_fraction <= 1.0):
