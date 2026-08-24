@@ -1,6 +1,7 @@
 """FORGE WORLD API server (FastAPI). Serves the computational core to the console."""
 from __future__ import annotations
 
+import math
 import os
 import re
 from pathlib import Path
@@ -11,7 +12,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 from forge.engine import ForgeEngine, ObjectiveSpecInput
 from forge.pack import load_pack
@@ -68,15 +69,44 @@ def get_registry() -> CanonicalRegistry:
 class ObjectiveIn(BaseModel):
     pack_id: str
     variant_id: str
-    annual_units: float = Field(gt=0)
+    annual_units: float = Field(gt=0, allow_inf_nan=False)
     geography: str = "INDIA"
-    deadline_year: int = 2030
-    min_dva: float = 0.70
-    budget_usd: Optional[float] = None
+    deadline_year: int = Field(default=2030, ge=2026, le=2200)
+    min_dva: float = Field(default=0.70, ge=0.0, le=1.0, allow_inf_nan=False)
+    budget_usd: Optional[float] = Field(default=None, ge=0.0, allow_inf_nan=False)
     funded_projects: List[str] = Field(default_factory=list)
     shocks: List[str] = Field(default_factory=list)
-    analyst_capacity_assumptions: Dict[str, List[float]] = Field(default_factory=dict)
+    analyst_capacity_assumptions: Dict[str, tuple[float, float]] = Field(default_factory=dict)
+    per_item_import_cap: Dict[str, float] = Field(default_factory=dict)
     include_deep: bool = True
+
+    @field_validator("analyst_capacity_assumptions")
+    @classmethod
+    def validate_capacity_assumptions(
+        cls, value: Dict[str, tuple[float, float]]
+    ) -> Dict[str, tuple[float, float]]:
+        for item_id, (lo, hi) in value.items():
+            if not item_id.strip():
+                raise ValueError("capacity assumption item id must not be blank")
+            if not math.isfinite(lo) or not math.isfinite(hi):
+                raise ValueError(f"capacity assumption for '{item_id}' must be finite")
+            if lo < 0 or hi < lo:
+                raise ValueError(
+                    f"capacity assumption for '{item_id}' must satisfy 0 <= lo <= hi"
+                )
+        return value
+
+    @field_validator("per_item_import_cap")
+    @classmethod
+    def validate_import_caps(cls, value: Dict[str, float]) -> Dict[str, float]:
+        for item_id, cap in value.items():
+            if not item_id.strip():
+                raise ValueError("import-cap item id must not be blank")
+            if not math.isfinite(cap) or not 0.0 <= cap <= 1.0:
+                raise ValueError(
+                    f"per-item import cap for '{item_id}' must be a finite fraction in [0, 1]"
+                )
+        return value
 
 
 class DesignIn(ObjectiveIn):
@@ -105,6 +135,9 @@ def _objective_spec(obj: ObjectiveIn) -> ObjectiveSpecInput:
         budget_usd=obj.budget_usd,
         funded_projects=obj.funded_projects,
         analyst_capacity_assumptions=assumptions,
+        per_item_import_cap={
+            key: float(value) for key, value in obj.per_item_import_cap.items()
+        },
     )
 
 
@@ -199,6 +232,9 @@ def pack_detail(pack_id: str):
     )
     s["execution_model"] = dict(pk.raw.get("execution_model", {}) or {})
     s["program_model"] = dict(pk.raw.get("program_model", {}) or {})
+    s["reverse_buildability_scenarios"] = list(
+        pk.raw.get("reverse_buildability_scenarios", ()) or ()
+    )
     s["supplier_links"] = list(pk.raw.get("supplier_links", ()) or ())
     s["facilities"] = [
         {

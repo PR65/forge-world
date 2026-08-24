@@ -19,7 +19,7 @@ from __future__ import annotations
 import copy
 import math
 from collections import defaultdict, deque
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Set, Tuple
 
 from .capacity import capacity_envelope
@@ -82,6 +82,7 @@ def _opts(obj: ObjectiveSpecInput) -> ScenarioOptions:
         cost_import=dict(obj.cost_import),
         geography=obj.geography,
         min_domestic_share=obj.min_dva,
+        per_item_import_cap=dict(obj.per_item_import_cap),
         funded_pipeline="selected_only" if obj.funded_projects else "optimistic",
         foreign_supply_policy=obj.foreign_supply_policy,
     )
@@ -956,17 +957,104 @@ def capability_leverage(
     }
 
 
+def _shortfall_text(value: float) -> str:
+    """Keep small binding deficits visible instead of rounding them to zero."""
+
+    magnitude = abs(value)
+    if magnitude >= 100:
+        return f"{value:,.0f}"
+    if magnitude >= 10:
+        return f"{value:,.1f}".rstrip("0").rstrip(".")
+    if magnitude >= 1:
+        return f"{value:,.2f}".rstrip("0").rstrip(".")
+    return f"{value:,.3g}"
+
+
+def _binding_shortfalls(result: SolveResult) -> List[Dict[str, Any]]:
+    """Aggregate physical shortfalls into a stable, ranked intervention list."""
+
+    by_item: Dict[str, Dict[str, Any]] = {}
+    for year, year_result in sorted(result.years.items()):
+        for gap in year_result.shortfalls:
+            candidate = {
+                "item_id": gap.item_id,
+                "first_binding_year": year,
+                "peak_shortfall": float(gap.shortfall),
+                "unit": gap.unit_family,
+                "demand_at_peak": float(gap.demand),
+                "domestic_used_at_peak": float(gap.domestic_used),
+                "imports_used_at_peak": float(gap.imports_used),
+                "service_deficit_share": float(gap.service_deficit_share),
+                "epistemic_class": "UNKNOWN" if gap.unknown else "DERIVED",
+            }
+            current = by_item.get(gap.item_id)
+            if current is None:
+                by_item[gap.item_id] = candidate
+                continue
+            current["first_binding_year"] = min(
+                int(current["first_binding_year"]), year
+            )
+            if float(candidate["service_deficit_share"]) > float(
+                current["service_deficit_share"]
+            ):
+                candidate["first_binding_year"] = current["first_binding_year"]
+                by_item[gap.item_id] = candidate
+
+    rows = sorted(
+        by_item.values(),
+        key=lambda row: (
+            -float(row["service_deficit_share"]),
+            -float(row["peak_shortfall"]),
+            str(row["item_id"]),
+        ),
+    )
+    for rank, row in enumerate(rows, start=1):
+        row["rank"] = rank
+        row["action"] = (
+            "RESEARCH_QUALIFIED_EFFECTIVE_CAPACITY"
+            if row["epistemic_class"] == "UNKNOWN"
+            else "BUILD_OR_QUALIFY_CAPACITY"
+        )
+    return rows
+
+
+def _capacity_pair(raw: Any, *, scenario_id: str, item_id: str) -> Tuple[float, float]:
+    if not isinstance(raw, (list, tuple)) or len(raw) != 2:
+        raise ValueError(
+            f"reverse scenario '{scenario_id}' capacity assumption for '{item_id}' "
+            "must be [lo, hi]"
+        )
+    lo, hi = float(raw[0]), float(raw[1])
+    if lo < 0 or hi < lo:
+        raise ValueError(
+            f"reverse scenario '{scenario_id}' has invalid capacity range for "
+            f"'{item_id}': [{lo}, {hi}]"
+        )
+    return lo, hi
+
+
 def reverse_buildability_report(
     pack: KnowledgePack,
     objective: ObjectiveSpecInput,
     *,
     shock_ids: Optional[Sequence[str]] = None,
     max_iterations: int = 24,
+    include_declared_scenarios: bool = True,
 ) -> Dict[str, Any]:
     """Find an evidence-bounded output ceiling without claiming a proof theorem."""
 
     _require_variant(pack, objective.variant_id)
     years = _years(objective.deadline_year)
+
+    def finalize(report: Dict[str, Any]) -> Dict[str, Any]:
+        if include_declared_scenarios:
+            report["declared_scenarios"] = _declared_reverse_scenarios(
+                pack,
+                objective,
+                shock_ids=shock_ids,
+                max_iterations=max_iterations,
+            )
+        return report
 
     def evaluate(volume: int) -> Tuple[SolveResult, ExplosionResult]:
         pg = ProofGraph()
@@ -990,7 +1078,7 @@ def reverse_buildability_report(
                 funded_project_ids=(set(objective.funded_projects) or None),
             ).domestic.is_unknown()
         ]
-        return {
+        return finalize({
             "max_units_per_year": None,
             "epistemic_class": "UNKNOWN",
             "status": "NOT_ADJUDICABLE_AT_ONE_UNIT",
@@ -1005,12 +1093,12 @@ def reverse_buildability_report(
             ],
             "algorithm": "bounded integer binary search after a one-unit adjudicability check",
             "proof_status": "HEURISTIC_SEARCH_NOT_A_MATHEMATICAL_PROOF",
-        }
+        })
 
     target = max(int(math.ceil(objective.annual_units)), 1)
     target_result, _ = evaluate(target)
     if target_result.result_class in {ResultClass.FEASIBLE, ResultClass.CONDITIONALLY_FEASIBLE}:
-        return {
+        return finalize({
             "max_units_per_year": target,
             "search_upper_bound": target,
             "target_supported_within_search_bound": True,
@@ -1020,7 +1108,7 @@ def reverse_buildability_report(
             "interventions": list(target_result.closure_candidates[:12]),
             "algorithm": "bounded integer binary search",
             "proof_status": "SEARCH_BOUND_ONLY; CAPACITY MONOTONICITY ASSUMED",
-        }
+        })
 
     lo, hi = 0, target
     last_ok: Optional[SolveResult] = None
@@ -1036,7 +1124,17 @@ def reverse_buildability_report(
         else:
             hi = mid
             first_fail = result
-    return {
+    binding_shortfalls = _binding_shortfalls(first_fail)
+    binding_constraints = list(
+        first_fail.blocking_unknowns or first_fail.binding_summary
+    )[:16]
+    if not binding_constraints:
+        binding_constraints = [
+            f"{row['item_id']}@{row['first_binding_year']}: shortfall "
+            f"{_shortfall_text(float(row['peak_shortfall']))} {row['unit']}/yr"
+            for row in binding_shortfalls[:16]
+        ]
+    return finalize({
         "max_units_per_year": lo,
         "first_failing_units_per_year": hi,
         "search_upper_bound": target,
@@ -1044,14 +1142,257 @@ def reverse_buildability_report(
         "class_at_max": last_ok.result_class.value if last_ok else one_result.result_class.value,
         "class_at_first_failure": first_fail.result_class.value,
         "epistemic_class": "DERIVED",
-        "binding_constraints": list(
-            first_fail.blocking_unknowns or first_fail.binding_summary
-        )[:16],
+        "binding_constraints": binding_constraints,
+        "binding_shortfalls": binding_shortfalls[:16],
+        "ranked_interventions": binding_shortfalls[:12],
         "interventions": list(first_fail.closure_candidates[:12]),
         "iterations": iterations,
         "algorithm": "bounded integer binary search",
         "proof_status": "HEURISTIC SEARCH; CAPACITY MONOTONICITY ASSUMED",
-    }
+    })
+
+
+def _declared_reverse_scenarios(
+    pack: KnowledgePack,
+    objective: ObjectiveSpecInput,
+    *,
+    shock_ids: Optional[Sequence[str]],
+    max_iterations: int,
+) -> List[Dict[str, Any]]:
+    """Evaluate pack-declared planning envelopes without mutating baseline truth.
+
+    A declared scenario may close otherwise-UNKNOWN capacity cells only through
+    an explicit item range or a named requirement-headroom policy. The complete
+    generated assumption ledger is returned to the caller. This is deliberately
+    separate from evidence and never upgrades the baseline reverse verdict.
+    """
+
+    declarations = list(pack.raw.get("reverse_buildability_scenarios", ()) or ())
+    outputs: List[Dict[str, Any]] = []
+    for declaration in declarations:
+        scenario_id = str(declaration.get("id", "")).strip()
+        if not scenario_id:
+            raise ValueError("reverse buildability scenario requires an id")
+        variant_id = str(declaration.get("variant_id", objective.variant_id))
+        if variant_id != objective.variant_id:
+            continue
+
+        search_upper_bound = int(
+            declaration.get("search_upper_bound", math.ceil(objective.annual_units))
+        )
+        if search_upper_bound < 1:
+            raise ValueError(
+                f"reverse scenario '{scenario_id}' search_upper_bound must be positive"
+            )
+        deadline_year = int(declaration.get("deadline_year", objective.deadline_year))
+        geography = str(declaration.get("geography", objective.geography))
+        years = _years(deadline_year)
+
+        policy = dict(declaration.get("unresolved_capacity_policy", {}) or {})
+        policy_type = str(policy.get("type", "NONE")).upper()
+        basis_units = int(policy.get("basis_units_per_year", search_upper_bound))
+        headroom = float(policy.get("multiplier", 1.0))
+        if basis_units < 1 or headroom < 1.0:
+            raise ValueError(
+                f"reverse scenario '{scenario_id}' requires a positive basis and "
+                "headroom multiplier >= 1"
+            )
+
+        proof = ProofGraph()
+        basis_explosion = explode_variant(
+            pack.world, proof, variant_id, float(basis_units), years
+        )
+        exploded_items = set(basis_explosion.items())
+        assumptions: Dict[str, Tuple[float, float]] = {}
+        assumption_ledger: List[Dict[str, Any]] = []
+
+        for item_id, raw_assumption in dict(
+            declaration.get("capacity_assumptions", {}) or {}
+        ).items():
+            item_id = str(item_id)
+            if item_id not in exploded_items:
+                raise ValueError(
+                    f"reverse scenario '{scenario_id}' assumption '{item_id}' is not "
+                    f"required by variant '{variant_id}'"
+                )
+            metadata = raw_assumption if isinstance(raw_assumption, Mapping) else {}
+            raw_range = metadata.get("range") if metadata else raw_assumption
+            lo, hi = _capacity_pair(
+                raw_range, scenario_id=scenario_id, item_id=item_id
+            )
+            assumptions[item_id] = (lo, hi)
+            line = basis_explosion.get(item_id)
+            assumption_ledger.append(
+                {
+                    "item_id": item_id,
+                    "range": [lo, hi],
+                    "unit": str(
+                        metadata.get(
+                            "unit", line.gross_annual.unit if line else "UNKNOWN"
+                        )
+                    ),
+                    "basis": "EXPLICIT_SCENARIO_RANGE",
+                    "rationale": str(metadata.get("rationale", "")),
+                    "epistemic_class": "ASSUMPTION",
+                }
+            )
+
+        generated_items: List[str] = []
+        if policy_type == "REQUIREMENT_HEADROOM":
+            for item_id in sorted(exploded_items):
+                if item_id in assumptions:
+                    continue
+                envelope = capacity_envelope(
+                    pack.world,
+                    item_id,
+                    deadline_year,
+                    geography=geography,
+                    funded_project_ids=(set(objective.funded_projects) or None),
+                )
+                if not envelope.domestic.is_unknown():
+                    continue
+                line = basis_explosion.get(item_id)
+                if line is None:
+                    continue
+                value = abs(float(line.gross_annual.value)) * headroom
+                assumptions[item_id] = (value, value)
+                generated_items.append(item_id)
+                assumption_ledger.append(
+                    {
+                        "item_id": item_id,
+                        "range": [value, value],
+                        "unit": line.gross_annual.unit,
+                        "basis": "REQUIREMENT_HEADROOM_POLICY",
+                        "rationale": (
+                            f"Assumed {headroom:g}x the modelled gross requirement "
+                            f"at {basis_units:,} output units/year."
+                        ),
+                        "epistemic_class": "ASSUMPTION",
+                    }
+                )
+        elif policy_type != "NONE":
+            raise ValueError(
+                f"reverse scenario '{scenario_id}' has unsupported unresolved "
+                f"capacity policy '{policy_type}'"
+            )
+
+        per_item_import_cap = dict(objective.per_item_import_cap)
+        import_policy = str(
+            (declaration.get("import_policy", {}) or {}).get("type", "OBJECTIVE")
+        ).upper()
+        if import_policy == "DOMESTIC_ONLY":
+            per_item_import_cap.update({item_id: 0.0 for item_id in exploded_items})
+        elif import_policy != "OBJECTIVE":
+            raise ValueError(
+                f"reverse scenario '{scenario_id}' has unsupported import policy "
+                f"'{import_policy}'"
+            )
+
+        base_spec = replace(
+            objective,
+            variant_id=variant_id,
+            annual_units=float(search_upper_bound),
+            geography=geography,
+            deadline_year=deadline_year,
+            min_dva=float(declaration.get("min_dva", objective.min_dva)),
+            per_item_import_cap=per_item_import_cap,
+            foreign_supply_policy=str(
+                declaration.get("foreign_supply_policy", "strict")
+            ),
+        )
+        conservative_assumptions = {
+            item_id: (limits[0], limits[0]) for item_id, limits in assumptions.items()
+        }
+        optimistic_assumptions = {
+            item_id: (limits[1], limits[1]) for item_id, limits in assumptions.items()
+        }
+        conservative = reverse_buildability_report(
+            pack,
+            replace(
+                base_spec, analyst_capacity_assumptions=conservative_assumptions
+            ),
+            shock_ids=shock_ids,
+            max_iterations=max_iterations,
+            include_declared_scenarios=False,
+        )
+        optimistic = reverse_buildability_report(
+            pack,
+            replace(base_spec, analyst_capacity_assumptions=optimistic_assumptions),
+            shock_ids=shock_ids,
+            max_iterations=max_iterations,
+            include_declared_scenarios=False,
+        )
+
+        low_ceiling = conservative.get("max_units_per_year")
+        high_ceiling = optimistic.get("max_units_per_year")
+        scenario_report = dict(optimistic)
+        scenario_report.update(
+            {
+                "scenario_id": scenario_id,
+                "title": str(declaration.get("title", scenario_id)),
+                "description": str(declaration.get("description", "")),
+                "variant_id": variant_id,
+                "status": (
+                    "SCENARIO_CEILING_DERIVED"
+                    if low_ceiling is not None and high_ceiling is not None
+                    else "SCENARIO_NOT_ADJUDICABLE"
+                ),
+                "epistemic_class": "SCENARIO",
+                "calculation_epistemic_class": optimistic.get(
+                    "epistemic_class", "UNKNOWN"
+                ),
+                "ceiling_range_units_per_year": [low_ceiling, high_ceiling],
+                "conservative_edge": {
+                    "max_units_per_year": low_ceiling,
+                    "class_at_max": conservative.get("class_at_max"),
+                    "binding_constraints": conservative.get(
+                        "binding_constraints", []
+                    ),
+                    "binding_shortfalls": conservative.get(
+                        "binding_shortfalls", []
+                    ),
+                    "ranked_interventions": conservative.get(
+                        "ranked_interventions", []
+                    ),
+                },
+                "optimistic_edge": {
+                    "max_units_per_year": high_ceiling,
+                    "class_at_max": optimistic.get("class_at_max"),
+                    "binding_constraints": optimistic.get(
+                        "binding_constraints", []
+                    ),
+                    "binding_shortfalls": optimistic.get(
+                        "binding_shortfalls", []
+                    ),
+                    "ranked_interventions": optimistic.get(
+                        "ranked_interventions", []
+                    ),
+                },
+                "assumption_boundary": {
+                    "persistent": False,
+                    "baseline_world_mutated": False,
+                    "capacity_policy": policy_type,
+                    "basis_units_per_year": basis_units,
+                    "headroom_multiplier": headroom,
+                    "import_policy": import_policy,
+                    "explicit_assumption_count": len(assumptions)
+                    - len(generated_items),
+                    "policy_generated_assumption_count": len(generated_items),
+                    "assumptions": sorted(
+                        assumption_ledger, key=lambda row: row["item_id"]
+                    ),
+                    "notes": list(declaration.get("assumption_notes", ()) or ()),
+                },
+                "not_claimed": [
+                    "current evidenced production capacity",
+                    "qualified supplier availability",
+                    "mathematical proof of a global maximum",
+                    "automatic permission to execute investments",
+                ],
+            }
+        )
+        outputs.append(scenario_report)
+    return outputs
 
 
 def shock_impact(
@@ -1119,15 +1460,48 @@ def shock_impact(
 
     baseline_year = baseline.years.get(objective.deadline_year)
     shocked_year = shocked.years.get(objective.deadline_year)
-    shortfall_delta = (
-        (shocked_year.total_shortfall if shocked_year else 0.0)
-        - (baseline_year.total_shortfall if baseline_year else 0.0)
+    baseline_vector = (
+        baseline_year.shortfall_vector.to_json() if baseline_year else {}
+    )
+    shocked_vector = shocked_year.shortfall_vector.to_json() if shocked_year else {}
+    shortfall_units = sorted(set(baseline_vector) | set(shocked_vector))
+    shortfall_delta_by_unit = {
+        unit: round(
+            float(shocked_vector.get(unit, 0.0))
+            - float(baseline_vector.get(unit, 0.0)),
+            3,
+        )
+        for unit in shortfall_units
+    }
+    normalized_deficit_delta = round(
+        (shocked_year.normalized_deficit if shocked_year else 0.0)
+        - (baseline_year.normalized_deficit if baseline_year else 0.0),
+        6,
+    )
+    # Compatibility scalar is safe only when the entire physical vector is pcs.
+    legacy_pcs_delta = (
+        shortfall_delta_by_unit.get("pcs", 0.0)
+        if set(shortfall_units) <= {"pcs"}
+        else None
     )
     return {
         "shock_ids": list(shock_ids),
         "baseline": _result_summary(baseline),
         "shocked": _result_summary(shocked),
-        "deadline_shortfall_delta": shortfall_delta,
+        "deadline_shortfall_vectors": {
+            "baseline": baseline_vector,
+            "shocked": shocked_vector,
+        },
+        "deadline_shortfall_delta_by_unit": shortfall_delta_by_unit,
+        "deadline_normalized_deficit_delta": normalized_deficit_delta,
+        "deadline_shortfall_delta": legacy_pcs_delta,
+        "deadline_shortfall_delta_unit": (
+            "pcs" if legacy_pcs_delta is not None else None
+        ),
+        "deadline_shortfall_delta_semantics": (
+            "Legacy compatibility scalar; null for mixed physical unit families. "
+            "Use deadline_shortfall_delta_by_unit or the dimensionless normalized delta."
+        ),
         "directly_affected_entity_ids": sorted(directly_affected),
         "affected_origins": sorted(affected_origins),
         "objective_reached_by_causal_path": objective.variant_id in roots,

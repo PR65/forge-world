@@ -850,6 +850,12 @@ def solve_objective(
     return sr
 
 
+def _format_shortfall(value: float) -> str:
+    """Show a non-zero physical deficit without rounding it to a fake zero."""
+
+    return f"{value:,.3f}".rstrip("0").rstrip(".")
+
+
 def _classify(
     results: Dict[int, YearResult],
     blocking_unknowns: List[str],
@@ -886,7 +892,7 @@ def _classify(
         for y, yr in sorted(results.items()):
             for g in yr.shortfalls:
                 relax = (
-                    f"{g.item_id}@{y}: need {g.shortfall:,.0f} more {g.unit_family}/yr "
+                    f"{g.item_id}@{y}: need {_format_shortfall(g.shortfall)} more {g.unit_family}/yr "
                     f"({g.service_deficit_share:.0%} of its demand)"
                 )
                 if relax not in sr.required_relaxations:
@@ -894,7 +900,7 @@ def _classify(
                 if g.unknown:
                     cand = f"RESEARCH {g.item_id}: capacity UNKNOWN — audit suppliers/yields"
                 else:
-                    cand = (f"BUILD/QUALIFY {g.item_id}: add {g.shortfall:,.0f} "
+                    cand = (f"BUILD/QUALIFY {g.item_id}: add {_format_shortfall(g.shortfall)} "
                             f"{g.unit_family}/yr before {y}")
                 if cand not in sr.closure_candidates:
                     sr.closure_candidates.append(cand)

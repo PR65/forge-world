@@ -83,6 +83,34 @@ def test_reverse_buildability_keeps_unknown_as_unknown(cnc_case):
     assert report["interventions"]
 
 
+def test_declared_reverse_scenario_derives_a_bounded_ceiling_without_mutating_unknown(cnc_case):
+    pack, objective, _ = cnc_case
+    report = reverse_buildability_report(pack, objective)
+
+    # The evidence-bounded answer remains UNKNOWN. The numerical result lives
+    # only inside an explicit, non-persistent scenario boundary.
+    assert report["max_units_per_year"] is None
+    scenario = report["declared_scenarios"][0]
+    assert scenario["scenario_id"] == "cnc_declared_qualification_envelope"
+    assert scenario["status"] == "SCENARIO_CEILING_DERIVED"
+    assert scenario["epistemic_class"] == "SCENARIO"
+    assert scenario["ceiling_range_units_per_year"] == [82, 98]
+    assert scenario["assumption_boundary"]["persistent"] is False
+    assert scenario["assumption_boundary"]["baseline_world_mutated"] is False
+    assert scenario["assumption_boundary"]["import_policy"] == "DOMESTIC_ONLY"
+    assert scenario["assumption_boundary"]["explicit_assumption_count"] == 4
+    assert scenario["assumption_boundary"]["policy_generated_assumption_count"] > 0
+    assert all(
+        row["epistemic_class"] == "ASSUMPTION"
+        for row in scenario["assumption_boundary"]["assumptions"]
+    )
+    assert scenario["binding_constraints"] == [
+        "machine_bed_casting@2026: shortfall 0.336 pcs/yr"
+    ]
+    assert scenario["ranked_interventions"][0]["item_id"] == "machine_bed_casting"
+    assert scenario["ranked_interventions"][0]["peak_shortfall"] > 0
+
+
 def test_shock_impact_reaches_the_objective_through_real_edges(cnc_case):
     pack, objective, _ = cnc_case
     impact = shock_impact(pack, objective, ["shk_ball_screw_grinder_loss"])

@@ -2143,3 +2143,50 @@ supplier_links:
     status: RESEARCH_REQUIRED
     evidence_ids: [ev_nsk_spindle_bearing_scope, ev_cnc_recursive_capacity_unknown]
     note: Product-family evidence supports an RFQ lead only; no origin allocation or India qualification is claimed.
+
+# This is a deliberately hypothetical planning envelope, not a statement of
+# current Indian capacity. It exists so an operator can exercise reverse
+# buildability while the evidenced baseline correctly remains UNKNOWN. Every
+# synthetic capacity cell and its generation rule is returned in the API ledger.
+reverse_buildability_scenarios:
+  - id: cnc_declared_qualification_envelope
+    title: "Declared CNC qualification envelope — scenario, not evidence"
+    description: >
+      Bounds annual output if four decision-sensitive qualified cells fall within
+      the declared ranges, every other unresolved dependency has 20% headroom at
+      a 250-machine planning basis, and imports are unavailable. Replace these
+      assumptions through the research workflow before using the result as a plan.
+    variant_id: cnc_vmc_100_per_year
+    geography: INDIA
+    deadline_year: 2030
+    search_upper_bound: 250
+    min_dva: 0.70
+    foreign_supply_policy: strict
+    import_policy:
+      type: DOMESTIC_ONLY
+    unresolved_capacity_policy:
+      type: REQUIREMENT_HEADROOM
+      basis_units_per_year: 250
+      multiplier: 1.20
+    capacity_assumptions:
+      machine_bed_casting:
+        range: [105, 125]
+        unit: pcs/year
+        rationale: "Hypothetical qualified casting-and-finish cell range selected for decision-sensitivity analysis; not a supplier or facility claim."
+      ball_screw_set:
+        range: [320, 360]
+        unit: pcs/year
+        rationale: "Hypothetical three-axis ball-screw allocation range; grade, route, metrology, yield, and supplier qualification remain unresolved."
+      spindle_cartridge:
+        range: [105, 120]
+        unit: pcs/year
+        rationale: "Hypothetical qualified spindle integration range; bearing allocation and thermal acceptance remain unresolved."
+      metrology_acceptance_kit:
+        range: [100, 110]
+        unit: pcs/year
+        rationale: "Hypothetical final-acceptance service range; instrument availability, traceability, cycle time, and customer acceptance remain unresolved."
+    assumption_notes:
+      - "ASSUMPTION only: no range in this scenario is promoted to baseline evidence."
+      - "The requirement-headroom policy generates exact item-level assumptions from the exploded gross demand and returns every generated value."
+      - "DOMESTIC_ONLY is a scenario boundary, not a claim that domestic supply exists."
+      - "The conservative and optimistic edges use the low and high ends of the declared ranges respectively."
