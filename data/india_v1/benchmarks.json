@@ -1,0 +1,84 @@
+{
+  "schema_version": "india_v1.benchmark_config.v1",
+  "runner_version": "1.0.0",
+  "random_seed": 20260825,
+  "top_k": 10,
+  "required_named_queries": [
+    "MRI",
+    "5-axis CNC",
+    "freeze dryer",
+    "food dehydrator",
+    "industrial heat pump",
+    "electrolyzer",
+    "industrial motor",
+    "industrial robot",
+    "transformer",
+    "packaging machine",
+    "textile machine",
+    "centrifugal pump",
+    "agricultural drone",
+    "satellite",
+    "semiconductor equipment"
+  ],
+  "random_product_sample_size": 12,
+  "indiabuild_accounting": {
+    "observations_file": "research/indiabuild_verified_observations.md",
+    "observed_on": "2026-08-22",
+    "public_observed_mapped_count": 7047,
+    "public_catalogue_claim": 10000,
+    "public_bulk_list_available": false,
+    "public_bulk_list_note": "The verified repository observations record the public dashboard and examples, but do not contain a downloadable complete capability list or a public row-level export. Reconciliation is therefore limited to explicitly observed sampled names.",
+    "sampled_public_names": [
+      {
+        "name": "aerospace single-crystal blade casting",
+        "observed_context": "Homepage spotlight: aerospace single-crystal blade casting.",
+        "search_query": "single crystal blade casting"
+      },
+      {
+        "name": "hard-carbon anode production",
+        "observed_context": "Homepage recent status move: hard-carbon anode production.",
+        "search_query": "hard carbon anode"
+      },
+      {
+        "name": "battery-cell assembly equipment",
+        "observed_context": "Homepage recent status move: battery-cell assembly equipment.",
+        "search_query": "battery cell assembly equipment"
+      },
+      {
+        "name": "semiconductor equipment metrology/inspection",
+        "observed_context": "Homepage leading chokepoint example: semiconductor equipment metrology/inspection.",
+        "search_query": "semiconductor metrology inspection"
+      },
+      {
+        "name": "advanced process design kit and EDA toolchain",
+        "observed_context": "Homepage leading chokepoint example: advanced process design kit and EDA toolchain.",
+        "search_query": "advanced process design kit EDA toolchain"
+      },
+      {
+        "name": "thin-film deposition",
+        "observed_context": "Homepage leading chokepoint example: thin-film deposition.",
+        "search_query": "thin film deposition"
+      },
+      {
+        "name": "power semiconductor valves",
+        "observed_context": "Homepage leading chokepoint example: power semiconductor valves.",
+        "search_query": "power semiconductor valves"
+      },
+      {
+        "name": "nuclear steam generator",
+        "observed_context": "Verified alpha observation: BHEL product-class capability includes nuclear steam generators.",
+        "search_query": "nuclear steam generator"
+      },
+      {
+        "name": "turn-mill centre",
+        "observed_context": "Verified alpha observation: Ministry of Heavy Industries programme supported turn-mill centre technology development.",
+        "search_query": "turn mill centre"
+      },
+      {
+        "name": "four-guideway CNC lathe",
+        "observed_context": "Verified alpha observation: Ministry of Heavy Industries programme supported a four-guideway CNC lathe.",
+        "search_query": "four guideway CNC lathe"
+      }
+    ]
+  }
+}

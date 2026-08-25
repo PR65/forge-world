@@ -5,11 +5,12 @@ import json
 import math
 import os
 import re
+from collections import deque
 from pathlib import Path
 from threading import Lock
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Sequence
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -18,6 +19,16 @@ from pydantic import BaseModel, Field, field_validator
 from forge.engine import ForgeEngine, ObjectiveSpecInput
 from forge.pack import load_pack
 from forge.registry import CanonicalRegistry, load_registry
+from forge.india_v1.catalog import (
+    DEPTH_PROFILE as INDIA_DEPTH_PROFILE,
+    DOMAIN_ORDER as INDIA_DOMAIN_ORDER,
+    EPISTEMIC_CLASSES as INDIA_EPISTEMIC_CLASSES,
+    KINDS as INDIA_KINDS,
+    STATUSES as INDIA_STATUSES,
+    domains as india_domains,
+    get_catalog as get_india_catalog,
+    summary as india_summary,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 PACKS_DIR = ROOT / "packs"
@@ -145,6 +156,295 @@ def _objective_spec(obj: ObjectiveIn) -> ObjectiveSpecInput:
 @app.get("/api/health")
 def health():
     return {"status": "ok", "packs": sorted(p.stem for p in PACKS_DIR.glob("*.yaml"))}
+
+
+def _india_summary_record(catalog, record_id: str) -> Dict[str, Any]:
+    record = catalog.by_id.get(record_id)
+    if record is None:
+        raise HTTPException(404, f"India V1 record '{record_id}' not found")
+    return {
+        "id": record["id"],
+        "canonical_name": record["canonical_name"],
+        "name": record["canonical_name"],
+        "aliases": list(record["aliases"]),
+        "domain_id": record["domain_id"],
+        "domain_code": record["domain_code"],
+        "domain": record["domain"],
+        "category": record["category"],
+        "kind": record["kind"],
+        "explanation": record["explanation"],
+        "uses": list(record["uses"]),
+        "use": record["uses"][0] if record["uses"] else "",
+        "status": record["status"],
+        "india_status": record["status"],
+        "status_epistemic_class": record["status_epistemic_class"],
+        "status_basis": record["status_basis"],
+        "is_reference_only": record["is_reference_only"],
+        "depth_profile": INDIA_DEPTH_PROFILE,
+    }
+
+
+def _india_full_record(catalog, record_id: str) -> Dict[str, Any]:
+    record = catalog.by_id.get(record_id)
+    if record is None:
+        raise HTTPException(404, f"India V1 record '{record_id}' not found")
+
+    dependencies: Dict[str, List[Dict[str, Any]]] = {}
+    dependency_ids: Dict[str, List[str]] = {}
+    for group, references in record["dependencies"].items():
+        dependency_ids[group] = list(references)
+        dependencies[group] = [_india_summary_record(catalog, reference) for reference in references]
+
+    # Highly reused foundations can unlock thousands of records. Keep a
+    # record response readable and bounded; the graph/search endpoints retain
+    # access to the wider branch.
+    link_limit = 100
+
+    def linked(references: Sequence[str]) -> List[Dict[str, Any]]:
+        return [_india_summary_record(catalog, reference) for reference in references[:link_limit]]
+
+    upstream = linked(record["upstream"])
+    downstream = linked(record["downstream"])
+    related = linked(record["related"])
+    payload = {
+        **_india_summary_record(catalog, record_id),
+        "explanation": record["explanation"],
+        "uses": list(record["uses"]),
+        "use": record["uses"][0] if record["uses"] else "",
+        "status_basis": record["status_basis"],
+        "status_epistemic": record["status_epistemic_class"],
+        "epistemic_class": record["status_epistemic_class"],
+        "dependencies": dependencies,
+        "dependency_ids": [reference for values in dependency_ids.values() for reference in values],
+        "dependency_ids_by_group": dependency_ids,
+        "gaps": list(record["gaps"]),
+        "import_notes": list(record["import_notes"]),
+        "gap_import_notes": record["gap_import_notes"],
+        "making_ladder": list(record["making_ladder"]),
+        "upstream": upstream,
+        "upstream_ids": list(record["upstream"][:link_limit]),
+        "downstream": downstream,
+        "downstream_ids": list(record["downstream"][:link_limit]),
+        "unlocks": downstream,
+        "unlock_ids": list(record["downstream"][:link_limit]),
+        "related": related,
+        "related_ids": list(record["related"][:link_limit]),
+        "link_counts": {
+            "upstream": len(record["upstream"]),
+            "downstream": len(record["downstream"]),
+            "unlocks": len(record["downstream"]),
+            "related": len(record["related"]),
+        },
+        "links_truncated": {
+            "upstream": len(record["upstream"]) > link_limit,
+            "downstream": len(record["downstream"]) > link_limit,
+            "unlocks": len(record["downstream"]) > link_limit,
+            "related": len(record["related"]) > link_limit,
+        },
+        "links": {
+            "upstream": upstream,
+            "downstream": downstream,
+            "unlocks": downstream,
+            "related": related,
+        },
+        "source_spec": record["source_spec"],
+    }
+    return payload
+
+
+def _india_domain_filter(catalog, value: Optional[str]) -> Optional[str]:
+    if value is None or not value.strip():
+        return None
+    resolved = catalog.resolve_domain(value)
+    if resolved is None:
+        raise HTTPException(422, f"unknown India V1 domain '{value}'")
+    return resolved
+
+
+def _india_kind_filter(value: Optional[str]) -> Optional[str]:
+    if value is None or not value.strip():
+        return None
+    normalized = value.strip().upper().replace("-", "_").replace(" ", "_")
+    aliases = {
+        "FINISHED_PRODUCT": "PRODUCT",
+        "COMPONENT": "PRODUCT",
+        "MACHINE": "EQUIPMENT",
+        "HEAVY_EQUIPMENT": "EQUIPMENT",
+        "INSTRUMENT": "EQUIPMENT",
+        "CHEMICAL": "MATERIAL",
+        "PROCESS_CAPABILITY": "PROCESS",
+        "UTILITY_CAPABILITY": "CAPABILITY",
+        "SERVICE_CAPABILITY": "CAPABILITY",
+    }
+    normalized = aliases.get(normalized, normalized)
+    if normalized not in INDIA_KINDS:
+        raise HTTPException(422, f"invalid India V1 kind '{value}'")
+    return normalized
+
+
+def _india_status_filter(value: Optional[str]) -> Optional[str]:
+    if value is None or not value.strip():
+        return None
+    normalized = value.strip().upper()
+    aliases = {
+        "STRONG / AVAILABLE IN INDIA": "AVAILABLE",
+        "PARTIAL / SCALE-LIMITED": "SCALE_LIMITED",
+        "SPECIFICATION GAP": "PARTIAL",
+        "QUALIFICATION GAP": "PARTIAL",
+        "CAPACITY GAP": "SCALE_LIMITED",
+        "IMPORT-DEPENDENT": "IMPORT_DEPENDENT",
+        "MISSING / NO EVIDENCED DOMESTIC CAPABILITY": "MISSING",
+    }
+    normalized = aliases.get(normalized, normalized)
+    if normalized not in INDIA_STATUSES:
+        raise HTTPException(422, f"invalid India V1 status '{value}'")
+    return normalized
+
+
+@app.get("/api/india/summary")
+def india_summary_api():
+    """Return deterministic combined Run 1 coverage and distributions."""
+
+    return india_summary(get_india_catalog())
+
+
+@app.get("/api/india/domains")
+def india_domains_api():
+    return {
+        "depth_profile": INDIA_DEPTH_PROFILE,
+        "domain_count": len(INDIA_DOMAIN_ORDER),
+        "domains": india_domains(get_india_catalog()),
+    }
+
+
+@app.get("/api/india/search")
+def india_search_api(
+    q: str = Query(default="", max_length=200),
+    domain: Optional[str] = Query(default=None, max_length=120),
+    kind: Optional[str] = Query(default=None, max_length=50),
+    status: Optional[str] = Query(default=None, max_length=80),
+    limit: int = Query(default=25, ge=1, le=100),
+):
+    catalog = get_india_catalog()
+    domain_code = _india_domain_filter(catalog, domain)
+    kind_value = _india_kind_filter(kind)
+    status_value = _india_status_filter(status)
+    ranked = catalog.ranked_search(
+        q.strip(), domain=domain_code, kind=kind_value, status=status_value, limit=limit
+    )
+    results = []
+    for rank, (record, score) in enumerate(ranked, start=1):
+        results.append({**_india_summary_record(catalog, record["id"]), "rank": rank, "score": score})
+    return {
+        "query": q,
+        "domain": domain_code,
+        "kind": kind_value,
+        "status": status_value,
+        "limit": limit,
+        "count": len(results),
+        "results": results,
+        "depth_profile": INDIA_DEPTH_PROFILE,
+    }
+
+
+@app.get("/api/india/records/{record_id:path}")
+def india_record_api(record_id: str):
+    if not record_id.strip() or len(record_id) > 240:
+        raise HTTPException(404, f"India V1 record '{record_id}' not found")
+    return _india_full_record(get_india_catalog(), record_id)
+
+
+@app.get("/api/india/graph/{record_id:path}")
+def india_graph_api(
+    record_id: str,
+    depth: int = Query(default=1, ge=0, le=4),
+    limit: int = Query(default=100, ge=1, le=200),
+):
+    catalog = get_india_catalog()
+    if record_id not in catalog.by_id:
+        raise HTTPException(404, f"India V1 record '{record_id}' not found")
+
+    visited: Dict[str, int] = {record_id: 0}
+    queue: deque[tuple[str, int]] = deque([(record_id, 0)])
+    edges: set[tuple[str, str, str]] = set()
+    truncated = False
+    while queue:
+        current_id, current_depth = queue.popleft()
+        current = catalog.by_id[current_id]
+        if current_depth >= depth:
+            continue
+        neighbors: list[tuple[str, str]] = []
+        for group, references in current["dependencies"].items():
+            neighbors.extend((f"dependency:{group}", reference) for reference in references)
+        neighbors.extend(("upstream", reference) for reference in current["upstream"])
+        neighbors.extend(("downstream", reference) for reference in current["downstream"])
+        neighbors.extend(("related", reference) for reference in current["related"])
+        for relation, target_id in sorted(set(neighbors), key=lambda item: (item[0], item[1])):
+            if target_id not in catalog.by_id:
+                continue
+            if target_id not in visited:
+                if len(visited) >= limit:
+                    truncated = True
+                    continue
+                visited[target_id] = current_depth + 1
+                queue.append((target_id, current_depth + 1))
+            if target_id in visited:
+                edges.add((current_id, target_id, relation))
+
+    nodes = []
+    for node_id, node_depth in sorted(visited.items(), key=lambda item: (item[1], item[0])):
+        nodes.append({**_india_summary_record(catalog, node_id), "depth": node_depth})
+    edge_rows = [
+        {"source": source, "target": target, "relation": relation}
+        for source, target, relation in sorted(edges)
+    ]
+    return {
+        "root": _india_summary_record(catalog, record_id),
+        "nodes": nodes,
+        "edges": edge_rows,
+        "depth": depth,
+        "limit": limit,
+        "truncated": truncated,
+        "depth_profile": INDIA_DEPTH_PROFILE,
+    }
+
+
+@app.get("/api/india/discover")
+def india_discover_api(limit: int = Query(default=12, ge=1, le=50)):
+    """Return fixed, cross-domain discovery examples with no random ordering."""
+
+    catalog = get_india_catalog()
+    prompts = (
+        ("launch vehicle", "Aerospace and space systems expose deep recursive manufacturing routes."),
+        ("nuclear", "Nuclear records expose strategic qualification and safety dependencies."),
+        ("semiconductor", "Electronics records expose computing and advanced-package dependencies."),
+        ("precision grinding", "Precision process records recur across machine tools and strategic products."),
+        ("battery electric", "Mobility records expose energy, power-electronics, and service routes."),
+        ("industrial controls", "Controls and automation are cross-domain option-value primitives."),
+        ("water treatment", "Water and effluent systems recur as physical industrial prerequisites."),
+        ("medical imaging", "Medical equipment demonstrates qualification-sensitive system depth."),
+        ("materials engineering", "Materials engineering is a reusable cross-domain capability."),
+        ("CNC machining", "Machining links product architecture to equipment, metrology, and process control."),
+        ("satellite", "Space products make the product-to-process-to-material recursion visible."),
+        ("robotics", "Robotics connects motion, controls, precision mechanics, and qualification."),
+    )
+    examples: list[Dict[str, Any]] = []
+    seen: set[str] = set()
+    for query, rationale in prompts:
+        matches = catalog.ranked_search(query, limit=8)
+        chosen = next((record for record, _score in matches if not record["is_reference_only"] and record["id"] not in seen), None)
+        if chosen is None:
+            continue
+        seen.add(chosen["id"])
+        examples.append({"id": chosen["id"], "rationale": rationale, "record": _india_summary_record(catalog, chosen["id"])})
+        if len(examples) >= limit:
+            break
+    return {
+        "depth_profile": INDIA_DEPTH_PROFILE,
+        "limit": limit,
+        "examples": examples,
+        "records": [example["record"] for example in examples],
+    }
 
 
 @app.get("/api/packs")
