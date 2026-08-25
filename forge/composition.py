@@ -247,4 +247,3 @@ def rank_decision_gaps(composition: Mapping[str, Any]) -> Dict[str, Any]:
         "task_count": len(rows),
         "tasks": rows,
     }
-

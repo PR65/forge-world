@@ -78,4 +78,3 @@ objectives:
       - {id: power_electronics, label: "Power electronics", role: shared_foundation, canonical_id: "cap:power-electronics", decision_weight: 4, decision_critical: true}
       - {id: tooling, label: "Production tooling and fixtures", role: shared_foundation, canonical_id: "cap:tooling-fixtures", decision_weight: 3, decision_critical: false}
       - {id: qualification, label: "Cross-sector product qualification", role: shared_foundation, canonical_id: "cap:industrial-product-qualification", decision_weight: 4, decision_critical: true}
-
