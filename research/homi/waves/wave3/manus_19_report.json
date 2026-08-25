@@ -1,0 +1,257 @@
+{
+  "schema_version": "wave3_staging_report.v1",
+  "report_identity": {
+    "wave": "wave3",
+    "manus_id": "manus-19",
+    "corpus_title": "Robotics, Humanoids, and Industrial Automation",
+    "posture": "STAGING_ONLY",
+    "deterministic": true,
+    "web_used": false,
+    "canonical_promotions": 0
+  },
+  "source_boundaries": {
+    "raw_zip": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\Thorough Research and In-Depth Analysis Techniques.zip",
+    "extracted_root": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-19",
+    "repo_manifest": "research/homi/staging/corpus_manifest.json",
+    "manifest_row": {
+      "corpus_id": "manus-19",
+      "declared_file_count": 12,
+      "status": "OK"
+    },
+    "scope_note": "Only the immutable raw ZIP, its extracted files, and repository manifests were used; no external source was fetched or promoted."
+  },
+  "artifact_manifest": {
+    "raw_zip": {
+      "logical_path": "Thorough Research and In-Depth Analysis Techniques.zip",
+      "byte_length": 520378,
+      "sha256": "753c2d6e4b366bf2a8dbd5ab92e4197126ff692b4c369bb83c38f2fa91796d9b",
+      "raw_zip_member_count": 16,
+      "raw_zip_file_entry_count": 13,
+      "raw_zip_directory_entry_count": 3,
+      "manifest_byte_match": true,
+      "manifest_hash_match": true
+    },
+    "raw_zip_directories": [
+      "Representative 1M/",
+      "FORGE WORLD \u2014 Robotics /",
+      "FORGE WORLD \u2014 Robotics / Humanoids /"
+    ],
+    "extracted_files": [
+      {"artifact_id":"artifact:04ee6409621a6763429629fe","logical_path":"manus-19/forge_robotics_scale_model.csv","byte_length":795,"sha256":"4b189ee0a40e99100e99ea6beb2e7bbccdf1afb4a207c73ef5e8b0176cd2bd2b","raw_zip_match":true},
+      {"artifact_id":"artifact:13b2654e8f53245ab5e26e3f","logical_path":"manus-19/FORGE WORLD \u2014 Robotics / Humanoids / Industrial Automation.md","byte_length":65605,"sha256":"72fd13405c9477493656ce17ec7454135476a7aa36e1fb113b23c916c07047e1","raw_zip_match":true},
+      {"artifact_id":"artifact:1634282df864799d2e50c71e","logical_path":"manus-19/robotics_supplier_facility_mapping.csv","byte_length":77428,"sha256":"e1f93f36d9e2087157339956abbbf2d8d799ba799da80df28cd93521f1509e49","raw_zip_match":true},
+      {"artifact_id":"artifact:18f7bfaca7783edfd1047122","logical_path":"manus-19/pasted_content.txt","byte_length":4487,"sha256":"636a51ff25c657fcb5f21fe7dcf3c3eb151a12227f23fb178b308071404353c5","raw_zip_match":true},
+      {"artifact_id":"artifact:2f048b5d3d7c197de0808284","logical_path":"manus-19/forge_robotics_knowledge_graph_seed.csv","byte_length":4604,"sha256":"e314e95980aab3cc694fdf3293c5b61040e019cec0fee07347101a8d8f4dec6d","raw_zip_match":true},
+      {"artifact_id":"artifact:4b3bb4e4326096f7a1e0ac7a","logical_path":"manus-19/robotics_upstream_process_qualification.csv","byte_length":72094,"sha256":"e693519adb051b00c857aa97484eb01ba698c9fc009a83994e61261037536f49","raw_zip_match":true},
+      {"artifact_id":"artifact:51258b7d94fa652943c0d69e","logical_path":"manus-19/forge_robotics_scale_model.py","byte_length":3085,"sha256":"e671b14218abd89a81574a2826f64b17da1610d7e3ed086aacc38224166de025","raw_zip_match":true},
+      {"artifact_id":"artifact:5821672b66a8b74784ef72ec","logical_path":"manus-19/robotics_industrial_research.json","byte_length":63443,"sha256":"cf2811007c9f1e739f62ae2a0739793d2a54a5a5ba2ebe852155beefb7dae596","raw_zip_match":true},
+      {"artifact_id":"artifact:72ccdd7416196b120b9e83f7","logical_path":"manus-19/robotics_supplier_facility_mapping.json","byte_length":79755,"sha256":"ea24d873a299642ca8d2ddcc10136c21ad0e48fb15e9f6d0a7fb456bc3278b9b","raw_zip_match":true},
+      {"artifact_id":"artifact:c8ec86ba6dfd93e2a0ed8a0f","logical_path":"manus-19/robotics_upstream_process_qualification.json","byte_length":73609,"sha256":"3d63ffd9667fff00e709cffad785114d7bdaf2e0117f004f47a3714004cf3fd2","raw_zip_match":true},
+      {"artifact_id":"artifact:d4b38b7e2492e26835e4fed0","logical_path":"manus-19/robotics_industrial_research.csv","byte_length":62049,"sha256":"8bce3f729778efa1c438e3f97d038d25c5162634dcf2906bcfa992c455d633b1","raw_zip_match":true},
+      {"artifact_id":"artifact:de3fa89a0d729901d6174172","logical_path":"manus-19/Validated evidence notes.md","byte_length":9437,"sha256":"f82e2dc593b0e45e750f9b708a25e3aa3941f2a2ccccbc2c5780eb6e75160ae3","raw_zip_match":true},
+      {"artifact_id":"artifact:e2a746e3a51e6149f4ddaf3c","logical_path":"manus-19/Representative 1M/year scaling model.md","byte_length":1329,"sha256":"c3d74283647474321b91f4b1b321d440e94032f703c52a8bf2f9c0a7e429d2a3","raw_zip_match":true}
+    ],
+    "extracted_file_count": 13,
+    "raw_zip_byte_matches": 13,
+    "raw_zip_hash_matches": 13,
+    "duplicate_artifact_hash_groups": 0,
+    "manifest_file_count_mismatch": true
+  },
+  "epistemic_and_semantic_rules": {
+    "allowed_classes": ["MEASURED","REPORTED","DERIVED","ESTIMATED","MODELLED","ASSUMPTION","SCENARIO","UNKNOWN","CONFLICTED"],
+    "legacy_tokens_seen": ["LEGISLATED","LEGISLATED/REPORTED"],
+    "rules": [
+      "UNKNOWN stays UNKNOWN.",
+      "Prototype or demonstration is not production.",
+      "Order, announcement, approval, financing, or construction is not operating capacity.",
+      "Facility presence is not qualified capability or qualified recurring throughput.",
+      "Nameplate or planned rate is not effective available capacity.",
+      "Deployment/installations are not domestic manufacturing output.",
+      "Upstream rare-earth product output is not finished magnet output.",
+      "Policy targets are not supply."
+    ]
+  },
+  "corpus_accounting": {
+    "extracted_files": 13,
+    "manifest_declared_files": 12,
+    "raw_zip_members": 16,
+    "raw_zip_file_entries": 13,
+    "raw_zip_directory_entries": 3,
+    "physical_csv_rows": 46,
+    "physical_json_rows": 29,
+    "physical_structured_rows": 75,
+    "csv_json_mirror_rows_removed": 29,
+    "logical_structured_records_after_mirror_dedupe": 46,
+    "markdown_table_rows": 171,
+    "nested_memo_table_rows_one_per_json_family": 196,
+    "bounded_claim_count": 384,
+    "bounded_claim_basis": "171 atlas table rows + 196 nested memo table rows + 14 knowledge-graph seed rows + 3 scale-model scenario rows; CSV/JSON wrapper mirrors, prose, and pasted prompt text are not counted as extra claims."
+  },
+  "schemas_and_rows": {
+    "forge_robotics_knowledge_graph_seed.csv": {"columns":13,"rows":14,"malformed_rows":0},
+    "forge_robotics_scale_model.csv": {"columns":20,"rows":3,"malformed_rows":0},
+    "robotics_industrial_research.csv": {"columns":6,"rows":9,"malformed_rows":0},
+    "robotics_supplier_facility_mapping.csv": {"columns":7,"rows":12,"malformed_rows":0},
+    "robotics_upstream_process_qualification.csv": {"columns":7,"rows":8,"malformed_rows":0},
+    "robotics_industrial_research.json": {"schema":"results[]/{input,output,error}","rows":9,"parse_errors":0,"mirror_of":"robotics_industrial_research.csv"},
+    "robotics_supplier_facility_mapping.json": {"schema":"results[]/{input,output,error}","rows":12,"parse_errors":0,"mirror_of":"robotics_supplier_facility_mapping.csv"},
+    "robotics_upstream_process_qualification.json": {"schema":"results[]/{input,output,error}","rows":8,"parse_errors":0,"mirror_of":"robotics_upstream_process_qualification.csv"},
+    "atlas_markdown": {"lines":705,"headings":45,"tables":18,"table_rows":171,"malformed_tables":0},
+    "validated_evidence_notes": {"lines":50,"headings":3,"url_tokens":17},
+    "representative_scaling_model_markdown": {"lines":39,"headings":3,"url_tokens":0},
+    "pasted_content": {"lines":68,"evidence_status":"prompt_copy_only"},
+    "forge_robotics_scale_model.py": {"source_only":true,"executed":false}
+  },
+  "source_inventory": {
+    "source_artifact_count": 13,
+    "url_occurrences_all_artifacts_including_mirrors": 535,
+    "url_occurrences_after_csv_json_mirror_dedupe": 291,
+    "unique_source_url_candidates": 228,
+    "verified_external_sources": 0,
+    "source_registry_records_created": 0,
+    "url_occurrences_by_logical_artifact": {
+      "FORGE WORLD \u2014 Robotics / Humanoids / Industrial Automation.md": 16,
+      "forge_robotics_knowledge_graph_seed.csv": 14,
+      "robotics_industrial_research.csv": 84,
+      "robotics_supplier_facility_mapping.csv": 68,
+      "robotics_upstream_process_qualification.csv": 92,
+      "Validated evidence notes.md": 17
+    },
+    "source_posture": "URL tokens are candidate citations only; provenance, retrieval date, version, and primary-source verification remain unresolved."
+  },
+  "source_candidates": {
+    "candidate_count": 228,
+    "dedupe_key": "normalized URL token",
+    "canonical_promotions": 0,
+    "sample_status": "not enumerated in this compact report"
+  },
+  "claim_candidates": {
+    "bounded_claim_count": 384,
+    "atlas_table_claim_rows": 171,
+    "nested_memo_claim_rows": 196,
+    "knowledge_graph_seed_claim_rows": 14,
+    "scale_model_scenario_rows": 3,
+    "epistemic_token_occurrences_all_artifacts": {"UNKNOWN":182,"CONFLICTED":49,"MEASURED":150,"REPORTED":303,"DERIVED":70,"ESTIMATED":89,"MODELLED":44,"ASSUMPTION":64,"SCENARIO":111},
+    "epistemic_token_occurrences_after_mirror_dedupe": {"UNKNOWN":109,"CONFLICTED":26,"MEASURED":82,"REPORTED":165,"DERIVED":42,"ESTIMATED":46,"MODELLED":23,"ASSUMPTION":38,"SCENARIO":62},
+    "claim_samples": [
+      {"claim":"Figure AI BotQ factory is stated at up to 12,000 humanoids/year; qualified recurring output is not established.","class":"REPORTED","capacity_semantics":"known-rated, not qualified recurring throughput","locator":"manus-19/forge_robotics_knowledge_graph_seed.csv#row=2","artifact_sha256":"e314e95980aab3cc694fdf3293c5b61040e019cec0fee07347101a8d8f4dec6d"},
+      {"claim":"Agility RoboFab is stated at 10,000+ robots/year as a planned/rated facility; operating realization is unknown.","class":"REPORTED","capacity_semantics":"planned/rated, not operating","locator":"manus-19/forge_robotics_knowledge_graph_seed.csv#row=3","artifact_sha256":"e314e95980aab3cc694fdf3293c5b61040e019cec0fee07347101a8d8f4dec6d"},
+      {"claim":"Harmonic Drive Ariake is reported at 220,000 units/month; allocations and product scope prevent treating it as humanoid qualified supply.","class":"REPORTED","capacity_semantics":"nameplate/allocated reducer rate, not effective humanoid supply","locator":"manus-19/forge_robotics_knowledge_graph_seed.csv#row=6","artifact_sha256":"e314e95980aab3cc694fdf3293c5b61040e019cec0fee07347101a8d8f4dec6d"},
+      {"claim":"MP Materials reports 2,599 metric tonnes of NdPr products; this is upstream material and not finished NdFeB magnet output.","class":"MEASURED","capacity_semantics":"reported upstream product output","locator":"manus-19/forge_robotics_knowledge_graph_seed.csv#row=8","artifact_sha256":"e314e95980aab3cc694fdf3293c5b61040e019cec0fee07347101a8d8f4dec6d"},
+      {"claim":"India integrated REPM scheme has a 6,000 metric tonne/year target; target, setup, and operation remain distinct.","class":"REPORTED","capacity_semantics":"policy/planned target, not operating capacity","locator":"manus-19/forge_robotics_knowledge_graph_seed.csv#row=10","artifact_sha256":"e314e95980aab3cc694fdf3293c5b61040e019cec0fee07347101a8d8f4dec6d"},
+      {"claim":"Global industrial robot installations are reported at 542,000 in 2024; this is a deployment proxy, not manufacturing capacity.","class":"MEASURED","capacity_semantics":"installed/deployed stock flow proxy","locator":"manus-19/forge_robotics_knowledge_graph_seed.csv#row=12","artifact_sha256":"e314e95980aab3cc694fdf3293c5b61040e019cec0fee07347101a8d8f4dec6d"},
+      {"claim":"Central architecture assumes 2.5 kg NdFeB per robot and derives 2,500 tonnes/year at one million robots/year.","class":"DERIVED","capacity_semantics":"scenario arithmetic from explicit assumptions, not measured supply","locator":"manus-19/forge_robotics_scale_model.csv#row=3","artifact_sha256":"4b189ee0a40e99100e99ea6beb2e7bbccdf1afb4a207c73ef5e8b0176cd2bd2b"},
+      {"claim":"The atlas lists unresolved effective-capacity and qualification evidence for reducer, actuator, magnet, and battery nodes.","class":"UNKNOWN","capacity_semantics":"unknown until facility-, product-, and test-scoped evidence exists","locator":"manus-19/FORGE WORLD \u2014 Robotics / Humanoids / Industrial Automation.md#L322","artifact_sha256":"72fd13405c9477493656ce17ec7454135476a7aa36e1fb113b23c916c07047e1"},
+      {"claim":"The atlas conflict ledger preserves competing interpretations of industrial capacity and deployment figures rather than choosing a false precision value.","class":"CONFLICTED","capacity_semantics":"conflict retained for resolution packet","locator":"manus-19/FORGE WORLD \u2014 Robotics / Humanoids / Industrial Automation.md#L570","artifact_sha256":"72fd13405c9477493656ce17ec7454135476a7aa36e1fb113b23c916c07047e1"},
+      {"claim":"Upstream process qualification workstream records unresolved qualification, yield, sub-tier, and test evidence requirements.","class":"UNKNOWN","capacity_semantics":"qualification candidate, not qualified capability","locator":"manus-19/robotics_upstream_process_qualification.csv#row=2","artifact_sha256":"e693519adb051b00c857aa97484eb01ba698c9fc009a83994e61261037536f49"}
+    ]
+  },
+  "candidate_counts": {
+    "entity_candidates": 14,
+    "facility_candidates": 10,
+    "location_candidates": 10,
+    "project_or_policy_candidates": 7,
+    "capacity_candidates": 22,
+    "component_candidates": 18,
+    "process_candidates": 19,
+    "equipment_candidates": 11,
+    "qualification_candidates": 8,
+    "relation_candidates": 10,
+    "count_basis": {
+      "entity": "14 explicit knowledge-graph seed rows",
+      "facility_and_location": "10 rows in the atlas Entity / facility table; location is a region candidate, not geocoded facility identity",
+      "project_or_policy": "7 seed rows with planned, legislated, or setup/unknown project-policy status",
+      "capacity": "10 numeric seed rows + 9 atlas direct-capacity rows + 3 scale-model scenario rows; not exact-deduped across source views",
+      "component": "18 atlas demand-item rows",
+      "process": "11 atlas BOP/process rows + 8 upstream workstream rows",
+      "equipment": "11 atlas BOP rows containing equipment/metrology scope",
+      "qualification": "8 upstream process-qualification workstream rows",
+      "relation": "10 atlas relationship-example rows"
+    },
+    "non_deduped_cross_category_sum": 129,
+    "canonical_entity_instances_created": 0
+  },
+  "capacity_claims": {
+    "seed_numeric_capacity_rows": 10,
+    "atlas_direct_capacity_rows": 9,
+    "scale_model_scenarios": 3,
+    "status_tokens_in_seed": {"Known-rated":2,"Planned/rated":1,"Product-spec":1,"UNKNOWN":2,"Planned target":1,"Known-realized":1,"Planned":2,"Unknown/Planned":1,"Measured":2,"Legislated":1},
+    "required_qualified_capacity_fields": ["exact facility","product/process/node/package scope","dated operating evidence","yield and test evidence","customer qualification","material/equipment/sub-tier constraints","recurring throughput and utilization"],
+    "qualified_recurring_capacity_candidates": 0,
+    "effective_capacity_candidates": 0,
+    "nameplate_or_planned_only_candidates": 8,
+    "deployment_proxy_candidates": 2,
+    "policy_target_candidates": 1,
+    "capacity_verdict": "No qualified recurring throughput is promoted from this bounded corpus."
+  },
+  "relation_candidates": {
+    "explicit_relationship_example_rows": 10,
+    "relation_types_seen": ["uses","produces","requires","located_in","owned_by","supplies","qualifies","constrains","substitutes","depends_on"],
+    "canonical_edges_created": 0,
+    "shadow_world_edges_created": 0
+  },
+  "unknown_candidates": {
+    "explicit_atlas_unknown_ledger_rows": 12,
+    "explicit_atlas_unknown_register_rows": 15,
+    "unknown_candidate_rows": 27,
+    "unknown_token_occurrences_after_mirror_dedupe": 109,
+    "promotion_blocked_until": ["dated operating evidence","facility/product scope","yield/test data","customer qualification","sub-tier and material provenance"]
+  },
+  "conflict_candidates": {
+    "explicit_atlas_conflict_ledger_rows": 9,
+    "conflicted_token_occurrences_after_mirror_dedupe": 26,
+    "auto_resolution": "none",
+    "conflict_resolution_status": "preserved for evidence-resolution packets"
+  },
+  "duplicate_malformed_repaired": {
+    "artifact_hash_duplicate_groups": 0,
+    "csv_json_mirror_families": 3,
+    "csv_json_mirror_rows_removed": 29,
+    "duplicate_claims_auto_collapsed_beyond_mirrors": 0,
+    "csv_malformed_rows": 0,
+    "json_parse_errors": 0,
+    "atlas_malformed_table_rows": 0,
+    "repaired_rows": 0,
+    "noncanonical_epistemic_tokens_requiring_normalization": ["LEGISLATED","LEGISLATED/REPORTED"],
+    "manifest_count_anomalies": 1
+  },
+  "canonical_reconciliation": {
+    "target_namespace": "humanoid_india",
+    "registry_manifest": "data/registry/manifest.yaml",
+    "existing_canonical_ids_reused": 0,
+    "new_canonical_ids_created": 0,
+    "staging_links_only": true,
+    "shadow_worlds_created": 0,
+    "canonical_promotions": 0,
+    "unresolved_names_and_facilities_remain_staging": true,
+    "reconciliation_note": "Candidate mentions are to be matched to existing humanoid_india and shared registry identities when evidence permits; this report creates no parallel robotics registry and assigns no canonical identity."
+  },
+  "explicit_blockers": {
+    "facility_presence_neq_qualified_capacity": {
+      "status": "BLOCKED",
+      "reason": "A named factory, campus, or cluster does not establish process qualification, product scope, yield, utilization, customer acceptance, or recurring output.",
+      "required_evidence": ["facility identity and operating date","product/process/package scope","qualification and yield/test records","recurring throughput ledger"]
+    },
+    "nameplate_neq_effective_capacity": {
+      "status": "BLOCKED",
+      "reason": "Rated, announced, planned, allocated, or target throughput cannot be used as effective available capacity without utilization, yield, downtime, allocation, and sub-tier constraints.",
+      "required_evidence": ["dated realized output","yield and scrap","utilization and downtime","allocation/customer commitments","material and equipment constraints"]
+    },
+    "prototype_order_deployment_neq_production": {
+      "status": "BLOCKED",
+      "reason": "Prototype specifications, orders, installations, and policy targets remain separate evidence classes and do not prove domestic qualified manufacturing.",
+      "required_evidence": ["serial production records","domestic site scope","qualified supplier chain","acceptance evidence"]
+    },
+    "zero_promotions": true
+  },
+  "validation": {
+    "json_required": true,
+    "json_validated": true,
+    "report_byte_limit": 61440,
+    "report_size_bytes": 18976,
+    "artifact_hashes_verified_against_raw_zip": true,
+    "manifest_reconciliation_complete": true,
+    "schema_and_row_width_checks_complete": true,
+    "final_status": "READY_FOR_PARENT_REVIEW"
+  }
+}

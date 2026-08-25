@@ -1,0 +1,3967 @@
+{
+  "schema_version": "homi-wave3-corpus-report.v1",
+  "report_identity": {
+    "wave": "wave3",
+    "observed_manus": "manus-08",
+    "campaign_expected_manus": "manus-08",
+    "actual_theme": "Clean energy, batteries, EV, solar, wind, hydrogen, grid, and critical minerals",
+    "generated_from_read_only_sources": true,
+    "report_reference_date": "2026-08-25",
+    "evidence_cutoff": "2026-08-24"
+  },
+  "source_boundaries": {
+    "no_external_browsing": true,
+    "raw_vault_immutable": true,
+    "canonical_pack_not_assumed_truth": true,
+    "no_canonical_changes": true,
+    "no_promotions": true,
+    "candidate_status": "All entities, facilities, projects, capacities, claims, relations, and canonical matches are staging candidates only."
+  },
+  "epistemic_and_semantic_rules": {
+    "allowed_classes": [
+      "MEASURED",
+      "REPORTED",
+      "DERIVED",
+      "ESTIMATED",
+      "MODELLED",
+      "ASSUMPTION",
+      "SCENARIO",
+      "UNKNOWN",
+      "CONFLICTED"
+    ],
+    "project_announcement_is_not_operating_capacity": true,
+    "nameplate_is_not_effective_capacity": true,
+    "facility_presence_is_not_qualified_capability": true,
+    "awarded_capacity_is_not_commissioned": true,
+    "operating_is_not_qualified_or_available": true,
+    "trade_is_not_production_capability": true,
+    "qualified_available_capacity_requires": [
+      "exact site",
+      "product/process/grade scope",
+      "dated operating evidence",
+      "qualification evidence",
+      "yield/utilization deductions",
+      "material/tooling/workforce/sub-tier constraints"
+    ]
+  },
+  "corpus_accounting": {
+    "manifest": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/_meta/manus_corpus_manifest.csv",
+      "row": {
+        "corpus_id": "manus-08",
+        "zip_name": "How to Conduct Thorough Research and Analysis_.zip",
+        "file_count": 12,
+        "status": "OK"
+      }
+    },
+    "raw_zip": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips/How to Conduct Thorough Research and Analysis_.zip",
+      "sha256": "8ed76f26b8ec24f711ff3efd09d2658d463ae7575ae2a8575cc1fcfc0c104a8d",
+      "expected_sha256": "8ed76f26b8ec24f711ff3efd09d2658d463ae7575ae2a8575cc1fcfc0c104a8d",
+      "sha256_match": true,
+      "zip_member_count": 12,
+      "zip_test_result": "PASS",
+      "extracted_member_count": 12,
+      "member_names_and_sha256_exact": true,
+      "archive_integrity_report_ref": "research/homi/staging/archive_integrity.json"
+    },
+    "extracted_root": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-08",
+    "artifacts": [
+      {
+        "path": "manus-08/01_baseline_sources.md",
+        "format": "markdown",
+        "bytes": 29711,
+        "sha256": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+        "raw_zip_member": "01_baseline_sources.md",
+        "raw_zip_member_bytes": 29711,
+        "raw_zip_member_sha256": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+        "raw_zip_match": true,
+        "line_count": 194,
+        "row_count": null,
+        "role": "validated_source_memo",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+          "post_condition_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/FORGE WORLD Clean-Energy Industrial Research Package.md",
+        "format": "markdown",
+        "bytes": 2224,
+        "sha256": "bda8cbffda9944cae861fcc431565476a7c4388adb1eb790ac3ad18724e036cf",
+        "raw_zip_member": "FORGE WORLD Clean-Energy Industrial Research Package.md",
+        "raw_zip_member_bytes": 2224,
+        "raw_zip_member_sha256": "bda8cbffda9944cae861fcc431565476a7c4388adb1eb790ac3ad18724e036cf",
+        "raw_zip_match": true,
+        "line_count": 20,
+        "row_count": null,
+        "role": "context_memo",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "bda8cbffda9944cae861fcc431565476a7c4388adb1eb790ac3ad18724e036cf",
+          "post_condition_hash": "bda8cbffda9944cae861fcc431565476a7c4388adb1eb790ac3ad18724e036cf",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/FORGE WORLD Research \u2014 Baseline Findings.md",
+        "format": "markdown",
+        "bytes": 29711,
+        "sha256": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+        "raw_zip_member": "FORGE WORLD Research \u2014 Baseline Findings.md",
+        "raw_zip_member_bytes": 29711,
+        "raw_zip_member_sha256": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+        "raw_zip_match": true,
+        "line_count": 194,
+        "row_count": null,
+        "role": "validated_source_memo_duplicate",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+          "post_condition_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/FORGE WORLD \u2014 Industrial Systems Research Package.md",
+        "format": "markdown",
+        "bytes": 73800,
+        "sha256": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+        "raw_zip_member": "FORGE WORLD \u2014 Industrial Systems Research Package.md",
+        "raw_zip_member_bytes": 73800,
+        "raw_zip_member_sha256": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+        "raw_zip_match": true,
+        "line_count": 523,
+        "row_count": null,
+        "role": "industrial_systems_memo",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+          "post_condition_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/FORGE_WORLD_06_Clean_Energy_Industrial_Systems_Research.md",
+        "format": "markdown",
+        "bytes": 73800,
+        "sha256": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+        "raw_zip_member": "FORGE_WORLD_06_Clean_Energy_Industrial_Systems_Research.md",
+        "raw_zip_member_bytes": 73800,
+        "raw_zip_member_sha256": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+        "raw_zip_match": true,
+        "line_count": 523,
+        "row_count": null,
+        "role": "industrial_systems_memo_duplicate",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+          "post_condition_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/entity_record_extraction.csv",
+        "format": "csv",
+        "bytes": 198014,
+        "sha256": "293142d8117854025c13d5cfc3a3c7c614c234ca9ac0cc3c6434864d35ac8387",
+        "raw_zip_member": "entity_record_extraction.csv",
+        "raw_zip_member_bytes": 198014,
+        "raw_zip_member_sha256": "293142d8117854025c13d5cfc3a3c7c614c234ca9ac0cc3c6434864d35ac8387",
+        "raw_zip_match": true,
+        "line_count": 9,
+        "row_count": 8,
+        "role": "structured_entity_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Source Memo",
+            "Entity Records",
+            "Geographic Clusters",
+            "Relationships And Shared Capabilities",
+            "Verification Queue",
+            "Error"
+          ],
+          "rows_excluding_header": 8
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "293142d8117854025c13d5cfc3a3c7c614c234ca9ac0cc3c6434864d35ac8387",
+          "post_condition_hash": "293142d8117854025c13d5cfc3a3c7c614c234ca9ac0cc3c6434864d35ac8387",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/entity_record_extraction.json",
+        "format": "json",
+        "bytes": 200128,
+        "sha256": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+        "raw_zip_member": "entity_record_extraction.json",
+        "raw_zip_member_bytes": 200128,
+        "raw_zip_member_sha256": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+        "raw_zip_match": true,
+        "line_count": 92,
+        "row_count": 8,
+        "role": "structured_entity_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+          "post_condition_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/extract_industrial_entity_records.json",
+        "format": "json",
+        "bytes": 200128,
+        "sha256": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+        "raw_zip_member": "extract_industrial_entity_records.json",
+        "raw_zip_member_bytes": 200128,
+        "raw_zip_member_sha256": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+        "raw_zip_match": true,
+        "line_count": 92,
+        "row_count": 8,
+        "role": "structured_entity_export_duplicate",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+          "post_condition_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/pasted_content.txt",
+        "format": "txt",
+        "bytes": 4426,
+        "sha256": "6b9ee7cd9fd0821810b85b6f47178ddb9dee5c4cb3e1cc9b0d682761b0f95c7f",
+        "raw_zip_member": "pasted_content.txt",
+        "raw_zip_member_bytes": 4426,
+        "raw_zip_member_sha256": "6b9ee7cd9fd0821810b85b6f47178ddb9dee5c4cb3e1cc9b0d682761b0f95c7f",
+        "raw_zip_match": true,
+        "line_count": 41,
+        "row_count": null,
+        "role": "prompt_not_evidence",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "prompt_or_instruction_text": true
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "6b9ee7cd9fd0821810b85b6f47178ddb9dee5c4cb3e1cc9b0d682761b0f95c7f",
+          "post_condition_hash": "6b9ee7cd9fd0821810b85b6f47178ddb9dee5c4cb3e1cc9b0d682761b0f95c7f",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/raw_workstream_research.csv",
+        "format": "csv",
+        "bytes": 170897,
+        "sha256": "fbf2e4b6955e81d92bc526d69af7082915f66b6957e1252d897e5ae0c252a41c",
+        "raw_zip_member": "raw_workstream_research.csv",
+        "raw_zip_member_bytes": 170897,
+        "raw_zip_member_sha256": "fbf2e4b6955e81d92bc526d69af7082915f66b6957e1252d897e5ae0c252a41c",
+        "raw_zip_match": true,
+        "line_count": 9,
+        "row_count": 8,
+        "role": "structured_workstream_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Architecture And Processes",
+            "Companies Facilities And Capacity",
+            "Materials Dependencies And Bottlenecks",
+            "Sources",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "fbf2e4b6955e81d92bc526d69af7082915f66b6957e1252d897e5ae0c252a41c",
+          "post_condition_hash": "fbf2e4b6955e81d92bc526d69af7082915f66b6957e1252d897e5ae0c252a41c",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/raw_workstream_research.json",
+        "format": "json",
+        "bytes": 173178,
+        "sha256": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+        "raw_zip_member": "raw_workstream_research.json",
+        "raw_zip_member_bytes": 173178,
+        "raw_zip_member_sha256": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+        "raw_zip_match": true,
+        "line_count": 100,
+        "row_count": 8,
+        "role": "structured_workstream_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+          "post_condition_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-08/research_industrial_workstreams.json",
+        "format": "json",
+        "bytes": 173178,
+        "sha256": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+        "raw_zip_member": "research_industrial_workstreams.json",
+        "raw_zip_member_bytes": 173178,
+        "raw_zip_member_sha256": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+        "raw_zip_match": true,
+        "line_count": 100,
+        "row_count": 8,
+        "role": "structured_workstream_export_duplicate",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+          "post_condition_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "repair_actions": []
+        }
+      }
+    ]
+  },
+  "schemas_and_rows": {
+    "artifact_schemas": [
+      {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-08/FORGE WORLD Clean-Energy Industrial Research Package.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-08/FORGE WORLD Research \u2014 Baseline Findings.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-08/FORGE WORLD \u2014 Industrial Systems Research Package.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-08/FORGE_WORLD_06_Clean_Energy_Industrial_Systems_Research.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-08/entity_record_extraction.csv",
+        "format": "csv",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Source Memo",
+            "Entity Records",
+            "Geographic Clusters",
+            "Relationships And Shared Capabilities",
+            "Verification Queue",
+            "Error"
+          ],
+          "rows_excluding_header": 8
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-08/entity_record_extraction.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-08/extract_industrial_entity_records.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-08/pasted_content.txt",
+        "format": "txt",
+        "schema": {
+          "prompt_or_instruction_text": true
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-08/raw_workstream_research.csv",
+        "format": "csv",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Architecture And Processes",
+            "Companies Facilities And Capacity",
+            "Materials Dependencies And Bottlenecks",
+            "Sources",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-08/raw_workstream_research.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-08/research_industrial_workstreams.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "rows": 8
+      }
+    ],
+    "structured_rows": {
+      "entity_record_extraction.csv": 8,
+      "entity_record_extraction.json": 8,
+      "extract_industrial_entity_records.json": 8,
+      "raw_workstream_research.csv": 8,
+      "raw_workstream_research.json": 8,
+      "research_industrial_workstreams.json": 8
+    },
+    "conditioning_references": [
+      {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+        "post_condition_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/FORGE WORLD Clean-Energy Industrial Research Package.md",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "bda8cbffda9944cae861fcc431565476a7c4388adb1eb790ac3ad18724e036cf",
+        "post_condition_hash": "bda8cbffda9944cae861fcc431565476a7c4388adb1eb790ac3ad18724e036cf",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/FORGE WORLD Research \u2014 Baseline Findings.md",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+        "post_condition_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/FORGE WORLD \u2014 Industrial Systems Research Package.md",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+        "post_condition_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/FORGE_WORLD_06_Clean_Energy_Industrial_Systems_Research.md",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+        "post_condition_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/entity_record_extraction.csv",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "293142d8117854025c13d5cfc3a3c7c614c234ca9ac0cc3c6434864d35ac8387",
+        "post_condition_hash": "293142d8117854025c13d5cfc3a3c7c614c234ca9ac0cc3c6434864d35ac8387",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/entity_record_extraction.json",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+        "post_condition_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/extract_industrial_entity_records.json",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+        "post_condition_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/pasted_content.txt",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "6b9ee7cd9fd0821810b85b6f47178ddb9dee5c4cb3e1cc9b0d682761b0f95c7f",
+        "post_condition_hash": "6b9ee7cd9fd0821810b85b6f47178ddb9dee5c4cb3e1cc9b0d682761b0f95c7f",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/raw_workstream_research.csv",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "fbf2e4b6955e81d92bc526d69af7082915f66b6957e1252d897e5ae0c252a41c",
+        "post_condition_hash": "fbf2e4b6955e81d92bc526d69af7082915f66b6957e1252d897e5ae0c252a41c",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/raw_workstream_research.json",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+        "post_condition_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-08/research_industrial_workstreams.json",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+        "post_condition_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "repair_actions": []
+      }
+    ],
+    "deduplication": {
+      "physical_structured_rows": 48,
+      "logical_records_after_csv_json_dedupe": 16,
+      "duplicate_records_removed": 32,
+      "exact_duplicate_artifact_pairs": 4,
+      "exact_duplicate_artifacts_removed_from_evidence": 4,
+      "duplicate_groups": [
+        {
+          "logical_record_kind": "entity_records",
+          "artifacts": [
+            "manus-08/entity_record_extraction.csv",
+            "manus-08/entity_record_extraction.json",
+            "manus-08/extract_industrial_entity_records.json"
+          ],
+          "logical_rows": 8
+        },
+        {
+          "logical_record_kind": "workstream_records",
+          "artifacts": [
+            "manus-08/raw_workstream_research.csv",
+            "manus-08/raw_workstream_research.json",
+            "manus-08/research_industrial_workstreams.json"
+          ],
+          "logical_rows": 8
+        },
+        {
+          "logical_record_kind": "baseline_memo",
+          "artifacts": [
+            "manus-08/01_baseline_sources.md",
+            "manus-08/FORGE WORLD Research \u2014 Baseline Findings.md"
+          ]
+        },
+        {
+          "logical_record_kind": "industrial_systems_memo",
+          "artifacts": [
+            "manus-08/FORGE WORLD \u2014 Industrial Systems Research Package.md",
+            "manus-08/FORGE_WORLD_06_Clean_Energy_Industrial_Systems_Research.md"
+          ]
+        }
+      ],
+      "rule": "CSV/JSON mirrors and exact duplicate hashes are counted once for logical evidence; all artifact hashes remain in accounting."
+    }
+  },
+  "source_inventory": {
+    "unique_original_urls": 165,
+    "baseline_numbered_source_sections": 28,
+    "structured_workstream_rows_with_sources": 8,
+    "structured_entity_rows_with_sources": 8,
+    "bounded_sample_count": 24,
+    "source_urls_are_unverified_tokens": true
+  },
+  "source_candidates": [
+    {
+      "source_id": "src_manus08_001",
+      "original_url": "https://www.iea.org/reports/the-state-of-clean-technology-manufacturing/analysis",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L13",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_002",
+      "original_url": "https://www.iea.org/reports/energy-technology-perspectives-2026/executive-summary",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L28",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_003",
+      "original_url": "https://mnre.gov.in/en/hydrogen-overview/",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L41",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_004",
+      "original_url": "https://www.iea.org/reports/sustainable-and-responsible-critical-mineral-supply-chains",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L49",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_005",
+      "original_url": "https://www.iea.org/reports/batteries-and-secure-energy-transitions",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L70",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_006",
+      "original_url": "https://www.iea.org/reports/batteries-and-secure-energy-transitions/executive-summary",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L74",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_007",
+      "original_url": "https://heavyindustries.gov.in/en/pli-scheme-national-programme-advanced-chemistry-cell-acc-battery-storage",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L78",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_008",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2224542",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L82",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_009",
+      "original_url": "https://www.iea.org/reports/solar-pv-global-supply-chains",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L92",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_010",
+      "original_url": "https://mnre.gov.in/en/production-linked-incentive-pli/",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L96",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_011",
+      "original_url": "https://www.energy.gov/cmei/systems/wind-manufacturing-and-supply-chain",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L106",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_012",
+      "original_url": "https://www.iea.org/reports/energy-technology-perspectives-2026/supply-chain-risks-and-industrial-competitiveness",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L110",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_013",
+      "original_url": "https://www.gwec.net/reports/globalwindreport/2025",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L114",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_014",
+      "original_url": "https://mnre.gov.in/en/wind-manufacturing/",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L118",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_015",
+      "original_url": "https://www.iea.org/energy-system/low-emissions-fuels/electrolysers",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L125",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_016",
+      "original_url": "https://www.iea.org/reports/global-hydrogen-review-2025/executive-summary",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L129",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_017",
+      "original_url": "https://mnre.gov.in/en/national-green-hydrogen-mission/",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L133",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_018",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2204464",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L137",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_019",
+      "original_url": "https://www.iea.org/reports/building-the-future-transmission-grid",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L151",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_020",
+      "original_url": "https://www.iea.org/reports/electricity-grids-and-secure-energy-transitions",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L155",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_021",
+      "original_url": "https://www.osti.gov/biblio/1871501",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L159",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_022",
+      "original_url": "https://cea.nic.in/transmission-reports/?lang=en",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L163",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_023",
+      "original_url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025/executive-summary",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L170",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus08_024",
+      "original_url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025/overview-of-outlook-for-key-minerals",
+      "artifact": "manus-08/01_baseline_sources.md",
+      "exact_locator": "manus-08/01_baseline_sources.md:L174",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "claim_candidates": [
+    {
+      "claim_id": "clm_manus08_01",
+      "subject": "ACC PLI beneficiaries",
+      "predicate": "awarded_vs_installed_capacity",
+      "observed_claim": "As of 31 Dec 2025, 40 GWh was awarded to four firms but only 1 GWh was reported installed by Ola; awards are not commissioned or qualified output.",
+      "source_locator": "01_baseline_sources.md:L81-L86",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2224542",
+      "geography": "India",
+      "date_or_period": "2025-12-31",
+      "scope": "ACC cell manufacturing",
+      "epistemic_class": "REPORTED",
+      "caveat": "Awarded/nameplate and installed states are separate; qualification and available good output are not stated.",
+      "unknowns": [
+        "Current qualified output by beneficiary, chemistry, site, yield, and customer approval."
+      ],
+      "conflicts": [
+        "Parallel memo claims of commissioned Reliance/other capacities conflict with the PIB reply."
+      ],
+      "entity_resolution": {
+        "observed_entities": [
+          "Reliance New Energy",
+          "Ola Electric",
+          "ACC PLI four beneficiaries"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Obtain beneficiary filings, site commissioning records, production/yield data, and customer qualification packs.",
+      "capacity_type": "awarded_or_installed",
+      "value": "40 awarded; 1 installed",
+      "unit": "GWh/yr",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_02",
+      "subject": "Additional Indian battery announcements",
+      "predicate": "announced_capacity",
+      "observed_claim": "At least ten other manufacturers had announced about 178 GWh cumulative capacity over the next five years; the memo explicitly says announcements are not commissioned or qualified output.",
+      "source_locator": "01_baseline_sources.md:L83-L86",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2224542",
+      "geography": "India",
+      "date_or_period": "2026-2031 target window",
+      "scope": "battery-cell projects",
+      "epistemic_class": "REPORTED",
+      "caveat": "Announcement count and target horizon do not establish project FID, construction, commissioning, or qualified throughput.",
+      "unknowns": [
+        "Project-by-project site, FID, construction, commissioning, yield, and offtake."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Indian cell project announcements"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Revalidate each project against dated primary filings and facility evidence.",
+      "capacity_type": "announced_nameplate",
+      "value": "~178",
+      "unit": "GWh cumulative",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_03",
+      "subject": "Global battery manufacturing",
+      "predicate": "nameplate_vs_throughput",
+      "observed_claim": "Global installed nameplate capacity exceeded 3.1 TWh in late 2024 while actual throughput was estimated at about 60-70%.",
+      "source_locator": "entity_record_extraction.csv:row 2 Companies Facilities And Capacity",
+      "original_url": "https://www.iea.org/reports/solar-pv-global-supply-chains",
+      "geography": "Global",
+      "date_or_period": "late 2024",
+      "scope": "global cell manufacturing",
+      "epistemic_class": "ESTIMATED",
+      "caveat": "The figure is global and aggregate; plant, chemistry, yield, and qualified automotive output are not resolved.",
+      "unknowns": [
+        "Facility-level current throughput and qualified available output."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Global battery manufacturing capacity"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Collect audited plant-level production and qualification evidence before applying to India.",
+      "capacity_type": "global_nameplate_and_utilization",
+      "value": ">3.1 TWh; 60-70% estimated",
+      "unit": "TWh / utilization",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_04",
+      "subject": "Battery cell production process",
+      "predicate": "process_requirement",
+      "observed_claim": "Electrode coating, dry-room assembly, formation/aging, and in-line metrology are distinct process gates; moisture and qualification controls are decision-sensitive.",
+      "source_locator": "entity_record_extraction.csv:row 2 Entity Records; Architecture And Processes",
+      "original_url": "https://www.iea.org/reports/batteries-and-secure-energy-transitions",
+      "geography": "Global/India",
+      "date_or_period": "process description",
+      "scope": "cell manufacturing BOP",
+      "epistemic_class": "MODELLED",
+      "caveat": "Process taxonomy is not evidence that a named facility possesses or qualifies each capability.",
+      "unknowns": [
+        "Facility-specific equipment, recipes, yield, and automotive qualification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Battery-cell manufacturing",
+          "dry-room line",
+          "formation bank",
+          "metrology"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Map each candidate facility to equipment, process route, qualification standard, and current yield.",
+      "capacity_type": null,
+      "value": null,
+      "unit": null,
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_05",
+      "subject": "Solar PV PLI tranche I",
+      "predicate": "awarded_capacity",
+      "observed_claim": "Tranche I awarded 8,737 MW to three bidders for fully integrated solar-PV manufacturing.",
+      "source_locator": "01_baseline_sources.md:L96-L100",
+      "original_url": "https://mnre.gov.in/en/production-linked-incentive-pli/",
+      "geography": "India",
+      "date_or_period": "2023 scheme page; current state unknown",
+      "scope": "polysilicon/ingot/wafer/cell/module",
+      "epistemic_class": "REPORTED",
+      "caveat": "Awarded capacity is not commissioned or qualified throughput and may cover multiple process stages.",
+      "unknowns": [
+        "Current facility stage, process integration, product qualification, and operating output."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "MNRE",
+          "solar PV PLI tranche I"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Reconcile award, construction, commissioning, and ALMM/quality evidence per facility.",
+      "capacity_type": "awarded_nameplate",
+      "value": "8737",
+      "unit": "MW",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_06",
+      "subject": "Solar PV PLI tranche II",
+      "predicate": "letter_of_award_capacity",
+      "observed_claim": "Tranche II issued LoAs to 11 bidders for 39,600 MW of fully or partially integrated manufacturing.",
+      "source_locator": "01_baseline_sources.md:L96-L100",
+      "original_url": "https://mnre.gov.in/en/production-linked-incentive-pli/",
+      "geography": "India",
+      "date_or_period": "2023 scheme page; current state unknown",
+      "scope": "solar PV manufacturing",
+      "epistemic_class": "REPORTED",
+      "caveat": "LoA is a programme state, not operating output; module-only versus upstream integration must be preserved.",
+      "unknowns": [
+        "Facility and process-stage status, yield, and qualified product output."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "MNRE",
+          "solar PV PLI tranche II"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Collect bidder/site-level status and current qualification evidence.",
+      "capacity_type": "awarded_nameplate",
+      "value": "39600",
+      "unit": "MW",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_07",
+      "subject": "Indian wind manufacturing",
+      "predicate": "domestic_nameplate_capacity",
+      "observed_claim": "MNRE reports about 18,000 MW/year domestic wind-turbine production capacity, 70-80% indigenisation, and about 14 companies; RLMM/ALMM-Wind certification is a qualification gate.",
+      "source_locator": "01_baseline_sources.md:L118-L120",
+      "original_url": "https://mnre.gov.in/en/wind-manufacturing/",
+      "geography": "India",
+      "date_or_period": "2026 page update",
+      "scope": "wind turbines and components",
+      "epistemic_class": "REPORTED",
+      "caveat": "Official reported capacity is not independently audited effective or available qualified throughput.",
+      "unknowns": [
+        "Plant-level utilization, model/type certification, nacelle/hub facility evidence, and current qualified output."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "MNRE",
+          "RLMM/ALMM-Wind listed facilities"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Join current ALMM-Wind records to dated plant output and qualification validity.",
+      "capacity_type": "domestic_nameplate",
+      "value": "18000",
+      "unit": "MW/year",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_08",
+      "subject": "Global electrolyser manufacturing",
+      "predicate": "nominal_manufacturing_capacity",
+      "observed_claim": "Electrolyser manufacturing capacity reached 25 GW/year in 2023 based on nominal facility size from company announcements; only a small portion of the pipeline had FID/construction.",
+      "source_locator": "01_baseline_sources.md:L125-L127",
+      "original_url": "https://www.iea.org/energy-system/low-emissions-fuels/electrolysers",
+      "geography": "Global",
+      "date_or_period": "2023; pipeline to 2030",
+      "scope": "electrolyser stacks/systems",
+      "epistemic_class": "ESTIMATED",
+      "caveat": "Nominal announced facility size is not operating or qualified system throughput.",
+      "unknowns": [
+        "Factory-level operating rate, technology stack, standards, service, and qualified delivery."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Global electrolyser manufacturers"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Replace announcement-based capacity with facility-level audited output and qualification records.",
+      "capacity_type": "announced_nameplate",
+      "value": "25",
+      "unit": "GW/year",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_09",
+      "subject": "India green-hydrogen mission awards",
+      "predicate": "awarded_capacity",
+      "observed_claim": "Government reported 15 companies awarded 3,000 MW/year electrolyser manufacturing and 18 companies awarded 862,000 tonnes/year green-hydrogen production capacity plus 20,000 tonnes/year refinery procurement.",
+      "source_locator": "01_baseline_sources.md:L133-L138",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2204464",
+      "geography": "India",
+      "date_or_period": "2025-12-16 awards; targets through 2030",
+      "scope": "electrolysers and hydrogen production",
+      "epistemic_class": "REPORTED",
+      "caveat": "Awards are not commissioned, operating, qualified, or available supply.",
+      "unknowns": [
+        "Company/site identity, stack technology, commissioning, offtake, purity, and operating output."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "MNRE",
+          "BHEL/electrolyser awardees",
+          "hydrogen projects"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Audit awardee sites, FID/construction, commissioning, quality certificates, and offtake contracts.",
+      "capacity_type": "awarded_nameplate",
+      "value": "3000; 862000; 20000",
+      "unit": "MW/year; tonnes/year",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_10",
+      "subject": "National Green Hydrogen Mission",
+      "predicate": "policy_target",
+      "observed_claim": "India mission outlay is INR 19,744 crore with a target of 5 million metric tonnes annual green-hydrogen production capacity.",
+      "source_locator": "01_baseline_sources.md:L41-L47",
+      "original_url": "https://mnre.gov.in/en/hydrogen-overview/",
+      "geography": "India",
+      "date_or_period": "launched 2023; target horizon not a current output",
+      "scope": "policy target",
+      "epistemic_class": "REPORTED",
+      "caveat": "Policy target is a scenario/programme objective, not operating supply.",
+      "unknowns": [
+        "Project-level commissioning, renewable-energy matching, purity, cost, and offtake."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "MNRE",
+          "National Green Hydrogen Mission"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Track project-level commissioning and certified production against the mission target.",
+      "capacity_type": "programme_target",
+      "value": "5",
+      "unit": "Mt/year",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_11",
+      "subject": "Transmission evidence base",
+      "predicate": "measurement_source",
+      "observed_claim": "CEA publishes monthly 220-kV-and-above substation, line, and project completion/progress reports suitable for separating commissioned and under-construction assets.",
+      "source_locator": "01_baseline_sources.md:L163-L164",
+      "original_url": "https://cea.nic.in/transmission-reports/?lang=en",
+      "geography": "India",
+      "date_or_period": "July 2026 reporting cycle cited",
+      "scope": "grid transmission",
+      "epistemic_class": "MEASURED",
+      "caveat": "The source establishes a measurement pathway, not a consolidated current available-capacity total in this corpus.",
+      "unknowns": [
+        "Latest asset-level rows, energization dates, equipment capability, and available transfer capacity."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "CEA",
+          "India transmission assets"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Parse dated CEA asset reports into commissioned/under-construction/qualified datasets.",
+      "capacity_type": "measurement_source",
+      "value": null,
+      "unit": null,
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_12",
+      "subject": "Critical-mineral refining concentration",
+      "predicate": "upstream_dependency",
+      "observed_claim": "IEA reports high concentration in lithium, cobalt, graphite, and rare-earth refining, with China supplying large shares in the cited 2024/2025 analysis.",
+      "source_locator": "01_baseline_sources.md:L170-L179",
+      "original_url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025/executive-summary",
+      "geography": "Global/India",
+      "date_or_period": "2024-2025 source-dated outlook",
+      "scope": "lithium/cobalt/graphite/rare-earth chains",
+      "epistemic_class": "ESTIMATED",
+      "caveat": "Reserve, mine, concentrate, refined grade, and qualified battery material are distinct states.",
+      "unknowns": [
+        "India facility-level battery-grade output, purity, recovery, and qualification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "lithium refining",
+          "graphite processing",
+          "rare-earth separation"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Obtain commodity-level facility data and purity/qualification evidence.",
+      "capacity_type": "upstream_concentration",
+      "value": "various high shares",
+      "unit": "percent",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_13",
+      "subject": "Reliance new-energy complex",
+      "predicate": "company_plan",
+      "observed_claim": "Reliance reports a 5,000-acre Jamnagar complex intended to house PV, battery, hydrogen, electrolyser, power-electronics, and wind-related factories; capacities/status remain UNKNOWN without separate evidence.",
+      "source_locator": "01_baseline_sources.md:L185-L187",
+      "original_url": "https://www.ril.com/businesses/new-energy-materials",
+      "geography": "Jamnagar, Gujarat, India",
+      "date_or_period": "2026 company page; targets include 2025",
+      "scope": "multi-technology project/facility plan",
+      "epistemic_class": "REPORTED",
+      "caveat": "Company plan and facility footprint are not proof of commissioned or qualified output.",
+      "unknowns": [
+        "Actual facility boundaries, commissioning, process route, and qualified throughput."
+      ],
+      "conflicts": [
+        "Company-reported plan conflicts with any unstaged assumption of current commissioned capacity."
+      ],
+      "entity_resolution": {
+        "observed_entities": [
+          "Reliance New Energy",
+          "Reliance Dhirubhai Ambani Green Energy Giga Complex"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Request dated construction/commissioning and plant-level qualification evidence.",
+      "capacity_type": "facility_footprint_and_project_nameplate",
+      "value": "5000; 20000",
+      "unit": "acres; MTPA carbon fibre target",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_14",
+      "subject": "JinkoSolar global PV footprint",
+      "predicate": "planned_design_capacity",
+      "observed_claim": "JinkoSolar reports cumulative shipments around 400 GW and planned/design capacity by end-2026 of 120 GW wafers, 95 GW cells, and 130 GW modules.",
+      "source_locator": "01_baseline_sources.md:L189-L191",
+      "original_url": "https://www.jinkosolar.com/en/site/aboutus",
+      "geography": "Global",
+      "date_or_period": "Q1/end-2026 company report",
+      "scope": "PV wafers/cells/modules",
+      "epistemic_class": "REPORTED",
+      "caveat": "Company-reported design/nameplate capacity is not audited plant-level qualified throughput.",
+      "unknowns": [
+        "Plant-level operating rate, product qualification, and geography-specific output."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "JinkoSolar",
+          "JinkoSolar global manufacturing bases"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Reconcile company design claims with dated plant output and quality certifications.",
+      "capacity_type": "planned_nameplate",
+      "value": "120;95;130",
+      "unit": "GW/year",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_15",
+      "subject": "BHEL-thyssenkrupp nucera collaboration",
+      "predicate": "localisation_plan",
+      "observed_claim": "The companies report phased localisation of alkaline-electrolyser module fabrication in India; no production capacity or commissioned facility is stated.",
+      "source_locator": "01_baseline_sources.md:L193-L195",
+      "original_url": "https://www.thyssenkrupp-nucera.com/newsroom/news-press-releases/thyssenkrupp-nucera-and-bharat-heavy-electricals-limited-sign-strategic-collaboration-to-advance-green-hydrogen-electrolysis-in-india",
+      "geography": "India/Germany",
+      "date_or_period": "2026-07-07 partnership",
+      "scope": "electrolyser module fabrication",
+      "epistemic_class": "REPORTED",
+      "caveat": "Partnership/localisation plan is not a production or qualification record.",
+      "unknowns": [
+        "Site, equipment, technology-transfer milestones, output, and certification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "BHEL",
+          "thyssenkrupp nucera",
+          "electrolyser manufacturing"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Collect signed scope, site, commissioning milestones, and product qualification evidence.",
+      "capacity_type": "partnership_project",
+      "value": null,
+      "unit": null,
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus08_16",
+      "subject": "Indian battery canonical objective",
+      "predicate": "canonical_pack_alignment",
+      "observed_claim": "The existing battery_gwh_india pack frames 40 GWh/year of 80-kWh packs by 2030; this corpus supplies project and process evidence but does not prove that objective is operating qualified supply.",
+      "source_locator": "packs/battery_gwh_india.yaml:pack_id/title; data/registry/manifest.yaml:cap:battery-cell",
+      "original_url": null,
+      "geography": "India",
+      "date_or_period": "pack target by 2030",
+      "scope": "canonical pack staging alignment",
+      "epistemic_class": "MODELLED",
+      "caveat": "Pack objective, awarded/project capacity, installed output, qualified output, and available output remain separate clocks.",
+      "unknowns": [
+        "Current India cell/pack qualified output, chemistry/form-factor fit, upstream material qualification, and available capacity."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "battery_gwh_india",
+          "Battery-cell manufacturing",
+          "Battery-pack integration"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source locator only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Use the existing pack and canonical IDs only as reconciliation anchors; require evidence before promotion.",
+      "capacity_type": "canonical_pack_objective",
+      "value": "40",
+      "unit": "GWh/year",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "entity_candidates": {
+    "organizations": [
+      {
+        "candidate_id": "homi-candidate:d517191a67e643971927",
+        "observed_name": "CATL (Contemporary Amperex Technology Co., Ltd.)",
+        "normalized_name": "catl (contemporary amperex technology co., ltd.)",
+        "entity_type": "organization",
+        "geography": "Ningde, China",
+        "observed_role": "battery-cell manufacturer",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:e7ac41078ee39b3116fa",
+        "observed_name": "LG Energy Solution (LGES)",
+        "normalized_name": "lg energy solution (lges)",
+        "entity_type": "organization",
+        "geography": "South Korea/Poland/USA",
+        "observed_role": "battery-cell manufacturer",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:de635a959070ac513e2c",
+        "observed_name": "BYD (FinDreams)",
+        "normalized_name": "byd (findreams)",
+        "entity_type": "organization",
+        "geography": "China",
+        "observed_role": "battery-cell manufacturer",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:5d737f1950561082fe6e",
+        "observed_name": "Panasonic",
+        "normalized_name": "panasonic",
+        "entity_type": "organization",
+        "geography": "Japan/USA",
+        "observed_role": "battery-cell manufacturer",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:d00dacd90510d4021845",
+        "observed_name": "Tesla",
+        "normalized_name": "tesla",
+        "entity_type": "organization",
+        "geography": "USA/Germany",
+        "observed_role": "4680 battery-cell and EV manufacturer",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:d61d9a8265597f9a85e0",
+        "observed_name": "Reliance New Energy",
+        "normalized_name": "reliance new energy",
+        "entity_type": "organization",
+        "geography": "Jamnagar, Gujarat, India",
+        "observed_role": "battery/PV/hydrogen project developer",
+        "source_locator": "01_baseline_sources.md:L185-L187",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:8c163cb0f67271c695e8",
+        "observed_name": "Ola Electric",
+        "normalized_name": "ola electric",
+        "entity_type": "organization",
+        "geography": "Krishnagiri, Tamil Nadu, India",
+        "observed_role": "battery-cell and EV manufacturer",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:77c691218d29d29aad1d",
+        "observed_name": "Exide Energy Solutions",
+        "normalized_name": "exide energy solutions",
+        "entity_type": "organization",
+        "geography": "Bengaluru, Karnataka, India",
+        "observed_role": "battery-cell project developer",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:a30d1adab70637e0a87a",
+        "observed_name": "Amara Raja",
+        "normalized_name": "amara raja",
+        "entity_type": "organization",
+        "geography": "Mahbubnagar, Telangana, India",
+        "observed_role": "battery-cell project developer",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:150e203b68d099acb290",
+        "observed_name": "Tata (Agratas)",
+        "normalized_name": "tata (agratas)",
+        "entity_type": "organization",
+        "geography": "Gujarat, India / UK",
+        "observed_role": "captive battery-cell project developer",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:75df1033c412f4718708",
+        "observed_name": "JinkoSolar",
+        "normalized_name": "jinkosolar",
+        "entity_type": "organization",
+        "geography": "China/USA/SE Asia/Middle East",
+        "observed_role": "PV wafer/cell/module manufacturer",
+        "source_locator": "01_baseline_sources.md:L189-L191",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:9dae29eeeb6abfa81ced",
+        "observed_name": "Ministry of New and Renewable Energy (MNRE)",
+        "normalized_name": "ministry of new and renewable energy (mnre)",
+        "entity_type": "organization",
+        "geography": "India",
+        "observed_role": "renewable-energy policy and qualification authority",
+        "source_locator": "01_baseline_sources.md:L96-L100",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:c5f6d9c175b3b7c9f268",
+        "observed_name": "Bharat Heavy Electricals Limited (BHEL)",
+        "normalized_name": "bharat heavy electricals limited (bhel)",
+        "entity_type": "organization",
+        "geography": "India",
+        "observed_role": "electrolyser/grid/heavy-engineering candidate",
+        "source_locator": "01_baseline_sources.md:L193-L195",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:6e68e422737ced28193e",
+        "observed_name": "thyssenkrupp nucera",
+        "normalized_name": "thyssenkrupp nucera",
+        "entity_type": "organization",
+        "geography": "Germany/India collaboration",
+        "observed_role": "electrolyser technology partner",
+        "source_locator": "01_baseline_sources.md:L193-L195",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:86428dba454a0755fbe5",
+        "observed_name": "Vestas",
+        "normalized_name": "vestas",
+        "entity_type": "organization",
+        "geography": "Global/India",
+        "observed_role": "wind-turbine OEM candidate",
+        "source_locator": "entity_record_extraction.csv:row 5 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:44ab5447ee3355d52a47",
+        "observed_name": "Siemens Gamesa",
+        "normalized_name": "siemens gamesa",
+        "entity_type": "organization",
+        "geography": "Global/India",
+        "observed_role": "wind-turbine OEM candidate",
+        "source_locator": "entity_record_extraction.csv:row 5 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:2ec3dc3fca2434eb7b9b",
+        "observed_name": "Suzlon",
+        "normalized_name": "suzlon",
+        "entity_type": "organization",
+        "geography": "India",
+        "observed_role": "wind-turbine OEM candidate",
+        "source_locator": "entity_record_extraction.csv:row 5 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:575e92af09faab438a58",
+        "observed_name": "Thermo Fisher Scientific",
+        "normalized_name": "thermo fisher scientific",
+        "entity_type": "organization",
+        "geography": "USA/global",
+        "observed_role": "battery metrology equipment supplier",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:0dfa0030ada490806647",
+        "observed_name": "Central Electricity Authority (CEA)",
+        "normalized_name": "central electricity authority (cea)",
+        "entity_type": "organization",
+        "geography": "India",
+        "observed_role": "transmission data authority",
+        "source_locator": "01_baseline_sources.md:L163-L164",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:a5678e99e68cbb1883a8",
+        "observed_name": "International Energy Agency (IEA)",
+        "normalized_name": "international energy agency (iea)",
+        "entity_type": "organization",
+        "geography": "Global",
+        "observed_role": "energy technology and supply-chain evidence source",
+        "source_locator": "01_baseline_sources.md:L13-L38",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      }
+    ],
+    "facilities": [
+      {
+        "candidate_id": "homi-candidate:b61c9042caada8066d97",
+        "observed_name": "CATL Ningde facility",
+        "normalized_name": "catl ningde facility",
+        "entity_type": "facility",
+        "geography": "Ningde, Fujian, China",
+        "observed_role": "commissioned/expanding cell facility",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:c137ed66d2e8ad5acfe6",
+        "observed_name": "CATL Yibin facility",
+        "normalized_name": "catl yibin facility",
+        "entity_type": "facility",
+        "geography": "Yibin, Sichuan, China",
+        "observed_role": "commissioned cell facility",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:ae449c1ded00e91e3eb4",
+        "observed_name": "LGES Wroclaw facility",
+        "normalized_name": "lges wroclaw facility",
+        "entity_type": "facility",
+        "geography": "Wroclaw, Poland",
+        "observed_role": "commissioned cell facility",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:7a29ce841e4dba4e176d",
+        "observed_name": "Tesla Giga Nevada",
+        "normalized_name": "tesla giga nevada",
+        "entity_type": "facility",
+        "geography": "Nevada, USA",
+        "observed_role": "4680 cell facility",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:13a6d961667b95b7eccf",
+        "observed_name": "Tesla Giga Texas",
+        "normalized_name": "tesla giga texas",
+        "entity_type": "facility",
+        "geography": "Texas, USA",
+        "observed_role": "ramping 4680 cell facility",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:6cf62f0f0bdb7f9d7131",
+        "observed_name": "Northvolt Ett",
+        "normalized_name": "northvolt ett",
+        "entity_type": "facility",
+        "geography": "Skelleftea, Sweden",
+        "observed_role": "ramping cell facility",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:7526a0342af9834dd451",
+        "observed_name": "Reliance Dhirubhai Ambani Green Energy Giga Complex",
+        "normalized_name": "reliance dhirubhai ambani green energy giga complex",
+        "entity_type": "facility",
+        "geography": "Jamnagar, Gujarat, India",
+        "observed_role": "planned multi-technology giga complex",
+        "source_locator": "01_baseline_sources.md:L185-L187",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:49c19f600da8bb14588e",
+        "observed_name": "Ola Krishnagiri Gigafactory",
+        "normalized_name": "ola krishnagiri gigafactory",
+        "entity_type": "facility",
+        "geography": "Krishnagiri, Tamil Nadu, India",
+        "observed_role": "claimed operating/ramping cell facility",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:cb4aa029b59ea03900fa",
+        "observed_name": "Exide Bengaluru cell facility",
+        "normalized_name": "exide bengaluru cell facility",
+        "entity_type": "facility",
+        "geography": "Bengaluru, Karnataka, India",
+        "observed_role": "under-construction cell facility",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:0340c55596a820528d8a",
+        "observed_name": "Amara Raja Mahbubnagar facility",
+        "normalized_name": "amara raja mahbubnagar facility",
+        "entity_type": "facility",
+        "geography": "Mahbubnagar, Telangana, India",
+        "observed_role": "reported phase-1 cell facility",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:ca326ab2839df9d0d366",
+        "observed_name": "Agratas Gujarat cell project",
+        "normalized_name": "agratas gujarat cell project",
+        "entity_type": "facility",
+        "geography": "Gujarat, India",
+        "observed_role": "FID/construction cell project",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:e266da067afb33419e8e",
+        "observed_name": "JinkoSolar global manufacturing bases",
+        "normalized_name": "jinkosolar global manufacturing bases",
+        "entity_type": "facility",
+        "geography": "China/USA/SE Asia/Middle East",
+        "observed_role": "planned/design PV capacity footprint",
+        "source_locator": "01_baseline_sources.md:L189-L191",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:fa9f3294f5c799047069",
+        "observed_name": "MNRE ALMM-Wind listed facilities",
+        "normalized_name": "mnre almm-wind listed facilities",
+        "entity_type": "facility",
+        "geography": "India",
+        "observed_role": "type/quality-certified wind facility set",
+        "source_locator": "01_baseline_sources.md:L118-L120",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:705fb1a68ef3fdd69d33",
+        "observed_name": "BHEL electrolyser manufacturing sites",
+        "normalized_name": "bhel electrolyser manufacturing sites",
+        "entity_type": "facility",
+        "geography": "India",
+        "observed_role": "localisation-plan facility candidate",
+        "source_locator": "01_baseline_sources.md:L193-L195",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:861da2d20d2480a26525",
+        "observed_name": "CEA 220-kV-and-above transmission assets",
+        "normalized_name": "cea 220-kv-and-above transmission assets",
+        "entity_type": "facility",
+        "geography": "India",
+        "observed_role": "commissioned/construction data universe",
+        "source_locator": "01_baseline_sources.md:L163-L164",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:043019edf632d1b996f6",
+        "observed_name": "North American Battery Belt",
+        "normalized_name": "north american battery belt",
+        "entity_type": "facility",
+        "geography": "Midwest/Southeast/Southwest USA",
+        "observed_role": "battery and EV industrial cluster",
+        "source_locator": "entity_record_extraction.csv:row 2 Geographic Clusters",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:63d4e573bbaea77d8fd5",
+        "observed_name": "China battery refining and cell cluster",
+        "normalized_name": "china battery refining and cell cluster",
+        "entity_type": "facility",
+        "geography": "China",
+        "observed_role": "integrated battery materials/cell cluster",
+        "source_locator": "entity_record_extraction.csv:row 2 Geographic Clusters",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:20ef8cdc02424a474e21",
+        "observed_name": "India clean-energy industrial ecosystem",
+        "normalized_name": "india clean-energy industrial ecosystem",
+        "entity_type": "facility",
+        "geography": "India",
+        "observed_role": "cross-workstream cluster candidate",
+        "source_locator": "entity_record_extraction.csv:row 9 Geographic Clusters",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      }
+    ],
+    "clusters": [
+      {
+        "candidate_id": "homi-candidate:4e97181ce76ca665b00b",
+        "observed_name": "China battery materials and cell cluster",
+        "normalized_name": "china battery materials and cell cluster",
+        "entity_type": "industrial_cluster",
+        "geography": "China",
+        "observed_role": "integrated refining, precursor, equipment, and cell manufacturing",
+        "source_locator": "entity_record_extraction.csv:row 2 Geographic Clusters",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:c5e18eb624289c454a26",
+        "observed_name": "North American Battery Belt",
+        "normalized_name": "north american battery belt",
+        "entity_type": "industrial_cluster",
+        "geography": "USA",
+        "observed_role": "battery/EV manufacturing cluster",
+        "source_locator": "entity_record_extraction.csv:row 2 Geographic Clusters",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:8d54e2743f93020a8ad2",
+        "observed_name": "European battery cluster",
+        "normalized_name": "european battery cluster",
+        "entity_type": "industrial_cluster",
+        "geography": "Europe",
+        "observed_role": "cell manufacturing and automotive supply chain",
+        "source_locator": "entity_record_extraction.csv:row 2 Geographic Clusters",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:50c67a77197e58a6f5e7",
+        "observed_name": "Jamnagar new-energy cluster",
+        "normalized_name": "jamnagar new-energy cluster",
+        "entity_type": "industrial_cluster",
+        "geography": "Gujarat, India",
+        "observed_role": "battery/PV/hydrogen/power-electronics project ecosystem",
+        "source_locator": "01_baseline_sources.md:L185-L187",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:2c0faac734b5f1658548",
+        "observed_name": "Tamil Nadu EV and cell cluster",
+        "normalized_name": "tamil nadu ev and cell cluster",
+        "entity_type": "industrial_cluster",
+        "geography": "Tamil Nadu, India",
+        "observed_role": "EV and battery manufacturing",
+        "source_locator": "entity_record_extraction.csv:row 2 Geographic Clusters",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:a4bbb4d105f27492dedb",
+        "observed_name": "Gujarat semiconductor and battery cluster",
+        "normalized_name": "gujarat semiconductor and battery cluster",
+        "entity_type": "industrial_cluster",
+        "geography": "Gujarat, India",
+        "observed_role": "PV/battery/grid industrial candidate",
+        "source_locator": "entity_record_extraction.csv:row 9 Geographic Clusters",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:e025758e00b5b41c0f4b",
+        "observed_name": "India wind manufacturing network",
+        "normalized_name": "india wind manufacturing network",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "observed_role": "wind OEM, component, certification network",
+        "source_locator": "01_baseline_sources.md:L118-L120",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:cb79a6ec76cfcb845257",
+        "observed_name": "India hydrogen and electrolyser network",
+        "normalized_name": "india hydrogen and electrolyser network",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "observed_role": "policy, electrolyser, hydrogen project network",
+        "source_locator": "01_baseline_sources.md:L133-L138",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:26cb00f07d94f04798c6",
+        "observed_name": "India transmission equipment network",
+        "normalized_name": "india transmission equipment network",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "observed_role": "transformer, HVDC, switchgear, and transmission network",
+        "source_locator": "01_baseline_sources.md:L151-L164",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:b172d9d2d0874581c9c5",
+        "observed_name": "Global critical-mineral refining chokepoints",
+        "normalized_name": "global critical-mineral refining chokepoints",
+        "entity_type": "industrial_cluster",
+        "geography": "Global",
+        "observed_role": "lithium/cobalt/graphite/rare-earth refining concentration",
+        "source_locator": "01_baseline_sources.md:L170-L179",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      }
+    ],
+    "capabilities": [
+      {
+        "candidate_id": "homi-candidate:36b5015e58152f00f172",
+        "observed_name": "Battery-cell manufacturing",
+        "normalized_name": "battery-cell manufacturing",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "cell chemistry, electrode, assembly, formation, aging",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_match_candidates": [
+          "cap:battery-cell"
+        ],
+        "canonical_target_status": "staging_match_only"
+      },
+      {
+        "candidate_id": "homi-candidate:4175ab9f3b26d5b18050",
+        "observed_name": "Battery-pack integration",
+        "normalized_name": "battery-pack integration",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "cell screening, pack/BMS/thermal/safety integration",
+        "source_locator": "packs/battery_gwh_india.yaml",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_match_candidates": [
+          "cap:battery-pack-integration"
+        ],
+        "canonical_target_status": "staging_match_only"
+      },
+      {
+        "candidate_id": "homi-candidate:61633d3575d1c8f66bd8",
+        "observed_name": "Precision electric-motor manufacturing",
+        "normalized_name": "precision electric-motor manufacturing",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "motor design, winding, rotor assembly, balancing, acceptance test",
+        "source_locator": "entity_record_extraction.csv:row 3 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_match_candidates": [
+          "cap:electric-motors"
+        ],
+        "canonical_target_status": "staging_match_only"
+      },
+      {
+        "candidate_id": "homi-candidate:f3c7d1954c79d9136954",
+        "observed_name": "Power-electronics manufacturing",
+        "normalized_name": "power-electronics manufacturing",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "inverters, converters, SiC power stages, controls",
+        "source_locator": "entity_record_extraction.csv:row 3 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_match_candidates": [
+          "cap:power-electronics"
+        ],
+        "canonical_target_status": "staging_match_only"
+      },
+      {
+        "candidate_id": "homi-candidate:bf1823e7f6b5e532f65e",
+        "observed_name": "Industrial electronics manufacturing",
+        "normalized_name": "industrial electronics manufacturing",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "control boards, gate drivers, industrial networking, test",
+        "source_locator": "entity_record_extraction.csv:row 3 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_match_candidates": [
+          "cap:industrial-electronics"
+        ],
+        "canonical_target_status": "staging_match_only"
+      },
+      {
+        "candidate_id": "homi-candidate:32efb7f756c033af4e55",
+        "observed_name": "Solar PV polysilicon/ingot/wafer/cell/module chain",
+        "normalized_name": "solar pv polysilicon/ingot/wafer/cell/module chain",
+        "entity_type": "capability",
+        "geography": "Global/India",
+        "observed_role": "PV upstream and module manufacturing",
+        "source_locator": "entity_record_extraction.csv:row 4 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_target_status": "no_exact_current_vocab_match"
+      },
+      {
+        "candidate_id": "homi-candidate:8965e61b092a591a005d",
+        "observed_name": "Wind-turbine and component manufacturing",
+        "normalized_name": "wind-turbine and component manufacturing",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "blades, drivetrain, towers, nacelles, power electronics",
+        "source_locator": "entity_record_extraction.csv:row 5 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_target_status": "no_exact_current_vocab_match"
+      },
+      {
+        "candidate_id": "homi-candidate:d69a3a9a7c8a90f035d5",
+        "observed_name": "Electrolyser stack and system manufacturing",
+        "normalized_name": "electrolyser stack and system manufacturing",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "alkaline, PEM, SOEC/AEM stacks and balance of plant",
+        "source_locator": "entity_record_extraction.csv:row 6 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_target_status": "no_exact_current_vocab_match"
+      },
+      {
+        "candidate_id": "homi-candidate:82b0c968170f31685c89",
+        "observed_name": "Green-hydrogen production",
+        "normalized_name": "green-hydrogen production",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "renewable hydrogen production, storage, offtake",
+        "source_locator": "entity_record_extraction.csv:row 6 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_target_status": "no_exact_current_vocab_match"
+      },
+      {
+        "candidate_id": "homi-candidate:9af01a09e8322f523adf",
+        "observed_name": "Large power-transformer manufacturing",
+        "normalized_name": "large power-transformer manufacturing",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "GOES core, windings, insulation, tank, bushings, cooling",
+        "source_locator": "entity_record_extraction.csv:row 7 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_target_status": "no_exact_current_vocab_match"
+      },
+      {
+        "candidate_id": "homi-candidate:119f81a749ecf34cbffc",
+        "observed_name": "Switchgear and HVDC converter systems",
+        "normalized_name": "switchgear and hvdc converter systems",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "high-voltage switching, converter stations, protection/control",
+        "source_locator": "entity_record_extraction.csv:row 7 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_target_status": "no_exact_current_vocab_match"
+      },
+      {
+        "candidate_id": "homi-candidate:c3328d1f89fd42113564",
+        "observed_name": "Grid-scale battery storage",
+        "normalized_name": "grid-scale battery storage",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "storage systems, BMS, power conversion and controls",
+        "source_locator": "entity_record_extraction.csv:row 7 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_target_status": "no_exact_current_vocab_match"
+      },
+      {
+        "candidate_id": "homi-candidate:1cf79c6f3662528a48a3",
+        "observed_name": "Battery-grade lithium refining",
+        "normalized_name": "battery-grade lithium refining",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "feed preparation, leaching, purification, precipitation, qualification",
+        "source_locator": "entity_record_extraction.csv:row 8 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_match_candidates": [
+          "cap:lithium-refining"
+        ],
+        "canonical_target_status": "staging_match_only"
+      },
+      {
+        "candidate_id": "homi-candidate:88be20cfe2cfba9efe46",
+        "observed_name": "Rare-earth separation and metal/alloy conversion",
+        "normalized_name": "rare-earth separation and metal/alloy conversion",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "concentrate cracking, separation, oxide, metal/alloy conversion",
+        "source_locator": "entity_record_extraction.csv:row 8 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_match_candidates": [
+          "cap:rare-earth-separation"
+        ],
+        "canonical_target_status": "staging_match_only"
+      },
+      {
+        "candidate_id": "homi-candidate:aa10d259555fe7848b11",
+        "observed_name": "Rare-earth permanent-magnet chain",
+        "normalized_name": "rare-earth permanent-magnet chain",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "NdFeB material, magnet processing, and qualification",
+        "source_locator": "entity_record_extraction.csv:row 8 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_match_candidates": [
+          "cap:rare-earth-magnet"
+        ],
+        "canonical_target_status": "staging_match_only"
+      },
+      {
+        "candidate_id": "homi-candidate:9be65105318ab3580917",
+        "observed_name": "Metrology and industrial qualification",
+        "normalized_name": "metrology and industrial qualification",
+        "entity_type": "capability",
+        "geography": "India/global",
+        "observed_role": "in-line inspection, accreditation, product and process qualification",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "canonical_match_candidates": [
+          "cap:metrology"
+        ],
+        "canonical_target_status": "staging_match_only"
+      }
+    ],
+    "projects": [
+      {
+        "candidate_id": "homi-candidate:bfdbcda75987cb43b2f0",
+        "observed_name": "ACC PLI 50 GWh target",
+        "normalized_name": "acc pli 50 gwh target",
+        "entity_type": "project",
+        "geography": "India",
+        "observed_role": "policy target for domestic advanced-chemistry-cell manufacturing",
+        "source_locator": "01_baseline_sources.md:L75-L86",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:1016915395460f5455ea",
+        "observed_name": "ACC four-beneficiary awards",
+        "normalized_name": "acc four-beneficiary awards",
+        "entity_type": "project",
+        "geography": "India",
+        "observed_role": "40 GWh awarded cell capacity",
+        "source_locator": "01_baseline_sources.md:L81-L86",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:9074a75d4eedae9d826a",
+        "observed_name": "Reliance Jamnagar cell/PV/hydrogen complex",
+        "normalized_name": "reliance jamnagar cell/pv/hydrogen complex",
+        "entity_type": "project",
+        "geography": "Jamnagar, India",
+        "observed_role": "company-reported multi-technology plan",
+        "source_locator": "01_baseline_sources.md:L185-L187",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:db570ade5ff0bacd90c5",
+        "observed_name": "Ola Krishnagiri gigafactory expansion",
+        "normalized_name": "ola krishnagiri gigafactory expansion",
+        "entity_type": "project",
+        "geography": "Tamil Nadu, India",
+        "observed_role": "reported operating and future cell targets",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:90474acc57363215e895",
+        "observed_name": "Exide Bengaluru cell plant",
+        "normalized_name": "exide bengaluru cell plant",
+        "entity_type": "project",
+        "geography": "Karnataka, India",
+        "observed_role": "12 GWh initial cell project",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:3b5490a97c75aab33e1d",
+        "observed_name": "Amara Raja Mahbubnagar cell plant",
+        "normalized_name": "amara raja mahbubnagar cell plant",
+        "entity_type": "project",
+        "geography": "Telangana, India",
+        "observed_role": "16 GWh target/phase-1 claim",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:b78ed15f4cd85944a20c",
+        "observed_name": "Agratas India/UK cell projects",
+        "normalized_name": "agratas india/uk cell projects",
+        "entity_type": "project",
+        "geography": "Gujarat, India / UK",
+        "observed_role": "20 GWh India and 40 GWh UK FID/construction",
+        "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:a1514a5a00a791fc062c",
+        "observed_name": "Solar PV PLI tranche I",
+        "normalized_name": "solar pv pli tranche i",
+        "entity_type": "project",
+        "geography": "India",
+        "observed_role": "8,737 MW awarded fully integrated capacity",
+        "source_locator": "01_baseline_sources.md:L96-L100",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:571cc8e99beca2a7ef71",
+        "observed_name": "Solar PV PLI tranche II",
+        "normalized_name": "solar pv pli tranche ii",
+        "entity_type": "project",
+        "geography": "India",
+        "observed_role": "39,600 MW LoA capacity",
+        "source_locator": "01_baseline_sources.md:L96-L100",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:915ab5af869085468631",
+        "observed_name": "National Green Hydrogen Mission",
+        "normalized_name": "national green hydrogen mission",
+        "entity_type": "project",
+        "geography": "India",
+        "observed_role": "5 Mt/year target and INR 19,744 crore mission",
+        "source_locator": "01_baseline_sources.md:L41-L47",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:d518dbab8f52f878b90c",
+        "observed_name": "SIGHT electrolyser and hydrogen awards",
+        "normalized_name": "sight electrolyser and hydrogen awards",
+        "entity_type": "project",
+        "geography": "India",
+        "observed_role": "3,000 MW/year electrolyser and 862,000 t/year hydrogen awards",
+        "source_locator": "01_baseline_sources.md:L133-L138",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      },
+      {
+        "candidate_id": "homi-candidate:59f7ef13e3269bac682c",
+        "observed_name": "BHEL-thyssenkrupp nucera localisation collaboration",
+        "normalized_name": "bhel-thyssenkrupp nucera localisation collaboration",
+        "entity_type": "project",
+        "geography": "India/Germany",
+        "observed_role": "alkaline-electrolyser module localisation plan",
+        "source_locator": "01_baseline_sources.md:L193-L195",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "project_or_policy_state_not_operating_qualified_capacity"
+      }
+    ],
+    "promotion_status": "staging_candidate"
+  },
+  "relation_candidates": [
+    {
+      "relation_id": "rel_manus08_01",
+      "subject_candidate": "homi-candidate:d61d9a8265597f9a85e0",
+      "raw_predicate": "develops_project",
+      "object_candidate": "Reliance new-energy complex",
+      "semantic_qualifier": "Company-reported plan; project/facility presence is not operating qualified output.",
+      "evidence": {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "locator": "01_baseline_sources.md:L185-L187"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_02",
+      "subject_candidate": "homi-candidate:d61d9a8265597f9a85e0",
+      "raw_predicate": "has_facility_presence",
+      "object_candidate": "homi-candidate:7526a0342af9834dd451",
+      "semantic_qualifier": "5,000-acre footprint claim; exact operating facilities remain UNKNOWN.",
+      "evidence": {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "locator": "01_baseline_sources.md:L185-L187"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_03",
+      "subject_candidate": "homi-candidate:8c163cb0f67271c695e8",
+      "raw_predicate": "has_facility_presence",
+      "object_candidate": "homi-candidate:49c19f600da8bb14588e",
+      "semantic_qualifier": "Reported operating/ramping state requires current primary evidence.",
+      "evidence": {
+        "artifact": "manus-08/entity_record_extraction.csv",
+        "locator": "entity_record_extraction.csv:row 2 Entity Records"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_04",
+      "subject_candidate": "homi-candidate:77c691218d29d29aad1d",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:90474acc57363215e895",
+      "semantic_qualifier": "Under-construction project candidate; 12 GWh is nameplate/target.",
+      "evidence": {
+        "artifact": "manus-08/entity_record_extraction.csv",
+        "locator": "entity_record_extraction.csv:row 2 Entity Records"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_05",
+      "subject_candidate": "homi-candidate:a30d1adab70637e0a87a",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:3b5490a97c75aab33e1d",
+      "semantic_qualifier": "Phase-1 operational claim is CONFLICTED/UNKNOWN pending direct evidence.",
+      "evidence": {
+        "artifact": "manus-08/entity_record_extraction.csv",
+        "locator": "entity_record_extraction.csv:row 2 Entity Records"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_06",
+      "subject_candidate": "homi-candidate:150e203b68d099acb290",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:b78ed15f4cd85944a20c",
+      "semantic_qualifier": "FID/construction targets are not commissioned or qualified output.",
+      "evidence": {
+        "artifact": "manus-08/entity_record_extraction.csv",
+        "locator": "entity_record_extraction.csv:row 2 Entity Records"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_07",
+      "subject_candidate": "MNRE",
+      "raw_predicate": "administers_policy",
+      "object_candidate": "homi-candidate:bfdbcda75987cb43b2f0",
+      "semantic_qualifier": "Policy target; not supply.",
+      "evidence": {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "locator": "01_baseline_sources.md:L75-L86"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_08",
+      "subject_candidate": "MNRE",
+      "raw_predicate": "administers_policy",
+      "object_candidate": "homi-candidate:571cc8e99beca2a7ef71",
+      "semantic_qualifier": "Awarded capacity; process-stage and qualification scope unresolved.",
+      "evidence": {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "locator": "01_baseline_sources.md:L96-L100"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_09",
+      "subject_candidate": "MNRE",
+      "raw_predicate": "administers_policy",
+      "object_candidate": "homi-candidate:915ab5af869085468631",
+      "semantic_qualifier": "Policy target and framework; not commissioned production.",
+      "evidence": {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "locator": "01_baseline_sources.md:L41-L47"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_10",
+      "subject_candidate": "homi-candidate:c5f6d9c175b3b7c9f268",
+      "raw_predicate": "collaborates_with",
+      "object_candidate": "homi-candidate:59f7ef13e3269bac682c",
+      "semantic_qualifier": "Technology/localisation plan; no capacity stated.",
+      "evidence": {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "locator": "01_baseline_sources.md:L193-L195"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_11",
+      "subject_candidate": "homi-candidate:75df1033c412f4718708",
+      "raw_predicate": "claims_capability",
+      "object_candidate": "homi-candidate:32efb7f756c033af4e55",
+      "semantic_qualifier": "Company-reported design/nameplate capacity; not qualified throughput.",
+      "evidence": {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "locator": "01_baseline_sources.md:L189-L191"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_12",
+      "subject_candidate": "homi-candidate:d517191a67e643971927",
+      "raw_predicate": "has_facility_presence",
+      "object_candidate": "homi-candidate:b61c9042caada8066d97",
+      "semantic_qualifier": "Global nameplate and commissioned labels are reported; qualified available output is not inferred.",
+      "evidence": {
+        "artifact": "manus-08/entity_record_extraction.csv",
+        "locator": "entity_record_extraction.csv:row 2 Entity Records"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_13",
+      "subject_candidate": "battery_gwh_india",
+      "raw_predicate": "requires_or_represents",
+      "object_candidate": "homi-candidate:36b5015e58152f00f172",
+      "semantic_qualifier": "Existing canonical pack-to-capability mapping retained; no new identity.",
+      "evidence": {
+        "artifact": "manus-08/data/registry/manifest.yaml",
+        "locator": "data/registry/manifest.yaml:cap:battery-cell mapping"
+      },
+      "canonical_target": "cap:battery-cell",
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_14",
+      "subject_candidate": "battery_gwh_india",
+      "raw_predicate": "requires_or_represents",
+      "object_candidate": "homi-candidate:4175ab9f3b26d5b18050",
+      "semantic_qualifier": "Existing pack context; qualification/availability remain UNKNOWN.",
+      "evidence": {
+        "artifact": "manus-08/packs/battery_gwh_india.yaml",
+        "locator": "packs/battery_gwh_india.yaml:product_variants"
+      },
+      "canonical_target": "cap:battery-pack-integration",
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_15",
+      "subject_candidate": "homi-candidate:1cf79c6f3662528a48a3",
+      "raw_predicate": "upstream_dependency",
+      "object_candidate": "homi-candidate:36b5015e58152f00f172",
+      "semantic_qualifier": "Refining concentration is dependency evidence, not India supply.",
+      "evidence": {
+        "artifact": "manus-08/01_baseline_sources.md",
+        "locator": "01_baseline_sources.md:L170-L179"
+      },
+      "canonical_target": "cap:lithium-refining",
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus08_16",
+      "subject_candidate": "homi-candidate:f3c7d1954c79d9136954",
+      "raw_predicate": "supports",
+      "object_candidate": "homi-candidate:8965e61b092a591a005d",
+      "semantic_qualifier": "Shared capability candidate; site/qualification unresolved.",
+      "evidence": {
+        "artifact": "manus-08/entity_record_extraction.csv",
+        "locator": "entity_record_extraction.csv:row 5 Relationships And Shared Capabilities"
+      },
+      "canonical_target": "cap:power-electronics",
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    }
+  ],
+  "capacity_claims": [
+    {
+      "capacity_claim_id": "clm_manus08_01",
+      "subject": "ACC PLI beneficiaries",
+      "capacity_type": "awarded_or_installed",
+      "value": "40 awarded; 1 installed",
+      "unit": "GWh/yr",
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L81-L86",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2224542",
+      "geography": "India",
+      "date_or_period": "2025-12-31",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Awarded/nameplate and installed states are separate; qualification and available good output are not stated.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_02",
+      "subject": "Additional Indian battery announcements",
+      "capacity_type": "announced_nameplate",
+      "value": "~178",
+      "unit": "GWh cumulative",
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L83-L86",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2224542",
+      "geography": "India",
+      "date_or_period": "2026-2031 target window",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Announcement count and target horizon do not establish project FID, construction, commissioning, or qualified throughput.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_03",
+      "subject": "Global battery manufacturing",
+      "capacity_type": "global_nameplate_and_utilization",
+      "value": ">3.1 TWh; 60-70% estimated",
+      "unit": "TWh / utilization",
+      "epistemic_class": "ESTIMATED",
+      "source_locator": "entity_record_extraction.csv:row 2 Companies Facilities And Capacity",
+      "original_url": "https://www.iea.org/reports/solar-pv-global-supply-chains",
+      "geography": "Global",
+      "date_or_period": "late 2024",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "The figure is global and aggregate; plant, chemistry, yield, and qualified automotive output are not resolved.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_05",
+      "subject": "Solar PV PLI tranche I",
+      "capacity_type": "awarded_nameplate",
+      "value": "8737",
+      "unit": "MW",
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L96-L100",
+      "original_url": "https://mnre.gov.in/en/production-linked-incentive-pli/",
+      "geography": "India",
+      "date_or_period": "2023 scheme page; current state unknown",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Awarded capacity is not commissioned or qualified throughput and may cover multiple process stages.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_06",
+      "subject": "Solar PV PLI tranche II",
+      "capacity_type": "awarded_nameplate",
+      "value": "39600",
+      "unit": "MW",
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L96-L100",
+      "original_url": "https://mnre.gov.in/en/production-linked-incentive-pli/",
+      "geography": "India",
+      "date_or_period": "2023 scheme page; current state unknown",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "LoA is a programme state, not operating output; module-only versus upstream integration must be preserved.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_07",
+      "subject": "Indian wind manufacturing",
+      "capacity_type": "domestic_nameplate",
+      "value": "18000",
+      "unit": "MW/year",
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L118-L120",
+      "original_url": "https://mnre.gov.in/en/wind-manufacturing/",
+      "geography": "India",
+      "date_or_period": "2026 page update",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Official reported capacity is not independently audited effective or available qualified throughput.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_08",
+      "subject": "Global electrolyser manufacturing",
+      "capacity_type": "announced_nameplate",
+      "value": "25",
+      "unit": "GW/year",
+      "epistemic_class": "ESTIMATED",
+      "source_locator": "01_baseline_sources.md:L125-L127",
+      "original_url": "https://www.iea.org/energy-system/low-emissions-fuels/electrolysers",
+      "geography": "Global",
+      "date_or_period": "2023; pipeline to 2030",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Nominal announced facility size is not operating or qualified system throughput.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_09",
+      "subject": "India green-hydrogen mission awards",
+      "capacity_type": "awarded_nameplate",
+      "value": "3000; 862000; 20000",
+      "unit": "MW/year; tonnes/year",
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L133-L138",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2204464",
+      "geography": "India",
+      "date_or_period": "2025-12-16 awards; targets through 2030",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Awards are not commissioned, operating, qualified, or available supply.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_10",
+      "subject": "National Green Hydrogen Mission",
+      "capacity_type": "programme_target",
+      "value": "5",
+      "unit": "Mt/year",
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L41-L47",
+      "original_url": "https://mnre.gov.in/en/hydrogen-overview/",
+      "geography": "India",
+      "date_or_period": "launched 2023; target horizon not a current output",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Policy target is a scenario/programme objective, not operating supply.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_11",
+      "subject": "Transmission evidence base",
+      "capacity_type": "measurement_source",
+      "value": null,
+      "unit": null,
+      "epistemic_class": "MEASURED",
+      "source_locator": "01_baseline_sources.md:L163-L164",
+      "original_url": "https://cea.nic.in/transmission-reports/?lang=en",
+      "geography": "India",
+      "date_or_period": "July 2026 reporting cycle cited",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "The source establishes a measurement pathway, not a consolidated current available-capacity total in this corpus.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_12",
+      "subject": "Critical-mineral refining concentration",
+      "capacity_type": "upstream_concentration",
+      "value": "various high shares",
+      "unit": "percent",
+      "epistemic_class": "ESTIMATED",
+      "source_locator": "01_baseline_sources.md:L170-L179",
+      "original_url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025/executive-summary",
+      "geography": "Global/India",
+      "date_or_period": "2024-2025 source-dated outlook",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Reserve, mine, concentrate, refined grade, and qualified battery material are distinct states.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_13",
+      "subject": "Reliance new-energy complex",
+      "capacity_type": "facility_footprint_and_project_nameplate",
+      "value": "5000; 20000",
+      "unit": "acres; MTPA carbon fibre target",
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L185-L187",
+      "original_url": "https://www.ril.com/businesses/new-energy-materials",
+      "geography": "Jamnagar, Gujarat, India",
+      "date_or_period": "2026 company page; targets include 2025",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Company plan and facility footprint are not proof of commissioned or qualified output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_14",
+      "subject": "JinkoSolar global PV footprint",
+      "capacity_type": "planned_nameplate",
+      "value": "120;95;130",
+      "unit": "GW/year",
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L189-L191",
+      "original_url": "https://www.jinkosolar.com/en/site/aboutus",
+      "geography": "Global",
+      "date_or_period": "Q1/end-2026 company report",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Company-reported design/nameplate capacity is not audited plant-level qualified throughput.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_15",
+      "subject": "BHEL-thyssenkrupp nucera collaboration",
+      "capacity_type": "partnership_project",
+      "value": null,
+      "unit": null,
+      "epistemic_class": "REPORTED",
+      "source_locator": "01_baseline_sources.md:L193-L195",
+      "original_url": "https://www.thyssenkrupp-nucera.com/newsroom/news-press-releases/thyssenkrupp-nucera-and-bharat-heavy-electricals-limited-sign-strategic-collaboration-to-advance-green-hydrogen-electrolysis-in-india",
+      "geography": "India/Germany",
+      "date_or_period": "2026-07-07 partnership",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Partnership/localisation plan is not a production or qualification record.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus08_16",
+      "subject": "Indian battery canonical objective",
+      "capacity_type": "canonical_pack_objective",
+      "value": "40",
+      "unit": "GWh/year",
+      "epistemic_class": "MODELLED",
+      "source_locator": "packs/battery_gwh_india.yaml:pack_id/title; data/registry/manifest.yaml:cap:battery-cell",
+      "original_url": null,
+      "geography": "India",
+      "date_or_period": "pack target by 2030",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "REPORTED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Pack objective, awarded/project capacity, installed output, qualified output, and available output remain separate clocks.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus08_extra_01",
+      "subject": "Reliance New Energy cell project",
+      "capacity_type": "company_project_nameplate",
+      "value": "40 phase-1; 120 long-term",
+      "unit": "GWh",
+      "epistemic_class": "CONFLICTED",
+      "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+      "original_url": "https://www.ril.com/businesses/new-energy-materials",
+      "geography": "India",
+      "date_or_period": "2026 source text; current state requires revalidation",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "CLAIMED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Company/entity text reports commissioned/project capacity, while the validated PIB correction says direct official evidence is required.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus08_extra_02",
+      "subject": "Ola Electric cell project",
+      "capacity_type": "company_operating_and_target",
+      "value": "2.5 operational; 20 by 2027; 100 long-term",
+      "unit": "GWh",
+      "epistemic_class": "CONFLICTED",
+      "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+      "original_url": "https://www.olaelectric.com/gigafactory",
+      "geography": "India",
+      "date_or_period": "2026 source text; current state requires revalidation",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "CLAIMED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "The baseline correction rejects the operational claim without direct official evidence; retain as conflicted/unknown.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus08_extra_03",
+      "subject": "Exide Energy Solutions cell project",
+      "capacity_type": "under_construction_nameplate",
+      "value": "12 initial",
+      "unit": "GWh",
+      "epistemic_class": "REPORTED",
+      "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+      "original_url": "https://heavyindustries.gov.in/en/pli-scheme-national-programme-advanced-chemistry-cell-acc-battery-storage",
+      "geography": "India",
+      "date_or_period": "2026 source text; current state requires revalidation",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "CLAIMED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Under-construction/target capacity is not operating qualified output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus08_extra_04",
+      "subject": "Amara Raja cell project",
+      "capacity_type": "operational_target_claim",
+      "value": "16 target",
+      "unit": "GWh",
+      "epistemic_class": "CONFLICTED",
+      "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+      "original_url": "https://heavyindustries.gov.in/en/pli-scheme-national-programme-advanced-chemistry-cell-acc-battery-storage",
+      "geography": "India",
+      "date_or_period": "2026 source text; current state requires revalidation",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "CLAIMED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "Phase-1 operational language lacks direct current facility and qualification evidence in this slice.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus08_extra_05",
+      "subject": "Agratas India/UK cell projects",
+      "capacity_type": "fid_nameplate",
+      "value": "20 India; 40 UK",
+      "unit": "GWh",
+      "epistemic_class": "REPORTED",
+      "source_locator": "entity_record_extraction.csv:row 2 Entity Records",
+      "original_url": "https://heavyindustries.gov.in/en/pli-scheme-national-programme-advanced-chemistry-cell-acc-battery-storage",
+      "geography": "India/UK",
+      "date_or_period": "2026 source text; current state requires revalidation",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "CLAIMED_OR_PROJECT_STATE",
+      "available_state": "UNKNOWN",
+      "status_semantics": {
+        "project_announcement_is_not_operating": true,
+        "nameplate_is_not_effective": true,
+        "facility_presence_is_not_qualified": true,
+        "qualified_available_output": "UNKNOWN"
+      },
+      "caveat": "FID/construction targets are not commissioned, qualified, or available output.",
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "capacity_semantics": {
+    "capacity_type_counts": {
+      "announced_nameplate": 2,
+      "awarded_nameplate": 3,
+      "awarded_or_installed": 1,
+      "canonical_pack_objective": 1,
+      "company_operating_and_target": 1,
+      "company_project_nameplate": 1,
+      "domestic_nameplate": 1,
+      "facility_footprint_and_project_nameplate": 1,
+      "fid_nameplate": 1,
+      "global_nameplate_and_utilization": 1,
+      "measurement_source": 1,
+      "operational_target_claim": 1,
+      "partnership_project": 1,
+      "planned_nameplate": 1,
+      "programme_target": 1,
+      "under_construction_nameplate": 1,
+      "upstream_concentration": 1
+    },
+    "operating_qualified_capacity_claims": 0,
+    "effective_available_capacity_claims": 0,
+    "qualified_available_state": "UNKNOWN",
+    "distinction_guard": "Programme target, award, project/nameplate, facility presence, reported installed/operating, scenario, and source-dated estimate are retained as distinct states; none is promoted to operating qualified available supply."
+  },
+  "canonical_reconciliation": {
+    "existing_pack_id": "battery_gwh_india",
+    "existing_pack_path": "packs/battery_gwh_india.yaml",
+    "existing_pack_title": "Domain pack 2: India 40 GWh/yr battery cell industrialization by 2030",
+    "existing_canonical_vocab_source": "data/registry/manifest.yaml",
+    "existing_registry_capability_ids_used": [
+      "cap:battery-cell",
+      "cap:battery-pack-integration",
+      "cap:electric-motors",
+      "cap:industrial-electronics",
+      "cap:lithium-refining",
+      "cap:metrology",
+      "cap:power-electronics",
+      "cap:rare-earth-magnet",
+      "cap:rare-earth-separation"
+    ],
+    "staging_matches": [
+      {
+        "candidate_id": "homi-candidate:36b5015e58152f00f172",
+        "observed_name": "Battery-cell manufacturing",
+        "canonical_id": "cap:battery-cell",
+        "match_basis": "existing registry vocabulary/explicit pack mapping; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:4175ab9f3b26d5b18050",
+        "observed_name": "Battery-pack integration",
+        "canonical_id": "cap:battery-pack-integration",
+        "match_basis": "existing registry vocabulary/explicit pack mapping; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:61633d3575d1c8f66bd8",
+        "observed_name": "Precision electric-motor manufacturing",
+        "canonical_id": "cap:electric-motors",
+        "match_basis": "existing registry vocabulary/explicit pack mapping; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:f3c7d1954c79d9136954",
+        "observed_name": "Power-electronics manufacturing",
+        "canonical_id": "cap:power-electronics",
+        "match_basis": "existing registry vocabulary/explicit pack mapping; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:bf1823e7f6b5e532f65e",
+        "observed_name": "Industrial electronics manufacturing",
+        "canonical_id": "cap:industrial-electronics",
+        "match_basis": "existing registry vocabulary/explicit pack mapping; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:1cf79c6f3662528a48a3",
+        "observed_name": "Battery-grade lithium refining",
+        "canonical_id": "cap:lithium-refining",
+        "match_basis": "existing registry vocabulary/explicit pack mapping; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:88be20cfe2cfba9efe46",
+        "observed_name": "Rare-earth separation and metal/alloy conversion",
+        "canonical_id": "cap:rare-earth-separation",
+        "match_basis": "existing registry vocabulary/explicit pack mapping; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:aa10d259555fe7848b11",
+        "observed_name": "Rare-earth permanent-magnet chain",
+        "canonical_id": "cap:rare-earth-magnet",
+        "match_basis": "existing registry vocabulary/explicit pack mapping; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:9be65105318ab3580917",
+        "observed_name": "Metrology and industrial qualification",
+        "canonical_id": "cap:metrology",
+        "match_basis": "existing registry vocabulary/explicit pack mapping; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      }
+    ],
+    "no_shadow_identities": true,
+    "fuzzy_merge": false,
+    "canonical_promotion": "NONE",
+    "reconciliation_rule": "Reuse existing battery_gwh_india and canonical IDs as references only; candidate IDs are deterministic handles and cannot create or substitute canonical identities."
+  },
+  "unknown_candidates": [
+    {
+      "unknown_id": "unk_manus08_01",
+      "question": "Current qualified and available India cell output by beneficiary, site, chemistry, format, yield, and customer approval.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_02",
+      "question": "Whether Reliance Jamnagar Phase 1 is commissioned and producing qualified cells, versus a company plan or project state.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_03",
+      "question": "Whether Ola's reported 2.5 GWh is current good output and qualified automotive supply; the baseline correction flags it pending direct evidence.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_04",
+      "question": "Whether Amara Raja phase-1 capacity is operational and qualified at the claimed 16 GWh target.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_05",
+      "question": "Current commissioned/qualified stage of each solar PV PLI award and process-level upstream integration.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_06",
+      "question": "Current India polysilicon, ingot, wafer, and battery-grade material operating capacity and qualification.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_07",
+      "question": "Actual effective and qualified wind-turbine throughput behind the reported 18,000 MW/year capacity and ALMM status.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_08",
+      "question": "Commissioned and qualified electrolyser manufacturing output behind the 3,000 MW/year awards.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_09",
+      "question": "Commissioned and certified green-hydrogen production behind the 862,000 tonnes/year awards.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_10",
+      "question": "Current commissioned versus under-construction transmission assets and available transfer capacity from CEA records.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_11",
+      "question": "Battery-grade lithium, graphite, cobalt, nickel, and rare-earth conversion capacity available to India.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    },
+    {
+      "unknown_id": "unk_manus08_12",
+      "question": "Formation/aging yield, dry-room performance, safety qualification failure rates, and effective output of new gigafactories.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, facility audits, qualification packs, CEA/MNRE registries, production/yield records, and customer/offtake evidence."
+    }
+  ],
+  "conflict_candidates": [
+    {
+      "conflict_id": "cnf_manus08_01",
+      "signal": "PIB ACC reply reports only 1 GWh installed while parallel entity text reports commissioned Reliance/other Indian capacities.",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Keep awarded, installed, commissioned, and qualified states separate; direct official facility evidence controls promotion.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus08_02",
+      "signal": "Ola 2.5 GWh operational claim is explicitly rejected by the baseline correction absent direct official evidence.",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Retain both provenance signals as CONFLICTED/UNKNOWN; do not promote operational capacity.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus08_03",
+      "signal": "Amara Raja phase-1 operational claim and other 2026 Indian project claims lack direct current qualification evidence.",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Preserve project/target state and request dated plant and customer qualification records.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus08_04",
+      "signal": "Solar PV PLI awards and source-dated IEA global capacity can be mistaken for current India operating capacity.",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Keep award, process stage, commissioning, and qualification as separate state transitions.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus08_05",
+      "signal": "Company-reported Reliance/Jinko design or project capacity is not independently audited effective throughput.",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Treat as REPORTED nameplate/project evidence with UNKNOWN availability.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus08_06",
+      "signal": "Global supply-chain estimates and domestic policy awards use different geographies, denominators, and clocks.",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Do not combine totals without explicit scope, date, denominator, and status reconciliation.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus08_07",
+      "signal": "Dry-electrode mass-production yield remains contested in the battery process memo.",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Keep process concept and facility qualification distinct; require line-level yield evidence.",
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "freshness_flags": {
+    "evidence_cutoff": "2026-08-24",
+    "revalidation_reference_date": "2026-08-25",
+    "current_state_and_target_claims_require_revalidation": true,
+    "future_or_target_years_observed": [
+      "2027",
+      "2028",
+      "2030"
+    ],
+    "flag": "Current-state, project, award, and future-target claims are not web-refreshed and require dated primary-source revalidation before decision use."
+  },
+  "explicit_accounting": {
+    "artifacts": 12,
+    "evidence_artifacts_before_deduplication": 11,
+    "non_evidence_artifacts": 1,
+    "logical_records_after_csv_json_dedupe": 16,
+    "physical_structured_rows": 48,
+    "duplicate_records_removed": 32,
+    "sources": 165,
+    "baseline_source_sections": 28,
+    "claims": 84,
+    "structured_claim_blocks": 56,
+    "baseline_source_claim_blocks": 28,
+    "claim_count_basis": "8 workstream rows x 3 populated research fields + 8 entity rows x 4 populated extraction fields + 28 numbered baseline source sections; duplicate CSV/JSON logical rows counted once, source/confidence identity fields excluded.",
+    "entity_candidates": 76,
+    "entity_candidate_breakdown": {
+      "organizations": 20,
+      "facilities": 18,
+      "clusters": 10,
+      "capabilities": 16,
+      "projects": 12
+    },
+    "relations": 16,
+    "facilities": 18,
+    "capacity_claims": 20,
+    "capacity_claims_by_type": {
+      "announced_nameplate": 2,
+      "awarded_nameplate": 3,
+      "awarded_or_installed": 1,
+      "canonical_pack_objective": 1,
+      "company_operating_and_target": 1,
+      "company_project_nameplate": 1,
+      "domestic_nameplate": 1,
+      "facility_footprint_and_project_nameplate": 1,
+      "fid_nameplate": 1,
+      "global_nameplate_and_utilization": 1,
+      "measurement_source": 1,
+      "operational_target_claim": 1,
+      "partnership_project": 1,
+      "planned_nameplate": 1,
+      "programme_target": 1,
+      "under_construction_nameplate": 1,
+      "upstream_concentration": 1
+    },
+    "operating_qualified_capacity_claims": 0,
+    "effective_available_capacity_claims": 0,
+    "unknown_label_occurrences": 57,
+    "conflicted_label_occurrences": 32,
+    "unknown_candidate_records": 12,
+    "conflict_candidate_records": 7,
+    "duplicate_artifact_pairs": 4,
+    "malformed_artifacts": 0,
+    "malformed_records": 0,
+    "repaired_artifacts": 0,
+    "repaired_records": 0,
+    "skipped_as_non_evidence_artifacts": 1,
+    "escalation_count": 19,
+    "raw_zip_mismatch_count": 0
+  },
+  "escalation_packets": [
+    {
+      "escalation_id": "esc_manus08_01",
+      "trigger": "Current qualified and available India cell output by beneficiary, site, chemistry, format, yield, and customer approval.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_02",
+      "trigger": "Whether Reliance Jamnagar Phase 1 is commissioned and producing qualified cells, versus a company plan or project state.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_03",
+      "trigger": "Whether Ola's reported 2.5 GWh is current good output and qualified automotive supply; the baseline correction flags it pending direct evidence.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_04",
+      "trigger": "Whether Amara Raja phase-1 capacity is operational and qualified at the claimed 16 GWh target.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_05",
+      "trigger": "Current commissioned/qualified stage of each solar PV PLI award and process-level upstream integration.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_06",
+      "trigger": "Current India polysilicon, ingot, wafer, and battery-grade material operating capacity and qualification.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_07",
+      "trigger": "Actual effective and qualified wind-turbine throughput behind the reported 18,000 MW/year capacity and ALMM status.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_08",
+      "trigger": "Commissioned and qualified electrolyser manufacturing output behind the 3,000 MW/year awards.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_09",
+      "trigger": "Commissioned and certified green-hydrogen production behind the 862,000 tonnes/year awards.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_10",
+      "trigger": "Current commissioned versus under-construction transmission assets and available transfer capacity from CEA records.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_11",
+      "trigger": "Battery-grade lithium, graphite, cobalt, nickel, and rare-earth conversion capacity available to India.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_12",
+      "trigger": "Formation/aging yield, dry-room performance, safety qualification failure rates, and effective output of new gigafactories.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_13",
+      "trigger": "PIB ACC reply reports only 1 GWh installed while parallel entity text reports commissioned Reliance/other Indian capacities.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_14",
+      "trigger": "Ola 2.5 GWh operational claim is explicitly rejected by the baseline correction absent direct official evidence.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_15",
+      "trigger": "Amara Raja phase-1 operational claim and other 2026 Indian project claims lack direct current qualification evidence.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_16",
+      "trigger": "Solar PV PLI awards and source-dated IEA global capacity can be mistaken for current India operating capacity.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_17",
+      "trigger": "Company-reported Reliance/Jinko design or project capacity is not independently audited effective throughput.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_18",
+      "trigger": "Global supply-chain estimates and domestic policy awards use different geographies, denominators, and clocks.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus08_19",
+      "trigger": "Dry-electrode mass-production yield remains contested in the battery process memo.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/product/grade scope",
+        "qualification or commissioning evidence",
+        "time-windowed good output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    }
+  ],
+  "validation": {
+    "archive_integrity": "PASS",
+    "all_12_artifacts_hash_and_byte_match": true,
+    "conditioning_raw_unchanged": true,
+    "structured_errors_empty": true,
+    "csv_json_pair_semantic_match": true,
+    "malformed_artifact_count": 0,
+    "python_minus_m_json_tool": "PASS (after materialization)",
+    "deterministic": true,
+    "canonical_changes": 0
+  }
+}
