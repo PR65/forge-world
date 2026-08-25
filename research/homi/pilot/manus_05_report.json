@@ -1,0 +1,2945 @@
+{
+  "report_schema_version": "1.0.0",
+  "corpus_id": "manus-05",
+  "staging_contract": {
+    "implementation": "forge.reality",
+    "staging_schema_version": "1.0.0",
+    "candidate_id_inputs": [
+      "corpus_id",
+      "artifact_id",
+      "locator",
+      "subject_text",
+      "predicate_text",
+      "value_text"
+    ],
+    "promotion_policy": "Candidates only; no Observation, EvidenceRecord, canonical node or solver state."
+  },
+  "scope": {
+    "included_extracted_root": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-05",
+    "included_raw_zip": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\Guide to Conducting Thorough Research.zip",
+    "included_source_manifest": "C:\\FORGE-RESEARCH-CORPUS\\manus\\_meta\\manus_corpus_manifest.csv",
+    "excluded_roots": [
+      "C:\\FORGE-GLM-FOUNDRY",
+      "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-01..04",
+      "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06..20"
+    ],
+    "raw_vault_mutated": false
+  },
+  "raw_references": {
+    "source_manifest": {
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\_meta\\manus_corpus_manifest.csv",
+      "sha256": "5b60e5026abb70a2298ba28d00d190b5b9e434231201f82ff59daaa055b388e",
+      "mapping_row": {
+        "CorpusID": "manus-05",
+        "OriginalZip": "Guide to Conducting Thorough Research.zip",
+        "FileCount": "5",
+        "Status": "OK"
+      }
+    },
+    "raw_zip": {
+      "corpus_id": "manus_raw_zips",
+      "artifact_id": "artifact:fa94c539249f0e0a62c0994e",
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\Guide to Conducting Thorough Research.zip",
+      "sha256": "7a52ec8024ed291cc8b8d7d8d487045bf8d94a806373b125c6363aba5136f458",
+      "byte_length": 238417,
+      "entry_count": 5,
+      "license": "UNSPECIFIED",
+      "storage_posture": "external_immutable",
+      "entry_hashes": [
+        {
+          "name": "FORGE WORLD Research Notes.md",
+          "byte_length": 15273,
+          "crc32": 3292521947,
+          "sha256": "5309280a8e32a4d22954daffb1e8fa08af6db9e6af9f944ff995006321260903",
+          "extraction_match": true
+        },
+        {
+          "name": "research_infrastructure_workstreams.json",
+          "byte_length": 131674,
+          "crc32": 3465850016,
+          "sha256": "95373b69d8bdde09656b5c0beb0e9555bf141b0ac0b93dce4f9701e8d99425a1",
+          "extraction_match": true
+        },
+        {
+          "name": "validate_high_risk_claims.json",
+          "byte_length": 31626,
+          "crc32": 457850603,
+          "sha256": "7fc1d8c4f02538bf3a06f510e4bc1d213bb8218fdc3694f148d4a29001d99027",
+          "extraction_match": true
+        },
+        {
+          "name": "FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md",
+          "byte_length": 54234,
+          "crc32": 2370903669,
+          "sha256": "d01aeec211ca96242ab11af418d2211d750d9b60053629c6bd2b18e1a2a21558",
+          "extraction_match": true
+        },
+        {
+          "name": "pasted_content.txt",
+          "byte_length": 4640,
+          "crc32": 1122662263,
+          "sha256": "f53e01100a096b01af317abb5647aea7bbce3bfd1c94381a4a741c3350ca1f0e",
+          "extraction_match": true
+        }
+      ]
+    }
+  },
+  "artifact_accounting": [
+    {
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "logical_path": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md",
+      "sha256": "d01aeec211ca96242ab11af418d2211d750d9b60053629c6bd2b18e1a2a21558",
+      "byte_length": 54234,
+      "format": "text/markdown",
+      "line_count": 346,
+      "row_count": 117,
+      "row_count_basis": "data rows in 11 Markdown tables; header/separator rows excluded",
+      "schema_or_header": {
+        "type": "narrative_plus_markdown_tables",
+        "table_count": 11,
+        "table_headers": [
+          [
+            "Finding",
+            "Evidence status",
+            "Operational implication"
+          ],
+          [
+            "Class",
+            "Meaning in this package",
+            "Example"
+          ],
+          [
+            "Method family",
+            "Typical instruments or methods",
+            "Critical dependencies",
+            "Typical failure modes"
+          ],
+          [
+            "Quantity",
+            "Reference/realization layer",
+            "Industrial dissemination layer",
+            "FORGE evidence fields"
+          ],
+          [
+            "Stage",
+            "Question",
+            "Required evidence",
+            "Failure if missing"
+          ],
+          [
+            "Organization/facility",
+            "Role and evidence-backed capability",
+            "Status and limits"
+          ],
+          [
+            "Benchmark",
+            "Demonstrated role",
+            "What it does not prove"
+          ],
+          [
+            "Layer",
+            "Representative system",
+            "Function",
+            "FORGE interpretation"
+          ],
+          [
+            "Capability",
+            "Minimum physical dependencies",
+            "Human and procedural dependencies",
+            "Traceability/data dependencies"
+          ],
+          [
+            "ID",
+            "Claim or variable",
+            "Current status",
+            "Why it matters",
+            "Exact follow-up"
+          ],
+          [
+            "Rule",
+            "Machine-actionable condition",
+            "Result"
+          ]
+        ]
+      },
+      "evidence_locator_base": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L1-L346",
+      "evidence_locator_ranges": {
+        "core_findings": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L10-L49",
+        "taxonomy": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L51-L114",
+        "traceability_map": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L116-L139",
+        "qualification_pathways": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L141-L165",
+        "india_atlas": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L167-L188",
+        "benchmarks": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L190-L203",
+        "standards_crosswalk": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L205-L222",
+        "dependencies": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L224-L242",
+        "bottlenecks": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L244-L258",
+        "unknown_ledger": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L260-L278",
+        "machine_rules": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L280-L303",
+        "references": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L311-L343"
+      },
+      "explicit_epistemic_tokens": {
+        "MEASURED": 1,
+        "REPORTED": 9,
+        "DERIVED": 3,
+        "ESTIMATED": 1,
+        "MODELLED": 1,
+        "ASSUMPTION": 1,
+        "SCENARIO": 2,
+        "UNKNOWN": 27,
+        "CONFLICTED": 3
+      },
+      "source_layer": "EXTRACTED",
+      "storage_posture": "external_immutable",
+      "license": "UNSPECIFIED"
+    },
+    {
+      "artifact_id": "artifact:a69096aaef9839ab0cb020ee",
+      "logical_path": "manus-05/FORGE WORLD Research Notes.md",
+      "sha256": "5309280a8e32a4d22954daffb1e8fa08af6db9e6af9f944ff995006321260903",
+      "byte_length": 15273,
+      "format": "text/markdown",
+      "line_count": 166,
+      "row_count": 166,
+      "row_count_basis": "lines; no Markdown tables",
+      "schema_or_header": {
+        "type": "headings_and_bullets",
+        "top_level_header": "# FORGE WORLD Research Notes",
+        "source_register_entry_count": 15,
+        "section_headers": [
+          "## Initial source findings",
+          "## Research implications",
+          "## Source date note",
+          "## Evidence taxonomy to apply",
+          "## Open follow-up questions",
+          "## Global workstreams",
+          "## Status",
+          "## Source register",
+          "## Important corrections for final report",
+          "## New source register",
+          "## India evidence discipline",
+          "## Source register additions"
+        ]
+      },
+      "evidence_locator_base": "manus-05/FORGE WORLD Research Notes.md#L1-L166",
+      "evidence_locator_ranges": {
+        "initial_findings": "manus-05/FORGE WORLD Research Notes.md#L3-L35",
+        "global_workstreams": "manus-05/FORGE WORLD Research Notes.md#L36-L48",
+        "global_quality": "manus-05/FORGE WORLD Research Notes.md#L54-L76",
+        "india_findings": "manus-05/FORGE WORLD Research Notes.md#L83-L100",
+        "sector_facilities": "manus-05/FORGE WORLD Research Notes.md#L102-L125",
+        "standards": "manus-05/FORGE WORLD Research Notes.md#L127-L143",
+        "benchmarks": "manus-05/FORGE WORLD Research Notes.md#L145-L166"
+      },
+      "explicit_epistemic_tokens": {
+        "MEASURED": 1,
+        "REPORTED": 17,
+        "DERIVED": 1,
+        "ESTIMATED": 1,
+        "MODELLED": 1,
+        "ASSUMPTION": 1,
+        "SCENARIO": 1,
+        "UNKNOWN": 2,
+        "CONFLICTED": 1
+      },
+      "source_layer": "EXTRACTED",
+      "storage_posture": "external_immutable",
+      "license": "UNSPECIFIED"
+    },
+    {
+      "artifact_id": "artifact:a018c4b24244caed6fc67b9d",
+      "logical_path": "manus-05/pasted_content.txt",
+      "sha256": "f53e01100a096b01af317abb5647aea7bbce3bfd1c94381a4a741c3350ca1f0e",
+      "byte_length": 4640,
+      "format": "text/plain",
+      "line_count": 61,
+      "row_count": 61,
+      "row_count_basis": "lines; task prompt, not evidence claims",
+      "schema_or_header": {
+        "type": "research_prompt",
+        "first_line": "05 — Metrology, Testing, Qualification & Standards Infrastructure",
+        "directive_line": "COPY FROM THE NEXT LINE THROUGH THE END OF THIS TASK.",
+        "section_headers": [
+          "PURPOSE",
+          "THIS IS NOT",
+          "EPISTEMIC RULES",
+          "SOURCE PRIORITY",
+          "OUTPUT STYLE",
+          "CORE MISSION",
+          "DELIVERABLES",
+          "RESEARCH DEPTH REQUIREMENT"
+        ]
+      },
+      "evidence_locator_base": "manus-05/pasted_content.txt#L1-L61",
+      "explicit_epistemic_tokens": {
+        "MEASURED": 1,
+        "REPORTED": 1,
+        "DERIVED": 1,
+        "ESTIMATED": 1,
+        "MODELLED": 1,
+        "ASSUMPTION": 1,
+        "SCENARIO": 1,
+        "UNKNOWN": 4,
+        "CONFLICTED": 1
+      },
+      "source_layer": "EXTRACTED",
+      "storage_posture": "external_immutable",
+      "license": "UNSPECIFIED"
+    },
+    {
+      "artifact_id": "artifact:2414fe91a08211d10757d1a3",
+      "logical_path": "manus-05/research_infrastructure_workstreams.json",
+      "sha256": "95373b69d8bdde09656b5c0beb0e9555bf141b0ac0b93dce4f9701e8d99425a1",
+      "byte_length": 131674,
+      "format": "application/json",
+      "line_count": 121,
+      "row_count": 9,
+      "row_count_basis": "results records",
+      "schema_or_header": {
+        "type": "object",
+        "top_level_keys": [
+          "results"
+        ],
+        "result_keys": [
+          "input",
+          "output",
+          "error"
+        ],
+        "output_keys": [
+          "bottlenecks_unknowns",
+          "global_infrastructure",
+          "india_infrastructure",
+          "sources",
+          "standards_pathways",
+          "technical_synthesis",
+          "workstream"
+        ],
+        "embedded_markdown_table_count": 36,
+        "embedded_markdown_data_row_count": 224
+      },
+      "evidence_locator_base": "manus-05/research_infrastructure_workstreams.json#L1-L121",
+      "evidence_locator_pattern": "manus-05/research_infrastructure_workstreams.json#/results/{index}/output/{field}",
+      "source_url_occurrences": 172,
+      "source_url_unique": 124,
+      "explicit_epistemic_tokens": {
+        "MEASURED": 0,
+        "REPORTED": 0,
+        "DERIVED": 0,
+        "ESTIMATED": 0,
+        "MODELLED": 0,
+        "ASSUMPTION": 0,
+        "SCENARIO": 0,
+        "UNKNOWN": 5,
+        "CONFLICTED": 0
+      },
+      "source_layer": "EXTRACTED",
+      "storage_posture": "external_immutable",
+      "license": "UNSPECIFIED"
+    },
+    {
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "logical_path": "manus-05/validate_high_risk_claims.json",
+      "sha256": "7fc1d8c4f02538bf3a06f510e4bc1d213bb8218fdc3694f148d4a29001d99027",
+      "byte_length": 31626,
+      "format": "application/json",
+      "line_count": 92,
+      "row_count": 8,
+      "row_count_basis": "results records",
+      "schema_or_header": {
+        "type": "object",
+        "top_level_keys": [
+          "results"
+        ],
+        "result_keys": [
+          "input",
+          "output",
+          "error"
+        ],
+        "output_keys": [
+          "claim_cluster",
+          "corrections",
+          "sources",
+          "supported_claims",
+          "unsupported_or_limited"
+        ],
+        "embedded_markdown_table_count": 0,
+        "embedded_markdown_data_row_count": 0
+      },
+      "evidence_locator_base": "manus-05/validate_high_risk_claims.json#L1-L92",
+      "evidence_locator_pattern": "manus-05/validate_high_risk_claims.json#/results/{index}/output/{field}",
+      "source_url_occurrences": 48,
+      "source_url_unique": 48,
+      "explicit_epistemic_tokens": {
+        "MEASURED": 31,
+        "REPORTED": 40,
+        "DERIVED": 5,
+        "ESTIMATED": 4,
+        "MODELLED": 0,
+        "ASSUMPTION": 2,
+        "SCENARIO": 1,
+        "UNKNOWN": 8,
+        "CONFLICTED": 5
+      },
+      "source_layer": "EXTRACTED",
+      "storage_posture": "external_immutable",
+      "license": "UNSPECIFIED"
+    }
+  ],
+  "source_class_license_metadata": {
+    "extraction_rule": "Host/document-type class is a candidate only; provenance and rights remain unverified.",
+    "source_license_rule": "No URL-level license metadata appears in the five artifacts; all artifact/source licenses are UNSPECIFIED.",
+    "raw_source_text_posture": "URL references and extracted claims only; no per-URL SourceSnapshot/access-date/hash scope is present.",
+    "url_coverage": {
+      "occurrences_all_artifacts": 266,
+      "unique_urls_all_artifacts": 182,
+      "unique_hosts_all_artifacts": 92,
+      "by_artifact": {
+        "main_markdown": {
+          "occurrences": 16,
+          "unique_urls": 16
+        },
+        "research_notes": {
+          "occurrences": 30,
+          "unique_urls": 15
+        },
+        "pasted_content": {
+          "occurrences": 0,
+          "unique_urls": 0
+        },
+        "workstreams_json": {
+          "occurrences": 172,
+          "unique_urls": 124
+        },
+        "high_risk_json": {
+          "occurrences": 48,
+          "unique_urls": 48
+        }
+      }
+    },
+    "candidate_source_classes": [
+      {
+        "source_class": "government_or_intergovernmental_primary",
+        "url_occurrences": 134,
+        "unique_host_count": 33,
+        "representative_hosts": [
+          "bipm.org",
+          "nist.gov",
+          "ptb.de",
+          "nplindia.in",
+          "cpri.res.in",
+          "isro.gov.in",
+          "nasa.gov",
+          "bis.gov.in"
+        ],
+        "license": "UNSPECIFIED",
+        "promotion_posture": "Reference-only until source rights/access metadata is attached."
+      },
+      {
+        "source_class": "standards_or_accreditation_body",
+        "url_occurrences": 48,
+        "unique_host_count": 15,
+        "representative_hosts": [
+          "iso.org",
+          "asme.org",
+          "ilac.org",
+          "iaf.nu",
+          "global-aci.org",
+          "nabl-india.org",
+          "jedec.org",
+          "ipc.org"
+        ],
+        "license": "UNSPECIFIED",
+        "promotion_posture": "Identifiers/short attributed claims only; no paywalled standard text."
+      },
+      {
+        "source_class": "company_or_facility_primary",
+        "url_occurrences": 41,
+        "unique_host_count": 15,
+        "representative_hosts": [
+          "araiindia.com",
+          "tataelectronics.com",
+          "investors.micron.com",
+          "imec-int.com",
+          "kla.com",
+          "sgs.com",
+          "intertek.com"
+        ],
+        "license": "UNSPECIFIED",
+        "promotion_posture": "Reported/promotional claims require page/date/scope/qualification review."
+      },
+      {
+        "source_class": "academic_or_technical_literature",
+        "url_occurrences": 10,
+        "unique_host_count": 6,
+        "representative_hosts": [
+          "pmc.ncbi.nlm.nih.gov",
+          "sciencedirect.com",
+          "link.springer.com",
+          "iopscience.iop.org",
+          "onlinelibrary.wiley.com"
+        ],
+        "license": "UNSPECIFIED",
+        "promotion_posture": "Citation/discovery until publication and reuse rights are recorded."
+      },
+      {
+        "source_class": "secondary_or_discovery",
+        "url_occurrences": 22,
+        "unique_host_count": 16,
+        "representative_hosts": [
+          "en.wikipedia.org",
+          "qualitymag.com",
+          "marketsandmarkets.com",
+          "spacedaily.com",
+          "pharmabiz.com",
+          "linkedin.com",
+          "instagram.com"
+        ],
+        "license": "UNSPECIFIED",
+        "promotion_posture": "Discovery/caveated evidence; never silently promote to measured capability."
+      },
+      {
+        "source_class": "unclassified_reference",
+        "url_occurrences": 11,
+        "unique_host_count": 7,
+        "representative_hosts": [
+          "tsapps.nist.gov",
+          "www.cense.iisc.ac.in",
+          "hal-india.co.in",
+          "cprijournal.in",
+          "subodhlabs.net",
+          "trentonsystems.com"
+        ],
+        "license": "UNSPECIFIED",
+        "promotion_posture": "Manual source classification required."
+      }
+    ]
+  },
+  "coverage_totals": {
+    "extracted_artifact_count": 5,
+    "raw_zip_entry_count": 5,
+    "extracted_byte_count": 237447,
+    "all_file_line_count": 786,
+    "main_markdown_table_count": 11,
+    "main_markdown_data_row_count": 117,
+    "embedded_workstream_table_count": 36,
+    "embedded_workstream_data_row_count": 224,
+    "structured_table_data_row_count": 341,
+    "workstream_result_count": 9,
+    "high_risk_result_count": 8,
+    "result_record_count": 17,
+    "source_register_entry_count": 15,
+    "unknown_ledger_entry_count": 15,
+    "machine_rule_entry_count": 18,
+    "url_occurrences": 266,
+    "unique_urls": 182,
+    "unique_hosts": 92,
+    "explicit_epistemic_label_occurrences": 187,
+    "lexical_epistemic_token_counts": {
+      "MEASURED": 34,
+      "REPORTED": 67,
+      "DERIVED": 10,
+      "ESTIMATED": 7,
+      "MODELLED": 3,
+      "ASSUMPTION": 5,
+      "SCENARIO": 5,
+      "UNKNOWN": 46,
+      "CONFLICTED": 10
+    },
+    "candidate_claim_sample_count": 22,
+    "canonical_match_candidate_count": 34,
+    "relation_normalization_candidate_count": 19,
+    "malformed_artifact_count": 0,
+    "error_field_nonempty_count": 0
+  },
+  "entity_and_relation_inventory": {
+    "extraction_method": "Deterministic surface-label collection from main Markdown tables and embedded JSON Markdown tables; labels are not canonical identities.",
+    "surface_label_mentions": 341,
+    "unique_clean_first_column_labels": 296,
+    "entity_candidate_groups": {
+      "organizations_facilities": 17,
+      "standards_schemes": 10,
+      "capabilities_methods_tests": 7,
+      "ambiguity_groups": 10
+    },
+    "canonical_match_candidates": [
+      {
+        "candidate_id": "canonical-candidate:org:bipm",
+        "kind": "organization",
+        "surface_forms": [
+          "BIPM",
+          "International Bureau of Weights and Measures"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L12-L16",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L193-L195",
+          "manus-05/research_infrastructure_workstreams.json#/results/0/output/global_infrastructure"
+        ],
+        "ambiguity_or_escalation": "Role and current source snapshot require manual review."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:nist",
+        "kind": "organization",
+        "surface_forms": [
+          "NIST",
+          "NIST Dimensional Metrology Group",
+          "NIST (CHIPS Metrology)"
+        ],
+        "match_state": "RELATED_NOT_IDENTICAL",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L14-L16",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L193-L196",
+          "manus-05/research_infrastructure_workstreams.json#/results/1/output/global_infrastructure"
+        ],
+        "ambiguity_or_escalation": "Institute, group, program and facility are distinct."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:ptb",
+        "kind": "organization",
+        "surface_forms": [
+          "PTB",
+          "PTB (Germany)",
+          "Division 5 (Precision Engineering)"
+        ],
+        "match_state": "RELATED_NOT_IDENTICAL",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L193-L198",
+          "manus-05/research_infrastructure_workstreams.json#/results/1/output/global_infrastructure"
+        ],
+        "ambiguity_or_escalation": "Institute and division must not be merged."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:npl",
+        "kind": "organization",
+        "surface_forms": [
+          "NPL",
+          "NPL (UK)",
+          "NPL India",
+          "CSIR-NPL",
+          "CSIR-NPLI",
+          "NPLI"
+        ],
+        "match_state": "AMBIGUOUS",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L172-L174",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L193-L198",
+          "manus-05/FORGE WORLD Research Notes.md#L85-L92",
+          "manus-05/research_infrastructure_workstreams.json#/results/1/output/global_infrastructure"
+        ],
+        "ambiguity_or_escalation": "NPL UK and Indian NPL aliases collide; split jurisdiction and institution."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:nmij-aist",
+        "kind": "organization",
+        "surface_forms": [
+          "NMIJ",
+          "NMIJ/AIST",
+          "AIST/NMIJ (Japan)"
+        ],
+        "match_state": "RELATED_NOT_IDENTICAL",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L197-L198",
+          "manus-05/research_infrastructure_workstreams.json#/results/8/output/global_infrastructure"
+        ],
+        "ambiguity_or_escalation": "Institute/division relation requires verification."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:barc-niot",
+        "kind": "organization",
+        "surface_forms": [
+          "BARC",
+          "Bhabha Atomic Research Centre",
+          "NIOT",
+          "National Institute of Ocean Technology"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L172-L174",
+          "manus-05/research_infrastructure_workstreams.json#/results/0/output/india_infrastructure",
+          "manus-05/validate_high_risk_claims.json#/results/0/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Designated-institute roles are field-specific; do not infer broad capability."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:nabl",
+        "kind": "accreditation_body",
+        "surface_forms": [
+          "NABL",
+          "NABL (India)",
+          "NABL (QCI)",
+          "NABL (Gurugram)"
+        ],
+        "match_state": "AMBIGUOUS",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L174-L175",
+          "manus-05/FORGE WORLD Research Notes.md#L61-L65",
+          "manus-05/validate_high_risk_claims.json#/results/1/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Body, directory, site, scheme and recognition program need separate identities."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:bis",
+        "kind": "standards_body",
+        "surface_forms": [
+          "BIS",
+          "Bureau of Indian Standards",
+          "ISI Mark",
+          "CRS"
+        ],
+        "match_state": "RELATED_NOT_IDENTICAL",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L176-L177",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L218-L220",
+          "manus-05/research_infrastructure_workstreams.json#/results/7/output/standards_pathways"
+        ],
+        "ambiguity_or_escalation": "Institution, mark, scheme and QCO are separate."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:global-aci",
+        "kind": "accreditation_arrangement",
+        "surface_forms": [
+          "Global Accreditation Cooperation Incorporated",
+          "Global ACI",
+          "Global ACI MRA"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L222-L222",
+          "manus-05/FORGE WORLD Research Notes.md#L67-L71",
+          "manus-05/validate_high_risk_claims.json#/results/6/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Verify effective resolution, signatory and mark status."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:ilac-iaf",
+        "kind": "accreditation_arrangement",
+        "surface_forms": [
+          "ILAC",
+          "ILAC MRA",
+          "IAF",
+          "IAF MLA"
+        ],
+        "match_state": "RELATED_NOT_IDENTICAL",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD Research Notes.md#L61-L76",
+          "manus-05/validate_high_risk_claims.json#/results/5/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Historical arrangements and Global ACI successor need versioning."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:arai",
+        "kind": "facility",
+        "surface_forms": [
+          "ARAI",
+          "ARAI (Pune)",
+          "ARAI, Pune/Chakan",
+          "Centre of Excellence for Green Mobility",
+          "Vehicle EMC Facility"
+        ],
+        "match_state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L112-L114",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L176-L178",
+          "manus-05/validate_high_risk_claims.json#/results/2/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Institution, site, chamber and motor beds are not one asset."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:isro-nal",
+        "kind": "facility_network",
+        "surface_forms": [
+          "ISRO",
+          "URSC",
+          "ISITE",
+          "CSIR-NAL",
+          "NAL Acoustic Test Facility",
+          "ATF"
+        ],
+        "match_state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L102-L104",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L177-L181",
+          "manus-05/validate_high_risk_claims.json#/results/3/output/corrections"
+        ],
+        "ambiguity_or_escalation": "URSC/ISITE and joint/related NAL ATF require separate operator/asset records."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:cpri",
+        "kind": "facility_network",
+        "surface_forms": [
+          "CPRI",
+          "Central Power Research Institute",
+          "Bengaluru HPL",
+          "Bhopal STDS",
+          "Noida laboratory",
+          "Hyderabad UHVRL"
+        ],
+        "match_state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L104-L105",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L179-L180",
+          "manus-05/validate_high_risk_claims.json#/results/4/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Parent and laboratory scopes must be separate."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:cmti-stqc",
+        "kind": "organization",
+        "surface_forms": [
+          "CMTI",
+          "STQC",
+          "SAMEER (MeitY)"
+        ],
+        "match_state": "RELATED_NOT_IDENTICAL",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/research_infrastructure_workstreams.json#/results/1/output/india_infrastructure",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L179-L182"
+        ],
+        "ambiguity_or_escalation": "Related quality infrastructure, not aliases."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:nasa-natf",
+        "kind": "facility",
+        "surface_forms": [
+          "NASA Neil Armstrong Test Facility",
+          "NATF",
+          "Space Power Facility",
+          "SPF",
+          "Mechanical Vibration Facility",
+          "In-Space Propulsion Facility"
+        ],
+        "match_state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L102-L103",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L198-L200",
+          "manus-05/validate_high_risk_claims.json#/results/7/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Campus and assets must be separated; largest/only claims are scope-limited."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:standards-bodies",
+        "kind": "standards_body",
+        "surface_forms": [
+          "ISO",
+          "ASTM International",
+          "ASME",
+          "JEDEC",
+          "IPC",
+          "ASNT",
+          "ISNT"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L205-L222",
+          "manus-05/research_infrastructure_workstreams.json#/results/6/output/global_infrastructure"
+        ],
+        "ambiguity_or_escalation": "Body, standard edition, certificate and lab scope are different."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:in-space-rdso",
+        "kind": "qualification_or_authorization_body",
+        "surface_forms": [
+          "IN-SPACe",
+          "RDSO",
+          "Research Designs and Standards Organisation"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/validate_high_risk_claims.json#/results/3/output/supported_claims",
+          "manus-05/research_infrastructure_workstreams.json#/results/5/output/india_infrastructure"
+        ],
+        "ambiguity_or_escalation": "Authorization/approval is not slot availability or production capacity."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:semiconductor-cluster",
+        "kind": "facility_cluster",
+        "surface_forms": [
+          "SCL",
+          "Semi-Conductor Laboratory",
+          "CeNSE (IISc)",
+          "Micron ATMP Facility",
+          "Tata Electronics (TSAT)"
+        ],
+        "match_state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/research_infrastructure_workstreams.json#/results/4/output/india_infrastructure",
+          "manus-05/research_infrastructure_workstreams.json#/results/4/output/bottlenecks_unknowns"
+        ],
+        "ambiguity_or_escalation": "Research, fab, ATMP and process-control scopes differ."
+      },
+      {
+        "candidate_id": "canonical-candidate:org:global-test-centers",
+        "kind": "facility_network",
+        "surface_forms": [
+          "ESA ESTEC",
+          "JAXA Tsukuba Space Center",
+          "NASA Stennis Space Center",
+          "IAEA Seibersdorf Laboratories",
+          "CERN",
+          "HORIBA MIRA",
+          "VUZ Velim",
+          "DNV Technology Centre",
+          "ITER",
+          "Applus+ IDIADA"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/research_infrastructure_workstreams.json#/results/3/output/global_infrastructure",
+          "manus-05/research_infrastructure_workstreams.json#/results/5/output/global_infrastructure"
+        ],
+        "ambiguity_or_escalation": "Benchmark mentions need exact asset and operating scope."
+      },
+      {
+        "candidate_id": "canonical-candidate:capability:traceability",
+        "kind": "capability",
+        "surface_forms": [
+          "SI traceability",
+          "calibration chain",
+          "measurement uncertainty",
+          "DCC"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L12-L16",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L121-L139",
+          "manus-05/FORGE WORLD Research Notes.md#L12-L21"
+        ],
+        "ambiguity_or_escalation": "Result-level traceability must not collapse into instrument calibration."
+      },
+      {
+        "candidate_id": "canonical-candidate:capability:dimensional",
+        "kind": "capability",
+        "surface_forms": [
+          "dimensional metrology",
+          "CMM inspection",
+          "laser interferometry",
+          "laser tracking",
+          "form/surface metrology"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L59-L74",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L224-L240",
+          "manus-05/research_infrastructure_workstreams.json#/results/1/output/standards_pathways"
+        ],
+        "ambiguity_or_escalation": "Equipment ownership is not qualified scope, uncertainty or throughput."
+      },
+      {
+        "candidate_id": "canonical-candidate:capability:materials-mechanical",
+        "kind": "capability",
+        "surface_forms": [
+          "materials chemistry",
+          "microscopy",
+          "hardness",
+          "tensile/fatigue/fracture",
+          "CRM"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L88-L94",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L233-L235",
+          "manus-05/research_infrastructure_workstreams.json#/results/2/output/standards_pathways"
+        ],
+        "ambiguity_or_escalation": "Specimen, method, reference material and uncertainty need separate records."
+      },
+      {
+        "candidate_id": "canonical-candidate:capability:ndt",
+        "kind": "capability",
+        "surface_forms": [
+          "NDT",
+          "UT/PAUT/TOFD",
+          "radiography",
+          "eddy current",
+          "penetrant",
+          "magnetic particle"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L96-L104",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L235-L237",
+          "manus-05/research_infrastructure_workstreams.json#/results/3/output/standards_pathways"
+        ],
+        "ambiguity_or_escalation": "Procedure, reference block, personnel, criteria and sizing uncertainty are distinct."
+      },
+      {
+        "candidate_id": "canonical-candidate:capability:environmental-emc",
+        "kind": "capability",
+        "surface_forms": [
+          "TVAC",
+          "vibration",
+          "acoustic",
+          "shock",
+          "EMC/EMI",
+          "ingress",
+          "reliability/life"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L96-L112",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L236-L239",
+          "manus-05/validate_high_risk_claims.json#/results/3/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Ratings do not establish severity, calibration, access or queue."
+      },
+      {
+        "candidate_id": "canonical-candidate:capability:semiconductor-battery",
+        "kind": "capability",
+        "surface_forms": [
+          "semiconductor process control",
+          "CD-SEM",
+          "overlay",
+          "battery abuse/life",
+          "BMS",
+          "thermal propagation"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "UNKNOWN",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L106-L114",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L238-L240",
+          "manus-05/research_infrastructure_workstreams.json#/results/4/output/bottlenecks_unknowns"
+        ],
+        "ambiguity_or_escalation": "India advanced scope and qualified throughput are unresolved."
+      },
+      {
+        "candidate_id": "canonical-candidate:standard:iso-iec-17025",
+        "kind": "standard",
+        "surface_forms": "ISO/IEC 17025",
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L16-L16",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L212-L213",
+          "manus-05/FORGE WORLD Research Notes.md#L129-L133",
+          "manus-05/validate_high_risk_claims.json#/results/1/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Exact certificate/site/method/range/uncertainty/status required."
+      },
+      {
+        "candidate_id": "canonical-candidate:standard:accreditation-family",
+        "kind": "standard_family",
+        "surface_forms": [
+          "ISO/IEC 17011",
+          "ISO/IEC 17020",
+          "ISO/IEC 17043",
+          "ISO/IEC 17065",
+          "ISO 17034",
+          "ISO 20387"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L207-L219",
+          "manus-05/research_infrastructure_workstreams.json#/results/0/output/standards_pathways",
+          "manus-05/research_infrastructure_workstreams.json#/results/6/output/standards_pathways"
+        ],
+        "ambiguity_or_escalation": "Each scheme/body type is separate."
+      },
+      {
+        "candidate_id": "canonical-candidate:standard:cipm-gum-vim",
+        "kind": "metrology_framework",
+        "surface_forms": [
+          "CIPM MRA",
+          "KCDB",
+          "CMCs",
+          "JCGM 100:2008 (GUM)",
+          "JCGM 200:2012 (VIM)",
+          "Mises en Pratique"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L12-L16",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L55-L57",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L208-L211",
+          "manus-05/validate_high_risk_claims.json#/results/5/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "CMC capability and equivalence are not commercial throughput."
+      },
+      {
+        "candidate_id": "canonical-candidate:standard:dimensional-methods",
+        "kind": "standard_family",
+        "surface_forms": [
+          "ISO 1",
+          "ISO 10360",
+          "ISO 3650",
+          "ISO 4287",
+          "ISO 25178",
+          "ISO 12181"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L63-L74",
+          "manus-05/research_infrastructure_workstreams.json#/results/1/output/standards_pathways"
+        ],
+        "ambiguity_or_escalation": "Edition, artifact, range, environment, software and accreditation are missing."
+      },
+      {
+        "candidate_id": "canonical-candidate:standard:mechanical-methods",
+        "kind": "standard_family",
+        "surface_forms": [
+          "ISO 376",
+          "ISO 6789",
+          "ISO 6506/6507/6508",
+          "ISO 6892",
+          "ASTM E8",
+          "ASTM E399/E1820",
+          "ASTM E466/E606"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L88-L94",
+          "manus-05/research_infrastructure_workstreams.json#/results/2/output/standards_pathways"
+        ],
+        "ambiguity_or_escalation": "Method references are not current facility accreditation."
+      },
+      {
+        "candidate_id": "canonical-candidate:standard:sector",
+        "kind": "standard_family",
+        "surface_forms": [
+          "AS9100/AS9102",
+          "NADCAP",
+          "ASME NQA-1",
+          "ISO 9001",
+          "IATF 16949",
+          "ISO 13485",
+          "ISO 22163",
+          "ISO 29001"
+        ],
+        "match_state": "AMBIGUOUS",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L143-L165",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L216-L220",
+          "manus-05/validate_high_risk_claims.json#/results/7/output/corrections"
+        ],
+        "ambiguity_or_escalation": "QMS, QAP, lab accreditation, customer qualification and regulator approval differ."
+      },
+      {
+        "candidate_id": "canonical-candidate:standard:electronics-battery",
+        "kind": "standard_family",
+        "surface_forms": [
+          "JEDEC JESD22",
+          "J-STD-020",
+          "IPC",
+          "MIL-STD-883",
+          "UN 38.3",
+          "IEC 62133-2",
+          "IEC 62619",
+          "ISO 12405",
+          "AIS 156",
+          "AIS 038",
+          "ECE R10"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L106-L114",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L159-L165",
+          "manus-05/validate_high_risk_claims.json#/results/2/output/supported_claims"
+        ],
+        "ambiguity_or_escalation": "Product level, edition, test article and market must be explicit."
+      },
+      {
+        "candidate_id": "canonical-candidate:standard:ndt-environmental",
+        "kind": "standard_family",
+        "surface_forms": [
+          "ISO 9712",
+          "MIL-STD-810H",
+          "RTCA DO-160G",
+          "ECSS-E-ST-10-03C",
+          "IEC 61000",
+          "IEC 60529"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L96-L110",
+          "manus-05/research_infrastructure_workstreams.json#/results/3/output/standards_pathways"
+        ],
+        "ambiguity_or_escalation": "Method severity and accredited scope need a test record."
+      },
+      {
+        "candidate_id": "canonical-candidate:standard:india-regulatory",
+        "kind": "regulatory_scheme_family",
+        "surface_forms": [
+          "BIS QCO",
+          "ISI Mark",
+          "CRS",
+          "CMVR",
+          "Legal Metrology Act",
+          "RDSO approval",
+          "AERB rules"
+        ],
+        "match_state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_epistemic_class": "REPORTED",
+        "locators": [
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L176-L177",
+          "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L218-L220",
+          "manus-05/research_infrastructure_workstreams.json#/results/7/output/standards_pathways"
+        ],
+        "ambiguity_or_escalation": "Current product/jurisdiction applicability needs regulator evidence."
+      }
+    ]
+  },
+  "relation_normalization_candidates": [
+    {
+      "relation_candidate_id": "relation-candidate:traceability",
+      "subject_text": "measurement result",
+      "original_relation": "has documented unbroken calibration chain",
+      "object_text": "SI/NMI/reference-material chain",
+      "state": "AMBIGUOUS",
+      "normalized_relation": "",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L121-L139",
+        "manus-05/FORGE WORLD Research Notes.md#L12-L17"
+      ],
+      "rationale": "No exact traceability edge exists; do not invent one."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:cipm-kcdb",
+      "subject_text": "CIPM MRA",
+      "original_relation": "supports peer-reviewed CMC/comparison results",
+      "object_text": "KCDB/CMC",
+      "state": "NORMALIZED",
+      "normalized_relation": "supports",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L12-L16",
+        "manus-05/FORGE WORLD Research Notes.md#L56-L59"
+      ],
+      "rationale": "Closest allowed relation; publishes/contains semantics remain unresolved."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:cmc-throughput",
+      "subject_text": "CMC",
+      "original_relation": "is not commercial throughput",
+      "object_text": "qualified annual throughput",
+      "state": "NORMALIZED",
+      "normalized_relation": "contradicts",
+      "candidate_epistemic_class": "DERIVED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L24-L26",
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L244-L247",
+        "manus-05/validate_high_risk_claims.json#/results/5/output/corrections"
+      ],
+      "rationale": "Preserves anti-proxy boundary."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:global-aci",
+      "subject_text": "Global ACI MRA",
+      "original_relation": "succeeds former ILAC MRA/IAF MLA",
+      "object_text": "ILAC MRA/IAF MLA",
+      "state": "NORMALIZED",
+      "normalized_relation": "supersedes",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L222-L222",
+        "manus-05/FORGE WORLD Research Notes.md#L67-L71",
+        "manus-05/validate_high_risk_claims.json#/results/6/output/supported_claims"
+      ],
+      "rationale": "Transition marks and scheme-owner conditions remain open."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:nabl-accredits",
+      "subject_text": "NABL",
+      "original_relation": "accredits",
+      "object_text": "laboratory/scheme within defined scope",
+      "state": "AMBIGUOUS",
+      "normalized_relation": "",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L174-L175",
+        "manus-05/validate_high_risk_claims.json#/results/1/output/supported_claims"
+      ],
+      "rationale": "accredits is not an ALLOWED_EDGES relation; supports would erase semantics."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:arai-location",
+      "subject_text": "ARAI facility",
+      "original_relation": "located at",
+      "object_text": "Pune/Chakan",
+      "state": "NORMALIZED",
+      "normalized_relation": "located_at",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L176-L178",
+        "manus-05/validate_high_risk_claims.json#/results/2/output/sources"
+      ],
+      "rationale": "Location only; no throughput inference."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:ursc-location",
+      "subject_text": "URSC/ISITE",
+      "original_relation": "located at",
+      "object_text": "Bengaluru",
+      "state": "NORMALIZED",
+      "normalized_relation": "located_at",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L177-L178",
+        "manus-05/FORGE WORLD Research Notes.md#L110-L114"
+      ],
+      "rationale": "Location only; separate URSC/ISITE/NAL assets."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:atf-operated",
+      "subject_text": "Acoustic Test Facility",
+      "original_relation": "operated jointly by",
+      "object_text": "ISRO and CSIR-NAL",
+      "state": "NORMALIZED",
+      "normalized_relation": "operated_by",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L102-L104",
+        "manus-05/validate_high_risk_claims.json#/results/3/output/corrections"
+      ],
+      "rationale": "Ownership and operating agreement need evidence."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:arai-scope",
+      "subject_text": "ARAI facility",
+      "original_relation": "supports declared scope",
+      "object_text": "motor, battery, EMC and homologation tests",
+      "state": "NORMALIZED",
+      "normalized_relation": "supports",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L112-L114",
+        "manus-05/validate_high_risk_claims.json#/results/2/output/supported_claims"
+      ],
+      "rationale": "Declared scope is not qualified throughput."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:cpri-scope",
+      "subject_text": "CPRI laboratories",
+      "original_relation": "supports declared scope",
+      "object_text": "HV, PD, endurance, switchgear and IP68 tests",
+      "state": "NORMALIZED",
+      "normalized_relation": "supports",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L104-L105",
+        "manus-05/validate_high_risk_claims.json#/results/4/output/supported_claims"
+      ],
+      "rationale": "Site-level scope and limits are separate."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:cpri-exclusion",
+      "subject_text": "CPRI supplementary laboratory",
+      "original_relation": "excludes",
+      "object_text": "short-circuit and EMI/EMC capability",
+      "state": "AMBIGUOUS",
+      "normalized_relation": "",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L104-L105",
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L179-L180"
+      ],
+      "rationale": "No exact exclusion edge; do not generalize to CPRI-wide absence."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:facility-throughput",
+      "subject_text": "facility/equipment existence",
+      "original_relation": "does not prove qualified throughput",
+      "object_text": "annual/concurrent qualified output",
+      "state": "NORMALIZED",
+      "normalized_relation": "contradicts",
+      "candidate_epistemic_class": "DERIVED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L246-L247",
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L291-L293",
+        "manus-05/validate_high_risk_claims.json#/results/2/output/unsupported_or_limited"
+      ],
+      "rationale": "Explicit anti-proxy rule."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:qms-lab",
+      "subject_text": "ISO 9001/AS9100/IATF/ISO 13485",
+      "original_relation": "does not prove ISO/IEC 17025 competence",
+      "object_text": "technical laboratory scope",
+      "state": "NORMALIZED",
+      "normalized_relation": "contradicts",
+      "candidate_epistemic_class": "DERIVED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L217-L220",
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L293-L295",
+        "manus-05/validate_high_risk_claims.json#/results/7/output/unsupported_or_limited"
+      ],
+      "rationale": "Store QMS and lab competence separately."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:cmm-gate",
+      "subject_text": "CMM inspection",
+      "original_relation": "requires standard/qualification",
+      "object_text": "ISO 10360 and calibrated artifacts",
+      "state": "NORMALIZED",
+      "normalized_relation": "requires_qualification",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L63-L74",
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L227-L229"
+      ],
+      "rationale": "Standard is a gate, not equipment."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:battery-gate",
+      "subject_text": "battery qualification",
+      "original_relation": "requires applicable standards",
+      "object_text": "AIS 156/AIS 038/UN 38.3/IEC 62133-2",
+      "state": "NORMALIZED",
+      "normalized_relation": "requires_qualification",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L106-L114",
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L159-L165"
+      ],
+      "rationale": "Product level/edition/market remain metadata."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:nqa1",
+      "subject_text": "NASA NATF / ASME NQA-1",
+      "original_relation": "QAP compliance is not campus-wide lab accreditation/regulator approval",
+      "object_text": "ISO/IEC 17025/NRC authorization",
+      "state": "NORMALIZED",
+      "normalized_relation": "contradicts",
+      "candidate_epistemic_class": "CONFLICTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L147-L149",
+        "manus-05/validate_high_risk_claims.json#/results/7/output/unsupported_or_limited"
+      ],
+      "rationale": "Conflicting wording must remain visible."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:qualification-chain",
+      "subject_text": "qualification result",
+      "original_relation": "is gated by method, calibration, competence, attestation and lifecycle",
+      "object_text": "qualification evidence package",
+      "state": "NORMALIZED",
+      "normalized_relation": "gated_by",
+      "candidate_epistemic_class": "MODELLED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L121-L139",
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L284-L303"
+      ],
+      "rationale": "Machine-actionable rule candidate."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:objective-chain",
+      "subject_text": "objective",
+      "original_relation": "decomposes into",
+      "object_text": "requirement/measurand/method/result/decision",
+      "state": "NORMALIZED",
+      "normalized_relation": "decomposes_into",
+      "candidate_epistemic_class": "MODELLED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L121-L139"
+      ],
+      "rationale": "Reusable evidence chain candidate."
+    },
+    {
+      "relation_candidate_id": "relation-candidate:crm-input",
+      "subject_text": "materials chemistry claim",
+      "original_relation": "requires certified reference material",
+      "object_text": "CRM with matrix/value/uncertainty/validity",
+      "state": "NORMALIZED",
+      "normalized_relation": "requires_input",
+      "candidate_epistemic_class": "REPORTED",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L88-L94",
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L298-L300"
+      ],
+      "rationale": "CRM is a physical/evidence dependency."
+    }
+  ],
+  "claim_candidate_samples": [
+    {
+      "claim_id": "staged-claim:manus05:traceability-result",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+        "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L12-L16",
+        "subject_text": "measurement result",
+        "predicate_text": "requires documented result-level traceability",
+        "value_text": "Traceability belongs to a measurement result; a calibrated instrument alone is insufficient."
+      },
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L12-L16",
+      "subject_text": "measurement result",
+      "predicate_text": "requires documented result-level traceability",
+      "value_text": "Traceability belongs to a measurement result; a calibrated instrument alone is insufficient.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "GLOBAL_OR_SOURCE_SCOPE",
+      "technical_scope": "",
+      "unknown_dimensions": [
+        "facility_scope",
+        "qualified_throughput"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "requires documented result-level traceability",
+        "state": "AMBIGUOUS",
+        "normalized_relation": "",
+        "rationale": "No exact typed edge."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:cmc-not-throughput",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+        "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L24-L26",
+        "subject_text": "CIPM MRA CMC",
+        "predicate_text": "is not commercial throughput",
+        "value_text": "CMC counts/ranges must not be converted into annual commercial capacity."
+      },
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L24-L26",
+      "subject_text": "CIPM MRA CMC",
+      "predicate_text": "is not commercial throughput",
+      "value_text": "CMC counts/ranges must not be converted into annual commercial capacity.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "GLOBAL_OR_SOURCE_SCOPE",
+      "technical_scope": "",
+      "unknown_dimensions": [
+        "commercial_throughput",
+        "customer_access"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "is not commercial throughput",
+        "state": "NORMALIZED",
+        "normalized_relation": "contradicts",
+        "rationale": "Anti-proxy boundary."
+      },
+      "conflict_state": "NONE_FOUND",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:iso-scope",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+        "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L16-L16",
+        "subject_text": "ISO/IEC 17025 accreditation",
+        "predicate_text": "covers a defined method/measurand/range/location scope",
+        "value_text": "Accreditation is scope-specific and does not cover every organization activity."
+      },
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L16-L16",
+      "subject_text": "ISO/IEC 17025 accreditation",
+      "predicate_text": "covers a defined method/measurand/range/location scope",
+      "value_text": "Accreditation is scope-specific and does not cover every organization activity.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "GLOBAL_OR_SOURCE_SCOPE",
+      "technical_scope": "",
+      "unknown_dimensions": [
+        "certificate_number",
+        "scope_edition",
+        "active_status"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "covers defined laboratory scope",
+        "state": "AMBIGUOUS",
+        "normalized_relation": "",
+        "rationale": "accredited_for is not in current edge vocabulary."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:arai-ratings",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+        "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L112-L114",
+        "subject_text": "ARAI E-Mobility and EMC facilities",
+        "predicate_text": "declares facility ratings",
+        "value_text": "30/150/220 kW motor beds, 12,000 kg-per-axle dynamometer and EMC ranges are declared; annual throughput is not published."
+      },
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L112-L114",
+      "subject_text": "ARAI E-Mobility and EMC facilities",
+      "predicate_text": "declares facility ratings",
+      "value_text": "30/150/220 kW motor beds, 12,000 kg-per-axle dynamometer and EMC ranges are declared; annual throughput is not published.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED",
+        "MEASURED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India:Pune/Chakan",
+      "technical_scope": "EV battery/e-powertrain/EMC/homologation",
+      "unknown_dimensions": [
+        "qualified_throughput",
+        "utilization",
+        "turnaround",
+        "accreditation_scope"
+      ],
+      "entity_resolution": {
+        "state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:org:arai"
+        ],
+        "method": "manual_site_scope_review",
+        "rationale": "Institution/labs/assets differ."
+      },
+      "relation": {
+        "original_relation": "declares facility ratings",
+        "state": "NORMALIZED",
+        "normalized_relation": "supports",
+        "rationale": "Declared scope only."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:cpri-limits",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+        "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L104-L105",
+        "subject_text": "CPRI supplementary laboratory",
+        "predicate_text": "has declared tests with explicit exclusions",
+        "value_text": "HV, temperature-rise, CT/VT, PD, endurance, switchgear/fuse and IP68 are declared; cited lab excludes short-circuit and EMI/EMC."
+      },
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L104-L105",
+      "subject_text": "CPRI supplementary laboratory",
+      "predicate_text": "has declared tests with explicit exclusions",
+      "value_text": "HV, temperature-rise, CT/VT, PD, endurance, switchgear/fuse and IP68 are declared; cited lab excludes short-circuit and EMI/EMC.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India:CPRI site-specific",
+      "technical_scope": "power-equipment tests",
+      "unknown_dimensions": [
+        "site_scope",
+        "qualified_throughput",
+        "active_accreditation"
+      ],
+      "entity_resolution": {
+        "state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:org:cpri"
+        ],
+        "method": "manual_lab_scope_review",
+        "rationale": "Parent and sites differ."
+      },
+      "relation": {
+        "original_relation": "supports declared tests",
+        "state": "NORMALIZED",
+        "normalized_relation": "supports",
+        "rationale": "Site scope candidate."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:cmc-conflict-u01",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+        "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L260-L278",
+        "subject_text": "CSIR-NPL/India CMC totals",
+        "predicate_text": "has conflicting reported totals",
+        "value_text": "27 section; 42 mass-related India; 105 NPLI; 117 India including DIs; ~236 elsewhere; dated KCDB reconciliation required."
+      },
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L260-L278",
+      "subject_text": "CSIR-NPL/India CMC totals",
+      "predicate_text": "has conflicting reported totals",
+      "value_text": "27 section; 42 mass-related India; 105 NPLI; 117 India including DIs; ~236 elsewhere; dated KCDB reconciliation required.",
+      "candidate_epistemic_class": "CONFLICTED",
+      "source_claim_labels": [
+        "CONFLICTED",
+        "REPORTED",
+        "UNKNOWN"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India",
+      "technical_scope": "BIPM KCDB CMC scope",
+      "unknown_dimensions": [
+        "dated_kcdb_export",
+        "subject_boundary",
+        "current_total"
+      ],
+      "entity_resolution": {
+        "state": "AMBIGUOUS",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:org:npl"
+        ],
+        "method": "manual_alias_and_scope_review",
+        "rationale": "Section/institute/national subjects differ."
+      },
+      "relation": {
+        "original_relation": "reported totals contradict/revise one another",
+        "state": "NORMALIZED",
+        "normalized_relation": "contradicts",
+        "rationale": "Conflict stays visible."
+      },
+      "conflict_state": "CONFIRMED",
+      "conflicting_claim_ids": [
+        "staged-claim:manus05:hr0-cmc-105",
+        "staged-claim:manus05:notes-cmc-27"
+      ],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:facility-throughput-rule",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+        "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L284-L303",
+        "subject_text": "facility/equipment existence",
+        "predicate_text": "does not prove qualified throughput",
+        "value_text": "No throughput claim may be derived from facility existence, equipment, exports, revenue or employee count."
+      },
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "locator": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L284-L303",
+      "subject_text": "facility/equipment existence",
+      "predicate_text": "does not prove qualified throughput",
+      "value_text": "No throughput claim may be derived from facility existence, equipment, exports, revenue or employee count.",
+      "candidate_epistemic_class": "DERIVED",
+      "source_claim_labels": [
+        "DERIVED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "GLOBAL_OR_SOURCE_SCOPE",
+      "technical_scope": "",
+      "unknown_dimensions": [
+        "availability",
+        "utilization",
+        "yield",
+        "qualification_fraction",
+        "queue"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "does not prove qualified throughput",
+        "state": "NORMALIZED",
+        "normalized_relation": "contradicts",
+        "rationale": "Explicit anti-proxy rule."
+      },
+      "conflict_state": "NONE_FOUND",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:nist-traceability",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:a69096aaef9839ab0cb020ee",
+        "locator": "manus-05/FORGE WORLD Research Notes.md#L12-L17",
+        "subject_text": "metrological traceability",
+        "predicate_text": "attaches to the measurement result",
+        "value_text": "NIST distinguishes result-level traceability from merely using a calibrated instrument."
+      },
+      "artifact_id": "artifact:a69096aaef9839ab0cb020ee",
+      "locator": "manus-05/FORGE WORLD Research Notes.md#L12-L17",
+      "subject_text": "metrological traceability",
+      "predicate_text": "attaches to the measurement result",
+      "value_text": "NIST distinguishes result-level traceability from merely using a calibrated instrument.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED"
+      ],
+      "source_class": "official_primary_reference_embedded_in_corpus",
+      "source_license": "UNSPECIFIED",
+      "geography": "GLOBAL_OR_SOURCE_SCOPE",
+      "technical_scope": "",
+      "unknown_dimensions": [
+        "complete_chain",
+        "uncertainty_budget",
+        "measurement_process"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "attaches to",
+        "state": "AMBIGUOUS",
+        "normalized_relation": "",
+        "rationale": "No exact provenance edge."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:notes-cmc-27",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:a69096aaef9839ab0cb020ee",
+        "locator": "manus-05/FORGE WORLD Research Notes.md#L89-L92",
+        "subject_text": "CSIR-NPL mass-metrology page",
+        "predicate_text": "reports 27 peer-reviewed CMCs for a section",
+        "value_text": "The 27 figure is field/page-specific and must not be generalized to the full NPLI/India total."
+      },
+      "artifact_id": "artifact:a69096aaef9839ab0cb020ee",
+      "locator": "manus-05/FORGE WORLD Research Notes.md#L89-L92",
+      "subject_text": "CSIR-NPL mass-metrology page",
+      "predicate_text": "reports 27 peer-reviewed CMCs for a section",
+      "value_text": "The 27 figure is field/page-specific and must not be generalized to the full NPLI/India total.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED",
+        "CONFLICTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India",
+      "technical_scope": "mass/volume/density/viscosity",
+      "unknown_dimensions": [],
+      "entity_resolution": {
+        "state": "AMBIGUOUS",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:org:npl"
+        ],
+        "method": "manual_scope_review",
+        "rationale": "Section claim is not institute total."
+      },
+      "relation": {
+        "original_relation": "supports section-level CMC capability",
+        "state": "NORMALIZED",
+        "normalized_relation": "supports",
+        "rationale": "Field-specific only."
+      },
+      "conflict_state": "CONFIRMED",
+      "conflicting_claim_ids": [
+        "staged-claim:manus05:cmc-conflict-u01",
+        "staged-claim:manus05:hr0-cmc-105"
+      ],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:ws0-dcc-unknown",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:2414fe91a08211d10757d1a3",
+        "locator": "manus-05/research_infrastructure_workstreams.json#/results/0/output/bottlenecks_unknowns",
+        "subject_text": "mid-tier NMIs and commercial laboratories",
+        "predicate_text": "have machine-actionable metrology adoption gap",
+        "value_text": "DCC and machine-readable CMC adoption is described as limited; the rate is UNKNOWN."
+      },
+      "artifact_id": "artifact:2414fe91a08211d10757d1a3",
+      "locator": "manus-05/research_infrastructure_workstreams.json#/results/0/output/bottlenecks_unknowns",
+      "subject_text": "mid-tier NMIs and commercial laboratories",
+      "predicate_text": "have machine-actionable metrology adoption gap",
+      "value_text": "DCC and machine-readable CMC adoption is described as limited; the rate is UNKNOWN.",
+      "candidate_epistemic_class": "UNKNOWN",
+      "source_claim_labels": [
+        "UNKNOWN"
+      ],
+      "source_class": "mixed_embedded_references",
+      "source_license": "UNSPECIFIED",
+      "geography": "GLOBAL_OR_SOURCE_SCOPE",
+      "technical_scope": "digital calibration certificates/machine-readable CMCs",
+      "unknown_dimensions": [
+        "adoption_rate",
+        "schema_interoperability",
+        "commercial_lab_coverage"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "requires capability improvement",
+        "state": "NORMALIZED",
+        "normalized_relation": "requires_capability",
+        "rationale": "Unknown gap, not measured rate."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:ws4-semiconductor-unknown",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:2414fe91a08211d10757d1a3",
+        "locator": "manus-05/research_infrastructure_workstreams.json#/results/4/output/bottlenecks_unknowns",
+        "subject_text": "India semiconductor metrology",
+        "predicate_text": "has leading-edge qualified scope",
+        "value_text": "EUV-compatible/sub-7 nm CD-SEM/overlay, advanced packaging inspection and qualified throughput are not sufficiently evidenced."
+      },
+      "artifact_id": "artifact:2414fe91a08211d10757d1a3",
+      "locator": "manus-05/research_infrastructure_workstreams.json#/results/4/output/bottlenecks_unknowns",
+      "subject_text": "India semiconductor metrology",
+      "predicate_text": "has leading-edge qualified scope",
+      "value_text": "EUV-compatible/sub-7 nm CD-SEM/overlay, advanced packaging inspection and qualified throughput are not sufficiently evidenced.",
+      "candidate_epistemic_class": "UNKNOWN",
+      "source_claim_labels": [
+        "UNKNOWN"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India",
+      "technical_scope": "semiconductor process control",
+      "unknown_dimensions": [
+        "installed_tools",
+        "process_node",
+        "reference_wafers",
+        "gage_rr",
+        "qualified_throughput"
+      ],
+      "entity_resolution": {
+        "state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:capability:semiconductor-battery"
+        ],
+        "method": "manual_facility_scope_review",
+        "rationale": "SCL/CeNSE/ATMP/company facilities differ."
+      },
+      "relation": {
+        "original_relation": "requires capability",
+        "state": "NORMALIZED",
+        "normalized_relation": "requires_capability",
+        "rationale": "Decision-sensitive scope gap."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:ws5-qualification-paths",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:2414fe91a08211d10757d1a3",
+        "locator": "manus-05/research_infrastructure_workstreams.json#/results/5/output/standards_pathways",
+        "subject_text": "sector qualification pathways",
+        "predicate_text": "require method-specific standards, certification and customer/regulator gates",
+        "value_text": "Aerospace, nuclear, automotive, medical, rail, energy and space pathways are distinct."
+      },
+      "artifact_id": "artifact:2414fe91a08211d10757d1a3",
+      "locator": "manus-05/research_infrastructure_workstreams.json#/results/5/output/standards_pathways",
+      "subject_text": "sector qualification pathways",
+      "predicate_text": "require method-specific standards, certification and customer/regulator gates",
+      "value_text": "Aerospace, nuclear, automotive, medical, rail, energy and space pathways are distinct.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "GLOBAL_OR_SOURCE_SCOPE",
+      "technical_scope": "AS9100/NADCAP/NQA-1/PPAP/APQP/IATF and sector pathways",
+      "unknown_dimensions": [
+        "jurisdiction",
+        "customer_acceptance",
+        "current_edition"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "is gated by",
+        "state": "NORMALIZED",
+        "normalized_relation": "gated_by",
+        "rationale": "Qualification gate."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr0-cmc-105",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/0/output/supported_claims",
+        "subject_text": "CSIR-NPL",
+        "predicate_text": "has 105 KCDB CMCs",
+        "value_text": "Validation text reports 105 CMCs (101 General Physics, 4 Chemistry/Biology) as of August 2026."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/0/output/supported_claims",
+      "subject_text": "CSIR-NPL",
+      "predicate_text": "has 105 KCDB CMCs",
+      "value_text": "Validation text reports 105 CMCs (101 General Physics, 4 Chemistry/Biology) as of August 2026.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "MEASURED",
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India",
+      "technical_scope": "BIPM KCDB",
+      "unknown_dimensions": [
+        "dated_kcdb_export",
+        "current_status",
+        "scope_boundary"
+      ],
+      "entity_resolution": {
+        "state": "AMBIGUOUS",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:org:npl"
+        ],
+        "method": "manual_scope_review",
+        "rationale": "Institution total differs from section/national totals."
+      },
+      "relation": {
+        "original_relation": "supports CMC capability",
+        "state": "NORMALIZED",
+        "normalized_relation": "supports",
+        "rationale": "No throughput inference."
+      },
+      "conflict_state": "CONFIRMED",
+      "conflicting_claim_ids": [
+        "staged-claim:manus05:cmc-conflict-u01",
+        "staged-claim:manus05:notes-cmc-27"
+      ],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr1-nabl-scope",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/1/output/supported_claims",
+        "subject_text": "NABL",
+        "predicate_text": "accredits defined conformity-assessment schemes",
+        "value_text": "Testing/calibration, medical, proficiency testing, reference-material producers and biobanks are named; scope proves competence only within defined ranges/uncertainties."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/1/output/supported_claims",
+      "subject_text": "NABL",
+      "predicate_text": "accredits defined conformity-assessment schemes",
+      "value_text": "Testing/calibration, medical, proficiency testing, reference-material producers and biobanks are named; scope proves competence only within defined ranges/uncertainties.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED",
+        "MEASURED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India",
+      "technical_scope": "ISO/IEC 17025, ISO 15189, ISO/IEC 17043, ISO 17034, ISO 20387",
+      "unknown_dimensions": [
+        "current_lab_count",
+        "scope_density",
+        "throughput"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "accredits",
+        "state": "AMBIGUOUS",
+        "normalized_relation": "",
+        "rationale": "No exact accreditation edge."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr1-nabl-count",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/1/output/unsupported_or_limited",
+        "subject_text": "NABL accredited laboratories",
+        "predicate_text": "has current total count",
+        "value_text": "Current total as of 24 August 2026 is UNKNOWN; 8,561 from September 2023 is historical/estimated."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/1/output/unsupported_or_limited",
+      "subject_text": "NABL accredited laboratories",
+      "predicate_text": "has current total count",
+      "value_text": "Current total as of 24 August 2026 is UNKNOWN; 8,561 from September 2023 is historical/estimated.",
+      "candidate_epistemic_class": "UNKNOWN",
+      "source_claim_labels": [
+        "UNKNOWN",
+        "ESTIMATED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India",
+      "technical_scope": "",
+      "unknown_dimensions": [
+        "current_total",
+        "scheme_breakdown",
+        "active_status"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "has current total",
+        "state": "AMBIGUOUS",
+        "normalized_relation": "",
+        "rationale": "Directory count is not throughput."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "AGING",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr2-arai-throughput",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/2/output/unsupported_or_limited",
+        "subject_text": "ARAI battery abuse testing",
+        "predicate_text": "has qualified throughput",
+        "value_text": "Maximum throughput and concurrent test cycles are UNKNOWN; equipment existence cannot fill the operating record."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/2/output/unsupported_or_limited",
+      "subject_text": "ARAI battery abuse testing",
+      "predicate_text": "has qualified throughput",
+      "value_text": "Maximum throughput and concurrent test cycles are UNKNOWN; equipment existence cannot fill the operating record.",
+      "candidate_epistemic_class": "UNKNOWN",
+      "source_claim_labels": [
+        "UNKNOWN",
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India:Pune/Chakan",
+      "technical_scope": "battery abuse/propagation",
+      "unknown_dimensions": [
+        "qualified_throughput",
+        "concurrent_cycles",
+        "queue",
+        "turnaround",
+        "utilization"
+      ],
+      "entity_resolution": {
+        "state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:org:arai"
+        ],
+        "method": "manual_site_scope_review",
+        "rationale": "Battery lab and institution differ."
+      },
+      "relation": {
+        "original_relation": "has qualified throughput",
+        "state": "AMBIGUOUS",
+        "normalized_relation": "",
+        "rationale": "UNKNOWN is not supply."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr3-isro-facility",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/3/output/supported_claims",
+        "subject_text": "ISRO URSC/ISITE",
+        "predicate_text": "has declared spacecraft environmental test facilities",
+        "value_text": "CATVAC ~6.5 m/200 m³, 100–433 K, 5x10^-6 mbar; 29-ton vibration; joint NAL ATF; CATF 1.1–40 GHz."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/3/output/supported_claims",
+      "subject_text": "ISRO URSC/ISITE",
+      "predicate_text": "has declared spacecraft environmental test facilities",
+      "value_text": "CATVAC ~6.5 m/200 m³, 100–433 K, 5x10^-6 mbar; 29-ton vibration; joint NAL ATF; CATF 1.1–40 GHz.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "MEASURED",
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India:Bengaluru",
+      "technical_scope": "TVAC/vibration/acoustic/antenna",
+      "unknown_dimensions": [
+        "qualified_throughput",
+        "private_access_queue",
+        "utilization",
+        "asset_ownership"
+      ],
+      "entity_resolution": {
+        "state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:org:isro-nal"
+        ],
+        "method": "manual_facility_scope_review",
+        "rationale": "URSC/ISITE/NAL ATF related but not identical."
+      },
+      "relation": {
+        "original_relation": "supports environmental test",
+        "state": "NORMALIZED",
+        "normalized_relation": "supports",
+        "rationale": "Declared facility scope only."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr4-cpri-ratings",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/4/output/supported_claims",
+        "subject_text": "CPRI Bengaluru/Bhopal/Hyderabad",
+        "predicate_text": "has declared test ratings and limits",
+        "value_text": "2500 MVA short-circuit, 245 kV breaker, 1200 kV class UHVRL, PD to 100 kV/5 pC, IP68 to 3.5 m x 3.5 m x 4 m and 15 tons."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/4/output/supported_claims",
+      "subject_text": "CPRI Bengaluru/Bhopal/Hyderabad",
+      "predicate_text": "has declared test ratings and limits",
+      "value_text": "2500 MVA short-circuit, 245 kV breaker, 1200 kV class UHVRL, PD to 100 kV/5 pC, IP68 to 3.5 m x 3.5 m x 4 m and 15 tons.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "MEASURED",
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "India:CPRI sites",
+      "technical_scope": "HV/short-circuit/PD/endurance/IP68",
+      "unknown_dimensions": [
+        "site_scope",
+        "qualified_throughput",
+        "utilization",
+        "active_accreditation"
+      ],
+      "entity_resolution": {
+        "state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:org:cpri"
+        ],
+        "method": "manual_lab_scope_review",
+        "rationale": "Facility ratings are site-specific."
+      },
+      "relation": {
+        "original_relation": "supports declared test ratings",
+        "state": "NORMALIZED",
+        "normalized_relation": "supports",
+        "rationale": "Scope only."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr5-mra-boundary",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/5/output/unsupported_or_limited",
+        "subject_text": "CIPM/ILAC MRA",
+        "predicate_text": "provides technical equivalence but not automatic legal acceptance",
+        "value_text": "Recognition is scope-limited to published CMC/accreditation scope; regulator/customer acceptance remains jurisdiction-specific."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/5/output/unsupported_or_limited",
+      "subject_text": "CIPM/ILAC MRA",
+      "predicate_text": "provides technical equivalence but not automatic legal acceptance",
+      "value_text": "Recognition is scope-limited to published CMC/accreditation scope; regulator/customer acceptance remains jurisdiction-specific.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "REPORTED",
+        "MEASURED",
+        "ESTIMATED",
+        "SCENARIO"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "GLOBAL_OR_SOURCE_SCOPE",
+      "technical_scope": "CIPM MRA/KCDB/ILAC MRA/ISO/IEC 17011",
+      "unknown_dimensions": [
+        "jurisdictional_acceptance",
+        "customer_acceptance",
+        "scope_currentness"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "supports technical equivalence",
+        "state": "NORMALIZED",
+        "normalized_relation": "supports",
+        "rationale": "No blanket legal approval."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr6-global-aci",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/6/output/supported_claims",
+        "subject_text": "Global Accreditation Cooperation Incorporated",
+        "predicate_text": "succeeds ILAC/IAF and maintains transition recognition",
+        "value_text": "Operations began 1 January 2026; Global ACI MRA and regional peer evaluation are described; legacy marks have transition conditions."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/6/output/supported_claims",
+      "subject_text": "Global Accreditation Cooperation Incorporated",
+      "predicate_text": "succeeds ILAC/IAF and maintains transition recognition",
+      "value_text": "Operations began 1 January 2026; Global ACI MRA and regional peer evaluation are described; legacy marks have transition conditions.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "MEASURED",
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "GLOBAL_OR_SOURCE_SCOPE",
+      "technical_scope": "Global ACI/ILAC/IAF",
+      "unknown_dimensions": [
+        "current_mark_rules",
+        "scheme_owner_membership",
+        "resolution_status"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "succeeds",
+        "state": "NORMALIZED",
+        "normalized_relation": "supersedes",
+        "rationale": "Historical successor candidate."
+      },
+      "conflict_state": "UNCHECKED",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr7-natf-nqa1",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/7/output/unsupported_or_limited",
+        "subject_text": "NASA Neil Armstrong Test Facility and ASME NQA-1",
+        "predicate_text": "must distinguish QAP compliance from lab accreditation/regulatory approval",
+        "value_text": "The correction distinguishes QAP/compliance wording from campus-wide ISO/IEC 17025 and NRC approval; current facility-specific scope remains unresolved."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/7/output/unsupported_or_limited",
+      "subject_text": "NASA Neil Armstrong Test Facility and ASME NQA-1",
+      "predicate_text": "must distinguish QAP compliance from lab accreditation/regulatory approval",
+      "value_text": "The correction distinguishes QAP/compliance wording from campus-wide ISO/IEC 17025 and NRC approval; current facility-specific scope remains unresolved.",
+      "candidate_epistemic_class": "CONFLICTED",
+      "source_claim_labels": [
+        "DERIVED",
+        "CONFLICTED",
+        "REPORTED",
+        "ASSUMPTION"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "United States:Sandusky",
+      "technical_scope": "NQA-1/ISO 17025/NASA SMA/NRC",
+      "unknown_dimensions": [
+        "current_qap_audit",
+        "specific_lab_scope",
+        "regulatory_material_scope"
+      ],
+      "entity_resolution": {
+        "state": "SPLIT_REQUIRED",
+        "canonical_ids": [],
+        "candidate_ids": [
+          "canonical-candidate:org:nasa-natf",
+          "canonical-candidate:org:standards-bodies"
+        ],
+        "method": "manual_program_scope_review",
+        "rationale": "Campus/lab/QAP/certificate/regulator are distinct."
+      },
+      "relation": {
+        "original_relation": "is not equivalent to",
+        "state": "NORMALIZED",
+        "normalized_relation": "contradicts",
+        "rationale": "Scope boundary remains visible."
+      },
+      "conflict_state": "CONFIRMED",
+      "conflicting_claim_ids": [
+        "staged-claim:manus05:hr7-natf-size"
+      ],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    },
+    {
+      "claim_id": "staged-claim:manus05:hr7-natf-size",
+      "candidate_id_inputs": {
+        "corpus_id": "manus-05",
+        "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+        "locator": "manus-05/validate_high_risk_claims.json#/results/7/output/supported_claims",
+        "subject_text": "NASA Space Power Facility",
+        "predicate_text": "has declared large space-simulation dimensions",
+        "value_text": "SPF is reported at 30.5 m diameter, 37.2 m height and ~22,653 m³; dimensions do not prove throughput or blanket accreditation."
+      },
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "locator": "manus-05/validate_high_risk_claims.json#/results/7/output/supported_claims",
+      "subject_text": "NASA Space Power Facility",
+      "predicate_text": "has declared large space-simulation dimensions",
+      "value_text": "SPF is reported at 30.5 m diameter, 37.2 m height and ~22,653 m³; dimensions do not prove throughput or blanket accreditation.",
+      "candidate_epistemic_class": "REPORTED",
+      "source_claim_labels": [
+        "MEASURED",
+        "REPORTED"
+      ],
+      "source_class": "corpus_research_package",
+      "source_license": "UNSPECIFIED",
+      "geography": "United States:Sandusky",
+      "technical_scope": "space-simulation vacuum/vibration/acoustic",
+      "unknown_dimensions": [
+        "qualified_throughput",
+        "booking_time",
+        "campus_accreditation_scope"
+      ],
+      "entity_resolution": {
+        "state": "NEW_CANONICAL_CANDIDATE",
+        "canonical_ids": [],
+        "candidate_ids": [],
+        "method": "manual_surface_form_candidate",
+        "rationale": "Staged identity only; no canonical promotion."
+      },
+      "relation": {
+        "original_relation": "supports declared capability",
+        "state": "NORMALIZED",
+        "normalized_relation": "supports",
+        "rationale": "Benchmark scope only."
+      },
+      "conflict_state": "POSSIBLE",
+      "conflicting_claim_ids": [],
+      "freshness_state": "UNKNOWN",
+      "promotion_state": "BLOCKED",
+      "escalation_reason": "Source license, source snapshot, identity, scope, and relation require review before promotion.",
+      "metadata": {}
+    }
+  ],
+  "unknown_conflict_signals": [
+    {
+      "id": "U-01",
+      "status": "CONFLICTED",
+      "signal": "CMC totals 27/42/105/117/~236",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L263-L265",
+        "manus-05/FORGE WORLD Research Notes.md#L89-L92",
+        "manus-05/validate_high_risk_claims.json#/results/0/output/corrections"
+      ],
+      "escalation": "Archive dated KCDB export; reconcile section/institute/DI boundary."
+    },
+    {
+      "id": "U-02",
+      "status": "UNKNOWN",
+      "signal": "Current India-wide NABL lab total",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L264-L266",
+        "manus-05/validate_high_risk_claims.json#/results/1/output/unsupported_or_limited"
+      ],
+      "escalation": "Extract dated registry by scheme/state/discipline/status."
+    },
+    {
+      "id": "U-03",
+      "status": "UNKNOWN",
+      "signal": "Advanced CMM/optical/nano/EMC/PAUT/TOFD/fracture/battery scope density",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L265-L267"
+      ],
+      "escalation": "Query current NABL scopes by method/range/site."
+    },
+    {
+      "id": "U-04",
+      "status": "UNKNOWN",
+      "signal": "ARAI annual qualified throughput",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L266-L268",
+        "manus-05/validate_high_risk_claims.json#/results/2/output/unsupported_or_limited"
+      ],
+      "escalation": "Obtain audited/facility monthly throughput."
+    },
+    {
+      "id": "U-05",
+      "status": "UNKNOWN",
+      "signal": "ISRO/IN-SPACe private access queue/backlog",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L267-L269",
+        "manus-05/validate_high_risk_claims.json#/results/3/output/unsupported_or_limited"
+      ],
+      "escalation": "Collect booking windows and queue statistics."
+    },
+    {
+      "id": "U-06",
+      "status": "UNKNOWN",
+      "signal": "CPRI utilization and lead time",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L268-L270",
+        "manus-05/validate_high_risk_claims.json#/results/4/output/unsupported_or_limited"
+      ],
+      "escalation": "Obtain site-level operating records."
+    },
+    {
+      "id": "U-07",
+      "status": "UNKNOWN",
+      "signal": "India sub-10 nm/advanced-packaging metrology scope",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L269-L271",
+        "manus-05/research_infrastructure_workstreams.json#/results/4/output/bottlenecks_unknowns"
+      ],
+      "escalation": "Verify installed tools, node, wafers, Gage R&R and qualified production."
+    },
+    {
+      "id": "U-08",
+      "status": "UNKNOWN",
+      "signal": "Indigenous CRM coverage",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L270-L272"
+      ],
+      "escalation": "Build CRM catalog by measurand/matrix/certificate/stock."
+    },
+    {
+      "id": "U-09",
+      "status": "UNKNOWN",
+      "signal": "Accredited versus non-accredited industrial test volume",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L271-L273"
+      ],
+      "escalation": "Survey regulators, associations and OEM networks."
+    },
+    {
+      "id": "U-10",
+      "status": "UNKNOWN",
+      "signal": "India NDT Level III workforce supply",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L272-L274"
+      ],
+      "escalation": "Obtain certification-body and active-personnel statistics."
+    },
+    {
+      "id": "U-11",
+      "status": "UNKNOWN",
+      "signal": "DCC adoption/interoperability",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L273-L275",
+        "manus-05/research_infrastructure_workstreams.json#/results/0/output/bottlenecks_unknowns"
+      ],
+      "escalation": "Survey labs and map schema/API adoption."
+    },
+    {
+      "id": "U-12",
+      "status": "UNKNOWN",
+      "signal": "Regulated-product certificate acceptance",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L274-L276",
+        "manus-05/validate_high_risk_claims.json#/results/5/output/unsupported_or_limited"
+      ],
+      "escalation": "Record regulator/customer decision by jurisdiction and product class."
+    },
+    {
+      "id": "U-13",
+      "status": "UNKNOWN_OR_CONFLICTED",
+      "signal": "Effective NQA-1/NADCAP/BIS/ISO scope",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L276-L277",
+        "manus-05/validate_high_risk_claims.json#/results/7/output/corrections"
+      ],
+      "escalation": "Require certificate, issue/expiry, location and scope."
+    },
+    {
+      "id": "U-14",
+      "status": "UNKNOWN",
+      "signal": "Facility downtime/rework/queue",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L277-L278"
+      ],
+      "escalation": "Require operating time series before throughput modelling."
+    },
+    {
+      "id": "U-15",
+      "status": "PARTLY_UNKNOWN",
+      "signal": "Comparable SEM/TEM/AFM/metrology data formats",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L278-L279"
+      ],
+      "escalation": "Map exports, metadata, calibration IDs and uncertainty schemas."
+    },
+    {
+      "id": "C-01",
+      "status": "CONFLICTED",
+      "signal": "NQA-1 certification versus compliant QAP wording",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L147-L149",
+        "manus-05/FORGE WORLD Research Notes.md#L152-L156",
+        "manus-05/validate_high_risk_claims.json#/results/7/output/corrections"
+      ],
+      "escalation": "Resolve ASME program semantics and NATF-specific audit evidence."
+    },
+    {
+      "id": "C-02",
+      "status": "SCOPE_CONFLICT",
+      "signal": "URSC/ISITE versus joint ISRO-NAL ATF ownership",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L102-L104",
+        "manus-05/validate_high_risk_claims.json#/results/3/output/corrections"
+      ],
+      "escalation": "Split facility and operator records."
+    },
+    {
+      "id": "C-03",
+      "status": "SCOPE_CONFLICT",
+      "signal": "CPRI supplementary exclusions versus HPL/UHVRL capabilities",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L104-L105",
+        "manus-05/validate_high_risk_claims.json#/results/4/output/unsupported_or_limited"
+      ],
+      "escalation": "Split laboratory scope."
+    },
+    {
+      "id": "C-04",
+      "status": "SCOPE_CONFLICT",
+      "signal": "Global ACI transition/legacy-mark state",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L222-L222",
+        "manus-05/FORGE WORLD Research Notes.md#L67-L76",
+        "manus-05/validate_high_risk_claims.json#/results/6/output/corrections"
+      ],
+      "escalation": "Pin current resolution and effective date."
+    },
+    {
+      "id": "C-05",
+      "status": "SCOPE_CONFLICT",
+      "signal": "MRA technical recognition versus legal/customer acceptance",
+      "locators": [
+        "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L16-L16",
+        "manus-05/FORGE WORLD Research Notes.md#L73-L76",
+        "manus-05/validate_high_risk_claims.json#/results/5/output/unsupported_or_limited"
+      ],
+      "escalation": "Separate technical and legal predicates."
+    }
+  ],
+  "malformed_duplicate_signals": [
+    {
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "signal": "No malformed Markdown table rows; all 11 tables have consistent column widths.",
+      "severity": "NONE_FOUND",
+      "evidence": "manus-05/FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md#L22-L303"
+    },
+    {
+      "artifact_id": "artifact:8f098c4bb55ef78e79378e6a",
+      "signal": "Repeated separator rows (5 three-column, 5 four-column) across separate tables.",
+      "severity": "DUPLICATE_FORMATTING",
+      "interpretation": "Expected formatting; no duplicate U-01..U-15 or R-01..R-18 IDs."
+    },
+    {
+      "artifact_id": "artifact:a69096aaef9839ab0cb020ee",
+      "signal": "Heading '## Source register additions' appears four times; exact BIPM status line appears twice.",
+      "severity": "DUPLICATE_SECTION_SIGNAL",
+      "interpretation": "Likely incremental sections; deduplicate by URL/title/date while preserving locators."
+    },
+    {
+      "artifact_id": "artifact:a018c4b24244caed6fc67b9d",
+      "signal": "No URLs, tables or repeated structured records.",
+      "severity": "NONE_FOUND"
+    },
+    {
+      "artifact_id": "artifact:2414fe91a08211d10757d1a3",
+      "signal": "JSON parses; 9 uniform results; all error fields empty; repeated URLs are cross-workstream references.",
+      "severity": "DUPLICATE_REFERENCE_SIGNAL"
+    },
+    {
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "signal": "JSON parses; 8 uniform results; all error fields empty; no duplicate inputs or URLs.",
+      "severity": "NONE_FOUND"
+    },
+    {
+      "artifact_id": "artifact:2414fe91a08211d10757d1a3",
+      "signal": "No NUL bytes, UTF-8 replacement characters or schema-width anomalies.",
+      "severity": "NONE_FOUND"
+    },
+    {
+      "artifact_id": "artifact:4e47cbcaf18307db25a40ddf",
+      "signal": "No NUL bytes, UTF-8 replacement characters or schema-width anomalies.",
+      "severity": "NONE_FOUND"
+    }
+  ],
+  "ambiguities_escalations": [
+    {
+      "id": "E-01",
+      "issue": "Every extracted artifact and embedded URL has UNSPECIFIED license metadata.",
+      "blocker": "MEASURED/REPORTED promotion requires source-specific license, publisher/access date and hash scope.",
+      "next_action": "Attach SourceSnapshot per URL/document; retain paywalled standards as identifiers."
+    },
+    {
+      "id": "E-02",
+      "issue": "JSON outputs are long text blobs rather than atomic claims.",
+      "blocker": "Entity/relation/quantity/source/class boundaries are mixed.",
+      "next_action": "Split into ClaimCandidate rows using JSON pointer and sentence/table-cell offsets."
+    },
+    {
+      "id": "E-03",
+      "issue": "NPL/NPLI/CSIR-NPL and NPL UK aliases collide.",
+      "blocker": "Automatic matching could merge different institutes/scopes.",
+      "next_action": "Resolve jurisdiction, legal name, site and NMI/DI role."
+    },
+    {
+      "id": "E-04",
+      "issue": "ARAI, ISRO/URSC/ISITE/NAL, CPRI parent/labs and NASA NATF/assets are hierarchy groups.",
+      "blocker": "Organization existence cannot stand in for asset scope, operation or access.",
+      "next_action": "Split organization/facility/asset/operator/access records."
+    },
+    {
+      "id": "E-05",
+      "issue": "CMC, accreditation, QA program, regulatory approval, customer qualification and throughput are conflated.",
+      "blocker": "Strong capability/supply predicates would violate qualification/UNKNOWN rules.",
+      "next_action": "Use scope-specific relation candidates and preserve UNKNOWN."
+    },
+    {
+      "id": "E-06",
+      "issue": "Standards are often named without edition/amendment/test-date.",
+      "blocker": "Cross-edition equivalence cannot be assumed.",
+      "next_action": "Capture edition, method, specimen, range, decision rule and date."
+    },
+    {
+      "id": "E-07",
+      "issue": "Facility pages/brochures report ratings but not utilization, queues, failed-run rework or qualified throughput.",
+      "blocker": "Facility existence/nameplate cannot satisfy capacity.",
+      "next_action": "Acquire operating records or leave capacity UNKNOWN."
+    },
+    {
+      "id": "E-08",
+      "issue": "Global ACI transition claims are time-sensitive.",
+      "blocker": "Recognition/mark state may change after the research cut-off.",
+      "next_action": "Verify current resolution/signatory/scheme-owner state at decision time."
+    },
+    {
+      "id": "E-09",
+      "issue": "Secondary/discovery hosts occur in embedded source lists.",
+      "blocker": "They cannot silently become measured parameters.",
+      "next_action": "Trace consequential claims to primary pages, registries, certificates or records."
+    }
+  ],
+  "promotion_boundary": {
+    "canonical_promotion_performed": false,
+    "observations_created": false,
+    "evidence_records_created": false,
+    "registry_nodes_created": false,
+    "solver_state_changed": false,
+    "raw_vault_modified": false,
+    "code_modified": false,
+    "report_only": true,
+    "blockers": [
+      "source license UNSPECIFIED",
+      "atomic claim splitting required",
+      "entity identities/facility hierarchy unresolved",
+      "relations candidate-only",
+      "CMC/scope/throughput conflicts open",
+      "current qualification/operating evidence incomplete"
+    ]
+  }
+}

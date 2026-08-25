@@ -1,0 +1,1044 @@
+{
+  "report_schema_version": "homi-gate-0-pilot.v1",
+  "report_kind": "equipment_context_pilot",
+  "report_scope": "Directly relevant supplier-to-process/equipment context from the verified industrial-machines corpus manus-16; no broad extraction from unrelated corpora.",
+  "generated_for": "HOMI Gate-0 bounded pilot",
+  "corpus_id": "manus-16",
+  "campaign_expected_number": "15",
+  "verified_theme": "Industrial Machines and Production Equipment Universe",
+  "raw_vault_immutable": true,
+  "canonical_promotion": "NONE",
+  "mapping_discrepancy": {
+    "requested_context_label": "manus-15",
+    "requested_label_verified_theme": "Aerospace, Satellites, and Reusable Launch",
+    "equipment_context_corpus_id": "manus-16",
+    "equipment_context_verified_theme": "Industrial Machines and Production Equipment Universe",
+    "campaign_expected_number_for_manus_16": "15",
+    "status": "NUMBER_MISMATCH",
+    "decision": "Use manus-16 for the equipment context. Manus-15 is not treated as equipment evidence and is audited separately in manus_15_context_report.json."
+  },
+  "source_manifest_mapping": {
+    "manifest_path": "C:/FORGE-RESEARCH-CORPUS/manus/_meta/manus_corpus_manifest.csv",
+    "manifest_row": {
+      "corpus_id": "manus-16",
+      "zip_name": "How to Conduct Thorough Research_5555.zip",
+      "file_count": 7,
+      "status": "OK"
+    },
+    "raw_zip": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips/How to Conduct Thorough Research_5555.zip",
+      "sha256": "fc82795ba7f3f27017e9c824531d550c3a40dc7e634916ed2c9e47c090e67e39",
+      "zip_member_count": 7,
+      "zip_test_result": "PASS",
+      "extracted_member_count": 7,
+      "member_names_and_sha256_exact": true
+    },
+    "extracted_root": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-16",
+    "mapping_verified": true
+  },
+  "artifact_accounting": {
+    "artifact_count": 7,
+    "analysis_artifact_count": 6,
+    "non_evidence_artifact_count": 1,
+    "malformed_artifact_count": 0,
+    "artifacts": [
+      {
+        "path": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "format": "markdown",
+        "bytes": 71846,
+        "sha256": "0a9b51af4b68aa48fbbe53dcc8dc6fbc96bb7851acce7c9e2ebddfd3c654c71b",
+        "line_count": 581,
+        "header_or_schema": "1 H1; 16 H2; 30 H3; 220 table lines",
+        "row_count": null,
+        "role": "primary_equipment_research_memo",
+        "parse_status": "INVENTORIED"
+      },
+      {
+        "path": "manus-16/FORGE WORLD — validated research notes.md",
+        "format": "markdown",
+        "bytes": 3737,
+        "sha256": "bb280bccd862f5996208551212cbd8f60184eb3bbae7f92ac4cf8cc8f62d4777",
+        "line_count": 25,
+        "header_or_schema": "1 H1; 3 H2; validation and source-quality notes",
+        "row_count": null,
+        "role": "validated_research_notes",
+        "parse_status": "INVENTORIED"
+      },
+      {
+        "path": "manus-16/pasted_content.txt",
+        "format": "txt",
+        "bytes": 4871,
+        "sha256": "799825013da0edc9866806834c84ad44e8ac9590c1a179a5ae7f6a605b603499",
+        "line_count": 64,
+        "header_or_schema": "prompt/instruction text; not an evidence record",
+        "row_count": null,
+        "role": "prompt_not_evidence",
+        "parse_status": "INVENTORIED"
+      },
+      {
+        "path": "manus-16/research_equipment_universe_clusters.csv",
+        "format": "csv",
+        "bytes": 117581,
+        "sha256": "42077c92b77c181d38baa933d2e5f6b5d30d19c41f144b947369b37712aacbf1",
+        "line_count": 13,
+        "header_or_schema": ["Subject", "Cluster", "Research Memo", "Sources", "Confidence", "Error"],
+        "row_count": 12,
+        "role": "global_equipment_cluster_export",
+        "duplicate_group": "global_equipment_research_export",
+        "parse_status": "VALID_WIDTH_6_ERRORS_EMPTY"
+      },
+      {
+        "path": "manus-16/research_equipment_universe_clusters.json",
+        "format": "json",
+        "bytes": 119867,
+        "sha256": "98d7c1af1b63c6a6345396aaa77cc2196b8caa7bedab4f152cd17db96ae98d94",
+        "line_count": 124,
+        "header_or_schema": "object.results[]; 12 result records; output keys cluster, confidence, key_findings, memo, source_count, workstream",
+        "row_count": 12,
+        "role": "global_equipment_cluster_export",
+        "duplicate_group": "global_equipment_research_export",
+        "parse_status": "VALID_ERRORS_EMPTY"
+      },
+      {
+        "path": "manus-16/research_india_equipment_capability.csv",
+        "format": "csv",
+        "bytes": 94546,
+        "sha256": "b048bb5cbc04e55dacfa0a4c8fdb9332cfa8b6f31630a446c339859d89c31552",
+        "line_count": 13,
+        "header_or_schema": ["Subject", "Cluster", "India Capability Memo", "Sources", "Confidence", "Error"],
+        "row_count": 12,
+        "role": "india_equipment_capability_export",
+        "duplicate_group": "india_equipment_research_export",
+        "parse_status": "VALID_WIDTH_6_ERRORS_EMPTY"
+      },
+      {
+        "path": "manus-16/research_india_equipment_capability.json",
+        "format": "json",
+        "bytes": 96827,
+        "sha256": "e38de56c39708649864ecd2562cf04b77d8aa28953789a94bcdc1973fcd6e588",
+        "line_count": 124,
+        "header_or_schema": "object.results[]; 12 result records; output keys cluster, confidence, india_memo, key_findings, source_count, sources, workstream",
+        "row_count": 12,
+        "role": "india_equipment_capability_export",
+        "duplicate_group": "india_equipment_research_export",
+        "parse_status": "VALID_ERRORS_EMPTY"
+      }
+    ],
+    "duplicate_accounting": {
+      "physical_duplicate_export_pairs": 2,
+      "pairs": [
+        [
+          "manus-16/research_equipment_universe_clusters.csv",
+          "manus-16/research_equipment_universe_clusters.json"
+        ],
+        [
+          "manus-16/research_india_equipment_capability.csv",
+          "manus-16/research_india_equipment_capability.json"
+        ]
+      ],
+      "dedupe_rule": "Each CSV and JSON pair is one logical 12-row research set; retain all four hashes but do not count mirror exports as independent corroboration.",
+      "serialization_drift": "One global CSV/JSON memo contains minor escaped-apostrophe serialization drift after decoding; semantic review is required before any claim-level merge."
+    }
+  },
+  "candidate_id_contract": {
+    "ordered_fields": [
+      "source_corpus",
+      "artifact",
+      "source_locator",
+      "record_kind",
+      "observed_name",
+      "normalized_name",
+      "scope",
+      "relation_type"
+    ],
+    "algorithm": "SHA-256 of UTF-8 pipe-joined ordered field values; candidate_id is homi-candidate: plus the first 20 hexadecimal characters.",
+    "normalization": "NFKC, trim, and casefold for matching only; observed names and source locators are preserved.",
+    "promotion_rule": "Candidate IDs are deterministic analysis handles, not canonical IDs; no candidate in this report is promoted."
+  },
+  "epistemic_classes": [
+    "MEASURED",
+    "REPORTED",
+    "DERIVED",
+    "ESTIMATED",
+    "MODELLED",
+    "ASSUMPTION",
+    "SCENARIO",
+    "UNKNOWN",
+    "CONFLICTED"
+  ],
+  "status_semantics": {
+    "capability_maturity": {
+      "M0": "Concept/R&D: prototype, laboratory, university, or announced technology; does not prove production readiness or reliability.",
+      "M1": "Fabricator: builds frames, tanks, housings, simple assemblies, or standard equipment; does not prove indigenous controls, precision subsystems, or qualified output.",
+      "M2": "Integrator: combines modules into a working cell or line; does not prove critical IP ownership or repeatability at scale.",
+      "M3": "Builder: designs and manufactures a complete machine platform; does not prove frontier performance parity.",
+      "M4": "Qualified builder: accepted in a demanding or regulated production environment with customer, standard, repeat-installation, and traceable-performance evidence.",
+      "M5": "Frontier strategic capability: globally scarce capability with validated process window, reliability, sustained production, and service ecosystem; still does not guarantee surge capacity.",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L28-L39",
+      "assessment_class": "MODELLED"
+    },
+    "manufacturer": {
+      "meaning": "A legal entity linked to an identified physical facility and relevant process or machine family by current evidence.",
+      "not_sufficient": ["builder name in a map", "product page", "machine label", "integrator claim"],
+      "promotion_state_in_this_slice": "NOT_PROMOTED"
+    },
+    "potential_supplier": {
+      "meaning": "A facility or builder with a plausible process envelope and dependencies, but incomplete product-, route-, customer-, and qualification-specific evidence.",
+      "not_sufficient": ["facility existence", "park or project announcement", "installed line", "imported machine integration"],
+      "promotion_state_in_this_slice": "NOT_PROMOTED"
+    },
+    "qualified_supplier": {
+      "meaning": "Exact site, machine/process, product or requirement revision, material, customer or regulator, and current acceptance/qualification evidence are linked.",
+      "required_evidence": ["customer qualification or FAI/PPAP/PPA", "traceable process and material", "scope and revision", "validity/surveillance", "repeatable output"],
+      "observed_instance_count_in_this_slice": 0
+    },
+    "available_capacity": {
+      "meaning": "Current time-windowed good qualified output after commitments, yield, tooling, test, material, labor, maintenance, logistics, and sub-tier deductions.",
+      "supplier_statement_class": "REPORTED",
+      "observed_instance_count_in_this_slice": 0,
+      "current_value": "UNKNOWN"
+    },
+    "machine_label_guard": "The existence of a machine labelled 5-axis, semiconductor, battery, or robot does not prove simultaneous performance, product qualification, uptime, indigenous subsystem content, or serviceable installed capacity."
+  },
+  "entities_products_processes_equipment": {
+    "equipment_cluster_subjects": [
+      "Primary metals: casting, foundry equipment, induction/vacuum/arc melting, rolling mills, extrusion, forging presses/hammers/ring rolling, stamping presses",
+      "Precision subtractive manufacturing: CNC lathes, mills, machining centers, grinding, gear machines, EDM, broaching",
+      "Joining and surface engineering: welding, brazing, heat treatment, coating/plating, PVD/CVD, industrial atmospheres",
+      "Chemical and process equipment: reactors, separators, distillation, pumps, compressors, valves, instrumentation",
+      "Mining and mineral processing: mining equipment, crushers, mills, flotation, separation, beneficiation, bulk handling",
+      "Semiconductor front-end equipment: lithography, deposition, etch, ion implantation, CMP, metrology and cleanroom infrastructure",
+      "PCB and electronics assembly: PCB fabrication, SMT, assembly, inspection, test, packaging and cleanroom dependencies",
+      "Battery, solar and advanced-materials lines: electrode, cell, formation, module, PV, silicon, wafer, thin-film and materials",
+      "Plastics, polymers, composites, ceramics and textile machinery: extrusion, injection, molding, pultrusion, autoclave, kilns",
+      "Food-processing and packaging machinery: milling, thermal processing, filling, aseptic, inspection, end-of-line and cold-chain",
+      "Industrial robots, factory automation, metrology and test: robots, drives, PLC/CNC, machine vision, CMM, NDT, environmental and reliability test",
+      "Cross-cutting global chokepoints: machine tools, precision motion, controls, sensors, lasers, vacuum, power electronics"
+    ],
+    "facilities_and_geography": [
+      {
+        "name": "Tumakuru integrated machine-tools park",
+        "kind": "industrial park/infrastructure",
+        "evidence_class": "REPORTED",
+        "state": "infrastructure evidence only; not national high-end controller or spindle proof",
+        "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L140-L142"
+      },
+      {
+        "name": "HEC heavy-equipment facilities",
+        "kind": "heavy-equipment facility reference",
+        "evidence_class": "UNKNOWN/CONFLICTED",
+        "state": "current qualified utilization and output unresolved",
+        "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L432-L451"
+      },
+      {
+        "name": "BHEL facilities",
+        "kind": "heavy-industry facility reference",
+        "evidence_class": "REPORTED",
+        "state": "reported utilization is not equivalent to qualified available output",
+        "source_locator": "manus-16/research_india_equipment_capability.csv:Primary metals row"
+      },
+      {
+        "name": "SCL legacy fab and Indian cleanroom/OSAT ecosystem",
+        "kind": "semiconductor facility/ecosystem reference",
+        "evidence_class": "REPORTED",
+        "state": "ecosystem/project evidence; exact tool list, node, and qualification remain unknown",
+        "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L24-L26;L270-L273"
+      },
+      {
+        "name": "Indian battery/PV announced projects",
+        "kind": "planned production facilities",
+        "evidence_class": "SCENARIO",
+        "state": "announced GWh or line count is not operating qualified output",
+        "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L270-L275;L443-L444"
+      }
+    ],
+    "builder_and_supplier_mentions": {
+      "global_examples": [
+        "SMS group",
+        "Danieli",
+        "Primetals",
+        "Siempelkamp",
+        "Schuler",
+        "DMG MORI",
+        "Yamazaki Mazak",
+        "Okuma",
+        "FANUC",
+        "Haas",
+        "ASML",
+        "Applied Materials",
+        "Lam Research",
+        "Tokyo Electron",
+        "KLA",
+        "Hexagon",
+        "Zeiss",
+        "Mitutoyo",
+        "Renishaw"
+      ],
+      "india_examples": [
+        "Jyoti CNC Automation",
+        "BFW",
+        "Ace Micromatic",
+        "LMW",
+        "HMT",
+        "Wendt",
+        "Precihole",
+        "HEC",
+        "BHEL",
+        "HHV"
+      ],
+      "guard": "The builder map is an evidence-backed lead list, not a ranking, sole-source assertion, or qualified-supplier register.",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L226-L250"
+    },
+    "products_and_lines": [
+      "5-axis machining centre",
+      "large hydraulic forging press",
+      "VIM/EAF/VAR and foundry systems",
+      "gear hobbing and grinding line",
+      "pressure reactor and process plant",
+      "battery-cell and PV line",
+      "mature-node semiconductor line",
+      "PCB/SMT and packaging line",
+      "robot cell",
+      "aseptic food-processing line",
+      "ceramic and composite processing line",
+      "metrology/NDT and reliability-test system"
+    ],
+    "processes": [
+      "casting",
+      "forging",
+      "rolling",
+      "extrusion",
+      "machining",
+      "grinding",
+      "gear hobbing/shaping",
+      "welding and joining",
+      "heat treatment",
+      "coating/plating/PVD/CVD",
+      "reacting/separation/distillation",
+      "mining/crushing/milling/flotation",
+      "lithography/deposition/etch/implant/CMP",
+      "PCB fabrication and SMT",
+      "electrode coating/cell formation",
+      "injection/extrusion/pultrusion/autoclave/kiln",
+      "food thermal processing/filling/sealing",
+      "robot calibration/vision/inspection/NDT"
+    ],
+    "equipment_and_dependencies": [
+      "spindles, bearings, ballscrews, linear guides, encoders and scales",
+      "CNC/PLC/servo drives and safety controls",
+      "vacuum pumps, valves, mass-flow controllers, RF power and leak testing",
+      "castings, forgings, heat treatment, coatings and high-purity materials",
+      "metrology, CMM, laser interferometry, NDT, calibration and reliability test",
+      "tooling, fixtures, recipes, software, operators, service and spares"
+    ],
+    "observed_concept_counts": {
+      "global_cluster_records": 12,
+      "india_cluster_records": 12,
+      "facility_level_qualified_records": 0,
+      "available_capacity_records": 0,
+      "machine_instance_records": 0,
+      "process_to_machine_mappings": 8,
+      "unknown_ledger_items": 16
+    }
+  },
+  "structured_claim_samples": [
+    {
+      "claim_id": "m16-claim-01",
+      "observed_claim": "Industrial capability is a chain of process envelope, machine and subsystems, qualified materials/tooling, metrology, operators, documented control, safety/regulatory approval, service/spares, and repeatable production evidence.",
+      "epistemic_class": "DERIVED",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L8",
+      "interpretation": "Machine possession or a product page is not a capability record.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-02",
+      "observed_claim": "M0 through M5 distinguish concept/R&D, fabricator, integrator, builder, qualified builder, and frontier strategic capability.",
+      "epistemic_class": "MODELLED",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L28-L39",
+      "interpretation": "Maturity is an analytical assessment and must retain underlying evidence; M3 is not M4.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-03",
+      "observed_claim": "A 5-axis machine label does not prove simultaneous 5-axis performance, aerospace qualification, or a serviceable installed base.",
+      "epistemic_class": "DERIVED",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L59-L63",
+      "interpretation": "Keep engineering requirement edges separate from world-state facility claims.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-04",
+      "observed_claim": "Physical objectives map to process chains, critical machine classes, and control variables; examples include pressure reactors, battery cells, mature-node chips, and robot cells.",
+      "epistemic_class": "DERIVED",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L108-L119",
+      "interpretation": "These are process/equipment dependency candidates, not evidence that a named supplier can execute the chain.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-05",
+      "observed_claim": "A five-axis machining centre recursively depends on castings, grinding, spindle/bearing manufacture, ballscrews, CNC/drives, and calibrated metrology.",
+      "epistemic_class": "DERIVED",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L127-L142",
+      "interpretation": "Assembly of an imported platform must not be treated as indigenous depth in every subsystem.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-06",
+      "observed_claim": "The global builder table is a map, not a ranking or sole-source control assertion.",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L226-L250",
+      "interpretation": "Builder names are candidate organizations and require facility, product, qualification, and service evidence before promotion.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-07",
+      "observed_claim": "The India precision-machining row reports Jyoti CNC Automation installed capacity of 6,000 machines per year and gives an analyst estimate of approximately 4,500–5,000 qualified throughput.",
+      "epistemic_classes": ["REPORTED", "ESTIMATED"],
+      "source_locator": "manus-16/research_india_equipment_capability.csv:precision subtractive manufacturing row; corresponding JSON results record",
+      "interpretation": "The estimate is not measured available capacity and lacks a current product/site/customer scope in this slice.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-08",
+      "observed_claim": "HEC, BHEL, ISGEC, and other India heavy-industry figures mix nameplate, reported utilization, and analyst estimates; current qualified output is unresolved.",
+      "epistemic_classes": ["REPORTED", "ESTIMATED", "UNKNOWN", "CONFLICTED"],
+      "source_locator": "manus-16/research_india_equipment_capability.csv:Primary metals row; manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L432-L451",
+      "interpretation": "Do not convert a nameplate or utilization statement into available or qualified capacity.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-09",
+      "observed_claim": "India policy, cleanroom, fab, battery, and PV projects provide scenario or ecosystem evidence but do not prove current qualified frontier equipment or operating GWh output.",
+      "epistemic_class": "SCENARIO",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L20-L26;L256-L275;L443-L445",
+      "interpretation": "Project and policy claims require commissioning, tool-list, yield, uptime, qualification, and shipment evidence.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-10",
+      "observed_claim": "The evidence ledger explicitly leaves 16 decision-sensitive variables UNKNOWN, CONFLICTED, UNVERIFIED, SCENARIO, or MODELLED.",
+      "epistemic_class": "UNKNOWN",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L432-L453",
+      "interpretation": "The unknown ledger is a required operating state, not permission to impute values.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m16-claim-11",
+      "observed_claim": "Every numeric property needs value, unit, scope, period, evidence class, source, and confidence; capacity must distinguish nameplate, installed, available, qualified, utilized, shipped, and planned.",
+      "epistemic_class": "MODELLED",
+      "source_locator": "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L495-L514",
+      "interpretation": "This is the minimum evidence contract for any later canonical record.",
+      "promotion_state": "NOT_PROMOTED"
+    }
+  ],
+  "capacity_laundering_risks": [
+    {
+      "signal": "Nameplate tonnage, machine count, or stated annual capacity",
+      "laundered_conclusion": "available or qualified output",
+      "required_disambiguation": "installed, operational, good, qualified, utilized, shipped, and available values with scope and period"
+    },
+    {
+      "signal": "Announced fab, gigafactory, PV line, or industrial park",
+      "laundered_conclusion": "operating production capacity",
+      "required_disambiguation": "commissioning, tool installation, yield, uptime, qualification, and shipment evidence"
+    },
+    {
+      "signal": "Policy subsidy or strategic pillar",
+      "laundered_conclusion": "current sovereign capability",
+      "required_disambiguation": "physical facility, qualified process, accepted product, and sustained output"
+    },
+    {
+      "signal": "Builder or integrator product page",
+      "laundered_conclusion": "qualified manufacturer or indigenous subsystem depth",
+      "required_disambiguation": "legal entity, site, BOM origin, process envelope, acceptance, and service evidence"
+    },
+    {
+      "signal": "Imported machine installed in India",
+      "laundered_conclusion": "domestic machine-building capability",
+      "required_disambiguation": "ownership and origin of controls, spindle, motion, materials, software, maintenance, and qualification"
+    },
+    {
+      "signal": "Line count or installed CPH",
+      "laundered_conclusion": "national board, battery, or product throughput",
+      "required_disambiguation": "product mix, shifts, changeover, yield, uptime, test, and good output"
+    },
+    {
+      "signal": "Market share, revenue, or export presence",
+      "laundered_conclusion": "specific process or customer qualification",
+      "required_disambiguation": "part family, route, material, customer approval, and traceability"
+    },
+    {
+      "signal": "Prototype, startup claim, or R&D project",
+      "laundered_conclusion": "M4/M5 capability",
+      "required_disambiguation": "independent production data, reliability, customer acceptance, and service ecosystem"
+    },
+    {
+      "signal": "Generic ISO or facility certificate",
+      "laundered_conclusion": "part-specific qualified supplier",
+      "required_disambiguation": "FAI/PPAP/PPA or equivalent approval for exact revision and route"
+    },
+    {
+      "signal": "One-off high-value installation",
+      "laundered_conclusion": "repeatable scalable throughput",
+      "required_disambiguation": "run-at-rate, yield, duty cycle, maintenance, spares, and qualified backlog"
+    }
+  ],
+  "relation_normalization_candidates": [
+    {
+      "candidate_id": "homi-candidate:0d06d134bc1bf5e160a6",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L108-L119",
+        "record_kind": "relation_normalization",
+        "observed_name": "process→critical_machine_classes",
+        "normalized_name": "requires_subsystem",
+        "scope": "equipment-context",
+        "relation_type": "source=process,target=machine_family"
+      },
+      "orientation": "process -> machine_family",
+      "current_registry_mapping": "depends_on or unlocks, pending orientation review",
+      "guard": "Engineering dependency is not facility capability evidence."
+    },
+    {
+      "candidate_id": "homi-candidate:59b949712b68e9253dee",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L127-L140",
+        "record_kind": "relation_normalization",
+        "observed_name": "machine_family→upstream_dependencies",
+        "normalized_name": "depends_on",
+        "scope": "equipment-context",
+        "relation_type": "source=machine_family,target=subsystem/material"
+      },
+      "orientation": "machine_family -> subsystem/material/process",
+      "current_registry_mapping": "CURRENT_VOCABULARY_MATCH",
+      "guard": "Keep subsystem origin and qualification separate from dependency existence."
+    },
+    {
+      "candidate_id": "homi-candidate:afc9b135780ddc9358b0",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L226-L244",
+        "record_kind": "relation_normalization",
+        "observed_name": "builder→machine_family",
+        "normalized_name": "built_by",
+        "scope": "equipment-context",
+        "relation_type": "source=machine_family,target=organization"
+      },
+      "orientation": "machine_family -> organization",
+      "current_registry_mapping": "supplied_by approximation; richer built_by edge is deferred",
+      "guard": "Builder map is not proof of a named facility's qualified output."
+    },
+    {
+      "candidate_id": "homi-candidate:2011b8dd8b424f0ec44e",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L67-L84",
+        "record_kind": "relation_normalization",
+        "observed_name": "machine_instance→facility",
+        "normalized_name": "operated_at",
+        "scope": "equipment-context",
+        "relation_type": "source=machine_instance,target=facility"
+      },
+      "orientation": "machine_instance -> facility",
+      "current_registry_mapping": "located_at approximation",
+      "guard": "Require instance identity, installation date, operating state, and source."
+    },
+    {
+      "candidate_id": "homi-candidate:4596bb7005f0789a3e18",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L67-L84",
+        "record_kind": "relation_normalization",
+        "observed_name": "machine_family→qualification",
+        "normalized_name": "qualified_by",
+        "scope": "equipment-context",
+        "relation_type": "source=machine_family,target=qualification"
+      },
+      "orientation": "machine_family_or_instance -> qualification",
+      "current_registry_mapping": "CURRENT_VOCABULARY_MATCH",
+      "guard": "Qualification must specify product, route, material, customer/regulator, date, and scope."
+    },
+    {
+      "candidate_id": "homi-candidate:85743b86860d3605921d",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L417-L426",
+        "record_kind": "relation_normalization",
+        "observed_name": "machine_family→service_spares",
+        "normalized_name": "serviced_by",
+        "scope": "equipment-context",
+        "relation_type": "source=machine_family,target=service_provider/spares"
+      },
+      "orientation": "machine_family_or_instance -> service_provider_or_spares",
+      "current_registry_mapping": "RICHER_THAN_CURRENT_EDGE_VOCABULARY",
+      "guard": "Service and spares evidence controls availability and resilience; do not infer from builder identity alone."
+    },
+    {
+      "candidate_id": "homi-candidate:b3621cd81048df8ebe19",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L108-L119",
+        "record_kind": "relation_normalization",
+        "observed_name": "process→control_variable",
+        "normalized_name": "controlled_by",
+        "scope": "equipment-context",
+        "relation_type": "source=process,target=control_variable"
+      },
+      "orientation": "process -> control_variable",
+      "current_registry_mapping": "RICHER_THAN_CURRENT_EDGE_VOCABULARY",
+      "guard": "Store units, limits, period, and evidence class for control values."
+    },
+    {
+      "candidate_id": "homi-candidate:a8f95c1afc053d3239ac",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L495-L514",
+        "record_kind": "relation_normalization",
+        "observed_name": "evidence_record→equipment_claim",
+        "normalized_name": "evidenced_by",
+        "scope": "equipment-context",
+        "relation_type": "source=evidence_record,target=equipment/facility/process"
+      },
+      "orientation": "claim -> evidence_record",
+      "current_registry_mapping": "RICHER_THAN_CURRENT_EDGE_VOCABULARY",
+      "guard": "Preserve source date, locator, confidence, and claim scope."
+    },
+    {
+      "candidate_id": "homi-candidate:330df6ef16efa63d4931",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L390-L405",
+        "record_kind": "relation_normalization",
+        "observed_name": "preferred_process→substitute",
+        "normalized_name": "substitutable_by",
+        "scope": "equipment-context",
+        "relation_type": "source=process,target=process"
+      },
+      "orientation": "process -> alternative_process",
+      "current_registry_mapping": "substitutes_for inverse/orientation review",
+      "guard": "Retain geometry, material, throughput, quality/qualification, and lifecycle limits."
+    },
+    {
+      "candidate_id": "homi-candidate:07f769469e763573899a",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L366-L386",
+        "record_kind": "relation_normalization",
+        "observed_name": "equipment→chokepoint",
+        "normalized_name": "limited_by",
+        "scope": "equipment-context",
+        "relation_type": "source=equipment_family,target=constraint"
+      },
+      "orientation": "equipment_family_or_process -> constraint",
+      "current_registry_mapping": "constrained_by approximation",
+      "guard": "Constraint must retain evidence basis, substitution window, and geography/time."
+    }
+  ],
+  "canonical_match_candidates": [
+    {
+      "candidate_id": "homi-candidate:9272363d730b94533840",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "research_india_equipment_capability.csv",
+        "source_locator": "row=3",
+        "record_kind": "builder_candidate",
+        "observed_name": "Jyoti CNC Automation",
+        "normalized_name": "jyoti-cnc-automation",
+        "scope": "India precision subtractive",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "organization_candidate",
+      "match_basis": "Named in India machine-tool capability memo; facility, model, qualification, and current output are not fully resolved.",
+      "evidence_class": "REPORTED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Verify legal entity, plant, model-level production, customer acceptance, indigenous BOM, and available capacity."
+    },
+    {
+      "candidate_id": "homi-candidate:f1974cb984f73da32f8c",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "research_india_equipment_capability.csv",
+        "source_locator": "row=3",
+        "record_kind": "builder_candidate",
+        "observed_name": "BFW",
+        "normalized_name": "bharat-fritz-werner",
+        "scope": "India precision subtractive",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "organization_candidate",
+      "match_basis": "Named in India machine-tool capability memo; abbreviation and legal/site identity require resolution.",
+      "evidence_class": "REPORTED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Resolve legal identity, plant(s), product family, qualification, source dates, and current output."
+    },
+    {
+      "candidate_id": "homi-candidate:c539b3eec77e472665f3",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "research_india_equipment_capability.csv",
+        "source_locator": "row=3",
+        "record_kind": "capability_concept",
+        "observed_name": "precision subtractive manufacturing",
+        "normalized_name": "precision-subtractive-manufacturing",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capability_family",
+      "match_basis": "One of the 12 structured India/global equipment clusters.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Split into machine families, sites, process envelopes, control/metrology dependencies, and qualified output."
+    },
+    {
+      "candidate_id": "homi-candidate:47183516182d536c5f9d",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "research_equipment_universe_clusters.csv",
+        "source_locator": "row=13",
+        "record_kind": "capability_concept",
+        "observed_name": "cross-cutting global chokepoints",
+        "normalized_name": "cross-cutting-precision-industrial-stack",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capability_family",
+      "match_basis": "Cluster covers machine tools, precision motion, controls, sensors, lasers, vacuum, and power electronics.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Decompose into canonical subsystem, organization, facility, and evidence records."
+    },
+    {
+      "candidate_id": "homi-candidate:853a299d3e37e07dcbd3",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L417-L426",
+        "record_kind": "capability_concept",
+        "observed_name": "precision metrology and calibration",
+        "normalized_name": "industrial-metrology",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capability_family",
+      "match_basis": "Repeated cross-sector capability candidate; analytical option value, not a measured national capacity.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Attach laboratories, traceability, uncertainty budgets, services, and customer qualification evidence."
+    },
+    {
+      "candidate_id": "homi-candidate:2e106b040b2cb181ff7f",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L417-L426",
+        "record_kind": "capability_concept",
+        "observed_name": "domestic CNC/PLC/servo platform",
+        "normalized_name": "cnc-controls",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capability_family",
+      "match_basis": "Control and motion layer recurs across machine tools, presses, robots, and process plants.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Need controller, safety, drive, thermal compensation, reliability, certification, and field-service evidence."
+    },
+    {
+      "candidate_id": "homi-candidate:1134c36512ee30ae0da8",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L417-L426",
+        "record_kind": "capability_concept",
+        "observed_name": "precision motion components",
+        "normalized_name": "precision-motion-components",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capability_family",
+      "match_basis": "Ballscrews, guides, encoders, bearings, and reducers recur across machine and automation families.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Resolve domestic process depth, life data, low-backlash performance, and qualification."
+    },
+    {
+      "candidate_id": "homi-candidate:1e2b2669389f81c7cb25",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L417-L426",
+        "record_kind": "capability_concept",
+        "observed_name": "high-integrity castings and forgings",
+        "normalized_name": "structural-castings-and-heavy-forging",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capability_family",
+      "match_basis": "Structural castings and forgings recur in frames, presses, reactors, mining equipment, and turbines.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Need facility matrix for melt, ingot, press, furnace, machining, NDT, and customer qualification."
+    },
+    {
+      "candidate_id": "homi-candidate:30f66890b24778c8ab64",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L417-L426",
+        "record_kind": "capability_concept",
+        "observed_name": "vacuum, gas and leak-control stack",
+        "normalized_name": "vacuum-gas-leak-control",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capability_family",
+      "match_basis": "Vacuum, gas, seals, leak testing, and controls recur in semiconductor, coating, heat treatment, space, and battery equipment.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Decompose representative system BOMs and verify origin, purity, leak performance, service, and qualification."
+    },
+    {
+      "candidate_id": "homi-candidate:6ed13c0afd870ae60642",
+      "stable_id_inputs": {
+        "source_corpus": "manus-16",
+        "artifact": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+        "source_locator": "L417-L426",
+        "record_kind": "capability_concept",
+        "observed_name": "qualification/service/spares infrastructure",
+        "normalized_name": "qualification-service-spares",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capability_family",
+      "match_basis": "Service, spares, calibration, and qualification convert installed equipment into available productive capacity.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Need service depots, lead times, repair/refurbishment records, calibration, and customer trust/acceptance evidence."
+    }
+  ],
+  "unknowns_conflicts": {
+    "unknown_ledger": [
+      {
+        "id": "U-01",
+        "question": "Annual qualified throughput of Indian high-end CNC builders by model family",
+        "status": "UNKNOWN",
+        "closure_action": "Collect FY2024-26 production, shipments, installed base, and acceptance data."
+      },
+      {
+        "id": "U-02",
+        "question": "Indigenous percentage of spindle, scale, ballscrew, and controller content in Indian 5-axis machines",
+        "status": "UNKNOWN/CONFLICTED",
+        "closure_action": "Request representative BOM value and country of origin; reconcile customs and supplier records."
+      },
+      {
+        "id": "U-03",
+        "question": "Current qualified utilization of HEC heavy-equipment facilities",
+        "status": "UNKNOWN/CONFLICTED",
+        "closure_action": "Inspect latest audited filing, plant utilization, work orders, and acceptance records."
+      },
+      {
+        "id": "U-04",
+        "question": "Indian ultra-heavy clean forging capability above defined mass and section limits",
+        "status": "UNKNOWN",
+        "closure_action": "Build facility matrix for melt, ingot, press, furnace, crane, machining, NDT, and qualification."
+      },
+      {
+        "id": "U-05",
+        "question": "National installed and qualified PVD/CVD coating capacity",
+        "status": "UNKNOWN",
+        "closure_action": "Survey chamber volume, materials, substrate, qualification, and processed area/weight."
+      },
+      {
+        "id": "U-06",
+        "question": "Indigenous content in HHV and other vacuum/thin-film systems",
+        "status": "UNKNOWN",
+        "closure_action": "Decompose system BOM and supplier origin; separate integration from subsystem manufacture."
+      },
+      {
+        "id": "U-07",
+        "question": "Current Indian high-end GMD and large-mill control capability",
+        "status": "UNKNOWN",
+        "closure_action": "Review installed base, drive supplier, local engineering responsibility, and spares history."
+      },
+      {
+        "id": "U-08",
+        "question": "Qualified output versus announced GWh of Indian battery-cell projects",
+        "status": "SCENARIO/UNKNOWN",
+        "closure_action": "Require commissioning, yield, uptime, product qualification, and shipment evidence by line and period."
+      },
+      {
+        "id": "U-09",
+        "question": "Exact tool list and node capability of Indian semiconductor fabs",
+        "status": "REPORTED/PLANNED with UNKNOWN details",
+        "closure_action": "Obtain permits, tenders, installation and customer qualification evidence, and tool-vendor confirmations."
+      },
+      {
+        "id": "U-10",
+        "question": "Indigenous advanced DUV/EUV lithography capability",
+        "status": "UNVERIFIED",
+        "closure_action": "Require independent wafer data, overlay/CD/yield data, and customer installation evidence."
+      },
+      {
+        "id": "U-11",
+        "question": "India national board-level SMT throughput",
+        "status": "UNKNOWN",
+        "closure_action": "Collect line-level CPH, utilization, product mix, changeover, and defect data."
+      },
+      {
+        "id": "U-12",
+        "question": "Domestic production of robot reducers and high-end robot arms",
+        "status": "UNKNOWN/CONFLICTED",
+        "closure_action": "Separate arm, reducer, motor, encoder, drive, controller, and integrator origin in BOMs."
+      },
+      {
+        "id": "U-13",
+        "question": "Domestic high-purity quartz and ceramic capacity for semiconductor and solar equipment",
+        "status": "UNKNOWN",
+        "closure_action": "Test purity, trace contaminants, thermal cycling, geometry, and customer acceptance."
+      },
+      {
+        "id": "U-14",
+        "question": "Qualified aseptic filling capacity in India",
+        "status": "UNKNOWN",
+        "closure_action": "Survey format, speed, sterile validation, uptime, and service records."
+      },
+      {
+        "id": "U-15",
+        "question": "Actual service-spares lead times for imported critical subsystems",
+        "status": "UNKNOWN",
+        "closure_action": "Establish anonymized service-log data and single-source/dual-source classification."
+      },
+      {
+        "id": "U-16",
+        "question": "Cross-sector benefit of the domestic metrology/control stack",
+        "status": "MODELLED",
+        "closure_action": "Build input-output model linking component availability to machine families and sectors."
+      }
+    ],
+    "conflicts_and_format_signals": [
+      {
+        "id": "m16-C01",
+        "signal": "HEC utilization and indigenous-content claims use incompatible or incomplete scopes.",
+        "status": "CONFLICTED",
+        "resolution": "Preserve claim-level provenance and reconcile nameplate, installed, operating, qualified, and current periods before aggregation."
+      },
+      {
+        "id": "m16-C02",
+        "signal": "Integrator or builder claims can be mistaken for indigenous arm, reducer, controller, or vacuum-system manufacture.",
+        "status": "CONFLICTED",
+        "resolution": "Decompose product BOM and retain organization roles separately."
+      },
+      {
+        "id": "m16-C03",
+        "signal": "Global CSV/JSON export has minor escaped-apostrophe serialization drift in one memo.",
+        "status": "CONFLICTED_FORMAT",
+        "resolution": "Review the source text and avoid byte-level merge; do not count the mirror pair twice."
+      }
+    ],
+    "absence_guard": "No facility-level, product-specific qualified supplier or current available-capacity record was promoted from this context slice."
+  },
+  "ambiguities_escalations": [
+    {
+      "id": "m16-E01",
+      "issue": "The original context label points to manus-15, but manus-15 is aerospace and manus-16 is equipment.",
+      "impact": "Using manus-15 as equipment would mislabel aerospace evidence and corrupt supplier-to-equipment relations.",
+      "escalation": "Use manus-16 report and retain manus-15 mapping audit."
+    },
+    {
+      "id": "m16-E02",
+      "issue": "Global and India CSV/JSON pairs are mirrored exports.",
+      "impact": "Double counting would inflate source support and cluster totals.",
+      "escalation": "Count each logical 12-row set once; retain physical artifact hashes."
+    },
+    {
+      "id": "m16-E03",
+      "issue": "Cluster records blend process physics, builder names, public projects, and analyst estimates.",
+      "impact": "A cluster row cannot directly become a facility, machine instance, supplier, or capacity record.",
+      "escalation": "Decompose decision-sensitive claims into facility-level primary evidence."
+    },
+    {
+      "id": "m16-E04",
+      "issue": "Some numeric claims have broad or unstated scope, period, and denominator.",
+      "impact": "Precision-looking capacity or utilization can be laundered into available supply.",
+      "escalation": "Require value, unit, scope, period, class, source, and confidence for each numeric property."
+    },
+    {
+      "id": "m16-E05",
+      "issue": "Policy targets and announced projects are interleaved with current capability discussion.",
+      "impact": "Scenario may be mistaken for operating capacity or qualified equipment.",
+      "escalation": "Keep SCENARIO/PLANNED edges separate from world-state records until commissioning and acceptance evidence exists."
+    },
+    {
+      "id": "m16-E06",
+      "issue": "Builder and subsystem names are not always linked to legal entity, plant, service territory, or BOM origin.",
+      "impact": "Canonical organization/facility matching remains ambiguous.",
+      "escalation": "Resolve legal name, site, product family, supplier tier, origin, and service evidence."
+    }
+  ],
+  "source_locators": [
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L8",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L20-L26",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L28-L39",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L43-L84",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L108-L119",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L127-L142",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L226-L250",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L256-L275",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L373-L407",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L417-L428",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L432-L453",
+    "manus-16/FORGE WORLD — Industrial Machines & Production Equipment Universe.md:L495-L532",
+    "manus-16/research_equipment_universe_clusters.csv:header and rows 2-13",
+    "manus-16/research_equipment_universe_clusters.json:results[0..11]",
+    "manus-16/research_india_equipment_capability.csv:header and rows 2-13",
+    "manus-16/research_india_equipment_capability.json:results[0..11]",
+    "manus-16/FORGE WORLD — validated research notes.md:L1-L25"
+  ],
+  "totals": {
+    "artifact_count": 7,
+    "analysis_artifact_count": 6,
+    "non_evidence_artifact_count": 1,
+    "global_cluster_csv_row_count": 12,
+    "global_cluster_json_record_count": 12,
+    "india_cluster_csv_row_count": 12,
+    "india_cluster_json_record_count": 12,
+    "physical_structured_row_count": 48,
+    "logical_structured_record_count_after_mirror_dedupe": 24,
+    "global_source_url_unique_count": 152,
+    "india_source_url_unique_count": 106,
+    "main_memo_source_url_unique_count": 36,
+    "validated_notes_source_url_unique_count": 4,
+    "malformed_artifact_count": 0,
+    "duplicate_export_pair_count": 2,
+    "serialization_drift_count": 1,
+    "equipment_cluster_count": 12,
+    "india_cluster_count": 12,
+    "process_to_machine_mapping_count": 8,
+    "facility_reference_count": 5,
+    "structured_claim_sample_count": 11,
+    "capacity_laundering_risk_count": 10,
+    "relation_normalization_candidate_count": 10,
+    "canonical_match_candidate_count": 10,
+    "unknown_ledger_item_count": 16,
+    "conflicted_ledger_entry_count": 3,
+    "unverified_ledger_entry_count": 1,
+    "scenario_ledger_entry_count": 1,
+    "modelled_ledger_entry_count": 1,
+    "qualified_supplier_or_builder_observation_count": 0,
+    "available_capacity_observation_count": 0,
+    "mapping_discrepancy_count": 1,
+    "raw_zip_mapping_mismatch_count": 0,
+    "canonical_promotion_count": 0
+  }
+}

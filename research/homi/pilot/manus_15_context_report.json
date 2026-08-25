@@ -1,0 +1,293 @@
+{
+  "report_schema_version": "homi-gate-0-pilot.v1",
+  "report_kind": "context_mapping_audit",
+  "report_scope": "Read-only identity and ZIP/source-manifest audit for the requested manus-15 label; no aerospace-to-equipment extraction or canonical promotion.",
+  "generated_for": "HOMI Gate-0 bounded pilot",
+  "requested_context_corpus_id": "manus-15",
+  "verified_theme": "Aerospace, Satellites, and Reusable Launch",
+  "correct_equipment_context_corpus_id": "manus-16",
+  "correct_equipment_report": "research/homi/pilot/manus_16_context_report.json",
+  "raw_vault_immutable": true,
+  "canonical_promotion": "NONE",
+  "mapping_discrepancy": {
+    "status": "NUMBER_MISMATCH",
+    "manifest_campaign_expected_number_for_manus_15": "14",
+    "campaign_equipment_label": "15",
+    "verified_manus_15_content": "aerospace",
+    "verified_manus_16_content": "industrial machines and production equipment",
+    "decision": "Do not mislabel manus-15 as equipment. Use manus-16 for supplier-to-process/equipment context and keep this report as the redirect/audit record."
+  },
+  "source_manifest_mapping": {
+    "manifest_path": "C:/FORGE-RESEARCH-CORPUS/manus/_meta/manus_corpus_manifest.csv",
+    "manifest_row": {
+      "corpus_id": "manus-15",
+      "zip_name": "How to Conduct Thorough Research_4854.zip",
+      "file_count": 21,
+      "status": "OK"
+    },
+    "raw_zip": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips/How to Conduct Thorough Research_4854.zip",
+      "sha256": "7b6dc0669dff0a42330f399079e70e54fe857a53ba8d0abe2a5bbe9e477987a2",
+      "zip_member_count": 21,
+      "zip_test_result": "PASS",
+      "extracted_member_count": 21,
+      "member_names_and_sha256_exact": true
+    },
+    "extracted_root": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-15",
+    "mapping_verified": true
+  },
+  "artifact_accounting": {
+    "artifact_count": 21,
+    "identity_audit_artifact_count": 21,
+    "equipment_analysis_artifact_count": 0,
+    "malformed_artifact_count": 0,
+    "artifacts": [
+      {
+        "path": "manus-15/aerospace_capability_tree.mmd",
+        "format": "mermaid",
+        "bytes": 2214,
+        "sha256": "ad13a4339938d714c7bf6cc1c338283b1ce12d556a4450639002fc752e89a28b",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/aerospace_capability_tree.png",
+        "format": "png",
+        "bytes": 181253,
+        "sha256": "6b1f9c567dce8db97c321d882592763e51f80df6d1949a777ac35d3c9e38e977",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/aerospace_conflict_ledger.csv",
+        "format": "csv",
+        "bytes": 4430,
+        "sha256": "6d9283be38601bb285cca5f8dcbd6e9e303e9ca66bb69144d3994aaa5958f96d",
+        "header_or_schema": ["conflict_id", "topic", "claim_a", "source_or_date_a", "claim_b", "source_or_date_b", "working_treatment", "why_conflict_matters"],
+        "row_count": 15,
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/aerospace_entities.csv",
+        "format": "csv",
+        "bytes": 10198,
+        "sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+        "header_or_schema": ["entity_id", "canonical_name", "parent_or_owner", "entity_type", "facility_or_location", "country", "products_or_processes", "role_or_relationship", "qualification_or_maturity", "capacity_or_throughput", "evidence_label", "source_ids", "uncertainty"],
+        "row_count": 28,
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/aerospace_industrial_research_workstreams.json",
+        "format": "json",
+        "bytes": 19541,
+        "sha256": "affa46f5f34323f1c36c0b99238b2f8f21d3fc4cc68eaeaf24dce688fa23c350",
+        "header_or_schema": "object.results[]",
+        "row_count": 8,
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/aerospace_relationships.csv",
+        "format": "csv",
+        "bytes": 6063,
+        "sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+        "header_or_schema": ["relationship_id", "source_entity", "target_entity", "relationship_type", "domain", "description", "evidence_label", "source_ids", "uncertainty"],
+        "row_count": 33,
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/aerospace_throughput_evidence.csv",
+        "format": "csv",
+        "bytes": 6140,
+        "sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+        "header_or_schema": ["throughput_id", "system_or_facility", "metric", "value", "unit", "time_or_date", "status", "evidence_label", "source_ids", "interpretation_and_caveat"],
+        "row_count": 36,
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/aerospace_unknown_ledger.csv",
+        "format": "csv",
+        "bytes": 6082,
+        "sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+        "header_or_schema": ["unknown_id", "unknown", "why_it_matters", "likely_resolution_source_or_owner", "concrete_research_query", "priority"],
+        "row_count": 20,
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/benchmark_clusters_bottlenecks_substitutions.md",
+        "format": "markdown",
+        "bytes": 10380,
+        "sha256": "b36495eafe2be06286e92cb8f6637df14c3a77e3cc290c0a0c6337779916fae9",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/download_research_memos.py",
+        "format": "python",
+        "bytes": 956,
+        "sha256": "2588af20a239ea236a08fe4cde934c60d720e5d8521230c2ae51ffec99d3ffd0",
+        "role": "utility_not_evidence"
+      },
+      {
+        "path": "manus-15/FORGE WORLD Research Package.md",
+        "format": "markdown",
+        "bytes": 74077,
+        "sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/global_aircraft_aerospace.md",
+        "format": "markdown",
+        "bytes": 10464,
+        "sha256": "2d266136234eba0764cd5b7f6cd02348e9c6b35d314b8af9249067885c73e110",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/global_launch_propulsion.md",
+        "format": "markdown",
+        "bytes": 9630,
+        "sha256": "1c37a8a5b53fc54b3c94512650bb63f4c917682663beb53adb8ee85b27b80c61",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/global_satellite_spacecraft.md",
+        "format": "markdown",
+        "bytes": 9705,
+        "sha256": "06cf435fa36edc361fd087e0c3974a242aa1c2b9db4bf5e63d824889ced9e2b7",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/india_space_aerospace_industry.md",
+        "format": "markdown",
+        "bytes": 11698,
+        "sha256": "120e20b98422539310c327d18f481458ea0f61309b64153014850008c71aacc0",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/manufacturing_equipment_machine_tools.md",
+        "format": "markdown",
+        "bytes": 9554,
+        "sha256": "29f69deb4a9ce52d70654a31f5ee303608e159047f5368839d9c4ad976a9dddd",
+        "role": "aerospace_identity_signal_with_equipment_terms",
+        "analysis_note": "Contains aerospace-manufacturing context; not used to reclassify the corpus or promote equipment relations."
+      },
+      {
+        "path": "manus-15/materials_minerals_alloys_composites.md",
+        "format": "markdown",
+        "bytes": 10584,
+        "sha256": "6ef6ca74346da84d4b8bed2aa0e7b65c8c4d11c4419ac485d0e640ace15e26a8",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/pasted_content.txt",
+        "format": "txt",
+        "bytes": 4392,
+        "sha256": "f5ae0424853872a8f083ea3e4c97e8c7a99f0263dd3b5d4f97d54af82c988edf",
+        "role": "prompt_not_evidence"
+      },
+      {
+        "path": "manus-15/qualification_test_launch_infrastructure.md",
+        "format": "markdown",
+        "bytes": 9678,
+        "sha256": "50bbd2e8f051a1ffcf10207d6ae5f7dd9e0eade938f9c6a2d650b869b6fad7c9",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/research_scope.md",
+        "format": "markdown",
+        "bytes": 5630,
+        "sha256": "9c00bdaa8a9b1d2742ed65161ff732a6084e8408fae07f028491fde70c900c67",
+        "role": "aerospace_identity_signal"
+      },
+      {
+        "path": "manus-15/Validated primary-source findings gathered so far.md",
+        "format": "markdown",
+        "bytes": 20021,
+        "sha256": "d6c8015fb61892f5a4eedce4430d108c8d7aa8eca13fb35fe2fc793265be09f4",
+        "role": "aerospace_identity_signal"
+      }
+    ],
+    "identity_signals": [
+      "Eight structured artifacts are explicitly aerospace_* or aerospace workstream records.",
+      "Markdown package titles cover aircraft, launch propulsion, satellites, India space/aerospace, and qualification/test/launch infrastructure.",
+      "The only equipment-named markdown file is scoped to aerospace manufacturing and does not change the corpus theme."
+    ]
+  },
+  "structured_claim_samples": [
+    {
+      "claim_id": "m15-map-01",
+      "observed_claim": "The verified content identity of manus-15 is aerospace, not industrial production equipment.",
+      "epistemic_class": "MEASURED",
+      "source_locator": "manus-15 artifact names and structured headers; source manifest row",
+      "interpretation": "The requested equipment context label is corrected to manus-16.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m15-map-02",
+      "observed_claim": "No supplier-to-process/equipment relation was extracted or promoted from manus-15 for this deliverable.",
+      "epistemic_class": "MEASURED",
+      "source_locator": "context audit scope; equipment_analysis_artifact_count=0",
+      "interpretation": "Avoids mislabeling aerospace relationships as equipment-universe relations.",
+      "promotion_state": "NOT_PROMOTED"
+    }
+  ],
+  "entities_products_processes_equipment": {
+    "verified_domain": "aerospace",
+    "identity_audit_terms": [
+      "aircraft",
+      "launch propulsion",
+      "satellite spacecraft",
+      "space/aerospace industry",
+      "qualification/test/launch infrastructure",
+      "aerospace materials and composites"
+    ],
+    "equipment_context_entities": [],
+    "equipment_context_processes": [],
+    "equipment_context_facilities": [],
+    "equipment_context_suppliers": [],
+    "interpretation": "Aerospace equipment may occur as a dependency inside the corpus, but no such relation is used here because the bounded context is redirected to manus-16."
+  },
+  "relation_normalization_candidates": [],
+  "canonical_match_candidates": [],
+  "unknowns_conflicts": {
+    "unknowns": [
+      {
+        "id": "m15-U01",
+        "question": "Which aerospace records, if any, should later be joined to equipment-family records?",
+        "status": "DEFERRED",
+        "next_action": "Use a separate aerospace-to-equipment join task after canonical equipment families exist in the manus-16 context."
+      }
+    ],
+    "conflicts": [
+      {
+        "id": "m15-C01",
+        "signal": "Campaign numeric label 15 points to an aerospace corpus while the equipment theme is corpus 16.",
+        "status": "RESOLVED_MAPPING_DISCREPANCY",
+        "resolution": "Keep manus-15 as aerospace and use manus-16 for equipment."
+      }
+    ]
+  },
+  "ambiguities_escalations": [
+    {
+      "id": "m15-E01",
+      "issue": "One aerospace markdown file contains manufacturing-equipment and machine-tool terms.",
+      "impact": "Keyword overlap is insufficient to reclassify the corpus or establish supplier-to-equipment edges.",
+      "escalation": "If needed, perform a separately scoped aerospace manufacturing dependency analysis with explicit cross-corpus relations."
+    },
+    {
+      "id": "m15-E02",
+      "issue": "The original request named manus-15 as the equipment context.",
+      "impact": "A mislabeled report would contaminate downstream canonical matches.",
+      "escalation": "Use research/homi/pilot/manus_16_context_report.json as the equipment deliverable."
+    }
+  ],
+  "totals": {
+    "artifact_count": 21,
+    "identity_audit_artifact_count": 21,
+    "equipment_analysis_artifact_count": 0,
+    "structured_csv_row_count": 132,
+    "structured_json_record_count": 8,
+    "malformed_artifact_count": 0,
+    "relation_normalization_candidate_count": 0,
+    "canonical_match_candidate_count": 0,
+    "mapping_discrepancy_count": 1,
+    "raw_zip_mapping_mismatch_count": 0,
+    "canonical_promotion_count": 0
+  }
+}

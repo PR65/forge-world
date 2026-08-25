@@ -1,0 +1,26 @@
+{
+  "mapping_version": "1.0.0",
+  "basis": "Verified from extracted artifact titles and structured filenames; artifact content overrides the campaign's expected numeric label.",
+  "packages": [
+    {"corpus_id": "manus-01", "observed_theme": "Supplier Qualification & Industrial Sourcing Intelligence", "campaign_expected_number": "01", "mapping_status": "MATCH"},
+    {"corpus_id": "manus-02", "observed_theme": "IndiaBUILD++ — India Industrial Capability Baseline", "campaign_expected_number": "02", "mapping_status": "MATCH"},
+    {"corpus_id": "manus-03", "observed_theme": "Global Industrial Capability and Facility Atlas", "campaign_expected_number": "03", "mapping_status": "MATCH"},
+    {"corpus_id": "manus-04", "observed_theme": "Workforce, Tacit Knowledge, and Human Capability", "campaign_expected_number": "04", "mapping_status": "MATCH"},
+    {"corpus_id": "manus-05", "observed_theme": "Metrology, Testing, Qualification, and Standards Infrastructure", "campaign_expected_number": "05", "mapping_status": "MATCH"},
+    {"corpus_id": "manus-06", "observed_theme": "Global Trade, Import Dependency, and Supply-Chain Dependency Graph", "campaign_expected_number": "16", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-07", "observed_theme": "Cross-Sector Foundational Capability and Industrial Option Value", "campaign_expected_number": "06", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-08", "observed_theme": "Clean Energy, Batteries, EV, Solar, Wind, Hydrogen, and Grid", "campaign_expected_number": "08", "mapping_status": "MATCH"},
+    {"corpus_id": "manus-09", "observed_theme": "Machine Tools, CNC, and Precision Manufacturing", "campaign_expected_number": "07", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-10", "observed_theme": "Industrial Resilience, Substitution, and Geopolitical Shock Library", "campaign_expected_number": "09", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-11", "observed_theme": "Factory Build, Ramp-Up, and Production Scaling", "campaign_expected_number": "10", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-12", "observed_theme": "Manufacturing Processes and Unit-Process Encyclopedia", "campaign_expected_number": "11", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-13", "observed_theme": "Materials, Minerals, Chemicals, and Foundational Upstream", "campaign_expected_number": "12", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-14", "observed_theme": "Semiconductors, Electronics, and Compute", "campaign_expected_number": "13", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-15", "observed_theme": "Aerospace, Satellites, and Reusable Launch", "campaign_expected_number": "14", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-16", "observed_theme": "Industrial Machines and Production Equipment Universe", "campaign_expected_number": "15", "mapping_status": "NUMBER_MISMATCH"},
+    {"corpus_id": "manus-17", "observed_theme": "Universal Manufactured-Product and Industrial Capability Universe", "campaign_expected_number": "17", "mapping_status": "MATCH"},
+    {"corpus_id": "manus-18", "observed_theme": "Industrial Geography, Logistics, and Infrastructure Atlas", "campaign_expected_number": "18", "mapping_status": "MATCH"},
+    {"corpus_id": "manus-19", "observed_theme": "Robotics, Humanoids, and Industrial Automation", "campaign_expected_number": "19", "mapping_status": "MATCH"},
+    {"corpus_id": "manus-20", "observed_theme": "Nuclear, Heavy Industry, and Grid", "campaign_expected_number": "20", "mapping_status": "MATCH"}
+  ]
+}

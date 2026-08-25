@@ -7,3 +7,4 @@ data/cache/
 *.log
 web/tsconfig.tsbuildinfo
 forge_world.egg-info/
+research/homi/staging/repaired/

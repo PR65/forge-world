@@ -1,0 +1,27 @@
+{
+  "archive_report_hash": "6abea6023eaf2ed410edfbe8e42f715568846568ddbfae57f2d5b8ddd02da756",
+  "artifact_count": 321,
+  "checks": {
+    "all_20_archives_accounted": true,
+    "all_254_zip_entries_match": true,
+    "all_321_artifacts_accounted": true,
+    "archive_failures_zero": true,
+    "conditioning_reproducible_contract": true,
+    "manual_test_pack_skipped": true,
+    "pilot_claim_ids_unique": true,
+    "pilot_claims_are_staging_only": true,
+    "pilot_reports_present": true,
+    "raw_integrity_failures_zero": true
+  },
+  "claim_count": 58,
+  "claim_ledger_hash": "672877db199f37d9e451e072328e5b9407acbec1f2c14f52627395fc5c58a4d2",
+  "conditioning_report_hash": "1f6f08fa953fe7514634308e5a00d0dda0747d0dee5097157b4160dbb1674e11",
+  "gate": "HOMI_GATE_0",
+  "malformed_unrepaired_count": 4,
+  "manifest_hash": "f3f9198e21e232309c874061d7276e62cb06cd47549ee3f5586880c5c917aa8e",
+  "note": "Executable pytest regression is run separately; this barrier validates persisted corpus and staging artifacts.",
+  "promotion_count": 0,
+  "repaired_artifact_count": 30,
+  "status": "PASS",
+  "structured_artifact_count": 101
+}
