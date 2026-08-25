@@ -133,3 +133,38 @@ No LLM in the numerical path (C20). This session builds and tests the determinis
   bureaucracy, ESG scorecard, finance simulator or global encyclopedia; finance, policy and
   legal/ethical sourcing rules enter only when they materially change physical buildability,
   eligibility, timing or resilience.
+
+## D15 — Second hard-recall closure: operability, economics, evidence and execution depth
+- **Context:** comparison against the full FORGE WORLD North Star and original due-diligence
+  dossier surfaced additional material mechanisms not explicit enough in the first canonical
+  India vision. These included working capital/WIP, maintenance-repair-spares, minimum economic
+  scale, co-products, waste/effluent gates, utility quality, contractual capacity allocation,
+  supplier financial health, construction/EPC capacity, industrial coordination failures,
+  circular-supply timing, stochastic uncertainty, evidence bias, classification mismatch,
+  three clocks, execution artifacts and causal institutional/geopolitical constraints.
+- **Choice:** add `docs/FORGE_INDIA_HARD_RECALL_CLOSURE.md` as a mandatory canonical supplement
+  and `docs/FORGE_INDIA_CANONICAL_INDEX.md` as the current source-of-truth index. The original
+  FORGE WORLD North Star remains the constitutional ceiling.
+- **Operability consequence:** owning or buying production equipment is insufficient if India
+  cannot maintain, repair, calibrate, service or supply critical spares/consumables. Usable
+  capability also depends on inventory/WIP, utility quality, contracts/allocations, economic
+  scale, qualified people and the construction/commissioning ecosystem.
+- **System consequence:** mineral/chemical co-products, end-of-life stock timing, waste/effluent
+  capacity, supplier financial viability, shared EPC resources, anchor-demand/coordination
+  failures and surge-vs-steady capacity may alter feasibility and therefore enter only where
+  decision-relevant.
+- **Epistemic consequence:** the three clocks are explicit; missingness has typed causes;
+  evidence bias/negative evidence/freshness are represented; model resolution cannot exceed
+  evidence resolution; cross-classification mappings are many-to-many and confidence-bearing;
+  data rights travel with evidence; consequential runs should remain reproducible.
+- **Validation consequence:** historical project/shock backtesting and calibrated interval/
+  stochastic treatment are required where uncertainty controls the decision. No probabilistic
+  output may manufacture precision from absence of evidence.
+- **Execution consequence:** FORGE EXECUTE should eventually generate decision-useful artifacts
+  such as RFQ-ready specs, supplier/qualification matrices, test/quality plans, equipment/tooling
+  lists, CapEx/staffing/procurement schedules, critical path, decision log and immediate next
+  actions, while avoiding paperwork that does not change execution.
+- **Non-goal:** FORGE India still does not become a full macro model, generic ERP, ESG system,
+  corporate credit platform, political-risk terminal, or detailed global logistics simulator.
+  Every added mechanism must materially affect buildability, timing, resilience, execution or
+  evidentiary truth.
