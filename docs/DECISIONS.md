@@ -70,3 +70,39 @@ run through the same public API as the UI.
 Structured objective parsing has a deterministic grammar path; an optional LLM adapter maps
 free text → candidate structured objective which must pass validation before entering solve.
 No LLM in the numerical path (C20). This session builds and tests the deterministic path.
+
+## D13 — Current operating scope: FORGE India first, global dependency layer retained
+- **Context:** FORGE WORLD's universal country/region/humanity ambition is directionally valid,
+  but attempting to populate every country's full industrial reality now would spread evidence,
+  compute, entity resolution, facility/capacity research, and product effort too thinly. The
+  project needs one geography deep enough to become genuinely useful and publicly releasable.
+- **Choice:** India becomes the current canonical target geography for buildability questions.
+  The default product question is **"Can India build this?"** FORGE must decompose the complete
+  objective, then classify every decision-relevant requirement against India's evidenced
+  capability, scale, specification, qualification, capacity and dependency state. The complete
+  operating vision is recorded in `docs/FORGE_INDIA_OPERATING_VISION.md`.
+- **Global-data consequence:** no useful global research is discarded. Foreign organizations,
+  facilities, technologies, materials, minerals, machine tools, semiconductor ecosystems,
+  logistics routes, export controls, sanctions, commodity exposures and supplier alternatives
+  remain modeled whenever they affect India's sourcing, localization, substitution or
+  resilience. The near-term model is therefore a **deep India core + selective global
+  dependency/sourcing/risk layer**, not an isolated India model.
+- **Product consequence:** presentation remains objective-first and progressively disclosed.
+  Normal users see buildability, domestic/partial/import/missing/UNKNOWN composition,
+  bottlenecks, localization paths and major dependencies; experts can drill through complete
+  system/component/process/machine/material/metrology/qualification/evidence chains.
+- **Localization consequence:** a missing domestic requirement does not imply "import it".
+  FORGE must consider direct localization, source diversification, licensing/technology
+  transfer, material/component/process substitution, adjacent Indian capabilities, full
+  architecture redesign, temporary import while localizing, and indigenous alternative routes;
+  alternatives are graph rewrites followed by re-solve.
+- **Coverage consequence:** IndiaBUILD is treated as a minimum public breadth benchmark, not as
+  canonical truth or as FORGE's ontology. FORGE should account for that capability universe and
+  materially exceed it through deeper engineering decomposition, evidence, capacity,
+  qualification, geography, alternatives, shocks and execution reasoning.
+- **Retained North Star:** FORGE WORLD remains the long-term product identity and eventual global
+  ambition. Country-by-country global buildability expansion is deferred until FORGE India is
+  strong enough to serve as the proven country-model architecture.
+- **Rejected:** deleting global research; replacing FORGE with a flat India capability wiki;
+  reducing the solver to an IndiaBUILD clone; or continuing broad country-by-country data
+  expansion before the India-first system is mature.
