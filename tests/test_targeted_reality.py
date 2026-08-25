@@ -77,3 +77,7 @@ def test_targeted_closure_improves_composition_without_becoming_a_verdict():
         objective["status"] == "COMPOSITION_DIAGNOSTIC_NOT_SOLVER_VERDICT"
         for objective in composition["objectives"]
     )
+    assert all(
+        objective["adjudication"]["verdict"] == "NOT_ADJUDICABLE"
+        for objective in composition["objectives"]
+    )

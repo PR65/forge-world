@@ -5,6 +5,11 @@
   "objective_count": 6,
   "objectives": [
     {
+      "adjudication": {
+        "meaning": "Insufficient model closure; not evidence of infeasibility.",
+        "reason": "Structural composition does not supply a validated quantitative BOM, objective-grade facility compatibility, qualified effective capacity, allocation, ramp, economics, or complete physical/evidence clocks.",
+        "verdict": "NOT_ADJUDICABLE"
+      },
       "architecture_seed_epistemic_class": "ASSUMPTION",
       "canonical_seed_only_count": 0,
       "composition_coverage": 1.0,
@@ -52,6 +57,17 @@
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_elgi_compressors"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_elgi_compressors"
+          ],
+          "supporting_sources": [
+            {
+              "license": "ELGi copyright; reference-only scoped extraction",
+              "publisher": "ELGi Equipments Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_elgi_compressors",
+              "url": "https://www.elgi.com/in/press-coverage/elgi-sauer-strengthens-presence-with-new-state-of-the-art-manufacturing-facility-in-coimbatore-india/"
+            }
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -77,6 +93,17 @@
           ],
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_alfa_heat_transfer"
+          ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_alfa_india"
+          ],
+          "supporting_sources": [
+            {
+              "license": "Alfa Laval copyright; reference-only scoped extraction",
+              "publisher": "Alfa Laval India",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_alfa_india",
+              "url": "https://www.alfalaval.com/en-in/about-us/our-company/alfa-laval-india/"
+            }
           ],
           "world_epistemic_classes": [
             "UNKNOWN"
@@ -121,6 +148,66 @@
             "pack:humanoid_india:evidence:ev_qual_latency_aero",
             "pack:targeted_industrial_reality:evidence:tr_ev_weg_motors"
           ],
+          "supporting_source_ids": [
+            "pack:humanoid_india:source:src_bcg_aero",
+            "pack:humanoid_india:source:src_corpus_streams",
+            "pack:humanoid_india:source:src_dod_mrl",
+            "pack:humanoid_india:source:src_harmonicdrive_precision",
+            "pack:humanoid_india:source:src_nabtesco_rv",
+            "pack:humanoid_india:source:src_nsk_crossroller",
+            "pack:humanoid_india:source:src_renishaw_resolute",
+            "pack:targeted_industrial_reality:source:tr_src_weg_motors"
+          ],
+          "supporting_sources": [
+            {
+              "license": "commercial summary referenced",
+              "publisher": "Boston Consulting Group",
+              "source_id": "pack:humanoid_india:source:src_bcg_aero",
+              "url": ""
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied research corpus",
+              "source_id": "pack:humanoid_india:source:src_corpus_streams",
+              "url": ""
+            },
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:humanoid_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Harmonic Drive LLC",
+              "source_id": "pack:humanoid_india:source:src_harmonicdrive_precision",
+              "url": "https://www.harmonicdrive.net/products/gear-units/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Nabtesco Precision Equipment Company",
+              "source_id": "pack:humanoid_india:source:src_nabtesco_rv",
+              "url": "https://precision.nabtesco.com/en/products/detail/rv-n"
+            },
+            {
+              "license": "public PDF (referenced)",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:humanoid_india:source:src_nsk_crossroller",
+              "url": "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:humanoid_india:source:src_renishaw_resolute",
+              "url": "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+            },
+            {
+              "license": "WEG copyright; reference-only scoped extraction",
+              "publisher": "WEG",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_weg_motors",
+              "url": "https://www.weg.net/institutional/GN/en/news/products-and-solutions/weg-supplies-motors-for-a-greenfield-project-on-the-cement-sector-in-india"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "ESTIMATED",
@@ -157,6 +244,17 @@
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
+          ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_abb_drives"
+          ],
+          "supporting_sources": [
+            {
+              "license": "ABB copyright; reference-only scoped extraction",
+              "publisher": "ABB India Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_abb_drives",
+              "url": "https://new.abb.com/news/detail/102971/abb-india-expands-production-footprint-of-its-energy-efficient-drives-portfolio"
+            }
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -197,6 +295,17 @@
           ],
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_bel_edms"
+          ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_bel_edms"
+          ],
+          "supporting_sources": [
+            {
+              "license": "BEL copyright; reference-only scoped extraction",
+              "publisher": "Bharat Electronics Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_bel_edms",
+              "url": "https://bel-india.in/electronic-design-manufacturing-services/"
+            }
           ],
           "world_epistemic_classes": [
             "UNKNOWN"
@@ -239,6 +348,24 @@
             "pack:nuclear_buildout_india:evidence:ev_nuclear_capacity_unknown",
             "pack:targeted_industrial_reality:evidence:tr_ev_stqc_metrology"
           ],
+          "supporting_source_ids": [
+            "pack:nuclear_buildout_india:source:src_aerb_qa",
+            "pack:targeted_industrial_reality:source:tr_src_stqc_ertl"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public guidance",
+              "publisher": "Atomic Energy Regulatory Board",
+              "source_id": "pack:nuclear_buildout_india:source:src_aerb_qa",
+              "url": "https://aerb.gov.in/english/publications/codes-guides"
+            },
+            {
+              "license": "Government of India public information; reference-only extraction",
+              "publisher": "STQC, Ministry of Electronics and Information Technology",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_stqc_ertl",
+              "url": "https://stqc.gov.in/en/ertl"
+            }
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -265,6 +392,11 @@
       "title": "India manufactures 50,000 industrial heat pumps per year"
     },
     {
+      "adjudication": {
+        "meaning": "Insufficient model closure; not evidence of infeasibility.",
+        "reason": "Structural composition does not supply a validated quantitative BOM, objective-grade facility compatibility, qualified effective capacity, allocation, ramp, economics, or complete physical/evidence clocks.",
+        "verdict": "NOT_ADJUDICABLE"
+      },
       "architecture_seed_epistemic_class": "ASSUMPTION",
       "canonical_seed_only_count": 0,
       "composition_coverage": 1.0,
@@ -312,6 +444,17 @@
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_lt_electrolyser"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_lt_electrolyser"
+          ],
+          "supporting_sources": [
+            {
+              "license": "L&T copyright; reference-only scoped extraction",
+              "publisher": "Larsen & Toubro Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_lt_electrolyser",
+              "url": "https://investors.larsentoubro.com/pdf/2025/MDA%20Annexures/Energy%20Projects%20Segment.pdf"
+            }
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -337,6 +480,17 @@
           ],
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_arci_mea"
+          ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_arci_mea"
+          ],
+          "supporting_sources": [
+            {
+              "license": "Government of India public information; reference-only extraction",
+              "publisher": "Press Information Bureau, Government of India",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_arci_mea",
+              "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1797090&lang=2&reg=48"
+            }
           ],
           "world_epistemic_classes": [
             "UNKNOWN"
@@ -373,6 +527,17 @@
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_abb_drives"
+          ],
+          "supporting_sources": [
+            {
+              "license": "ABB copyright; reference-only scoped extraction",
+              "publisher": "ABB India Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_abb_drives",
+              "url": "https://new.abb.com/news/detail/102971/abb-india-expands-production-footprint-of-its-energy-efficient-drives-portfolio"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -399,6 +564,17 @@
           ],
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_inox_hydrogen"
+          ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_inox_hydrogen"
+          ],
+          "supporting_sources": [
+            {
+              "license": "INOX copyright; reference-only scoped extraction",
+              "publisher": "INOX India Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_inox_hydrogen",
+              "url": "https://inoxcva.com/company-overview.php"
+            }
           ],
           "world_epistemic_classes": [
             "UNKNOWN"
@@ -438,6 +614,38 @@
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_schedule_assumption",
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_window",
             "pack:cnc_machining_india:evidence:ev_renishaw_metrology_scope"
+          ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_renishaw_machine_tool_metrology",
+            "pack:cnc_machining_india:source:src_research_07"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "public",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:cnc_machining_india:source:src_renishaw_machine_tool_metrology",
+              "url": "https://www.renishaw.com/en/machine-tool-probes-and-software--6073"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            }
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -495,6 +703,150 @@
             "pack:materials_minerals_foundational:evidence:mm_process_assumptions",
             "pack:targeted_industrial_reality:evidence:tr_ev_nise_testing"
           ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_research_07",
+            "pack:humanoid_india:source:src_bcg_aero",
+            "pack:humanoid_india:source:src_dod_mrl",
+            "pack:humanoid_india:source:src_harmonicdrive_precision",
+            "pack:humanoid_india:source:src_nabtesco_rv",
+            "pack:humanoid_india:source:src_nsk_crossroller",
+            "pack:humanoid_india:source:src_renishaw_resolute",
+            "pack:materials_minerals_foundational:source:src_benchmark_graphite",
+            "pack:materials_minerals_foundational:source:src_columbia_lithium",
+            "pack:materials_minerals_foundational:source:src_cpia_poly",
+            "pack:materials_minerals_foundational:source:src_iea_gcmo2025",
+            "pack:materials_minerals_foundational:source:src_iea_ree",
+            "pack:materials_minerals_foundational:source:src_kmml_initiatives",
+            "pack:materials_minerals_foundational:source:src_mathrubhumi_kmml",
+            "pack:materials_minerals_foundational:source:src_metalshub_graphite",
+            "pack:materials_minerals_foundational:source:src_orf_titanium",
+            "pack:materials_minerals_foundational:source:src_spacenews_kmml",
+            "pack:targeted_industrial_reality:source:tr_src_nise_testing"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            },
+            {
+              "license": "commercial summary referenced",
+              "publisher": "Boston Consulting Group",
+              "source_id": "pack:humanoid_india:source:src_bcg_aero",
+              "url": ""
+            },
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:humanoid_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Harmonic Drive LLC",
+              "source_id": "pack:humanoid_india:source:src_harmonicdrive_precision",
+              "url": "https://www.harmonicdrive.net/products/gear-units/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Nabtesco Precision Equipment Company",
+              "source_id": "pack:humanoid_india:source:src_nabtesco_rv",
+              "url": "https://precision.nabtesco.com/en/products/detail/rv-n"
+            },
+            {
+              "license": "public PDF (referenced)",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:humanoid_india:source:src_nsk_crossroller",
+              "url": "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:humanoid_india:source:src_renishaw_resolute",
+              "url": "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+            },
+            {
+              "license": "public",
+              "publisher": "Benchmark Minerals",
+              "source_id": "pack:materials_minerals_foundational:source:src_benchmark_graphite",
+              "url": "https://www.benchmarkminerals.com/glossary/what-is-graphite"
+            },
+            {
+              "license": "public",
+              "publisher": "Columbia SIPA",
+              "source_id": "pack:materials_minerals_foundational:source:src_columbia_lithium",
+              "url": "https://www.energypolicy.columbia.edu/publications/fact-sheet-lithium-supply-in-the-energy-transition/"
+            },
+            {
+              "license": "public",
+              "publisher": "CPIA via Bernreuter/PV-Tech/SolarPowerWorld",
+              "source_id": "pack:materials_minerals_foundational:source:src_cpia_poly",
+              "url": "https://www.solarpowerworldonline.com/2022/04/chinas-share-of-worlds-polysilicon-production-grows-from-30-to-80-in-just-one-decade/"
+            },
+            {
+              "license": "public",
+              "publisher": "IEA",
+              "source_id": "pack:materials_minerals_foundational:source:src_iea_gcmo2025",
+              "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025/executive-summary"
+            },
+            {
+              "license": "public",
+              "publisher": "IEA",
+              "source_id": "pack:materials_minerals_foundational:source:src_iea_ree",
+              "url": "https://www.iea.org/reports/rare-earth-elements/executive-summary"
+            },
+            {
+              "license": "public",
+              "publisher": "KMML",
+              "source_id": "pack:materials_minerals_foundational:source:src_kmml_initiatives",
+              "url": "https://www.kmml.com/initiatives/1"
+            },
+            {
+              "license": "public",
+              "publisher": "Mathrubhumi",
+              "source_id": "pack:materials_minerals_foundational:source:src_mathrubhumi_kmml",
+              "url": "https://english.mathrubhumi.com/amp/news/india/how-one-kerala-plant-could-stall-india-s-fighter-jets-and-submarines-ltae1312"
+            },
+            {
+              "license": "public",
+              "publisher": "Metals Hub",
+              "source_id": "pack:materials_minerals_foundational:source:src_metalshub_graphite",
+              "url": "https://www.metals-hub.com/en/blog/graphite-supply-chain/"
+            },
+            {
+              "license": "public",
+              "publisher": "Observer Research Foundation",
+              "source_id": "pack:materials_minerals_foundational:source:src_orf_titanium",
+              "url": "https://www.orfonline.org/expert-speak/the-titanium-bottleneck-that-could-stall-india-s-fighter-jet-and-submarine-plans"
+            },
+            {
+              "license": "public",
+              "publisher": "SpaceNews",
+              "source_id": "pack:materials_minerals_foundational:source:src_spacenews_kmml",
+              "url": "https://spacenews.com/isro-and-kerala-minerals-and-metals-limited-sign-mou-on-titanium-sponge-plant/"
+            },
+            {
+              "license": "Government of India public information; reference-only extraction",
+              "publisher": "National Institute of Solar Energy, MNRE",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_nise_testing",
+              "url": "https://nise.res.in/uploads/pages/17555243377672-stakeholder-meeting-hydrogen-testing-scheme.pdf"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "REPORTED",
@@ -522,6 +874,11 @@
       "title": "India develops 5 GW/year electrolyzer manufacturing capability"
     },
     {
+      "adjudication": {
+        "meaning": "Insufficient model closure; not evidence of infeasibility.",
+        "reason": "Structural composition does not supply a validated quantitative BOM, objective-grade facility compatibility, qualified effective capacity, allocation, ramp, economics, or complete physical/evidence clocks.",
+        "verdict": "NOT_ADJUDICABLE"
+      },
       "architecture_seed_epistemic_class": "ASSUMPTION",
       "canonical_seed_only_count": 0,
       "composition_coverage": 0.875,
@@ -604,6 +961,66 @@
             "pack:humanoid_india:evidence:ev_qual_latency_aero",
             "pack:targeted_industrial_reality:evidence:tr_ev_weg_motors"
           ],
+          "supporting_source_ids": [
+            "pack:humanoid_india:source:src_bcg_aero",
+            "pack:humanoid_india:source:src_corpus_streams",
+            "pack:humanoid_india:source:src_dod_mrl",
+            "pack:humanoid_india:source:src_harmonicdrive_precision",
+            "pack:humanoid_india:source:src_nabtesco_rv",
+            "pack:humanoid_india:source:src_nsk_crossroller",
+            "pack:humanoid_india:source:src_renishaw_resolute",
+            "pack:targeted_industrial_reality:source:tr_src_weg_motors"
+          ],
+          "supporting_sources": [
+            {
+              "license": "commercial summary referenced",
+              "publisher": "Boston Consulting Group",
+              "source_id": "pack:humanoid_india:source:src_bcg_aero",
+              "url": ""
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied research corpus",
+              "source_id": "pack:humanoid_india:source:src_corpus_streams",
+              "url": ""
+            },
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:humanoid_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Harmonic Drive LLC",
+              "source_id": "pack:humanoid_india:source:src_harmonicdrive_precision",
+              "url": "https://www.harmonicdrive.net/products/gear-units/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Nabtesco Precision Equipment Company",
+              "source_id": "pack:humanoid_india:source:src_nabtesco_rv",
+              "url": "https://precision.nabtesco.com/en/products/detail/rv-n"
+            },
+            {
+              "license": "public PDF (referenced)",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:humanoid_india:source:src_nsk_crossroller",
+              "url": "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:humanoid_india:source:src_renishaw_resolute",
+              "url": "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+            },
+            {
+              "license": "WEG copyright; reference-only scoped extraction",
+              "publisher": "WEG",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_weg_motors",
+              "url": "https://www.weg.net/institutional/GN/en/news/products-and-solutions/weg-supplies-motors-for-a-greenfield-project-on-the-cement-sector-in-india"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "ESTIMATED",
@@ -641,6 +1058,17 @@
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_abb_drives"
+          ],
+          "supporting_sources": [
+            {
+              "license": "ABB copyright; reference-only scoped extraction",
+              "publisher": "ABB India Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_abb_drives",
+              "url": "https://new.abb.com/news/detail/102971/abb-india-expands-production-footprint-of-its-energy-efficient-drives-portfolio"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -668,6 +1096,8 @@
           "role": "energy_storage",
           "supporting_evidence_classes": [],
           "supporting_evidence_ids": [],
+          "supporting_source_ids": [],
+          "supporting_sources": [],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -707,6 +1137,17 @@
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_bel_edms"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_bel_edms"
+          ],
+          "supporting_sources": [
+            {
+              "license": "BEL copyright; reference-only scoped extraction",
+              "publisher": "Bharat Electronics Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_bel_edms",
+              "url": "https://bel-india.in/electronic-design-manufacturing-services/"
+            }
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -738,6 +1179,31 @@
           "supporting_evidence_ids": [
             "pack:materials_minerals_foundational:evidence:c15_ata_2025",
             "pack:materials_minerals_foundational:evidence:c15_toray_conflict"
+          ],
+          "supporting_source_ids": [
+            "pack:materials_minerals_foundational:source:src_ata_cf",
+            "pack:materials_minerals_foundational:source:src_pmr_cf",
+            "pack:materials_minerals_foundational:source:src_toray_ir"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public",
+              "publisher": "CompositesWorld/ATA",
+              "source_id": "pack:materials_minerals_foundational:source:src_ata_cf",
+              "url": "https://www.compositesworld.com/news/ata-2025-global-carbon-fiber-composites-market-report-documents-record-demand"
+            },
+            {
+              "license": "public",
+              "publisher": "Persistence Market Research",
+              "source_id": "pack:materials_minerals_foundational:source:src_pmr_cf",
+              "url": "https://www.persistencemarketresearch.com/market-research/carbon-fiber-composites-market.asp"
+            },
+            {
+              "license": "public",
+              "publisher": "Toray Industries",
+              "source_id": "pack:materials_minerals_foundational:source:src_toray_ir",
+              "url": "https://www.toray.com/ir/pdf/lib/lib_a540.pdf"
+            }
           ],
           "world_epistemic_classes": [
             "CONFLICTED",
@@ -776,6 +1242,31 @@
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_schedule_assumption",
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_window"
           ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_research_07"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -795,6 +1286,8 @@
           "role": "lifecycle",
           "supporting_evidence_classes": [],
           "supporting_evidence_ids": [],
+          "supporting_source_ids": [],
+          "supporting_sources": [],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -822,6 +1315,11 @@
       "title": "Kenya manufactures 100,000 agricultural drones per year"
     },
     {
+      "adjudication": {
+        "meaning": "Insufficient model closure; not evidence of infeasibility.",
+        "reason": "Structural composition does not supply a validated quantitative BOM, objective-grade facility compatibility, qualified effective capacity, allocation, ramp, economics, or complete physical/evidence clocks.",
+        "verdict": "NOT_ADJUDICABLE"
+      },
       "architecture_seed_epistemic_class": "ASSUMPTION",
       "canonical_seed_only_count": 0,
       "composition_coverage": 0.892857,
@@ -887,6 +1385,66 @@
             "pack:humanoid_india:evidence:ev_qual_latency_aero",
             "pack:targeted_industrial_reality:evidence:tr_ev_weg_motors"
           ],
+          "supporting_source_ids": [
+            "pack:humanoid_india:source:src_bcg_aero",
+            "pack:humanoid_india:source:src_corpus_streams",
+            "pack:humanoid_india:source:src_dod_mrl",
+            "pack:humanoid_india:source:src_harmonicdrive_precision",
+            "pack:humanoid_india:source:src_nabtesco_rv",
+            "pack:humanoid_india:source:src_nsk_crossroller",
+            "pack:humanoid_india:source:src_renishaw_resolute",
+            "pack:targeted_industrial_reality:source:tr_src_weg_motors"
+          ],
+          "supporting_sources": [
+            {
+              "license": "commercial summary referenced",
+              "publisher": "Boston Consulting Group",
+              "source_id": "pack:humanoid_india:source:src_bcg_aero",
+              "url": ""
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied research corpus",
+              "source_id": "pack:humanoid_india:source:src_corpus_streams",
+              "url": ""
+            },
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:humanoid_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Harmonic Drive LLC",
+              "source_id": "pack:humanoid_india:source:src_harmonicdrive_precision",
+              "url": "https://www.harmonicdrive.net/products/gear-units/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Nabtesco Precision Equipment Company",
+              "source_id": "pack:humanoid_india:source:src_nabtesco_rv",
+              "url": "https://precision.nabtesco.com/en/products/detail/rv-n"
+            },
+            {
+              "license": "public PDF (referenced)",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:humanoid_india:source:src_nsk_crossroller",
+              "url": "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:humanoid_india:source:src_renishaw_resolute",
+              "url": "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+            },
+            {
+              "license": "WEG copyright; reference-only scoped extraction",
+              "publisher": "WEG",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_weg_motors",
+              "url": "https://www.weg.net/institutional/GN/en/news/products-and-solutions/weg-supplies-motors-for-a-greenfield-project-on-the-cement-sector-in-india"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "ESTIMATED",
@@ -928,6 +1486,17 @@
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_bel_edms"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_bel_edms"
+          ],
+          "supporting_sources": [
+            {
+              "license": "BEL copyright; reference-only scoped extraction",
+              "publisher": "Bharat Electronics Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_bel_edms",
+              "url": "https://bel-india.in/electronic-design-manufacturing-services/"
+            }
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -963,6 +1532,17 @@
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_abb_drives"
+          ],
+          "supporting_sources": [
+            {
+              "license": "ABB copyright; reference-only scoped extraction",
+              "publisher": "ABB India Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_abb_drives",
+              "url": "https://new.abb.com/news/detail/102971/abb-india-expands-production-footprint-of-its-energy-efficient-drives-portfolio"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -992,6 +1572,24 @@
           "supporting_evidence_ids": [
             "pack:materials_minerals_foundational:evidence:c01_india_steel_capacity"
           ],
+          "supporting_source_ids": [
+            "pack:materials_minerals_foundational:source:src_gmk_steel_capacity",
+            "pack:materials_minerals_foundational:source:src_pib_steel_may26"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public",
+              "publisher": "GMK Center",
+              "source_id": "pack:materials_minerals_foundational:source:src_gmk_steel_capacity",
+              "url": "https://gmk.center/en/news/india-has-reached-a-steel-production-capacity-of-205-million-tons-per-year-research/"
+            },
+            {
+              "license": "public",
+              "publisher": "Government of India",
+              "source_id": "pack:materials_minerals_foundational:source:src_pib_steel_may26",
+              "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2277931"
+            }
+          ],
           "world_epistemic_classes": [
             "REPORTED",
             "UNKNOWN"
@@ -1011,6 +1609,8 @@
           "role": "substitution_route",
           "supporting_evidence_classes": [],
           "supporting_evidence_ids": [],
+          "supporting_source_ids": [],
+          "supporting_sources": [],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -1055,6 +1655,73 @@
             "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
             "pack:targeted_industrial_reality:evidence:tr_ev_nbc_bearings"
           ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_nsk_spindle_bearing_official",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_research_07",
+            "pack:humanoid_india:source:src_harmonicdrive_precision",
+            "pack:humanoid_india:source:src_nabtesco_rv",
+            "pack:humanoid_india:source:src_nsk_crossroller",
+            "pack:humanoid_india:source:src_renishaw_resolute",
+            "pack:targeted_industrial_reality:source:tr_src_nbc_bearings"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:cnc_machining_india:source:src_nsk_spindle_bearing_official",
+              "url": "https://www.nsk.com/products/super-precision-bearings/precision-angular-contact-bearings/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Harmonic Drive LLC",
+              "source_id": "pack:humanoid_india:source:src_harmonicdrive_precision",
+              "url": "https://www.harmonicdrive.net/products/gear-units/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Nabtesco Precision Equipment Company",
+              "source_id": "pack:humanoid_india:source:src_nabtesco_rv",
+              "url": "https://precision.nabtesco.com/en/products/detail/rv-n"
+            },
+            {
+              "license": "public PDF (referenced)",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:humanoid_india:source:src_nsk_crossroller",
+              "url": "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:humanoid_india:source:src_renishaw_resolute",
+              "url": "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+            },
+            {
+              "license": "NBC copyright; reference-only scoped extraction",
+              "publisher": "National Engineering Industries",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_nbc_bearings",
+              "url": "https://www.nbcbearings.com/manufacturing-excellence/"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -1098,6 +1765,59 @@
             "pack:materials_minerals_foundational:evidence:c10_mofcom18",
             "pack:materials_minerals_foundational:evidence:mm_process_assumptions"
           ],
+          "supporting_source_ids": [
+            "pack:humanoid_india:source:src_iea_ree",
+            "pack:humanoid_india:source:src_pib_acc_pli",
+            "pack:humanoid_india:source:src_pib_repm",
+            "pack:humanoid_india:source:src_swarajya_minerals",
+            "pack:materials_minerals_foundational:source:src_csis_ree",
+            "pack:materials_minerals_foundational:source:src_iea_ree",
+            "pack:materials_minerals_foundational:source:src_mofcom_18"
+          ],
+          "supporting_sources": [
+            {
+              "license": "CC BY 4.0 (per IEA data products)",
+              "publisher": "International Energy Agency",
+              "source_id": "pack:humanoid_india:source:src_iea_ree",
+              "url": "https://www.iea.org/reports/rare-earth-elements/executive-summary"
+            },
+            {
+              "license": "public domain (Government of India)",
+              "publisher": "Press Information Bureau, Government of India",
+              "source_id": "pack:humanoid_india:source:src_pib_acc_pli",
+              "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2224542"
+            },
+            {
+              "license": "public domain (Government of India)",
+              "publisher": "Press Information Bureau, Government of India",
+              "source_id": "pack:humanoid_india:source:src_pib_repm",
+              "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2299078"
+            },
+            {
+              "license": "public article (referenced)",
+              "publisher": "Swarajya (Kovai Media)",
+              "source_id": "pack:humanoid_india:source:src_swarajya_minerals",
+              "url": "https://swarajyamag.com/economy/how-india-is-confronting-its-vulnerability-in-critical-mineral-supply-chains"
+            },
+            {
+              "license": "public",
+              "publisher": "CSIS",
+              "source_id": "pack:materials_minerals_foundational:source:src_csis_ree",
+              "url": "https://www.csis.org/analysis/consequences-chinas-new-rare-earths-export-restrictions"
+            },
+            {
+              "license": "public",
+              "publisher": "IEA",
+              "source_id": "pack:materials_minerals_foundational:source:src_iea_ree",
+              "url": "https://www.iea.org/reports/rare-earth-elements/executive-summary"
+            },
+            {
+              "license": "public",
+              "publisher": "China Ministry of Commerce",
+              "source_id": "pack:materials_minerals_foundational:source:src_mofcom_18",
+              "url": "https://english.mofcom.gov.cn/Policies/AnnouncementsOrders/art/2025/art_0dd87cbee7b045bf93fabe6ab2faceee.html"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "REPORTED",
@@ -1125,6 +1845,11 @@
       "title": "Industrial electric-motor architecture minimizing Chinese rare-earth permanent-magnet dependency"
     },
     {
+      "adjudication": {
+        "meaning": "Insufficient model closure; not evidence of infeasibility.",
+        "reason": "Structural composition does not supply a validated quantitative BOM, objective-grade facility compatibility, qualified effective capacity, allocation, ramp, economics, or complete physical/evidence clocks.",
+        "verdict": "NOT_ADJUDICABLE"
+      },
       "architecture_seed_epistemic_class": "ASSUMPTION",
       "canonical_seed_only_count": 0,
       "composition_coverage": 1.0,
@@ -1172,6 +1897,17 @@
           "supporting_evidence_ids": [
             "pack:smallsat_india:evidence:ev_hirel_qualification"
           ],
+          "supporting_source_ids": [
+            "pack:smallsat_india:source:src_corpus_streams"
+          ],
+          "supporting_sources": [
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied research corpus",
+              "source_id": "pack:smallsat_india:source:src_corpus_streams",
+              "url": ""
+            }
+          ],
           "world_epistemic_classes": [
             "REPORTED"
           ]
@@ -1211,6 +1947,38 @@
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_window",
             "pack:cnc_machining_india:evidence:ev_renishaw_metrology_scope"
           ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_renishaw_machine_tool_metrology",
+            "pack:cnc_machining_india:source:src_research_07"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "public",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:cnc_machining_india:source:src_renishaw_machine_tool_metrology",
+              "url": "https://www.renishaw.com/en/machine-tool-probes-and-software--6073"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -1244,6 +2012,8 @@
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields"
           ],
+          "supporting_source_ids": [],
+          "supporting_sources": [],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -1284,6 +2054,17 @@
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_bel_edms"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_bel_edms"
+          ],
+          "supporting_sources": [
+            {
+              "license": "BEL copyright; reference-only scoped extraction",
+              "publisher": "Bharat Electronics Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_bel_edms",
+              "url": "https://bel-india.in/electronic-design-manufacturing-services/"
+            }
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -1312,6 +2093,17 @@
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_isro_leos"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_isro_leos"
+          ],
+          "supporting_sources": [
+            {
+              "license": "Government of India public information; reference-only extraction",
+              "publisher": "Indian Space Research Organisation",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_isro_leos",
+              "url": "https://www.isro.gov.in/LEOS.html"
+            }
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -1338,6 +2130,17 @@
           ],
           "supporting_evidence_ids": [
             "pack:smallsat_india:evidence:ev_hirel_qualification"
+          ],
+          "supporting_source_ids": [
+            "pack:smallsat_india:source:src_corpus_streams"
+          ],
+          "supporting_sources": [
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied research corpus",
+              "source_id": "pack:smallsat_india:source:src_corpus_streams",
+              "url": ""
+            }
           ],
           "world_epistemic_classes": [
             "REPORTED",
@@ -1376,6 +2179,31 @@
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_schedule_assumption",
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_window"
           ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_research_07"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -1403,6 +2231,11 @@
       "title": "India manufactures 10,000 twelve-unit hyperspectral satellites per year"
     },
     {
+      "adjudication": {
+        "meaning": "Insufficient model closure; not evidence of infeasibility.",
+        "reason": "Structural composition does not supply a validated quantitative BOM, objective-grade facility compatibility, qualified effective capacity, allocation, ramp, economics, or complete physical/evidence clocks.",
+        "verdict": "NOT_ADJUDICABLE"
+      },
       "architecture_seed_epistemic_class": "ASSUMPTION",
       "canonical_seed_only_count": 0,
       "composition_coverage": 1.0,
@@ -1460,6 +2293,17 @@
           "supporting_evidence_ids": [
             "pack:targeted_industrial_reality:evidence:tr_ev_micromatic_grinders"
           ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_micromatic_grinders"
+          ],
+          "supporting_sources": [
+            {
+              "license": "Ace Micromatic copyright; reference-only scoped extraction",
+              "publisher": "Micromatic Grinding Technologies",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_micromatic_grinders",
+              "url": "https://www.acemicromatic.net/wp-content/uploads/2023/01/02-2017-_-CNC-Plus-ePaper.pdf"
+            }
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -1504,6 +2348,73 @@
             "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
             "pack:targeted_industrial_reality:evidence:tr_ev_nbc_bearings"
           ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_nsk_spindle_bearing_official",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_research_07",
+            "pack:humanoid_india:source:src_harmonicdrive_precision",
+            "pack:humanoid_india:source:src_nabtesco_rv",
+            "pack:humanoid_india:source:src_nsk_crossroller",
+            "pack:humanoid_india:source:src_renishaw_resolute",
+            "pack:targeted_industrial_reality:source:tr_src_nbc_bearings"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:cnc_machining_india:source:src_nsk_spindle_bearing_official",
+              "url": "https://www.nsk.com/products/super-precision-bearings/precision-angular-contact-bearings/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Harmonic Drive LLC",
+              "source_id": "pack:humanoid_india:source:src_harmonicdrive_precision",
+              "url": "https://www.harmonicdrive.net/products/gear-units/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Nabtesco Precision Equipment Company",
+              "source_id": "pack:humanoid_india:source:src_nabtesco_rv",
+              "url": "https://precision.nabtesco.com/en/products/detail/rv-n"
+            },
+            {
+              "license": "public PDF (referenced)",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:humanoid_india:source:src_nsk_crossroller",
+              "url": "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:humanoid_india:source:src_renishaw_resolute",
+              "url": "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+            },
+            {
+              "license": "NBC copyright; reference-only scoped extraction",
+              "publisher": "National Engineering Industries",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_nbc_bearings",
+              "url": "https://www.nbcbearings.com/manufacturing-excellence/"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -1545,6 +2456,24 @@
             "pack:nuclear_buildout_india:evidence:ev_aerb_qa_gates",
             "pack:nuclear_buildout_india:evidence:ev_nuclear_capacity_unknown",
             "pack:targeted_industrial_reality:evidence:tr_ev_stqc_metrology"
+          ],
+          "supporting_source_ids": [
+            "pack:nuclear_buildout_india:source:src_aerb_qa",
+            "pack:targeted_industrial_reality:source:tr_src_stqc_ertl"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public guidance",
+              "publisher": "Atomic Energy Regulatory Board",
+              "source_id": "pack:nuclear_buildout_india:source:src_aerb_qa",
+              "url": "https://aerb.gov.in/english/publications/codes-guides"
+            },
+            {
+              "license": "Government of India public information; reference-only extraction",
+              "publisher": "STQC, Ministry of Electronics and Information Technology",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_stqc_ertl",
+              "url": "https://stqc.gov.in/en/ertl"
+            }
           ],
           "world_epistemic_classes": [
             "UNKNOWN"
@@ -1588,6 +2517,66 @@
             "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
             "pack:humanoid_india:evidence:ev_qual_latency_aero",
             "pack:targeted_industrial_reality:evidence:tr_ev_weg_motors"
+          ],
+          "supporting_source_ids": [
+            "pack:humanoid_india:source:src_bcg_aero",
+            "pack:humanoid_india:source:src_corpus_streams",
+            "pack:humanoid_india:source:src_dod_mrl",
+            "pack:humanoid_india:source:src_harmonicdrive_precision",
+            "pack:humanoid_india:source:src_nabtesco_rv",
+            "pack:humanoid_india:source:src_nsk_crossroller",
+            "pack:humanoid_india:source:src_renishaw_resolute",
+            "pack:targeted_industrial_reality:source:tr_src_weg_motors"
+          ],
+          "supporting_sources": [
+            {
+              "license": "commercial summary referenced",
+              "publisher": "Boston Consulting Group",
+              "source_id": "pack:humanoid_india:source:src_bcg_aero",
+              "url": ""
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied research corpus",
+              "source_id": "pack:humanoid_india:source:src_corpus_streams",
+              "url": ""
+            },
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:humanoid_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Harmonic Drive LLC",
+              "source_id": "pack:humanoid_india:source:src_harmonicdrive_precision",
+              "url": "https://www.harmonicdrive.net/products/gear-units/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Nabtesco Precision Equipment Company",
+              "source_id": "pack:humanoid_india:source:src_nabtesco_rv",
+              "url": "https://precision.nabtesco.com/en/products/detail/rv-n"
+            },
+            {
+              "license": "public PDF (referenced)",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:humanoid_india:source:src_nsk_crossroller",
+              "url": "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:humanoid_india:source:src_renishaw_resolute",
+              "url": "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+            },
+            {
+              "license": "WEG copyright; reference-only scoped extraction",
+              "publisher": "WEG",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_weg_motors",
+              "url": "https://www.weg.net/institutional/GN/en/news/products-and-solutions/weg-supplies-motors-for-a-greenfield-project-on-the-cement-sector-in-india"
+            }
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -1637,6 +2626,66 @@
             "pack:humanoid_india:evidence:ev_renishaw_encoder_scope",
             "pack:targeted_industrial_reality:evidence:tr_ev_eipl_encoders"
           ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_research_07",
+            "pack:humanoid_india:source:src_harmonicdrive_precision",
+            "pack:humanoid_india:source:src_nabtesco_rv",
+            "pack:humanoid_india:source:src_nsk_crossroller",
+            "pack:humanoid_india:source:src_renishaw_resolute",
+            "pack:targeted_industrial_reality:source:tr_src_eipl_encoders"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Harmonic Drive LLC",
+              "source_id": "pack:humanoid_india:source:src_harmonicdrive_precision",
+              "url": "https://www.harmonicdrive.net/products/gear-units/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Nabtesco Precision Equipment Company",
+              "source_id": "pack:humanoid_india:source:src_nabtesco_rv",
+              "url": "https://precision.nabtesco.com/en/products/detail/rv-n"
+            },
+            {
+              "license": "public PDF (referenced)",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:humanoid_india:source:src_nsk_crossroller",
+              "url": "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:humanoid_india:source:src_renishaw_resolute",
+              "url": "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+            },
+            {
+              "license": "EIPL copyright; reference-only scoped extraction",
+              "publisher": "Encoders India Private Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_eipl_encoders",
+              "url": "https://www.encodersindia.com/encoders-india-profile.html"
+            }
+          ],
           "world_epistemic_classes": [
             "ASSUMPTION",
             "UNKNOWN"
@@ -1672,6 +2721,17 @@
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
+          ],
+          "supporting_source_ids": [
+            "pack:targeted_industrial_reality:source:tr_src_abb_drives"
+          ],
+          "supporting_sources": [
+            {
+              "license": "ABB copyright; reference-only scoped extraction",
+              "publisher": "ABB India Limited",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_abb_drives",
+              "url": "https://new.abb.com/news/detail/102971/abb-india-expands-production-footprint-of-its-energy-efficient-drives-portfolio"
+            }
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -1709,6 +2769,31 @@
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_schedule_assumption",
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_window"
+          ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_research_07"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            }
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -1765,6 +2850,150 @@
             "pack:materials_minerals_foundational:evidence:c12_china_poly",
             "pack:materials_minerals_foundational:evidence:mm_process_assumptions",
             "pack:targeted_industrial_reality:evidence:tr_ev_nise_testing"
+          ],
+          "supporting_source_ids": [
+            "pack:cnc_machining_india:source:src_dod_mrl",
+            "pack:cnc_machining_india:source:src_pri_nadcap",
+            "pack:cnc_machining_india:source:src_research_07",
+            "pack:humanoid_india:source:src_bcg_aero",
+            "pack:humanoid_india:source:src_dod_mrl",
+            "pack:humanoid_india:source:src_harmonicdrive_precision",
+            "pack:humanoid_india:source:src_nabtesco_rv",
+            "pack:humanoid_india:source:src_nsk_crossroller",
+            "pack:humanoid_india:source:src_renishaw_resolute",
+            "pack:materials_minerals_foundational:source:src_benchmark_graphite",
+            "pack:materials_minerals_foundational:source:src_columbia_lithium",
+            "pack:materials_minerals_foundational:source:src_cpia_poly",
+            "pack:materials_minerals_foundational:source:src_iea_gcmo2025",
+            "pack:materials_minerals_foundational:source:src_iea_ree",
+            "pack:materials_minerals_foundational:source:src_kmml_initiatives",
+            "pack:materials_minerals_foundational:source:src_mathrubhumi_kmml",
+            "pack:materials_minerals_foundational:source:src_metalshub_graphite",
+            "pack:materials_minerals_foundational:source:src_orf_titanium",
+            "pack:materials_minerals_foundational:source:src_spacenews_kmml",
+            "pack:targeted_industrial_reality:source:tr_src_nise_testing"
+          ],
+          "supporting_sources": [
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:cnc_machining_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public guidance",
+              "publisher": "Performance Review Institute",
+              "source_id": "pack:cnc_machining_india:source:src_pri_nadcap",
+              "url": "https://www.p-r-i.org/nadcap/getting-started"
+            },
+            {
+              "license": "supplied-for-project use only",
+              "publisher": "Supplied FORGE WORLD research corpus",
+              "source_id": "pack:cnc_machining_india:source:src_research_07",
+              "url": ""
+            },
+            {
+              "license": "commercial summary referenced",
+              "publisher": "Boston Consulting Group",
+              "source_id": "pack:humanoid_india:source:src_bcg_aero",
+              "url": ""
+            },
+            {
+              "license": "public domain",
+              "publisher": "US Department of Defense",
+              "source_id": "pack:humanoid_india:source:src_dod_mrl",
+              "url": "https://dodmrl.com/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Harmonic Drive LLC",
+              "source_id": "pack:humanoid_india:source:src_harmonicdrive_precision",
+              "url": "https://www.harmonicdrive.net/products/gear-units/"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Nabtesco Precision Equipment Company",
+              "source_id": "pack:humanoid_india:source:src_nabtesco_rv",
+              "url": "https://precision.nabtesco.com/en/products/detail/rv-n"
+            },
+            {
+              "license": "public PDF (referenced)",
+              "publisher": "NSK Ltd.",
+              "source_id": "pack:humanoid_india:source:src_nsk_crossroller",
+              "url": "https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1226.pdf"
+            },
+            {
+              "license": "public web page (referenced)",
+              "publisher": "Renishaw plc",
+              "source_id": "pack:humanoid_india:source:src_renishaw_resolute",
+              "url": "https://www.renishaw.com/en/encoder-ottici-lineari-assoluti-ed-encoder-ottici-rotativi-angolari-assoluti-resolute--10852"
+            },
+            {
+              "license": "public",
+              "publisher": "Benchmark Minerals",
+              "source_id": "pack:materials_minerals_foundational:source:src_benchmark_graphite",
+              "url": "https://www.benchmarkminerals.com/glossary/what-is-graphite"
+            },
+            {
+              "license": "public",
+              "publisher": "Columbia SIPA",
+              "source_id": "pack:materials_minerals_foundational:source:src_columbia_lithium",
+              "url": "https://www.energypolicy.columbia.edu/publications/fact-sheet-lithium-supply-in-the-energy-transition/"
+            },
+            {
+              "license": "public",
+              "publisher": "CPIA via Bernreuter/PV-Tech/SolarPowerWorld",
+              "source_id": "pack:materials_minerals_foundational:source:src_cpia_poly",
+              "url": "https://www.solarpowerworldonline.com/2022/04/chinas-share-of-worlds-polysilicon-production-grows-from-30-to-80-in-just-one-decade/"
+            },
+            {
+              "license": "public",
+              "publisher": "IEA",
+              "source_id": "pack:materials_minerals_foundational:source:src_iea_gcmo2025",
+              "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025/executive-summary"
+            },
+            {
+              "license": "public",
+              "publisher": "IEA",
+              "source_id": "pack:materials_minerals_foundational:source:src_iea_ree",
+              "url": "https://www.iea.org/reports/rare-earth-elements/executive-summary"
+            },
+            {
+              "license": "public",
+              "publisher": "KMML",
+              "source_id": "pack:materials_minerals_foundational:source:src_kmml_initiatives",
+              "url": "https://www.kmml.com/initiatives/1"
+            },
+            {
+              "license": "public",
+              "publisher": "Mathrubhumi",
+              "source_id": "pack:materials_minerals_foundational:source:src_mathrubhumi_kmml",
+              "url": "https://english.mathrubhumi.com/amp/news/india/how-one-kerala-plant-could-stall-india-s-fighter-jets-and-submarines-ltae1312"
+            },
+            {
+              "license": "public",
+              "publisher": "Metals Hub",
+              "source_id": "pack:materials_minerals_foundational:source:src_metalshub_graphite",
+              "url": "https://www.metals-hub.com/en/blog/graphite-supply-chain/"
+            },
+            {
+              "license": "public",
+              "publisher": "Observer Research Foundation",
+              "source_id": "pack:materials_minerals_foundational:source:src_orf_titanium",
+              "url": "https://www.orfonline.org/expert-speak/the-titanium-bottleneck-that-could-stall-india-s-fighter-jet-and-submarine-plans"
+            },
+            {
+              "license": "public",
+              "publisher": "SpaceNews",
+              "source_id": "pack:materials_minerals_foundational:source:src_spacenews_kmml",
+              "url": "https://spacenews.com/isro-and-kerala-minerals-and-metals-limited-sign-mou-on-titanium-sponge-plant/"
+            },
+            {
+              "license": "Government of India public information; reference-only extraction",
+              "publisher": "National Institute of Solar Energy, MNRE",
+              "source_id": "pack:targeted_industrial_reality:source:tr_src_nise_testing",
+              "url": "https://nise.res.in/uploads/pages/17555243377672-stakeholder-meeting-hydrogen-testing-scheme.pdf"
+            }
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",

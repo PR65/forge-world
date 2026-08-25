@@ -108,6 +108,31 @@ def compose_objective(registry: CanonicalRegistry, objective: Mapping[str, Any])
                 if evidence_id in registry.evidence
             }
         )
+        supporting_source_id_set: set[str] = set()
+        for evidence_id in supporting_evidence_ids:
+            evidence = registry.evidence.get(evidence_id)
+            if evidence is None:
+                continue
+            prefix = evidence_id.split(":evidence:", 1)[0]
+            for source_id in evidence.source_ids:
+                public_source_id = (
+                    source_id
+                    if source_id in registry.sources
+                    else f"{prefix}:source:{source_id}"
+                )
+                if public_source_id in registry.sources:
+                    supporting_source_id_set.add(public_source_id)
+        supporting_source_ids = sorted(supporting_source_id_set)
+        supporting_sources = [
+            {
+                "source_id": source_id,
+                "publisher": registry.sources[source_id].publisher,
+                "url": registry.sources[source_id].url,
+                "license": registry.sources[source_id].license,
+            }
+            for source_id in supporting_source_ids
+            if source_id in registry.sources
+        ]
         # A capability node may correctly collapse to UNKNOWN because dimensions
         # such as qualified capacity remain unknown while still carrying a
         # scoped REPORTED facility/process observation. Evidence presence and
@@ -154,6 +179,8 @@ def compose_objective(registry: CanonicalRegistry, objective: Mapping[str, Any])
                 "world_epistemic_classes": classes or ["UNKNOWN"],
                 "supporting_evidence_ids": supporting_evidence_ids,
                 "supporting_evidence_classes": supporting_evidence_classes,
+                "supporting_source_ids": supporting_source_ids,
+                "supporting_sources": supporting_sources,
                 "evidenced_world_state": evidenced_world_state,
             }
         )
@@ -165,6 +192,15 @@ def compose_objective(registry: CanonicalRegistry, objective: Mapping[str, Any])
         "geography": str(objective.get("geography", "GLOBAL")),
         "target": dict(objective.get("target", {}) or {}),
         "status": "COMPOSITION_DIAGNOSTIC_NOT_SOLVER_VERDICT",
+        "adjudication": {
+            "verdict": "NOT_ADJUDICABLE",
+            "reason": (
+                "Structural composition does not supply a validated quantitative BOM, "
+                "objective-grade facility compatibility, qualified effective capacity, "
+                "allocation, ramp, economics, or complete physical/evidence clocks."
+            ),
+            "meaning": "Insufficient model closure; not evidence of infeasibility.",
+        },
         "architecture_seed_epistemic_class": "ASSUMPTION",
         "composition_coverage": round(coverage, 6),
         "coverage_formula": "sum(decision_weight for REUSED_CANONICAL requirements) / sum(all decision_weight)",

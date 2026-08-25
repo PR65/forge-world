@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "audit_date": "2026-08-25",
+  "scope": "Single bounded post-campaign audit; no new research or feature work.",
+  "branch": "codex/homi-reality-world-expansion",
+  "baseline_commit": "ece00c16f320c68d48b594b68917e5eff91ace1b",
+  "result": "PASS_WITH_RETAINED_BLOCKERS",
+  "checks": [
+    {
+      "check": "raw_archive_integrity",
+      "result": "PASS",
+      "evidence": "20 archives; 254/254 extracted entries byte-match; zero integrity failures."
+    },
+    {
+      "check": "corpus_accounting",
+      "result": "PASS",
+      "evidence": "All 20 Manus corpora have hash-linked staging reports; 321 artifacts, 315 unique hashes, 12 duplicate artifacts."
+    },
+    {
+      "check": "claim_laundering_boundary",
+      "result": "PASS",
+      "evidence": "58 corpus claims remain staging-only and zero were bulk-promoted while rights/source requirements remain unresolved."
+    },
+    {
+      "check": "targeted_source_lineage",
+      "result": "PASS",
+      "evidence": "14/14 reviewed promotions link through observation and immutable snapshot to a declared-license primary or official source."
+    },
+    {
+      "check": "capacity_epistemics",
+      "result": "PASS",
+      "evidence": "Zero targeted effective-qualified-capacity promotions; facility or product evidence is not treated as allocable supply."
+    },
+    {
+      "check": "canonical_registry",
+      "result": "PASS",
+      "evidence": "Seven packs load into registry-snapshot:db84f98a08835614 with 924 nodes, 1,412 edges, and 131 evidence records."
+    },
+    {
+      "check": "novel_objective_honesty",
+      "result": "PASS",
+      "evidence": "Six frozen objectives average 0.96131 structural coverage; all remain NOT_ADJUDICABLE and explicitly make no feasibility claim."
+    },
+    {
+      "check": "regression_and_build",
+      "result": "PASS",
+      "evidence": "211 Python tests passed, one intentional skip; all seven packs validate; TypeScript/Vite production build passed."
+    },
+    {
+      "check": "long_term_product_completion",
+      "result": "PARTIAL",
+      "evidence": "Qualified effective capacity, automatic validated BOM/process synthesis, canonical facility geography, and DESIGN/EXECUTE depth remain material blockers."
+    }
+  ],
+  "stop_decision": {
+    "decision": "STOP_CAMPAIGN_AND_OPEN_REVIEW",
+    "reason": "The requested bounded waves, targeted closure, recomposition, regression, and accounting are complete. The two remaining composition gaps have low cross-objective marginal value relative to the retained capacity and synthesis blockers."
+  }
+}

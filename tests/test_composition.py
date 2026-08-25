@@ -27,12 +27,21 @@ def test_composition_metric_is_weighted_structural_reuse_not_feasibility():
     )
     assert heat_pumps["composition_coverage"] == 1
     assert heat_pumps["status"] == "COMPOSITION_DIAGNOSTIC_NOT_SOLVER_VERDICT"
+    assert heat_pumps["adjudication"]["verdict"] == "NOT_ADJUDICABLE"
+    assert "not evidence of infeasibility" in heat_pumps["adjudication"]["meaning"].lower()
     assert "feasibility" in heat_pumps["coverage_not_claimed"]
     assert all(
         "supporting_evidence_classes" in requirement
         for requirement in heat_pumps["requirements"]
     )
     assert heat_pumps["architecture_seed_epistemic_class"] == "ASSUMPTION"
+    evidenced = [
+        requirement
+        for requirement in heat_pumps["requirements"]
+        if requirement["evidenced_world_state"]
+    ]
+    assert evidenced
+    assert any(requirement["supporting_sources"] for requirement in evidenced)
 
 
 def test_missing_reality_becomes_ranked_structured_research_tasks():
