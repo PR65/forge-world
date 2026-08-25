@@ -106,3 +106,30 @@ No LLM in the numerical path (C20). This session builds and tests the determinis
 - **Rejected:** deleting global research; replacing FORGE with a flat India capability wiki;
   reducing the solver to an IndiaBUILD clone; or continuing broad country-by-country data
   expansion before the India-first system is mature.
+
+## D14 — Hard-recall refinement: full industrial transformation action space
+- **Context:** the first India operating draft correctly preserved build/import/license/
+  substitute/redesign logic but under-specified several important FORGE WORLD ideas, especially
+  JV/acquisition, explicit supplier-development/qualification pathways, finance/policy enablers,
+  recursive machine-builds-machine closure, project state/ramp, purity/yield, inventory buffers,
+  competing demand, and value-of-information prioritization.
+- **Choice:** `docs/FORGE_INDIA_OPERATING_VISION_CANONICAL.md` is the current canonical execution
+  vision for the India-first phase. It preserves the prior India draft for history and does not
+  modify `docs/FORGE_WORLD_NORTH_STAR.md`.
+- **Transformation consequence:** missing capability is solved over a full action space including
+  BUY/IMPORT, diversify/stockpile, QUALIFY, supplier development, LICENSE/technology transfer,
+  JV/co-development, ACQUIRE, greenfield/brownfield build, seed-equipment bootstrap, FUND/
+  procurement/offtake/policy enablement, SUBSTITUTE/RECYCLE, REDESIGN, indigenous R&D and
+  targeted RESEARCH. Each path changes the industrial graph and must be re-solved.
+- **Industrial-depth consequence:** usable output must distinguish grade/purity, uptime, yield,
+  specification acceptance, qualification and allocatable capacity; projects progress through
+  funded/construction/commission/ramp/qualification states; machine/tool dependencies can recurse
+  into bootstrap sets; shared resources face competing demand; shocks propagate through buffers,
+  qualification delays and recovery paths.
+- **Optimization consequence:** FORGE may compare fastest, cheapest, most sovereign, most
+  resilient, most qualification-certain and highest-option-value paths rather than pretending
+  one plan is universally best.
+- **Non-goal:** these additions must remain decision-relevant. FORGE does not become a generic
+  bureaucracy, ESG scorecard, finance simulator or global encyclopedia; finance, policy and
+  legal/ethical sourcing rules enter only when they materially change physical buildability,
+  eligibility, timing or resilience.
