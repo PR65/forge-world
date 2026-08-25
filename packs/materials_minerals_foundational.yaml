@@ -1,0 +1,557 @@
+pack_id: materials_minerals_foundational
+title: "Foundational materials & minerals layer for FORGE WORLD (upstream of all benchmark packs)"
+version: 0.1.0
+geography_focus: GLOBAL
+notes: >
+  Cross-pack upstream materials/minerals layer built by the industrial-knowledge
+  foundry (workstream 07). Anchors are world-state claims verified during the
+  2026-08-24 build run (PIB/Ministry of Steel, MOFCOM, IEA, USGS-landing,
+  Benchmark, CPIA-synthesis, ATA-2025, company disclosures). Recipe coefficients
+  are transparent engineering ASSUMPTIONS that expose gross-up structure, not
+  observed plant data. No factory existence, reserve, trade flow, or nameplate
+  is promoted into qualified effective capacity; those remain UNKNOWN where
+  evidence is absent. India-specific depth (Ti sponge single-plant, copper
+  import dependence, REE separation gap) is evidence-linked below.
+
+sources:
+  - {id: src_pib_steel_may26, name: "PIB — India crude steel May 2026 (PRID 2277931)", publisher: "Government of India", url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2277931", source_type: government_release, license: public, access_date: "2026-08-24", notes: "Capacity ~221.9 MTPA May 2026"}
+  - {id: src_pib_steel_may25, name: "PIB — India crude steel Apr-May 2025/2026 (PRID 2268816)", publisher: "Government of India", url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2268816", source_type: government_release, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_et_steel_fy26, name: "ET Infra — India FY2025-26 steel production", publisher: "Economic Times (Ministry data)", url: "https://infra.economictimes.indiatimes.com/news/construction/indias-crude-steel-production-soars-107-to-1684-mt-in-fy-2025-26/130115699", source_type: news_ministry_data, license: public, access_date: "2026-08-24", notes: "~168.4 MT FY25-26"}
+  - {id: src_gmk_steel_capacity, name: "GMK — India reached 205 Mt/yr capacity FY25", publisher: "GMK Center", url: "https://gmk.center/en/news/india-has-reached-a-steel-production-capacity-of-205-million-tons-per-year-research/", source_type: industry_analysis, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_mofcom_18, name: "MOFCOM Announcement No.18 (2025) REE export controls", publisher: "China Ministry of Commerce", url: "https://english.mofcom.gov.cn/Policies/AnnouncementsOrders/art/2025/art_0dd87cbee7b045bf93fabe6ab2faceee.html", source_type: government_regulation, license: public, access_date: "2026-08-24", notes: "7 REEs + magnets; license regime"}
+  - {id: src_csis_ree, name: "CSIS — Consequences of China's REE export restrictions", publisher: "CSIS", url: "https://www.csis.org/analysis/consequences-chinas-new-rare-earths-export-restrictions", source_type: think_tank_analysis, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_iea_ree, name: "IEA — Rare Earth Elements analysis", publisher: "IEA", url: "https://www.iea.org/reports/rare-earth-elements/executive-summary", source_type: intergovernmental_analysis, license: public, access_date: "2026-08-24", notes: "94% sintered magnets 2024"}
+  - {id: src_iea_gcmo2025, name: "IEA — Global Critical Minerals Outlook 2025", publisher: "IEA", url: "https://www.iea.org/reports/global-critical-minerals-outlook-2025/executive-summary", source_type: intergovernmental_analysis, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_woodmac_lithium, name: "Wood Mackenzie — easing reliance on Chinese lithium", publisher: "Wood Mackenzie", url: "https://www.woodmac.com/news/opinion/easing-global-reliance-on-chinese-lithium-supplies/", source_type: industry_analysis, license: public, access_date: "2026-08-24", notes: "81% spodumene refining by 2027"}
+  - {id: src_columbia_lithium, name: "Columbia SIPA — lithium supply fact sheet", publisher: "Columbia SIPA", url: "https://www.energypolicy.columbia.edu/publications/fact-sheet-lithium-supply-in-the-energy-transition/", source_type: academic_fact_sheet, license: public, access_date: "2026-08-24", notes: "98% AUS spodumene to China"}
+  - {id: src_wa_gov_profile, name: "WA Battery & Critical Minerals Profile (Jul 2025)", publisher: "Government of Western Australia", url: "https://www.wa.gov.au/system/files/2025-08/wabatteryandcriticalmineralsprofilejuly2025.docx", source_type: government_report, license: public, access_date: "2026-08-24", notes: "2024 mined shares"}
+  - {id: src_csep_copper, name: "CSEP — Indian copper cathode market", publisher: "CSEP", url: "https://csep.org/blog/decoding-copper-cathode-navigating-through-the-indian-copper-market/", source_type: think_tank_analysis, license: public, access_date: "2026-08-24", notes: "MoM 2024 10.28 lakh t; >90% concentrate imports"}
+  - {id: src_vedanta_fy25, name: "Vedanta FY25 copper disclosure", publisher: "Vedanta Limited", url: "https://www.vedantalimited.com/vedantaFY25/copper-india-australia.html", source_type: company_disclosure, license: public, access_date: "2026-08-24", notes: "Silvassa 149 kt FY25"}
+  - {id: src_kmml_initiatives, name: "KMML initiatives (sponge/SAIL JV/pigment)", publisher: "KMML", url: "https://www.kmml.com/initiatives/1", source_type: company_disclosure, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_orf_titanium, name: "ORF — India titanium bottleneck", publisher: "Observer Research Foundation", url: "https://www.orfonline.org/expert-speak/the-titanium-bottleneck-that-could-stall-india-s-fighter-jet-and-submarine-plans", source_type: think_tank_analysis, license: public, access_date: "2026-08-24", notes: "~500 TPA vs ~1,500 t demand"}
+  - {id: src_irel_about, name: "IREL about — units & Odisha REE plant", publisher: "IREL (India) Ltd", url: "https://www.irel.co.in/quick-aboutus", source_type: company_website, license: public, access_date: "2026-08-24", notes: "~11,000 t RE chloride class; Japan suspension report"}
+  - {id: src_spacenews_kmml, name: "SpaceNews — ISRO/KMML sponge MoU", publisher: "SpaceNews", url: "https://spacenews.com/isro-and-kerala-minerals-and-metals-limited-sign-mou-on-titanium-sponge-plant/", source_type: trade_media, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_mathrubhumi_kmml, name: "Mathrubhumi — KMML sponge plant", publisher: "Mathrubhumi", url: "https://english.mathrubhumi.com/amp/news/india/how-one-kerala-plant-could-stall-india-s-fighter-jets-and-submarines-ltae1312", source_type: regional_media, license: public, access_date: "2026-08-24", notes: "300-500 t band"}
+  - {id: src_metalpowder_midhani, name: "Metal Powder — MIDHANI AM powders/Ti plant", publisher: "Metal Powder & Processing", url: "https://www.metal-powder.tech/midhani-to-produce-nickel-and-titanium-alloy-powders-for-aerospace-additive-manufacturing/", source_type: trade_media, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_usgs_nickel, name: "USGS Nickel Statistics", publisher: "USGS", url: "https://www.usgs.gov/centers/national-minerals-information-center/nickel-statistics-and-information", source_type: government_statistics, license: public domain, access_date: "2026-08-24", notes: "62% Indonesia 2024 basis"}
+  - {id: src_usgs_cobalt, name: "USGS Cobalt Statistics", publisher: "USGS", url: "https://www.usgs.gov/centers/national-minerals-information-center/cobalt-statistics-and-information", source_type: government_statistics, license: public domain, access_date: "2026-08-24", notes: ""}
+  - {id: src_benchmark_drc, name: "Benchmark — DRC cobalt quotas", publisher: "Benchmark Source", url: "https://source.benchmarkminerals.com/article/drc-to-lift-cobalt-export-ban-and-impose-quotas-through-2027", source_type: industry_analysis, license: public, access_date: "2026-08-24", notes: "18,125 t 2025; 96,600 t/yr 2026-27"}
+  - {id: src_benchmark_graphite, name: "Benchmark glossary — graphite", publisher: "Benchmark Minerals", url: "https://www.benchmarkminerals.com/glossary/what-is-graphite", source_type: industry_glossary, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_metalshub_graphite, name: "Metals Hub — graphite supply chain", publisher: "Metals Hub", url: "https://www.metals-hub.com/en/blog/graphite-supply-chain/", source_type: industry_analysis, license: public, access_date: "2026-08-24", notes: "98% graphitization"}
+  - {id: src_springer_graphite, name: "Springer — graphite supply chain overview 2025", publisher: "Springer", url: "https://link.springer.com/article/10.1007/s12303-025-00027-2", source_type: peer_reviewed, license: cc-by, access_date: "2026-08-24", notes: "top-3 ~40% shipments"}
+  - {id: src_cpia_poly, name: "CPIA synthesis — polysilicon share & pullback", publisher: "CPIA via Bernreuter/PV-Tech/SolarPowerWorld", url: "https://www.solarpowerworldonline.com/2022/04/chinas-share-of-worlds-polysilicon-production-grows-from-30-to-80-in-just-one-decade/", source_type: industry_statistics, license: public, access_date: "2026-08-24", notes: "93.5% 2024; H1-25 pullback"}
+  - {id: src_tongwei_pdf, name: "Tongwei company research PDF", publisher: "Securities research (dfcfw)", url: "https://pdf.dfcfw.com/pdf/H3_AP202301051581714899_1.pdf", source_type: securities_research, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_ata_cf, name: "ATA 2025 Global Carbon Fiber report (via CompositesWorld)", publisher: "CompositesWorld/ATA", url: "https://www.compositesworld.com/news/ata-2025-global-carbon-fiber-composites-market-report-documents-record-demand", source_type: industry_report, license: public, access_date: "2026-08-24", notes: "China 52.5% of 326 kt"}
+  - {id: src_pmr_cf, name: "Persistence MR — carbon fiber composites market", publisher: "Persistence Market Research", url: "https://www.persistencemarketresearch.com/market-research/carbon-fiber-composites-market.asp", source_type: market_report, license: public, access_date: "2026-08-24", notes: "Toray PAN claim"}
+  - {id: src_toray_ir, name: "Toray IR report", publisher: "Toray Industries", url: "https://www.toray.com/ir/pdf/lib/lib_a540.pdf", source_type: company_investor_report, license: public, access_date: "2026-08-24", notes: ""}
+  - {id: src_precedence_cf, name: "Precedence — carbon fiber market", publisher: "Precedence Research", url: "https://www.precedencemarketresearch.com/carbon-fiber-market", source_type: market_report, license: public, access_date: "2026-08-24", notes: "~208 kt volume 2025"}
+
+evidence:
+  - {claim_id: mm_process_assumptions, subject: materials_minerals_recipes, predicate: process_coefficients, epistemic_class: ASSUMPTION, value_text: "All recipe yields, consumption coefficients, cycle times and energies in this pack are transparent engineering planning assumptions exposing gross-up structure; not observed plant data.", source_ids: [], retrieval_date: "2026-08-24", confidence: {technical_specificity: 0.5}, quote_or_caveat: "Replace with measured route data during qualification."}
+  - {claim_id: mm_capacity_discipline, subject: this_pack, predicate: epistemic_discipline, epistemic_class: UNKNOWN, value_text: "Plant-level effective/qualified capacity left UNKNOWN wherever public evidence is absent; nameplate, reserves, trade and factory existence are never promoted to capacity.", source_ids: [], retrieval_date: "2026-08-24", confidence: {completeness: 0.2}}
+  - {claim_id: c01_india_steel_capacity, subject: INDIA_steel, predicate: installed_capacity, epistemic_class: REPORTED, value_quantity: [205000000, t_product/yr], value_text: "India crude steel capacity ~205 MT FY24-25; ~221.9 MTPA by May 2026; NSP target 300 MT by 2030.", source_ids: [src_gmk_steel_capacity, src_pib_steel_may26], retrieval_date: "2026-08-24", confidence: {authority: 0.85, directness: 0.8, recency: 0.9}, geographic_scope: INDIA, quote_or_caveat: "Aggregate nameplate; not effective qualified capacity per product."}
+  - {claim_id: c01_india_steel_production, subject: INDIA_steel, predicate: crude_steel_production, epistemic_class: REPORTED, value_quantity: [168400000, t_product/yr], value_text: "FY2025-26 production ~168.4 MT (+10.7% YoY); Apr-May 2026 28.04 MT.", source_ids: [src_et_steel_fy26, src_pib_steel_may25], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.85, recency: 0.9}, geographic_scope: INDIA}
+  - {claim_id: c04_india_capacity, subject: INDIA_copper, predicate: installed_capacity, epistemic_class: REPORTED, value_quantity: [1028000, t_metal/yr], value_text: "Installed copper smelting+refining ~10.28 lakh t/yr (Ministry of Mines 2024 via CSEP); ~820 kt refined expected 2025.", source_ids: [src_csep_copper], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.75, recency: 0.8}, geographic_scope: INDIA}
+  - {claim_id: c04_india_concentrate_import, subject: INDIA_copper, predicate: concentrate_import_dependence, epistemic_class: REPORTED, value_text: "India imports >90% of copper concentrate requirements.", source_ids: [src_csep_copper], retrieval_date: "2026-08-24", confidence: {authority: 0.75, directness: 0.7, recency: 0.8}, geographic_scope: INDIA}
+  - {claim_id: c04_vedanta_silvassa, subject: fac_silvassa, predicate: fy25_production, epistemic_class: REPORTED, value_quantity: [149000, t_metal/yr], value_text: "Silvassa FY25 copper production 149 kt (+6%), highest since Tuticorin closure.", source_ids: [src_vedanta_fy25], retrieval_date: "2026-08-24", confidence: {authority: 0.75, directness: 0.9, recency: 0.9}, geographic_scope: INDIA, quote_or_caveat: "Company-reported production, not nameplate or allocation."}
+  - {claim_id: c04_tuticorin_shock, subject: fac_tuticorin, predicate: policy_closure, epistemic_class: REPORTED, value_text: "Tuticorin 400 kt/yr smelter permanently closed by govt order (2018); India flipped net exporter to major importer.", source_ids: [src_csep_copper, src_vedanta_fy25], retrieval_date: "2026-08-24", confidence: {authority: 0.85, directness: 0.85, recency: 0.7}, geographic_scope: INDIA}
+  - {claim_id: c04_hcl_jhagadia, subject: fac_jhagadia, predicate: secondary_cathode_capacity, epistemic_class: REPORTED, value_quantity: [50000, t_metal/yr], value_text: "HCL Jhagadia ~50 kt/yr cathode via secondary/ENP route.", source_ids: [src_csep_copper], retrieval_date: "2026-08-24", confidence: {authority: 0.7, directness: 0.7, recency: 0.7}, geographic_scope: INDIA}
+  - {claim_id: c05_kmml_sponge, subject: fac_kmml_chavara, predicate: ti_sponge_capacity, epistemic_class: REPORTED, value_quantity: [500, t_metal/yr], value_text: "KMML: India's only Ti sponge plant, ~500 TPA nameplate (300-500 t actual band), 2011 ISRO/VSSC technology; 10,000 TPY proposal under consideration.", source_ids: [src_kmml_initiatives, src_orf_titanium, src_mathrubhumi_kmml, src_spacenews_kmml], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.8, recency: 0.85}, geographic_scope: INDIA, quote_or_caveat: "Single-plant fragility; actual output UNKNOWN within band."}
+  - {claim_id: c05_sail_kmml_jv, subject: proj_sail_kmml_jv, predicate: mou_announced, epistemic_class: REPORTED, value_text: "KMML-SAIL MoU for Rs 5,000-crore titanium sponge JV.", source_ids: [src_kmml_initiatives], retrieval_date: "2026-08-24", confidence: {authority: 0.75, directness: 0.85, recency: 0.8}, geographic_scope: INDIA, quote_or_caveat: "MoU only."}
+  - {claim_id: c05_orf_bottleneck, subject: INDIA_titanium, predicate: defense_supply_gap, epistemic_class: REPORTED, value_text: "Defense demand ~1,500 t/yr vs ~500 TPA sponge; KMML and MIDHANI are single points without redundancy.", source_ids: [src_orf_titanium], retrieval_date: "2026-08-24", confidence: {authority: 0.7, directness: 0.7, recency: 0.85}, geographic_scope: INDIA}
+  - {claim_id: c05_midhani_plant, subject: fac_midhani_hyd, predicate: ti_plant_expansion, epistemic_class: REPORTED, value_text: "MIDHANI new Ti plant inaugurated ~Mar 2025; equity-research throughput claims (250-300 t/mo) LOW confidence; AM powders program; AMCA supplier.", source_ids: [src_metalpowder_midhani], retrieval_date: "2026-08-24", confidence: {authority: 0.6, directness: 0.5, recency: 0.8}, geographic_scope: INDIA, quote_or_caveat: "Identity verified; throughput is secondary — VERIFY before use."}
+  - {claim_id: c05_irel_oscom, subject: fac_oscom, predicate: ree_concentrate_capacity, epistemic_class: REPORTED, value_quantity: [11000, t_product/yr], value_text: "IREL Odisha REE extraction plant ~11,000 t/yr RE concentrate (RE-chloride class); units Chavara/MK/OSCOM.", source_ids: [src_irel_about], retrieval_date: "2026-08-24", confidence: {authority: 0.75, directness: 0.75, recency: 0.7}, geographic_scope: INDIA, quote_or_caveat: "Chloride intermediate — NOT separated oxides."}
+  - {claim_id: c05_irel_japan_suspension, subject: org_irel, predicate: export_policy_shift, epistemic_class: REPORTED, value_text: "IREL suspended a 13-year REE supply agreement with Japan to prioritize domestic needs.", source_ids: [src_irel_about], retrieval_date: "2026-08-24", confidence: {authority: 0.65, directness: 0.6, recency: 0.8}, geographic_scope: INDIA, quote_or_caveat: "Single-source synthesis; corroborate."}
+  - {claim_id: c06_indonesia_share, subject: Indonesia_nickel, predicate: mine_production_share, epistemic_class: REPORTED, value_text: "Indonesia 62% of global nickel mine production 2024 (51% 2023); refined share ~73%->82% 2020->2024.", source_ids: [src_usgs_nickel, src_iea_gcmo2025], retrieval_date: "2026-08-24", confidence: {authority: 0.85, directness: 0.7, recency: 0.9}, geographic_scope: GLOBAL}
+  - {claim_id: c07_drc_share, subject: DRC_cobalt, predicate: mine_production_share, epistemic_class: REPORTED, value_text: "DRC ~70-76% of mined cobalt (band 70-84 across sources); 2024 output ~220 kt.", source_ids: [src_usgs_cobalt], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.7, recency: 0.85}, geographic_scope: GLOBAL}
+  - {claim_id: c07_drc_quota, subject: DRC_cobalt_policy, predicate: quota_regime, epistemic_class: REPORTED, value_text: "Export ban Feb-Oct 2025 then quotas: 18,125 t remainder-2025; 96,600 t/yr 2026-2027.", source_ids: [src_benchmark_drc], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.8, recency: 0.9}, geographic_scope: COD}
+  - {claim_id: c08_china_refining, subject: China_lithium_refining, predicate: refining_capacity_share, epistemic_class: REPORTED, value_text: "China ~60-70% of global lithium chemical refining capacity.", source_ids: [src_columbia_lithium, src_iea_gcmo2025], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.65, recency: 0.85}, geographic_scope: GLOBAL}
+  - {claim_id: c08_mining_shares, subject: lithium_mining, predicate: mined_share_2024, epistemic_class: REPORTED, value_text: "2024: Australia ~55% (WA 42%), Chile 20%, China 17%, Zimbabwe 9%, Argentina 8%.", source_ids: [src_wa_gov_profile], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.8, recency: 0.9}, geographic_scope: GLOBAL}
+  - {claim_id: c08_aus_spodumene_china, subject: AUS_spodumene_trade, predicate: export_concentration, epistemic_class: REPORTED, value_text: "98% of Australian spodumene exported to China for processing (FY22-23).", source_ids: [src_columbia_lithium], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.8, recency: 0.7}, geographic_scope: AUS}
+  - {claim_id: c08_woodmac, subject: spodumene_refining, predicate: forecast_share, epistemic_class: REPORTED, value_text: "Chinese plants forecast 81% of global spodumene refinery production by 2027.", source_ids: [src_woodmac_lithium], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.75, recency: 0.85}, geographic_scope: GLOBAL}
+  - {claim_id: c09_china_anode, subject: China_anode, predicate: capacity_share, epistemic_class: REPORTED, value_text: "China >90% of anode manufacturing capacity; 90% of production.", source_ids: [src_benchmark_graphite, src_metalshub_graphite], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.7, recency: 0.85}, geographic_scope: GLOBAL}
+  - {claim_id: c09_graphitization, subject: graphitization, predicate: capacity_share, epistemic_class: REPORTED, value_text: "China ~98% of graphitization capacity.", source_ids: [src_metalshub_graphite], retrieval_date: "2026-08-24", confidence: {authority: 0.75, directness: 0.7, recency: 0.85}, geographic_scope: GLOBAL}
+  - {claim_id: c09_top3, subject: anode_makers, predicate: shipment_share, epistemic_class: REPORTED, value_text: "BTR, Shanshan, Putailai (CHN) ~40% of global anode shipments (2025).", source_ids: [src_springer_graphite], retrieval_date: "2026-08-24", confidence: {authority: 0.75, directness: 0.7, recency: 0.85}, geographic_scope: GLOBAL}
+  - {claim_id: c10_mofcom18, subject: China_REE_policy, predicate: export_control, epistemic_class: REPORTED, value_text: "MOFCOM No.18 (2025-04-04): controls+licensing on Sm/Gd/Tb/Dy/Lu/Sc/Y incl. oxides, alloys and magnets (NdFeB, TbDyFe).", source_ids: [src_mofcom_18, src_csis_ree], retrieval_date: "2026-08-24", confidence: {authority: 0.95, directness: 0.9, recency: 0.9}, geographic_scope: CHN}
+  - {claim_id: c10_iea_94, subject: China_REE_refining_magnets, predicate: production_share, epistemic_class: REPORTED, value_text: "China sintered-magnet share ~94% (2024, IEA), from ~50% historically.", source_ids: [src_iea_ree], retrieval_date: "2026-08-24", confidence: {authority: 0.9, directness: 0.8, recency: 0.9}, geographic_scope: GLOBAL}
+  - {claim_id: c12_china_poly, subject: polysilicon, predicate: production_share, epistemic_class: REPORTED, value_text: "China 93.5% of global polysilicon output 2024 (1.957 Mt world); capacity >95%.", source_ids: [src_cpia_poly], retrieval_date: "2026-08-24", confidence: {authority: 0.8, directness: 0.7, recency: 0.9}, geographic_scope: GLOBAL}
+  - {claim_id: c12_poly_pullback, subject: China_polysilicon_utilization, predicate: utilization_shock, epistemic_class: REPORTED, value_text: "H1-2025: 9 producers operating, 3.35 Mt/yr capacity, 597 kt output (-44.1%), rates 38.6-44.1% (anti-involution).", source_ids: [src_cpia_poly], retrieval_date: "2026-08-24", confidence: {authority: 0.75, directness: 0.7, recency: 0.9}, geographic_scope: CHN}
+  - {claim_id: c12_top_producers, subject: polysilicon_producers, predicate: ranking, epistemic_class: REPORTED, value_text: "Tongwei #1 (>900 kt/yr, ~24% global), GCL #2 (FBR), Daqo #3 (305 kt cap; ~124 kt 2025 output), Xinte #4; Wacker only non-Chinese top-10 (semi-grade leader).", source_ids: [src_cpia_poly, src_tongwei_pdf], retrieval_date: "2026-08-24", confidence: {authority: 0.75, directness: 0.7, recency: 0.85}, geographic_scope: GLOBAL}
+  - {claim_id: c15_ata_2025, subject: carbon_fiber_capacity, predicate: capacity_share, epistemic_class: REPORTED, value_text: "China operational CF capacity 171,080 t = 52.5% of 326,080 t world (ATA 2025); conflicting table ~138 kt (CONFLICTED in workstream ledger).", source_ids: [src_ata_cf], retrieval_date: "2026-08-24", confidence: {authority: 0.75, directness: 0.7, recency: 0.9}, geographic_scope: GLOBAL}
+  - {claim_id: c15_toray_conflict, subject: Toray_position, predicate: market_share_claims, epistemic_class: CONFLICTED, value_text: ">50% PAN fiber market (PMR) vs ~35 kt/yr CF capacity (other) — unreconciled; regular-tow demand +17%/yr to 2030 (Toray IR).", source_ids: [src_pmr_cf, src_toray_ir], retrieval_date: "2026-08-24", confidence: {authority: 0.6, directness: 0.6, recency: 0.8}, geographic_scope: GLOBAL}
+  - {claim_id: c15_market_size, subject: carbon_fiber_market, predicate: market_size, epistemic_class: REPORTED, value_text: "Global CF market ~$3.5-3.7B, ~207,600 t volume (2025).", source_ids: [src_precedence_cf], retrieval_date: "2026-08-24", confidence: {authority: 0.6, directness: 0.6, recency: 0.85}, geographic_scope: GLOBAL}
+
+materials:
+  - {id: mat_steel_crude, name: "Crude steel (BF-BOF/EAF)", family: ferrous, grade_spec: "EN/IS structural classes", form: slab_bloom_billet, evidence_ids: [c01_india_steel_production]}
+  - {id: mat_iron_ore_lump, name: "Iron ore lump/fines 55-64% Fe", family: iron_ore, form: ore}
+  - {id: mat_met_coke, name: "Metallurgical coke (coking coal derived)", family: carbon_reductant, form: lump, notes: "India import-dependent (Australia-dominant); ASSUMPTION class here"}
+  - {id: mat_steel_scrap, name: "Sorted steel scrap (HMS/shredded)", family: ferrous_secondary, form: scrap}
+  - {id: mat_graphite_electrode_uhp, name: "UHP graphite electrode", family: carbon_products, form: cylindrical, notes: "Needle-coke derived"}
+  - {id: mat_bauxite, name: "Bauxite (gibbsitic)", family: aluminum_ore, form: ore}
+  - {id: mat_alumina_sga, name: "Smelter-grade alumina", family: aluminum_intermediate, form: powder}
+  - {id: mat_alu_ingot, name: "Primary aluminium P1020", family: light_metal, grade_spec: "99.7% min", form: ingot}
+  - {id: mat_cu_concentrate, name: "Copper concentrate 25-30% Cu", family: copper_feed, form: concentrate}
+  - {id: mat_cu_cathode, name: "Copper cathode LME Grade A", family: base_metal, grade_spec: "99.9935%+", form: cathode, evidence_ids: [c04_india_capacity]}
+  - {id: mat_ilmenite_concentrate, name: "Ilmenite concentrate 45-60% TiO2", family: titanium_mineral, form: concentrate, evidence_ids: [c05_irel_oscom]}
+  - {id: mat_ti_tetrachloride, name: "Titanium tetrachloride (TiCl4)", family: titanium_intermediate, form: liquid}
+  - {id: mat_mg_ingot, name: "Magnesium ingot (Kroll reductant)", family: light_metal, form: ingot, notes: "China-dominated supply; Pidgeon process"}
+  - {id: mat_cl2, name: "Chlorine (chlor-alkali)", family: industrial_gas, form: gas}
+  - {id: mat_ti_sponge, name: "Titanium sponge (Kroll)", family: titanium, form: sponge, evidence_ids: [c05_kmml_sponge]}
+  - {id: mat_ti_ingot, name: "Ti ingot CP/Ti-6Al-4V (VAR)", family: titanium, form: ingot, evidence_ids: [c05_midhani_plant]}
+  - {id: mat_monazite_concentrate, name: "Monazite concentrate (Th-bearing REE phosphate)", family: ree_mineral, form: concentrate, notes: "Radioactivity-managed", evidence_ids: [c05_irel_oscom]}
+  - {id: mat_ree_concentrate_chloride, name: "Mixed RE chloride/concentrate", family: ree_intermediate, form: salt, evidence_ids: [c05_irel_oscom]}
+  - {id: mat_ndpr_oxide, name: "NdPr oxide 99-99.9%", family: ree_separated, form: powder, evidence_ids: [c10_iea_94]}
+  - {id: mat_dy_oxide, name: "Dysprosium oxide 99.9%", family: ree_separated, form: powder, evidence_ids: [c10_mofcom18]}
+  - {id: mat_feb_alloy, name: "Fe-B alloy (ferroboron)", family: magnet_alloy_input, form: lump}
+  - {id: mat_ndfeb_block, name: "Sintered NdFeB magnet blank (N35-EH classes)", family: permanent_magnet, form: block, evidence_ids: [c10_iea_94, c10_mofcom18]}
+  - {id: mat_spodumene_sc6, name: "Spodumene concentrate SC6 (~6% Li2O)", family: lithium_mineral, form: concentrate, evidence_ids: [c08_mining_shares]}
+  - {id: mat_soda_ash, name: "Soda ash (dense)", family: industrial_chemical, form: granular}
+  - {id: mat_li2co3_battery, name: "Battery-grade lithium carbonate", family: lithium_chemical, grade_spec: ">=99.5%", form: powder, evidence_ids: [c08_china_refining]}
+  - {id: mat_co_hydroxide, name: "Cobalt hydroxide ~30% Co (DRC intermediate)", family: cobalt_intermediate, form: powder, evidence_ids: [c07_drc_share]}
+  - {id: mat_co_sulfate_battery, name: "Battery-grade cobalt sulfate", family: cobalt_chemical, form: crystal}
+  - {id: mat_graphite_flake, name: "Natural flake graphite 94-96% C", family: graphite_mineral, form: powder}
+  - {id: mat_anode_csg, name: "Coated spherical graphite anode material", family: battery_anode, form: powder, evidence_ids: [c09_china_anode]}
+  - {id: mat_needle_coke, name: "Needle coke (petroleum/coal)", family: carbon_precursor, form: granular}
+  - {id: mat_anode_synth, name: "Synthetic graphite anode material", family: battery_anode, form: powder, evidence_ids: [c09_top3]}
+  - {id: mat_mgsi, name: "Metallurgical-grade silicon 98-99%", family: silicon, form: lump}
+  - {id: mat_poly_solar, name: "Solar-grade polysilicon 6N-9N", family: silicon_refined, form: chunk_granular, evidence_ids: [c12_china_poly]}
+
+recipes:
+  - id: rec_steel_bf_bof
+    name: "BF-BOF integrated steelmaking"
+    output_part: mat_steel_crude
+    output_quantity: [1, t_product]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions]
+    steps:
+      - {id: sinter, name: "Sinter/pelletize ore", equipment_classes: [sinter_plant], yield_fraction: 0.97}
+      - {id: bf, name: "Blast furnace reduction", equipment_classes: [blast_furnace], energy_per_unit: [13.0, MWh], yield_fraction: 0.98}
+      - {id: bof, name: "BOF oxygen blow", equipment_classes: [bof_converter], yield_fraction: 0.95}
+      - {id: cc, name: "Continuous cast", equipment_classes: [continuous_caster], yield_fraction: 0.97}
+    inputs:
+      - {id: mat_iron_ore_lump, quantity: [1.55, t_ore]}
+      - {id: mat_met_coke, quantity: [0.32, t_product]}
+  - id: rec_steel_eaf_scrap
+    name: "EAF scrap-route steelmaking"
+    output_part: mat_steel_crude
+    output_quantity: [1, t_product]
+    route_type: secondary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions]
+    steps:
+      - {id: melt, name: "UHP arc melt", equipment_classes: [electric_arc_furnace], energy_per_unit: [1.7, MWh], yield_fraction: 0.93}
+      - {id: cast, name: "Continuous cast", equipment_classes: [continuous_caster], yield_fraction: 0.97}
+    inputs:
+      - {id: mat_steel_scrap, quantity: [1.08, t_product]}
+      - {id: mat_graphite_electrode_uhp, quantity: [1.5, kg_product]}
+  - id: rec_bayer_alumina
+    name: "Bayer process alumina"
+    output_part: mat_alumina_sga
+    output_quantity: [1, t_product]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions]
+    steps:
+      - {id: digest, name: "NaOH digestion", equipment_classes: [autoclave_digestion], energy_per_unit: [2.8, MWh], yield_fraction: 0.95}
+      - {id: precip_calcine, name: "Precipitation + calcination", equipment_classes: [calciner], yield_fraction: 0.93}
+    inputs:
+      - {id: mat_bauxite, quantity: [2.3, t_ore]}
+  - id: rec_hall_heroult
+    name: "Hall-Heroult electrolysis"
+    output_part: mat_alu_ingot
+    output_quantity: [1, t_product]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions]
+    steps:
+      - {id: electrolysis, name: "Potline electrolysis", equipment_classes: [hall_heroult_cell], energy_per_unit: [13.5, MWh], yield_fraction: 0.94}
+      - {id: casthouse, name: "Alloy + DC cast", equipment_classes: [casting_furnace], yield_fraction: 0.98}
+    inputs:
+      - {id: mat_alumina_sga, quantity: [1.92, t_product]}
+  - id: rec_cu_smelt_refine
+    name: "Cu smelting + electrorefining"
+    output_part: mat_cu_cathode
+    output_quantity: [1, t_metal]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions]
+    steps:
+      - {id: flash, name: "Flash smelting to matte", equipment_classes: [flash_furnace], energy_per_unit: [1.5, MWh], yield_fraction: 0.96}
+      - {id: convert, name: "Converting to blister", equipment_classes: [peirce_smith_converter], yield_fraction: 0.97}
+      - {id: erefine, name: "Electrorefining", equipment_classes: [electrolytic_tankhouse], energy_per_unit: [0.4, MWh], yield_fraction: 0.98}
+    inputs:
+      - {id: mat_cu_concentrate, quantity: [3.6, t_ore]}
+  - id: rec_kroll_sponge
+    name: "Kroll titanium sponge"
+    output_part: mat_ti_sponge
+    output_quantity: [1, t_metal]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions, c05_kmml_sponge]
+    steps:
+      - {id: chlorinate, name: "Fluidized chlorination to TiCl4", equipment_classes: [fluidized_bed_chlorinator], yield_fraction: 0.95}
+      - {id: distill, name: "TiCl4 fractional distillation", equipment_classes: [distillation_column], yield_fraction: 0.97}
+      - {id: kroll, name: "Mg reduction retort", equipment_classes: [kroll_retort_furnace], cycle_time_per_unit: [60, h], energy_per_unit: [12.0, MWh], yield_fraction: 0.90}
+      - {id: vdp, name: "Vacuum distillation + crush/blend", equipment_classes: [vacuum_distillation_furnace], yield_fraction: 0.95}
+    inputs:
+      - {id: mat_ilmenite_concentrate, quantity: [2.1, t_ore]}
+      - {id: mat_cl2, quantity: [0.5, t_product]}
+      - {id: mat_mg_ingot, quantity: [0.08, t_product]}
+  - id: rec_var_ingot
+    name: "VAR melting to Ti ingot"
+    output_part: mat_ti_ingot
+    output_quantity: [1, t_product]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions, c05_midhani_plant]
+    steps:
+      - {id: electrode, name: "Electrode press/weld", equipment_classes: [electrode_press], yield_fraction: 0.98}
+      - {id: var, name: "Vacuum arc remelt (x2-3)", equipment_classes: [var_furnace], energy_per_unit: [3.0, MWh], yield_fraction: 0.94}
+    inputs:
+      - {id: mat_ti_sponge, quantity: [1.08, t_metal]}
+  - id: rec_ree_separation
+    name: "Monazite cracking + SX separation to NdPr oxide"
+    output_part: mat_ndpr_oxide
+    output_quantity: [1, t_oxide]
+    route_type: primary
+    maturity: pilot
+    applicable_geographies: [INDIA, GLOBAL]
+    evidence_ids: [mm_process_assumptions, c05_irel_oscom, c10_iea_94]
+    steps:
+      - {id: crack, name: "Alkaline/acid crack + Th removal", equipment_classes: [radiochemical_cracking_train], yield_fraction: 0.92}
+      - {id: sx, name: "50-100 stage SX cascade", equipment_classes: [sx_mixer_settler_train], cycle_time_per_unit: [48, h], yield_fraction: 0.90}
+      - {id: precip, name: "Oxalate/carbonate precip + calcine", equipment_classes: [precipitation_calciner], yield_fraction: 0.95}
+    inputs:
+      - {id: mat_ree_concentrate_chloride, quantity: [8.0, t_product]}
+  - id: rec_ndfeb_magnet
+    name: "Sintered NdFeB magnet production (strip-cast to coated block)"
+    output_part: mat_ndfeb_block
+    output_quantity: [1000, kg_product]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions, c10_iea_94]
+    steps:
+      - {id: sc, name: "Strip casting alloy", equipment_classes: [vacuum_strip_caster], yield_fraction: 0.97}
+      - {id: hdd_jetmill, name: "HDD + jet milling", equipment_classes: [hydrogen_decrepitation_furnace, jet_mill], yield_fraction: 0.93}
+      - {id: press_sinter, name: "Field press + vacuum sinter + anneal", equipment_classes: [field_press, vacuum_sinter_furnace], energy_per_unit: [18.0, MWh], yield_fraction: 0.92}
+      - {id: gbd, name: "Dy/Tb grain-boundary diffusion (high grades)", equipment_classes: [diffusion_furnace], yield_fraction: 0.95}
+      - {id: machine_coat, name: "Machine + Ni-Cu-Ni coat + magnetize/grade", equipment_classes: [precision_grinder, barrel_plating_line], yield_fraction: 0.85}
+    inputs:
+      - {id: mat_ndpr_oxide, quantity: [310, kg_product]}
+      - {id: mat_dy_oxide, quantity: [10, kg_product]}
+      - {id: mat_feb_alloy, quantity: [30, kg_product]}
+  - id: rec_li_carbonate_sc6
+    name: "Spodumene route battery-grade lithium carbonate"
+    output_part: mat_li2co3_battery
+    output_quantity: [1, t_product]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions, c08_china_refining]
+    steps:
+      - {id: convert, name: "Calcination alpha->beta", equipment_classes: [rotary_calciner], energy_per_unit: [3.5, MWh], yield_fraction: 0.95}
+      - {id: roast_leach, name: "Acid roast + water leach", equipment_classes: [acid_roast_kiln], yield_fraction: 0.92}
+      - {id: purify_cryst, name: "Purification + crystallization", equipment_classes: [mvr_crystallizer], yield_fraction: 0.90}
+    inputs:
+      - {id: mat_spodumene_sc6, quantity: [7.5, t_ore]}
+      - {id: mat_soda_ash, quantity: [1.9, t_product]}
+  - id: rec_anode_csg
+    name: "Natural graphite anode: spheroidize + purify + coat"
+    output_part: mat_anode_csg
+    output_quantity: [1, t_product]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions, c09_china_anode, c09_graphitization]
+    steps:
+      - {id: spheroidize, name: "Attrition shaping 10-20um (30-45% yield)", equipment_classes: [attrition_mill], yield_fraction: 0.40}
+      - {id: purify, name: "Caustic/thermal purification to 99.95%+", equipment_classes: [purification_furnace], energy_per_unit: [3.0, MWh], yield_fraction: 0.95}
+      - {id: coat, name: "Pitch coating + graphitization pass", equipment_classes: [graphitization_furnace], energy_per_unit: [4.0, MWh], yield_fraction: 0.93}
+    inputs:
+      - {id: mat_graphite_flake, quantity: [2.6, t_ore]}
+  - id: rec_anode_synth
+    name: "Synthetic graphite anode from coke"
+    output_part: mat_anode_synth
+    output_quantity: [1, t_product]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions, c09_top3]
+    steps:
+      - {id: shape, name: "Calcine + mill/shape", equipment_classes: [calciner, attrition_mill], yield_fraction: 0.94}
+      - {id: graphitize, name: "Graphitization 2600-3000C (Acheson/LWG)", equipment_classes: [graphitization_furnace], energy_per_unit: [5.5, MWh], cycle_time_per_unit: [336, h], yield_fraction: 0.90}
+      - {id: classify, name: "Classification + surface treat", equipment_classes: [classifier], yield_fraction: 0.95}
+    inputs:
+      - {id: mat_needle_coke, quantity: [1.15, t_product]}
+  - id: rec_poly_siemens
+    name: "Siemens-route solar polysilicon"
+    output_part: mat_poly_solar
+    output_quantity: [1, t_product]
+    route_type: primary
+    maturity: series
+    applicable_geographies: [GLOBAL]
+    evidence_ids: [mm_process_assumptions, c12_china_poly]
+    steps:
+      - {id: tcs, name: "Fluidized HCl chlorination to TCS", equipment_classes: [fluidized_bed_chlorinator], yield_fraction: 0.95}
+      - {id: distill, name: "Multi-column TCS distillation (ppb B/P rejection)", equipment_classes: [distillation_column], yield_fraction: 0.93}
+      - {id: cvd, name: "CVD deposition on slim rods", equipment_classes: [siemens_reactor], energy_per_unit: [90.0, MWh], yield_fraction: 0.92}
+    inputs:
+      - {id: mat_mgsi, quantity: [1.2, t_product]}
+
+resource_classes:
+  - {id: rcls_sintered_ndfeb_supply, name: "Sintered NdFeB magnet supply", category: material, unit: t_product, supplied_by_countries: [CHN, JPN, DEU], concentration_hhi: 0.88, lead_time: [20, "wk"], evidence_ids: [c10_iea_94, c10_mofcom18], notes: "HHI ESTIMATED from ~94% single-country share; MOFCOM license latency applies"}
+  - {id: rcls_ree_separation_capacity, name: "REE separation capacity", category: processing_service, unit: t_oxide, supplied_by_countries: [CHN, MYS, USA, FRA, EST], concentration_hhi: 0.80, lead_time: [30, "wk"], evidence_ids: [c10_iea_94], notes: "HHI ESTIMATED from 85-90%+ China refining class"}
+  - {id: rcls_anode_material, name: "Anode material supply", category: material, unit: t_product, supplied_by_countries: [CHN, KOR, JPN], concentration_hhi: 0.83, lead_time: [16, "wk"], evidence_ids: [c09_china_anode, c09_top3], notes: "HHI ESTIMATED from >90% China capacity"}
+  - {id: rcls_graphitization_capacity, name: "Graphitization capacity", category: processing_service, unit: t_product, supplied_by_countries: [CHN], concentration_hhi: 0.95, lead_time: [12, "wk"], evidence_ids: [c09_graphitization], notes: "98% China (verified)"}
+  - {id: rcls_polysilicon_supply, name: "Polysilicon supply", category: material, unit: t_product, supplied_by_countries: [CHN, DEU, USA], concentration_hhi: 0.88, lead_time: [16, "wk"], evidence_ids: [c12_china_poly, c12_top_producers], notes: "HHI ESTIMATED from 93.5% output share"}
+  - {id: rcls_lithium_chemicals, name: "Lithium chemicals refining", category: material, unit: t_product, supplied_by_countries: [CHN, CHL, USA], concentration_hhi: 0.50, lead_time: [20, "wk"], evidence_ids: [c08_china_refining, c08_woodmac], notes: "HHI ESTIMATED from 60-70% China"}
+  - {id: rcls_cobalt_hydroxide, name: "Cobalt hydroxide (DRC-origin)", category: material, unit: t_metal, supplied_by_countries: [COD], concentration_hhi: 0.60, lead_time: [16, "wk"], evidence_ids: [c07_drc_share, c07_drc_quota], notes: "Quota-regime constrained 2025-27"}
+  - {id: rcls_class1_nickel, name: "Class-1 nickel", category: material, unit: t_metal, supplied_by_countries: [IDN, CAN, AUS, RUS], concentration_hhi: 0.45, lead_time: [16, "wk"], evidence_ids: [c06_indonesia_share], notes: "Indonesia 62% mine / 82% refined-class"}
+  - {id: rcls_carbon_fiber_capacity, name: "Carbon fiber capacity", category: material, unit: t_product, supplied_by_countries: [CHN, JPN, USA, DEU, KOR], concentration_hhi: 0.32, lead_time: [26, "wk"], evidence_ids: [c15_ata_2025, c15_toray_conflict], notes: "CONFLICTED baseline (ATA vs others)"}
+
+organizations:
+  - {id: org_kmml, name: "Kerala Minerals and Metals Ltd", countries: [IND], org_type: state_psu, evidence_ids: [c05_kmml_sponge, c05_sail_kmml_jv], notes: "India's only Ti sponge plant; pigment; SAIL JV MoU"}
+  - {id: org_irel, name: "IREL (India) Ltd", countries: [IND], org_type: psu_dae, evidence_ids: [c05_irel_oscom, c05_irel_japan_suspension], notes: "Beach-sand minerals + REE extraction"}
+  - {id: org_midhani, name: "Mishra Dhatu Nigam Ltd (MIDHANI)", countries: [IND], org_type: psu, evidence_ids: [c05_midhani_plant, c05_orf_bottleneck], notes: "Specialty melt/Ti; single-point alloy stage"}
+  - {id: org_sail, name: "Steel Authority of India Ltd", countries: [IND], org_type: psu, evidence_ids: [c05_sail_kmml_jv], notes: "JV partner for sponge proposal"}
+  - {id: org_vedanta_copper, name: "Vedanta Copper", countries: [IND], org_type: company, evidence_ids: [c04_vedanta_silvassa, c04_tuticorin_shock], notes: "Silvassa producer; Tuticorin legacy"}
+  - {id: org_hcl, name: "Hindustan Copper Ltd", countries: [IND], org_type: psu, evidence_ids: [c04_hcl_jhagadia], notes: "Khetri + Jhagadia secondary"}
+  - {id: org_g_lynas, name: "Lynas Rare Earths", countries: [AUS], org_type: company, evidence_ids: [c10_iea_94], notes: "Leading non-Chinese REE separation (context)"}
+  - {id: org_g_tongwei, name: "Tongwei (Yongxiang)", countries: [CHN], org_type: company, evidence_ids: [c12_top_producers], notes: "#1 polysilicon"}
+  - {id: org_g_wacker, name: "Wacker Chemie", countries: [DEU], org_type: company, evidence_ids: [c12_top_producers], notes: "Only non-Chinese top-10 poly; semi-grade leader"}
+  - {id: org_g_toray, name: "Toray Industries", countries: [JPN], org_type: company, evidence_ids: [c15_toray_conflict], notes: "CF leader; conflicting share claims kept CONFLICTED"}
+  - {id: org_g_cmoc, name: "CMOC Group", countries: [CHN], org_type: company, evidence_ids: [c07_drc_share], notes: "DRC Cu-Co major"}
+  - {id: org_g_btr, name: "BTR New Material Group", countries: [CHN], org_type: company, evidence_ids: [c09_top3], notes: "Top anode maker"}
+
+facilities:
+  - {id: fac_kmml_chavara, name: "KMML Chavara (pigment + Ti sponge)", geo_id: KOLLAM_KERALA_IND, country: IND, owner_org: org_kmml, operator_org: org_kmml, status: operating, evidence_ids: [c05_kmml_sponge], notes: "Single national sponge point"}
+  - {id: fac_oscom, name: "IREL OSCOM + Odisha REE extraction", geo_id: GANJAM_ODISHA_IND, country: IND, owner_org: org_irel, operator_org: org_irel, status: operating, evidence_ids: [c05_irel_oscom], notes: "~11,000 t/yr RE-chloride class"}
+  - {id: fac_midhani_hyd, name: "MIDHANI Hyderabad (incl. new Ti plant)", geo_id: HYDERABAD_TELANGANA_IND, country: IND, owner_org: org_midhani, operator_org: org_midhani, status: operating, evidence_ids: [c05_midhani_plant], notes: "Throughput claims secondary"}
+  - {id: fac_silvassa, name: "Vedanta Copper Silvassa", geo_id: SILVASSA_DNH_IND, country: IND, owner_org: org_vedanta_copper, operator_org: org_vedanta_copper, status: operating, evidence_ids: [c04_vedanta_silvassa], notes: "FY25 149 kt"}
+  - {id: fac_tuticorin, name: "Sterlite Copper Thoothukudi (CLOSED)", geo_id: THOOTHUKUDI_TN_IND, country: IND, owner_org: org_vedanta_copper, operator_org: org_vedanta_copper, status: closed, evidence_ids: [c04_tuticorin_shock], notes: "400 kt/yr closed by govt order 2018"}
+  - {id: fac_jhagadia, name: "HCL Jhagadia ENP", geo_id: BHRUCH_GUJARAT_IND, country: IND, owner_org: org_hcl, operator_org: org_hcl, status: operating, evidence_ids: [c04_hcl_jhagadia], notes: "~50 kt/yr secondary cathode"}
+
+capacity_segments:
+  - id: seg_kmml_ti_sponge
+    item_id: mat_ti_sponge
+    facility_id: fac_kmml_chavara
+    geography: INDIA
+    nameplate_annual: [500, "t_metal/yr"]
+    availability: 0.9
+    utilization: 0.8
+    yield_fraction: 0.95
+    qualification_fraction: 0.9
+    valid_from: 2011
+    epistemic_class: ESTIMATED
+    evidence_ids: [c05_kmml_sponge]
+    notes: "Nameplate REPORTED-verified (~500 TPA; actual 300-500 band); segment factors are ASSUMPTION-class planning values, not observed."
+  - id: seg_irel_ree_chloride
+    item_id: mat_ree_concentrate_chloride
+    facility_id: fac_oscom
+    geography: INDIA
+    nameplate_annual: [11000, "t_product/yr"]
+    availability: 0.9
+    utilization: 0.75
+    yield_fraction: 0.95
+    qualification_fraction: 0.8
+    valid_from: 2020
+    epistemic_class: ESTIMATED
+    evidence_ids: [c05_irel_oscom]
+    notes: "Concentrate/chloride class, NOT separated oxides; factors ASSUMPTION."
+  - id: seg_india_cu_aggregate
+    item_id: mat_cu_cathode
+    geography: INDIA
+    nameplate_annual: [1028000, "t_metal/yr"]
+    availability: 0.85
+    utilization: 0.8
+    yield_fraction: 0.98
+    qualification_fraction: 0.95
+    valid_from: 2024
+    epistemic_class: ESTIMATED
+    evidence_ids: [c04_india_capacity, c04_india_concentrate_import]
+    notes: "AGGREGATE national installed (MoM 2024 via CSEP) — not a single facility; concentrate import >90% constrains; factors ASSUMPTION."
+  - id: seg_india_steel_aggregate
+    item_id: mat_steel_crude
+    geography: INDIA
+    nameplate_annual: [205000000, "t_product/yr"]
+    availability: 0.85
+    utilization: 0.82
+    yield_fraction: 0.96
+    qualification_fraction: 0.9
+    valid_from: 2025
+    epistemic_class: ESTIMATED
+    evidence_ids: [c01_india_steel_capacity]
+    notes: "FY24-25 aggregate nameplate (205 MT); May-2026 ~221.9 MTPA; product-mix/grade qualification NOT asserted; factors ASSUMPTION."
+
+projects:
+  - {id: proj_sail_kmml_jv, item_id: mat_ti_sponge, geography: INDIA, name: "SAIL-KMML Rs 5,000-cr titanium sponge JV", state: announced, state_date: "2025", earliest_start_year: 2026, years_to_commission: [3.0, 6.0], design_capacity_annual: [10000, "t_metal/yr"], evidence_ids: [c05_sail_kmml_jv, c05_kmml_sponge], notes: "MoU stage; capacity figure is proposal-scope (10,000 TPY proposal exists)"}
+  - {id: proj_vedanta_smelter_400kt, item_id: mat_cu_cathode, geography: INDIA, name: "Vedanta 400 kt/yr copper smelter+refinery", state: announced, state_date: "2025", earliest_start_year: 2027, years_to_commission: [3.0, 5.0], design_capacity_annual: [400000, "t_metal/yr"], evidence_ids: [c04_india_capacity, c04_vedanta_silvassa], notes: "Announced; site/commissioning UNKNOWN"}
+  - {id: proj_tata_crgo_phases, item_id: mat_steel_crude, geography: INDIA, name: "Tata Steel CRGO phased program (Jamshedpur)", state: process_qualification, state_date: "2020s", earliest_start_year: 2020, years_to_commission: [2.0, 6.0], evidence_ids: [c01_india_steel_capacity], notes: "Grade coverage evolving; treat import substitution as partial (workstream chain 02)"}
+
+qualifications:
+  - {id: qual_ndfeb_motor_grade, item_id: mat_ndfeb_block, qualifier: customer, standard_ref: "Motor-OEM magnet qualification: demag corner, thermal cycling, coating salt-spray, lot traceability to oxide", status: not_started, latency_months: [24, 60], evidence_ids: [mm_process_assumptions, c10_iea_94]}
+  - {id: qual_ndpr_oxide_battery_class, item_id: mat_ndpr_oxide, qualifier: customer, standard_ref: "Magnet-feed oxide qualification (impurity windows, lot consistency)", status: not_started, latency_months: [18, 48], evidence_ids: [mm_process_assumptions, c05_irel_oscom]}
+  - {id: qual_ti_sponge_aero, item_id: mat_ti_sponge, qualifier: customer, standard_ref: "Aero sponge lot qualification (hardness class, O/N/Fe, traceability)", status: qualified_subset, latency_months: [18, 48], evidence_ids: [c05_kmml_sponge, c05_orf_bottleneck], notes: "ISRO/defense subsets historically consumed; commercial aero breadth UNKNOWN"}
+  - {id: qual_li2co3_battery, item_id: mat_li2co3_battery, qualifier: customer, standard_ref: "Cathode-maker carbonate qualification (ppm windows, PSD)", status: not_started, latency_months: [12, 30], evidence_ids: [mm_process_assumptions, c08_china_refining]}
+  - {id: qual_anode_csg, item_id: mat_anode_csg, qualifier: customer, standard_ref: "Cell-maker anode qualification (FCE, cycling, magnetic species)", status: not_started, latency_months: [12, 36], evidence_ids: [mm_process_assumptions, c09_china_anode]}
+  - {id: qual_poly_solar, item_id: mat_poly_solar, qualifier: customer, standard_ref: "Ingot/cell-maker poly qualification (B/P ppb, n-type windows)", status: not_started, latency_months: [12, 36], evidence_ids: [mm_process_assumptions, c12_china_poly]}
+
+capability_claims:
+  - id: cc_india_ree_separation
+    capability_item: mat_ndpr_oxide
+    geography: INDIA
+    vector: {manufacturing_maturity: pilot, qualified_effective_capacity: UNKNOWN, design_ownership: UNKNOWN, process_ownership: UNKNOWN, tooling_autonomy: UNKNOWN, qualification_state: evidence_gap, metrology_test: UNKNOWN, supplier_concentration: UNKNOWN}
+    claim_vs_assessment: assessment
+    notes: "IREL produces chloride-class intermediates (~11 kt/yr verified); separated-oxide scale at battery/magnet grade UNKNOWN."
+    evidence_ids: [c05_irel_oscom, c05_irel_japan_suspension, c10_iea_94]
+  - id: cc_india_ndfeb_magnets
+    capability_item: mat_ndfeb_block
+    geography: INDIA
+    vector: {manufacturing_maturity: UNKNOWN, qualified_effective_capacity: UNKNOWN, qualification_state: not_started, supplier_concentration: "CHN ~94% global"}
+    claim_vs_assessment: assessment
+    notes: "No qualified Indian EV/robot-grade sintered-NdFeB supply established in public evidence; benchmark-2 constraint."
+    evidence_ids: [c10_iea_94, c10_mofcom18]
+  - id: cc_india_ti_sponge
+    capability_item: mat_ti_sponge
+    geography: INDIA
+    vector: {manufacturing_maturity: series, qualified_effective_capacity: UNKNOWN, design_ownership: domestic_psu, process_ownership: domestic_psu, tooling_autonomy: UNKNOWN, qualification_state: qualified_subset, metrology_test: UNKNOWN, supplier_concentration: single_plant}
+    claim_vs_assessment: assessment
+    notes: "Single plant ~500 TPA; defense demand ~1,500 t class gap; no redundancy."
+    evidence_ids: [c05_kmml_sponge, c05_orf_bottleneck, c05_sail_kmml_jv]
+  - id: cc_india_ti_alloy
+    capability_item: mat_ti_ingot
+    geography: INDIA
+    vector: {manufacturing_maturity: series, qualified_effective_capacity: UNKNOWN, design_ownership: domestic_psu, qualification_state: qualified_subset, supplier_concentration: single_primary_maker}
+    claim_vs_assessment: assessment
+    notes: "MIDHANI single point; expansion real but throughput claims secondary."
+    evidence_ids: [c05_midhani_plant, c05_orf_bottleneck]
+  - id: cc_india_cu_cathode
+    capability_item: mat_cu_cathode
+    geography: INDIA
+    vector: {manufacturing_maturity: series, qualified_effective_capacity: UNKNOWN, qualification_state: qualified_commodity, supplier_concentration: few_makers}
+    claim_vs_assessment: assessment
+    notes: "Net importer since Tuticorin closure; concentrate >90% imported."
+    evidence_ids: [c04_india_capacity, c04_tuticorin_shock, c04_india_concentrate_import]
+  - id: cc_india_steel
+    capability_item: mat_steel_crude
+    geography: INDIA
+    vector: {manufacturing_maturity: series, qualified_effective_capacity: UNKNOWN, design_ownership: mixed, process_ownership: mixed, qualification_state: qualified_commodity_specialty_partial, supplier_concentration: several_integrated_majors}
+    claim_vs_assessment: assessment
+    notes: "#2 producer globally; aggregate nameplate verified; coking-coal and top-end flat dependencies remain."
+    evidence_ids: [c01_india_steel_capacity, c01_india_steel_production]
+  - id: cc_india_li_chemicals
+    capability_item: mat_li2co3_battery
+    geography: INDIA
+    vector: {manufacturing_maturity: absent, qualified_effective_capacity: UNKNOWN, qualification_state: not_started}
+    claim_vs_assessment: assessment
+    notes: "No operating battery-grade LCE refinery in public evidence; recycling-partial only."
+    evidence_ids: [c08_china_refining, c08_mining_shares]
+  - id: cc_india_anode_material
+    capability_item: mat_anode_csg
+    geography: INDIA
+    vector: {manufacturing_maturity: UNKNOWN_project_stage, qualified_effective_capacity: UNKNOWN, qualification_state: not_started}
+    claim_vs_assessment: assessment
+    notes: "Imports dominate; entrants project-stage; graphitization economics unverified."
+    evidence_ids: [c09_china_anode, c09_graphitization, c09_top3]
+  - id: cc_india_polysilicon
+    capability_item: mat_poly_solar
+    geography: INDIA
+    vector: {manufacturing_maturity: absent, qualified_effective_capacity: UNKNOWN, qualification_state: not_started}
+    claim_vs_assessment: assessment
+    notes: "No operating poly; global supply 93.5% China with policy-driven utilization swings."
+    evidence_ids: [c12_china_poly, c12_poly_pullback, c12_top_producers]
+
+shocks:
+  - id: shk_mofcom_ree_2025
+    name: "China REE/magnet export-control licensing (MOFCOM #18, 2025-04-04)"
+    description: >
+      License regime on 7 medium/heavy REEs incl. oxides, alloys, NdFeB and TbDyFe
+      magnets. Modeled as import-eligibility reduction on China-origin separated
+      REE and magnet items rather than full embargo (licenses granted case-by-case).
+    evidence_ids: [c10_mofcom18]
+    edits:
+      - {type: import_eligibility, origin: CHN, fraction: 0.25, items: [mat_ndfeb_block, mat_ndpr_oxide, mat_dy_oxide]}
+  - id: shk_drc_cobalt_quota
+    name: "DRC cobalt export quota regime (2025-2027)"
+    description: >
+      Ban Feb-Oct 2025 then quotas (18,125 t 2025; 96,600 t/yr 2026-27). Modeled as
+      origin availability reduction on DRC cobalt hydroxide.
+    evidence_ids: [c07_drc_share, c07_drc_quota]
+    edits:
+      - {type: import_eligibility, origin: COD, fraction: 0.6, items: [mat_co_hydroxide]}
+  - id: shk_kmml_sponge_outage
+    name: "KMML Ti sponge outage (single-point scenario)"
+    description: "Scenario loss of India's only Ti sponge plant."
+    evidence_ids: [c05_kmml_sponge, c05_orf_bottleneck]
+    edits:
+      - {type: equipment_limit, equipment_class: kroll_retort_furnace, hours_per_year: 0, facility_id: fac_kmml_chavara}
+  - id: shk_tuticorin_precedent
+    name: "Tuticorin closure precedent (policy shock class)"
+    description: "Historical: 400 kt smelter closed by state order; national copper trade flipped within a year."
+    evidence_ids: [c04_tuticorin_shock]
+    edits:
+      - {type: equipment_limit, equipment_class: flash_furnace, hours_per_year: 0, facility_id: fac_tuticorin}
+
+substitutions:
+  - id: sub_anode_synth_for_csg
+    name: "Synthetic graphite anode replacing natural coated spherical graphite"
+    replaces_part: mat_anode_csg
+    alternative_recipe: rec_anode_synth
+    level: material
+    functional_envelope:
+      specific_capacity_mah_g: [300, 372]
+      first_cycle_efficiency_pct: [90, 96]
+      cycling_stability: [1, 1]
+    performance_delta:
+      natural_graphite_dependence: "removed"
+      energy_intensity: "higher (graphitization 4-8 MWh/t class)"
+      cost_per_kg: "typically higher (ESTIMATED)"
+      supply_concentration: "remains China-dominated (verified)"
+    maturity: series
+    transition_months: [12, 24]
+    evidence_ids: [mm_process_assumptions, c09_china_anode, c09_top3, c09_graphitization]
+    notes: "Blend-level substitution practiced globally; envelope is cell-design dependent (ASSUMPTION)."
+
+crosswalks:
+  - {from_class: HS, from_code: "8505.11", to_entity: mat_ndfeb_block, confidence: 0.7, note: "Permanent magnets NdFeB; trade flow is not qualified domestic magnet capability."}
+  - {from_class: HS, from_code: "2846", to_entity: mat_ndpr_oxide, confidence: 0.4, note: "REE compounds heading spans many elements/compounds."}
+  - {from_class: HS, from_code: "8108.20", to_entity: mat_ti_sponge, confidence: 0.6, note: "Ti unwrought/sponge; powder and waste included."}
+  - {from_class: HS, from_code: "7403", to_entity: mat_cu_cathode, confidence: 0.5, note: "Refined copper cathodes."}
+  - {from_class: HS, from_code: "7601", to_entity: mat_alu_ingot, confidence: 0.6, note: "Unwrought aluminium."}
+  - {from_class: HS, from_code: "2804.61", to_entity: mat_poly_solar, confidence: 0.45, note: "Si >=99.99% includes electronic+solar poly."}
+  - {from_class: HS, from_code: "2504", to_entity: mat_graphite_flake, confidence: 0.6, note: "Natural graphite."}
+  - {from_class: HS, from_code: "3801.90", to_entity: mat_anode_synth, confidence: 0.4, note: "Artificial graphite broad heading."}
+  - {from_class: HS, from_code: "2836.60", to_entity: mat_li2co3_battery, confidence: 0.5, note: "Lithium carbonate (technical+battery mixed in trade data)."}
+  - {from_class: HS, from_code: "7207", to_entity: mat_steel_crude, confidence: 0.3, note: "Semi-finished steel proxy only."}
+
+supplier_links:
+  - {id: sl_ti_sponge_kmml, item_id: mat_ti_sponge, organization_id: org_kmml, facility_id: fac_kmml_chavara, relation: known_domestic_maker_single_point, status: RESEARCH_REQUIRED, evidence_ids: [c05_kmml_sponge], note: "Identity+nameplate verified; effective output/allocation UNKNOWN."}
+  - {id: sl_ree_chloride_irel, item_id: mat_ree_concentrate_chloride, organization_id: org_irel, facility_id: fac_oscom, relation: known_domestic_maker, status: RESEARCH_REQUIRED, evidence_ids: [c05_irel_oscom], note: "Intermediate only; separation depth UNKNOWN."}
+  - {id: sl_cu_cathode_vedanta, item_id: mat_cu_cathode, organization_id: org_vedanta_copper, facility_id: fac_silvassa, relation: known_domestic_maker, status: RESEARCH_REQUIRED, evidence_ids: [c04_vedanta_silvassa], note: "FY25 production verified; allocation vs national deficit UNKNOWN."}
+  - {id: sl_ti_ingot_midhani, item_id: mat_ti_ingot, organization_id: org_midhani, facility_id: fac_midhani_hyd, relation: known_domestic_maker_single_point, status: RESEARCH_REQUIRED, evidence_ids: [c05_midhani_plant], note: "Aero/defense-qualified subsets; merchant availability UNKNOWN."}
+  - {id: sl_cu_jhagadia_hcl, item_id: mat_cu_cathode, organization_id: org_hcl, facility_id: fac_jhagadia, relation: known_domestic_maker_secondary_route, status: RESEARCH_REQUIRED, evidence_ids: [c04_hcl_jhagadia], note: "Secondary/ENP route."}
+
+material_chain_links:
+  - {id: mcl_monazite_to_chloride, source: mat_monazite_concentrate, target: mat_ree_concentrate_chloride, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c05_irel_oscom], note: "Cracking step incl. Th management"}
+  - {id: mcl_chloride_to_ndpr, source: mat_ree_concentrate_chloride, target: mat_ndpr_oxide, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c10_iea_94], note: "SX separation — the global chokepoint"}
+  - {id: mcl_ndpr_to_magnet, source: mat_ndpr_oxide, target: mat_ndfeb_block, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c10_iea_94]}
+  - {id: mcl_ilmenite_to_ticl4, source: mat_ilmenite_concentrate, target: mat_ti_tetrachloride, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions]}
+  - {id: mcl_ticl4_to_sponge, source: mat_ti_tetrachloride, target: mat_ti_sponge, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c05_kmml_sponge]}
+  - {id: mcl_sponge_to_ingot, source: mat_ti_sponge, target: mat_ti_ingot, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c05_midhani_plant]}
+  - {id: mcl_concentrate_to_cathode, source: mat_cu_concentrate, target: mat_cu_cathode, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c04_india_concentrate_import]}
+  - {id: mcl_bauxite_to_alumina, source: mat_bauxite, target: mat_alumina_sga, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions]}
+  - {id: mcl_alumina_to_ingot, source: mat_alumina_sga, target: mat_alu_ingot, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions]}
+  - {id: mcl_sc6_to_li2co3, source: mat_spodumene_sc6, target: mat_li2co3_battery, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c08_china_refining, c08_aus_spodumene_china]}
+  - {id: mcl_flake_to_csg, source: mat_graphite_flake, target: mat_anode_csg, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c09_graphitization]}
+  - {id: mcl_coke_to_synth_anode, source: mat_needle_coke, target: mat_anode_synth, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c09_top3]}
+  - {id: mcl_mgsi_to_poly, source: mat_mgsi, target: mat_poly_solar, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c12_china_poly]}
+  - {id: mcl_cohydroxide_to_cosulfate, source: mat_co_hydroxide, target: mat_co_sulfate_battery, relation: recurses_into, epistemic_class: ASSUMPTION, evidence_ids: [mm_process_assumptions, c07_drc_share], note: "Refining China-concentrated"}

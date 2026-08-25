@@ -25,6 +25,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "The CNC pack names grinding routes/equipment; no qualified Indian output is inferred."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [precision_grinder]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The NdFeB route requires a precision grinder; an equipment-class dependency is not a facility or qualified capability claim."
 
   - id: "cap:metrology"
     name: "Industrial metrology"
@@ -116,6 +121,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "The CNC pack includes a permanent-magnet material input; grade-compatible supply is UNKNOWN."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [mat_ndfeb_block, rec_ndfeb_magnet, qual_ndfeb_motor_grade, cc_india_ndfeb_magnets]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The foundational pack exposes material, process, qualification, and explicit India UNKNOWN records; it does not establish available magnet capacity."
 
   - id: "cap:hirel-qualification"
     name: "High-reliability (HiRel) qualification"
@@ -385,6 +395,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Material-chain nodes expose beneficiation dependencies; reserves or ore occurrence are not usable supply."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [mat_ilmenite_concentrate, mat_ree_concentrate_chloride, mat_spodumene_sc6, mat_graphite_flake]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Intermediate material identities expose beneficiation requirements; they are not reserve-to-supply conversions."
 
   - id: "cap:rare-earth-separation"
     name: "Rare-earth separation and metal/alloy conversion"
@@ -399,6 +414,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Intermediate and oxide-grade nodes map the separation chain; qualified annual output remains UNKNOWN."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [mat_ndpr_oxide, rec_ree_separation, qual_ndpr_oxide_battery_class, cc_india_ree_separation]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The foundational pack separates oxide, process, qualification, and capability-gap records; chloride nameplate is not treated as separated-oxide supply."
 
   - id: "cap:lithium-refining"
     name: "Battery-grade lithium refining"
@@ -413,6 +433,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "The pack recursively models lithium conversion; resource announcements are not treated as battery-grade output."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [mat_li2co3_battery, rec_li_carbonate_sc6, qual_li2co3_battery]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Battery-grade material, route, and qualification gate are reusable; concentration shares and projects do not prove available supply."
 
   - id: "cap:cathode-precursors"
     name: "Cathode-material precursor production"
@@ -567,6 +592,96 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Institutional role and inventory requirements are distinct from target-year usable supply."
+
+  - id: "cap:industrial-product-qualification"
+    name: "Industrial product and process qualification"
+    description: "Requirement revision, process-route approval, first-article/run-at-rate evidence, surveillance, and release for a defined product and customer or regulator."
+    aliases: ["product qualification", "process qualification", "supplier qualification"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_ids: [qual_machine_acceptance, qual_precision_bearing, qual_control_system]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Pack-local qualification gates instantiate the family without implying transferable approval across products."
+      - pack_id: humanoid_india
+        entity_ids: [qual_motor_robot_grade, qual_battery_pack, qual_encoder_robot_grade]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Robot-grade qualification gates are product-specific members of the common lifecycle."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [qual_ndfeb_motor_grade, qual_ti_sponge_aero, qual_li2co3_battery, qual_anode_csg, qual_poly_solar]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Material-grade qualification records remain distinct by grade, customer, and status; no supplier approval is inferred."
+
+  - id: "cap:environmental-test"
+    name: "Environmental test infrastructure"
+    description: "Thermal-vacuum, vibration, thermal cycling, EMC, life, and environment-specific acceptance infrastructure."
+    aliases: ["environmental testing", "thermal vacuum test", "vibration qualification"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: smallsat_india
+        entity_ids: [thermal_vac_chamber, qual_space_battery]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "A thermal-vacuum equipment dependency and one space qualification gate identify the family; facility throughput remains UNKNOWN."
+
+  - id: "cap:electrical-steel"
+    name: "Motor-grade electrical steel"
+    description: "Electrical-steel chemistry, sheet processing, insulation, lamination, magnetic-loss characterization, and motor-grade qualification."
+    aliases: ["electrical steel", "motor laminations", "CRGO and CRNO steel"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [hq_electrical_steel]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The humanoid route names high-grade laminations; grade-specific origin, yield, and supply remain UNKNOWN."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [proj_tata_crgo_phases]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "A process-qualification-stage CRGO project is context only and is never counted as operating grade-qualified capacity."
+
+  - id: "cap:composite-structures"
+    name: "Composite structural manufacturing"
+    description: "Material preparation, layup, cure/bond, trimming, inspection, and product-specific structural qualification."
+    aliases: ["composite structures", "carbon-fiber structures", "composite layup"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: smallsat_india
+        entity_ids: [sat_bus_structure, rec_sat_bus_structure, autoclave]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The satellite pack exposes a composite/honeycomb route and equipment; this is not agricultural-drone airframe qualification."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [rcls_carbon_fiber_capacity]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Carbon-fiber supply context is upstream of composite structures and remains CONFLICTED where source baselines disagree."
+
+  - id: "cap:space-optical-payloads"
+    name: "Space optical payload production"
+    description: "Optical design, detector/electronics integration, contamination control, alignment, calibration, and space-environment qualification."
+    aliases: ["space optical payload", "earth-observation payload", "hyperspectral payload"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: smallsat_india
+        entity_ids: [optical_payload_300kg]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "A 300 kg-class electro-optical payload is related family context, not proof of 12U hyperspectral architecture, cadence, or qualification."
 
 aliases:
   - id: "alias:precision-grinding"
