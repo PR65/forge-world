@@ -15,11 +15,11 @@ import type {
 type JsonObject = Record<string, unknown>;
 
 const DEPENDENCY_KEYS: IndiaDependencyGroupKey[] = [
+  "systems",
   "materials",
-  "components",
   "processes",
   "equipment",
-  "utilities",
+  "capabilities",
 ];
 
 const RESULT_KEYS = ["results", "records", "items", "nodes", "matches"];
@@ -128,11 +128,11 @@ function normalizeLinks(values: unknown[]): IndiaLink[] {
 
 function emptyDependencies(): IndiaDependencyGroups {
   return {
+    systems: [],
     materials: [],
-    components: [],
     processes: [],
     equipment: [],
-    utilities: [],
+    capabilities: [],
   };
 }
 
@@ -155,7 +155,7 @@ function normalizeDependencies(source: JsonObject | null): IndiaDependencyGroups
 
   if (!foundGroup) {
     const generic = readArray(source, ["dependencies", "requires", "inputs"]);
-    output.components = normalizeLinks(generic);
+    output.systems = normalizeLinks(generic);
   }
   return output;
 }
@@ -176,7 +176,7 @@ function normalizeLadder(values: unknown[]): IndiaMakingStep[] {
       {
         step: readString(source, ["step", "stage", "id"], `Step ${index + 1}`),
         action,
-        note: readString(source, ["note", "basis", "explanation"]) || undefined,
+        note: readString(source, ["note", "purpose", "basis", "explanation", "condition"]) || undefined,
       },
     ];
   });
@@ -255,7 +255,13 @@ export function normalizeDomain(value: unknown, index = 0): IndiaDomain {
 export function normalizeSummary(value: unknown): IndiaSummary {
   const raw = asObject(value) ?? {};
   const source = readObject(raw, ["summary", "data"]) ?? raw;
-  const counts = asObject(readValue(source, ["status_counts", "statusCounts", "statuses"]));
+  const counts = asObject(readValue(source, [
+    "direct_status_counts",
+    "directStatusCounts",
+    "status_counts",
+    "statusCounts",
+    "statuses",
+  ]));
   const statusCounts: Record<string, number> = {};
   for (const [key, count] of Object.entries(counts ?? {})) {
     if (typeof count === "number" && Number.isFinite(count)) statusCounts[key] = count;

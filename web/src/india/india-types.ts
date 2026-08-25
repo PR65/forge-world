@@ -8,11 +8,11 @@ export interface IndiaLink {
 }
 
 export interface IndiaDependencyGroups {
+  systems: IndiaLink[];
   materials: IndiaLink[];
-  components: IndiaLink[];
   processes: IndiaLink[];
   equipment: IndiaLink[];
-  utilities: IndiaLink[];
+  capabilities: IndiaLink[];
 }
 
 export interface IndiaMakingStep {
@@ -77,4 +77,3 @@ export interface IndiaBootstrap {
 }
 
 export type IndiaDependencyGroupKey = keyof IndiaDependencyGroups;
-

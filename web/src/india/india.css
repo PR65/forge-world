@@ -1316,6 +1316,13 @@ body:has(.india-app) {
   gap: 12px;
 }
 
+.india-link-overflow {
+  margin: 2px 0 0;
+  color: var(--india-faint);
+  font-size: 12px;
+  line-height: 18px;
+}
+
 .india-related-link {
   display: grid;
   gap: 2px;

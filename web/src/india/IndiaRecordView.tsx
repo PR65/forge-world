@@ -15,11 +15,11 @@ interface IndiaRecordViewProps {
 }
 
 const DEPENDENCY_LABELS: Record<IndiaDependencyGroupKey, string> = {
+  systems: "Major systems",
   materials: "Materials",
-  components: "Components",
   processes: "Processes",
   equipment: "Equipment",
-  utilities: "Utilities",
+  capabilities: "Capabilities",
 };
 
 function MissingNote({ children }: { children: string }) {
@@ -35,12 +35,13 @@ function LinkCluster({
   links: IndiaLink[];
   onNavigate: (link: IndiaLink) => void;
 }) {
+  const visibleLinks = links.slice(0, 24);
   return (
     <section className="india-link-cluster">
       <h3>{title}</h3>
       {links.length ? (
         <div className="india-link-list">
-          {links.map((link, index) => (
+          {visibleLinks.map((link, index) => (
             <button
               className="india-related-link"
               type="button"
@@ -54,6 +55,11 @@ function LinkCluster({
               {link.note ? <em>{link.note}</em> : null}
             </button>
           ))}
+          {links.length > visibleLinks.length ? (
+            <p className="india-link-overflow">
+              Showing 24 of {links.length} connections. Search the atlas to narrow this branch.
+            </p>
+          ) : null}
         </div>
       ) : (
         <MissingNote>Nothing is mapped in this direction yet.</MissingNote>
@@ -173,7 +179,9 @@ export default function IndiaRecordView({
             <div className="india-section-kicker">Inputs to plan for</div>
             <h2>Grouped dependencies</h2>
           </div>
-          <span className="india-section-aside">{record.dependencies.components.length + record.dependencies.materials.length + record.dependencies.processes.length + record.dependencies.equipment.length + record.dependencies.utilities.length} mapped groups</span>
+          <span className="india-section-aside">
+            {dependencyEntries.reduce((total, [, links]) => total + links.length, 0)} mapped dependencies
+          </span>
         </div>
         <div className="india-dependency-grid">
           {dependencyEntries.map(([key, links]) => (
@@ -262,4 +270,3 @@ export default function IndiaRecordView({
     </article>
   );
 }
-
