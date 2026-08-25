@@ -1,0 +1,2961 @@
+{
+  "accounting": {
+    "CONFLICTED": 5,
+    "SCENARIO": 1,
+    "UNKNOWN": 12,
+    "artifacts": {
+      "expected_manifest": 12,
+      "hash_byte_matches": 12,
+      "mismatches": 0,
+      "observed_extracted": 12,
+      "observed_zip_entries": 12
+    },
+    "canonical_promotions": 0,
+    "capability_families": 13,
+    "claims": 254,
+    "duplicates": 0,
+    "entities": 69,
+    "malformed": 0,
+    "numeric_option_value_promotions": 0,
+    "relation_promotions": 0,
+    "relations": 50,
+    "repaired": 0,
+    "sector_links": 169,
+    "shadow_identities": 0,
+    "skipped": 1,
+    "sources": 58
+  },
+  "analysis_date": "2026-08-25",
+  "artifacts": [
+    {
+      "bytes": 66402,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md",
+      "raw_zip_entry": "FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md",
+      "relative_path": "manus-07/FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md",
+      "role": "integrated cross-sector capability and option-value package",
+      "schema": {
+        "format": "Markdown",
+        "line_count": 449,
+        "parse_errors": [],
+        "table_count": 9,
+        "table_summaries": [
+          {
+            "header": [
+              "Candidate capability",
+              "Why it recurs",
+              "India evidence",
+              "Main caution",
+              "Provisional option-value view"
+            ],
+            "header_locator": 23,
+            "row_count": 8,
+            "rows_preview": [
+              [
+                "Industrial metrology and calibration",
+                "Converts physical production into measurable, certifiable production across almost every high-integrity sector",
+                "CMTI lists NABL calibration, laser interferometry, machine qualification, aerospace tests, and materials testing [2]",
+                "Institutional service capability does not equal national coverage or commercial throughput",
+                "**Very high horizontal value; low-regret enabling infrastructure**"
+              ],
+              [
+                "NDT and material-integrity assurance",
+                "Required for forgings, welds, pressure boundaries, aircraft structures, rail, grid equipment, and life-cycle safety",
+                "CMTI and nuclear sources support the need; India-wide qualified capacity is not publicly consolidated [2] [10]",
+                "Method qualification, personnel certification, and sector-specific acceptance criteria matter",
+                "**Very high; build as a network, not just a lab**"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Layer",
+              "Capability nodes",
+              "Typical prerequisite types",
+              "Main value created"
+            ],
+            "header_locator": 52,
+            "row_count": 6,
+            "rows_preview": [
+              [
+                "**A. Measurement and integrity**",
+                "C02 Industrial metrology and calibration; C06 NDT and material-integrity assurance",
+                "Traceable standards, calibrated instruments, certified personnel, procedures, reference artefacts",
+                "Converts process output into accepted, auditable quality"
+              ],
+              [
+                "**B. Precision motion and actuation**",
+                "C01 Precision motion and bearing systems; part of C09 drives and controls",
+                "Bearing steel, grinding/lapping, screw/guide manufacture, servo control, lubrication, environmental control",
+                "Enables accuracy, repeatability, load transfer, and automation"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Sector",
+              "C01",
+              "C02",
+              "C03",
+              "C04",
+              "C05",
+              "C06",
+              "C07",
+              "C08",
+              "C09",
+              "C10",
+              "C11",
+              "C12",
+              "C13"
+            ],
+            "header_locator": 65,
+            "row_count": 13,
+            "rows_preview": [
+              [
+                "Machine tools",
+                "H",
+                "H",
+                "M",
+                "L",
+                "M",
+                "M",
+                "L",
+                "M",
+                "H",
+                "M",
+                "H",
+                "H",
+                "L"
+              ],
+              [
+                "Robotics/humanoids",
+                "H",
+                "H",
+                "M",
+                "L",
+                "M",
+                "M",
+                "L",
+                "M",
+                "H",
+                "M",
+                "M",
+                "M",
+                "L"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Capability",
+              "Global representative nodes",
+              "India representative nodes",
+              "Evidence state"
+            ],
+            "header_locator": 211,
+            "row_count": 10,
+            "rows_preview": [
+              [
+                "Precision motion",
+                "THK, SKF, NSK, Harmonic Drive Systems, Nabtesco",
+                "MTAR; CMTI; Indian machine-tool and bearing firms require subcategory audit",
+                "THK documents multi-sector application reuse [11]; MTAR documents product scope [5]; qualified throughput UNKNOWN"
+              ],
+              [
+                "Metrology/calibration",
+                "NIST, PTB, national institutes, accredited OEM and commercial labs",
+                "CMTI; NPL and accredited laboratories should be mapped by discipline",
+                "CMTI official page documents calibration, laser interferometry, machine qualification, and tests [2]"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Dimension",
+              "Question",
+              "Evidence requirement",
+              "Suggested scale"
+            ],
+            "header_locator": 320,
+            "row_count": 9,
+            "rows_preview": [
+              [
+                "Path breadth",
+                "How many distinct downstream product families depend on it?",
+                "Dependency records with technical rationale",
+                "Low / medium / high / very high"
+              ],
+              [
+                "Path diversity",
+                "Are the paths in genuinely different sectors or merely variants of one product?",
+                "Sector and process comparison",
+                "Low / medium / high"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Class",
+              "Capabilities",
+              "Reasoning"
+            ],
+            "header_locator": 340,
+            "row_count": 4,
+            "rows_preview": [
+              [
+                "**A — horizontal and low-regret**",
+                "C02 metrology; C06 NDT; C12 traceability/process control; selected C01 precision motion",
+                "Broad reuse, lower irreversibility, direct spillovers, and ability to unlock other capabilities"
+              ],
+              [
+                "**B — horizontal but input/qualification intensive**",
+                "C03 special materials; C07 high-purity environment; C09 power electronics/controls; C10 heavy electrical/HV test",
+                "Large downstream breadth, but materials, capital, qualification, and reliability constraints are material"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Spillover",
+              "Evidence",
+              "Why it is genuine",
+              "Limitation"
+            ],
+            "header_locator": 368,
+            "row_count": 6,
+            "rows_preview": [
+              [
+                "Precision linear motion from machine tools to semiconductors, robotics, medical, aerospace, additive, and warehouse automation",
+                "THK’s official industry page lists these sectors and application requirements [11]",
+                "Shared motion physics, component families, precision manufacturing, and metrology",
+                "Cleanliness, load, shock, life, and customer qualification differ"
+              ],
+              [
+                "Metrology from machine-tool qualification to aerospace, materials, and nanomanufacturing",
+                "CMTI lists machine qualification, calibration, laser interferometry, aerospace tests, materials testing, and nanomanufacturing [2]",
+                "Shared traceability and uncertainty logic",
+                "Institutional capability does not prove national commercial coverage"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "ID",
+              "Unknown/conflict",
+              "Why it matters",
+              "Exact next question"
+            ],
+            "header_locator": 381,
+            "row_count": 12,
+            "rows_preview": [
+              [
+                "U01",
+                "Qualified annual throughput, yield, uptime, and available capacity for high-end Indian facilities",
+                "Determines whether a capability is usable now or only exists nominally",
+                "For each facility, what was accepted output by product class, grade, customer, and month over the last 24 months?"
+              ],
+              [
+                "U02",
+                "C0/C1 motion yield, imported machine/tooling share, bearing-steel provenance",
+                "Distinguishes product assembly from sovereign precision capability",
+                "Which machine models, material heats, process steps, rejection causes, and customer certificates support each accuracy class?"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Field group",
+              "Required fields"
+            ],
+            "header_locator": 406,
+            "row_count": 10,
+            "rows_preview": [
+              [
+                "Identity",
+                "capability_id, canonical_name, aliases, parent_layer, version"
+              ],
+              [
+                "Definition",
+                "exact boundary, included processes, excluded processes, engineering rationale"
+              ]
+            ]
+          }
+        ],
+        "unique_urls": 17,
+        "url_occurrences": 17
+      },
+      "sha256": "866558a25765b5ed3ee738b800f5d2baac7e1d148aa34880150af34fc343278c",
+      "zip_byte_match": true,
+      "zip_member_bytes": 66402,
+      "zip_member_sha256": "866558a25765b5ed3ee738b800f5d2baac7e1d148aa34880150af34fc343278c"
+    },
+    {
+      "bytes": 61861,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\Parallel Research Stream Syntheses.md",
+      "raw_zip_entry": "Parallel Research Stream Syntheses.md",
+      "relative_path": "manus-07/Parallel Research Stream Syntheses.md",
+      "role": "parallel stream synthesis",
+      "schema": {
+        "format": "Markdown",
+        "line_count": 499,
+        "parse_errors": [],
+        "table_count": 1,
+        "table_summaries": [
+          {
+            "header": [
+              "Entity",
+              "Capability Level",
+              "Evidence"
+            ],
+            "header_locator": 105,
+            "row_count": 5,
+            "rows_preview": [
+              [
+                "**Japan Steel Works (JSW)**",
+                "Global Leader: 14,000T press, 670T ingots.",
+                "MEASURED [S1]"
+              ],
+              [
+                "**Sheffield Forgemasters (UK)**",
+                "13,000T press, focus on defense/nuclear.",
+                "REPORTED [S8]"
+              ]
+            ]
+          }
+        ],
+        "unique_urls": 0,
+        "url_occurrences": 0
+      },
+      "sha256": "8ec502bef3628c7a7beac9ab329810d98b5c5a25fc968cff0d39bba2455688db",
+      "zip_byte_match": true,
+      "zip_member_bytes": 61861,
+      "zip_member_sha256": "8ec502bef3628c7a7beac9ab329810d98b5c5a25fc968cff0d39bba2455688db"
+    },
+    {
+      "bytes": 21322,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\Validated Findings — Initial Browser Review.md",
+      "raw_zip_entry": "Validated Findings — Initial Browser Review.md",
+      "relative_path": "manus-07/Validated Findings — Initial Browser Review.md",
+      "role": "validated findings and browser-review notes",
+      "schema": {
+        "format": "Markdown",
+        "line_count": 110,
+        "parse_errors": [],
+        "table_count": 0,
+        "table_summaries": [],
+        "unique_urls": 17,
+        "url_occurrences": 18
+      },
+      "sha256": "45e65f199149f0a4cd98daa5840e69c9a6e2240ada6dd3f09f235bd51a9f4fe9",
+      "zip_byte_match": true,
+      "zip_member_bytes": 21322,
+      "zip_member_sha256": "45e65f199149f0a4cd98daa5840e69c9a6e2240ada6dd3f09f235bd51a9f4fe9"
+    },
+    {
+      "bytes": 19830,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\build_forge_data.py",
+      "raw_zip_entry": "build_forge_data.py",
+      "relative_path": "manus-07/build_forge_data.py",
+      "role": "source-generation code preserved as read-only evidence artifact",
+      "schema": {
+        "format": "UTF-8 text",
+        "line_count": 128,
+        "parse_errors": [],
+        "unique_urls": 0,
+        "url_occurrences": 0
+      },
+      "sha256": "6226abaf4b833816de0e11b57bb863cfb9983db9842dead073ac2eed26e1a1c8",
+      "zip_byte_match": true,
+      "zip_member_bytes": 19830,
+      "zip_member_sha256": "6226abaf4b833816de0e11b57bb863cfb9983db9842dead073ac2eed26e1a1c8"
+    },
+    {
+      "bytes": 71648,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+      "raw_zip_entry": "forge_world_capability_research.json",
+      "relative_path": "manus-07/forge_world_capability_research.json",
+      "role": "parallel workstream synthesis and source-ledger pointers",
+      "schema": {
+        "format": "JSON",
+        "parse_errors": [],
+        "result_row_keys": [
+          "error",
+          "input",
+          "output"
+        ],
+        "results_row_count": 10,
+        "top_level_keys": [
+          "results"
+        ],
+        "top_level_type": "dict"
+      },
+      "sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+      "zip_byte_match": true,
+      "zip_member_bytes": 71648,
+      "zip_member_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e"
+    },
+    {
+      "bytes": 660,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_dependency_matrix.csv",
+      "raw_zip_entry": "forge_world_dependency_matrix.csv",
+      "relative_path": "manus-07/forge_world_dependency_matrix.csv",
+      "role": "qualitative sector-to-capability dependency matrix",
+      "schema": {
+        "column_count": 14,
+        "data_row_count": 13,
+        "format": "CSV",
+        "header": [
+          "sector",
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13"
+        ],
+        "malformed_rows": [],
+        "parse_errors": [],
+        "row_length_counts": {
+          "14": 13
+        }
+      },
+      "sha256": "d5f124c4cc874d4a713c3312868b5b6a454f50f9540fe71f9f0d779b66692e47",
+      "zip_byte_match": true,
+      "zip_member_bytes": 660,
+      "zip_member_sha256": "d5f124c4cc874d4a713c3312868b5b6a454f50f9540fe71f9f0d779b66692e47"
+    },
+    {
+      "bytes": 6330,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_option_value_scoring.csv",
+      "raw_zip_entry": "forge_world_option_value_scoring.csv",
+      "relative_path": "manus-07/forge_world_option_value_scoring.csv",
+      "role": "qualitative option-value candidate ratings",
+      "schema": {
+        "column_count": 10,
+        "data_row_count": 13,
+        "format": "CSV",
+        "header": [
+          "capability_id",
+          "capability",
+          "exact_boundary",
+          "downstream_sectors",
+          "cross_sector_reuse",
+          "india_gap_pressure",
+          "strategic_concentration",
+          "substitutability",
+          "evidence_basis",
+          "interpretation"
+        ],
+        "malformed_rows": [],
+        "parse_errors": [],
+        "row_length_counts": {
+          "10": 13
+        }
+      },
+      "sha256": "48334db1edc9e105972d0ee6dc03106499ca2b8bd363e22d580e3fb36bf59fe7",
+      "zip_byte_match": true,
+      "zip_member_bytes": 6330,
+      "zip_member_sha256": "48334db1edc9e105972d0ee6dc03106499ca2b8bd363e22d580e3fb36bf59fe7"
+    },
+    {
+      "bytes": 4536,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_research_scope.md",
+      "raw_zip_entry": "forge_world_research_scope.md",
+      "relative_path": "manus-07/forge_world_research_scope.md",
+      "role": "research scope and method",
+      "schema": {
+        "format": "Markdown",
+        "line_count": 51,
+        "parse_errors": [],
+        "table_count": 0,
+        "table_summaries": [],
+        "unique_urls": 0,
+        "url_occurrences": 0
+      },
+      "sha256": "754df4964ada3c709491b4cd7bc79f5751615cdeac2ac70a0f2d7525ea97a7b2",
+      "zip_byte_match": true,
+      "zip_member_bytes": 4536,
+      "zip_member_sha256": "754df4964ada3c709491b4cd7bc79f5751615cdeac2ac70a0f2d7525ea97a7b2"
+    },
+    {
+      "bytes": 12522,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "raw_zip_entry": "forge_world_structured_relationships.csv",
+      "relative_path": "manus-07/forge_world_structured_relationships.csv",
+      "role": "structured capability and sector relation ledger",
+      "schema": {
+        "column_count": 8,
+        "data_row_count": 50,
+        "format": "CSV",
+        "header": [
+          "capability_id",
+          "relationship",
+          "target",
+          "evidence_type",
+          "supporting_statement",
+          "source",
+          "as_of_date",
+          "status"
+        ],
+        "malformed_rows": [],
+        "parse_errors": [],
+        "row_length_counts": {
+          "8": 50
+        }
+      },
+      "sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "zip_byte_match": true,
+      "zip_member_bytes": 12522,
+      "zip_member_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868"
+    },
+    {
+      "bytes": 3951,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_unknown_conflict_ledger.csv",
+      "raw_zip_entry": "forge_world_unknown_conflict_ledger.csv",
+      "relative_path": "manus-07/forge_world_unknown_conflict_ledger.csv",
+      "role": "unknown/conflict/scenario ledger",
+      "schema": {
+        "column_count": 6,
+        "data_row_count": 12,
+        "format": "CSV",
+        "header": [
+          "unknown_id",
+          "scope",
+          "question",
+          "status",
+          "why_unresolved",
+          "next_research_action"
+        ],
+        "malformed_rows": [],
+        "parse_errors": [],
+        "row_length_counts": {
+          "6": 12
+        }
+      },
+      "sha256": "7e2a2fc63714a1dd08992d6c8b8b242880389e869fce7af0466bb298ae73e077",
+      "zip_byte_match": true,
+      "zip_member_bytes": 3951,
+      "zip_member_sha256": "7e2a2fc63714a1dd08992d6c8b8b242880389e869fce7af0466bb298ae73e077"
+    },
+    {
+      "bytes": 27373,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\parallel_ledger_index.txt",
+      "raw_zip_entry": "parallel_ledger_index.txt",
+      "relative_path": "manus-07/parallel_ledger_index.txt",
+      "role": "parallel source-ledger index",
+      "schema": {
+        "format": "UTF-8 text",
+        "line_count": 120,
+        "parse_errors": [],
+        "unique_urls": 100,
+        "url_occurrences": 101
+      },
+      "sha256": "ddd9a941585c75b9b977f2353671d4c7ce5c9fa29484e9ecb1c4b1c6d98e6570",
+      "zip_byte_match": true,
+      "zip_member_bytes": 27373,
+      "zip_member_sha256": "ddd9a941585c75b9b977f2353671d4c7ce5c9fa29484e9ecb1c4b1c6d98e6570"
+    },
+    {
+      "bytes": 5393,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\pasted_content.txt",
+      "raw_zip_entry": "pasted_content.txt",
+      "relative_path": "manus-07/pasted_content.txt",
+      "role": "captured source text",
+      "schema": {
+        "format": "UTF-8 text",
+        "line_count": 66,
+        "parse_errors": [],
+        "unique_urls": 0,
+        "url_occurrences": 0
+      },
+      "sha256": "6e4d1e7db7e35e5e143d90883f9c90ba2f81dd3db8bd90109cf7b78adc8070ee",
+      "zip_byte_match": true,
+      "zip_member_bytes": 5393,
+      "zip_member_sha256": "6e4d1e7db7e35e5e143d90883f9c90ba2f81dd3db8bd90109cf7b78adc8070ee"
+    }
+  ],
+  "campaign_expected_number": "06",
+  "canonical_promotion": "NONE",
+  "canonical_reconciliation": {
+    "candidate_mapping_pairs": 20,
+    "canonical_capability_count_observed": 39,
+    "canonical_promotions": 0,
+    "entries": [
+      {
+        "candidate_canonical_ids": [
+          "cap:precision-motion-components",
+          "cap:precision-bearings"
+        ],
+        "candidate_canonical_names": [
+          "Precision motion components",
+          "Precision bearing manufacturing"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Precision motion and bearing systems",
+        "manus_capability_id": "C01",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:metrology"
+        ],
+        "candidate_canonical_names": [
+          "Industrial metrology"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Industrial metrology and calibration",
+        "manus_capability_id": "C02",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:electrical-steel"
+        ],
+        "candidate_canonical_names": [
+          "Motor-grade electrical steel"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Specialty steels and advanced alloy processing",
+        "manus_capability_id": "C03",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:heavy-forging"
+        ],
+        "candidate_canonical_names": [
+          "Heavy forging"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Ultra-large forging and heavy forming",
+        "manus_capability_id": "C04",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:structural-castings",
+          "cap:nuclear-welding-ndt"
+        ],
+        "candidate_canonical_names": [
+          "Structural casting and stabilization",
+          "Nuclear-grade welding and NDT"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Advanced casting and high-integrity joining",
+        "manus_capability_id": "C05",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:nuclear-welding-ndt",
+          "cap:industrial-product-qualification"
+        ],
+        "candidate_canonical_names": [
+          "Nuclear-grade welding and NDT",
+          "Industrial product and process qualification"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "NDT and material integrity assurance",
+        "manus_capability_id": "C06",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [],
+        "candidate_canonical_names": [],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "High-purity process environment",
+        "manus_capability_id": "C07",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_canonical_ids": [],
+        "candidate_canonical_names": [],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Semiconductor front-end and equipment ecosystem",
+        "manus_capability_id": "C08",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:power-electronics",
+          "cap:electric-motors",
+          "cap:industrial-electronics"
+        ],
+        "candidate_canonical_names": [
+          "Power electronics",
+          "Precision electric-motor manufacturing",
+          "Industrial electronics manufacturing"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Power electronics, drives, and industrial controls",
+        "manus_capability_id": "C09",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:turbine-generators"
+        ],
+        "candidate_canonical_names": [
+          "Large turbine-generator manufacturing"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Heavy electrical manufacturing and HV test",
+        "manus_capability_id": "C10",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:composite-structures",
+          "cap:tooling-fixtures"
+        ],
+        "candidate_canonical_names": [
+          "Composite structural manufacturing",
+          "Production tooling and fixtures"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Composite, coating, AM, and high-end tooling",
+        "manus_capability_id": "C11",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:industrial-product-qualification"
+        ],
+        "candidate_canonical_names": [
+          "Industrial product and process qualification"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Qualification, traceability, and process-control know-how",
+        "manus_capability_id": "C12",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_canonical_ids": [
+          "cap:mineral-beneficiation",
+          "cap:rare-earth-separation",
+          "cap:lithium-refining",
+          "cap:cathode-precursors"
+        ],
+        "candidate_canonical_names": [
+          "Strategic-mineral beneficiation",
+          "Rare-earth separation and metal/alloy conversion",
+          "Battery-grade lithium refining",
+          "Cathode-material precursor production"
+        ],
+        "decision_basis": "Surface/ontology relatedness only; broad Manus family remains staging and canonical registry remains read-only.",
+        "manus_capability": "Critical-material refining and recycling",
+        "manus_capability_id": "C13",
+        "promotion_status": "NONE",
+        "qualification_boundary": "No equivalence is asserted across sector, process, grade, customer approval, metrology, facility, or capacity scope.",
+        "status": "RELATED_NOT_IDENTICAL"
+      }
+    ],
+    "matches": 0,
+    "reason_for_no_MATCH": "Manus families intentionally span broader process/sector/qualification boundaries than individual canonical IDs; no exact equivalence was defensible in this bounded pass.",
+    "registry": {
+      "bytes": 55924,
+      "path": "C:\\GitHub\\forge-world\\data\\registry\\manifest.yaml",
+      "read_only": true,
+      "role": "read-only canonical capability registry",
+      "sha256": "fe147ab3b339f2d35d1a2dd8f4cb293ae8b168038ac69de3ef3f84cb5ff7c038"
+    },
+    "related_not_identical": 11,
+    "shadow_identities": 0,
+    "status_counts": {
+      "RELATED_NOT_IDENTICAL": 11,
+      "UNRESOLVED_STAGING": 2
+    },
+    "unresolved_staging": 2
+  },
+  "capability_family_samples": [
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Precision motion and bearing systems",
+      "capability_id": "C01",
+      "downstream_sectors": [
+        "machine tools",
+        "robotics",
+        "semiconductors",
+        "aerospace/space",
+        "medical",
+        "railway"
+      ],
+      "exact_boundary": "Manufacture and qualify precision bearings, ball/roller screws, guides, and associated grinding/lapping processes.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "High",
+        "india_gap_pressure": "Medium",
+        "strategic_concentration": "High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U02"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Industrial metrology and calibration",
+      "capability_id": "C02",
+      "downstream_sectors": [
+        "all high-integrity manufacturing",
+        "aerospace",
+        "nuclear",
+        "semiconductors",
+        "medical",
+        "energy"
+      ],
+      "exact_boundary": "Traceable measurement, calibration, machine qualification, dimensional/geometry verification, and vibration/environmental measurement.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "Very High",
+        "india_gap_pressure": "Low",
+        "strategic_concentration": "Very High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U12"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Specialty steels and advanced alloy processing",
+      "capability_id": "C03",
+      "downstream_sectors": [
+        "aerospace",
+        "nuclear",
+        "power generation",
+        "oil/gas",
+        "EV motors",
+        "tooling",
+        "medical"
+      ],
+      "exact_boundary": "Vacuum melting/refining, remelting, alloy control, rolling, heat treatment, and qualification of high-performance metallic materials.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "High",
+        "india_gap_pressure": "High",
+        "strategic_concentration": "High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U03"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Ultra-large forging and heavy forming",
+      "capability_id": "C04",
+      "downstream_sectors": [
+        "nuclear",
+        "heavy electrical",
+        "marine",
+        "oil/gas",
+        "large machinery",
+        "defense"
+      ],
+      "exact_boundary": "Production of very large forgings from large ingots with controlled segregation, heat treatment, inspection, and nuclear/aerospace qualification.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "High",
+        "india_gap_pressure": "Very High",
+        "strategic_concentration": "Very High",
+        "substitutability": "Low"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U05"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Advanced casting and high-integrity joining",
+      "capability_id": "C05",
+      "downstream_sectors": [
+        "aerospace",
+        "power generation",
+        "nuclear",
+        "heavy machinery",
+        "medical",
+        "transport"
+      ],
+      "exact_boundary": "Vacuum investment/SX/DS casting, EBW/FSW/brazing, weld procedure qualification, and distortion/defect control.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "High",
+        "india_gap_pressure": "High",
+        "strategic_concentration": "High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U09"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "NDT and material integrity assurance",
+      "capability_id": "C06",
+      "downstream_sectors": [
+        "nuclear",
+        "aerospace",
+        "pressure equipment",
+        "rail",
+        "heavy electrical",
+        "construction",
+        "oil/gas"
+      ],
+      "exact_boundary": "Qualified ultrasonic, radiographic, phased-array/TOFD, surface inspection, and life-cycle integrity methods.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "Very High",
+        "india_gap_pressure": "Medium",
+        "strategic_concentration": "High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U09"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "UNRESOLVED_STAGING",
+      "capability": "High-purity process environment",
+      "capability_id": "C07",
+      "downstream_sectors": [
+        "semiconductors",
+        "pharmaceuticals",
+        "aerospace/defense electronics",
+        "PV",
+        "batteries"
+      ],
+      "exact_boundary": "Electronic/medical-grade gases and chemicals, ultrapure water, contamination control, cleanrooms, filtration, and trace impurity metrology.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "Very High",
+        "india_gap_pressure": "Very High",
+        "strategic_concentration": "Very High",
+        "substitutability": "Low"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U06",
+        "U07"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "UNRESOLVED_STAGING",
+      "capability": "Semiconductor front-end and equipment ecosystem",
+      "capability_id": "C08",
+      "downstream_sectors": [
+        "semiconductors",
+        "power electronics",
+        "sensors",
+        "communications",
+        "defense",
+        "vehicles",
+        "industrial controls"
+      ],
+      "exact_boundary": "Fab process modules, lithography/etch/deposition/implant, vacuum subsystems, precision tooling, process control, and advanced packaging.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "Very High",
+        "india_gap_pressure": "Very High",
+        "strategic_concentration": "Very High",
+        "substitutability": "Low"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U06",
+        "U07",
+        "U08"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Power electronics, drives, and industrial controls",
+      "capability_id": "C09",
+      "downstream_sectors": [
+        "EVs",
+        "solar/wind",
+        "grid",
+        "robotics",
+        "machine tools",
+        "construction equipment",
+        "industrial machinery"
+      ],
+      "exact_boundary": "Power-device packaging, WBG devices, inverters, servo drives, motors, sensing, PLC/DCS, safety controls, and embedded control.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "Very High",
+        "india_gap_pressure": "High",
+        "strategic_concentration": "High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U08"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Heavy electrical manufacturing and HV test",
+      "capability_id": "C10",
+      "downstream_sectors": [
+        "grid",
+        "generation",
+        "rail",
+        "marine",
+        "industry",
+        "renewables",
+        "EV charging"
+      ],
+      "exact_boundary": "Design/manufacture/test of transformers, reactors, generators, motors, switchgear, HVDC/UHVAC equipment, and insulation systems.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "High",
+        "india_gap_pressure": "High",
+        "strategic_concentration": "High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U04",
+        "U10"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Composite, coating, AM, and high-end tooling",
+      "capability_id": "C11",
+      "downstream_sectors": [
+        "aerospace",
+        "wind",
+        "medical",
+        "automotive",
+        "energy",
+        "semiconductor tooling",
+        "repair/MRO"
+      ],
+      "exact_boundary": "Autoclave/RTM/AFP composites, PVD/CVD/thermal spray, qualified metal AM, precision molds, fixtures, and 5-axis tooling.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "High",
+        "india_gap_pressure": "High",
+        "strategic_concentration": "High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U09"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Qualification, traceability, and process-control know-how",
+      "capability_id": "C12",
+      "downstream_sectors": [
+        "aerospace",
+        "nuclear",
+        "semiconductors",
+        "medical",
+        "rail",
+        "grid",
+        "defense"
+      ],
+      "exact_boundary": "Standards-compliant QMS, material/process traceability, digital records, procedure qualification, customer approval, and change control.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "Very High",
+        "india_gap_pressure": "Medium",
+        "strategic_concentration": "Very High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U12"
+      ]
+    },
+    {
+      "canonical_reconciliation_status": "RELATED_NOT_IDENTICAL",
+      "capability": "Critical-material refining and recycling",
+      "capability_id": "C13",
+      "downstream_sectors": [
+        "batteries",
+        "magnets",
+        "wind",
+        "solar",
+        "electronics",
+        "defense",
+        "chemicals"
+      ],
+      "exact_boundary": "Exploration-to-refining, separation, precursor production, recycling, and recovery from secondary/unconventional sources.",
+      "ordinal_dimensions": {
+        "cross_sector_reuse": "Very High",
+        "india_gap_pressure": "Very High",
+        "strategic_concentration": "High",
+        "substitutability": "Medium"
+      },
+      "promotion_status": "NONE",
+      "unknowns": [
+        "U01",
+        "U11"
+      ]
+    }
+  ],
+  "claim_samples": [
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_option_value_scoring.csv",
+      "artifact_sha256": "48334db1edc9e105972d0ee6dc03106499ca2b8bd363e22d580e3fb36bf59fe7",
+      "caveat": "Ordinal reuse/gap/concentration/substitutability ratings are candidate inputs only; no numeric score, denominator, or investment recommendation is promoted.",
+      "conflicts": [
+        "U02"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [],
+      "entity_candidates": [
+        "C01",
+        "Precision motion and bearing systems",
+        "machine tools",
+        "robotics",
+        "semiconductors",
+        "aerospace/space"
+      ],
+      "escalation": "Attach dated, denominator-preserving qualified-output, yield, utilization, concentration, and substitution evidence before any Forge option-value re-solve.",
+      "exact_locator": "forge_world_option_value_scoring.csv:row 2 (capability_id=C01)",
+      "geography": [
+        "India",
+        "global downstream sectors"
+      ],
+      "numeric_ranges": [],
+      "predicate": "qualitative_option_value_candidate",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "QUALITATIVE_OPTION_VALUE_INPUT",
+      "source_urls": [
+        "https://mtar.in/ball-screws-roller-screws/",
+        "https://store-na.thk.com/Industry"
+      ],
+      "subject": "C01",
+      "text": "Precision motion and bearing systems; Important enabling capability; prioritize only after use-case and qualification evidence are verified.",
+      "units": [],
+      "unknowns": [
+        "U01",
+        "U02"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_option_value_scoring.csv",
+      "artifact_sha256": "48334db1edc9e105972d0ee6dc03106499ca2b8bd363e22d580e3fb36bf59fe7",
+      "caveat": "Ordinal reuse/gap/concentration/substitutability ratings are candidate inputs only; no numeric score, denominator, or investment recommendation is promoted.",
+      "conflicts": [
+        "U12"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [],
+      "entity_candidates": [
+        "C02",
+        "Industrial metrology and calibration",
+        "all high-integrity manufacturing",
+        "aerospace",
+        "nuclear",
+        "semiconductors"
+      ],
+      "escalation": "Attach dated, denominator-preserving qualified-output, yield, utilization, concentration, and substitution evidence before any Forge option-value re-solve.",
+      "exact_locator": "forge_world_option_value_scoring.csv:row 3 (capability_id=C02)",
+      "geography": [
+        "India",
+        "global downstream sectors"
+      ],
+      "numeric_ranges": [],
+      "predicate": "qualitative_option_value_candidate",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "QUALITATIVE_OPTION_VALUE_INPUT",
+      "source_urls": [
+        "https://heavyindustries.gov.in/en/cmti"
+      ],
+      "subject": "C02",
+      "text": "Industrial metrology and calibration; Important enabling capability; prioritize only after use-case and qualification evidence are verified.",
+      "units": [],
+      "unknowns": [
+        "U01",
+        "U12"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_option_value_scoring.csv",
+      "artifact_sha256": "48334db1edc9e105972d0ee6dc03106499ca2b8bd363e22d580e3fb36bf59fe7",
+      "caveat": "Ordinal reuse/gap/concentration/substitutability ratings are candidate inputs only; no numeric score, denominator, or investment recommendation is promoted.",
+      "conflicts": [
+        "U08"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [],
+      "entity_candidates": [
+        "C08",
+        "Semiconductor front-end and equipment ecosystem",
+        "semiconductors",
+        "power electronics",
+        "sensors",
+        "communications"
+      ],
+      "escalation": "Attach dated, denominator-preserving qualified-output, yield, utilization, concentration, and substitution evidence before any Forge option-value re-solve.",
+      "exact_locator": "forge_world_option_value_scoring.csv:row 9 (capability_id=C08)",
+      "geography": [
+        "India",
+        "global downstream sectors"
+      ],
+      "numeric_ranges": [],
+      "predicate": "qualitative_option_value_candidate",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "QUALITATIVE_OPTION_VALUE_INPUT",
+      "source_urls": [
+        "https://www.meity.gov.in/static/uploads/2024/07/3f59b825b97a6fb93da21c973ceeaa15.pdf",
+        "https://www.semiconductors.org/strengthening-the-global-semiconductor-supply-chain-in-an-uncertain-era/"
+      ],
+      "subject": "C08",
+      "text": "Semiconductor front-end and equipment ecosystem; Candidate for deep profile; validate qualified throughput and customer approvals before investment.",
+      "units": [],
+      "unknowns": [
+        "U01",
+        "U06",
+        "U07",
+        "U08"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_option_value_scoring.csv",
+      "artifact_sha256": "48334db1edc9e105972d0ee6dc03106499ca2b8bd363e22d580e3fb36bf59fe7",
+      "caveat": "Ordinal reuse/gap/concentration/substitutability ratings are candidate inputs only; no numeric score, denominator, or investment recommendation is promoted.",
+      "conflicts": [],
+      "corpus_id": "manus-07",
+      "dates": [],
+      "entity_candidates": [
+        "C13",
+        "Critical-material refining and recycling",
+        "batteries",
+        "magnets",
+        "wind",
+        "solar"
+      ],
+      "escalation": "Attach dated, denominator-preserving qualified-output, yield, utilization, concentration, and substitution evidence before any Forge option-value re-solve.",
+      "exact_locator": "forge_world_option_value_scoring.csv:row 14 (capability_id=C13)",
+      "geography": [
+        "India",
+        "global downstream sectors"
+      ],
+      "numeric_ranges": [],
+      "predicate": "qualitative_option_value_candidate",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "QUALITATIVE_OPTION_VALUE_INPUT",
+      "source_urls": [
+        "https://www.pib.gov.in/PressNoteDetails.aspx?NoteId=155158&ModuleId=3",
+        "https://www.iea.org/reports/global-critical-minerals-outlook-2025",
+        "https://pubs.usgs.gov/publication/mcs2025"
+      ],
+      "subject": "C13",
+      "text": "Critical-material refining and recycling; Candidate for deep profile; validate qualified throughput and customer approvals before investment.",
+      "units": [],
+      "unknowns": [
+        "U01",
+        "U11"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_dependency_matrix.csv",
+      "artifact_sha256": "d5f124c4cc874d4a713c3312868b5b6a454f50f9540fe71f9f0d779b66692e47",
+      "caveat": "L/M/H/VH are qualitative dependency intensities, not probabilities, market shares, capacity, or production capability.",
+      "conflicts": [
+        "U08"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [],
+      "entity_candidates": [
+        "Semiconductors/electronics",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "escalation": "Compare each dependency with process-specific qualification and facility-level evidence before using it in a scenario.",
+      "exact_locator": "forge_world_dependency_matrix.csv:row 4 (sector=Semiconductors/electronics)",
+      "geography": [
+        "India",
+        "global supply chains"
+      ],
+      "numeric_ranges": [],
+      "predicate": "qualitative_dependency_intensity",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "QUALITATIVE_DEPENDENCY_MATRIX",
+      "source_urls": [],
+      "subject": "Semiconductors/electronics",
+      "text": "C01=H; C02=H; C03=M; C04=L; C05=M; C06=H; C07=VH; C08=VH; C09=H; C10=M; C11=H; C12=VH; C13=M",
+      "units": [],
+      "unknowns": [
+        "U06",
+        "U07",
+        "U08"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "caveat": "External relation and evidence labels remain staging candidates; a named product, programme, facility, or engineering relationship is not qualified capacity or supply.",
+      "conflicts": [
+        "U02"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "C01",
+        "MTAR Technologies India"
+      ],
+      "escalation": "Resolve the linked unknown ledger item with dated, product-class and qualification-scoped evidence before canonical graph insertion.",
+      "exact_locator": "forge_world_structured_relationships.csv:row 43",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 7,
+          "min": 7,
+          "text": "7 m length",
+          "unit": "m"
+        },
+        {
+          "max": 100,
+          "min": 10,
+          "text": "10–100 mm diameter",
+          "unit": "mm"
+        }
+      ],
+      "predicate": "named_capability_evidence",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "REPORTED",
+      "source_urls": [],
+      "subject": "C01",
+      "text": "Official product page states manufacture of aerospace and space ball/roller screws, up to 7 m length and 10–100 mm diameter; annual qualified throughput is not stated.",
+      "units": [
+        "m",
+        "mm"
+      ],
+      "unknowns": [
+        "U01",
+        "U02"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "caveat": "External relation and evidence labels remain staging candidates; a named product, programme, facility, or engineering relationship is not qualified capacity or supply.",
+      "conflicts": [],
+      "corpus_id": "manus-07",
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "C02",
+        "aerospace"
+      ],
+      "escalation": "Resolve the linked unknown ledger item with dated, product-class and qualification-scoped evidence before canonical graph insertion.",
+      "exact_locator": "forge_world_structured_relationships.csv:row 9",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [],
+      "predicate": "qualifies_or_verifies",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "ENGINEERING KNOWLEDGE",
+      "source_urls": [],
+      "subject": "C02",
+      "text": "Traceable measurement/calibration and machine/process verification are prerequisites for tolerances and acceptance.",
+      "units": [],
+      "unknowns": []
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "caveat": "External relation and evidence labels remain staging candidates; a named product, programme, facility, or engineering relationship is not qualified capacity or supply.",
+      "conflicts": [
+        "U05"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [
+        "2026-07-24"
+      ],
+      "entity_candidates": [
+        "C04",
+        "nuclear"
+      ],
+      "escalation": "Resolve the linked unknown ledger item with dated, product-class and qualification-scoped evidence before canonical graph insertion.",
+      "exact_locator": "forge_world_structured_relationships.csv:row 21",
+      "geography": [
+        "global",
+        "sector-specific"
+      ],
+      "numeric_ranges": [],
+      "predicate": "enables",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "ENGINEERING KNOWLEDGE",
+      "source_urls": [],
+      "subject": "C04",
+      "text": "Large pressure-bearing or rotating parts may require very large presses, ingots, controlled forging, heat treatment, and NDT.",
+      "units": [],
+      "unknowns": [
+        "U01",
+        "U05"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "caveat": "External relation and evidence labels remain staging candidates; a named product, programme, facility, or engineering relationship is not qualified capacity or supply.",
+      "conflicts": [
+        "U05"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [
+        "2026-07-24"
+      ],
+      "entity_candidates": [
+        "C04",
+        "Japan Steel Works and other heavy-forging firms"
+      ],
+      "escalation": "Resolve the linked unknown ledger item with dated, product-class and qualification-scoped evidence before canonical graph insertion.",
+      "exact_locator": "forge_world_structured_relationships.csv:row 46",
+      "geography": [
+        "global",
+        "sector-specific"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 15000,
+          "min": 14000,
+          "text": "14,000–15,000 tonne press class",
+          "unit": "tonne"
+        },
+        {
+          "max": 600,
+          "min": 500,
+          "text": "500–600 tonne ingot",
+          "unit": "tonne"
+        }
+      ],
+      "predicate": "global_scale_evidence",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "REPORTED",
+      "source_urls": [],
+      "subject": "C04",
+      "text": "WNA reports 14,000–15,000 tonne press class and 500–600 tonne ingot requirements for very large Gen III+ reactor pressure vessels; current available slots remain unknown.",
+      "units": [
+        "tonne"
+      ],
+      "unknowns": [
+        "U01",
+        "U05"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "caveat": "External relation and evidence labels remain staging candidates; a named product, programme, facility, or engineering relationship is not qualified capacity or supply.",
+      "conflicts": [
+        "U08"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [
+        "2024-08-31"
+      ],
+      "entity_candidates": [
+        "C08",
+        "India semiconductor ecosystem"
+      ],
+      "escalation": "Resolve the linked unknown ledger item with dated, product-class and qualification-scoped evidence before canonical graph insertion.",
+      "exact_locator": "forge_world_structured_relationships.csv:row 47",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 1,
+          "min": 1,
+          "text": "one approved fab application",
+          "unit": "approved fab application"
+        },
+        {
+          "max": 1,
+          "min": 1,
+          "text": "one ATMP",
+          "unit": "ATMP"
+        },
+        {
+          "max": 2,
+          "min": 2,
+          "text": "two OSAT applications",
+          "unit": "OSAT applications"
+        },
+        {
+          "max": 13,
+          "min": 13,
+          "text": "thirteen design-linked applications",
+          "unit": "design-linked applications"
+        }
+      ],
+      "predicate": "india_programme_evidence",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "REPORTED",
+      "source_urls": [],
+      "subject": "C08",
+      "text": "MeitY August 2024 report lists one approved fab application, one ATMP, two OSAT applications, thirteen design-linked applications, and SCL modernization consultancy; operational yield/output not established.",
+      "units": [
+        "applications"
+      ],
+      "unknowns": [
+        "U01",
+        "U06",
+        "U07",
+        "U08"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "caveat": "External relation and evidence labels remain staging candidates; a named product, programme, facility, or engineering relationship is not qualified capacity or supply.",
+      "conflicts": [
+        "U04"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "C10",
+        "BHEL India"
+      ],
+      "escalation": "Resolve the linked unknown ledger item with dated, product-class and qualification-scoped evidence before canonical graph insertion.",
+      "exact_locator": "forge_world_structured_relationships.csv:row 48",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 1200,
+          "min": 1200,
+          "text": "1200 kV",
+          "unit": "kV"
+        },
+        {
+          "max": 333,
+          "min": 333,
+          "text": "333 MVA",
+          "unit": "MVA"
+        }
+      ],
+      "predicate": "demonstrated_product_evidence",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "REPORTED",
+      "source_urls": [],
+      "subject": "C10",
+      "text": "Official page reports a 1200 kV, 333 MVA UHVAC transformer developed, manufactured, tested, and commissioned, and separately reports aggregate transformer/reactor capacity; repeatability by voltage class is unknown.",
+      "units": [
+        "kV",
+        "MVA"
+      ],
+      "unknowns": [
+        "U01",
+        "U04",
+        "U10"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "caveat": "External relation and evidence labels remain staging candidates; a named product, programme, facility, or engineering relationship is not qualified capacity or supply.",
+      "conflicts": [],
+      "corpus_id": "manus-07",
+      "dates": [
+        "2025-09-06"
+      ],
+      "entity_candidates": [
+        "C13",
+        "India NCMM"
+      ],
+      "escalation": "Resolve the linked unknown ledger item with dated, product-class and qualification-scoped evidence before canonical graph insertion.",
+      "exact_locator": "forge_world_structured_relationships.csv:row 49",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 1500,
+          "min": 1500,
+          "text": "₹1,500 crore",
+          "unit": "crore INR"
+        }
+      ],
+      "predicate": "policy_programme_evidence",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "REPORTED",
+      "source_urls": [],
+      "subject": "C13",
+      "text": "PIB explainer states exploration, processing, recycling, R&D, seven CoEs, ₹1,500 crore recycling incentive, and targets for patents/projects; implementation and qualified industrial output are unknown.",
+      "units": [
+        "crore INR"
+      ],
+      "unknowns": [
+        "U01",
+        "U11"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "caveat": "External relation and evidence labels remain staging candidates; a named product, programme, facility, or engineering relationship is not qualified capacity or supply.",
+      "conflicts": [],
+      "corpus_id": "manus-07",
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "C07",
+        "Global battery and semiconductor supply chains"
+      ],
+      "escalation": "Resolve the linked unknown ledger item with dated, product-class and qualification-scoped evidence before canonical graph insertion.",
+      "exact_locator": "forge_world_structured_relationships.csv:row 50",
+      "geography": [
+        "global",
+        "sector-specific"
+      ],
+      "numeric_ranges": [],
+      "predicate": "world_state_evidence",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "REPORTED",
+      "source_urls": [],
+      "subject": "C07",
+      "text": "IEA/SIA sources document concentration, capacity/demand distinctions, and risks; they do not directly establish India’s qualified high-purity chemical tonnage.",
+      "units": [],
+      "unknowns": [
+        "U01",
+        "U06",
+        "U07"
+      ]
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+      "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+      "caveat": "Synthesis and signed ledger pointer are retained as corpus evidence; the signed external ledger was not fetched in this bounded no-web job.",
+      "conflicts": [],
+      "corpus_id": "manus-07",
+      "dates": [],
+      "entity_candidates": "MTAR ",
+      "escalation": "Open the signed source ledger and bind each synthesis statement to primary evidence, date, geography, and denominator.",
+      "exact_locator": "$.results[0].output.synthesis",
+      "geography": [],
+      "numeric_ranges": [],
+      "predicate": "workstream_synthesis",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "PARALLEL_WORKSTREAM_SYNTHESIS",
+      "source_urls": [
+        "https://private-us-east-1.manuscdn.com/sessionFile/lUOnteVSaXBBudkFvHlOir/sandbox/SSW1PtNtONfx4NjTMilK2m_1787536970413_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbFVPbnRlVlNhWEJCdWRrRnZIbE9pci9zYW5kYm94L1NTVzFQdE50T05meDROalRNaWxLMm1fMTc4NzUzNjk3MDQxM19uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQCu1DZHmlCskPcVw32O7C9JSu60W3wiss6Og17d9OnSDgIhAIjbQkuIDOCrV6FSnkxtJIuG~V2XftI0W~eA5990Qz8b"
+      ],
+      "subject": "Precision motion, bearings, ball screws, gears, reducers, grinding, and industrial metrology.",
+      "text": "### 1. Capability Definitions and Boundaries\nPrecision motion is defined by the conversion of energy into movement with sub-micron accuracy and high repeatability. **Ball screws** are rotary-to-linear devices governed by **ISO 3408**, with accuracy classes ranging from **C0 (highest)** to **C10** [Steinmeyer]. **Bearings** are friction-reduction components defined by **ISO 492** (P2, P4, P5, P6 classes). **Gears and Reducers** (Harmonic and Cycloidal) provide high-torque, zero-backlash transmission for robotics, with gear accuracy measured by **DIN 3962 (Grades 1-4 for ultra-precision)** [BD Gears]. **Industrial Metrology** serves as the qualification boundary, utilizing laser interferometry and Coordinate Measuring Machines (CMM) to verify tolerances below 0.1 µm.\n\n### 2. Technical and Infrastructure Prerequisites\nQualified capability requires a strictly controlled environment: **MEASURED** facilities at India's **CMTI** utilize underground labs (6m depth) with monolithic anti-vibration blocks maintaining **20°±0.5°C** and vibration levels **<0.2 µm** [CMTI]. Material prerequisites include **GCr15 (AISI 52100/100Cr6)** high-carbon chrome steel for bearings and specialized flexspline alloys for harmonic drives. Machine prerequisites center on **CNC ultra-precision grinding** (e.g., Studer S41, Makino iQ300) and **diamond turning**. Skill prerequisites involve advanced lapping and sub-micron metrology calibration [Makino].\n\n### 3. Downstream Sectors and Cross-Sector Reuse\nMajor downstream sectors include **Aerospace (actuators)**, **Robotics (joints)**, **Semiconductors (wafer stages)**, and **Medical Devices (surgical robots)**. **REPORTED** cross-sector reuse is technically genuine for basic mechanical principles but often **superficial** due to specialized requirements: aerospace components require **AS9100** certification and vacuum-stable lubricants, whereas industrial robotics prioritize **torque density** and **zero-backlash** over weight [Steinmeyer].\n\n### 4. Global and Indian Landscape\n**Global Leaders**: **NSK**, **SKF**, and **THK** dominate bearings and ball screws; **Harmonic Drive Systems** and **Nabtesco** control the robotic reducer market [Spherical Insights].\n**Indian Landscape**: **MTAR Technologies** is the **MEASURED** sole manufacturer of ball screws in India, achieving **C1 accuracy** [MTAR]. **NRB Bearings** recently acquired **Mahant Tool Room (Aug 2026)** to deepen its **AS9100D-certified** aerospace capability [Bearing News]. **SKF India** is investing **$72M** in a \"Factory of the Future\" in Pune (Feb 2026) [Bearing News].\n\n### 5. Constraints and Sovereignty Analysis\n**Constraints**: Lead times for custom **C0/C1 ball screws** are **ESTIMATED** at **12-24 weeks**, though standard items have 3-5 day ship programs [NSK]. Bottlenecks include the supply of high-precision ceramic balls and specialized lubricants, which faced **REPORTED** shortages in early 2026 [Lubes'N'Greases].\n**Sovereignty**: India faces a **MEASURED** total gap in the domestic manufacturing of **harmonic and cycloidal reducers**, creating a critical dependency on Japan (Harmonic Drive/Nabtesco). Furthermore, India relies heavily on **Swiss and Japanese imports** for the ultra-precision grinding machines required to achieve C1/C0 tolerances [SourceReady].\n\n### 6. India Maturity and Gaps\n**Maturity**: India is mature in **C1-C3 ball screws** (MTAR) and aerospace-grade needle bearings (NRB). **Gaps**: There is a significant gap in **ultra-precision reducers** for humanoid robotics, despite the launch of domestic humanoids like **Addverb** and **Daksha Gen 2 (Feb 2026)**, which likely rely on imported gearboxes [Analytics India]. India's demand for Swiss precision tools surged **9.4%** in 2026, indicating a growing but dependent ecosystem [SourceReady].\n\n### 7. Uncertainties and UNKNOWNs\n- **UNKNOWN**: The domestic yield rate for C0-grade ball screws in India; current evidence only confirms C1 capability.\n- **CONFLICTED**: The degree to which Indian \"aerospace\" bearings use domestic vs. imported steel (Mukand vs. Ovako).\n- **UNKNOWN**: The specific domestic source for high-precision robotic lubricants, as global supply chains remain volatile.\n",
+      "units": [],
+      "unknowns": "1. Ex"
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+      "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+      "caveat": "Synthesis and signed ledger pointer are retained as corpus evidence; the signed external ledger was not fetched in this bounded no-web job.",
+      "conflicts": [],
+      "corpus_id": "manus-07",
+      "dates": [],
+      "entity_candidates": "Sodiu",
+      "escalation": "Open the signed source ledger and bind each synthesis statement to primary evidence, date, geography, and denominator.",
+      "exact_locator": "$.results[9].output.synthesis",
+      "geography": [],
+      "numeric_ranges": [],
+      "predicate": "workstream_synthesis",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "PARALLEL_WORKSTREAM_SYNTHESIS",
+      "source_urls": [
+        "https://private-us-east-1.manuscdn.com/sessionFile/pIUwZnfGYYu27UD8E7j21J/sandbox/2vHsRb9nBh9Oxp3FmidnGt_1787536854889_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcElVd1puZkdZWXUyN1VEOEU3ajIxSi9zYW5kYm94LzJ2SHNSYjluQmg5T3hwM0ZtaWRuR3RfMTc4NzUzNjg1NDg4OV9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQDMsfm93wfiydgOBZNLlRZWTtw6nChbJAkpXwSsqQca0wIhAOZzzfi65phjc3e8ZctlqUd3vAXejTVb7ul8uEnYAR7Q"
+      ],
+      "subject": "Transportation, batteries/EV, solar/wind, construction equipment, industrial machinery, and consumer manufacturing as downstream dependency cross-checks.",
+      "text": "### Industrial Electrification and Heavy Machinery: Capability Synthesis\n\n#### 1. Capability Definitions and Boundaries\nThe **Industrial Electrification** stream encompasses the integrated production of energy generation (Solar PV, Wind Turbines), energy storage (Lithium-ion, Sodium-ion batteries), and electrified consumption/work (Electric Vehicles, Electric Construction Machinery). The boundaries are defined by the transition from internal combustion and fossil-fuel heating to high-efficiency electric powertrains and electrochemical storage. This includes the manufacturing of core components such as battery cells, solar modules, wind magnets, and high-torque electric motors.\n\n#### 2. Prerequisites: Process, Material, and Infrastructure\nManufacturing in this stream requires high-purity **critical minerals**, including Lithium, Cobalt, Nickel, and Manganese for batteries [3], and Silicon and Silver for solar PV [4]. Key **machinery** includes high-precision slurry mixers, electrode coating machines (slot-die), calendering rolls for density control, and large-scale **Gigapresses** for automotive structural casting [5]. **Metrology** and qualification are governed by standards such as **AIS-156** (India) for battery safety [6] and **IEC 61215** for solar module durability. **Infrastructure** prerequisites include high-voltage grid connections for factory testing and specialized port facilities for heavy machinery exports.\n\n#### 3. Downstream Sectors and Cross-Sector Reuse\nDocumented reuse is high between EV batteries and **Grid Storage (BESS)**, where second-life batteries provide peak shaving [7]. **Industrial machinery** like CNC welding and precision machining are shared prerequisites between heavy equipment (excavators) and consumer manufacturing (appliances) [9]. Common **power electronics**, specifically inverters and BMS (Battery Management Systems), serve as cross-sector dependencies for both solar installations and EV charging networks [10].\n\n#### 4. Global and Indian Landscape\n**Global Leaders:** China dominates the landscape, accounting for **80% of global battery production** in 2025 [3] and **46% of raw mineral processing** [10]. Key firms include CATL, BYD (Batteries/EV), and LONGi (Solar).\n**India Maturity:** India has reached a **100 GW solar module capacity** milestone (MEASURED) [4]. However, battery cell manufacturing remains a gap; while 178 GWh has been announced, only **1.4 GWh was commissioned** by late 2025 (REPORTED) [2]. Major players include **Reliance New Energy** (40 GWh target), **Ola Electric** (5 GWh Phase 1), and **Tata AutoComp** [1, 2].\n\n#### 5. Constraints and Substitution Analysis\n**Constraints:** Supply chain concentration in China remains the primary bottleneck (SOVEREIGNTY). Lead times for new gigafactories average 24-36 months from announcement to qualified output (ESTIMATED).\n**Substitution:** **Sodium-ion batteries** are emerging as a viable low-cost substitute for LFP in grid storage by 2026 (MODELLED) [7]. **Perovskite-Silicon tandem cells** have achieved **34.85% efficiency** (MEASURED), potentially substituting traditional monocrystalline silicon in high-efficiency applications [8].\n\n#### 6. India Maturity and Gaps\nIndia's maturity is high in **downstream assembly** (modules, vehicle assembly) but low in **upstream cell fabrication** and mineral refining (GAPS). The PLI scheme aims for 50 GWh by 2026, but current delivery is only **2.8% of the target** (MEASURED) [2]. The reuse of EV tech in construction equipment is in the \"pilot\" stage, with the market reaching **USD 553 million in 2025** (ESTIMATED) [9].\n\n#### 7. Assessment of Reuse Genuineness\nTechnically, the reuse of battery modules in second-life applications is **GENUINE** but limited by the lack of standardized health-monitoring data (BMS data silos). Cross-sector machinery reuse (e.g., using automotive presses for industrial parts) is **SUPERFICIAL** without significant re-tooling.\n\n#### 8. Unknowns and Conflicts\nThe actual **yield rates** of Indian gigafactories are UNKNOWN due to proprietary data. Conflicts exist regarding the **environmental impact** of deep-sea mining for battery minerals versus land-based extraction (CONFLICTED). The denominator for \"domestic value addition\" in PLI claims is often opaque (SCOPE PROBLEM).",
+      "units": [],
+      "unknowns": "1. **"
+    },
+    {
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md",
+      "artifact_sha256": "866558a25765b5ed3ee738b800f5d2baac7e1d148aa34880150af34fc343278c",
+      "caveat": "The package explicitly warns against multiplying ordinal scores; this is a provisional class, not a Forge score or promotion.",
+      "conflicts": [
+        "U02",
+        "U12"
+      ],
+      "corpus_id": "manus-07",
+      "dates": [
+        "2026-08-25"
+      ],
+      "entity_candidates": [
+        "C01",
+        "C02",
+        "C06",
+        "C12"
+      ],
+      "escalation": "Use Forge option-value architecture only after measured re-solves with evidenced objective packs and qualified-output denominators.",
+      "exact_locator": "FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md:line 340 table (4 rows)",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [],
+      "predicate": "provisional_option_value_class",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "MARKDOWN_QUALITATIVE_SYNTHESIS",
+      "source_urls": [
+        "https://heavyindustries.gov.in/en/heavy-engineering-and-machine-tool",
+        "https://heavyindustries.gov.in/en/cmti",
+        "https://www.meity.gov.in/static/uploads/2024/07/3f59b825b97a6fb93da21c973ceeaa15.pdf",
+        "https://www.iea.org/reports/global-ev-outlook-2025/electric-vehicle-batteries",
+        "https://mtar.in/ball-screws-roller-screws/",
+        "https://midhani-india.in/hyderabad-unit/",
+        "https://www.bhel.com/bhel-developed-indias-first-ultra-high-voltage-ac-1200-kv-transformer-successfully-commissioned",
+        "https://www.pib.gov.in/PressNoteDetails.aspx?NoteId=155158&ModuleId=3",
+        "https://heavyindustries.gov.in/en/scheme-enhancement-competitiveness-indian-capital-goods-sector-phase-i",
+        "https://world-nuclear.org/information-library/nuclear-power-reactors/other/heavy-manufacturing-of-power-plants",
+        "https://store-na.thk.com/Industry",
+        "https://www.iea.org/reports/global-critical-minerals-outlook-2025",
+        "https://pubs.usgs.gov/publication/mcs2025",
+        "https://www-pub.iaea.org/MTCD/publications/PDF/p15953-PUB2139_web.pdf",
+        "https://www.semiconductors.org/strengthening-the-global-semiconductor-supply-chain-in-an-uncertain-era/",
+        "https://www.ncbi.nlm.nih.gov/books/NBK581381/?report=printable",
+        "https://pubsonline.informs.org/doi/abs/10.1287/orsc.12.6.744.10082"
+      ],
+      "subject": "C02/C06/C12/C01 qualitative class A",
+      "text": "**A — horizontal and low-regret** | C02 metrology; C06 NDT; C12 traceability/process control; selected C01 precision motion | Broad reuse, lower irreversibility, direct spillovers, and ability to unlock other capabilities",
+      "units": [],
+      "unknowns": [
+        "U01",
+        "U02",
+        "U12"
+      ]
+    }
+  ],
+  "code_modified": false,
+  "corpus_id": "manus-07",
+  "escalation_packets": [
+    {
+      "blocker": "No facility-level qualified annual throughput, yield, utilization, or available capacity denominator.",
+      "evidence_locator": "forge_world_unknown_conflict_ledger.csv:row 2",
+      "packet_id": "E01",
+      "promotion_status": "NONE",
+      "required_evidence": "Audited or customer-qualified output by product class, grade, period, facility, acceptance status, and utilization.",
+      "subject": "all high-end capability families",
+      "unknown_ids": [
+        "U01"
+      ]
+    },
+    {
+      "blocker": "Product-envelope evidence does not establish C0/C1 yield, imported machine/tooling share, or bearing-steel provenance.",
+      "evidence_locator": "forge_world_unknown_conflict_ledger.csv:row 3; forge_world_structured_relationships.csv:row 44",
+      "packet_id": "E02",
+      "promotion_status": "NONE",
+      "required_evidence": "Supplier audit, material heats/certificates, process route, acceptance and rejection data, and customer qualification scope.",
+      "subject": "C01 precision motion and bearing systems",
+      "unknown_ids": [
+        "U02"
+      ]
+    },
+    {
+      "blocker": "Facility process list does not establish qualified tonnage or aerospace/nuclear customer approval.",
+      "evidence_locator": "forge_world_unknown_conflict_ledger.csv:row 4; forge_world_structured_relationships.csv:row 46",
+      "packet_id": "E03",
+      "promotion_status": "NONE",
+      "required_evidence": "Annual qualified tonnes, yield, lot rejection, product grades, route, and customer approval records.",
+      "subject": "C03 special alloys and process metallurgy",
+      "unknown_ids": [
+        "U03"
+      ]
+    },
+    {
+      "blocker": "Historical press/ingot scale evidence does not establish current open slots or Indian qualification scope.",
+      "evidence_locator": "forge_world_unknown_conflict_ledger.csv:row 6; forge_world_structured_relationships.csv:row 47",
+      "packet_id": "E04",
+      "promotion_status": "NONE",
+      "required_evidence": "Current facility confirmation, press utilization, ingot route, code scope, qualified slot book, and delivery cadence.",
+      "subject": "C04 ultra-large forgings and heavy forming",
+      "unknown_ids": [
+        "U05"
+      ]
+    },
+    {
+      "blocker": "Programme/design evidence does not establish fab/OSAT yield, accepted high-purity tonnage, WBG device yield, or domestic content.",
+      "evidence_locator": "forge_world_unknown_conflict_ledger.csv:rows 7-9; forge_world_structured_relationships.csv:rows 48 and 51",
+      "packet_id": "E05",
+      "promotion_status": "NONE",
+      "required_evidence": "Fab or supplier qualification records, first-silicon/device yield, uptime, accepted volumes, impurity specifications, tool/material BOM, and reliability grade.",
+      "subject": "C07/C08/C09 high-purity, semiconductor, and power-electronics ecosystem",
+      "unknown_ids": [
+        "U06",
+        "U07",
+        "U08"
+      ]
+    }
+  ],
+  "generated_for": "FORGE WORLD HOMI Wave 4 corpus conditioning",
+  "guardrails": {
+    "cross_sector_reuse_does_not_equate_sector_qualification": true,
+    "external_relations_are_mapping_candidates_only": true,
+    "facility_presence_is_not_qualified_capability": true,
+    "nameplate_or_policy_is_not_effective_qualified_capacity": true,
+    "qualitative_option_value_is_not_a_score": true,
+    "shadow_identities_created": 0,
+    "unknown_stays_unknown": true
+  },
+  "inventory": {
+    "claims": {
+      "dependency_matrix_qualitative_links": 169,
+      "dependency_matrix_sector_rows": 13,
+      "markdown_candidate_rows_not_counted_again": 8,
+      "markdown_ranking_rows_not_counted_again": 4,
+      "markdown_spillover_rows_not_counted_again": 6,
+      "markdown_synthesis_rows_excluded_from_structured_claim_total": 18,
+      "non_deduplicated_structured_claim_records": 254,
+      "parallel_workstream_synthesis_rows": 10,
+      "qualitative_option_value_rating_cells": 52,
+      "qualitative_option_value_rows": 13,
+      "structured_relationship_rows": 50,
+      "unknown_conflict_rows": 12
+    },
+    "conflicts": {
+      "conflicted_ids": [
+        "U02",
+        "U04",
+        "U05",
+        "U08",
+        "U12"
+      ],
+      "rows_with_CONFLICTED_status": 5
+    },
+    "duplicates": {
+      "duplicate_claims": 0,
+      "exact_duplicate_artifact_hashes": 0,
+      "exact_duplicate_structured_rows_by_csv": {
+        "forge_world_dependency_matrix.csv": 0,
+        "forge_world_option_value_scoring.csv": 0,
+        "forge_world_structured_relationships.csv": 0,
+        "forge_world_unknown_conflict_ledger.csv": 0
+      }
+    },
+    "entities": {
+      "capability_family_count": 13,
+      "capability_family_ids": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "named_or_programme_targets": [
+        "BHEL India",
+        "CMTI India",
+        "Global battery and semiconductor supply chains",
+        "India NCMM",
+        "India semiconductor ecosystem",
+        "Japan Steel Works and other heavy-forging firms",
+        "MIDHANI Hyderabad India",
+        "MTAR Technologies India"
+      ],
+      "relation_target_entity_count": 36,
+      "sector_entity_count": 13,
+      "unique_casefolded_entity_surface_forms": 69
+    },
+    "malformed": {
+      "raw_csv_rows": 0,
+      "repaired_in_memory_rows": 0,
+      "unrepaired_rows": 0
+    },
+    "option_value_claims": {
+      "numeric_scores_computed": 0,
+      "numeric_scores_promoted": 0,
+      "provisional_ranking_rows_in_markdown": 4,
+      "qualitative_candidate_rows": 13,
+      "qualitative_rating_cells": 52,
+      "qualitative_rating_dimensions": [
+        "cross_sector_reuse",
+        "india_gap_pressure",
+        "strategic_concentration",
+        "substitutability"
+      ]
+    },
+    "relations": {
+      "allowed_edge_review": {
+        "demonstrated_product_evidence": {
+          "ambiguity": "A demonstrated product does not establish repeatability, class-specific capacity, or available slots.",
+          "candidate_edges": [
+            "derived_from"
+          ]
+        },
+        "enables": {
+          "ambiguity": "Engineering enablement is not necessarily a canonical support edge without a typed product/process scope.",
+          "candidate_edges": [
+            "supports"
+          ]
+        },
+        "global_scale_evidence": {
+          "ambiguity": "Global evidence is provenance, not an India facility or supply assertion.",
+          "candidate_edges": [
+            "derived_from"
+          ]
+        },
+        "india_programme_evidence": {
+          "ambiguity": "Programme or approval evidence does not establish operating yield or accepted output.",
+          "candidate_edges": [
+            "derived_from"
+          ]
+        },
+        "integrity_assurance": {
+          "ambiguity": "NDT/integrity assurance is not equivalent to a nuclear-specific qualification family.",
+          "candidate_edges": [
+            "requires_qualification"
+          ]
+        },
+        "materials_enabler": {
+          "ambiguity": "The relation may denote an input material, an upstream process capability, or both; leave unresolved.",
+          "candidate_edges": [
+            "requires_input",
+            "requires_capability"
+          ]
+        },
+        "named_capability_evidence": {
+          "ambiguity": "Evidence provenance only; named capability is not canonical qualified output.",
+          "candidate_edges": [
+            "derived_from"
+          ]
+        },
+        "named_infrastructure_evidence": {
+          "ambiguity": "Infrastructure presence does not establish service coverage, throughput, or qualification.",
+          "candidate_edges": [
+            "derived_from"
+          ]
+        },
+        "policy_programme_evidence": {
+          "ambiguity": "Policy target is not operating industrial output.",
+          "candidate_edges": [
+            "derived_from"
+          ]
+        },
+        "qualifies_or_verifies": {
+          "ambiguity": "Verification evidence does not establish that every target requires the same qualification scope.",
+          "candidate_edges": [
+            "requires_qualification"
+          ]
+        },
+        "world_state_evidence": {
+          "ambiguity": "World-state context does not establish Indian qualified high-purity supply.",
+          "candidate_edges": [
+            "derived_from"
+          ]
+        }
+      },
+      "canonical_relation_promotions": 0,
+      "relation_type_counts": {
+        "demonstrated_product_evidence": 1,
+        "enables": 24,
+        "global_scale_evidence": 1,
+        "india_programme_evidence": 1,
+        "integrity_assurance": 6,
+        "materials_enabler": 5,
+        "named_capability_evidence": 2,
+        "named_infrastructure_evidence": 1,
+        "policy_programme_evidence": 1,
+        "qualifies_or_verifies": 7,
+        "world_state_evidence": 1
+      },
+      "rows": 50
+    },
+    "sector_links": {
+      "matrix_capability_columns": 13,
+      "matrix_qualitative_links": 169,
+      "matrix_sector_rows": 13,
+      "relation_type_counts": {
+        "demonstrated_product_evidence": 1,
+        "enables": 24,
+        "global_scale_evidence": 1,
+        "india_programme_evidence": 1,
+        "integrity_assurance": 6,
+        "materials_enabler": 5,
+        "named_capability_evidence": 2,
+        "named_infrastructure_evidence": 1,
+        "policy_programme_evidence": 1,
+        "qualifies_or_verifies": 7,
+        "world_state_evidence": 1
+      },
+      "structured_relation_rows": 50
+    },
+    "skipped": [
+      {
+        "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\build_forge_data.py",
+        "reason": "Source-generation code was inventoried but not executed; execution is outside bounded evidence conditioning."
+      }
+    ],
+    "sources": {
+      "all_included_text_unique_urls": 126,
+      "all_included_text_url_occurrences": 146,
+      "main_package_reference_urls": 17,
+      "signed_source_ledger_pointers": 10,
+      "source_ledger_records": [
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[0].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:01",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/lUOnteVSaXBBudkFvHlOir/sandbox/SSW1PtNtONfx4NjTMilK2m_1787536970413_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbFVPbnRlVlNhWEJCdWRrRnZIbE9pci9zYW5kYm94L1NTVzFQdE50T05meDROalRNaWxLMm1fMTc4NzUzNjk3MDQxM19uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQCu1DZHmlCskPcVw32O7C9JSu60W3wiss6Og17d9OnSDgIhAIjbQkuIDOCrV6FSnkxtJIuG~V2XftI0W~eA5990Qz8b"
+        },
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[1].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:02",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/nEg9tZRpCMjxUbz4wN4HBC/sandbox/sqI02vdp4WDaCP9cNve7nh_1787536881105_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbkVnOXRaUnBDTWp4VWJ6NHdONEhCQy9zYW5kYm94L3NxSTAydmRwNFdEYUNQOWNOdmU3bmhfMTc4NzUzNjg4MTEwNV9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIE8CaZ9~wpip5bOkWnMIQ-RyierueU7n2kSoyTpdvCkeAiBmphthgelad~ySxU9VjeaTFPyd3FFT1dq7ho8owIzESg__"
+        },
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[2].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:03",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/t39CveGGPZzG52JP2hVoOL/sandbox/BBs0FKV13LpFKvtKkkZGak_1787536883518_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvdDM5Q3ZlR0dQWnpHNTJKUDJoVm9PTC9zYW5kYm94L0JCczBGS1YxM0xwRkt2dEtra1pHYWtfMTc4NzUzNjg4MzUxOF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIEmiZ3mDrNVuKgQzTlkDyWPyefTPPgInXI-hIbc3IQ2HAiBfciE6WAtZSC9xNOykS21AcJBMBot9ACo0N-7bndHPEg__"
+        },
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[3].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:04",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/Yv6g2kQ1BKp6jYKNAdcnon/sandbox/UUY9EFJNmJV5gg9RQUmkPe_1787536849935_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWXY2ZzJrUTFCS3A2allLTkFkY25vbi9zYW5kYm94L1VVWTlFRkpObUpWNWdnOVJRVW1rUGVfMTc4NzUzNjg0OTkzNV9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIDvmFrgsQnUwPteWOd0I2b7P5l~sNsHjy4i8QFvwf3M5AiBewlV9~~ZXJSIPORCBbIQExJi4xwOjolei5tEuq2jW~A__"
+        },
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[4].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:05",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/Yv4ab5scEU8P0RjgnzW3er/sandbox/8FMzIGpyDKcvZ9EQwBpob2_1787536845419_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWXY0YWI1c2NFVThQMFJqZ256VzNlci9zYW5kYm94LzhGTXpJR3B5REtjdlo5RVF3QnBvYjJfMTc4NzUzNjg0NTQxOV9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIQD-ikeh7ZWCvsM7D2Al4hJf0cSkgzJwo3zwDhUPnwQHGgIgQ85pk4eVbet0f4722ap2golnXoV4eYcl~nLhryfTOo4_"
+        },
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[5].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:06",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/jpXrttwWWr5WPWYWMqNLtd/sandbox/PVsYfUIhOzs7WSuMtSXMD7_1787536872054_na1fn_L2hvbWUvdWJ1bnR1L3NlbWljb25kdWN0b3Jfc291cmNlX2xlZGdlcg.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvanBYcnR0d1dXcjVXUFdZV01xTkx0ZC9zYW5kYm94L1BWc1lmVUloT3pzN1dTdU10U1hNRDdfMTc4NzUzNjg3MjA1NF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNObGJXbGpiMjVrZFdOMGIzSmZjMjkxY21ObFgyeGxaR2RsY2cubWQiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODk0MzA0MDB9fX1dfQ__&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIGH6EqnHdMevjf3p~gzPAgIQPPq8PcRzFv0iukMysfDSAiEAp-ccHQ3~Urtp38BWh2cmqMV6pTO3s3puLcAmq-XJ3ww_"
+        },
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[6].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:07",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/aOnUavkDnrtLxr7Wo0MokY/sandbox/UmiWxY2xhOB4Y79qUVHtiC_1787536854975_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvYU9uVWF2a0RucnRMeHI3V28wTW9rWS9zYW5kYm94L1VtaVd4WTJ4aE9CNFk3OXFVVkh0aUNfMTc4NzUzNjg1NDk3NV9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQCMHYfc6yr9oePL6f2KDUMhfL~FsThIigk-FgJrHIGTvwIhALPLjCArs0ZD4FBTy68nVFrB7LeOunnvAa88D5iNQ8Mj"
+        },
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[7].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:08",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/mlZziskrL2QwZt6nkjsQzQ/sandbox/8LX0mRJ1uNI5AqfvLV02qB_1787536839034_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbWxaemlza3JMMlF3WnQ2bmtqc1F6US9zYW5kYm94LzhMWDBtUkoxdU5JNUFxZnZMVjAycUJfMTc4NzUzNjgzOTAzNF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIHWWbvsnySg2Bv7G935ipEVJoGjc3IG4M~Ut-xZkrinjAiB3bLdP-1hb-i3Tn4bSp9TYe~cAKLPR9RB4dv6XrK89MQ__"
+        },
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[8].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:09",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/dhqf47FORK0UICkDMjgtGY/sandbox/3IqS7xvQ6Dd9fcH45KJEea_1787536914884_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZGhxZjQ3Rk9SSzBVSUNrRE1qZ3RHWS9zYW5kYm94LzNJcVM3eHZRNkRkOWZjSDQ1S0pFZWFfMTc4NzUzNjkxNDg4NF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIBlNl7yqKMFRNq-TjZc0XIFMtf1NOQwVlwN9t5igLStsAiBmQpZnT-wmXDQeDQkh0qwmoC4k-Zqe1p2Fk50bJul7lA__"
+        },
+        {
+          "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_capability_research.json",
+          "artifact_sha256": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "exact_locator": "$.results[9].output.source_ledger",
+          "promotion_status": "STAGING_ONLY",
+          "retrieved_in_this_job": false,
+          "source_class": "signed_source_ledger_pointer",
+          "source_id": "manus07:workstream:10",
+          "source_url": "https://private-us-east-1.manuscdn.com/sessionFile/pIUwZnfGYYu27UD8E7j21J/sandbox/2vHsRb9nBh9Oxp3FmidnGt_1787536854889_na1fn_L2hvbWUvdWJ1bnR1L3NvdXJjZV9sZWRnZXI.md?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcElVd1puZkdZWXUyN1VEOEU3ajIxSi9zYW5kYm94LzJ2SHNSYjluQmg5T3hwM0ZtaWRuR3RfMTc4NzUzNjg1NDg4OV9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOdmRYSmpaVjlzWldSblpYSS5tZCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQDMsfm93wfiydgOBZNLlRZWTtw6nChbJAkpXwSsqQca0wIhAOZzzfi65phjc3e8ZctlqUd3vAXejTVb7ul8uEnYAR7Q"
+        }
+      ],
+      "source_reference_records": 58,
+      "structured_relationship_source_labels": 14,
+      "validated_findings_reference_urls": 17
+    },
+    "unknowns": {
+      "explicit_rows": 12,
+      "ids": [
+        "U01",
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U08",
+        "U09",
+        "U10",
+        "U11",
+        "U12"
+      ],
+      "status_counts": {
+        "SCENARIO/UNKNOWN": 1,
+        "UNKNOWN": 6,
+        "UNKNOWN/CONFLICTED": 5
+      }
+    }
+  },
+  "option_value_architecture": {
+    "allowed_edges_from_forge_model": [
+      "affected_by_shock",
+      "competes_for",
+      "consumes_energy",
+      "consumes_water",
+      "contradicts",
+      "decomposes_into",
+      "derived_from",
+      "enabled_by_project",
+      "gated_by",
+      "has_capacity",
+      "licensed_from",
+      "located_at",
+      "operated_by",
+      "owned_by",
+      "produced_via",
+      "recurses_into",
+      "requires_capability",
+      "requires_equipment",
+      "requires_input",
+      "requires_qualification",
+      "requires_tool",
+      "satisfies_function",
+      "substitutable_with",
+      "supersedes",
+      "supplied_by",
+      "supports",
+      "transported_via"
+    ],
+    "architecture_semantics": [
+      "forge.optionvalue evaluates CapabilityInvestment candidates against objective packs and returns modelled option deltas with explicit assumptions.",
+      "forge.optionreport measures within-pack relief using real re-solves per evidenced investment/objective.",
+      "Cross-pack capability sharing/true portfolio synergy is documented as not yet wired into scoring; this report does not create a second scoring engine.",
+      "No Manus ordinal rating is converted into a numeric score or promoted to canonical option value."
+    ],
+    "existing_forge_architecture_refs": [
+      {
+        "bytes": 4580,
+        "path": "C:\\GitHub\\forge-world\\forge\\optionvalue.py",
+        "read_only": true,
+        "role": "existing Forge option-value portfolio architecture",
+        "sha256": "a4bd8fb220501942f089934f2b81e758f21d5cff7984cfb1eaaa30d31421a5ce"
+      },
+      {
+        "bytes": 5436,
+        "path": "C:\\GitHub\\forge-world\\forge\\optionreport.py",
+        "read_only": true,
+        "role": "existing Forge per-objective re-solve option report",
+        "sha256": "b7ddddc1ad7378ded0586f07e8fe562c8c98fb6c2e64ce3cf43e2b8f391eb82c"
+      },
+      {
+        "bytes": 17058,
+        "path": "C:\\GitHub\\forge-world\\forge\\model.py",
+        "read_only": true,
+        "role": "Forge relation ontology and ALLOWED_EDGES",
+        "sha256": "3c0d037bb7d8ca95a0afb8f00756a48222b68fb9ed467b3f17779337c55462ab"
+      },
+      {
+        "bytes": 3717,
+        "path": "C:\\GitHub\\forge-world\\docs\\PROJECT_STATUS.md",
+        "read_only": true,
+        "role": "Forge status and known option-value architecture gap",
+        "sha256": "70cc6c664bb3a2eccac91d9b3dc8cf2a7b33dad091817b7570f8edd3a49d8298"
+      }
+    ],
+    "external_candidate_inputs": [
+      {
+        "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_option_value_scoring.csv",
+        "rows": 13,
+        "semantics": "ordinal qualitative candidate ratings; not a numeric score",
+        "sha256": "48334db1edc9e105972d0ee6dc03106499ca2b8bd363e22d580e3fb36bf59fe7"
+      },
+      {
+        "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_dependency_matrix.csv",
+        "links": 169,
+        "rows": 13,
+        "semantics": "qualitative dependency intensity; not probability or capacity",
+        "sha256": "d5f124c4cc874d4a713c3312868b5b6a454f50f9540fe71f9f0d779b66692e47"
+      }
+    ],
+    "numeric_option_value_promotions": 0,
+    "relation_mapping_candidates_only": {
+      "demonstrated_product_evidence": {
+        "ambiguity": "A demonstrated product does not establish repeatability, class-specific capacity, or available slots.",
+        "candidate_edges": [
+          "derived_from"
+        ]
+      },
+      "enables": {
+        "ambiguity": "Engineering enablement is not necessarily a canonical support edge without a typed product/process scope.",
+        "candidate_edges": [
+          "supports"
+        ]
+      },
+      "global_scale_evidence": {
+        "ambiguity": "Global evidence is provenance, not an India facility or supply assertion.",
+        "candidate_edges": [
+          "derived_from"
+        ]
+      },
+      "india_programme_evidence": {
+        "ambiguity": "Programme or approval evidence does not establish operating yield or accepted output.",
+        "candidate_edges": [
+          "derived_from"
+        ]
+      },
+      "integrity_assurance": {
+        "ambiguity": "NDT/integrity assurance is not equivalent to a nuclear-specific qualification family.",
+        "candidate_edges": [
+          "requires_qualification"
+        ]
+      },
+      "materials_enabler": {
+        "ambiguity": "The relation may denote an input material, an upstream process capability, or both; leave unresolved.",
+        "candidate_edges": [
+          "requires_input",
+          "requires_capability"
+        ]
+      },
+      "named_capability_evidence": {
+        "ambiguity": "Evidence provenance only; named capability is not canonical qualified output.",
+        "candidate_edges": [
+          "derived_from"
+        ]
+      },
+      "named_infrastructure_evidence": {
+        "ambiguity": "Infrastructure presence does not establish service coverage, throughput, or qualification.",
+        "candidate_edges": [
+          "derived_from"
+        ]
+      },
+      "policy_programme_evidence": {
+        "ambiguity": "Policy target is not operating industrial output.",
+        "candidate_edges": [
+          "derived_from"
+        ]
+      },
+      "qualifies_or_verifies": {
+        "ambiguity": "Verification evidence does not establish that every target requires the same qualification scope.",
+        "candidate_edges": [
+          "requires_qualification"
+        ]
+      },
+      "world_state_evidence": {
+        "ambiguity": "World-state context does not establish Indian qualified high-purity supply.",
+        "candidate_edges": [
+          "derived_from"
+        ]
+      }
+    },
+    "second_scoring_engine_created": false
+  },
+  "option_value_numeric_promotion": "NONE",
+  "raw_vault_immutable": true,
+  "relation_candidate_samples": [
+    {
+      "ambiguity": "A demonstrated product does not establish repeatability, class-specific capacity, or available slots.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "derived_from"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type demonstrated_product_evidence",
+      "external_relation_type": "demonstrated_product_evidence",
+      "observed_row_count": 1,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "Engineering enablement is not necessarily a canonical support edge without a typed product/process scope.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "supports"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type enables",
+      "external_relation_type": "enables",
+      "observed_row_count": 24,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "Global evidence is provenance, not an India facility or supply assertion.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "derived_from"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type global_scale_evidence",
+      "external_relation_type": "global_scale_evidence",
+      "observed_row_count": 1,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "Programme or approval evidence does not establish operating yield or accepted output.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "derived_from"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type india_programme_evidence",
+      "external_relation_type": "india_programme_evidence",
+      "observed_row_count": 1,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "NDT/integrity assurance is not equivalent to a nuclear-specific qualification family.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "requires_qualification"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type integrity_assurance",
+      "external_relation_type": "integrity_assurance",
+      "observed_row_count": 6,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "The relation may denote an input material, an upstream process capability, or both; leave unresolved.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "requires_input",
+        "requires_capability"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type materials_enabler",
+      "external_relation_type": "materials_enabler",
+      "observed_row_count": 5,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "Evidence provenance only; named capability is not canonical qualified output.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "derived_from"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type named_capability_evidence",
+      "external_relation_type": "named_capability_evidence",
+      "observed_row_count": 2,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "Infrastructure presence does not establish service coverage, throughput, or qualification.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "derived_from"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type named_infrastructure_evidence",
+      "external_relation_type": "named_infrastructure_evidence",
+      "observed_row_count": 1,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "Policy target is not operating industrial output.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "derived_from"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type policy_programme_evidence",
+      "external_relation_type": "policy_programme_evidence",
+      "observed_row_count": 1,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "Verification evidence does not establish that every target requires the same qualification scope.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "requires_qualification"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type qualifies_or_verifies",
+      "external_relation_type": "qualifies_or_verifies",
+      "observed_row_count": 7,
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "ambiguity": "World-state context does not establish Indian qualified high-purity supply.",
+      "artifact": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07\\forge_world_structured_relationships.csv",
+      "artifact_sha256": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+      "candidate_allowed_edges": [
+        "derived_from"
+      ],
+      "exact_locator": "forge_world_structured_relationships.csv:rows of relation type world_state_evidence",
+      "external_relation_type": "world_state_evidence",
+      "observed_row_count": 1,
+      "promotion_status": "STAGING_ONLY"
+    }
+  ],
+  "relation_promotion": "NONE",
+  "repair_metadata": {
+    "conditioned_repairs": [],
+    "malformed_samples": [],
+    "parser_mode": "strict read-only UTF-8/UTF-8-SIG and CSV row-length validation",
+    "raw_files_edited": 0,
+    "raw_malformed_rows": 0,
+    "repaired_in_memory_rows": 0,
+    "unrepaired_rows": 0
+  },
+  "report_kind": "cross_sector_foundational_capability_option_value_staging",
+  "report_schema_version": "homi-wave4-manus07.v1",
+  "report_scope": "Bounded evidence-preserving Wave 4 staging/integration job for Manus07. It inventories cross-sector capability families, sector links, qualitative option-value inputs, relations, and unknown/conflict evidence without canonical promotion.",
+  "schemas": {
+    "csv": {
+      "forge_world_dependency_matrix.csv": {
+        "column_count": 14,
+        "data_row_count": 13,
+        "format": "CSV",
+        "header": [
+          "sector",
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13"
+        ],
+        "malformed_rows": [],
+        "parse_errors": [],
+        "row_length_counts": {
+          "14": 13
+        }
+      },
+      "forge_world_option_value_scoring.csv": {
+        "column_count": 10,
+        "data_row_count": 13,
+        "format": "CSV",
+        "header": [
+          "capability_id",
+          "capability",
+          "exact_boundary",
+          "downstream_sectors",
+          "cross_sector_reuse",
+          "india_gap_pressure",
+          "strategic_concentration",
+          "substitutability",
+          "evidence_basis",
+          "interpretation"
+        ],
+        "malformed_rows": [],
+        "parse_errors": [],
+        "row_length_counts": {
+          "10": 13
+        }
+      },
+      "forge_world_structured_relationships.csv": {
+        "column_count": 8,
+        "data_row_count": 50,
+        "format": "CSV",
+        "header": [
+          "capability_id",
+          "relationship",
+          "target",
+          "evidence_type",
+          "supporting_statement",
+          "source",
+          "as_of_date",
+          "status"
+        ],
+        "malformed_rows": [],
+        "parse_errors": [],
+        "row_length_counts": {
+          "8": 50
+        }
+      },
+      "forge_world_unknown_conflict_ledger.csv": {
+        "column_count": 6,
+        "data_row_count": 12,
+        "format": "CSV",
+        "header": [
+          "unknown_id",
+          "scope",
+          "question",
+          "status",
+          "why_unresolved",
+          "next_research_action"
+        ],
+        "malformed_rows": [],
+        "parse_errors": [],
+        "row_length_counts": {
+          "6": 12
+        }
+      }
+    },
+    "json": {
+      "format": "JSON",
+      "parse_errors": [],
+      "result_row_keys": [
+        "error",
+        "input",
+        "output"
+      ],
+      "results_row_count": 10,
+      "top_level_keys": [
+        "results"
+      ],
+      "top_level_type": "dict"
+    },
+    "markdown": {
+      "main_package": {
+        "artifact": "FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md",
+        "tables": [
+          {
+            "header": [
+              "Candidate capability",
+              "Why it recurs",
+              "India evidence",
+              "Main caution",
+              "Provisional option-value view"
+            ],
+            "header_locator": 23,
+            "row_count": 8,
+            "rows_preview": [
+              [
+                "Industrial metrology and calibration",
+                "Converts physical production into measurable, certifiable production across almost every high-integrity sector",
+                "CMTI lists NABL calibration, laser interferometry, machine qualification, aerospace tests, and materials testing [2]",
+                "Institutional service capability does not equal national coverage or commercial throughput",
+                "**Very high horizontal value; low-regret enabling infrastructure**"
+              ],
+              [
+                "NDT and material-integrity assurance",
+                "Required for forgings, welds, pressure boundaries, aircraft structures, rail, grid equipment, and life-cycle safety",
+                "CMTI and nuclear sources support the need; India-wide qualified capacity is not publicly consolidated [2] [10]",
+                "Method qualification, personnel certification, and sector-specific acceptance criteria matter",
+                "**Very high; build as a network, not just a lab**"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Layer",
+              "Capability nodes",
+              "Typical prerequisite types",
+              "Main value created"
+            ],
+            "header_locator": 52,
+            "row_count": 6,
+            "rows_preview": [
+              [
+                "**A. Measurement and integrity**",
+                "C02 Industrial metrology and calibration; C06 NDT and material-integrity assurance",
+                "Traceable standards, calibrated instruments, certified personnel, procedures, reference artefacts",
+                "Converts process output into accepted, auditable quality"
+              ],
+              [
+                "**B. Precision motion and actuation**",
+                "C01 Precision motion and bearing systems; part of C09 drives and controls",
+                "Bearing steel, grinding/lapping, screw/guide manufacture, servo control, lubrication, environmental control",
+                "Enables accuracy, repeatability, load transfer, and automation"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Sector",
+              "C01",
+              "C02",
+              "C03",
+              "C04",
+              "C05",
+              "C06",
+              "C07",
+              "C08",
+              "C09",
+              "C10",
+              "C11",
+              "C12",
+              "C13"
+            ],
+            "header_locator": 65,
+            "row_count": 13,
+            "rows_preview": [
+              [
+                "Machine tools",
+                "H",
+                "H",
+                "M",
+                "L",
+                "M",
+                "M",
+                "L",
+                "M",
+                "H",
+                "M",
+                "H",
+                "H",
+                "L"
+              ],
+              [
+                "Robotics/humanoids",
+                "H",
+                "H",
+                "M",
+                "L",
+                "M",
+                "M",
+                "L",
+                "M",
+                "H",
+                "M",
+                "M",
+                "M",
+                "L"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Capability",
+              "Global representative nodes",
+              "India representative nodes",
+              "Evidence state"
+            ],
+            "header_locator": 211,
+            "row_count": 10,
+            "rows_preview": [
+              [
+                "Precision motion",
+                "THK, SKF, NSK, Harmonic Drive Systems, Nabtesco",
+                "MTAR; CMTI; Indian machine-tool and bearing firms require subcategory audit",
+                "THK documents multi-sector application reuse [11]; MTAR documents product scope [5]; qualified throughput UNKNOWN"
+              ],
+              [
+                "Metrology/calibration",
+                "NIST, PTB, national institutes, accredited OEM and commercial labs",
+                "CMTI; NPL and accredited laboratories should be mapped by discipline",
+                "CMTI official page documents calibration, laser interferometry, machine qualification, and tests [2]"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Dimension",
+              "Question",
+              "Evidence requirement",
+              "Suggested scale"
+            ],
+            "header_locator": 320,
+            "row_count": 9,
+            "rows_preview": [
+              [
+                "Path breadth",
+                "How many distinct downstream product families depend on it?",
+                "Dependency records with technical rationale",
+                "Low / medium / high / very high"
+              ],
+              [
+                "Path diversity",
+                "Are the paths in genuinely different sectors or merely variants of one product?",
+                "Sector and process comparison",
+                "Low / medium / high"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Class",
+              "Capabilities",
+              "Reasoning"
+            ],
+            "header_locator": 340,
+            "row_count": 4,
+            "rows_preview": [
+              [
+                "**A — horizontal and low-regret**",
+                "C02 metrology; C06 NDT; C12 traceability/process control; selected C01 precision motion",
+                "Broad reuse, lower irreversibility, direct spillovers, and ability to unlock other capabilities"
+              ],
+              [
+                "**B — horizontal but input/qualification intensive**",
+                "C03 special materials; C07 high-purity environment; C09 power electronics/controls; C10 heavy electrical/HV test",
+                "Large downstream breadth, but materials, capital, qualification, and reliability constraints are material"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Spillover",
+              "Evidence",
+              "Why it is genuine",
+              "Limitation"
+            ],
+            "header_locator": 368,
+            "row_count": 6,
+            "rows_preview": [
+              [
+                "Precision linear motion from machine tools to semiconductors, robotics, medical, aerospace, additive, and warehouse automation",
+                "THK’s official industry page lists these sectors and application requirements [11]",
+                "Shared motion physics, component families, precision manufacturing, and metrology",
+                "Cleanliness, load, shock, life, and customer qualification differ"
+              ],
+              [
+                "Metrology from machine-tool qualification to aerospace, materials, and nanomanufacturing",
+                "CMTI lists machine qualification, calibration, laser interferometry, aerospace tests, materials testing, and nanomanufacturing [2]",
+                "Shared traceability and uncertainty logic",
+                "Institutional capability does not prove national commercial coverage"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "ID",
+              "Unknown/conflict",
+              "Why it matters",
+              "Exact next question"
+            ],
+            "header_locator": 381,
+            "row_count": 12,
+            "rows_preview": [
+              [
+                "U01",
+                "Qualified annual throughput, yield, uptime, and available capacity for high-end Indian facilities",
+                "Determines whether a capability is usable now or only exists nominally",
+                "For each facility, what was accepted output by product class, grade, customer, and month over the last 24 months?"
+              ],
+              [
+                "U02",
+                "C0/C1 motion yield, imported machine/tooling share, bearing-steel provenance",
+                "Distinguishes product assembly from sovereign precision capability",
+                "Which machine models, material heats, process steps, rejection causes, and customer certificates support each accuracy class?"
+              ]
+            ]
+          },
+          {
+            "header": [
+              "Field group",
+              "Required fields"
+            ],
+            "header_locator": 406,
+            "row_count": 10,
+            "rows_preview": [
+              [
+                "Identity",
+                "capability_id, canonical_name, aliases, parent_layer, version"
+              ],
+              [
+                "Definition",
+                "exact boundary, included processes, excluded processes, engineering rationale"
+              ]
+            ]
+          }
+        ]
+      },
+      "validated_findings": {
+        "format": "Markdown",
+        "line_count": 110,
+        "parse_errors": [],
+        "table_count": 0,
+        "table_summaries": [],
+        "unique_urls": 17,
+        "url_occurrences": 18
+      }
+    },
+    "source_url_inventory_by_artifact": {
+      "FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md": {
+        "occurrences": 17,
+        "unique": 17
+      },
+      "Parallel Research Stream Syntheses.md": {
+        "occurrences": 0,
+        "unique": 0
+      },
+      "Validated Findings — Initial Browser Review.md": {
+        "occurrences": 18,
+        "unique": 17
+      },
+      "forge_world_capability_research.json": {
+        "occurrences": 10,
+        "unique": 10
+      },
+      "forge_world_dependency_matrix.csv": {
+        "occurrences": 0,
+        "unique": 0
+      },
+      "forge_world_option_value_scoring.csv": {
+        "occurrences": 0,
+        "unique": 0
+      },
+      "forge_world_research_scope.md": {
+        "occurrences": 0,
+        "unique": 0
+      },
+      "forge_world_structured_relationships.csv": {
+        "occurrences": 0,
+        "unique": 0
+      },
+      "forge_world_unknown_conflict_ledger.csv": {
+        "occurrences": 0,
+        "unique": 0
+      },
+      "parallel_ledger_index.txt": {
+        "occurrences": 101,
+        "unique": 100
+      },
+      "pasted_content.txt": {
+        "occurrences": 0,
+        "unique": 0
+      }
+    }
+  },
+  "scope": {
+    "excluded_actions": [
+      "external web retrieval",
+      "raw vault edits",
+      "canonical registry edits",
+      "code execution from build_forge_data.py",
+      "numeric option-value scoring",
+      "canonical graph insertion"
+    ],
+    "included_extracted_root": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-07",
+    "included_manifest": "C:\\FORGE-RESEARCH-CORPUS\\manus\\_meta\\manus_corpus_manifest.csv",
+    "included_raw_zip": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\How to Conduct Thorough Research and Analysis.zip",
+    "method": "Deterministic manifest lookup, SHA-256 hashing, ZIP-member byte comparison, UTF-8/JSON/CSV/Markdown parsing, bounded claim samples, relation mapping review, and read-only canonical/Forge architecture comparison.",
+    "raw_vault_modified": false
+  },
+  "source_manifest_mapping": {
+    "manifest_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\_meta\\manus_corpus_manifest.csv",
+    "manifest_row": {
+      "CorpusID": "manus-07",
+      "FileCount": "12",
+      "OriginalZip": "How to Conduct Thorough Research and Analysis.zip",
+      "Status": "OK"
+    },
+    "raw_zip_bytes": 303974,
+    "raw_zip_sha256": "7d490d85d26970a3247ea9238ef802c11e0ff1af7eac091f4ff2f38a2b6dab8c"
+  },
+  "validation": {
+    "artifact_hash_and_zip_parity": "PASS",
+    "canonical_registry_edited": false,
+    "code_edited": false,
+    "csv_row_shape_validation": "PASS",
+    "json_tool": "PASS",
+    "raw_vault_edited": false
+  },
+  "verified_theme": "Cross-Sector Foundational Capability and Industrial Option Value",
+  "zip_comparison": {
+    "all_entries_verified": true,
+    "byte_hash_mismatches": [],
+    "expected_manifest_file_count": 12,
+    "hash_byte_matches": 12,
+    "missing_extracted_entries": [],
+    "observed_extracted_files": 12,
+    "observed_raw_zip_file_entries": 12,
+    "unexpected_extracted_entries": [],
+    "zip_entry_names_sorted": [
+      "FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md",
+      "Parallel Research Stream Syntheses.md",
+      "Validated Findings — Initial Browser Review.md",
+      "build_forge_data.py",
+      "forge_world_capability_research.json",
+      "forge_world_dependency_matrix.csv",
+      "forge_world_option_value_scoring.csv",
+      "forge_world_research_scope.md",
+      "forge_world_structured_relationships.csv",
+      "forge_world_unknown_conflict_ledger.csv",
+      "parallel_ledger_index.txt",
+      "pasted_content.txt"
+    ]
+  }
+}
