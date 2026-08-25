@@ -3,6 +3,8 @@
 **Status:** Current canonical operating vision for the India-first phase of FORGE WORLD  
 **Decision date:** 2026-08-25  
 **Supersedes for current execution:** `docs/FORGE_INDIA_OPERATING_VISION.md` as the more complete operating statement  
+**Canonical supplement:** `docs/FORGE_INDIA_HARD_RECALL_CLOSURE.md` — mandatory recovered FORGE WORLD mechanisms that materially affect industrial realism  
+**Canonical index:** `docs/FORGE_INDIA_CANONICAL_INDEX.md`  
 **Does not replace:** `docs/FORGE_WORLD_NORTH_STAR.md`
 
 ---
