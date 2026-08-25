@@ -1,0 +1,2355 @@
+{
+  "schema_version": "forge_world.homi.wave2.manus06.trade_dependency_report.v1",
+  "report_identity": {
+    "observed_manus": "manus-06",
+    "campaign_expected_manus": 16,
+    "theme": "Global Trade, Import Dependency, and Supply-Chain Dependency Graph",
+    "campaign_mapping_preserved": true
+  },
+  "source_boundaries": {
+    "raw_vault_immutable": true,
+    "no_web": true,
+    "no_source_edits": true,
+    "scripts_not_executed": [
+      "compute_india_dependencies.py",
+      "plot_india_dependencies.py"
+    ],
+    "canonical_promotions": 0
+  },
+  "trade_epistemic_gate": {
+    "trade_observation_can_support": [
+      "IMPORTS_FROM",
+      "EXPORTS_TO",
+      "TRADE_PROXY_ONLY",
+      "candidate DEPENDS_ON_COUNTRY after denominator review",
+      "REEXPORTS_VIA/origin hypotheses with metadata"
+    ],
+    "trade_observation_cannot_support": [
+      "production capability",
+      "qualified supply",
+      "nameplate or available capacity",
+      "qualified throughput",
+      "DVA/value-added share",
+      "product grade or end use",
+      "country of origin through a re-export hub"
+    ],
+    "required_scope_fields": [
+      "reporter",
+      "partner/origin distinction",
+      "flow",
+      "HS revision/code",
+      "period/year",
+      "product proxy",
+      "unit/value",
+      "world denominator",
+      "coverage ratio",
+      "country-of-origin treatment"
+    ],
+    "all_trade_claim_samples_status": "TRADE_PROXY_ONLY_STAGING"
+  },
+  "corpus_accounting": {
+    "manifest": {
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\_meta\\manus_corpus_manifest.csv",
+      "bytes": 1431,
+      "sha256": "5b60e5026abb70a2298baa28d00d190b5b9e434231201f82ff59daaa055b388e",
+      "manus06_row": {
+        "CorpusID": "manus-06",
+        "OriginalZip": "How to Conduct Thorough and Deep Research.zip",
+        "FileCount": "16",
+        "Status": "OK"
+      }
+    },
+    "raw_zip": {
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\How to Conduct Thorough and Deep Research.zip",
+      "bytes": 694449,
+      "sha256": "15fef209a479a7e2b83bc02fa1a7e84849ae2b51fa50bbb91b6143ca0b0c2f86",
+      "entries_total": 16,
+      "file_entries": 16,
+      "directory_entries": 0,
+      "entries": [
+        {
+          "path": "forge_world_research_tracks.json",
+          "bytes": 214147,
+          "compressed_bytes": 214147,
+          "is_directory": false,
+          "sha256": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f"
+        },
+        {
+          "path": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "bytes": 60446,
+          "compressed_bytes": 60446,
+          "is_directory": false,
+          "sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9"
+        },
+        {
+          "path": "FORGE_WORLD_source_inventory.csv",
+          "bytes": 4808,
+          "compressed_bytes": 4808,
+          "is_directory": false,
+          "sha256": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94"
+        },
+        {
+          "path": "FORGE_WORLD_relationship_proposals.csv",
+          "bytes": 3020,
+          "compressed_bytes": 3020,
+          "is_directory": false,
+          "sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3"
+        },
+        {
+          "path": "india_2024_strategic_dependency_map.csv",
+          "bytes": 2197,
+          "compressed_bytes": 2197,
+          "is_directory": false,
+          "sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f"
+        },
+        {
+          "path": "india_2024_strategic_dependency_map.json",
+          "bytes": 5461,
+          "compressed_bytes": 5461,
+          "is_directory": false,
+          "sha256": "7167ced726cb239119b534b358dacc35384c6b906f8e30737257a4e9a43ff180"
+        },
+        {
+          "path": "india_2024_strategic_china_share_hhi.png",
+          "bytes": 325197,
+          "compressed_bytes": 325197,
+          "is_directory": false,
+          "sha256": "e983560d90031fe8d261d77b6bd75371525e3f72d66b47fbb51ec5c0fe1c256a"
+        },
+        {
+          "path": "track_14.md",
+          "bytes": 14899,
+          "compressed_bytes": 14899,
+          "is_directory": false,
+          "sha256": "64e0fdd77e2df9c98c23a0d633130a1d71f45d3defee158a2b51f8d05764b25c"
+        },
+        {
+          "path": "track_13.md",
+          "bytes": 14397,
+          "compressed_bytes": 14397,
+          "is_directory": false,
+          "sha256": "31dc198bcc47e58385d14b34ca919b7b614c1f04b57e01e6dca609e24b12b723"
+        },
+        {
+          "path": "plot_india_dependencies.py",
+          "bytes": 1673,
+          "compressed_bytes": 1673,
+          "is_directory": false,
+          "sha256": "d29de76c43cad9b4d92d7f06583db740790b8f9b283d9831169b1b09dde87f98"
+        },
+        {
+          "path": "forge_world_research_notes.md",
+          "bytes": 15526,
+          "compressed_bytes": 15526,
+          "is_directory": false,
+          "sha256": "1758d2fd21e4b7c2e067b2658bf0914276e9dd190c50f35a0fceafc834daab1d"
+        },
+        {
+          "path": "track_03.md",
+          "bytes": 13488,
+          "compressed_bytes": 13488,
+          "is_directory": false,
+          "sha256": "8e19e85012e787b05944ebde79758a8b31b800e4c78b589c7b2420a499917ef1"
+        },
+        {
+          "path": "compute_india_dependencies.py",
+          "bytes": 3846,
+          "compressed_bytes": 3846,
+          "is_directory": false,
+          "sha256": "26006279f1640a6948a1e3771872d7502ead119da2d7c917cafcb038c214ab70"
+        },
+        {
+          "path": "index.tsv",
+          "bytes": 3154,
+          "compressed_bytes": 3154,
+          "is_directory": false,
+          "sha256": "759099b2ac6a2764b034902227bce4df03b276a3a5d5384cc28b55e5478f1c65"
+        },
+        {
+          "path": "forge_world_research_scope.md",
+          "bytes": 5189,
+          "compressed_bytes": 5189,
+          "is_directory": false,
+          "sha256": "84a118ad30a7af2bc17d94e873b33c894443255d06910c2d0aa1a68cd1618b33"
+        },
+        {
+          "path": "pasted_content.txt",
+          "bytes": 4629,
+          "compressed_bytes": 4629,
+          "is_directory": false,
+          "sha256": "b42a4d59acedfe5052b735717fb1c597b5cc74d1665b6cc68196a708bca14c39"
+        }
+      ]
+    },
+    "extracted_root": {
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06",
+      "file_count": 16,
+      "artifacts": [
+        {
+          "path": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "bytes": 60446,
+          "sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "format": "md",
+          "line_count": 493,
+          "url_occurrences": 18,
+          "raw_zip_entry": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "raw_zip_bytes": 60446,
+          "raw_zip_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "FORGE_WORLD_relationship_proposals.csv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\FORGE_WORLD_relationship_proposals.csv",
+          "bytes": 3020,
+          "sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "format": "csv",
+          "line_count": 21,
+          "url_occurrences": 0,
+          "raw_zip_entry": "FORGE_WORLD_relationship_proposals.csv",
+          "raw_zip_bytes": 3020,
+          "raw_zip_sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "FORGE_WORLD_source_inventory.csv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\FORGE_WORLD_source_inventory.csv",
+          "bytes": 4808,
+          "sha256": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94",
+          "format": "csv",
+          "line_count": 18,
+          "url_occurrences": 17,
+          "raw_zip_entry": "FORGE_WORLD_source_inventory.csv",
+          "raw_zip_bytes": 4808,
+          "raw_zip_sha256": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "compute_india_dependencies.py",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\compute_india_dependencies.py",
+          "bytes": 3846,
+          "sha256": "26006279f1640a6948a1e3771872d7502ead119da2d7c917cafcb038c214ab70",
+          "format": "py",
+          "line_count": 98,
+          "url_occurrences": 1,
+          "raw_zip_entry": "compute_india_dependencies.py",
+          "raw_zip_bytes": 3846,
+          "raw_zip_sha256": "26006279f1640a6948a1e3771872d7502ead119da2d7c917cafcb038c214ab70",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "forge_world_research_notes.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\forge_world_research_notes.md",
+          "bytes": 15526,
+          "sha256": "1758d2fd21e4b7c2e067b2658bf0914276e9dd190c50f35a0fceafc834daab1d",
+          "format": "md",
+          "line_count": 180,
+          "url_occurrences": 14,
+          "raw_zip_entry": "forge_world_research_notes.md",
+          "raw_zip_bytes": 15526,
+          "raw_zip_sha256": "1758d2fd21e4b7c2e067b2658bf0914276e9dd190c50f35a0fceafc834daab1d",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "forge_world_research_scope.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\forge_world_research_scope.md",
+          "bytes": 5189,
+          "sha256": "84a118ad30a7af2bc17d94e873b33c894443255d06910c2d0aa1a68cd1618b33",
+          "format": "md",
+          "line_count": 76,
+          "url_occurrences": 0,
+          "raw_zip_entry": "forge_world_research_scope.md",
+          "raw_zip_bytes": 5189,
+          "raw_zip_sha256": "84a118ad30a7af2bc17d94e873b33c894443255d06910c2d0aa1a68cd1618b33",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "forge_world_research_tracks.json",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\forge_world_research_tracks.json",
+          "bytes": 214147,
+          "sha256": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f",
+          "format": "json",
+          "line_count": 144,
+          "url_occurrences": 141,
+          "raw_zip_entry": "forge_world_research_tracks.json",
+          "raw_zip_bytes": 214147,
+          "raw_zip_sha256": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "index.tsv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\index.tsv",
+          "bytes": 3154,
+          "sha256": "759099b2ac6a2764b034902227bce4df03b276a3a5d5384cc28b55e5478f1c65",
+          "format": "tsv",
+          "line_count": 14,
+          "url_occurrences": 0,
+          "raw_zip_entry": "index.tsv",
+          "raw_zip_bytes": 3154,
+          "raw_zip_sha256": "759099b2ac6a2764b034902227bce4df03b276a3a5d5384cc28b55e5478f1c65",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "india_2024_strategic_china_share_hhi.png",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\india_2024_strategic_china_share_hhi.png",
+          "bytes": 325197,
+          "sha256": "e983560d90031fe8d261d77b6bd75371525e3f72d66b47fbb51ec5c0fe1c256a",
+          "format": "png",
+          "line_count": 6886,
+          "url_occurrences": 1,
+          "raw_zip_entry": "india_2024_strategic_china_share_hhi.png",
+          "raw_zip_bytes": 325197,
+          "raw_zip_sha256": "e983560d90031fe8d261d77b6bd75371525e3f72d66b47fbb51ec5c0fe1c256a",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "india_2024_strategic_dependency_map.csv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\india_2024_strategic_dependency_map.csv",
+          "bytes": 2197,
+          "sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "format": "csv",
+          "line_count": 12,
+          "url_occurrences": 0,
+          "raw_zip_entry": "india_2024_strategic_dependency_map.csv",
+          "raw_zip_bytes": 2197,
+          "raw_zip_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "india_2024_strategic_dependency_map.json",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\india_2024_strategic_dependency_map.json",
+          "bytes": 5461,
+          "sha256": "7167ced726cb239119b534b358dacc35384c6b906f8e30737257a4e9a43ff180",
+          "format": "json",
+          "line_count": 156,
+          "url_occurrences": 0,
+          "raw_zip_entry": "india_2024_strategic_dependency_map.json",
+          "raw_zip_bytes": 5461,
+          "raw_zip_sha256": "7167ced726cb239119b534b358dacc35384c6b906f8e30737257a4e9a43ff180",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "pasted_content.txt",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\pasted_content.txt",
+          "bytes": 4629,
+          "sha256": "b42a4d59acedfe5052b735717fb1c597b5cc74d1665b6cc68196a708bca14c39",
+          "format": "txt",
+          "line_count": 64,
+          "url_occurrences": 0,
+          "raw_zip_entry": "pasted_content.txt",
+          "raw_zip_bytes": 4629,
+          "raw_zip_sha256": "b42a4d59acedfe5052b735717fb1c597b5cc74d1665b6cc68196a708bca14c39",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "plot_india_dependencies.py",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\plot_india_dependencies.py",
+          "bytes": 1673,
+          "sha256": "d29de76c43cad9b4d92d7f06583db740790b8f9b283d9831169b1b09dde87f98",
+          "format": "py",
+          "line_count": 29,
+          "url_occurrences": 0,
+          "raw_zip_entry": "plot_india_dependencies.py",
+          "raw_zip_bytes": 1673,
+          "raw_zip_sha256": "d29de76c43cad9b4d92d7f06583db740790b8f9b283d9831169b1b09dde87f98",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "track_03.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\track_03.md",
+          "bytes": 13488,
+          "sha256": "8e19e85012e787b05944ebde79758a8b31b800e4c78b589c7b2420a499917ef1",
+          "format": "md",
+          "line_count": 101,
+          "url_occurrences": 0,
+          "raw_zip_entry": "track_03.md",
+          "raw_zip_bytes": 13488,
+          "raw_zip_sha256": "8e19e85012e787b05944ebde79758a8b31b800e4c78b589c7b2420a499917ef1",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "track_13.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\track_13.md",
+          "bytes": 14397,
+          "sha256": "31dc198bcc47e58385d14b34ca919b7b614c1f04b57e01e6dca609e24b12b723",
+          "format": "md",
+          "line_count": 106,
+          "url_occurrences": 0,
+          "raw_zip_entry": "track_13.md",
+          "raw_zip_bytes": 14397,
+          "raw_zip_sha256": "31dc198bcc47e58385d14b34ca919b7b614c1f04b57e01e6dca609e24b12b723",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "track_14.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-06\\track_14.md",
+          "bytes": 14899,
+          "sha256": "64e0fdd77e2df9c98c23a0d633130a1d71f45d3defee158a2b51f8d05764b25c",
+          "format": "md",
+          "line_count": 120,
+          "url_occurrences": 15,
+          "raw_zip_entry": "track_14.md",
+          "raw_zip_bytes": 14899,
+          "raw_zip_sha256": "64e0fdd77e2df9c98c23a0d633130a1d71f45d3defee158a2b51f8d05764b25c",
+          "raw_zip_byte_match": true
+        }
+      ],
+      "all_extracted_files_byte_match_raw_zip": true,
+      "manifest_count_matches": true
+    }
+  },
+  "schema_inventory": {
+    "artifacts": [
+      {
+        "artifact": "FORGE_WORLD_relationship_proposals.csv",
+        "format": "csv",
+        "columns": [
+          "relation",
+          "subject",
+          "object",
+          "default_evidence_state",
+          "minimum_evidence",
+          "notes"
+        ],
+        "data_rows": 20,
+        "row_lengths": {
+          "6": 21
+        },
+        "malformed_rows": 0,
+        "parse_error": null
+      },
+      {
+        "artifact": "FORGE_WORLD_source_inventory.csv",
+        "format": "csv",
+        "columns": [
+          "source_id",
+          "title",
+          "publisher",
+          "url",
+          "publication_or_update_date",
+          "accessed",
+          "evidence_type",
+          "coverage_or_use",
+          "limitations"
+        ],
+        "data_rows": 17,
+        "row_lengths": {
+          "9": 18
+        },
+        "malformed_rows": 0,
+        "parse_error": null
+      },
+      {
+        "artifact": "india_2024_strategic_dependency_map.csv",
+        "format": "csv",
+        "columns": [
+          "hs6",
+          "product_proxy",
+          "world_import_usd",
+          "partner_sum_usd",
+          "china_import_usd",
+          "china_share_pct_of_world",
+          "coverage_ratio_partner_sum_to_world",
+          "partner_count",
+          "hhi_10000_scale",
+          "top5_partners_by_value",
+          "world_rows",
+          "partner_rows"
+        ],
+        "data_rows": 11,
+        "row_lengths": {
+          "12": 12
+        },
+        "malformed_rows": 0,
+        "parse_error": null
+      },
+      {
+        "artifact": "forge_world_research_tracks.json",
+        "format": "json",
+        "top_level": "dict",
+        "keys": [
+          "results"
+        ],
+        "data_rows": 14,
+        "parse_error": null
+      },
+      {
+        "artifact": "india_2024_strategic_dependency_map.json",
+        "format": "json",
+        "top_level": "list",
+        "keys": [],
+        "data_rows": 11,
+        "parse_error": null
+      },
+      {
+        "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+        "format": "markdown",
+        "line_count": 493,
+        "heading_count": 43,
+        "table_count": 9,
+        "table_rows": 93,
+        "parse_error": null
+      },
+      {
+        "artifact": "compute_india_dependencies.py",
+        "format": "py",
+        "line_count": 98,
+        "heading_count": 0,
+        "bytes": 3846,
+        "parse_error": null,
+        "execution": "not_executed"
+      },
+      {
+        "artifact": "forge_world_research_notes.md",
+        "format": "md",
+        "line_count": 180,
+        "heading_count": 19,
+        "bytes": 15526,
+        "parse_error": null,
+        "execution": null
+      },
+      {
+        "artifact": "forge_world_research_scope.md",
+        "format": "md",
+        "line_count": 76,
+        "heading_count": 10,
+        "bytes": 5189,
+        "parse_error": null,
+        "execution": null
+      },
+      {
+        "artifact": "index.tsv",
+        "format": "tsv",
+        "line_count": 14,
+        "heading_count": 0,
+        "bytes": 3154,
+        "parse_error": null,
+        "execution": null
+      },
+      {
+        "artifact": "india_2024_strategic_china_share_hhi.png",
+        "format": "png",
+        "line_count": null,
+        "heading_count": null,
+        "bytes": 325197,
+        "parse_error": null,
+        "execution": null
+      },
+      {
+        "artifact": "pasted_content.txt",
+        "format": "txt",
+        "line_count": 64,
+        "heading_count": 0,
+        "bytes": 4629,
+        "parse_error": null,
+        "execution": null
+      },
+      {
+        "artifact": "plot_india_dependencies.py",
+        "format": "py",
+        "line_count": 29,
+        "heading_count": 0,
+        "bytes": 1673,
+        "parse_error": null,
+        "execution": "not_executed"
+      },
+      {
+        "artifact": "track_03.md",
+        "format": "md",
+        "line_count": 101,
+        "heading_count": 15,
+        "bytes": 13488,
+        "parse_error": null,
+        "execution": null
+      },
+      {
+        "artifact": "track_13.md",
+        "format": "md",
+        "line_count": 106,
+        "heading_count": 16,
+        "bytes": 14397,
+        "parse_error": null,
+        "execution": null
+      },
+      {
+        "artifact": "track_14.md",
+        "format": "md",
+        "line_count": 120,
+        "heading_count": 21,
+        "bytes": 14899,
+        "parse_error": null,
+        "execution": null
+      }
+    ],
+    "track_json_results": 14,
+    "track_json_error_rows": 0,
+    "dependency_csv_json_logical_hs6_match": true,
+    "dependency_csv_rows": 11,
+    "relationship_proposal_rows": 20,
+    "source_inventory_rows": 17,
+    "unknown_ledger_rows": 14
+  },
+  "candidate_counts": {
+    "artifacts": 16,
+    "registered_sources": 17,
+    "track_source_entries": 129,
+    "source_url_candidates": 143,
+    "source_url_occurrences": 206,
+    "claims": {
+      "atlas_table_rows": 93,
+      "dependency_map_rows": 11,
+      "track_findings_evidence_rows": 196,
+      "track_uncertainty_evidence_rows": 75,
+      "bounded_claim_samples": 13
+    },
+    "entities": 11,
+    "relations": 20,
+    "relation_types": 20,
+    "unknown_records": 14,
+    "conflict_records": 4,
+    "conflict_mentions_across_text": 103,
+    "duplicate_artifact_groups": 0,
+    "duplicate_extra_artifacts": 0,
+    "duplicate_structured_records": 0,
+    "malformed_rows": 0,
+    "unrepaired_rows": 0,
+    "skipped_artifacts": 0,
+    "skipped_execution_units": 2,
+    "trade_map_zero_or_null_observations": 1,
+    "trade_map_null_share_observations": 1,
+    "geography_promotions": 0
+  },
+  "trade_map": {
+    "reporter": "India",
+    "reporter_code": "699",
+    "flow": "M imports",
+    "partner_aggregate": "world code 0",
+    "partner_focus": "China code 156",
+    "calendar_year": 2024,
+    "classification": "HS-6 as reported",
+    "values_currency": "current USD",
+    "denominator": "India imports from world for same HS-6/year",
+    "proxy_warning": "Broad HS proxies; grade, end use, origin, production and capability are unresolved",
+    "rows": 11,
+    "samples": [
+      {
+        "claim_id": "clm_manus06_trade_01",
+        "subject": "Processors/controllers (broad semiconductor proxy)",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 854231 Processors/controllers (broad semiconductor proxy): India imports from world $14489625975.08; China $5325437800.68; China share 36.753%; HHI 2808.43; partners 75",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "854231",
+            "min": 854231.0,
+            "max": 854231.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "14489625975.08",
+            "min": 14489625975.08,
+            "max": 14489625975.08,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "5325437800.68",
+            "min": 5325437800.68,
+            "max": 5325437800.68,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "36.753%",
+            "min": 36.753,
+            "max": 36.753,
+            "comparator": "=",
+            "unit": "%"
+          },
+          {
+            "raw": "2808.43",
+            "min": 2808.43,
+            "max": 2808.43,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "75",
+            "min": 75.0,
+            "max": 75.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Processors/controllers (broad semiconductor proxy)"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 2
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "854231",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      },
+      {
+        "claim_id": "clm_manus06_trade_02",
+        "subject": "Lithium-ion accumulators",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 850760 Lithium-ion accumulators: India imports from world $2795936197.84; China $2553179920.84; China share 91.318%; HHI 8352.9; partners 47",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "850760",
+            "min": 850760.0,
+            "max": 850760.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2795936197.84",
+            "min": 2795936197.84,
+            "max": 2795936197.84,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2553179920.84",
+            "min": 2553179920.84,
+            "max": 2553179920.84,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "91.318%",
+            "min": 91.318,
+            "max": 91.318,
+            "comparator": "=",
+            "unit": "%"
+          },
+          {
+            "raw": "8352.9",
+            "min": 8352.9,
+            "max": 8352.9,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "47",
+            "min": 47.0,
+            "max": 47.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Lithium-ion accumulators"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 3
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "850760",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      },
+      {
+        "claim_id": "clm_manus06_trade_03",
+        "subject": "Permanent magnets, metal (broad proxy)",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 850511 Permanent magnets, metal (broad proxy): India imports from world $198566973.15; China $164562345.13; China share 82.875%; HHI 6890.72; partners 52",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "850511",
+            "min": 850511.0,
+            "max": 850511.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "198566973.15",
+            "min": 198566973.15,
+            "max": 198566973.15,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "164562345.13",
+            "min": 164562345.13,
+            "max": 164562345.13,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "82.875%",
+            "min": 82.875,
+            "max": 82.875,
+            "comparator": "=",
+            "unit": "%"
+          },
+          {
+            "raw": "6890.72",
+            "min": 6890.72,
+            "max": 6890.72,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "52",
+            "min": 52.0,
+            "max": 52.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Permanent magnets, metal (broad proxy)"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 4
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "850511",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      },
+      {
+        "claim_id": "clm_manus06_trade_09",
+        "subject": "Aircraft parts (broad proxy)",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 880330 Aircraft parts (broad proxy): India imports from world $0; China $0.0; China share N/A%; HHI N/A; partners 0",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "880330",
+            "min": 880330.0,
+            "max": 880330.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0.0",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Aircraft parts (broad proxy)"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 10
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "880330",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      },
+      {
+        "claim_id": "clm_manus06_trade_11",
+        "subject": "Nuclear reactors and parts",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 840140 Nuclear reactors and parts: India imports from world $460.62; China $0.0; China share 0.0%; HHI 10000.0; partners 1",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "840140",
+            "min": 840140.0,
+            "max": 840140.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "460.62",
+            "min": 460.62,
+            "max": 460.62,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0.0",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0.0%",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": "%"
+          },
+          {
+            "raw": "10000.0",
+            "min": 10000.0,
+            "max": 10000.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "1",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Nuclear reactors and parts"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 12
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "840140",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      }
+    ]
+  },
+  "samples": {
+    "sources": [
+      {
+        "source_id": "S01",
+        "title": "What is the Harmonized System?",
+        "publisher": "World Customs Organization",
+        "url": "https://www.wcoomd.org/en/topics/nomenclature/overview/what-is-the-harmonized-system.aspx",
+        "publication_or_update_date": "unknown",
+        "accessed": "2026-08-24",
+        "evidence_type": "REPORTED",
+        "coverage_or_use": "HS definition hierarchy and international use",
+        "limitations": "Customs/product nomenclature; not capability or qualification",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_source_inventory.csv",
+          "artifact_sha256": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94",
+          "line": 2
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "source_id": "S02",
+        "title": "Classifications on economic statistics",
+        "publisher": "United Nations Statistics Division",
+        "url": "https://unstats.un.org/unsd/classifications/econ",
+        "publication_or_update_date": "2026 portal",
+        "accessed": "2026-08-24",
+        "evidence_type": "REPORTED",
+        "coverage_or_use": "HS SITC BEC CPC ISIC revisions and concordances",
+        "limitations": "Revision and mapping uncertainty; read notes/corrigenda",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_source_inventory.csv",
+          "artifact_sha256": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94",
+          "line": 3
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "source_id": "S05",
+        "title": "The CEPII-BACI dataset",
+        "publisher": "CEPII",
+        "url": "https://www.cepii.fr/DATA_DOWNLOAD/baci/doc/baci_webpage.html",
+        "publication_or_update_date": "2026-01-22",
+        "accessed": "2026-08-24",
+        "evidence_type": "REPORTED/DERIVED",
+        "coverage_or_use": "Harmonized annual bilateral HS6 flows and methodology",
+        "limitations": "FOB/CIF harmonization; positive flows only; derived data",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_source_inventory.csv",
+          "artifact_sha256": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94",
+          "line": 6
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "source_id": "S09",
+        "title": "Global Critical Minerals Outlook 2025",
+        "publisher": "International Energy Agency",
+        "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025/executive-summary",
+        "publication_or_update_date": "2025-05-21",
+        "accessed": "2026-08-24",
+        "evidence_type": "REPORTED/MODELLED",
+        "coverage_or_use": "Refining/mining concentration and mineral shock scenarios",
+        "limitations": "Compiled/modelled estimates; not raw trade or qualified capacity",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_source_inventory.csv",
+          "artifact_sha256": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94",
+          "line": 10
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "source_id": "S17",
+        "title": "Trends in PV Applications 2025",
+        "publisher": "IEA PVPS",
+        "url": "https://iea-pvps.org/trends_reports/trends-2025/",
+        "publication_or_update_date": "2025",
+        "accessed": "2026-08-24",
+        "evidence_type": "REPORTED",
+        "coverage_or_use": "PV deployment and technology context",
+        "limitations": "Not a product-grade trade source",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_source_inventory.csv",
+          "artifact_sha256": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94",
+          "line": 18
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "clm_manus06_trade_01",
+        "subject": "Processors/controllers (broad semiconductor proxy)",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 854231 Processors/controllers (broad semiconductor proxy): India imports from world $14489625975.08; China $5325437800.68; China share 36.753%; HHI 2808.43; partners 75",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "854231",
+            "min": 854231.0,
+            "max": 854231.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "14489625975.08",
+            "min": 14489625975.08,
+            "max": 14489625975.08,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "5325437800.68",
+            "min": 5325437800.68,
+            "max": 5325437800.68,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "36.753%",
+            "min": 36.753,
+            "max": 36.753,
+            "comparator": "=",
+            "unit": "%"
+          },
+          {
+            "raw": "2808.43",
+            "min": 2808.43,
+            "max": 2808.43,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "75",
+            "min": 75.0,
+            "max": 75.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Processors/controllers (broad semiconductor proxy)"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 2
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "854231",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      },
+      {
+        "claim_id": "clm_manus06_trade_02",
+        "subject": "Lithium-ion accumulators",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 850760 Lithium-ion accumulators: India imports from world $2795936197.84; China $2553179920.84; China share 91.318%; HHI 8352.9; partners 47",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "850760",
+            "min": 850760.0,
+            "max": 850760.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2795936197.84",
+            "min": 2795936197.84,
+            "max": 2795936197.84,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2553179920.84",
+            "min": 2553179920.84,
+            "max": 2553179920.84,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "91.318%",
+            "min": 91.318,
+            "max": 91.318,
+            "comparator": "=",
+            "unit": "%"
+          },
+          {
+            "raw": "8352.9",
+            "min": 8352.9,
+            "max": 8352.9,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "47",
+            "min": 47.0,
+            "max": 47.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Lithium-ion accumulators"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 3
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "850760",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      },
+      {
+        "claim_id": "clm_manus06_trade_03",
+        "subject": "Permanent magnets, metal (broad proxy)",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 850511 Permanent magnets, metal (broad proxy): India imports from world $198566973.15; China $164562345.13; China share 82.875%; HHI 6890.72; partners 52",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "850511",
+            "min": 850511.0,
+            "max": 850511.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "198566973.15",
+            "min": 198566973.15,
+            "max": 198566973.15,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "164562345.13",
+            "min": 164562345.13,
+            "max": 164562345.13,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "82.875%",
+            "min": 82.875,
+            "max": 82.875,
+            "comparator": "=",
+            "unit": "%"
+          },
+          {
+            "raw": "6890.72",
+            "min": 6890.72,
+            "max": 6890.72,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "52",
+            "min": 52.0,
+            "max": 52.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Permanent magnets, metal (broad proxy)"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 4
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "850511",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      },
+      {
+        "claim_id": "clm_manus06_trade_09",
+        "subject": "Aircraft parts (broad proxy)",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 880330 Aircraft parts (broad proxy): India imports from world $0; China $0.0; China share N/A%; HHI N/A; partners 0",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "880330",
+            "min": 880330.0,
+            "max": 880330.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0.0",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Aircraft parts (broad proxy)"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 10
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "880330",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      },
+      {
+        "claim_id": "clm_manus06_trade_11",
+        "subject": "Nuclear reactors and parts",
+        "predicate": "IMPORTS_FROM / TRADE_PROXY_ONLY",
+        "text": "HS-6 840140 Nuclear reactors and parts: India imports from world $460.62; China $0.0; China share 0.0%; HHI 10000.0; partners 1",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "840140",
+            "min": 840140.0,
+            "max": 840140.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "460.62",
+            "min": 460.62,
+            "max": 460.62,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0.0",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "0.0%",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": "%"
+          },
+          {
+            "raw": "10000.0",
+            "min": 10000.0,
+            "max": 10000.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "1",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "INDIA reporter 699; world partner 0; China partner 156",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Nuclear reactors and parts"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 12
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "hs6": "840140",
+        "reporter": "India",
+        "reporter_code": "699",
+        "flow": "M",
+        "partner_aggregate": "world",
+        "partner_focus": "China",
+        "classification": "HS-6 as reported",
+        "observation_year": 2024,
+        "denominator": "world aggregate imports for same HS-6/year",
+        "trade_only_inference_block": "Not production, qualified supply, capacity, or DVA"
+      },
+      {
+        "claim_id": "clm_manus06_track_01",
+        "subject": "Trade classifications and concordances: HS, SITC, BEC, CPC, ISIC, NAICS, NACE, revision concordances, and product-to-process mappings.",
+        "predicate": "trade_dependency_track_statement",
+        "text": "The track encompasses the global architecture of economic classification systems, which serve as the \"lingua franca\" of industrial intelligence. These systems are hierarchical, multi-dimensional, and subject to periodic revisions that reflect technological evolution and shifting policy priorities. The core of this architecture resides in the **Harmonized Commodity Description and Coding System (HS)**, maintained by the World Customs Organization (WCO), which provides the primary **MEASURED** data for international trade at the 6-digit level. However, for industrial intelligence, HS codes are insufficient in isolation, as they describe *what* is traded rather than *how* it is produced or *where* it fits in a process chain.",
+        "numeric_ranges": [
+          {
+            "raw": "6",
+            "min": 6.0,
+            "max": 6.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL/UNSPECIFIED",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Trade classifications and concordances: HS, SITC, BEC, CPC, ISIC, NAICS, NACE, revision concordances, and product-to-process mappings."
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "forge_world_research_tracks.json",
+          "artifact_sha256": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f",
+          "line": 7
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "track": "Trade classifications and concordances: HS, SITC, BEC, CPC, ISIC, NAICS, NACE, revision concordances, and product-to-process mappings.",
+        "trade_only_inference_block": "Discovery claim requires product/facility/qualification join"
+      },
+      {
+        "claim_id": "clm_manus06_track_02",
+        "subject": "Global trade datasets: UN Comtrade, BACI, WTO, ITC Trade Map, national customs/statistics, Eurostat COMEXT, US Census, China customs, and India trade data.",
+        "predicate": "trade_dependency_track_statement",
+        "text": "- **UN Comtrade**: The foundational **REPORTED** database aggregating global annual and monthly trade statistics by product (HS, SITC, BEC) and partner [1].",
+        "numeric_ranges": [
+          {
+            "raw": "1",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL/UNSPECIFIED",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "REPORTED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Global trade datasets: UN Comtrade, BACI, WTO, ITC Trade Map, national customs/statistics, Eurostat COMEXT, US Census, China customs, and India trade data."
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "forge_world_research_tracks.json",
+          "artifact_sha256": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f",
+          "line": 5
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "track": "Global trade datasets: UN Comtrade, BACI, WTO, ITC Trade Map, national customs/statistics, Eurostat COMEXT, US Census, China customs, and India trade data.",
+        "trade_only_inference_block": "Discovery claim requires product/facility/qualification join"
+      },
+      {
+        "claim_id": "clm_manus06_track_03",
+        "subject": "Semiconductor supply chains: wafers, gases, lithography, packaging, memory, logic, and equipment.",
+        "predicate": "trade_dependency_track_statement",
+        "text": "Trade volumes are often **REPORTED** based on the value of shipments, which can be misleading due to the \"Processing Trade\" model prevalent in East Asia. For instance, a chip may be designed in the United States, fabricated in Taiwan, and packaged in Malaysia before being shipped to China for final assembly into a smartphone that is eventually sold back to the US. This creates a **DERIVED** trade surplus for assembly hubs that does not reflect domestic IP or core manufacturing capability. Furthermore, **Re-exports** through hubs like Singapore and Hong Kong can account for up to 30% of regional trade, masking the ultimate end-user and complicating export control enforcement.",
+        "numeric_ranges": [
+          {
+            "raw": "30%",
+            "min": 30.0,
+            "max": 30.0,
+            "comparator": "=",
+            "unit": "%"
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "GLOBAL/UNSPECIFIED",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "REPORTED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Semiconductor supply chains: wafers, gases, lithography, packaging, memory, logic, and equipment."
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "forge_world_research_tracks.json",
+          "artifact_sha256": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f",
+          "line": 26
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "track": "Semiconductor supply chains: wafers, gases, lithography, packaging, memory, logic, and equipment.",
+        "trade_only_inference_block": "Discovery claim requires product/facility/qualification join"
+      },
+      {
+        "claim_id": "clm_manus06_track_04",
+        "subject": "Machine-tool components: CNC controls, spindles, precision guides, ball screws, motors, drives, and tooling.",
+        "predicate": "trade_dependency_track_statement",
+        "text": "### 8. UNKNOWN and CONFLICTED Items",
+        "numeric_ranges": [
+          {
+            "raw": "8",
+            "min": 8.0,
+            "max": 8.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL/UNSPECIFIED",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "UNKNOWN",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Machine-tool components: CNC controls, spindles, precision guides, ball screws, motors, drives, and tooling."
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "forge_world_research_tracks.json",
+          "artifact_sha256": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f",
+          "line": 74
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "track": "Machine-tool components: CNC controls, spindles, precision guides, ball screws, motors, drives, and tooling.",
+        "trade_only_inference_block": "Discovery claim requires product/facility/qualification join"
+      },
+      {
+        "claim_id": "clm_manus06_track_05",
+        "subject": "Rare-earth magnets: mined material, separation, oxides, metals, alloys, sintered magnets, and recycling.",
+        "predicate": "trade_dependency_track_statement",
+        "text": "The process begins with the extraction of REE-bearing ores, primarily **Bastnasite**, **Monazite**, and **Ion-adsorption clays**. While Bastnasite and Monazite are rich in LREEs, ion-adsorption clays (found predominantly in southern China and Myanmar) are the primary source of HREEs. Beneficiation involves physical separation techniques such as flotation, magnetic separation, and gravity concentration to produce a rare-earth concentrate. **MEASURED** data from the USGS indicates that global mine production reached approximately 270,000 metric tons of rare earth oxide (REO) equivalent in 2025, with China maintaining a dominant share despite increasing output from the United States (Mountain Pass) and Australia (Mt Weld) [7][8].",
+        "numeric_ranges": [
+          {
+            "raw": "270",
+            "min": 270.0,
+            "max": 270.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "000 m",
+            "min": 0.0,
+            "max": 0.0,
+            "comparator": "=",
+            "unit": "m"
+          },
+          {
+            "raw": "2025",
+            "min": 2025.0,
+            "max": 2025.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "7",
+            "min": 7.0,
+            "max": 7.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "8",
+            "min": 8.0,
+            "max": 8.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "m"
+        ],
+        "geography": "GLOBAL/UNSPECIFIED",
+        "dates": [
+          "2025"
+        ],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Rare-earth magnets: mined material, separation, oxides, metals, alloys, sintered magnets, and recycling."
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "forge_world_research_tracks.json",
+          "artifact_sha256": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f",
+          "line": 12
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "track": "Rare-earth magnets: mined material, separation, oxides, metals, alloys, sintered magnets, and recycling.",
+        "trade_only_inference_block": "Discovery claim requires product/facility/qualification join"
+      },
+      {
+        "claim_id": "clm_manus06_track_06",
+        "subject": "Batteries: lithium, nickel, cobalt, graphite, cathodes, anodes, cells, packs, and manufacturing equipment",
+        "predicate": "trade_dependency_track_statement",
+        "text": "*   **Capacity vs. Utilization:** (REPORTED) capacities for many announced gigafactories in Europe and India often mask **<20% actual yield** due to equipment calibration issues.",
+        "numeric_ranges": [
+          {
+            "raw": "<20%",
+            "min": 20.0,
+            "max": 20.0,
+            "comparator": "<",
+            "unit": "%"
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "GLOBAL/UNSPECIFIED",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "REPORTED",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Batteries: lithium, nickel, cobalt, graphite, cathodes, anodes, cells, packs, and manufacturing equipment"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "forge_world_research_tracks.json",
+          "artifact_sha256": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f",
+          "line": 57
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "track": "Batteries: lithium, nickel, cobalt, graphite, cathodes, anodes, cells, packs, and manufacturing equipment",
+        "trade_only_inference_block": "Discovery claim requires product/facility/qualification join"
+      },
+      {
+        "claim_id": "clm_manus06_ledger_01",
+        "subject": "U-01",
+        "predicate": "UNKNOWN_ABOUT",
+        "text": "U-01 | Qualified throughput of named facilities | UNKNOWN | Factory existence does not establish available output | Audited filings, customer qualification, production data",
+        "numeric_ranges": [
+          {
+            "raw": "01",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL/INDIA",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "UNKNOWN",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "U-01"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 375
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "ledger_state": "UNKNOWN"
+      },
+      {
+        "claim_id": "clm_manus06_ledger_14",
+        "subject": "U-14",
+        "predicate": "UNKNOWN_ABOUT",
+        "text": "U-14 | Future-dated shock claims in discovery material | UNKNOWN | Several claims lacked verified primary evidence | Do not ingest until official source and denominator are found",
+        "numeric_ranges": [
+          {
+            "raw": "14",
+            "min": 14.0,
+            "max": 14.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL/INDIA",
+        "dates": [],
+        "source_url": null,
+        "class": "trade_observation_or_dependency_candidate",
+        "proposed_epistemic": "UNKNOWN",
+        "caveat": "Trade observation is not production capability, qualified supply, capacity, or DVA; proxy/product/grade/end-use scope remains explicit.",
+        "unknowns": [
+          "product grade, origin, end use, domestic output, qualified capacity and DVA are not established by this observation"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "U-14"
+        ],
+        "escalation": "join HS revision, origin, production, facility and qualification evidence before graph promotion",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 388
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING",
+        "ledger_state": "UNKNOWN"
+      }
+    ],
+    "entities": [
+      {
+        "entity_candidate_id": "ent_manus06_01",
+        "name": "Processors/controllers (broad semiconductor proxy)",
+        "entity_type": "trade_product_proxy",
+        "hs6": "854231",
+        "geography": "India reporter / world partner aggregate",
+        "grade_or_end_use": "UNKNOWN within broad HS proxy",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 2
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING"
+      },
+      {
+        "entity_candidate_id": "ent_manus06_02",
+        "name": "Lithium-ion accumulators",
+        "entity_type": "trade_product_proxy",
+        "hs6": "850760",
+        "geography": "India reporter / world partner aggregate",
+        "grade_or_end_use": "UNKNOWN within broad HS proxy",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 3
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING"
+      },
+      {
+        "entity_candidate_id": "ent_manus06_03",
+        "name": "Permanent magnets, metal (broad proxy)",
+        "entity_type": "trade_product_proxy",
+        "hs6": "850511",
+        "geography": "India reporter / world partner aggregate",
+        "grade_or_end_use": "UNKNOWN within broad HS proxy",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 4
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING"
+      },
+      {
+        "entity_candidate_id": "ent_manus06_04",
+        "name": "Rare-earth compounds excluding cerium",
+        "entity_type": "trade_product_proxy",
+        "hs6": "284690",
+        "geography": "India reporter / world partner aggregate",
+        "grade_or_end_use": "UNKNOWN within broad HS proxy",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 5
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING"
+      },
+      {
+        "entity_candidate_id": "ent_manus06_05",
+        "name": "Rare-earth metals, scandium, yttrium",
+        "entity_type": "trade_product_proxy",
+        "hs6": "280530",
+        "geography": "India reporter / world partner aggregate",
+        "grade_or_end_use": "UNKNOWN within broad HS proxy",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 6
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING"
+      },
+      {
+        "entity_candidate_id": "ent_manus06_06",
+        "name": "Semiconductor manufacturing equipment",
+        "entity_type": "trade_product_proxy",
+        "hs6": "848620",
+        "geography": "India reporter / world partner aggregate",
+        "grade_or_end_use": "UNKNOWN within broad HS proxy",
+        "exact_locator": {
+          "artifact": "india_2024_strategic_dependency_map.csv",
+          "artifact_sha256": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "line": 7
+        },
+        "promotion_status": "TRADE_PROXY_ONLY_STAGING"
+      }
+    ],
+    "relations": [
+      {
+        "relation": "IMPORTS_FROM",
+        "subject": "India / product proxy",
+        "object": "Partner country",
+        "default_evidence_state": "MEASURED",
+        "minimum_evidence": "Trade observation with reporter partner period and HS revision",
+        "notes": "Record partner versus origin separately",
+        "relation_candidate_id": "rel_manus06_01",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_relationship_proposals.csv",
+          "artifact_sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "line": 2
+        },
+        "trade_capability_gate": "TRADE_PROXY_ONLY unless independent production/qualification evidence",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation": "EXPORTS_TO",
+        "subject": "Exporter country / product proxy",
+        "object": "Destination country",
+        "default_evidence_state": "MEASURED",
+        "minimum_evidence": "Trade observation with exporter destination period and HS revision",
+        "notes": "Do not infer domestic production depth",
+        "relation_candidate_id": "rel_manus06_02",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_relationship_proposals.csv",
+          "artifact_sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "line": 3
+        },
+        "trade_capability_gate": "TRADE_PROXY_ONLY unless independent production/qualification evidence",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation": "TRADE_PROXY_ONLY",
+        "subject": "Country",
+        "object": "Product/process/capability",
+        "default_evidence_state": "TRADE_PROXY_ONLY",
+        "minimum_evidence": "Trade flow plus explicit proxy mapping",
+        "notes": "Trade does not establish capability grade or capacity",
+        "relation_candidate_id": "rel_manus06_03",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_relationship_proposals.csv",
+          "artifact_sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "line": 4
+        },
+        "trade_capability_gate": "TRADE_PROXY_ONLY unless independent production/qualification evidence",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation": "HAS_NAMEPLATE_CAPACITY",
+        "subject": "Facility",
+        "object": "Product/process",
+        "default_evidence_state": "REPORTED",
+        "minimum_evidence": "Capacity source with unit date and definition",
+        "notes": "Do not merge with utilization",
+        "relation_candidate_id": "rel_manus06_08",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_relationship_proposals.csv",
+          "artifact_sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "line": 9
+        },
+        "trade_capability_gate": "TRADE_PROXY_ONLY unless independent production/qualification evidence",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation": "HAS_QUALIFIED_THROUGHPUT",
+        "subject": "Facility",
+        "object": "Product/process",
+        "default_evidence_state": "UNKNOWN until verified",
+        "minimum_evidence": "Audited or independently corroborated output and qualification",
+        "notes": "Usually unavailable publicly",
+        "relation_candidate_id": "rel_manus06_09",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_relationship_proposals.csv",
+          "artifact_sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "line": 10
+        },
+        "trade_capability_gate": "TRADE_PROXY_ONLY unless independent production/qualification evidence",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation": "REEXPORTS_VIA",
+        "subject": "Trade flow",
+        "object": "Hub",
+        "default_evidence_state": "DERIVED",
+        "minimum_evidence": "Hub import/export and origin/partner metadata",
+        "notes": "Signal of routing not proof of hidden origin",
+        "relation_candidate_id": "rel_manus06_14",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_relationship_proposals.csv",
+          "artifact_sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "line": 15
+        },
+        "trade_capability_gate": "TRADE_PROXY_ONLY unless independent production/qualification evidence",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation": "PROPAGATES_TO",
+        "subject": "Shock",
+        "object": "Downstream node",
+        "default_evidence_state": "MODELLED",
+        "minimum_evidence": "Input-output/network model with assumptions",
+        "notes": "Report range and sensitivity",
+        "relation_candidate_id": "rel_manus06_18",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_relationship_proposals.csv",
+          "artifact_sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "line": 19
+        },
+        "trade_capability_gate": "TRADE_PROXY_ONLY unless independent production/qualification evidence",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation": "UNKNOWN_ABOUT",
+        "subject": "Entity/edge",
+        "object": "Variable",
+        "default_evidence_state": "UNKNOWN",
+        "minimum_evidence": "Documented missing or inaccessible evidence",
+        "notes": "Do not silently impute",
+        "relation_candidate_id": "rel_manus06_20",
+        "exact_locator": {
+          "artifact": "FORGE_WORLD_relationship_proposals.csv",
+          "artifact_sha256": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "line": 21
+        },
+        "trade_capability_gate": "TRADE_PROXY_ONLY unless independent production/qualification evidence",
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "unknowns": [
+      {
+        "unknown_id": "U-01",
+        "item": "Qualified throughput of named facilities",
+        "state": "UNKNOWN",
+        "why": "Factory existence does not establish available output",
+        "follow_up": "Audited filings, customer qualification, production data",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 375
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-02",
+        "item": "Product grade within broad HS codes",
+        "state": "UNKNOWN",
+        "why": "Strategic and commodity grades can share a code",
+        "follow_up": "National tariff lines, technical specs, invoices, standards",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 376
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-03",
+        "item": "Country of origin through hubs",
+        "state": "UNKNOWN/CONFLICTED",
+        "why": "Partner may be a re-exporter or last consignor",
+        "follow_up": "Origin fields, customs procedure, hub import/export reconciliation",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 377
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-04",
+        "item": "China upstream content in Indian exports",
+        "state": "UNKNOWN",
+        "why": "Direct imports understate embedded exposure",
+        "follow_up": "BOMs, firm surveys, TiVA/IO modeling, origin investigations",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 378
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-05",
+        "item": "India domestic output on compatible product boundary",
+        "state": "UNKNOWN",
+        "why": "Import penetration denominator may be invalid",
+        "follow_up": "ASI/official production data, industry surveys, facility evidence",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 379
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-06",
+        "item": "Capacity versus utilization and allocation",
+        "state": "UNKNOWN",
+        "why": "Nameplate capacity overstates switchable supply",
+        "follow_up": "Plant utilization, yield, contracts, inventory, maintenance data",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 380
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "conflicts": [
+      {
+        "unknown_id": "U-03",
+        "item": "Country of origin through hubs",
+        "state": "UNKNOWN/CONFLICTED",
+        "why": "Partner may be a re-exporter or last consignor",
+        "follow_up": "Origin fields, customs procedure, hub import/export reconciliation",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 377
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-09",
+        "item": "HHI as resilience",
+        "state": "CONFLICTED/CONDITIONAL",
+        "why": "Concentration can imply risk but resilience depends on switching",
+        "follow_up": "Lead time, elasticity, inventories, qualification and alternatives",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 383
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-11",
+        "item": "Mirror discrepancy as fraud",
+        "state": "CONFLICTED",
+        "why": "CIF/FOB, timing, destination and classification create gaps",
+        "follow_up": "Customs metadata, valuation analysis, investigative evidence",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 385
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-13",
+        "item": "National classification revisions",
+        "state": "CONFLICTED",
+        "why": "Breaks can create artificial trends",
+        "follow_up": "Revision notes, concordance tests, overlapping years",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "artifact_sha256": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "line": 387
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "duplicates": [],
+    "malformed": []
+  },
+  "explicit_accounting": {
+    "artifacts": 16,
+    "sources": 17,
+    "claims": {
+      "candidate_rows": 375,
+      "bounded_samples": 13
+    },
+    "entities": 11,
+    "relations": 20,
+    "unknown": 14,
+    "conflicts": 4,
+    "duplicates": {
+      "artifact_groups": 0,
+      "extra_artifacts": 0,
+      "structured_records": 0
+    },
+    "malformed": {
+      "rows": 0,
+      "unrepaired": 0
+    },
+    "skipped": {
+      "artifacts": 0,
+      "execution_units": 2
+    },
+    "promotions": 0
+  },
+  "blockers": [
+    {
+      "blocker_id": "B06-01",
+      "topic": "trade_is_not_capability",
+      "detail": "All HS trade ratios remain screening proxies; no production, qualified supply, capacity or DVA promotion."
+    },
+    {
+      "blocker_id": "B06-02",
+      "topic": "broad_HS_proxy_grade_end_use",
+      "count": 11,
+      "detail": "HS-6 proxies conflate grades, products, applications and embedded content."
+    },
+    {
+      "blocker_id": "B06-03",
+      "topic": "origin_reexport_and_DVA",
+      "detail": "Partner is not origin; third-country routing and embedded Chinese content remain UNKNOWN."
+    },
+    {
+      "blocker_id": "B06-04",
+      "topic": "qualified_supply_denominator",
+      "detail": "Domestic output, utilization, allocation, qualification and available-capacity denominators are absent."
+    },
+    {
+      "blocker_id": "B06-05",
+      "topic": "sparse_or_zero_observations",
+      "count": 1,
+      "detail": "Aircraft-parts proxy has no returned observation; zero trade is not zero imports or zero capability."
+    },
+    {
+      "blocker_id": "B06-06",
+      "topic": "conflict_unknown_ledger",
+      "count": 4,
+      "detail": "Origin, HHI-as-resilience, mirror discrepancies and classification revisions remain conflicted/conditional."
+    }
+  ],
+  "validation": {
+    "json_tool": "PASS (python -m json.tool)",
+    "raw_zip_match": true,
+    "dependency_csv_json_match": true,
+    "malformed_rows": 0,
+    "promotion_count": 0,
+    "output": "C:\\GitHub\\forge-world\\research\\homi\\waves\\wave2\\manus_06_report.json"
+  }
+}

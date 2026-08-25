@@ -1,0 +1,605 @@
+{
+  "schema_version": "forge_world.homi.wave2.manus03.facility_atlas_report.v1",
+  "report_identity": {
+    "observed_manus": "manus-03",
+    "campaign_expected_manus": "manus-03",
+    "theme": "Global Industrial Capability & Facility Atlas",
+    "research_baseline_date": "2026-08-24",
+    "analysis_date": "2026-08-25",
+    "generated_from_read_only_sources": true,
+    "campaign_mapping_mismatch_preserved": false
+  },
+  "source_boundaries": {
+    "no_external_browsing": true,
+    "raw_vault_immutable": true,
+    "no_source_file_edits": true,
+    "scripts_not_executed": [
+      "manus-03/extract_forge_research.py"
+    ],
+    "all_candidates_are_staging": true,
+    "canonical_promotions": 0
+  },
+  "corpus_accounting": {
+    "manus_manifest": {
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\_meta\\manus_corpus_manifest.csv",
+      "corpus_id": "manus-03",
+      "original_zip": "Guide to Conducting Thorough Research 555.zip",
+      "file_count": 13,
+      "status": "ALREADY EXTRACTED"
+    },
+    "registry_manifest": {
+      "path": "research/homi/staging/corpus_manifest.json",
+      "manifest_hash": "f3f9198e21e232309c874061d7276e62cb06cd47549ee3f5586880c5c917aa8e"
+    },
+    "raw_zip": {
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\Guide to Conducting Thorough Research 555.zip",
+      "artifact_id": "artifact:54eb012a7febcfc0b6df2959",
+      "bytes": 368574,
+      "sha256": "df95e484bba00d9b82b66047cfcfdcefae81a16cef680c927385e62559d5b42f",
+      "manifest_byte_match": true,
+      "entry_count": 13
+    },
+    "extracted_root": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-03",
+    "artifact_count": 14,
+    "extracted_artifact_count": 13,
+    "raw_zip_entry_byte_matches": true,
+    "artifacts": [
+      {
+        "logical_path": "manus-03/01_steel__aluminium__copper__integrated_mills__smelters__and_refineries.md",
+        "artifact_id": "artifact:083f764c7bd29a346099904e",
+        "bytes": 11405,
+        "sha256": "a303c85ccae3089fa8eb1fa789d5546a3f3218fa2a3f88ec74346d964a7fbeea",
+        "media_type": "text/markdown",
+        "zip_entry": "01_steel__aluminium__copper__integrated_mills__smelters__and_refineries.md",
+        "zip_entry_bytes": 11405,
+        "zip_entry_sha256": "a303c85ccae3089fa8eb1fa789d5546a3f3218fa2a3f88ec74346d964a7fbeea",
+        "zip_crc32": "7e6acb0e",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/02_semiconductors__advanced_packaging__electronics_manufacturing__and_osat_facilities.md",
+        "artifact_id": "artifact:4804749e9a9038378196b775",
+        "bytes": 10212,
+        "sha256": "04d25ced3d8e6cdea8a5d347c27d0a240548db6c2a0698d20a3d413f28e460f6",
+        "media_type": "text/markdown",
+        "zip_entry": "02_semiconductors__advanced_packaging__electronics_manufacturing__and_osat_facilities.md",
+        "zip_entry_bytes": 10212,
+        "zip_entry_sha256": "04d25ced3d8e6cdea8a5d347c27d0a240548db6c2a0698d20a3d413f28e460f6",
+        "zip_crc32": "4cf7fc4d",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/04_chemicals__petrochemicals__and_fertilizers.md",
+        "artifact_id": "artifact:04d0d357625457de0bd8d284",
+        "bytes": 12007,
+        "sha256": "cfd2e4628c634db0b0746942695eb8a7801f27ea47919eec3e9cf87bcde7c84b",
+        "media_type": "text/markdown",
+        "zip_entry": "04_chemicals__petrochemicals__and_fertilizers.md",
+        "zip_entry_bytes": 12007,
+        "zip_entry_sha256": "cfd2e4628c634db0b0746942695eb8a7801f27ea47919eec3e9cf87bcde7c84b",
+        "zip_crc32": "b95ee538",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/05_aerospace__aero_engines__and_space_launch_systems.md",
+        "artifact_id": "artifact:bedcba6b01e281a132f54177",
+        "bytes": 10931,
+        "sha256": "ae97c024b905b7de5feb243d20dcde3b105ed11493a723e400b04899ff71ef09",
+        "media_type": "text/markdown",
+        "zip_entry": "05_aerospace__aero_engines__and_space_launch_systems.md",
+        "zip_entry_bytes": 10931,
+        "zip_entry_sha256": "ae97c024b905b7de5feb243d20dcde3b105ed11493a723e400b04899ff71ef09",
+        "zip_crc32": "b4d77adf",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/06_shipyards__marine_systems__nuclear_power_equipment__nuclear_fuel_cycle__and_strategic_heav.md",
+        "artifact_id": "artifact:314b2ae34b8b0d4eb0532f61",
+        "bytes": 9603,
+        "sha256": "804559629b577302066116a63b47beda0ea85c4ce9b9128b1a47be03075a5b19",
+        "media_type": "text/markdown",
+        "zip_entry": "06_shipyards__marine_systems__nuclear_power_equipment__nuclear_fuel_cycle__and_strategic_heav.md",
+        "zip_entry_bytes": 9603,
+        "zip_entry_sha256": "804559629b577302066116a63b47beda0ea85c4ce9b9128b1a47be03075a5b19",
+        "zip_crc32": "0c9663ad",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/07_machine_tools__precision_machining__forging__casting__additive_manufacturing__tooling__met.md",
+        "artifact_id": "artifact:8593f89b204683543e59aa76",
+        "bytes": 13278,
+        "sha256": "4e8622ad2125003b902bfcbda2d75d8cd158b2de69729c3be17b4bfb4b24d137",
+        "media_type": "text/markdown",
+        "zip_entry": "07_machine_tools__precision_machining__forging__casting__additive_manufacturing__tooling__met.md",
+        "zip_entry_bytes": 13278,
+        "zip_entry_sha256": "4e8622ad2125003b902bfcbda2d75d8cd158b2de69729c3be17b4bfb4b24d137",
+        "zip_crc32": "80eeaef6",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/08_mining__mineral_beneficiation__alumina__lithium__nickel__cobalt__rare_earths__graphite__an.md",
+        "artifact_id": "artifact:7088b8dd66bca5464580309b",
+        "bytes": 12496,
+        "sha256": "b1415fe2fd19e38fec6d173841d19a0525e95d92b1b1467f426b7cbc9610fc56",
+        "media_type": "text/markdown",
+        "zip_entry": "08_mining__mineral_beneficiation__alumina__lithium__nickel__cobalt__rare_earths__graphite__an.md",
+        "zip_entry_bytes": 12496,
+        "zip_entry_sha256": "b1415fe2fd19e38fec6d173841d19a0525e95d92b1b1467f426b7cbc9610fc56",
+        "zip_crc32": "1c28eca9",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/FORGE WORLD \u2014 Global Industrial Capability & Facility Atlas.md",
+        "artifact_id": "artifact:fbaed34a10cab2bce1afc5f2",
+        "bytes": 40532,
+        "sha256": "b6ef5676cc37b62a7adbab6330395cb899987b4b9a50f89061ef53bde05abacc",
+        "media_type": "text/markdown",
+        "zip_entry": "FORGE WORLD \u2014 Global Industrial Capability & Facility Atlas.md",
+        "zip_entry_bytes": 40532,
+        "zip_entry_sha256": "b6ef5676cc37b62a7adbab6330395cb899987b4b9a50f89061ef53bde05abacc",
+        "zip_crc32": "5841be0c",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/Verified research notes.md",
+        "artifact_id": "artifact:bd3b98d5833eeeceae48cfbd",
+        "bytes": 4229,
+        "sha256": "89ac3c6c7a42399e9ededdfd2d165f6d3f3abe022cab7b58b4a1715aa2bf6d5f",
+        "media_type": "text/markdown",
+        "zip_entry": "Verified research notes.md",
+        "zip_entry_bytes": 4229,
+        "zip_entry_sha256": "89ac3c6c7a42399e9ededdfd2d165f6d3f3abe022cab7b58b4a1715aa2bf6d5f",
+        "zip_crc32": "7da44346",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/extract_forge_research.py",
+        "artifact_id": "artifact:a5df1db041d5a6fe872b50ff",
+        "bytes": 1005,
+        "sha256": "41a0b7017473034dd55606c86b0026e3f993b4e300d0c61aa605c126b113a96f",
+        "media_type": "application/octet-stream",
+        "zip_entry": "extract_forge_research.py",
+        "zip_entry_bytes": 1005,
+        "zip_entry_sha256": "41a0b7017473034dd55606c86b0026e3f993b4e300d0c61aa605c126b113a96f",
+        "zip_crc32": "e0cdacc7",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/pasted_content.txt",
+        "artifact_id": "artifact:7c667bda1a6b92c7449d778d",
+        "bytes": 5035,
+        "sha256": "20c65f6114484fe514e99d2e6c05bf5978ecf305a3165bb710526c8a670786e6",
+        "media_type": "text/plain",
+        "zip_entry": "pasted_content.txt",
+        "zip_entry_bytes": 5035,
+        "zip_entry_sha256": "20c65f6114484fe514e99d2e6c05bf5978ecf305a3165bb710526c8a670786e6",
+        "zip_crc32": "0cd3f3da",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/research_industrial_sectors.csv",
+        "artifact_id": "artifact:33b9447a6fd89a36d651c6c5",
+        "bytes": 116574,
+        "sha256": "2817b1f3583cee74e8abfe73b5ae4018c728b94260415e9b7beeccee07401d4a",
+        "media_type": "text/csv",
+        "zip_entry": "research_industrial_sectors.csv",
+        "zip_entry_bytes": 116574,
+        "zip_entry_sha256": "2817b1f3583cee74e8abfe73b5ae4018c728b94260415e9b7beeccee07401d4a",
+        "zip_crc32": "98270267",
+        "byte_match": true
+      },
+      {
+        "logical_path": "manus-03/research_industrial_sectors.json",
+        "artifact_id": "artifact:95c90a5a23f905b541629967",
+        "bytes": 118613,
+        "sha256": "b997ba3e3aa99e287dc1907923989f868b452ba07cd11138eb9a3fad3debfde4",
+        "media_type": "application/json",
+        "zip_entry": "research_industrial_sectors.json",
+        "zip_entry_bytes": 118613,
+        "zip_entry_sha256": "b997ba3e3aa99e287dc1907923989f868b452ba07cd11138eb9a3fad3debfde4",
+        "zip_crc32": "5f6ec187",
+        "byte_match": true
+      }
+    ]
+  },
+  "schema_inventory": {
+    "structured_artifacts": [
+      {
+        "artifact": "manus-03/research_industrial_sectors.json",
+        "format": "json",
+        "top_level": "object",
+        "keys": [
+          "results"
+        ],
+        "row_path": "results",
+        "rows": 10,
+        "nested_facility_table_rows": 119,
+        "nested_cluster_table_rows": 59,
+        "error_rows": 0
+      },
+      {
+        "artifact": "manus-03/research_industrial_sectors.csv",
+        "format": "csv",
+        "columns": [
+          "Subject",
+          "Sector",
+          "Facility Findings",
+          "Strategic Clusters",
+          "Evidence Gaps",
+          "Source Ledger",
+          "Error"
+        ],
+        "data_rows": 10,
+        "nonempty_error_rows": 0
+      },
+      {
+        "artifact": "manus-03/sector markdown files",
+        "format": "markdown",
+        "file_count": 7,
+        "facility_table_rows": 83,
+        "cluster_table_rows": 42,
+        "table_rows": 125,
+        "malformed_table_rows": 0
+      },
+      {
+        "artifact": "manus-03/FORGE WORLD \u2014 Global Industrial Capability & Facility Atlas.md",
+        "format": "markdown",
+        "lines": 221,
+        "headings": 16,
+        "tables": 7,
+        "table_rows": 77,
+        "malformed_table_rows": 0
+      }
+    ],
+    "supporting_artifacts": [
+      {
+        "artifact": "manus-03/Verified research notes.md",
+        "format": "markdown",
+        "lines": 22,
+        "headings": 3,
+        "tables": 0
+      },
+      {
+        "artifact": "manus-03/pasted_content.txt",
+        "format": "text",
+        "lines": 68,
+        "evidence_status": "non_evidence_prompt_copy"
+      },
+      {
+        "artifact": "manus-03/extract_forge_research.py",
+        "format": "python_source",
+        "execution": "not_executed_read_only"
+      }
+    ]
+  },
+  "source_inventory": {
+    "source_url_occurrences_all_artifacts": 960,
+    "unique_source_url_tokens_raw": 260,
+    "unique_source_url_tokens_normalized": 259,
+    "normalization": "decode escaped unicode URL tokens and trim terminal punctuation",
+    "source_candidate_count": 259,
+    "source_candidates_are_staging": true,
+    "url_occurrences_by_artifact": {
+      "01_steel__aluminium__copper__integrated_mills__smelters__and_refineries.md": 49,
+      "02_semiconductors__advanced_packaging__electronics_manufacturing__and_osat_facilities.md": 18,
+      "04_chemicals__petrochemicals__and_fertilizers.md": 42,
+      "05_aerospace__aero_engines__and_space_launch_systems.md": 39,
+      "06_shipyards__marine_systems__nuclear_power_equipment__nuclear_fuel_cycle__and_strategic_heav.md": 31,
+      "07_machine_tools__precision_machining__forging__casting__additive_manufacturing__tooling__met.md": 24,
+      "08_mining__mineral_beneficiation__alumina__lithium__nickel__cobalt__rare_earths__graphite__an.md": 40,
+      "FORGE WORLD \u2014 Global Industrial Capability & Facility Atlas.md": 12,
+      "Verified research notes.md": 7,
+      "research_industrial_sectors.csv": 349,
+      "research_industrial_sectors.json": 349
+    }
+  },
+  "bounded_claims": {
+    "definition": "One staging claim bundle per sector result, facility table row, or cluster table row. CSV/JSON sector duplicates and standalone topical markdown duplicates are excluded; prose is not silently promoted into row claims.",
+    "sector_result_rows": 10,
+    "facility_row_candidates": 138,
+    "facility_unique_exact_name_candidates": 134,
+    "cluster_row_candidates": 71,
+    "cluster_unique_name_candidates": 71,
+    "bounded_claim_count": 219,
+    "semantic_duplicate_row_extras_excluded": {
+      "standalone_topical_markdown_rows_also_present_in_nested_json": 125,
+      "csv_rows_also_represented_by_json_sector_results": 10
+    },
+    "claim_samples": [
+      {
+        "claim_id": "m03-clm-001",
+        "subject": "Vijayanagar Works",
+        "proposed_epistemic": "REPORTED",
+        "quote": "**Vijayanagar Works** | JSW Steel Ltd | Toranagallu, Karnataka, India | HR Coils, Plates, Sheets, CR Coils, Galvanized | Integrated: Corex, Blast Furnace (BF), SMS, HSM. Features world's first RH Ladle Rocker (SMS group). | **OPERATING** (Aug 2026) | 17.5 MTPA (12.5 **QUALIFIED**; 5 **COMMISSIONING**) | **MEASURED** capacity from site; **REPORTED** status of expansion.",
+        "exact_locator": {
+          "artifact": "manus-03/01_steel__aluminium__copper__integrated_mills__smelters__and_refineries.md",
+          "sha256": "a303c85ccae3089fa8eb1fa789d5546a3f3218fa2a3f88ec74346d964a7fbeea",
+          "line": 9
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-002",
+        "subject": "Jamshedpur Works",
+        "proposed_epistemic": "REPORTED",
+        "quote": "**Jamshedpur Works** | Tata Steel Ltd | Jamshedpur, Jharkhand, India | Flat/Long products, Tubes, Wires, Bearings | Integrated: H-Blast Furnace (3814 m\u00b3), G-BF (3230 m\u00b3). Pellets, Sinter, Coke ovens. | **OPERATING** (Jan 2025) | 12.0 MTPA (Crude) **QUALIFIED** | **REPORTED** production records; **MEASURED** furnace volumes.",
+        "exact_locator": {
+          "artifact": "manus-03/01_steel__aluminium__copper__integrated_mills__smelters__and_refineries.md",
+          "sha256": "a303c85ccae3089fa8eb1fa789d5546a3f3218fa2a3f88ec74346d964a7fbeea",
+          "line": 10
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-003",
+        "subject": "Tata Dholera Fab",
+        "proposed_epistemic": "REPORTED",
+        "quote": "**Tata Dholera Fab** | Tata Electronics (Partner: PSMC) | Dholera, Gujarat, India | 28nm-110nm Logic, Power Management ICs, MCUs. | 300mm Wafers, DUV Lithography (ASML), Etch (Lam). | **REPORTED** Construction (June 2026) [2] | 50,000 WSPM (Nameplate) | **ESTIMATED** First chip output by Q4 2026.",
+        "exact_locator": {
+          "artifact": "manus-03/02_semiconductors__advanced_packaging__electronics_manufacturing__and_osat_facilities.md",
+          "sha256": "04d25ced3d8e6cdea8a5d347c27d0a240548db6c2a0698d20a3d413f28e460f6",
+          "line": 10
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-004",
+        "subject": "CATL Ningde Facility",
+        "proposed_epistemic": "REPORTED",
+        "quote": "**CATL Ningde Facility** | CATL | Ningde, Fujian, China | LFP & NMC Cells | High-speed cell assembly, R&D | Operational | >100 GWh (Available) | [23] [24] | **MEASURED**",
+        "exact_locator": {
+          "artifact": "manus-03/research_industrial_sectors.json",
+          "sha256": "b997ba3e3aa99e287dc1907923989f868b452ba07cd11138eb9a3fad3debfde4",
+          "json_pointer": "/results/2/output/facilities",
+          "nested_markdown_table_row": 1
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-005",
+        "subject": "Mazagon Dock (MDL)",
+        "proposed_epistemic": "REPORTED",
+        "quote": "**Mazagon Dock (MDL)** | MDL (Govt of India) | Mumbai, Maharashtra, India | Warships, Scorpene-class Submarines | 30,000 DWT dry dock; submarine assembly bays | Operating; Submarine capacity 6 to 11 (expansion) | REPORTED (Capacity)",
+        "exact_locator": {
+          "artifact": "manus-03/06_shipyards__marine_systems__nuclear_power_equipment__nuclear_fuel_cycle__and_strategic_heav.md",
+          "sha256": "804559629b577302066116a63b47beda0ea85c4ce9b9128b1a47be03075a5b19",
+          "line": 10
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-006",
+        "subject": "Fanuc Headquarters Factories",
+        "proposed_epistemic": "REPORTED",
+        "quote": "**Fanuc Headquarters Factories** | Fanuc Corporation | Oshino-mura, Yamanashi, Japan | CNCs, Industrial Robots, Servo Motors; Automated assembly, die casting. | 1.78M m\u00b2 \"Fanuc Forest\" site; Unmanned continuous machining cells. | **OPERATING**; 25,000 CNCs/mo, 150,000 Motors/mo [REPORTED]",
+        "exact_locator": {
+          "artifact": "manus-03/07_machine_tools__precision_machining__forging__casting__additive_manufacturing__tooling__met.md",
+          "sha256": "4e8622ad2125003b902bfcbda2d75d8cd158b2de69729c3be17b4bfb4b24d137",
+          "line": 11
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-007",
+        "subject": "Baotou REE Zone",
+        "proposed_epistemic": "ESTIMATED",
+        "quote": "**Baotou REE Zone** | China Northern Rare Earth | Inner Mongolia, China | LREE Oxides, Metals | Solvent Extraction, Electrolysis | National Rare Earth High-Tech Zone | Operating (2026) | 24,000 t (Qualified Concentrate) | Bayan Obo Mine | **ESTIMATED**",
+        "exact_locator": {
+          "artifact": "manus-03/08_mining__mineral_beneficiation__alumina__lithium__nickel__cobalt__rare_earths__graphite__an.md",
+          "sha256": "b1415fe2fd19e38fec6d173841d19a0525e95d92b1b1467f426b7cbc9610fc56",
+          "line": 20
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-008",
+        "subject": "CSIR-NPL Main Campus",
+        "proposed_epistemic": "REPORTED",
+        "quote": "**CSIR-NPL Main Campus** | CSIR (Govt of India) | New Delhi, India | National Standards, IST | 236 CMCs, Primary atomic clocks, Micro-liquid flow lab | Operational (2026) | 236 CMCs (Reported) | [NPL India](https://www.nplindia.in/); REPORTED",
+        "exact_locator": {
+          "artifact": "manus-03/research_industrial_sectors.json",
+          "sha256": "b997ba3e3aa99e287dc1907923989f868b452ba07cd11138eb9a3fad3debfde4",
+          "json_pointer": "/results/9/output/facilities",
+          "nested_markdown_table_row": 1
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-009",
+        "subject": "Vijayanagar Works atlas anchor",
+        "proposed_epistemic": "REPORTED",
+        "quote": "**Vijayanagar Works** | JSW Steel | Toranagallu, Karnataka | Integrated iron and steel route including Corex/BF, steelmaking, rolling, and flat products, according to company/facility material in the discovery scan. | **REPORTED** operating status; expansion and the split between qualified and commissioning capacity require current plant-level confirmation.",
+        "exact_locator": {
+          "artifact": "manus-03/FORGE WORLD \u2014 Global Industrial Capability & Facility Atlas.md",
+          "sha256": "b6ef5676cc37b62a7adbab6330395cb899987b4b9a50f89061ef53bde05abacc",
+          "line": 80
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-010",
+        "subject": "Nameplate capacity rule",
+        "proposed_epistemic": "REPORTED",
+        "quote": "Nameplate capacity | Design or stated maximum under assumptions. | Presenting it as current supply. | Store basis, date, and assumptions; exclude from available-capacity totals.",
+        "exact_locator": {
+          "artifact": "manus-03/FORGE WORLD \u2014 Global Industrial Capability & Facility Atlas.md",
+          "sha256": "b6ef5676cc37b62a7adbab6330395cb899987b4b9a50f89061ef53bde05abacc",
+          "line": 129
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "m03-clm-011",
+        "subject": "Sadara Jubail status conflict",
+        "proposed_epistemic": "CONFLICTED",
+        "quote": "**Sadara Jubail** | JV ownership, temporary shutdown, feedstock interruption, and structural idling are different states. | **CONFLICTED** status until official operator evidence resolves duration and cause. | Compare Sadara, Dow, Aramco/SABIC, port, and regulatory notices.",
+        "exact_locator": {
+          "artifact": "manus-03/FORGE WORLD \u2014 Global Industrial Capability & Facility Atlas.md",
+          "sha256": "b6ef5676cc37b62a7adbab6330395cb899987b4b9a50f89061ef53bde05abacc",
+          "line": 146
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ]
+  },
+  "entity_candidates": {
+    "organization_owner_rows": 138,
+    "organization_unique_normalized_text": 130,
+    "facility_rows": 138,
+    "facility_unique_exact_normalized_names": 134,
+    "location_rows": 138,
+    "location_unique_normalized_text": 129,
+    "cluster_rows": 71,
+    "cluster_unique_normalized_names": 71,
+    "all_entities_are_staging": true
+  },
+  "capacity_candidates": {
+    "facility_capacity_rows": 138,
+    "capacity_label_record_counts_overlap": true,
+    "label_record_counts": {
+      "QUALIFIED": 30,
+      "NAMEPLATE": 30,
+      "DEMONSTRATED": 18,
+      "AVAILABLE": 17,
+      "UNKNOWN": 13,
+      "CONFLICTED": 4,
+      "ESTIMATED": 11,
+      "PLANNED": 7,
+      "COMMISSIONING": 5,
+      "RAMPING": 4
+    },
+    "qualified_effective_capacity_claims": 0,
+    "effective_capacity_observations": 0,
+    "effective_capacity_formula_required": "nameplate x availability x utilization x yield x qualification_fraction"
+  },
+  "relation_candidates": {
+    "explicit_relation_tables": 0,
+    "derived_from_facility_rows_only": true,
+    "relation_type_count": 7,
+    "relation_counts": {
+      "OWNER_OF": 138,
+      "LOCATED_IN": 138,
+      "PRODUCES": 119,
+      "PERFORMS_PROCESS": 138,
+      "USES_EQUIPMENT": 83,
+      "DEPENDS_ON": 55,
+      "SUPPORTED_BY_EVIDENCE": 119
+    },
+    "derived_relation_candidate_count": 790,
+    "canonical_promotions": 0
+  },
+  "epistemic_accounting": {
+    "allowed_classes": [
+      "MEASURED",
+      "REPORTED",
+      "DERIVED",
+      "ESTIMATED",
+      "MODELLED",
+      "ASSUMPTION",
+      "SCENARIO",
+      "UNKNOWN",
+      "CONFLICTED"
+    ],
+    "all_artifact_label_occurrences": {
+      "UNKNOWN": 83,
+      "CONFLICTED": 33
+    },
+    "bounded_table_row_candidates_after_nested_json_atlas_dedupe": {
+      "UNKNOWN": 19,
+      "CONFLICTED": 6
+    },
+    "unknown_stays_unknown": true
+  },
+  "duplicate_and_malformed_accounting": {
+    "artifact_hash_duplicate_groups": 0,
+    "artifact_hash_duplicate_extra_files": 0,
+    "semantic_duplicate_structured_rows_excluded": 135,
+    "semantic_duplicate_breakdown": {
+      "standalone_topical_rows_repeated_from_json": 125,
+      "csv_json_sector_pair_rows": 10
+    },
+    "exact_facility_name_collision_candidates": 4,
+    "malformed_artifacts": 0,
+    "malformed_csv_rows": 0,
+    "malformed_json_rows": 0,
+    "malformed_markdown_table_rows": 0,
+    "unrepaired_rows": 0
+  },
+  "explicit_accounting": {
+    "artifacts": 14,
+    "sources": 259,
+    "bounded_claims": 219,
+    "entities": 130,
+    "facilities": 138,
+    "locations": 138,
+    "capacity_claims": 138,
+    "relations": 790,
+    "unknown_candidates": 19,
+    "conflict_candidates": 6,
+    "duplicate_artifact_groups": 0,
+    "duplicate_structured_rows": 135,
+    "malformed_artifacts": 0,
+    "malformed_records": 0,
+    "canonical_promotions": 0
+  },
+  "blockers": [
+    {
+      "blocker_id": "M03-B01",
+      "topic": "facility_not_qualified_capability",
+      "detail": "A facility or installed process/equipment row establishes at most a staging facility candidate. Facility existence is not qualified production capability; product grade, process qualification, customer/regulatory acceptance, yield, and current scope remain separate fields.",
+      "affected_facility_rows": 138,
+      "promotion_effect": "No canonical facility or capability promotion."
+    },
+    {
+      "blocker_id": "M03-B02",
+      "topic": "nameplate_not_effective_capacity",
+      "detail": "Nameplate, demonstrated, qualified, available, target, and project labels are not interchangeable. No row supplies the full time-indexed nameplate x availability x utilization x yield x qualification_fraction calculation.",
+      "capacity_rows": 138,
+      "qualified_effective_capacity_claims": 0,
+      "promotion_effect": "Capacity remains a staging claim; no usable supply is inferred."
+    },
+    {
+      "blocker_id": "M03-B03",
+      "topic": "source_provenance_and_rights",
+      "detail": "The corpus contains URL references and source ledgers but no immutable page snapshots or source-specific license metadata sufficient for exportable EvidenceRecords.",
+      "source_candidates": 259,
+      "promotion_effect": "URLs remain source candidates only."
+    },
+    {
+      "blocker_id": "M03-B04",
+      "topic": "geography_resolution",
+      "detail": "Locations are textual facility/cluster fields; exact addresses, coordinates, facility boundaries, and owner/operator dates are not established by this pass.",
+      "location_candidates": 138,
+      "unique_location_texts": 129,
+      "promotion_effect": "No geographic canonicalization or facility-site merge."
+    },
+    {
+      "blocker_id": "M03-B05",
+      "topic": "alias_and_status_conflicts",
+      "detail": "Four exact facility-name collisions and six bounded conflicted table-row candidates require identity, scope, status, and date reconciliation before any merge.",
+      "exact_name_collision_candidates": 4,
+      "conflict_candidates": 6,
+      "promotion_effect": "Conflicts retained; zero canonical promotions."
+    }
+  ],
+  "canonical_reconciliation": {
+    "registry_write": false,
+    "canonical_promotions": 0,
+    "facility_promotions": 0,
+    "capability_promotions": 0,
+    "location_promotions": 0,
+    "relation_promotions": 0,
+    "unmatched_or_unproven_candidates_remain_staging": true
+  },
+  "validation": {
+    "json_parse": true,
+    "raw_zip_manifest_match": true,
+    "all_13_extracted_artifacts_hash_and_byte_match": true,
+    "structured_schema_parse": true,
+    "csv_nonempty_error_rows": 0,
+    "markdown_table_column_mismatch_rows": 0,
+    "deterministic_ordering": true,
+    "canonical_promotion_count": 0,
+    "output_is_report_only": true
+  }
+}
