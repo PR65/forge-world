@@ -3,6 +3,7 @@ from pathlib import Path
 from forge.epistemics import EpistemicClass
 from forge.model import Project, ProjectStateContribution, STATE_CONTRIBUTION
 from forge.pack import load_pack
+from forge.optionreport import option_value_report
 from forge.registry import load_registry
 
 
@@ -74,3 +75,6 @@ def test_foundational_pack_does_not_become_a_solver_objective_by_accident():
     pack = load_pack(PACK_PATH)
     assert pack.variants == {}
     assert pack.world.of_kind("product_variant") == []
+    assert option_value_report(
+        [(pack.pack_id, pack)], units_by_pack={}, dva_by_pack={}
+    ) == []

@@ -58,11 +58,15 @@ def option_value_report(
     units_by_pack: Dict[str, float],
     dva_by_pack: Dict[str, float],
 ) -> List[dict]:
+    # Foundational world packs intentionally have no product objective.  They
+    # enrich the canonical substrate but must not be coerced into an arbitrary
+    # solver benchmark merely because the registry loads them.
+    objective_packs = [(pid, pk) for pid, pk in packs if pk.variants]
     engines: Dict[str, ForgeEngine] = {}
     baselines: Dict[str, float] = {}
     objectives: Dict[str, ObjectiveSpecInput] = {}
 
-    for pid, pk in packs:
+    for pid, pk in objective_packs:
         eng = ForgeEngine(pk)
         vid = sorted(pk.variants.keys())[0]
         spec = ObjectiveSpecInput(
@@ -78,7 +82,7 @@ def option_value_report(
 
     rows: Dict[str, OptionRow] = {}
 
-    for pid, pk in packs:
+    for pid, pk in objective_packs:
         eng = engines[pid]
         spec = objectives[pid]
         for prj in pk.world.of_kind("project"):
