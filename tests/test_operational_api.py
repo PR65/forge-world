@@ -74,10 +74,17 @@ def test_discover_program_and_ingestion_endpoints_expose_epistemic_boundaries():
     ingestion = CLIENT.get("/api/ingestion/status")
     assert ingestion.status_code == 200
     assert ingestion.json()["unresolved_world_subjects"] == []
+    assert ingestion.json()["targeted_catalog_observations"] == 14
+    assert ingestion.json()["targeted_resolved_world_subjects"] == 14
     comtrade = next(
         row for row in ingestion.json()["pathways"] if row["id"] == "un_comtrade_api"
     )
     assert "never capability" in comtrade["model_role"]
+
+    targeted = CLIENT.get("/api/adapter/official/targeted")
+    assert targeted.status_code == 200
+    assert targeted.json()["pathway"] == "HOMI_TARGETED_PRIMARY_SOURCE_CATALOG"
+    assert len(targeted.json()["results"]) == 14
 
 
 def test_operational_endpoints_reject_unknown_variants():

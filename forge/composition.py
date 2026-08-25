@@ -101,7 +101,21 @@ def compose_objective(registry: CanonicalRegistry, objective: Mapping[str, Any])
         supporting_evidence_ids = sorted(
             {evidence_id for node in mapped for evidence_id in node.evidence_ids}
         )
-        evidenced_world_state = bool(set(classes) & EVIDENCED_CLASSES and supporting_evidence_ids)
+        supporting_evidence_classes = sorted(
+            {
+                registry.evidence[evidence_id].epistemic_class.value
+                for evidence_id in supporting_evidence_ids
+                if evidence_id in registry.evidence
+            }
+        )
+        # A capability node may correctly collapse to UNKNOWN because dimensions
+        # such as qualified capacity remain unknown while still carrying a
+        # scoped REPORTED facility/process observation. Evidence presence and
+        # residual capability-vector uncertainty are therefore reported
+        # separately rather than allowing UNKNOWN to erase source-backed state.
+        evidenced_world_state = bool(
+            set(supporting_evidence_classes) & EVIDENCED_CLASSES
+        )
         relation_rows = [
             edge
             for edge in registry.edges
@@ -139,6 +153,7 @@ def compose_objective(registry: CanonicalRegistry, objective: Mapping[str, Any])
                 "mapped_pack_ids": mapped_packs,
                 "world_epistemic_classes": classes or ["UNKNOWN"],
                 "supporting_evidence_ids": supporting_evidence_ids,
+                "supporting_evidence_classes": supporting_evidence_classes,
                 "evidenced_world_state": evidenced_world_state,
             }
         )

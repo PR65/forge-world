@@ -25,9 +25,13 @@ def test_composition_metric_is_weighted_structural_reuse_not_feasibility():
     heat_pumps = next(
         row for row in composition["objectives"] if row["objective_id"] == "india_heat_pumps_50k"
     )
-    assert 0 < heat_pumps["composition_coverage"] < 1
+    assert heat_pumps["composition_coverage"] == 1
     assert heat_pumps["status"] == "COMPOSITION_DIAGNOSTIC_NOT_SOLVER_VERDICT"
     assert "feasibility" in heat_pumps["coverage_not_claimed"]
+    assert all(
+        "supporting_evidence_classes" in requirement
+        for requirement in heat_pumps["requirements"]
+    )
     assert heat_pumps["architecture_seed_epistemic_class"] == "ASSUMPTION"
 
 
@@ -60,6 +64,8 @@ def test_reality_and_composition_api_expose_status_without_promoting_claims():
     assert payload["staged_claims"] == 58
     assert payload["promotions"] == 0
     assert payload["conditioning"]["raw_integrity_failures"] == 0
+    assert payload["targeted_closure"]["promotions"] == 14
+    assert payload["targeted_closure"]["effective_capacity_promotions"] == 0
 
     claims = client.get("/api/reality/claims", params={"limit": 3})
     assert claims.status_code == 200
@@ -70,4 +76,4 @@ def test_reality_and_composition_api_expose_status_without_promoting_claims():
     assert composition.status_code == 200
     result = composition.json()
     assert result["composition"]["objective_count"] == 6
-    assert result["decision_gaps"]["task_count"] > 0
+    assert result["decision_gaps"]["task_count"] == 2

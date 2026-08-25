@@ -1,13 +1,13 @@
 {
   "benchmark_hash": "b20f7481b097d0a2e1463d95bc6ea37026d7feac4f80de561fcb39568e77cae6",
   "benchmark_version": "1.0.0",
-  "mean_composition_coverage": 0.795905,
+  "mean_composition_coverage": 0.96131,
   "objective_count": 6,
   "objectives": [
     {
       "architecture_seed_epistemic_class": "ASSUMPTION",
       "canonical_seed_only_count": 0,
-      "composition_coverage": 0.590909,
+      "composition_coverage": 1.0,
       "coverage_formula": "sum(decision_weight for REUSED_CANONICAL requirements) / sum(all decision_weight)",
       "coverage_not_claimed": [
         "feasibility",
@@ -17,41 +17,8 @@
         "economic viability"
       ],
       "epistemic_closure": {
-        "decision_critical_unknown_count": 4,
-        "decision_critical_unknowns": [
-          {
-            "canonical_id": "cap:industrial-compressors",
-            "decision_weight": 5.0,
-            "label": "Industrial compressor manufacturing",
-            "reason": "canonical primitive missing",
-            "requirement_id": "compressor",
-            "research_question": "Which Indian facilities can manufacture and qualify objective-scale industrial heat-pump compressors?"
-          },
-          {
-            "canonical_id": "cap:heat-exchangers",
-            "decision_weight": 4.0,
-            "label": "Industrial heat exchangers",
-            "reason": "canonical primitive missing",
-            "requirement_id": "heat_exchanger",
-            "research_question": "What qualified heat-exchanger product envelope and effective capacity exist?"
-          },
-          {
-            "canonical_id": "cap:electric-motors",
-            "decision_weight": 4.0,
-            "label": "Precision electric motors",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "motor",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:power-electronics",
-            "decision_weight": 4.0,
-            "label": "Variable-speed power electronics",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "power_electronics",
-            "research_question": ""
-          }
-        ],
+        "decision_critical_unknown_count": 0,
+        "decision_critical_unknowns": [],
         "note": "Class counts remain disaggregated; no confidence scalar is computed.",
         "world_record_class_counts": {
           "ASSUMPTION": 2,
@@ -60,22 +27,31 @@
         }
       },
       "geography": "IND",
-      "new_unresolved_requirement_count": 2,
+      "new_unresolved_requirement_count": 0,
       "objective_id": "india_heat_pumps_50k",
       "requirements": [
         {
           "architecture_seed_epistemic_class": "ASSUMPTION",
           "canonical_id": "cap:industrial-compressors",
-          "composition_state": "UNRESOLVED_PRIMITIVE",
+          "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 5.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Industrial compressor manufacturing",
-          "mapped_entity_ids": [],
-          "mapped_pack_ids": [],
+          "mapped_entity_ids": [
+            "pack:targeted_industrial_reality:tr_cc_industrial_compressors"
+          ],
+          "mapped_pack_ids": [
+            "targeted_industrial_reality"
+          ],
           "requirement_id": "compressor",
           "role": "core_process_hardware",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_elgi_compressors"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -83,16 +59,25 @@
         {
           "architecture_seed_epistemic_class": "ASSUMPTION",
           "canonical_id": "cap:heat-exchangers",
-          "composition_state": "UNRESOLVED_PRIMITIVE",
+          "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Industrial heat exchangers",
-          "mapped_entity_ids": [],
-          "mapped_pack_ids": [],
+          "mapped_entity_ids": [
+            "pack:targeted_industrial_reality:tr_cc_heat_exchangers"
+          ],
+          "mapped_pack_ids": [
+            "targeted_industrial_reality"
+          ],
           "requirement_id": "heat_exchanger",
           "role": "thermal_hardware",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_alfa_heat_transfer"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -103,7 +88,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Precision electric motors",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:rec_servo_motor_axis",
@@ -112,20 +97,29 @@
             "pack:cnc_machining_india:spindle_motor",
             "pack:humanoid_india:bldc_servo_motor",
             "pack:humanoid_india:qual_motor_robot_grade",
-            "pack:humanoid_india:rec_bldc_servo_motor"
+            "pack:humanoid_india:rec_bldc_servo_motor",
+            "pack:targeted_industrial_reality:tr_cc_electric_motors"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "motor",
           "role": "drive_system",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "ESTIMATED",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:cnc_machining_india:evidence:ev_cnc_recursive_capacity_unknown",
             "pack:humanoid_india:evidence:ev_bldc_market_india",
             "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
-            "pack:humanoid_india:evidence:ev_qual_latency_aero"
+            "pack:humanoid_india:evidence:ev_qual_latency_aero",
+            "pack:targeted_industrial_reality:evidence:tr_ev_weg_motors"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -139,23 +133,30 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Variable-speed power electronics",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:control_power_module",
             "pack:cnc_machining_india:rec_servo_drive",
             "pack:cnc_machining_india:servo_drive",
             "pack:humanoid_india:motor_driver_inverter",
-            "pack:humanoid_india:sic_power_stage"
+            "pack:humanoid_india:sic_power_stage",
+            "pack:targeted_industrial_reality:tr_cc_power_electronics"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "power_electronics",
           "role": "drive_system",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
-            "pack:cnc_machining_india:evidence:ev_cnc_process_yields"
+            "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
+            "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -168,7 +169,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": false,
           "decision_weight": 3.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Industrial controls",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:control_power_module",
@@ -180,16 +181,23 @@
             "pack:humanoid_india:power_distribution_unit",
             "pack:humanoid_india:safety_controller",
             "pack:nuclear_buildout_india:radiation_hard_electronics",
-            "pack:nuclear_buildout_india:safety_control_logic"
+            "pack:nuclear_buildout_india:safety_control_logic",
+            "pack:targeted_industrial_reality:tr_cc_industrial_electronics"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
             "humanoid_india",
-            "nuclear_buildout_india"
+            "nuclear_buildout_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "controls",
           "role": "controls",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_bel_edms"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -200,7 +208,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": false,
           "decision_weight": 2.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Industrial metrology",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:ball_screw_metrology_station",
@@ -210,32 +218,40 @@
             "pack:nuclear_buildout_india:cc_india_nuclear_metrology_unknown",
             "pack:nuclear_buildout_india:large_metrology_lab",
             "pack:nuclear_buildout_india:nuclear_calibration_lab",
-            "pack:smallsat_india:metrology_cmm"
+            "pack:smallsat_india:metrology_cmm",
+            "pack:targeted_industrial_reality:tr_cc_metrology"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
             "humanoid_india",
             "nuclear_buildout_india",
-            "smallsat_india"
+            "smallsat_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "metrology",
           "role": "qualification",
+          "supporting_evidence_classes": [
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:nuclear_buildout_india:evidence:ev_aerb_qa_gates",
-            "pack:nuclear_buildout_india:evidence:ev_nuclear_capacity_unknown"
+            "pack:nuclear_buildout_india:evidence:ev_nuclear_capacity_unknown",
+            "pack:targeted_industrial_reality:evidence:tr_ev_stqc_metrology"
           ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
         }
       ],
-      "reused_canonical_primitive_count": 4,
-      "reused_entity_count": 29,
+      "reused_canonical_primitive_count": 6,
+      "reused_entity_count": 35,
       "reused_pack_ids": [
         "cnc_machining_india",
         "humanoid_india",
         "nuclear_buildout_india",
-        "smallsat_india"
+        "smallsat_india",
+        "targeted_industrial_reality"
       ],
       "reused_relation_types": [
         "requires_or_represents"
@@ -251,7 +267,7 @@
     {
       "architecture_seed_epistemic_class": "ASSUMPTION",
       "canonical_seed_only_count": 0,
-      "composition_coverage": 0.416667,
+      "composition_coverage": 1.0,
       "coverage_formula": "sum(decision_weight for REUSED_CANONICAL requirements) / sum(all decision_weight)",
       "coverage_not_claimed": [
         "feasibility",
@@ -261,41 +277,8 @@
         "economic viability"
       ],
       "epistemic_closure": {
-        "decision_critical_unknown_count": 4,
-        "decision_critical_unknowns": [
-          {
-            "canonical_id": "cap:electrochemical-stacks",
-            "decision_weight": 5.0,
-            "label": "Electrochemical stack manufacturing",
-            "reason": "canonical primitive missing",
-            "requirement_id": "electrochemistry",
-            "research_question": "What stack technology, yield, durability qualification, and effective capacity exist in India?"
-          },
-          {
-            "canonical_id": "cap:membrane-electrode-assemblies",
-            "decision_weight": 5.0,
-            "label": "Membranes and catalyst-coated electrodes",
-            "reason": "canonical primitive missing",
-            "requirement_id": "membrane",
-            "research_question": "Which membrane/electrode chemistries have qualified domestic production and what is their allocation?"
-          },
-          {
-            "canonical_id": "cap:power-electronics",
-            "decision_weight": 4.0,
-            "label": "High-current rectifiers and power electronics",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "power_electronics",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:industrial-gas-systems",
-            "decision_weight": 4.0,
-            "label": "Hydrogen gas handling and purification",
-            "reason": "canonical primitive missing",
-            "requirement_id": "gas_handling",
-            "research_question": ""
-          }
-        ],
+        "decision_critical_unknown_count": 0,
+        "decision_critical_unknowns": [],
         "note": "Class counts remain disaggregated; no confidence scalar is computed.",
         "world_record_class_counts": {
           "ASSUMPTION": 3,
@@ -304,22 +287,31 @@
         }
       },
       "geography": "IND",
-      "new_unresolved_requirement_count": 3,
+      "new_unresolved_requirement_count": 0,
       "objective_id": "india_electrolyzers_multi_gw",
       "requirements": [
         {
           "architecture_seed_epistemic_class": "ASSUMPTION",
           "canonical_id": "cap:electrochemical-stacks",
-          "composition_state": "UNRESOLVED_PRIMITIVE",
+          "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 5.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Electrochemical stack manufacturing",
-          "mapped_entity_ids": [],
-          "mapped_pack_ids": [],
+          "mapped_entity_ids": [
+            "pack:targeted_industrial_reality:tr_cc_electrochemical_stacks"
+          ],
+          "mapped_pack_ids": [
+            "targeted_industrial_reality"
+          ],
           "requirement_id": "electrochemistry",
           "role": "core_stack",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_lt_electrolyser"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -327,16 +319,25 @@
         {
           "architecture_seed_epistemic_class": "ASSUMPTION",
           "canonical_id": "cap:membrane-electrode-assemblies",
-          "composition_state": "UNRESOLVED_PRIMITIVE",
+          "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 5.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Membranes and catalyst-coated electrodes",
-          "mapped_entity_ids": [],
-          "mapped_pack_ids": [],
+          "mapped_entity_ids": [
+            "pack:targeted_industrial_reality:tr_cc_membrane_electrode_assemblies"
+          ],
+          "mapped_pack_ids": [
+            "targeted_industrial_reality"
+          ],
           "requirement_id": "membrane",
           "role": "critical_material",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_arci_mea"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -347,23 +348,30 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "High-current rectifiers and power electronics",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:control_power_module",
             "pack:cnc_machining_india:rec_servo_drive",
             "pack:cnc_machining_india:servo_drive",
             "pack:humanoid_india:motor_driver_inverter",
-            "pack:humanoid_india:sic_power_stage"
+            "pack:humanoid_india:sic_power_stage",
+            "pack:targeted_industrial_reality:tr_cc_power_electronics"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "power_electronics",
           "role": "balance_of_plant",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
-            "pack:cnc_machining_india:evidence:ev_cnc_process_yields"
+            "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
+            "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -373,16 +381,25 @@
         {
           "architecture_seed_epistemic_class": "ASSUMPTION",
           "canonical_id": "cap:industrial-gas-systems",
-          "composition_state": "UNRESOLVED_PRIMITIVE",
+          "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Hydrogen gas handling and purification",
-          "mapped_entity_ids": [],
-          "mapped_pack_ids": [],
+          "mapped_entity_ids": [
+            "pack:targeted_industrial_reality:tr_cc_industrial_gas_systems"
+          ],
+          "mapped_pack_ids": [
+            "targeted_industrial_reality"
+          ],
           "requirement_id": "gas_handling",
           "role": "balance_of_plant",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_inox_hydrogen"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -393,7 +410,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": false,
           "decision_weight": 3.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Precision assembly and calibration",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:machine_alignment_calibration",
@@ -409,6 +426,11 @@
           ],
           "requirement_id": "precision_assembly",
           "role": "production",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_metrology_research_question",
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
@@ -441,15 +463,22 @@
             "pack:materials_minerals_foundational:qual_li2co3_battery",
             "pack:materials_minerals_foundational:qual_ndfeb_motor_grade",
             "pack:materials_minerals_foundational:qual_poly_solar",
-            "pack:materials_minerals_foundational:qual_ti_sponge_aero"
+            "pack:materials_minerals_foundational:qual_ti_sponge_aero",
+            "pack:targeted_industrial_reality:tr_cc_electrolyser_testing"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
             "humanoid_india",
-            "materials_minerals_foundational"
+            "materials_minerals_foundational",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "qualification",
           "role": "qualification",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_schedule_assumption",
@@ -463,7 +492,8 @@
             "pack:materials_minerals_foundational:evidence:c09_china_anode",
             "pack:materials_minerals_foundational:evidence:c10_iea_94",
             "pack:materials_minerals_foundational:evidence:c12_china_poly",
-            "pack:materials_minerals_foundational:evidence:mm_process_assumptions"
+            "pack:materials_minerals_foundational:evidence:mm_process_assumptions",
+            "pack:targeted_industrial_reality:evidence:tr_ev_nise_testing"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -472,12 +502,13 @@
           ]
         }
       ],
-      "reused_canonical_primitive_count": 3,
-      "reused_entity_count": 21,
+      "reused_canonical_primitive_count": 6,
+      "reused_entity_count": 26,
       "reused_pack_ids": [
         "cnc_machining_india",
         "humanoid_india",
-        "materials_minerals_foundational"
+        "materials_minerals_foundational",
+        "targeted_industrial_reality"
       ],
       "reused_relation_types": [
         "requires_or_represents"
@@ -503,38 +534,14 @@
         "economic viability"
       ],
       "epistemic_closure": {
-        "decision_critical_unknown_count": 5,
+        "decision_critical_unknown_count": 2,
         "decision_critical_unknowns": [
-          {
-            "canonical_id": "cap:electric-motors",
-            "decision_weight": 4.0,
-            "label": "High-efficiency electric motors",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "motors",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:power-electronics",
-            "decision_weight": 4.0,
-            "label": "Motor drives and power electronics",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "power_electronics",
-            "research_question": ""
-          },
           {
             "canonical_id": "cap:battery-pack-integration",
             "decision_weight": 4.0,
             "label": "Battery-pack integration",
             "reason": "no mapped evidence-bearing world-state record",
             "requirement_id": "battery_pack",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:industrial-electronics",
-            "decision_weight": 4.0,
-            "label": "Embedded avionics and industrial electronics",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "avionics",
             "research_question": ""
           },
           {
@@ -564,7 +571,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "High-efficiency electric motors",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:rec_servo_motor_axis",
@@ -573,20 +580,29 @@
             "pack:cnc_machining_india:spindle_motor",
             "pack:humanoid_india:bldc_servo_motor",
             "pack:humanoid_india:qual_motor_robot_grade",
-            "pack:humanoid_india:rec_bldc_servo_motor"
+            "pack:humanoid_india:rec_bldc_servo_motor",
+            "pack:targeted_industrial_reality:tr_cc_electric_motors"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "motors",
           "role": "propulsion",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "ESTIMATED",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:cnc_machining_india:evidence:ev_cnc_recursive_capacity_unknown",
             "pack:humanoid_india:evidence:ev_bldc_market_india",
             "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
-            "pack:humanoid_india:evidence:ev_qual_latency_aero"
+            "pack:humanoid_india:evidence:ev_qual_latency_aero",
+            "pack:targeted_industrial_reality:evidence:tr_ev_weg_motors"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -600,23 +616,30 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Motor drives and power electronics",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:control_power_module",
             "pack:cnc_machining_india:rec_servo_drive",
             "pack:cnc_machining_india:servo_drive",
             "pack:humanoid_india:motor_driver_inverter",
-            "pack:humanoid_india:sic_power_stage"
+            "pack:humanoid_india:sic_power_stage",
+            "pack:targeted_industrial_reality:tr_cc_power_electronics"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "power_electronics",
           "role": "propulsion",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
-            "pack:cnc_machining_india:evidence:ev_cnc_process_yields"
+            "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
+            "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -643,6 +666,7 @@
           ],
           "requirement_id": "battery_pack",
           "role": "energy_storage",
+          "supporting_evidence_classes": [],
           "supporting_evidence_ids": [],
           "world_epistemic_classes": [
             "UNKNOWN"
@@ -654,7 +678,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Embedded avionics and industrial electronics",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:control_power_module",
@@ -666,16 +690,23 @@
             "pack:humanoid_india:power_distribution_unit",
             "pack:humanoid_india:safety_controller",
             "pack:nuclear_buildout_india:radiation_hard_electronics",
-            "pack:nuclear_buildout_india:safety_control_logic"
+            "pack:nuclear_buildout_india:safety_control_logic",
+            "pack:targeted_industrial_reality:tr_cc_industrial_electronics"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
             "humanoid_india",
-            "nuclear_buildout_india"
+            "nuclear_buildout_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "avionics",
           "role": "control",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_bel_edms"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -686,7 +717,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": false,
           "decision_weight": 3.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Lightweight composite structures",
           "mapped_entity_ids": [
             "pack:materials_minerals_foundational:rcls_carbon_fiber_capacity",
@@ -700,6 +731,10 @@
           ],
           "requirement_id": "composite_structures",
           "role": "airframe",
+          "supporting_evidence_classes": [
+            "CONFLICTED",
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
             "pack:materials_minerals_foundational:evidence:c15_ata_2025",
             "pack:materials_minerals_foundational:evidence:c15_toray_conflict"
@@ -715,7 +750,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": false,
           "decision_weight": 2.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Production tooling and fixtures",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:ball_screw_grinding_fixture",
@@ -731,6 +766,10 @@
           ],
           "requirement_id": "tooling",
           "role": "production",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
@@ -754,6 +793,7 @@
           "mapped_pack_ids": [],
           "requirement_id": "field_service",
           "role": "lifecycle",
+          "supporting_evidence_classes": [],
           "supporting_evidence_ids": [],
           "world_epistemic_classes": [
             "UNKNOWN"
@@ -761,13 +801,14 @@
         }
       ],
       "reused_canonical_primitive_count": 6,
-      "reused_entity_count": 36,
+      "reused_entity_count": 39,
       "reused_pack_ids": [
         "cnc_machining_india",
         "humanoid_india",
         "materials_minerals_foundational",
         "nuclear_buildout_india",
-        "smallsat_india"
+        "smallsat_india",
+        "targeted_industrial_reality"
       ],
       "reused_relation_types": [
         "requires_or_represents"
@@ -793,33 +834,8 @@
         "economic viability"
       ],
       "epistemic_closure": {
-        "decision_critical_unknown_count": 3,
-        "decision_critical_unknowns": [
-          {
-            "canonical_id": "cap:electric-motors",
-            "decision_weight": 5.0,
-            "label": "Precision electric-motor manufacturing",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "motors",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:industrial-electronics",
-            "decision_weight": 4.0,
-            "label": "Advanced motor controls",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "controls",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:power-electronics",
-            "decision_weight": 4.0,
-            "label": "Power electronics",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "power_electronics",
-            "research_question": ""
-          }
-        ],
+        "decision_critical_unknown_count": 0,
+        "decision_critical_unknowns": [],
         "note": "Class counts remain disaggregated; no confidence scalar is computed.",
         "world_record_class_counts": {
           "ASSUMPTION": 4,
@@ -838,7 +854,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 5.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Precision electric-motor manufacturing",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:rec_servo_motor_axis",
@@ -847,20 +863,29 @@
             "pack:cnc_machining_india:spindle_motor",
             "pack:humanoid_india:bldc_servo_motor",
             "pack:humanoid_india:qual_motor_robot_grade",
-            "pack:humanoid_india:rec_bldc_servo_motor"
+            "pack:humanoid_india:rec_bldc_servo_motor",
+            "pack:targeted_industrial_reality:tr_cc_electric_motors"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "motors",
           "role": "architecture_family",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "ESTIMATED",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:cnc_machining_india:evidence:ev_cnc_recursive_capacity_unknown",
             "pack:humanoid_india:evidence:ev_bldc_market_india",
             "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
-            "pack:humanoid_india:evidence:ev_qual_latency_aero"
+            "pack:humanoid_india:evidence:ev_qual_latency_aero",
+            "pack:targeted_industrial_reality:evidence:tr_ev_weg_motors"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -874,7 +899,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Advanced motor controls",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:control_power_module",
@@ -886,16 +911,23 @@
             "pack:humanoid_india:power_distribution_unit",
             "pack:humanoid_india:safety_controller",
             "pack:nuclear_buildout_india:radiation_hard_electronics",
-            "pack:nuclear_buildout_india:safety_control_logic"
+            "pack:nuclear_buildout_india:safety_control_logic",
+            "pack:targeted_industrial_reality:tr_cc_industrial_electronics"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
             "humanoid_india",
-            "nuclear_buildout_india"
+            "nuclear_buildout_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "controls",
           "role": "architecture_enabler",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_bel_edms"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -906,23 +938,30 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Power electronics",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:control_power_module",
             "pack:cnc_machining_india:rec_servo_drive",
             "pack:cnc_machining_india:servo_drive",
             "pack:humanoid_india:motor_driver_inverter",
-            "pack:humanoid_india:sic_power_stage"
+            "pack:humanoid_india:sic_power_stage",
+            "pack:targeted_industrial_reality:tr_cc_power_electronics"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "power_electronics",
           "role": "architecture_enabler",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
-            "pack:cnc_machining_india:evidence:ev_cnc_process_yields"
+            "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
+            "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -947,6 +986,9 @@
           ],
           "requirement_id": "electrical_steel",
           "role": "critical_material",
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
             "pack:materials_minerals_foundational:evidence:c01_india_steel_capacity"
           ],
@@ -967,6 +1009,7 @@
           "mapped_pack_ids": [],
           "requirement_id": "copper_rotor",
           "role": "substitution_route",
+          "supporting_evidence_classes": [],
           "supporting_evidence_ids": [],
           "world_epistemic_classes": [
             "UNKNOWN"
@@ -978,7 +1021,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": false,
           "decision_weight": 3.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Precision bearings",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:cc_india_precision_bearing_unknown",
@@ -986,14 +1029,21 @@
             "pack:cnc_machining_india:rec_bearing_ring_set",
             "pack:cnc_machining_india:spindle_bearing",
             "pack:humanoid_india:crossed_roller_bearing",
-            "pack:humanoid_india:rec_crossed_roller_bearing"
+            "pack:humanoid_india:rec_crossed_roller_bearing",
+            "pack:targeted_industrial_reality:tr_cc_precision_bearings"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "bearings",
           "role": "motion_system",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
@@ -1002,7 +1052,8 @@
             "pack:cnc_machining_india:evidence:ev_cnc_recursive_capacity_unknown",
             "pack:cnc_machining_india:evidence:ev_nsk_spindle_bearing_scope",
             "pack:humanoid_india:evidence:ev_nsk_crossroller_scope",
-            "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown"
+            "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
+            "pack:targeted_industrial_reality:evidence:tr_ev_nbc_bearings"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -1034,6 +1085,11 @@
           ],
           "requirement_id": "magnet_chain",
           "role": "residual_dependency",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:humanoid_india:evidence:ev_china_processing",
             "pack:humanoid_india:evidence:ev_material_chain_unknown",
@@ -1050,12 +1106,13 @@
         }
       ],
       "reused_canonical_primitive_count": 6,
-      "reused_entity_count": 37,
+      "reused_entity_count": 41,
       "reused_pack_ids": [
         "cnc_machining_india",
         "humanoid_india",
         "materials_minerals_foundational",
-        "nuclear_buildout_india"
+        "nuclear_buildout_india",
+        "targeted_industrial_reality"
       ],
       "reused_relation_types": [
         "requires_or_represents"
@@ -1080,33 +1137,8 @@
         "economic viability"
       ],
       "epistemic_closure": {
-        "decision_critical_unknown_count": 3,
-        "decision_critical_unknowns": [
-          {
-            "canonical_id": "cap:precision-assembly-calibration",
-            "decision_weight": 4.0,
-            "label": "Precision assembly and calibration",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "precision_assembly",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:industrial-electronics",
-            "decision_weight": 5.0,
-            "label": "Industrial/space electronics",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "electronics",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:space-optical-payloads",
-            "decision_weight": 5.0,
-            "label": "Hyperspectral optical payload production",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "optical_payload",
-            "research_question": "Which facilities can serially produce and calibrate hyperspectral payloads at the target cadence?"
-          }
-        ],
+        "decision_critical_unknown_count": 0,
+        "decision_critical_unknowns": [],
         "note": "Class counts remain disaggregated; no confidence scalar is computed.",
         "world_record_class_counts": {
           "ASSUMPTION": 3,
@@ -1134,6 +1166,9 @@
           ],
           "requirement_id": "hirel",
           "role": "qualification",
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
             "pack:smallsat_india:evidence:ev_hirel_qualification"
           ],
@@ -1147,7 +1182,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Precision assembly and calibration",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:machine_alignment_calibration",
@@ -1163,6 +1198,11 @@
           ],
           "requirement_id": "precision_assembly",
           "role": "production",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_metrology_research_question",
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
@@ -1198,6 +1238,9 @@
           ],
           "requirement_id": "thermal",
           "role": "spacecraft_bus",
+          "supporting_evidence_classes": [
+            "ASSUMPTION"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields"
           ],
@@ -1212,7 +1255,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 5.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Industrial/space electronics",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:control_power_module",
@@ -1224,16 +1267,23 @@
             "pack:humanoid_india:power_distribution_unit",
             "pack:humanoid_india:safety_controller",
             "pack:nuclear_buildout_india:radiation_hard_electronics",
-            "pack:nuclear_buildout_india:safety_control_logic"
+            "pack:nuclear_buildout_india:safety_control_logic",
+            "pack:targeted_industrial_reality:tr_cc_industrial_electronics"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
             "humanoid_india",
-            "nuclear_buildout_india"
+            "nuclear_buildout_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "electronics",
           "role": "avionics",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_bel_edms"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -1244,17 +1294,24 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 5.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Hyperspectral optical payload production",
           "mapped_entity_ids": [
-            "pack:smallsat_india:optical_payload_300kg"
+            "pack:smallsat_india:optical_payload_300kg",
+            "pack:targeted_industrial_reality:tr_cc_space_optical_payloads"
           ],
           "mapped_pack_ids": [
-            "smallsat_india"
+            "smallsat_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "optical_payload",
           "role": "payload",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_isro_leos"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -1276,6 +1333,9 @@
           ],
           "requirement_id": "test",
           "role": "qualification",
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
             "pack:smallsat_india:evidence:ev_hirel_qualification"
           ],
@@ -1290,7 +1350,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": false,
           "decision_weight": 2.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Production tooling and fixtures",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:ball_screw_grinding_fixture",
@@ -1306,6 +1366,10 @@
           ],
           "requirement_id": "tooling",
           "role": "production",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
@@ -1319,12 +1383,13 @@
         }
       ],
       "reused_canonical_primitive_count": 7,
-      "reused_entity_count": 31,
+      "reused_entity_count": 33,
       "reused_pack_ids": [
         "cnc_machining_india",
         "humanoid_india",
         "nuclear_buildout_india",
-        "smallsat_india"
+        "smallsat_india",
+        "targeted_industrial_reality"
       ],
       "reused_relation_types": [
         "requires_or_represents"
@@ -1350,57 +1415,8 @@
         "economic viability"
       ],
       "epistemic_closure": {
-        "decision_critical_unknown_count": 6,
-        "decision_critical_unknowns": [
-          {
-            "canonical_id": "cap:precision-grinding",
-            "decision_weight": 5.0,
-            "label": "Precision grinding",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "grinding",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:precision-bearings",
-            "decision_weight": 5.0,
-            "label": "Precision bearings",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "bearings",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:metrology",
-            "decision_weight": 5.0,
-            "label": "Industrial metrology",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "metrology",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:electric-motors",
-            "decision_weight": 4.0,
-            "label": "Precision electric motors",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "motors",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:encoders-position-sensing",
-            "decision_weight": 4.0,
-            "label": "Encoders and position sensing",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "encoders",
-            "research_question": ""
-          },
-          {
-            "canonical_id": "cap:power-electronics",
-            "decision_weight": 4.0,
-            "label": "Power electronics",
-            "reason": "no mapped evidence-bearing world-state record",
-            "requirement_id": "power_electronics",
-            "research_question": ""
-          }
-        ],
+        "decision_critical_unknown_count": 0,
+        "decision_critical_unknowns": [],
         "note": "Class counts remain disaggregated; no confidence scalar is computed.",
         "world_record_class_counts": {
           "ASSUMPTION": 6,
@@ -1419,7 +1435,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 5.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Precision grinding",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:ball_screw_grinder",
@@ -1427,16 +1443,23 @@
             "pack:cnc_machining_india:precision_surface_grinder",
             "pack:humanoid_india:precision_bearing_grinder",
             "pack:humanoid_india:precision_gear_grinder",
-            "pack:materials_minerals_foundational:precision_grinder"
+            "pack:materials_minerals_foundational:precision_grinder",
+            "pack:targeted_industrial_reality:tr_cc_precision_grinding"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
             "humanoid_india",
-            "materials_minerals_foundational"
+            "materials_minerals_foundational",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "grinding",
           "role": "shared_foundation",
-          "supporting_evidence_ids": [],
+          "supporting_evidence_classes": [
+            "REPORTED"
+          ],
+          "supporting_evidence_ids": [
+            "pack:targeted_industrial_reality:evidence:tr_ev_micromatic_grinders"
+          ],
           "world_epistemic_classes": [
             "UNKNOWN"
           ]
@@ -1447,7 +1470,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 5.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Precision bearings",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:cc_india_precision_bearing_unknown",
@@ -1455,14 +1478,21 @@
             "pack:cnc_machining_india:rec_bearing_ring_set",
             "pack:cnc_machining_india:spindle_bearing",
             "pack:humanoid_india:crossed_roller_bearing",
-            "pack:humanoid_india:rec_crossed_roller_bearing"
+            "pack:humanoid_india:rec_crossed_roller_bearing",
+            "pack:targeted_industrial_reality:tr_cc_precision_bearings"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "bearings",
           "role": "shared_foundation",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
@@ -1471,7 +1501,8 @@
             "pack:cnc_machining_india:evidence:ev_cnc_recursive_capacity_unknown",
             "pack:cnc_machining_india:evidence:ev_nsk_spindle_bearing_scope",
             "pack:humanoid_india:evidence:ev_nsk_crossroller_scope",
-            "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown"
+            "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
+            "pack:targeted_industrial_reality:evidence:tr_ev_nbc_bearings"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -1484,7 +1515,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 5.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Industrial metrology",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:ball_screw_metrology_station",
@@ -1494,19 +1525,26 @@
             "pack:nuclear_buildout_india:cc_india_nuclear_metrology_unknown",
             "pack:nuclear_buildout_india:large_metrology_lab",
             "pack:nuclear_buildout_india:nuclear_calibration_lab",
-            "pack:smallsat_india:metrology_cmm"
+            "pack:smallsat_india:metrology_cmm",
+            "pack:targeted_industrial_reality:tr_cc_metrology"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
             "humanoid_india",
             "nuclear_buildout_india",
-            "smallsat_india"
+            "smallsat_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "metrology",
           "role": "shared_foundation",
+          "supporting_evidence_classes": [
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:nuclear_buildout_india:evidence:ev_aerb_qa_gates",
-            "pack:nuclear_buildout_india:evidence:ev_nuclear_capacity_unknown"
+            "pack:nuclear_buildout_india:evidence:ev_nuclear_capacity_unknown",
+            "pack:targeted_industrial_reality:evidence:tr_ev_stqc_metrology"
           ],
           "world_epistemic_classes": [
             "UNKNOWN"
@@ -1518,7 +1556,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Precision electric motors",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:rec_servo_motor_axis",
@@ -1527,20 +1565,29 @@
             "pack:cnc_machining_india:spindle_motor",
             "pack:humanoid_india:bldc_servo_motor",
             "pack:humanoid_india:qual_motor_robot_grade",
-            "pack:humanoid_india:rec_bldc_servo_motor"
+            "pack:humanoid_india:rec_bldc_servo_motor",
+            "pack:targeted_industrial_reality:tr_cc_electric_motors"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "motors",
           "role": "shared_foundation",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "ESTIMATED",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
             "pack:cnc_machining_india:evidence:ev_cnc_recursive_capacity_unknown",
             "pack:humanoid_india:evidence:ev_bldc_market_india",
             "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
-            "pack:humanoid_india:evidence:ev_qual_latency_aero"
+            "pack:humanoid_india:evidence:ev_qual_latency_aero",
+            "pack:targeted_industrial_reality:evidence:tr_ev_weg_motors"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -1554,7 +1601,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Encoders and position sensing",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:absolute_encoder_axis",
@@ -1565,14 +1612,21 @@
             "pack:humanoid_india:cc_india_encoder_unknown",
             "pack:humanoid_india:encoder_asic",
             "pack:humanoid_india:encoder_scale_glass",
-            "pack:humanoid_india:rec_absolute_encoder"
+            "pack:humanoid_india:rec_absolute_encoder",
+            "pack:targeted_industrial_reality:tr_cc_encoders"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "encoders",
           "role": "shared_foundation",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
@@ -1580,7 +1634,8 @@
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_window",
             "pack:cnc_machining_india:evidence:ev_cnc_recursive_capacity_unknown",
             "pack:humanoid_india:evidence:ev_precision_motion_capacity_unknown",
-            "pack:humanoid_india:evidence:ev_renishaw_encoder_scope"
+            "pack:humanoid_india:evidence:ev_renishaw_encoder_scope",
+            "pack:targeted_industrial_reality:evidence:tr_ev_eipl_encoders"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -1593,23 +1648,30 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": true,
           "decision_weight": 4.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Power electronics",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:control_power_module",
             "pack:cnc_machining_india:rec_servo_drive",
             "pack:cnc_machining_india:servo_drive",
             "pack:humanoid_india:motor_driver_inverter",
-            "pack:humanoid_india:sic_power_stage"
+            "pack:humanoid_india:sic_power_stage",
+            "pack:targeted_industrial_reality:tr_cc_power_electronics"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
-            "humanoid_india"
+            "humanoid_india",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "power_electronics",
           "role": "shared_foundation",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
-            "pack:cnc_machining_india:evidence:ev_cnc_process_yields"
+            "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
+            "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -1622,7 +1684,7 @@
           "composition_state": "REUSED_CANONICAL",
           "decision_critical": false,
           "decision_weight": 3.0,
-          "evidenced_world_state": false,
+          "evidenced_world_state": true,
           "label": "Production tooling and fixtures",
           "mapped_entity_ids": [
             "pack:cnc_machining_india:ball_screw_grinding_fixture",
@@ -1638,6 +1700,10 @@
           ],
           "requirement_id": "tooling",
           "role": "shared_foundation",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
             "pack:cnc_machining_india:evidence:ev_cnc_process_yields",
@@ -1668,15 +1734,22 @@
             "pack:materials_minerals_foundational:qual_li2co3_battery",
             "pack:materials_minerals_foundational:qual_ndfeb_motor_grade",
             "pack:materials_minerals_foundational:qual_poly_solar",
-            "pack:materials_minerals_foundational:qual_ti_sponge_aero"
+            "pack:materials_minerals_foundational:qual_ti_sponge_aero",
+            "pack:targeted_industrial_reality:tr_cc_electrolyser_testing"
           ],
           "mapped_pack_ids": [
             "cnc_machining_india",
             "humanoid_india",
-            "materials_minerals_foundational"
+            "materials_minerals_foundational",
+            "targeted_industrial_reality"
           ],
           "requirement_id": "qualification",
           "role": "shared_foundation",
+          "supporting_evidence_classes": [
+            "ASSUMPTION",
+            "REPORTED",
+            "UNKNOWN"
+          ],
           "supporting_evidence_ids": [
             "pack:cnc_machining_india:evidence:ev_cnc_mrl_framework",
             "pack:cnc_machining_india:evidence:ev_cnc_qualification_schedule_assumption",
@@ -1690,7 +1763,8 @@
             "pack:materials_minerals_foundational:evidence:c09_china_anode",
             "pack:materials_minerals_foundational:evidence:c10_iea_94",
             "pack:materials_minerals_foundational:evidence:c12_china_poly",
-            "pack:materials_minerals_foundational:evidence:mm_process_assumptions"
+            "pack:materials_minerals_foundational:evidence:mm_process_assumptions",
+            "pack:targeted_industrial_reality:evidence:tr_ev_nise_testing"
           ],
           "world_epistemic_classes": [
             "ASSUMPTION",
@@ -1700,13 +1774,14 @@
         }
       ],
       "reused_canonical_primitive_count": 8,
-      "reused_entity_count": 56,
+      "reused_entity_count": 63,
       "reused_pack_ids": [
         "cnc_machining_india",
         "humanoid_india",
         "materials_minerals_foundational",
         "nuclear_buildout_india",
-        "smallsat_india"
+        "smallsat_india",
+        "targeted_industrial_reality"
       ],
       "reused_relation_types": [
         "requires_or_represents"
@@ -1724,8 +1799,8 @@
       "title": "Shared capabilities constraining CNC, robotics, aerospace, and EV manufacturing"
     }
   ],
-  "registry_content_hash": "29bd452399a18ecdada0cbf569a3b0866ff4ca26812e9a45afec9e7df9208da4",
-  "registry_snapshot_id": "registry-snapshot:29bd452399a18ecd",
+  "registry_content_hash": "db84f98a08835614fa255ca743b3ddf7b7a40f7abf8b21cd1d6031621f79088e",
+  "registry_snapshot_id": "registry-snapshot:db84f98a08835614",
   "schema_version": "1.0.0",
-  "total_decision_critical_unknowns": 25
+  "total_decision_critical_unknowns": 2
 }

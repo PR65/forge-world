@@ -583,6 +583,38 @@ def official_record_adapter():
     }
 
 
+@app.get("/api/adapter/official/targeted")
+def targeted_official_record_adapter():
+    """Reviewed HOMI gap-closure observations with canonical bindings."""
+    from forge.adapters import AdapterError, OfficialRecordCatalogAdapter
+
+    try:
+        results = OfficialRecordCatalogAdapter(
+            ROOT / "data" / "ingestion" / "homi_targeted_observations.yaml"
+        ).load()
+    except AdapterError as exc:
+        raise HTTPException(500, str(exc))
+    registry = get_registry()
+    rows = []
+    for result in results:
+        payload = _adapter_result_json(result)
+        payload["entity_bindings"] = [
+            {
+                "observation_id": observation.observation_id,
+                "subject": observation.subject,
+                "resolved_entity": registry.get_entity(observation.subject),
+                "automatic_model_mutation": False,
+            }
+            for observation in result.observations
+        ]
+        rows.append(payload)
+    return {
+        "pathway": "HOMI_TARGETED_PRIMARY_SOURCE_CATALOG",
+        "registry_snapshot_id": registry.snapshot_id,
+        "results": rows,
+    }
+
+
 @app.get("/api/ingestion/status")
 def ingestion_status():
     """Show which operational pathways reach resolvable world entities."""
@@ -591,9 +623,20 @@ def ingestion_status():
     results = OfficialRecordCatalogAdapter(
         ROOT / "data" / "ingestion" / "official_observations.yaml"
     ).load()
+    targeted_results = OfficialRecordCatalogAdapter(
+        ROOT / "data" / "ingestion" / "homi_targeted_observations.yaml"
+    ).load()
     registry = get_registry()
     observations = [observation for result in results for observation in result.observations]
     resolved = [observation for observation in observations if registry.get_entity(observation.subject)]
+    targeted_observations = [
+        observation for result in targeted_results for observation in result.observations
+    ]
+    targeted_resolved = [
+        observation
+        for observation in targeted_observations
+        if registry.get_entity(observation.subject)
+    ]
     return {
         "pathways": [
             {
@@ -615,6 +658,12 @@ def ingestion_status():
                 "model_role": "primary document observation and explicit entity binding",
             },
             {
+                "id": "homi_targeted_primary_sources",
+                "mode": "REVIEWED_SOURCE_SNAPSHOT_OBSERVATION_PROMOTION",
+                "operational": True,
+                "model_role": "decision-ranked facility/process/test observations mapped to canonical world state",
+            },
+            {
                 "id": "research_resolution",
                 "mode": "HUMAN_REVIEWED_CAPTURE_TO_SCENARIO_OVERLAY",
                 "operational": True,
@@ -629,6 +678,8 @@ def ingestion_status():
         ],
         "official_catalog_observations": len(observations),
         "resolved_world_subjects": len(resolved),
+        "targeted_catalog_observations": len(targeted_observations),
+        "targeted_resolved_world_subjects": len(targeted_resolved),
         "unresolved_world_subjects": sorted(
             observation.subject
             for observation in observations
@@ -656,6 +707,8 @@ def reality_status():
     barrier = _read_homi_json("gate0/barrier.json")
     ledger = _read_homi_json("gate0/claim_ledger.json")
     conditioning = _read_homi_json("staging/conditioning_report.json")
+    targeted = _read_homi_json("targeted/promotion_ledger.json")
+    closure = _read_homi_json("targeted/closure_summary.json")
     return {
         "layers": {
             "L0_raw": "EXTERNAL_IMMUTABLE",
@@ -669,6 +722,15 @@ def reality_status():
         "epistemic_class_counts": ledger["epistemic_class_counts"],
         "conflict_candidates": ledger["conflict_candidate_count"],
         "source_license_unspecified": ledger["source_license_unspecified_count"],
+        "targeted_closure": {
+            "sources": targeted["source_count"],
+            "observations": targeted["observation_count"],
+            "promotions": targeted["promotion_count"],
+            "effective_capacity_promotions": targeted[
+                "effective_capacity_promotion_count"
+            ],
+            "composition": closure["composition_after_targeted_closure"],
+        },
         "conditioning": {
             "artifacts": conditioning["artifact_count"],
             "unique_hashes": conditioning["unique_hash_count"],

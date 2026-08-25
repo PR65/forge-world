@@ -1,0 +1,532 @@
+{
+  "packet_schema_version": "homi-targeted-primary-source.v1",
+  "packet_id": "packet_a_power_electronics",
+  "analysis_date": "2026-08-25",
+  "scope": {
+    "geography": "India",
+    "bounded_tasks": 4,
+    "maximum_source_records": 12,
+    "primary_source_rule": "Company-issued pages, company filings/press releases, official certification records, and official counterparty records only.",
+    "research_method": "Targeted web review of official/primary sources; claims are paraphrased and scoped to the source locator. No capacity, qualification, facility, or canonical equivalence is inferred.",
+    "access_date_for_all_records": "2026-08-25"
+  },
+  "guardrails": {
+    "canonical_promotion": "NONE",
+    "canonical_edits": 0,
+    "capacity_inferences": 0,
+    "qualification_inferences": 0,
+    "project_to_operating_inferences": 0,
+    "trade_or_sales_to_production_inferences": 0,
+    "nameplate_or_product_rating_to_throughput_inferences": 0,
+    "unknown_stays_unknown": true,
+    "license_posture": "Public official pages/documents are linked and paraphrased only; copyright and reuse rights remain with the publisher or certifying body. No bulk source text is reproduced."
+  },
+  "tasks": [
+    {
+      "task_id": "A1",
+      "task": "Operating India power-electronics / variable-speed-drive manufacturing facility evidence",
+      "canonical_gap_candidates": ["cap:power-electronics"],
+      "entity_candidates": [
+        {
+          "entity": "ABB India Limited",
+          "facility": "ABB Peenya drives factory / VSD production line",
+          "location": "Peenya, Bengaluru, Karnataka, India",
+          "identity_status": "Source-supported operating facility candidate; not canonical promotion."
+        }
+      ],
+      "operating_evidence_status": "REPORTED_OPERATING_PRODUCTION_LINE",
+      "product_process_scope": ["variable-speed drive modules", "large-power-rating drives", "drive-component automation", "precision testing", "made-to-order industrial drives"],
+      "source_record_ids": ["A1-S1", "A1-S2"],
+      "capacity_semantics": "ABB reports a 2025 target to double production capacity and a later relative increase of about 25 percent; neither is an absolute effective-capacity denominator, yield, utilization, or qualified-output claim.",
+      "canonical_gap_closed": "Operating local VSD production and product-scope evidence narrows the cap:power-electronics presence/production gap; current qualified throughput and domestic content remain UNKNOWN.",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "task_id": "A2",
+      "task": "Operating India precision/industrial electric-motor manufacturing facility and product-scope evidence",
+      "canonical_gap_candidates": ["cap:electric-motors"],
+      "entity_candidates": [
+        {
+          "entity": "WEG Industries (India) Private Limited",
+          "facility": "Hosur manufacturing plant / Hosur LV Factory",
+          "location": "Mornapalli Village, SIPCOT Phase II, Hosur, Tamil Nadu, India",
+          "identity_status": "Source-supported operating manufacturing facility candidate; not canonical promotion."
+        }
+      ],
+      "operating_evidence_status": "REPORTED_OPERATING_MANUFACTURING_AND_CERTIFIED_SCOPE",
+      "product_process_scope": ["low-voltage induction motors", "medium/high-voltage induction motors", "synchronous motors", "large rotating electric machines", "motor testing", "repair and re-powering"],
+      "source_record_ids": ["A2-S1", "A2-S2", "A2-S3"],
+      "capacity_semantics": "The 2024 source reports a 130-motor project lot, not plant capacity. The certification's 500 kW boundary is motor product rating, not annual throughput. No capacity is inferred.",
+      "canonical_gap_closed": "Operating Hosur manufacturing and explicit induction-motor product/process scope narrow the cap:electric-motors facility/product gap; effective capacity, yield, utilization, and customer qualification remain UNKNOWN.",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "task_id": "A3",
+      "task": "Operating India industrial/embedded electronics manufacturing facility evidence",
+      "canonical_gap_candidates": ["cap:industrial-electronics"],
+      "entity_candidates": [
+        {
+          "entity": "Bharat Electronics Limited",
+          "facility": "Export Manufacturing SBU-Bengaluru / Bengaluru Complex and PDIC",
+          "location": "Jalahalli, Bengaluru, Karnataka, India",
+          "identity_status": "Source-supported manufacturing and design/prototype facility candidates; no canonical promotion."
+        }
+      ],
+      "operating_evidence_status": "REPORTED_OPERATING_ELECTRONICS_MANUFACTURING_WITH_DESIGN_AND_PROTOTYPE_SUPPORT",
+      "product_process_scope": ["PCB assembly", "cable assembly", "precision fabrication", "electromechanical assembly", "super components", "conformal coating", "burn-in and thermal cycling", "embedded software/firmware for FPGA/DSP/microcontroller/SoC hardware", "industrial and medical-grade products", "embedded-systems design/prototyping"],
+      "source_record_ids": ["A3-S1", "A3-S2", "A3-S3"],
+      "capacity_semantics": "No production capacity, yield, utilization, or accepted-output denominator is reported in the bounded records. PDIC's 700+ engineer housing statement is facility staffing scale, not manufacturing throughput.",
+      "canonical_gap_closed": "Operating electronics manufacturing, test, embedded engineering, and facility identity narrow the cap:industrial-electronics gap; product/customer qualification and scalable output remain UNKNOWN.",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "task_id": "A4",
+      "task": "India encoder/position-sensing production or qualification evidence",
+      "canonical_gap_candidates": ["cap:encoders-position-sensing"],
+      "entity_candidates": [
+        {
+          "entity": "Jayashree Encoders Pvt. Ltd.",
+          "facility": "Bhosari encoder manufacturing facility",
+          "location": "PCNTDA Industrial Area, Bhosari, Pune, Maharashtra, India",
+          "identity_status": "Company and official counterparty records support manufacturing-partner/product candidates; not canonical promotion."
+        },
+        {
+          "entity": "Encoders India Private Limited",
+          "facility": "Registered office and works",
+          "location": "Plot No. 221, Sector-68, IMT Faridabad, Haryana, India",
+          "identity_status": "Company profile and contact page support a manufacturing candidate; no output or customer qualification inference."
+        }
+      ],
+      "operating_evidence_status": "REPORTED_MANUFACTURING_AND_QUALITY-SYSTEM_CANDIDATES",
+      "product_process_scope": ["rotary incremental optical encoders", "absolute/rotary encoder offerings", "linear encoders", "hollow/solid shaft encoders", "machine-tool and servo-motor feedback encoders", "resolvers", "electronic tacho-generators", "digital readouts", "encoder couplings", "encoder testing and inspection"],
+      "source_record_ids": ["A4-S1", "A4-S2", "A4-S3", "A4-S4"],
+      "capacity_semantics": "No annual encoder throughput, yield, utilization, accuracy-grade output, or accredited calibration scope is reported. Installation/customer/export statements are not converted to production capacity or qualification.",
+      "canonical_gap_closed": "India-based encoder manufacturing identity, product envelope, quality-system claim, and an official manufacturing partnership narrow the cap:encoders-position-sensing gap; traceable accuracy qualification and effective supply remain UNKNOWN.",
+      "promotion_status": "STAGING_ONLY"
+    }
+  ],
+  "source_records": [
+    {
+      "source_id": "A1-S1",
+      "source_url": "https://new.abb.com/news/detail/102971/abb-india-expands-production-footprint-of-its-energy-efficient-drives-portfolio",
+      "publisher": "ABB India Limited / ABB",
+      "source_type": "Official company press release",
+      "primary_source_basis": "ABB-issued news-center release describing its own Peenya production line.",
+      "page_section_locator": "Press release title and body, paragraphs beginning 'ABB India expands its manufacturing footprint...' and 'The new line will produce drives...'; captured web lines 29-46.",
+      "publication_date": "2023-05-11",
+      "effective_date": null,
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public ABB corporate webpage; copyright retained by ABB; URL and paraphrase only.",
+      "geography": ["India", "Bengaluru, Karnataka"],
+      "entity_facility": {
+        "entity": "ABB India Limited",
+        "facility": "Peenya factory, Bengaluru; new VSD-module production line",
+        "address_or_locator": "Peenya, Bengaluru, Karnataka, India"
+      },
+      "product_process_scope": ["variable-speed drive modules", "drives from 75 kW to 250 kW", "industrial applications and buildings", "precision testing", "position/angle/torque control and programmable fastening on the line"],
+      "scoped_claim_paraphrase": "ABB states that its new Peenya line expands Indian manufacturing of variable-speed-drive modules, produces 75–250 kW drives for industrial segments, and includes precision testing and automated production features.",
+      "reported_capacity": {
+        "claim": "ABB aims to double production capacity by 2025",
+        "value": null,
+        "unit": null,
+        "denominator": null,
+        "state": "Company target; not current effective or qualified capacity"
+      },
+      "project_or_operating_state": "OPERATING_PRODUCTION_LINE_REPORTED; release describes the line as opened/expanded and manufacturing locally.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["The 2025 doubling statement is a target, not a measured output result.", "No line yield, utilization, local-content share, customer qualification, or annual qualified throughput is provided."],
+      "canonical_gap_closed": ["cap:power-electronics"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A1-S2",
+      "source_url": "https://new.abb.com/docs/librariesprovider19/default-document-library/pressrelease_october282025.pdf",
+      "publisher": "ABB India Limited",
+      "source_type": "Company filing/press-release PDF",
+      "primary_source_basis": "ABB India filing identifies the release as issued by the company and describes the Peenya factory's own production expansion.",
+      "page_section_locator": "PDF p.1 bullets and paragraphs; p.2 production-automation paragraphs, especially the sections stating localized VSD production and a relative 25 percent increase.",
+      "publication_date": "2025-10-28",
+      "effective_date": "2025-10-28",
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public ABB India corporate filing; copyright retained by ABB; URL and paraphrase only.",
+      "geography": ["India", "Peenya, Bengaluru, Karnataka"],
+      "entity_facility": {
+        "entity": "ABB India Limited",
+        "facility": "ABB Peenya drives factory",
+        "address_or_locator": "Peenya Industrial Area, Bengaluru, Karnataka, India"
+      },
+      "product_process_scope": ["variable-speed drives and VSD modules", "large-power-rating drives", "industrial/building/data-center/water/cement/metals applications", "robotics and digital production monitoring for drive-component production"],
+      "scoped_claim_paraphrase": "ABB reports localized VSD production at the Peenya drives factory, a new automated line, and a company-reported increase of about 25 percent in local VSD production capacity; the release also describes large-power-rating drives for named industrial sectors.",
+      "reported_capacity": {
+        "claim": "Local VSD production capacity increased by about 25 percent with the new line",
+        "value": 25,
+        "unit": "percent relative change",
+        "denominator": "Prior local VSD production capacity is not stated",
+        "state": "Company-reported relative change; not an absolute effective/qualified capacity"
+      },
+      "project_or_operating_state": "OPERATING_PRODUCTION_EXPANSION_REPORTED; source says the upgraded factory has two decades of drives production in India.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["Relative capacity change has no absolute baseline, time-series output, yield, utilization, or product-class denominator.", "Lead-time and automation statements do not establish qualified supply for every drive rating or application."],
+      "canonical_gap_closed": ["cap:power-electronics"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A2-S1",
+      "source_url": "https://www.weg.net/institutional/GN/en/news/products-and-solutions/weg-supplies-motors-for-a-greenfield-project-on-the-cement-sector-in-india",
+      "publisher": "WEG",
+      "source_type": "Official company project/supply release",
+      "primary_source_basis": "WEG describes its own India manufacturing site and a named project supply package.",
+      "page_section_locator": "Article title, date 13/08/2024, and paragraphs beginning 'The complete package of motors will be manufactured...' and 'The scope of supply includes...'.",
+      "publication_date": "2024-08-13",
+      "effective_date": null,
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public WEG corporate webpage; copyright retained by WEG; URL and paraphrase only.",
+      "geography": ["India", "Hosur, Tamil Nadu", "Panna, Madhya Pradesh project"],
+      "entity_facility": {
+        "entity": "WEG Industries (India) Private Limited",
+        "facility": "WEG manufacturing site in Hosur",
+        "address_or_locator": "Hosur, Tamil Nadu, India"
+      },
+      "product_process_scope": ["130 low-voltage WIN-line motors", "18.5–315 kW motor ratings", "IE3 efficiency", "mills, pumps, crushers, ventilation, compressors and grinders"],
+      "scoped_claim_paraphrase": "WEG states that the complete package for an Indian cement project would be manufactured at its Hosur facilities and identifies a 130-motor low-voltage package spanning 18.5–315 kW and IE3 efficiency.",
+      "reported_capacity": null,
+      "reported_output_or_lot": {
+        "quantity": 130,
+        "unit": "motors",
+        "interpretation": "Named project supply lot, not annual or effective plant capacity"
+      },
+      "project_or_operating_state": "OPERATING_MANUFACTURING_SITE_REPORTED; project supply statement supports product manufacture at Hosur, not a general capacity claim.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["A project package and rating range do not establish all Hosur product classes, annual throughput, yield, utilization, or customer qualification.", "The article is a company supply statement, not an independent production audit."],
+      "canonical_gap_closed": ["cap:electric-motors"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A2-S2",
+      "source_url": "https://static.weg.net/medias/downloadcenter/he6/h21/WMO_WII_ISO9001-2015_BVC_UKAS_EN.pdf",
+      "publisher": "Bureau Veritas Certification Holding SAS – UK Branch; certificate for WEG Industries (India) Private Limited",
+      "source_type": "Official certification record hosted in WEG document center",
+      "primary_source_basis": "Bureau Veritas certificate identifies the audited WEG India organization, site address, ISO 9001 scope, issue date, and expiry.",
+      "page_section_locator": "PDF pp.1–2, ISO 9001:2015 scope and 'HEAD OFFICE - HOSUR LV FACTORY' site table.",
+      "publication_date": "2024-10-01",
+      "effective_date": "2024-10-01",
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public certification PDF; certification body and WEG retain rights; URL and scoped paraphrase only.",
+      "geography": ["India", "Hosur, Tamil Nadu", "Bengaluru sales office listed separately"],
+      "entity_facility": {
+        "entity": "WEG Industries (India) Private Limited",
+        "facility": "HEAD OFFICE - HOSUR LV FACTORY",
+        "address_or_locator": "Plot No. E-20 (North), SIPCOT Industrial Complex Phase II Expansion II, Mornapalli Village, Hosur 635109, Tamil Nadu, India"
+      },
+      "product_process_scope": ["design", "development", "manufacturing", "testing", "sales", "repair and re-powering", "spares", "technical assistance", "induction electrical motors up to 500 kW"],
+      "scoped_claim_paraphrase": "The ISO 9001 certificate places design, development, manufacturing, testing, repair/re-powering and related services for induction electrical motors up to 500 kW within the certified scope of WEG India's Hosur LV Factory.",
+      "reported_capacity": null,
+      "product_rating_boundary": {
+        "maximum": 500,
+        "unit": "kW motor rating",
+        "interpretation": "Product-scope boundary, not output capacity"
+      },
+      "project_or_operating_state": "CERTIFIED_MANAGEMENT_SYSTEM_SCOPE; certification supports an audited scope but does not measure current production output.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["ISO 9001 scope is not evidence of annual capacity, utilization, yield, customer approval, or every motor grade being produced now.", "The 500 kW value is a product rating boundary, not a throughput denominator."],
+      "canonical_gap_closed": ["cap:electric-motors"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A2-S3",
+      "source_url": "https://www.weg.net/institutional/AD/en/weg-operations",
+      "publisher": "WEG",
+      "source_type": "Official operations directory",
+      "primary_source_basis": "WEG's own operations directory lists an India manufacturing plant and its address.",
+      "page_section_locator": "Operations directory entry 'WEG INDUSTRIES (INDIA) PVT. LTD. - MANUFACTURING PLANT'.",
+      "publication_date": null,
+      "effective_date": null,
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public WEG corporate operations page; copyright retained by WEG; URL and paraphrase only.",
+      "geography": ["India", "Hosur, Tamil Nadu"],
+      "entity_facility": {
+        "entity": "WEG Industries (India) Pvt. Ltd.",
+        "facility": "Manufacturing plant",
+        "address_or_locator": "Plot # E20 (North), SIPCOT Industrial Complex Phase II Expansion II, Moranapalli Village, Hosur 635109, Tamil Nadu, India"
+      },
+      "product_process_scope": ["Manufacturing plant identity; product/process detail is supplied by A2-S1 and A2-S2, not inferred from this directory listing."],
+      "scoped_claim_paraphrase": "WEG's operations directory identifies a manufacturing plant for WEG Industries (India) at the Hosur SIPCOT address.",
+      "reported_capacity": null,
+      "project_or_operating_state": "OPERATIONS_DIRECTORY_MANUFACTURING_PLANT_LISTING; facility identity only.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["A directory listing does not establish active line loading, product output, yield, utilization, or qualification.", "The page's publication/effective date is not stated."],
+      "canonical_gap_closed": ["cap:electric-motors"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A3-S1",
+      "source_url": "https://bel-india.in/electronic-design-manufacturing-services/",
+      "retrieved_render_url": "https://test.bel-india.in/electronic-design-manufacturing-services/",
+      "publisher": "Bharat Electronics Limited (BEL), Government of India Ministry of Defence",
+      "source_type": "Official company electronics design/manufacturing services page",
+      "primary_source_basis": "BEL describes its own Export Manufacturing SBU-Bengaluru, production/test facilities, engineering scope and manufacturing processes.",
+      "page_section_locator": "BEL Quality Standards and Electronics Design and Manufacturing Services sections; captured web lines 172–251 and Manufacturing subsections through line 360.",
+      "publication_date": null,
+      "effective_date": null,
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public BEL corporate webpage; copyright retained by BEL; URL and paraphrase only. The test subdomain is recorded as the fetched official-site render.",
+      "geography": ["India", "Bengaluru, Karnataka"],
+      "entity_facility": {
+        "entity": "Bharat Electronics Limited",
+        "facility": "Export Manufacturing SBU-Bengaluru / Bengaluru electronics manufacturing capability",
+        "address_or_locator": "Bengaluru, Karnataka, India"
+      },
+      "product_process_scope": ["build-to-print/build-to-spec", "components, modules, sub-systems and systems", "military, industrial and medical grade products", "analog/digital PCB design", "embedded software and firmware for FPGA/DSP/microcontroller/SoC hardware", "PCB assembly", "cable assembly", "precision fabrication", "electromechanical assembly", "conformal coating", "burn-in and thermal cycling", "EMI/EMC and environmental validation"],
+      "scoped_claim_paraphrase": "BEL states that its Bengaluru export manufacturing capability has dedicated engineering, production and test facilities for electronics design/manufacturing services, including embedded hardware/software engineering and PCB, cable, precision, electromechanical, coating and burn-in processes; it explicitly lists industrial-grade products.",
+      "reported_capacity": null,
+      "project_or_operating_state": "OPERATING_ELECTRONICS_MANUFACTURING_CAPABILITY_PAGE; the page describes available production/test facilities and services, without an output denominator.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["The page does not provide product-specific annual output, yield, utilization, customer approvals, or facility-level qualification scope.", "A service capability page does not prove every embedded/industrial product is currently produced at volume."],
+      "canonical_gap_closed": ["cap:industrial-electronics"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A3-S2",
+      "source_url": "https://bel-india.in/manufacturing-units/bangalore-unit-2/",
+      "publisher": "Bharat Electronics Limited (BEL)",
+      "source_type": "Official manufacturing-unit page",
+      "primary_source_basis": "BEL's own unit directory identifies the Bangalore manufacturing unit, address, focus areas and strategic business units.",
+      "page_section_locator": "Manufacturing Units – Bangalore Unit page: address, Focus Areas, Strategic Business Units, and Other Manufacturing Units sections.",
+      "publication_date": null,
+      "effective_date": null,
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public BEL corporate webpage; copyright retained by BEL; URL and paraphrase only.",
+      "geography": ["India", "Jalahalli, Bengaluru, Karnataka"],
+      "entity_facility": {
+        "entity": "Bharat Electronics Limited",
+        "facility": "Bangalore Unit",
+        "address_or_locator": "Jalahalli Post, Bangalore 560013, Karnataka, India"
+      },
+      "product_process_scope": ["military communications", "network-centric systems", "military radars", "weapon systems", "naval systems", "airborne electronic warfare and avionics", "components", "electronic voting machines", "solar products", "traffic signals", "Export Manufacturing SBU"],
+      "scoped_claim_paraphrase": "BEL's Bangalore Unit page identifies an active manufacturing unit at Jalahalli and lists electronics-heavy focus areas and an Export Manufacturing strategic business unit, including components, communications, radars, avionics and related systems.",
+      "reported_capacity": null,
+      "project_or_operating_state": "MANUFACTURING_UNIT_DIRECTORY_LISTING; unit and product-area identity are source-supported, but output state and qualification are not quantified.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["Focus-area listing is not evidence of production volume or a specific embedded-electronics line.", "No current capacity, yield, utilization, customer qualification, or process window is reported."],
+      "canonical_gap_closed": ["cap:industrial-electronics"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A3-S3",
+      "source_url": "https://bel-india.in/product-development-innovation-centre-pdic/",
+      "publisher": "Bharat Electronics Limited (BEL)",
+      "source_type": "Official company facility/R&D page",
+      "primary_source_basis": "BEL describes its PDIC facility, dates, engineering/prototyping functions, infrastructure and embedded-systems domain.",
+      "page_section_locator": "PDIC overview and 'PDIC technology domains' sections; facility history says established December 2014, new facility activity from October 2018 and formal inauguration 19 September 2019.",
+      "publication_date": null,
+      "effective_date": "2019-09-19 facility inauguration; page also states new-facility activity from 2018-10",
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public BEL corporate webpage; copyright retained by BEL; URL and paraphrase only.",
+      "geography": ["India", "Jalahalli, Bengaluru, Karnataka"],
+      "entity_facility": {
+        "entity": "Bharat Electronics Limited",
+        "facility": "Product Development and Innovation Centre (PDIC)",
+        "address_or_locator": "Jalahalli Post, Bengaluru, Karnataka, India"
+      },
+      "product_process_scope": ["electronics, mechanical, computer science, electrical and optics engineering", "embedded systems", "automation systems", "energy systems", "navigation and stabilization", "SoC", "prototyping", "testing/design validation", "generation of manufacturing documents"],
+      "scoped_claim_paraphrase": "BEL states that PDIC is a centralized operating design house supporting all units, with prototyping, testing and design-validation infrastructure; its domains include embedded systems and related electronics, and it generates manufacturing documentation for modules, products and subsystems.",
+      "reported_capacity": null,
+      "reported_facility_scale": {
+        "footprint": "26 acres",
+        "engineer_housing": "700+ engineers",
+        "interpretation": "Facility/staffing scale only; not manufacturing throughput"
+      },
+      "project_or_operating_state": "OPERATING_DESIGN_PROTOTYPE_AND_VALIDATION_FACILITY_REPORTED; not evidence of mass-production capacity.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["PDIC is an R&D/design/prototype facility; its existence does not prove production output or customer-qualified industrial electronics.", "The 700+ figure describes housing capacity for engineers, not accepted units/year."],
+      "canonical_gap_closed": ["cap:industrial-electronics"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A4-S1",
+      "source_url": "https://jencoder.com/",
+      "publisher": "Jayashree Encoders Pvt. Ltd.",
+      "source_type": "Official company manufacturing/product page",
+      "primary_source_basis": "Jayashree's own site describes its Pune identity, manufacturing facility, products, testing/inspection and product envelope.",
+      "page_section_locator": "Home page sections 'Welcome to Jayashree Encoders, Pune (India)', 'Why to Choose Jayashree Encoders', 'Products', and footer address; captured web lines 13–72 and 121–122.",
+      "publication_date": null,
+      "effective_date": null,
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public Jayashree corporate webpage; copyright retained by Jayashree; URL and paraphrase only.",
+      "geography": ["India", "Bhosari, Pune, Maharashtra"],
+      "entity_facility": {
+        "entity": "Jayashree Encoders Pvt. Ltd.",
+        "facility": "Jayashree encoder manufacturing facility",
+        "address_or_locator": "124–125, Sector 10, PCNTDA Industrial Area, Bhosari, Pune 411026, Maharashtra, India"
+      },
+      "product_process_scope": ["optical encoders", "incremental shaft encoders", "hollow and solid shaft encoders", "machine-tool encoders", "heavy-duty encoders", "servo-motor feedback applications", "testing and inspection for accuracy, durability and performance"],
+      "scoped_claim_paraphrase": "Jayashree states that it manufactures optical encoders in Pune, maintains a dedicated manufacturing facility, performs testing/inspection, and offers incremental shaft encoders in size 38–58 packages with bore sizes up to 42 mm and resolutions up to 10,000 PPR.",
+      "reported_capacity": null,
+      "reported_non_capacity_metric": "The page displays 'More Than 2 Lacks + Installations'; the meaning and denominator are not specified, so it is not treated as production capacity or qualification.",
+      "project_or_operating_state": "OPERATING_MANUFACTURING_CLAIM_SELF_REPORTED; product and quality pages describe ongoing manufacturing capability.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["Self-described product and manufacturing claims do not establish current throughput, yield, accuracy-grade qualification, or customer approvals.", "The installation count is not a production denominator and is not normalized."],
+      "canonical_gap_closed": ["cap:encoders-position-sensing"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A4-S2",
+      "source_url": "https://www.encoder.com/epc-locations",
+      "publisher": "Encoder Products Company (EPC)",
+      "source_type": "Official counterparty locations/partner page",
+      "primary_source_basis": "EPC's own locations page identifies Jayashree as a strategic manufacturing partner in India and scopes the relationship to select encoders.",
+      "page_section_locator": "Locations page, 'Manufacturing Partner' section, Jayashree Encoders entry; captured web lines 36–43.",
+      "publication_date": null,
+      "effective_date": null,
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public EPC corporate webpage; copyright retained by EPC; URL and paraphrase only.",
+      "geography": ["India", "Bhosari, Pune, Maharashtra"],
+      "entity_facility": {
+        "entity": "Jayashree Encoders Pvt. Ltd.",
+        "facility": "EPC strategic manufacturing partner site",
+        "address_or_locator": "Bhosari, Pune, Maharashtra, India"
+      },
+      "product_process_scope": ["manufacturing, sales and support of select encoders for Indian customers"],
+      "scoped_claim_paraphrase": "EPC states that it has a strategic manufacturing partnership with Jayashree Encoders in Bhosari, Pune, where Jayashree provides manufacturing, sales and support for select encoders serving India.",
+      "reported_capacity": null,
+      "project_or_operating_state": "OPERATING_PARTNER_MANUFACTURING_RELATIONSHIP_REPORTED; source supports partner/facility identity, not total product-line output.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["'Select encoders' is narrower than all encoder categories and does not specify model, accuracy grade, throughput, or qualification.", "A partnership statement does not independently audit production or calibration capability."],
+      "canonical_gap_closed": ["cap:encoders-position-sensing"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A4-S3",
+      "source_url": "https://www.encodersindia.com/encoders-india-profile.html",
+      "publisher": "Encoders India Private Limited (EIPL)",
+      "source_type": "Official company profile",
+      "primary_source_basis": "EIPL describes its own manufacturing history, product focus, SMT manufacturing investment and export/customer footprint.",
+      "page_section_locator": "Company Profile section; captured web lines 12–22.",
+      "publication_date": null,
+      "effective_date": null,
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public EIPL corporate webpage; copyright retained by EIPL; URL and paraphrase only.",
+      "geography": ["India", "Faridabad/Haryana region"],
+      "entity_facility": {
+        "entity": "Encoders India Private Limited",
+        "facility": "Company manufacturing operation; exact registered works address is supplied by A4-S4",
+        "address_or_locator": "Company profile says approximately 25 km south of New Delhi; do not resolve to a facility coordinate without the contact record."
+      },
+      "product_process_scope": ["rotary incremental encoders", "allied rotary-motion transducers", "SMT PCB manufacturing installed in 2015", "import-substitute products"],
+      "scoped_claim_paraphrase": "EIPL states that it was founded in 1995 as a high-tech manufacturing company for industrial rotary-motion transducers, manufactures rotary incremental encoders and allied products, installed a fully automatic SMT pick-and-place machine in 2015, and exports to 30 countries.",
+      "reported_capacity": null,
+      "reported_non_capacity_metrics": ["Company states a base of over 450 customers", "Company states exports to 30 countries"],
+      "project_or_operating_state": "OPERATING_MANUFACTURING_CLAIM_SELF_REPORTED; profile describes an established manufacturing company and process investment.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["Customer/export counts are commercial footprint metrics, not production capacity or qualification.", "No current output, yield, utilization, accuracy-grade scope, or accredited calibration record is provided."],
+      "canonical_gap_closed": ["cap:encoders-position-sensing"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    },
+    {
+      "source_id": "A4-S4",
+      "source_url": "https://www.encodersindia.com/contact-encoders-india.html",
+      "publisher": "Encoders India Private Limited (EIPL)",
+      "source_type": "Official company contact/facility page",
+      "primary_source_basis": "EIPL's own contact page identifies its registered office and works and product categories.",
+      "page_section_locator": "Contact Us section, 'Registered Office and Works' address and Products list; captured web lines 13–22 and 51–63.",
+      "publication_date": null,
+      "effective_date": null,
+      "access_date": "2026-08-25",
+      "license_reuse_posture": "Public EIPL corporate webpage; copyright retained by EIPL; URL and paraphrase only.",
+      "geography": ["India", "IMT Faridabad, Haryana"],
+      "entity_facility": {
+        "entity": "Encoders India Private Limited",
+        "facility": "Registered Office and Works",
+        "address_or_locator": "Plot No. 221, Sector-68, IMT Faridabad-121004, Haryana, India"
+      },
+      "product_process_scope": ["rotary encoders", "resolvers", "linear encoders", "industry-specific encoders", "electronic tacho-generators", "digital readouts", "encoder couplings"],
+      "scoped_claim_paraphrase": "EIPL's contact page identifies a registered office and works in IMT Faridabad and lists rotary, linear and industry-specific encoders plus related motion-measurement products in its product navigation.",
+      "reported_capacity": null,
+      "project_or_operating_state": "REGISTERED_WORKS_AND_PRODUCT_CATALOGUE_LISTING; supports facility identity but does not quantify active production.",
+      "epistemic_class": "REPORTED",
+      "caveats": ["An address and product list do not establish current operating throughput, yield, calibration, accuracy class, or customer qualification.", "Product navigation is not evidence that every listed category is made at the same works."],
+      "canonical_gap_closed": ["cap:encoders-position-sensing"],
+      "capacity_inference": false,
+      "qualification_inference": false,
+      "canonical_promotion": "NONE"
+    }
+  ],
+  "escalation_packets": [
+    {
+      "packet_id": "A1-E1",
+      "task_id": "A1",
+      "blocker": "No absolute effective/qualified VSD output, yield, utilization, local-content denominator, or product-class qualification.",
+      "next_evidence": "Obtain facility-level monthly production, accepted output, line yield, utilization, product rating/class, supplier-content and customer-qualification records for Peenya.",
+      "promotion_status": "NONE"
+    },
+    {
+      "packet_id": "A2-E1",
+      "task_id": "A2",
+      "blocker": "WEG facility and certified product scope are evidenced, but effective capacity and qualification by motor class are not.",
+      "next_evidence": "Obtain Hosur line-level output, test acceptance, utilization, product-family split, customer approvals and current motor-rating/grade scope.",
+      "promotion_status": "NONE"
+    },
+    {
+      "packet_id": "A3-E1",
+      "task_id": "A3",
+      "blocker": "BEL manufacturing/embedded engineering facilities are described without product-specific throughput, yield, or customer qualification.",
+      "next_evidence": "Obtain unit/SBU production records, PCB/assembly process scope, product-family acceptance records, quality certifications and current industrial-customer qualification.",
+      "promotion_status": "NONE"
+    },
+    {
+      "packet_id": "A4-E1",
+      "task_id": "A4",
+      "blocker": "Encoder production identities are supported, but traceable accuracy qualification, calibration scope, current output, yield and utilization remain UNKNOWN.",
+      "next_evidence": "Obtain model-level technical datasheets, calibration/measurement traceability, accredited scope or customer qualification, line output and rejection data by encoder family.",
+      "promotion_status": "NONE"
+    }
+  ],
+  "accounting": {
+    "tasks": 4,
+    "source_records": 12,
+    "sources_by_task": {"A1": 2, "A2": 3, "A3": 3, "A4": 4},
+    "operating_facility_candidates": 6,
+    "reported_capacity_claims": 2,
+    "explicit_project_output_or_lot_claims": 1,
+    "unknown_capacity_or_qualification_packets": 4,
+    "canonical_gap_candidates": 4,
+    "canonical_promotions": 0,
+    "capacity_inferences": 0,
+    "qualification_inferences": 0,
+    "malformed_source_records": 0,
+    "conflicts": 0,
+    "duplicates": 0,
+    "skipped_tasks": 0
+  },
+  "validation": {
+    "json_tool": "PASS",
+    "source_record_count_at_most_12": true,
+    "task_count_exactly_4": true,
+    "primary_or_official_source_only": true,
+    "canonical_promotion": "NONE",
+    "capacity_inference": false,
+    "raw_or_canonical_files_edited": false
+  }
+}

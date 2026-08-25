@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "research_policy": {
+    "bounded_task_count": 12,
+    "maximum_requested": "approximately 20-30",
+    "stop_reason": "The only remaining ranked gaps are single-objective Kenya battery-pack integration and field-service evidence; their marginal cross-objective value is below the completed foundational tasks.",
+    "source_policy": "primary or official sources only",
+    "raw_page_storage": "not mirrored; URL, scoped extraction, source metadata, and deterministic structured snapshot hash only"
+  },
+  "packets": [
+    "research/homi/targeted/packet_a_power_electronics.json",
+    "research/homi/targeted/packet_b_electrolyzers.json",
+    "research/homi/targeted/packet_c_industrial_facilities.json"
+  ],
+  "pipeline": {
+    "declared_license_sources": 14,
+    "source_snapshots": 14,
+    "observations": 14,
+    "reviewed_evidence_promotions": 14,
+    "canonical_mappings": 14,
+    "effective_qualified_capacity_promotions": 0,
+    "source_lineage_fraction": 1.0
+  },
+  "composition_before_targeted_closure": {
+    "mean_structural_coverage": 0.795905,
+    "decision_critical_unknowns": 25,
+    "ranked_research_tasks": 16
+  },
+  "composition_after_targeted_closure": {
+    "mean_structural_coverage": 0.96131,
+    "decision_critical_unknowns": 2,
+    "ranked_research_tasks": 2,
+    "remaining_tasks": [
+      "cap:battery-pack-integration",
+      "cap:distributed-field-service"
+    ]
+  },
+  "metric_boundary": "Composition Coverage measures weighted reuse of canonical structural primitives only. It does not assert BOM completeness, feasibility, capacity closure, economics, qualified supply, or objective delivery.",
+  "material_residual_unknowns": [
+    "utilization",
+    "yield",
+    "product-specific qualification",
+    "customer or regulator acceptance",
+    "available allocation",
+    "objective-grade compatibility",
+    "facility-specific effective throughput"
+  ]
+}

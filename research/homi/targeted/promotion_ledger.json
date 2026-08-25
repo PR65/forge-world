@@ -1,0 +1,335 @@
+{
+  "all_promotions_source_linked": true,
+  "catalog": "data/ingestion/homi_targeted_observations.yaml",
+  "effective_capacity_promotion_count": 0,
+  "observation_count": 14,
+  "pack": "packs/targeted_industrial_reality.yaml",
+  "promotion_count": 14,
+  "rows": [
+    {
+      "canonical_subject": "cap:power-electronics",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_abb_drives",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_power_electronics"
+      ],
+      "observation_id": "obs.tr.abb.drives",
+      "promotion_record": {
+        "claim_id": "tr_ev_abb_drives",
+        "observation_id": "obs.tr.abb.drives",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_abb_drives:608cc1700e71e1d2"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_abb_drives",
+      "source_id": "tr_src_abb_drives",
+      "source_license": "ABB copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_abb_drives:608cc1700e71e1d2"
+    },
+    {
+      "canonical_subject": "cap:heat-exchangers",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_alfa_heat_transfer",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_heat_exchangers"
+      ],
+      "observation_id": "obs.tr.alfa.heat",
+      "promotion_record": {
+        "claim_id": "tr_ev_alfa_heat_transfer",
+        "observation_id": "obs.tr.alfa.heat",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_alfa_india:2276806261f10e64"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_alfa_heat_transfer",
+      "source_id": "tr_src_alfa_india",
+      "source_license": "Alfa Laval copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_alfa_india:2276806261f10e64"
+    },
+    {
+      "canonical_subject": "cap:membrane-electrode-assemblies",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_arci_mea",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_membrane_electrode_assemblies"
+      ],
+      "observation_id": "obs.tr.arci.mea",
+      "promotion_record": {
+        "claim_id": "tr_ev_arci_mea",
+        "observation_id": "obs.tr.arci.mea",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_arci_mea:aba681b244cb0ea9"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_arci_mea",
+      "source_id": "tr_src_arci_mea",
+      "source_license": "Government of India public information; reference-only extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_arci_mea:aba681b244cb0ea9"
+    },
+    {
+      "canonical_subject": "cap:industrial-electronics",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_bel_edms",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_industrial_electronics"
+      ],
+      "observation_id": "obs.tr.bel.edms",
+      "promotion_record": {
+        "claim_id": "tr_ev_bel_edms",
+        "observation_id": "obs.tr.bel.edms",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_bel_edms:468686504521d592"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_bel_edms",
+      "source_id": "tr_src_bel_edms",
+      "source_license": "BEL copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_bel_edms:468686504521d592"
+    },
+    {
+      "canonical_subject": "cap:encoders-position-sensing",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_eipl_encoders",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_encoders"
+      ],
+      "observation_id": "obs.tr.eipl.encoders",
+      "promotion_record": {
+        "claim_id": "tr_ev_eipl_encoders",
+        "observation_id": "obs.tr.eipl.encoders",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_eipl_encoders:c9d6aa517eac5a9b"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_eipl_encoders",
+      "source_id": "tr_src_eipl_encoders",
+      "source_license": "EIPL copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_eipl_encoders:c9d6aa517eac5a9b"
+    },
+    {
+      "canonical_subject": "cap:industrial-compressors",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_elgi_compressors",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_industrial_compressors"
+      ],
+      "observation_id": "obs.tr.elgi.compressors",
+      "promotion_record": {
+        "claim_id": "tr_ev_elgi_compressors",
+        "observation_id": "obs.tr.elgi.compressors",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_elgi_compressors:f71c726b1525ff2a"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_elgi_compressors",
+      "source_id": "tr_src_elgi_compressors",
+      "source_license": "ELGi copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_elgi_compressors:f71c726b1525ff2a"
+    },
+    {
+      "canonical_subject": "cap:industrial-gas-systems",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_inox_hydrogen",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_industrial_gas_systems"
+      ],
+      "observation_id": "obs.tr.inox.hydrogen",
+      "promotion_record": {
+        "claim_id": "tr_ev_inox_hydrogen",
+        "observation_id": "obs.tr.inox.hydrogen",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_inox_hydrogen:9c8f932cb12aca7a"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_inox_hydrogen",
+      "source_id": "tr_src_inox_hydrogen",
+      "source_license": "INOX copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_inox_hydrogen:9c8f932cb12aca7a"
+    },
+    {
+      "canonical_subject": "cap:space-optical-payloads",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_isro_leos",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_space_optical_payloads"
+      ],
+      "observation_id": "obs.tr.isro.leos",
+      "promotion_record": {
+        "claim_id": "tr_ev_isro_leos",
+        "observation_id": "obs.tr.isro.leos",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_isro_leos:fc3f8aca5b2a66d5"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_isro_leos",
+      "source_id": "tr_src_isro_leos",
+      "source_license": "Government of India public information; reference-only extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_isro_leos:fc3f8aca5b2a66d5"
+    },
+    {
+      "canonical_subject": "cap:electrochemical-stacks",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_lt_electrolyser",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_electrochemical_stacks"
+      ],
+      "observation_id": "obs.tr.lt.electrolyser",
+      "promotion_record": {
+        "claim_id": "tr_ev_lt_electrolyser",
+        "observation_id": "obs.tr.lt.electrolyser",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_lt_electrolyser:a7f8a46534124f4e"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_lt_electrolyser",
+      "source_id": "tr_src_lt_electrolyser",
+      "source_license": "L&T copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_lt_electrolyser:a7f8a46534124f4e"
+    },
+    {
+      "canonical_subject": "cap:precision-grinding",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_micromatic_grinders",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_precision_grinding"
+      ],
+      "observation_id": "obs.tr.micromatic.grinders",
+      "promotion_record": {
+        "claim_id": "tr_ev_micromatic_grinders",
+        "observation_id": "obs.tr.micromatic.grinders",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_micromatic_grinders:ba1b634788e5712b"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_micromatic_grinders",
+      "source_id": "tr_src_micromatic_grinders",
+      "source_license": "Ace Micromatic copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_micromatic_grinders:ba1b634788e5712b"
+    },
+    {
+      "canonical_subject": "cap:precision-bearings",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_nbc_bearings",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_precision_bearings"
+      ],
+      "observation_id": "obs.tr.nbc.bearings",
+      "promotion_record": {
+        "claim_id": "tr_ev_nbc_bearings",
+        "observation_id": "obs.tr.nbc.bearings",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_nbc_bearings:4844145b816a4d2d"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_nbc_bearings",
+      "source_id": "tr_src_nbc_bearings",
+      "source_license": "NBC copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_nbc_bearings:4844145b816a4d2d"
+    },
+    {
+      "canonical_subject": "cap:industrial-product-qualification",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_nise_testing",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_electrolyser_testing"
+      ],
+      "observation_id": "obs.tr.nise.testing",
+      "promotion_record": {
+        "claim_id": "tr_ev_nise_testing",
+        "observation_id": "obs.tr.nise.testing",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_nise_testing:ee6276ccb44ba9d2"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_nise_testing",
+      "source_id": "tr_src_nise_testing",
+      "source_license": "Government of India public information; reference-only extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_nise_testing:ee6276ccb44ba9d2"
+    },
+    {
+      "canonical_subject": "cap:metrology",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_stqc_metrology",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_metrology"
+      ],
+      "observation_id": "obs.tr.stqc.metrology",
+      "promotion_record": {
+        "claim_id": "tr_ev_stqc_metrology",
+        "observation_id": "obs.tr.stqc.metrology",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_stqc_ertl:543aad657914fc92"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_stqc_metrology",
+      "source_id": "tr_src_stqc_ertl",
+      "source_license": "Government of India public information; reference-only extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_stqc_ertl:543aad657914fc92"
+    },
+    {
+      "canonical_subject": "cap:electric-motors",
+      "capacity_semantics": "NO_EFFECTIVE_QUALIFIED_CAPACITY_PROMOTED",
+      "claim_id": "tr_ev_weg_motors",
+      "epistemic_class": "REPORTED",
+      "mapped_registry_entity_ids": [
+        "pack:targeted_industrial_reality:tr_cc_electric_motors"
+      ],
+      "observation_id": "obs.tr.weg.motors",
+      "promotion_record": {
+        "claim_id": "tr_ev_weg_motors",
+        "observation_id": "obs.tr.weg.motors",
+        "promoted_at": "2026-08-25",
+        "rationale": "Checked-in primary-source extraction reviewed for scope and caveat.",
+        "reviewer": "official_record_catalog",
+        "source_snapshot_id": "source-snapshot:tr_src_weg_motors:62245bbeda363563"
+      },
+      "promotion_state": "PROMOTED_TO_EVIDENCE_AND_MAPPED_WORLD_STATE",
+      "registry_evidence_id": "pack:targeted_industrial_reality:evidence:tr_ev_weg_motors",
+      "source_id": "tr_src_weg_motors",
+      "source_license": "WEG copyright; reference-only scoped extraction",
+      "source_snapshot_id": "source-snapshot:tr_src_weg_motors:62245bbeda363563"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "snapshot_count": 14,
+  "source_count": 14
+}
