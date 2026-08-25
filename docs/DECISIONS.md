@@ -70,3 +70,101 @@ run through the same public API as the UI.
 Structured objective parsing has a deterministic grammar path; an optional LLM adapter maps
 free text → candidate structured objective which must pass validation before entering solve.
 No LLM in the numerical path (C20). This session builds and tests the deterministic path.
+
+## D13 — Current operating scope: FORGE India first, global dependency layer retained
+- **Context:** FORGE WORLD's universal country/region/humanity ambition is directionally valid,
+  but attempting to populate every country's full industrial reality now would spread evidence,
+  compute, entity resolution, facility/capacity research, and product effort too thinly. The
+  project needs one geography deep enough to become genuinely useful and publicly releasable.
+- **Choice:** India becomes the current canonical target geography for buildability questions.
+  The default product question is **"Can India build this?"** FORGE must decompose the complete
+  objective, then classify every decision-relevant requirement against India's evidenced
+  capability, scale, specification, qualification, capacity and dependency state. The complete
+  operating vision is recorded in `docs/FORGE_INDIA_OPERATING_VISION.md`.
+- **Global-data consequence:** no useful global research is discarded. Foreign organizations,
+  facilities, technologies, materials, minerals, machine tools, semiconductor ecosystems,
+  logistics routes, export controls, sanctions, commodity exposures and supplier alternatives
+  remain modeled whenever they affect India's sourcing, localization, substitution or
+  resilience. The near-term model is therefore a **deep India core + selective global
+  dependency/sourcing/risk layer**, not an isolated India model.
+- **Product consequence:** presentation remains objective-first and progressively disclosed.
+  Normal users see buildability, domestic/partial/import/missing/UNKNOWN composition,
+  bottlenecks, localization paths and major dependencies; experts can drill through complete
+  system/component/process/machine/material/metrology/qualification/evidence chains.
+- **Localization consequence:** a missing domestic requirement does not imply "import it".
+  FORGE must consider direct localization, source diversification, licensing/technology
+  transfer, material/component/process substitution, adjacent Indian capabilities, full
+  architecture redesign, temporary import while localizing, and indigenous alternative routes;
+  alternatives are graph rewrites followed by re-solve.
+- **Coverage consequence:** IndiaBUILD is treated as a minimum public breadth benchmark, not as
+  canonical truth or as FORGE's ontology. FORGE should account for that capability universe and
+  materially exceed it through deeper engineering decomposition, evidence, capacity,
+  qualification, geography, alternatives, shocks and execution reasoning.
+- **Retained North Star:** FORGE WORLD remains the long-term product identity and eventual global
+  ambition. Country-by-country global buildability expansion is deferred until FORGE India is
+  strong enough to serve as the proven country-model architecture.
+- **Rejected:** deleting global research; replacing FORGE with a flat India capability wiki;
+  reducing the solver to an IndiaBUILD clone; or continuing broad country-by-country data
+  expansion before the India-first system is mature.
+
+## D14 — Hard-recall refinement: full industrial transformation action space
+- **Context:** the first India operating draft correctly preserved build/import/license/
+  substitute/redesign logic but under-specified several important FORGE WORLD ideas, especially
+  JV/acquisition, explicit supplier-development/qualification pathways, finance/policy enablers,
+  recursive machine-builds-machine closure, project state/ramp, purity/yield, inventory buffers,
+  competing demand, and value-of-information prioritization.
+- **Choice:** `docs/FORGE_INDIA_OPERATING_VISION_CANONICAL.md` is the current canonical execution
+  vision for the India-first phase. It preserves the prior India draft for history and does not
+  modify `docs/FORGE_WORLD_NORTH_STAR.md`.
+- **Transformation consequence:** missing capability is solved over a full action space including
+  BUY/IMPORT, diversify/stockpile, QUALIFY, supplier development, LICENSE/technology transfer,
+  JV/co-development, ACQUIRE, greenfield/brownfield build, seed-equipment bootstrap, FUND/
+  procurement/offtake/policy enablement, SUBSTITUTE/RECYCLE, REDESIGN, indigenous R&D and
+  targeted RESEARCH. Each path changes the industrial graph and must be re-solved.
+- **Industrial-depth consequence:** usable output must distinguish grade/purity, uptime, yield,
+  specification acceptance, qualification and allocatable capacity; projects progress through
+  funded/construction/commission/ramp/qualification states; machine/tool dependencies can recurse
+  into bootstrap sets; shared resources face competing demand; shocks propagate through buffers,
+  qualification delays and recovery paths.
+- **Optimization consequence:** FORGE may compare fastest, cheapest, most sovereign, most
+  resilient, most qualification-certain and highest-option-value paths rather than pretending
+  one plan is universally best.
+- **Non-goal:** these additions must remain decision-relevant. FORGE does not become a generic
+  bureaucracy, ESG scorecard, finance simulator or global encyclopedia; finance, policy and
+  legal/ethical sourcing rules enter only when they materially change physical buildability,
+  eligibility, timing or resilience.
+
+## D15 — Second hard-recall closure: operability, economics, evidence and execution depth
+- **Context:** comparison against the full FORGE WORLD North Star and original due-diligence
+  dossier surfaced additional material mechanisms not explicit enough in the first canonical
+  India vision. These included working capital/WIP, maintenance-repair-spares, minimum economic
+  scale, co-products, waste/effluent gates, utility quality, contractual capacity allocation,
+  supplier financial health, construction/EPC capacity, industrial coordination failures,
+  circular-supply timing, stochastic uncertainty, evidence bias, classification mismatch,
+  three clocks, execution artifacts and causal institutional/geopolitical constraints.
+- **Choice:** add `docs/FORGE_INDIA_HARD_RECALL_CLOSURE.md` as a mandatory canonical supplement
+  and `docs/FORGE_INDIA_CANONICAL_INDEX.md` as the current source-of-truth index. The original
+  FORGE WORLD North Star remains the constitutional ceiling.
+- **Operability consequence:** owning or buying production equipment is insufficient if India
+  cannot maintain, repair, calibrate, service or supply critical spares/consumables. Usable
+  capability also depends on inventory/WIP, utility quality, contracts/allocations, economic
+  scale, qualified people and the construction/commissioning ecosystem.
+- **System consequence:** mineral/chemical co-products, end-of-life stock timing, waste/effluent
+  capacity, supplier financial viability, shared EPC resources, anchor-demand/coordination
+  failures and surge-vs-steady capacity may alter feasibility and therefore enter only where
+  decision-relevant.
+- **Epistemic consequence:** the three clocks are explicit; missingness has typed causes;
+  evidence bias/negative evidence/freshness are represented; model resolution cannot exceed
+  evidence resolution; cross-classification mappings are many-to-many and confidence-bearing;
+  data rights travel with evidence; consequential runs should remain reproducible.
+- **Validation consequence:** historical project/shock backtesting and calibrated interval/
+  stochastic treatment are required where uncertainty controls the decision. No probabilistic
+  output may manufacture precision from absence of evidence.
+- **Execution consequence:** FORGE EXECUTE should eventually generate decision-useful artifacts
+  such as RFQ-ready specs, supplier/qualification matrices, test/quality plans, equipment/tooling
+  lists, CapEx/staffing/procurement schedules, critical path, decision log and immediate next
+  actions, while avoiding paperwork that does not change execution.
+- **Non-goal:** FORGE India still does not become a full macro model, generic ERP, ESG system,
+  corporate credit platform, political-risk terminal, or detailed global logistics simulator.
+  Every added mechanism must materially affect buildability, timing, resilience, execution or
+  evidentiary truth.
