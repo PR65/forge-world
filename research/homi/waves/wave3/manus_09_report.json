@@ -1,0 +1,3018 @@
+{
+  "accounting": {
+    "CONFLICTED": 9,
+    "UNKNOWN": 18,
+    "artifacts": {
+      "expected": 8,
+      "hash_byte_matches": 8,
+      "mismatches": 0,
+      "observed_extracted": 8,
+      "observed_zip_entries": 8
+    },
+    "canonical_promotions": 0,
+    "claims": 80,
+    "duplicates": 0,
+    "entities": 31,
+    "malformed": 2,
+    "relations": 14,
+    "shadow_identities": 0,
+    "skipped": 2,
+    "sources": 31
+  },
+  "artifacts": [
+    {
+      "bytes": 87580,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "raw_zip_entry": "FORGE WORLD Research Package.md",
+      "relative_path": "manus-09/FORGE WORLD Research Package.md",
+      "role": "research package and bounded evidence/unknown/conflict ledgers",
+      "schema": {
+        "format": "Markdown with pipe tables",
+        "line_count": 710,
+        "parse_errors": 0,
+        "reference_count": 32,
+        "table_count": 19,
+        "table_headers_and_rows": [
+          {
+            "header": [
+              "Layer",
+              "India status supported by public evidence",
+              "Implication for a 100-machine program"
+            ],
+            "header_locator": 36,
+            "row_count": 7
+          },
+          {
+            "header": [
+              "Label",
+              "Meaning"
+            ],
+            "header_locator": 66,
+            "row_count": 8
+          },
+          {
+            "header": [
+              "Reference class",
+              "Kinematic architecture",
+              "Typical use",
+              "Strategic value"
+            ],
+            "header_locator": 87,
+            "row_count": 5
+          },
+          {
+            "header": [
+              "System",
+              "Representative elements",
+              "Typical process and qualification concerns",
+              "100-machine strategy"
+            ],
+            "header_locator": 101,
+            "row_count": 14
+          },
+          {
+            "header": [
+              "Stage",
+              "Main operation",
+              "Required equipment/capability",
+              "Exit evidence"
+            ],
+            "header_locator": 120,
+            "row_count": 13
+          },
+          {
+            "header": [
+              "Entity",
+              "Facility / geography",
+              "Role and products",
+              "Evidence and maturity",
+              "Capacity status"
+            ],
+            "header_locator": 260,
+            "row_count": 7
+          },
+          {
+            "header": [
+              "Entity",
+              "Geography",
+              "Role",
+              "What is evidenced",
+              "What is not evidenced"
+            ],
+            "header_locator": 272,
+            "row_count": 12
+          },
+          {
+            "header": [
+              "Geography",
+              "Representative entities",
+              "Industrial signature",
+              "Evidence status"
+            ],
+            "header_locator": 289,
+            "row_count": 8
+          },
+          {
+            "header": [
+              "Capacity item",
+              "Value",
+              "Evidence class",
+              "Scope and limitation"
+            ],
+            "header_locator": 334,
+            "row_count": 12
+          },
+          {
+            "header": [
+              "Planning parameter",
+              "Modelled value",
+              "Rationale / uncertainty"
+            ],
+            "header_locator": 357,
+            "row_count": 11
+          },
+          {
+            "header": [
+              "Subsystem",
+              "Typical material families",
+              "Upstream risks",
+              "India position"
+            ],
+            "header_locator": 379,
+            "row_count": 10
+          },
+          {
+            "header": [
+              "Measurement layer",
+              "Example instruments",
+              "Purpose"
+            ],
+            "header_locator": 422,
+            "row_count": 8
+          },
+          {
+            "header": [
+              "Capability",
+              "India today",
+              "Japan/Germany/Taiwan/Korea/US benchmark",
+              "Gap interpretation"
+            ],
+            "header_locator": 443,
+            "row_count": 11
+          },
+          {
+            "header": [
+              "Rank",
+              "Bottleneck",
+              "Why it matters",
+              "Near-term mitigation"
+            ],
+            "header_locator": 469,
+            "row_count": 8
+          },
+          {
+            "header": [
+              "Downstream output",
+              "Mother capability required",
+              "Upstream dependency",
+              "India status"
+            ],
+            "header_locator": 496,
+            "row_count": 9
+          },
+          {
+            "header": [
+              "ID",
+              "Exact unknown",
+              "Why it matters",
+              "Likely resolving source",
+              "Concrete research query"
+            ],
+            "header_locator": 514,
+            "row_count": 18
+          },
+          {
+            "header": [
+              "ID",
+              "Conflicting or ambiguous evidence",
+              "Resolution used in this package"
+            ],
+            "header_locator": 539,
+            "row_count": 9
+          },
+          {
+            "header": [
+              "Entity class",
+              "Example entities",
+              "Required evidence fields"
+            ],
+            "header_locator": 557,
+            "row_count": 10
+          },
+          {
+            "header": [
+              "Relationship",
+              "Example"
+            ],
+            "header_locator": 572,
+            "row_count": 14
+          }
+        ],
+        "unique_url_count": 33
+      },
+      "sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 87580,
+      "zip_entry_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2"
+    },
+    {
+      "bytes": 10661,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "raw_zip_entry": "FORGE_WORLD_CNC_evidence_entities.csv",
+      "relative_path": "manus-09/FORGE_WORLD_CNC_evidence_entities.csv",
+      "role": "entity/evidence ledger",
+      "schema": {
+        "fields": [
+          "entity_id",
+          "entity_type",
+          "canonical_name",
+          "parent_or_owner",
+          "facility_or_geography",
+          "role_or_product",
+          "evidence_label",
+          "capacity_or_metric",
+          "capacity_scope",
+          "source_url",
+          "source_date",
+          "uncertainty_or_limitation"
+        ],
+        "format": "CSV",
+        "parse_errors_repaired": 2,
+        "parse_errors_unrepaired": 0,
+        "raw_data_rows": 31,
+        "raw_field_length_counts": {
+          "11": 2,
+          "12": 29
+        },
+        "repaired_data_rows": 31
+      },
+      "sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 10661,
+      "zip_entry_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f"
+    },
+    {
+      "bytes": 8220,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_source_ledger.csv",
+      "raw_zip_entry": "FORGE_WORLD_CNC_source_ledger.csv",
+      "relative_path": "manus-09/FORGE_WORLD_CNC_source_ledger.csv",
+      "role": "source ledger",
+      "schema": {
+        "data_rows": 31,
+        "field_length_counts": {
+          "9": 31
+        },
+        "fields": [
+          "source_id",
+          "publisher",
+          "title",
+          "publication_or_access_date",
+          "url",
+          "source_type",
+          "primary_or_secondary",
+          "claims_supported",
+          "quality_or_limitation"
+        ],
+        "format": "CSV",
+        "parse_errors": 0
+      },
+      "sha256": "1b395bd9d7e4657dbac97014eec9e43743955139b9a07f79ea00124c64580427",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 8220,
+      "zip_entry_sha256": "1b395bd9d7e4657dbac97014eec9e43743955139b9a07f79ea00124c64580427"
+    },
+    {
+      "bytes": 98669,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\cnc_capacity_context.png",
+      "raw_zip_entry": "cnc_capacity_context.png",
+      "relative_path": "manus-09/cnc_capacity_context.png",
+      "role": "binary context image; not OCR-ed",
+      "schema": {
+        "dimensions": {
+          "height": 1016,
+          "width": 1754
+        },
+        "format": "PNG",
+        "semantic_parse": "not_performed"
+      },
+      "sha256": "a9e8601b5df9ab5fe118c6346d3b782a24b6d49f67dce7c6ebeca9430e6ab98c",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 98669,
+      "zip_entry_sha256": "a9e8601b5df9ab5fe118c6346d3b782a24b6d49f67dce7c6ebeca9430e6ab98c"
+    },
+    {
+      "bytes": 1036,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\cnc_chart.py",
+      "raw_zip_entry": "cnc_chart.py",
+      "relative_path": "manus-09/cnc_chart.py",
+      "role": "chart source; not executed",
+      "schema": {
+        "execution": "skipped",
+        "format": "Python source",
+        "line_count": 17
+      },
+      "sha256": "0b70f4e82c87c044e9e877f659f07046cbc02a060b2a4182c54443ebdc512721",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 1036,
+      "zip_entry_sha256": "0b70f4e82c87c044e9e877f659f07046cbc02a060b2a4182c54443ebdc512721"
+    },
+    {
+      "bytes": 86673,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\cnc_ecosystem_research_streams.json",
+      "raw_zip_entry": "cnc_ecosystem_research_streams.json",
+      "relative_path": "manus-09/cnc_ecosystem_research_streams.json",
+      "role": "structured research stream outputs",
+      "schema": {
+        "error_rows": [],
+        "format": "JSON",
+        "output_keys": [
+          "confidence",
+          "memo",
+          "stream"
+        ],
+        "row_count": 10,
+        "row_keys": [
+          "error",
+          "input",
+          "output"
+        ],
+        "row_path": "results[]",
+        "top_level_keys": [
+          "results"
+        ]
+      },
+      "sha256": "21648bcaf78b5eb00b60f16ed39fca94934974504e349ef0c50eb6675694f895",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 86673,
+      "zip_entry_sha256": "21648bcaf78b5eb00b60f16ed39fca94934974504e349ef0c50eb6675694f895"
+    },
+    {
+      "bytes": 3228,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\cnc_research_notes.md",
+      "raw_zip_entry": "cnc_research_notes.md",
+      "relative_path": "manus-09/cnc_research_notes.md",
+      "role": "research notes",
+      "schema": {
+        "format": "Markdown text",
+        "line_count": 33,
+        "parse_errors": 0
+      },
+      "sha256": "7e27a2220f130b4aae1a7e33b932a429026b3555cefdcf8f6915ed14016d1ed3",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 3228,
+      "zip_entry_sha256": "7e27a2220f130b4aae1a7e33b932a429026b3555cefdcf8f6915ed14016d1ed3"
+    },
+    {
+      "bytes": 4732,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\pasted_content.txt",
+      "raw_zip_entry": "pasted_content.txt",
+      "relative_path": "manus-09/pasted_content.txt",
+      "role": "pasted source text",
+      "schema": {
+        "format": "UTF-8 text",
+        "line_count": 43,
+        "parse_errors": 0
+      },
+      "sha256": "3e26dd2db0be0bf9c923bdd44e5ac3a7edd893e08f19bcbee342fbc21f766d51",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 4732,
+      "zip_entry_sha256": "3e26dd2db0be0bf9c923bdd44e5ac3a7edd893e08f19bcbee342fbc21f766d51"
+    }
+  ],
+  "canonical_reconciliation": {
+    "candidate_mapping_count": 31,
+    "canonical_pack_id": "cnc_machining_india",
+    "canonical_pack_ids_read": 160,
+    "canonical_pack_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+    "canonical_pack_sha256": "4c0dc0ce84fb45b5c2a329dfc98ffa92fb69c19afa2920597b29be5dfc2d6271",
+    "canonical_promotions": 0,
+    "mappings": [
+      {
+        "candidate_kind": "MachineBuilder",
+        "canonical_target_id": "pack:cnc_machining_india:org_jyoti_cnc",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2025-08-21",
+          "geography": "Rajkot Gujarat India; Strasbourg France",
+          "grade_or_precision": "Aggregate installed CNC capacity not high-quality 5-axis subset",
+          "scope": "VMC HMC 5-axis turn-mill multitasking"
+        },
+        "manus_entity_id": "manus-09:E001",
+        "manus_name": "Jyoti CNC Automation Limited",
+        "match_basis": "Exact builder identity normalized to existing CNC pack organization.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "MATCH"
+      },
+      {
+        "candidate_kind": "MachineBuilder",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2024-04-20",
+          "geography": "Bengaluru and Hosur India",
+          "grade_or_precision": "Aggregate plant capacity in secondary source not qualified high-end capacity",
+          "scope": "VMC HMC turning five-axis boring automation"
+        },
+        "manus_entity_id": "manus-09:E002",
+        "manus_name": "Bharat Fritz Werner",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Hosur Tamil Nadu India",
+          "grade_or_precision": "Foundry output not machine output",
+          "scope": "Grey iron SG iron NiHard castings"
+        },
+        "manus_entity_id": "manus-09:E003",
+        "manus_name": "BFW Hosur foundry",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Hosur Tamil Nadu India",
+          "grade_or_precision": "Facility equipment evidence not annual throughput",
+          "scope": "Mitsubishi piano miller Nissan HBM SIP jig boring Waldrich Coburg slideway grinder"
+        },
+        "manus_entity_id": "manus-09:E004",
+        "manus_name": "BFW mother-machine infrastructure",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "MachineBuilder",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Coimbatore Tamil Nadu India",
+          "grade_or_precision": "Annual report landing page only",
+          "scope": "Machine-tool division and CNC machinery"
+        },
+        "manus_entity_id": "manus-09:E005",
+        "manus_name": "Lakshmi Machine Works",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "IndustryAssociation",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "India",
+          "grade_or_precision": "Some detailed data sold through reports dashboards",
+          "scope": "Production import export consumption statistics and research reports"
+        },
+        "manus_entity_id": "manus-09:E006",
+        "manus_name": "IMTMA",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "ComponentSupplier",
+        "canonical_target_id": "pack:cnc_machining_india:org_thk",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Sri City Andhra Pradesh India",
+          "grade_or_precision": "Product-specific annual capacity and grade mix not public",
+          "scope": "LM guides ball screws and linear-motion products"
+        },
+        "manus_entity_id": "manus-09:E007",
+        "manus_name": "THK India Private Limited",
+        "match_basis": "THK India facility/legal entity is not identical to the pack's global THK organization.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "ComponentSupplier",
+        "canonical_target_id": "pack:cnc_machining_india:ball_screw_set",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Hyderabad Telangana India",
+          "grade_or_precision": "Product capability not annual industrial CNC volume",
+          "scope": "Ball screws and roller screws"
+        },
+        "manus_entity_id": "manus-09:E008",
+        "manus_name": "MTAR Technologies Limited",
+        "match_basis": "Supplier candidate maps to a reusable ball-screw part concept, not to qualified supply.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "ComponentSupplier",
+        "canonical_target_id": "pack:cnc_machining_india:spindle_cartridge",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Global with India operations",
+          "grade_or_precision": "Product capability and India presence not India capacity",
+          "scope": "Precision spindles and spindle repair"
+        },
+        "manus_entity_id": "manus-09:E009",
+        "manus_name": "Setco",
+        "match_basis": "Spindle supplier/product family is not identical to a part or qualified source.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "ComponentSupplier",
+        "canonical_target_id": "pack:cnc_machining_india:spindle_motor",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Ahmedabad Gujarat India",
+          "grade_or_precision": "Company product claims not independently qualified machine-tool volume",
+          "scope": "Spindle motors VFDs chillers guides ball screws automation components"
+        },
+        "manus_entity_id": "manus-09:E010",
+        "manus_name": "TriQuench India",
+        "match_basis": "Advertised spindle-motor products map to a part concept; scale and qualification remain unresolved.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "ComponentSupplier",
+        "canonical_target_id": "pack:cnc_machining_india:cnc_controller",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "India operations",
+          "grade_or_precision": "Global product claim not India production capacity",
+          "scope": "CNC controllers servo motors drives spindles PLC and networks"
+        },
+        "manus_entity_id": "manus-09:E011",
+        "manus_name": "FANUC India",
+        "match_basis": "FANUC product family maps to controller concept; global units are not India supply.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "ComponentSupplier",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Global and India",
+          "grade_or_precision": "Product capability not India manufacturing share",
+          "scope": "SINUMERIK ONE CNC SIMATIC PLC and drive ecosystem"
+        },
+        "manus_entity_id": "manus-09:E012",
+        "manus_name": "Siemens",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "ComponentSupplier",
+        "canonical_target_id": "pack:cnc_machining_india:absolute_encoder_axis",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Global and India market",
+          "grade_or_precision": "Not evidence of Indian high-volume core manufacture",
+          "scope": " CNC controls linear angle and rotary encoders"
+        },
+        "manus_entity_id": "manus-09:E013",
+        "manus_name": "HEIDENHAIN",
+        "match_basis": "HEIDENHAIN controls/encoders map to reusable encoder concept; no India manufacture inferred.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "ComponentSupplier",
+        "canonical_target_id": "pack:cnc_machining_india:spindle_bearing",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Global",
+          "grade_or_precision": "Product capability not India localization",
+          "scope": "Super-precision spindle bearings"
+        },
+        "manus_entity_id": "manus-09:E014",
+        "manus_name": "SKF",
+        "match_basis": "SKF spindle-bearing family maps to bearing concept; Indian P4/P2 production remains UNKNOWN.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "TestingFacility",
+        "canonical_target_id": "pack:cnc_machining_india:metrology_acceptance_kit",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "CMTI premises Bengaluru India",
+          "grade_or_precision": "Annual complete-machine throughput not public",
+          "scope": "Machine-tool testing certification calibration laser thermal vibration residual-stress and metrology"
+        },
+        "manus_entity_id": "manus-09:E015",
+        "manus_name": "AMTTF",
+        "match_basis": "AMTTF service categories map to an acceptance-metrology concept, not a facility identity or throughput claim.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "ResearchInstitute",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-20",
+          "geography": "Bengaluru India",
+          "grade_or_precision": "Specific annual support capacity not public",
+          "scope": "Manufacturing R&D product assembly and testing"
+        },
+        "manus_entity_id": "manus-09:E016",
+        "manus_name": "CMTI",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Standard",
+        "canonical_target_id": "pack:cnc_machining_india:qual_machine_acceptance",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2014",
+          "geography": "",
+          "grade_or_precision": "Standard method not universal performance threshold",
+          "scope": "Positioning accuracy and repeatability of NC axes"
+        },
+        "manus_entity_id": "manus-09:E017",
+        "manus_name": "ISO 230-2:2014",
+        "match_basis": "ISO 230-2 is a method standard relevant to acceptance; it is not a qualification result.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Standard",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2020",
+          "geography": "",
+          "grade_or_precision": "Standard tests are preliminary to full operating characterization",
+          "scope": "Thermal-effect tests for machine tools"
+        },
+        "manus_entity_id": "manus-09:E018",
+        "manus_name": "ISO 230-3:2020",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Standard",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2022",
+          "geography": "",
+          "grade_or_precision": "Method standard not universal error limit",
+          "scope": "Circular and contouring tests"
+        },
+        "manus_entity_id": "manus-09:E019",
+        "manus_name": "ISO 230-4:2022",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Standard",
+        "canonical_target_id": "pack:cnc_machining_india:ball_screw_grade_spec",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2006",
+          "geography": "",
+          "grade_or_precision": "Part 1 does not itself establish machine-level capacity",
+          "scope": "Ball-screw vocabulary designation and tolerance grades"
+        },
+        "manus_entity_id": "manus-09:E020",
+        "manus_name": "ISO 3408-1:2006",
+        "match_basis": "ISO 3408 vocabulary/grades map to a reusable specification concept, not supply.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Cluster",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Karnataka and Tamil Nadu India",
+          "grade_or_precision": "",
+          "scope": "Builder R&D foundry mother machines metrology aerospace and engineering"
+        },
+        "manus_entity_id": "manus-09:E021",
+        "manus_name": "Bengaluru-Hosur-Tumakuru",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Cluster",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "Tamil Nadu India",
+          "grade_or_precision": "",
+          "scope": "Foundry machine tools pneumatics precision engineering"
+        },
+        "manus_entity_id": "manus-09:E022",
+        "manus_name": "Coimbatore",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Cluster",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2025-08-21",
+          "geography": "Gujarat India",
+          "grade_or_precision": "Company scope not whole cluster",
+          "scope": "Jyoti CNC and broad engineering ecosystem"
+        },
+        "manus_entity_id": "manus-09:E023",
+        "manus_name": "Rajkot",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Cluster",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2023-05-03",
+          "geography": "Central Taiwan",
+          "grade_or_precision": "Government cluster statement",
+          "scope": "Tool-machine and component cluster"
+        },
+        "manus_entity_id": "manus-09:E024",
+        "manus_name": "Taichung central Taiwan",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "IndustryAssociation",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2025-09-11",
+          "geography": "Japan",
+          "grade_or_precision": "Association data by machine category and year",
+          "scope": "Machine-tool production orders exports imports and industry statistics"
+        },
+        "manus_entity_id": "manus-09:E025",
+        "manus_name": "JMTBA",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "IndustryAssociation",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-06-02",
+          "geography": "Germany",
+          "grade_or_precision": "Association data includes public key figures and member datasets",
+          "scope": "Production foreign trade employment orders and global statistics"
+        },
+        "manus_entity_id": "manus-09:E026",
+        "manus_name": "VDW",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "IndustryAssociation",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2025-12-16",
+          "geography": "Italy",
+          "grade_or_precision": "Industry-wide production value not machine-unit capacity",
+          "scope": "Machine tool robot and automation industry statistics"
+        },
+        "manus_entity_id": "manus-09:E027",
+        "manus_name": "UCIMU",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "IndustryAssociation",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-02-09",
+          "geography": "United States",
+          "grade_or_precision": "Orders not domestic production or installed capacity",
+          "scope": "Manufacturing-technology orders data"
+        },
+        "manus_entity_id": "manus-09:E028",
+        "manus_name": "AMT USMTO",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Government",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2025-09-06",
+          "geography": "India",
+          "grade_or_precision": "Policy context not CNC-specific capacity",
+          "scope": "Critical minerals list and National Critical Mineral Mission"
+        },
+        "manus_entity_id": "manus-09:E029",
+        "manus_name": "Press Information Bureau Government of India",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Government",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-08-24",
+          "geography": "United States and global",
+          "grade_or_precision": "Commodity data not machine-specific demand",
+          "scope": "Rare-earth statistics and information"
+        },
+        "manus_entity_id": "manus-09:E030",
+        "manus_name": "USGS National Minerals Information Center",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Government",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+        "grade_scope_geography_date": {
+          "date": "2026-04-17",
+          "geography": "India",
+          "grade_or_precision": "Country guide; not CNC-specific",
+          "scope": "Critical-minerals mining processing and supply-chain context"
+        },
+        "manus_entity_id": "manus-09:E031",
+        "manus_name": "US International Trade Administration",
+        "match_basis": "No exact existing CNC-pack identity; retain bounded Manus candidate for review.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      }
+    ],
+    "policy": "Only exact/related references to existing pack IDs are recorded; unresolved Manus candidates remain staging and no canonical file is edited.",
+    "shadow_identity_created": 0,
+    "status_counts": {
+      "MATCH": 1,
+      "RELATED_NOT_IDENTICAL": 10,
+      "UNRESOLVED_STAGING": 20
+    }
+  },
+  "claim_samples": [
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "caveat": "Aggregate installed CNC capacity not high-quality 5-axis subset; High-end product-family capacity UNKNOWN",
+      "claim_id": "manus09-evidence-E001",
+      "conflicts": [
+        "C-01",
+        "C-09"
+      ],
+      "dates": [
+        "2025-08-21"
+      ],
+      "entity_candidates": [
+        "manus-09:E001"
+      ],
+      "escalation": "Obtain product-family OEE, qualified acceptance records, and audited effective capacity by geography.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv:2 (CSV data row E001)",
+      "geography": [
+        "Rajkot Gujarat India",
+        "Strasbourg France"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 6000,
+          "min": 6000,
+          "qualifier": "reported aggregate",
+          "raw": "6,000 machines/year India",
+          "unit": "machines/year"
+        },
+        {
+          "max": 121,
+          "min": 121,
+          "qualifier": "reported aggregate",
+          "raw": "121 machines/year France",
+          "unit": "machines/year"
+        }
+      ],
+      "predicate": "aggregate_installed_capacity",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "research_package_or_unregistered",
+      "source_urls": [
+        "https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf"
+      ],
+      "subject": "Jyoti CNC Automation Limited",
+      "text": "Jyoti CNC Automation Limited (MachineBuilder) | role=VMC HMC 5-axis turn-mill multitasking | metric=6000 machines/year India; 121 machines/year France | scope=Aggregate installed CNC capacity not high-quality 5-axis subset | limitation=High-end product-family capacity UNKNOWN",
+      "units": [
+        "machines/year"
+      ],
+      "unknowns": [
+        "U-01",
+        "U-02"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "caveat": "Aggregate plant capacity in secondary source not qualified high-end capacity; Independent measured output and 5-axis subset UNKNOWN",
+      "claim_id": "manus09-evidence-E002",
+      "conflicts": [
+        "C-01",
+        "C-03"
+      ],
+      "dates": [
+        "2024-04-20"
+      ],
+      "entity_candidates": [
+        "manus-09:E002"
+      ],
+      "escalation": "Reconcile press coverage with audited operating output and product-family qualification data.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv:3 (CSV data row E002)",
+      "geography": [
+        "Bengaluru",
+        "Hosur India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": null,
+          "min": 10000,
+          "qualifier": "reported secondary lower bound",
+          "raw": "More than 10,000 CNC machines/year",
+          "unit": "machines/year"
+        }
+      ],
+      "predicate": "press_report_aggregate_capacity",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "News report",
+      "source_urls": [
+        "https://www.thehindu.com/business/machine-tools-player-bfw-sets-up-a-fully-digitised-plant-in-hosur-at-an-investment-of-200-crore/article68088562.ece"
+      ],
+      "subject": "Bharat Fritz Werner",
+      "text": "Bharat Fritz Werner (MachineBuilder) | role=VMC HMC turning five-axis boring automation | metric=More than 10000 CNC machines/year at Hosur in press report | scope=Aggregate plant capacity in secondary source not qualified high-end capacity | limitation=Independent measured output and 5-axis subset UNKNOWN",
+      "units": [
+        "machines/year"
+      ],
+      "unknowns": [
+        "U-01",
+        "U-02"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "caveat": "Foundry output not machine output; Casting yield and machine-bed subset UNKNOWN",
+      "claim_id": "manus09-evidence-E003",
+      "conflicts": [
+        "C-03"
+      ],
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "manus-09:E003"
+      ],
+      "escalation": "Obtain casting yield, bed/column allocation, dimensional-drift, and effective production records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv:4 (CSV data row E003)",
+      "geography": [
+        "Hosur Tamil Nadu India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 600,
+          "min": 0,
+          "qualifier": "reported foundry ceiling",
+          "raw": "Up to 600 tonnes/month",
+          "unit": "tonnes/month"
+        }
+      ],
+      "predicate": "foundry_throughput",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "Official facility page",
+      "source_urls": [
+        "https://bfwindia.com/aboutus/infrastructure/"
+      ],
+      "subject": "BFW Hosur foundry",
+      "text": "BFW Hosur foundry (Facility) | role=Grey iron SG iron NiHard castings | metric=Up to 600 tonnes/month | scope=Foundry output not machine output | limitation=Casting yield and machine-bed subset UNKNOWN",
+      "units": [
+        "tonnes/month"
+      ],
+      "unknowns": [
+        "U-10"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "caveat": "Product-specific annual capacity and grade mix not public; Qualified CNC allocation UNKNOWN",
+      "claim_id": "manus09-evidence-E007",
+      "conflicts": [
+        "C-04"
+      ],
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "manus-09:E007"
+      ],
+      "escalation": "Resolve Sri City product grades, annual output, and qualified CNC allocation.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv:8 (CSV data row E007)",
+      "geography": [
+        "Sri City Andhra Pradesh India"
+      ],
+      "numeric_ranges": [],
+      "predicate": "production_facility_existence",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MEASURED",
+      "source_class": "Official facility page",
+      "source_urls": [
+        "https://www.thk.com/in/en/company/domestic_production_base/sri_city/"
+      ],
+      "subject": "THK India Private Limited",
+      "text": "THK India Private Limited (ComponentSupplier) | role=LM guides ball screws and linear-motion products | metric=Production facility existence | scope=Product-specific annual capacity and grade mix not public | limitation=Qualified CNC allocation UNKNOWN",
+      "units": [],
+      "unknowns": [
+        "U-03"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "caveat": "Product capability not annual industrial CNC volume; Grade mix and qualified annual capacity UNKNOWN",
+      "claim_id": "manus09-evidence-E008",
+      "conflicts": [
+        "C-05"
+      ],
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "manus-09:E008"
+      ],
+      "escalation": "Obtain CNC-specific grade, life, yield, cost, and annual qualified-volume dossiers.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv:9 (CSV data row E008)",
+      "geography": [
+        "Hyderabad Telangana India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 7,
+          "min": 0,
+          "qualifier": "reported product range",
+          "raw": "up to 7 m",
+          "unit": "m"
+        },
+        {
+          "max": 100,
+          "min": 10,
+          "qualifier": "reported product range",
+          "raw": "10-100 mm",
+          "unit": "mm"
+        },
+        {
+          "max": 32,
+          "min": 4,
+          "qualifier": "reported product range",
+          "raw": "4-32 mm",
+          "unit": "mm lead"
+        }
+      ],
+      "predicate": "ball_screw_product_range",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "Official product page",
+      "source_urls": [
+        "https://mtar.in/ball-screws-roller-screws/"
+      ],
+      "subject": "MTAR Technologies Limited",
+      "text": "MTAR Technologies Limited (ComponentSupplier) | role=Ball screws and roller screws | metric=Up to 7 m length; 10-100 mm diameter; 4-32 mm lead | scope=Product capability not annual industrial CNC volume | limitation=Grade mix and qualified annual capacity UNKNOWN",
+      "units": [
+        "m",
+        "mm",
+        "mm lead"
+      ],
+      "unknowns": [
+        "U-04"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "caveat": "Global product claim not India production capacity; India local content UNKNOWN",
+      "claim_id": "manus09-evidence-E011",
+      "conflicts": [
+        "C-01"
+      ],
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "manus-09:E011"
+      ],
+      "escalation": "Obtain India manufacturing versus application/support split and local semiconductor/BOM content.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv:12 (CSV data row E011)",
+      "geography": [
+        "India operations"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 6000000,
+          "min": 6000000,
+          "qualifier": "global product/company claim",
+          "raw": "six million global FANUC CNC units claim",
+          "unit": "units"
+        }
+      ],
+      "predicate": "global_product_presence_not_indian_capacity",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "Official product page",
+      "source_urls": [
+        "https://www.fanucindia.com/products/cnc-motion-control"
+      ],
+      "subject": "FANUC India",
+      "text": "FANUC India (ComponentSupplier) | role=CNC controllers servo motors drives spindles PLC and networks | metric=0i and 31i/32i product families; six million global FANUC CNC units claim | scope=Global product claim not India production capacity | limitation=India local content UNKNOWN",
+      "units": [
+        "units"
+      ],
+      "unknowns": [
+        "U-07"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "caveat": "Annual complete-machine throughput not public; Qualification throughput UNKNOWN",
+      "claim_id": "manus09-evidence-E015",
+      "conflicts": [],
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "manus-09:E015"
+      ],
+      "escalation": "Obtain AMTTF annual complete-machine throughput, queue time, calibration scope, and acceptance records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv:16 (CSV data row E015)",
+      "geography": [
+        "CMTI premises Bengaluru India"
+      ],
+      "numeric_ranges": [],
+      "predicate": "testing_service_existence_not_throughput",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MEASURED",
+      "source_class": "Official facility page",
+      "source_urls": [
+        "https://www.amttf.in/index.php?page"
+      ],
+      "subject": "AMTTF",
+      "text": "AMTTF (TestingFacility) | role=Machine-tool testing certification calibration laser thermal vibration residual-stress and metrology | metric=Service categories publicly listed | scope=Annual complete-machine throughput not public | limitation=Qualification throughput UNKNOWN",
+      "units": [],
+      "unknowns": [
+        "U-09",
+        "U-18"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "caveat": "Standard method not universal performance threshold; Acceptance limits must be agreed",
+      "claim_id": "manus09-evidence-E017",
+      "conflicts": [
+        "C-07"
+      ],
+      "dates": [
+        "2014"
+      ],
+      "entity_candidates": [
+        "manus-09:E017"
+      ],
+      "escalation": "Bind the standard method to customer-agreed acceptance limits and uncertainty budgets.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv:18 (CSV data row E017)",
+      "geography": [],
+      "numeric_ranges": [],
+      "predicate": "acceptance_method_scope",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MEASURED",
+      "source_class": "International standard",
+      "source_urls": [
+        "https://www.iso.org/obp/ui/en/#!iso:std:55295:en"
+      ],
+      "subject": "ISO 230-2:2014",
+      "text": "ISO 230-2:2014 (Standard) | role=Positioning accuracy and repeatability of NC axes | metric=Applies to linear and rotary axes and acceptance verification | scope=Standard method not universal performance threshold | limitation=Acceptance limits must be agreed",
+      "units": [],
+      "unknowns": [
+        "U-18"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "caveat": "Company scope not whole cluster; Supplier depth in precision core UNKNOWN",
+      "claim_id": "manus09-evidence-E023",
+      "conflicts": [
+        "C-01",
+        "C-09"
+      ],
+      "dates": [
+        "2025-08-21"
+      ],
+      "entity_candidates": [
+        "manus-09:E023"
+      ],
+      "escalation": "Separate plant-installed capacity from product-family effective and qualified output across the Rajkot cluster.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv:24 (CSV data row E023)",
+      "geography": [
+        "Gujarat India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 6000,
+          "min": 6000,
+          "qualifier": "reported company scope",
+          "raw": "6000/year",
+          "unit": "machines/year"
+        }
+      ],
+      "predicate": "cluster_builder_capacity_context",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "research_package_or_unregistered",
+      "source_urls": [
+        "https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf"
+      ],
+      "subject": "Rajkot",
+      "text": "Rajkot (Cluster) | role=Jyoti CNC and broad engineering ecosystem | metric=Two Jyoti manufacturing plants and 6000/year installed capacity | scope=Company scope not whole cluster | limitation=Supplier depth in precision core UNKNOWN",
+      "units": [
+        "machines/year"
+      ],
+      "unknowns": [
+        "U-02"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "caveat": "User-defined target; 0.4/day and 20 hours/machine are derived scheduling metrics, not build labor or current capacity.",
+      "claim_id": "manus09-md-target-18",
+      "conflicts": [
+        "C-01"
+      ],
+      "dates": [
+        "planning horizon unspecified"
+      ],
+      "entity_candidates": [
+        "pack:cnc_machining_india:cnc_vmc_100_per_year"
+      ],
+      "escalation": "Define product acceptance envelope and validate takt, WIP, rework, and qualification-cell assumptions.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:18",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 100,
+          "min": 100,
+          "qualifier": "modelled target",
+          "raw": "100/year",
+          "unit": "machines/year"
+        },
+        {
+          "max": 0.4,
+          "min": 0.4,
+          "qualifier": "derived",
+          "raw": "0.4/day",
+          "unit": "machines/day"
+        },
+        {
+          "max": 20,
+          "min": 20,
+          "qualifier": "derived scheduling metric",
+          "raw": "20 available working hours/machine",
+          "unit": "hours/machine"
+        }
+      ],
+      "predicate": "planning_target_and_derived_rate",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MODELLED",
+      "source_class": "derived research-package planning",
+      "source_urls": [],
+      "subject": "100 high-quality CNC machining centers/year",
+      "text": "A target of 100 machines per year is approximately two machines per production week, or 0.4 finished machines per working day under a 250-day calendar. A simple takt calculation gives 20 available working hours per completed machine, but this is a **DERIVED scheduling metric**, not the build labor content. Final assembly, wiring, alignment, calibration, test cutting, rework, documentation, and customer acceptance do not happen in one 20-hour operation; they overlap through a cell-based flow. A reasonable first design is therefore a low-volume, high-control factory with parallel structural preparation, subsystem integration, assembly, calibration, and acceptance cells rather than a single conveyor line.",
+      "units": [
+        "machines/year",
+        "machines/day",
+        "hours/machine"
+      ],
+      "unknowns": [
+        "U-01",
+        "U-02",
+        "U-18"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "caveat": "Official infrastructure supports facility/equipment existence; press capacity is secondary and not independently measured qualified machine throughput.",
+      "claim_id": "manus09-md-bfw-28",
+      "conflicts": [
+        "C-03"
+      ],
+      "dates": [
+        "2024-04-20",
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "manus-09:E002",
+        "manus-09:E003",
+        "manus-09:E004"
+      ],
+      "escalation": "Audit BFW operating output, foundry yield, mother-machine utilization, and high-end product qualification.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:28",
+      "geography": [
+        "Hosur, Tamil Nadu, India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 600,
+          "min": 0,
+          "qualifier": "reported foundry ceiling",
+          "raw": "600 tonnes/month",
+          "unit": "tonnes/month"
+        },
+        {
+          "max": null,
+          "min": 10000,
+          "qualifier": "reported secondary plant claim",
+          "raw": ">10,000 CNC machines/year",
+          "unit": "machines/year"
+        }
+      ],
+      "predicate": "facility_and_equipment_evidence",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "Official facility page plus reported secondary press",
+      "source_urls": [
+        "https://bfwindia.com/aboutus/infrastructure/",
+        "https://www.thehindu.com/business/machine-tools-player-bfw-sets-up-a-fully-digitised-plant-in-hosur-at-an-investment-of-200-crore/article68088562.ece"
+      ],
+      "subject": "BFW Hosur foundry and mother-machine infrastructure",
+      "text": "BFW\u2019s official infrastructure page documents an integrated Hosur foundry, a declared output of up to 600 tonnes per month of grey iron, SG iron, and NiHard castings, and mother-machine equipment including a Mitsubishi 5-face piano miller, Nissan horizontal boring machine, SIP vertical jig boring machine, and Waldrich Coburg slideway grinder. It also documents large-part CMM capability and a spindle excellence center with controlled assembly and testing.[6] A separate 2024 press report described a new Hosur plant with two 20,000-square-metre assembly halls and reported capacity above 10,000 CNC machines per year; this is treated as **REPORTED**, not independently measured qualified capacity.[29]",
+      "units": [
+        "tonnes/month",
+        "machines/year"
+      ],
+      "unknowns": [
+        "U-01",
+        "U-02",
+        "U-10"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "caveat": "Aggregate builder capacity is not a proxy for machines passing a defined simultaneous 5-axis acceptance protocol.",
+      "claim_id": "manus09-md-5axis-44",
+      "conflicts": [
+        "C-01",
+        "C-07"
+      ],
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "manus-09:E001",
+        "manus-09:E002",
+        "manus-09:E005"
+      ],
+      "escalation": "Collect product-family output, customer acceptance, export, reliability, and test-cell records by year.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:44",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [],
+      "predicate": "qualified_capacity_unknown",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "UNKNOWN",
+      "source_class": "research-package synthesis",
+      "source_urls": [],
+      "subject": "India qualified simultaneous 5-axis throughput",
+      "text": "| Qualified 5-axis throughput | **UNKNOWN.** Aggregate machine capacity does not identify the number of simultaneous 5-axis machines that pass a defined acceptance protocol. | Do not use aggregate plant numbers as proof of high-end production capacity. |",
+      "units": [],
+      "unknowns": [
+        "U-01",
+        "U-02",
+        "U-18"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "caveat": "Thermal and vibratory routes are alternatives requiring geometry, residual-stress, stability, and process validation; no universal duration is promoted.",
+      "claim_id": "manus09-md-stress-136",
+      "conflicts": [
+        "C-06"
+      ],
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "pack:cnc_machining_india:rec_machine_bed_casting"
+      ],
+      "escalation": "Run controlled route comparison with dimensional-drift and residual-stress records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:136",
+      "geography": [
+        "India program design"
+      ],
+      "numeric_ranges": [],
+      "predicate": "process_route_conflicted",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "CONFLICTED",
+      "source_class": "research-package process synthesis",
+      "source_urls": [],
+      "subject": "casting stress-relief route",
+      "text": "Natural aging of castings for six to twelve months is sometimes used in industry, but the exact duration and necessity are design- and process-dependent. It should be treated as an **ASSUMPTION or DERIVED process option**, not a universal requirement. Thermal stress relief, controlled machining sequence, rib geometry, casting process, and post-machining stabilization can be combined differently. Vibratory stress relief may be useful for certain fabrications, but its sufficiency relative to thermal treatment for a particular high-precision casting is **CONFLICTED** and must be validated experimentally.",
+      "units": [],
+      "unknowns": [
+        "U-10"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "caveat": "The package names resolving sources but provides no adequate public figure.",
+      "claim_id": "manus09-md-unknown-u01",
+      "conflicts": [
+        "C-01"
+      ],
+      "dates": [
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "manus-09:E001",
+        "manus-09:E002",
+        "manus-09:E005"
+      ],
+      "escalation": "Builder plant records, customer acceptance records, and export certifications.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:516",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [],
+      "predicate": "research_gap",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "UNKNOWN",
+      "source_class": "research-package unknown ledger",
+      "source_urls": [],
+      "subject": "U-01",
+      "text": "| U-01 | Annual Indian output of qualified simultaneous 5-axis machining centers | Determines whether 100 units is a greenfield scale-up or capability leap | Builder plant records, customer acceptance records, export certifications | \u201cIndia annual production simultaneous 5-axis machining centers qualified aerospace 2024 2025 plant capacity\u201d |",
+      "units": [],
+      "unknowns": [
+        "U-01"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "caveat": "Keep press coverage as reported secondary; use official page for facility capability, not annual output.",
+      "claim_id": "manus09-md-conflict-c03",
+      "conflicts": [
+        "C-03"
+      ],
+      "dates": [
+        "2024-04-20",
+        "2026-08-24"
+      ],
+      "entity_candidates": [
+        "manus-09:E002",
+        "manus-09:E003",
+        "manus-09:E004"
+      ],
+      "escalation": "Request audited operating output and product-family/qualification breakdown.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:543",
+      "geography": [
+        "Hosur, Tamil Nadu, India"
+      ],
+      "numeric_ranges": [],
+      "predicate": "capacity_scope_conflict",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "CONFLICTED",
+      "source_class": "research-package conflict ledger",
+      "source_urls": [],
+      "subject": "BFW Hosur capacity definitions",
+      "text": "| C-03 | BFW Hosur capacity appears as 10,000+ units in press coverage while the official infrastructure page emphasizes foundry and mother-machine capabilities, not a verified annual output. | Mark 10,000+ as **REPORTED secondary**; use official BFW page for facility capability, not capacity. |",
+      "units": [],
+      "unknowns": [
+        "U-01",
+        "U-02"
+      ]
+    }
+  ],
+  "entity_candidate_samples": [
+    {
+      "canonical_name": "Jyoti CNC Automation Limited",
+      "capacity_or_metric": "6000 machines/year India; 121 machines/year France",
+      "capacity_scope": "Aggregate installed CNC capacity not high-quality 5-axis subset",
+      "entity_id": "E001",
+      "entity_type": "MachineBuilder",
+      "evidence_label": "REPORTED",
+      "facility_or_geography": "Rajkot Gujarat India; Strasbourg France",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "VMC HMC 5-axis turn-mill multitasking",
+      "source_date": "2025-08-21",
+      "source_url": "https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf",
+      "staging_entity_id": "manus-09:E001",
+      "uncertainty_or_limitation": "High-end product-family capacity UNKNOWN"
+    },
+    {
+      "canonical_name": "Bharat Fritz Werner",
+      "capacity_or_metric": "More than 10000 CNC machines/year at Hosur in press report",
+      "capacity_scope": "Aggregate plant capacity in secondary source not qualified high-end capacity",
+      "entity_id": "E002",
+      "entity_type": "MachineBuilder",
+      "evidence_label": "REPORTED",
+      "facility_or_geography": "Bengaluru and Hosur India",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "VMC HMC turning five-axis boring automation",
+      "source_date": "2024-04-20",
+      "source_url": "https://www.thehindu.com/business/machine-tools-player-bfw-sets-up-a-fully-digitised-plant-in-hosur-at-an-investment-of-200-crore/article68088562.ece",
+      "staging_entity_id": "manus-09:E002",
+      "uncertainty_or_limitation": "Independent measured output and 5-axis subset UNKNOWN"
+    },
+    {
+      "canonical_name": "BFW Hosur foundry",
+      "capacity_or_metric": "Up to 600 tonnes/month",
+      "capacity_scope": "Foundry output not machine output",
+      "entity_id": "E003",
+      "entity_type": "Facility",
+      "evidence_label": "REPORTED",
+      "facility_or_geography": "Hosur Tamil Nadu India",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "Grey iron SG iron NiHard castings",
+      "source_date": "2026-08-24",
+      "source_url": "https://bfwindia.com/aboutus/infrastructure/",
+      "staging_entity_id": "manus-09:E003",
+      "uncertainty_or_limitation": "Casting yield and machine-bed subset UNKNOWN"
+    },
+    {
+      "canonical_name": "BFW mother-machine infrastructure",
+      "capacity_or_metric": "Equipment existence",
+      "capacity_scope": "Facility equipment evidence not annual throughput",
+      "entity_id": "E004",
+      "entity_type": "Facility",
+      "evidence_label": "REPORTED",
+      "facility_or_geography": "Hosur Tamil Nadu India",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "Mitsubishi piano miller Nissan HBM SIP jig boring Waldrich Coburg slideway grinder",
+      "source_date": "2026-08-24",
+      "source_url": "https://bfwindia.com/aboutus/infrastructure/",
+      "staging_entity_id": "manus-09:E004",
+      "uncertainty_or_limitation": "National redundancy UNKNOWN"
+    },
+    {
+      "canonical_name": "THK India Private Limited",
+      "capacity_or_metric": "Production facility existence",
+      "capacity_scope": "Product-specific annual capacity and grade mix not public",
+      "entity_id": "E007",
+      "entity_type": "ComponentSupplier",
+      "evidence_label": "MEASURED",
+      "facility_or_geography": "Sri City Andhra Pradesh India",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "LM guides ball screws and linear-motion products",
+      "source_date": "2026-08-24",
+      "source_url": "https://www.thk.com/in/en/company/domestic_production_base/sri_city/",
+      "staging_entity_id": "manus-09:E007",
+      "uncertainty_or_limitation": "Qualified CNC allocation UNKNOWN"
+    },
+    {
+      "canonical_name": "MTAR Technologies Limited",
+      "capacity_or_metric": "Up to 7 m length; 10-100 mm diameter; 4-32 mm lead",
+      "capacity_scope": "Product capability not annual industrial CNC volume",
+      "entity_id": "E008",
+      "entity_type": "ComponentSupplier",
+      "evidence_label": "REPORTED",
+      "facility_or_geography": "Hyderabad Telangana India",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "Ball screws and roller screws",
+      "source_date": "2026-08-24",
+      "source_url": "https://mtar.in/ball-screws-roller-screws/",
+      "staging_entity_id": "manus-09:E008",
+      "uncertainty_or_limitation": "Grade mix and qualified annual capacity UNKNOWN"
+    },
+    {
+      "canonical_name": "FANUC India",
+      "capacity_or_metric": "0i and 31i/32i product families; six million global FANUC CNC units claim",
+      "capacity_scope": "Global product claim not India production capacity",
+      "entity_id": "E011",
+      "entity_type": "ComponentSupplier",
+      "evidence_label": "REPORTED",
+      "facility_or_geography": "India operations",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "CNC controllers servo motors drives spindles PLC and networks",
+      "source_date": "2026-08-24",
+      "source_url": "https://www.fanucindia.com/products/cnc-motion-control",
+      "staging_entity_id": "manus-09:E011",
+      "uncertainty_or_limitation": "India local content UNKNOWN"
+    },
+    {
+      "canonical_name": "SKF",
+      "capacity_or_metric": "Super-precision angular-contact and cylindrical-roller families",
+      "capacity_scope": "Product capability not India localization",
+      "entity_id": "E014",
+      "entity_type": "ComponentSupplier",
+      "evidence_label": "REPORTED",
+      "facility_or_geography": "Global",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "Super-precision spindle bearings",
+      "source_date": "2026-08-24",
+      "source_url": "https://www.skf.com/us/industries/machine-tools/products-and-services/bearing-solutions",
+      "staging_entity_id": "manus-09:E014",
+      "uncertainty_or_limitation": "Indian P4/P2 production UNKNOWN"
+    },
+    {
+      "canonical_name": "AMTTF",
+      "capacity_or_metric": "Service categories publicly listed",
+      "capacity_scope": "Annual complete-machine throughput not public",
+      "entity_id": "E015",
+      "entity_type": "TestingFacility",
+      "evidence_label": "MEASURED",
+      "facility_or_geography": "CMTI premises Bengaluru India",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "Machine-tool testing certification calibration laser thermal vibration residual-stress and metrology",
+      "source_date": "2026-08-24",
+      "source_url": "https://www.amttf.in/index.php?page",
+      "staging_entity_id": "manus-09:E015",
+      "uncertainty_or_limitation": "Qualification throughput UNKNOWN"
+    },
+    {
+      "canonical_name": "ISO 230-2:2014",
+      "capacity_or_metric": "Applies to linear and rotary axes and acceptance verification",
+      "capacity_scope": "Standard method not universal performance threshold",
+      "entity_id": "E017",
+      "entity_type": "Standard",
+      "evidence_label": "MEASURED",
+      "facility_or_geography": "",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "Positioning accuracy and repeatability of NC axes",
+      "source_date": "2014",
+      "source_url": "https://www.iso.org/obp/ui/en/#!iso:std:55295:en",
+      "staging_entity_id": "manus-09:E017",
+      "uncertainty_or_limitation": "Acceptance limits must be agreed"
+    },
+    {
+      "canonical_name": "Bengaluru-Hosur-Tumakuru",
+      "capacity_or_metric": "Anchor cluster based on BFW CMTI AMTTF and supplier presence",
+      "capacity_scope": "",
+      "entity_id": "E021",
+      "entity_type": "Cluster",
+      "evidence_label": "DERIVED",
+      "facility_or_geography": "Karnataka and Tamil Nadu India",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "Builder R&D foundry mother machines metrology aerospace and engineering",
+      "source_date": "2026-08-24",
+      "source_url": "https://bfwindia.com/aboutus/infrastructure/",
+      "staging_entity_id": "manus-09:E021",
+      "uncertainty_or_limitation": "Cluster-wide density and capacity need mapping"
+    },
+    {
+      "canonical_name": "Rajkot",
+      "capacity_or_metric": "Two Jyoti manufacturing plants and 6000/year installed capacity",
+      "capacity_scope": "Company scope not whole cluster",
+      "entity_id": "E023",
+      "entity_type": "Cluster",
+      "evidence_label": "REPORTED",
+      "facility_or_geography": "Gujarat India",
+      "promotion_status": "STAGING_ONLY",
+      "role_or_product": "Jyoti CNC and broad engineering ecosystem",
+      "source_date": "2025-08-21",
+      "source_url": "https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf",
+      "staging_entity_id": "manus-09:E023",
+      "uncertainty_or_limitation": "Supplier depth in precision core UNKNOWN"
+    }
+  ],
+  "equipment_candidates": [
+    {
+      "candidate_id": "manus-09:equipment-01",
+      "name": "large piano miller",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-02",
+      "name": "bridge mill",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-03",
+      "name": "horizontal boring mill",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-04",
+      "name": "way grinder",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-05",
+      "name": "jig borer",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-06",
+      "name": "thread grinder",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-07",
+      "name": "cylindrical grinder",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-08",
+      "name": "internal grinder",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-09",
+      "name": "balance machine",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-10",
+      "name": "CMM",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-11",
+      "name": "laser interferometer",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-12",
+      "name": "ballbar",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-13",
+      "name": "spindle-error analyzer",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-14",
+      "name": "temperature-controlled inspection",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-15",
+      "name": "granite/reference artefacts",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-16",
+      "name": "assembly cells",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-17",
+      "name": "alignment fixtures",
+      "promotion_status": "STAGING_ONLY"
+    },
+    {
+      "candidate_id": "manus-09:equipment-18",
+      "name": "acceptance test cell",
+      "promotion_status": "STAGING_ONLY"
+    }
+  ],
+  "escalation_packets": [
+    {
+      "linked_conflicts": [
+        "C-01",
+        "C-07",
+        "C-09"
+      ],
+      "linked_unknowns": [
+        "U-01",
+        "U-02",
+        "U-18"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-09-01",
+      "question": "What is India's annual qualified simultaneous-5-axis output by builder/product family?",
+      "required_evidence": [
+        "audited plant output",
+        "customer acceptance dossiers",
+        "product-family OEE",
+        "reliability/field records"
+      ],
+      "status": "BLOCKED_ESCALATION"
+    },
+    {
+      "linked_conflicts": [
+        "C-04",
+        "C-05"
+      ],
+      "linked_unknowns": [
+        "U-03",
+        "U-04"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-09-02",
+      "question": "What THK Sri City and MTAR ball-screw grades, yields, volumes, and CNC qualifications are actually available?",
+      "required_evidence": [
+        "grade mix",
+        "annual qualified volume",
+        "lead-error/life data",
+        "customer references"
+      ],
+      "status": "BLOCKED_ESCALATION"
+    },
+    {
+      "linked_conflicts": [
+        "C-01",
+        "C-02"
+      ],
+      "linked_unknowns": [
+        "U-05",
+        "U-06",
+        "U-07"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-09-03",
+      "question": "Can India supply qualified spindle bearings, encoders, controllers, and servo electronics at required scope?",
+      "required_evidence": [
+        "manufacturing-versus-assembly split",
+        "grade qualification",
+        "audited BOM",
+        "allocation and lead-time data"
+      ],
+      "status": "BLOCKED_ESCALATION"
+    },
+    {
+      "linked_conflicts": [
+        "C-07"
+      ],
+      "linked_unknowns": [
+        "U-09",
+        "U-18"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-09-04",
+      "question": "Can AMTTF/CMTI support annual complete-machine qualification and customer-specific acceptance?",
+      "required_evidence": [
+        "annual throughput",
+        "queue/service records",
+        "calibration traceability",
+        "acceptance limits and uncertainty budgets"
+      ],
+      "status": "BLOCKED_ESCALATION"
+    },
+    {
+      "linked_conflicts": [
+        "C-03"
+      ],
+      "linked_unknowns": [
+        "U-01",
+        "U-02",
+        "U-10"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-09-05",
+      "question": "How should the BFW press capacity claim be reconciled with official facility evidence?",
+      "required_evidence": [
+        "audited operating output",
+        "foundry yield",
+        "mother-machine utilization",
+        "product-family breakdown"
+      ],
+      "status": "BLOCKED_ESCALATION"
+    }
+  ],
+  "generated_date": "2026-08-25",
+  "inputs": {
+    "canonical_comparison": {
+      "bytes": 103621,
+      "path": "C:\\GitHub\\forge-world\\packs\\cnc_machining_india.yaml",
+      "read_only": true,
+      "sha256": "4c0dc0ce84fb45b5c2a329dfc98ffa92fb69c19afa2920597b29be5dfc2d6271"
+    },
+    "extracted_root": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09",
+    "manifest": {
+      "bytes": 1431,
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\_meta\\manus_corpus_manifest.csv",
+      "row": {
+        "CorpusID": "manus-09",
+        "FileCount": "8",
+        "OriginalZip": "How to Conduct Thorough Research and Analysis0145.zip",
+        "Status": "OK"
+      },
+      "sha256": "5b60e5026abb70a2298baa28d00d190b5b9e434231201f82ff59daaa055b388e"
+    },
+    "raw_zip": {
+      "bytes": 301851,
+      "entry_count": 8,
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\How to Conduct Thorough Research and Analysis0145.zip",
+      "sha256": "4af0c8f158913fded28e8018be9e75707e04fcee522ec7f41764ec1502959e4d"
+    }
+  },
+  "inventory": {
+    "capacity_claims": {
+      "capacity_guard": "Aggregate/nameplate/future-plan, product dimensions, orders, and facility existence are not promoted to qualified effective capacity.",
+      "component_product_metric_entity_ids": [
+        "E008",
+        "E010",
+        "E011"
+      ],
+      "decision_relevant_aggregate_capacity_entity_count": 3,
+      "decision_relevant_aggregate_capacity_entity_ids": [
+        "E001",
+        "E002",
+        "E023"
+      ],
+      "entity_rows_with_capacity_or_metric": 31,
+      "facility_or_service_existence_not_capacity_entity_ids": [
+        "E004",
+        "E007",
+        "E015",
+        "E016"
+      ],
+      "foundry_throughput_entity_ids": [
+        "E003"
+      ],
+      "industry_statistic_or_order_metric_entity_ids": [
+        "E024",
+        "E027",
+        "E028"
+      ],
+      "markdown_capacity_table_rows": 12,
+      "markdown_unknown_capacity_rows": 4,
+      "qualified_high_end_simultaneous_5axis_capacity_supported": 0,
+      "qualified_high_end_simultaneous_5axis_capacity_unknown": 1
+    },
+    "claims": {
+      "claim_counting_note": "Layer counts intentionally retain evidence/unknown/conflict overlap; no unproven synthesis is collapsed into a canonical claim.",
+      "claim_sample_count": 15,
+      "counted_non_deduplicated_evidence_or_decision_records": 80,
+      "evidence_entity_claim_rows": 31,
+      "explicit_conflict_claim_rows": 9,
+      "explicit_unknown_claim_rows": 18,
+      "markdown_capacity_table_rows": 12,
+      "stream_memo_claim_rows": 10
+    },
+    "conflicts": {
+      "conflict_ids": [
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04",
+        "C-05",
+        "C-06",
+        "C-07",
+        "C-08",
+        "C-09"
+      ],
+      "conflict_samples": [
+        {
+          "conflict": "Indian builders report thousands of machines per year, while industry commentary describes high-end core imports and limited domestic precision components.",
+          "id": "C-01",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:541",
+          "resolution": "Treat aggregate capacity as valid only for aggregate scope; high-quality 5-axis capacity remains **UNKNOWN**."
+        },
+        {
+          "conflict": "\u201cIndigenous\u201d or \u201cMade in India\u201d can mean design/assembly, domestic structural content, or deep component manufacture.",
+          "id": "C-02",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:542",
+          "resolution": "Report localization by subsystem and do not use a single domestic-value percentage without an audited BOM."
+        },
+        {
+          "conflict": "BFW Hosur capacity appears as 10,000+ units in press coverage while the official infrastructure page emphasizes foundry and mother-machine capabilities, not a verified annual output.",
+          "id": "C-03",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:543",
+          "resolution": "Mark 10,000+ as **REPORTED secondary**; use official BFW page for facility capability, not capacity."
+        },
+        {
+          "conflict": "THK India has a Sri City production facility, but public evidence does not reveal which product grades and volumes are made there.",
+          "id": "C-04",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:544",
+          "resolution": "Mark facility existence as evidenced; grade mix and qualified CNC capacity **UNKNOWN**."
+        },
+        {
+          "conflict": "MTAR claims sole Indian ball-screw manufacturing, but that does not prove volume production of the specific grades and service lives required by a 100-machine CNC program.",
+          "id": "C-05",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:545",
+          "resolution": "Preserve the claim as company-reported capability; mark capacity and qualification **UNKNOWN**."
+        }
+      ],
+      "conflicted_mentions_in_markdown": 4,
+      "explicit_conflict_ledger_rows": 9
+    },
+    "duplicates": {
+      "duplicate_artifact_hash_groups": [],
+      "duplicate_count": 0,
+      "duplicate_entity_ids": [],
+      "duplicate_source_ids": [],
+      "duplicate_stream_names": []
+    },
+    "entities": {
+      "all_entity_candidates_staging_only": true,
+      "bounded_entity_candidate_sample_count": 12,
+      "entity_rows_after_repair": 31,
+      "entity_type_counts": {
+        "Cluster": 4,
+        "ComponentSupplier": 8,
+        "Facility": 2,
+        "Government": 3,
+        "IndustryAssociation": 5,
+        "MachineBuilder": 3,
+        "ResearchInstitute": 1,
+        "Standard": 4,
+        "TestingFacility": 1
+      },
+      "evidence_label_counts": {
+        "DERIVED": 2,
+        "MEASURED": 13,
+        "REPORTED": 16
+      },
+      "unique_entity_ids": 31
+    },
+    "facilities_locations_clusters": {
+      "cluster_entity_rows": 4,
+      "facility_capacity_promotions": 0,
+      "facility_or_geography_nonempty_rows": 27,
+      "facility_semantics_note": "Facility/service existence is not qualified capability, annual throughput, or operating capacity.",
+      "research_institute_facility_candidates": 1,
+      "strict_facility_entity_rows": 2,
+      "testing_facility_entity_rows": 1
+    },
+    "malformed": {
+      "raw_files_modified": 0,
+      "raw_malformed_entity_csv_rows": 2,
+      "repair_rule_count": 1,
+      "repaired_in_memory_rows": 2,
+      "unrepaired_rows": 0
+    },
+    "process_equipment_metrology": {
+      "bill_of_process_stage_rows": 13,
+      "equipment_candidate_terms_bounded": 18,
+      "machine_builds_machine_recursion_rows": 9,
+      "metrology_measurement_layer_rows": 8,
+      "metrology_sample_count": 8,
+      "process_sample_count": 9,
+      "testing_and_research_facility_candidates": 2
+    },
+    "relations": {
+      "allowed_edges_reviewed": [
+        "affected_by_shock",
+        "competes_for",
+        "consumes_energy",
+        "consumes_water",
+        "contradicts",
+        "decomposes_into",
+        "derived_from",
+        "enabled_by_project",
+        "gated_by",
+        "has_capacity",
+        "licensed_from",
+        "located_at",
+        "operated_by",
+        "owned_by",
+        "produced_via",
+        "recurses_into",
+        "requires_capability",
+        "requires_equipment",
+        "requires_input",
+        "requires_qualification",
+        "requires_tool",
+        "substitutable_with",
+        "supplied_by",
+        "supports",
+        "supersedes",
+        "transported_via"
+      ],
+      "ambiguous_or_unsupported_relation_mappings": 6,
+      "concrete_relation_example_candidates": 14,
+      "relation_promotions": 0,
+      "relationship_ontology_rows": 14
+    },
+    "skipped": {
+      "items": [
+        {
+          "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\cnc_chart.py",
+          "reason": "source chart not executed"
+        },
+        {
+          "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\cnc_capacity_context.png",
+          "reason": "binary image not OCR-ed or semantically interpreted"
+        }
+      ],
+      "skipped_execution_units": 1,
+      "skipped_files_or_semantic_parses": 2
+    },
+    "sources": {
+      "duplicate_source_ids": [],
+      "package_reference_urls": 32,
+      "package_unique_urls_including_image": 33,
+      "primary_secondary_counts": {
+        "Primary": 30,
+        "Secondary": 1
+      },
+      "source_ledger_rows": 31,
+      "source_ledger_urls": 31,
+      "source_type_counts": {
+        "Annual report": 1,
+        "Government R&D page": 1,
+        "Government cluster page": 1,
+        "Government country guide": 1,
+        "Government data portal": 1,
+        "Government explainer": 1,
+        "Industry association page": 1,
+        "Industry association release": 2,
+        "Industry association statistics": 2,
+        "International standard": 5,
+        "News report": 1,
+        "Official company page": 1,
+        "Official facility page": 3,
+        "Official investor page": 2,
+        "Official product page": 7,
+        "Official technical page": 1
+      },
+      "unique_source_ids": 31
+    },
+    "unknowns": {
+      "explicit_unknown_ledger_rows": 18,
+      "unknown_ids": [
+        "U-01",
+        "U-02",
+        "U-03",
+        "U-04",
+        "U-05",
+        "U-06",
+        "U-07",
+        "U-08",
+        "U-09",
+        "U-10",
+        "U-11",
+        "U-12",
+        "U-13",
+        "U-14",
+        "U-15",
+        "U-16",
+        "U-17",
+        "U-18"
+      ],
+      "unknown_mentions_in_markdown": 49,
+      "unknown_samples": [
+        {
+          "exact_unknown": "Annual Indian output of qualified simultaneous 5-axis machining centers",
+          "id": "U-01",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:516"
+        },
+        {
+          "exact_unknown": "Jyoti, BFW, Ace, LMW capacity by product family and precision class",
+          "id": "U-02",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:517"
+        },
+        {
+          "exact_unknown": "THK Sri City annual output and grade mix",
+          "id": "U-03",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:518"
+        },
+        {
+          "exact_unknown": "MTAR commercial CNC ball-screw annual capacity, accuracy grade, and cost",
+          "id": "U-04",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:519"
+        },
+        {
+          "exact_unknown": "Indian production of P4/P2 spindle bearings",
+          "id": "U-05",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:520"
+        },
+        {
+          "exact_unknown": "Indian encoder manufacturing versus import/assembly",
+          "id": "U-06",
+          "locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:521"
+        }
+      ]
+    }
+  },
+  "metrology_candidates": [
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:metrology-layer-424",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:424",
+      "example_instruments": "Calibrated granite, artefacts, standards, temperature sensors",
+      "measurement_layer": "Primary dimensional reference",
+      "promotion_status": "STAGING_ONLY",
+      "purpose": "Establish reference and environmental conditions."
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:metrology-layer-425",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:425",
+      "example_instruments": "CMM, form/roundness, surface roughness, height and contour measurement",
+      "measurement_layer": "Component geometry",
+      "promotion_status": "STAGING_ONLY",
+      "purpose": "Inspect castings, housings, shafts, tables, and tooling."
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:metrology-layer-426",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:426",
+      "example_instruments": "Laser interferometer, electronic level, autocollimator, straightedge, square",
+      "measurement_layer": "Linear-axis performance",
+      "promotion_status": "STAGING_ONLY",
+      "purpose": "Measure positioning, repeatability, pitch/yaw/roll, straightness and squareness."
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:metrology-layer-427",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:427",
+      "example_instruments": "Ballbar or equivalent circular test system",
+      "measurement_layer": "Circular/contouring performance",
+      "promotion_status": "STAGING_ONLY",
+      "purpose": "Assess coordinated-axis behavior, servo mismatch, backlash and geometry."
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:metrology-layer-428",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:428",
+      "example_instruments": "Angular encoder, polygon/artefact methods, rotary-axis test systems",
+      "measurement_layer": "Rotary-axis performance",
+      "promotion_status": "STAGING_ONLY",
+      "purpose": "Measure rotary-axis location, accuracy, repeatability, reversal and thermal drift."
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:metrology-layer-429",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:429",
+      "example_instruments": "Spindle-error analyzer, displacement sensors, accelerometers, balance equipment",
+      "measurement_layer": "Spindle performance",
+      "promotion_status": "STAGING_ONLY",
+      "purpose": "Measure radial/axial error motion, vibration, thermal and dynamic behavior."
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:metrology-layer-430",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:430",
+      "example_instruments": "Temperature sensors, data acquisition, displacement probes, environmental logging",
+      "measurement_layer": "Thermal behavior",
+      "promotion_status": "STAGING_ONLY",
+      "purpose": "Build thermal maps and verify compensation."
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:metrology-layer-431",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:431",
+      "example_instruments": "Standard test piece, customer-specific workpiece, tool and coolant records",
+      "measurement_layer": "Cutting performance",
+      "promotion_status": "STAGING_ONLY",
+      "purpose": "Demonstrate actual machining accuracy and surface/process performance."
+    }
+  ],
+  "process_candidates": [
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:process-stage-122",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:122",
+      "exit_evidence": "Controlled product configuration and drawing release.",
+      "operation": "Freeze envelopes, loads, travel, spindle, tool interface, accuracy class",
+      "promotion_status": "STAGING_ONLY",
+      "required_equipment_or_capability": "Design engineering, FEA, thermal and kinematic modeling",
+      "stage": "1. Product definition"
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:process-stage-123",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:123",
+      "exit_evidence": "Chemistry, microstructure, hardness, dimensional and NDT records.",
+      "operation": "Pattern, mold, melt, inoculation, pour, shakeout, shotblast",
+      "promotion_status": "STAGING_ONLY",
+      "required_equipment_or_capability": "Foundry, melt lab, sand control, pattern tooling",
+      "stage": "2. Casting and pattern"
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:process-stage-124",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:124",
+      "exit_evidence": "Stress-relief route and post-process geometry record.",
+      "operation": "Thermal stress relief, vibratory treatment where justified, controlled storage/aging",
+      "promotion_status": "STAGING_ONLY",
+      "required_equipment_or_capability": "Furnace, temperature logging, residual-stress/geometry checks",
+      "stage": "3. Stress relief and aging"
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:process-stage-125",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:125",
+      "exit_evidence": "Rough-machined inspection and stock allowance record.",
+      "operation": "Datum creation, faces, bores, mounting pads, reference holes",
+      "promotion_status": "STAGING_ONLY",
+      "required_equipment_or_capability": "Large piano miller, bridge mill, horizontal boring mill",
+      "stage": "4. Rough machining"
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:process-stage-126",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:126",
+      "exit_evidence": "Geometric inspection and process capability record.",
+      "operation": "Guideway pads, spindle head interfaces, bearing seats, ballscrew supports",
+      "promotion_status": "STAGING_ONLY",
+      "required_equipment_or_capability": "Way grinder, jig borer, high-accuracy machining center, temperature-controlled inspection",
+      "stage": "5. Finish machining"
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:process-stage-129",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:129",
+      "exit_evidence": "Mechanical/electrical completion record.",
+      "operation": "Frame, axes, spindle, enclosure, cabinet, wiring, lubrication",
+      "promotion_status": "STAGING_ONLY",
+      "required_equipment_or_capability": "Assembly cells, cranes, torque tools, alignment fixtures",
+      "stage": "8. Machine assembly"
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:process-stage-130",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:130",
+      "exit_evidence": "Geometric test report.",
+      "operation": "Leveling, squareness, straightness, parallelism, spindle alignment",
+      "promotion_status": "STAGING_ONLY",
+      "required_equipment_or_capability": "Laser, electronic levels, autocollimator, granite and master artefacts",
+      "stage": "9. Geometric alignment"
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:process-stage-132",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:132",
+      "exit_evidence": "Functional test checklist and safety sign-off.",
+      "operation": "ATC cycles, pallet, hydraulics, coolant, interlocks, emergency functions",
+      "promotion_status": "STAGING_ONLY",
+      "required_equipment_or_capability": "Test programs and safety validation",
+      "stage": "11. Functional and safety test"
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:process-stage-133",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:133",
+      "exit_evidence": "Dimensional, surface, contour, and process-capability report.",
+      "operation": "Standard test piece and customer-specific workpiece where required",
+      "promotion_status": "STAGING_ONLY",
+      "required_equipment_or_capability": "Cutting tools, fixture, coolant, inspection",
+      "stage": "12. Machining test"
+    }
+  ],
+  "relation_candidates": [
+    {
+      "allowed_edge_candidate": "produced_via",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-574",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:574",
+      "external_relation": "BUILDS",
+      "mapping_status": "AMBIGUOUS_STAGING",
+      "object": "5-axis machining center",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "Jyoti CNC"
+    },
+    {
+      "allowed_edge_candidate": "owned_by",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-575",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:575",
+      "external_relation": "OWNS_FACILITY",
+      "mapping_status": "AMBIGUOUS_DIRECTION_STAGING",
+      "object": "Hosur facility",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "BFW"
+    },
+    {
+      "allowed_edge_candidate": "located_at",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-576",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:576",
+      "external_relation": "OPERATES_IN",
+      "mapping_status": "CANDIDATE_STAGING",
+      "object": "Sri City, Andhra Pradesh",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "THK India"
+    },
+    {
+      "allowed_edge_candidate": "supplied_by",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-577",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:577",
+      "external_relation": "SUPPLIES",
+      "mapping_status": "AMBIGUOUS_DIRECTION_STAGING",
+      "object": "super-precision spindle bearings",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "SKF"
+    },
+    {
+      "allowed_edge_candidate": "requires_input",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-578",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:578",
+      "external_relation": "USES",
+      "mapping_status": "AMBIGUOUS_STAGING",
+      "object": "ball screw",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "CNC machine"
+    },
+    {
+      "allowed_edge_candidate": "requires_equipment",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-579",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:579",
+      "external_relation": "REQUIRES_MOTHER_MACHINE",
+      "mapping_status": "CANDIDATE_STAGING",
+      "object": "thread grinder",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "ball screw"
+    },
+    {
+      "allowed_edge_candidate": "requires_qualification",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-580",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:580",
+      "external_relation": "QUALIFIED_BY",
+      "mapping_status": "CANDIDATE_STAGING",
+      "object": "ISO 230-2 test",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "machining center"
+    },
+    {
+      "allowed_edge_candidate": "supports",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-581",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:581",
+      "external_relation": "CALIBRATED_BY",
+      "mapping_status": "UNSUPPORTED_SEMANTICS_STAGING",
+      "object": "AMTTF / CMTI",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "machine"
+    },
+    {
+      "allowed_edge_candidate": "requires_input",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-582",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:582",
+      "external_relation": "DEPENDS_ON_MATERIAL",
+      "mapping_status": "CANDIDATE_STAGING",
+      "object": "bearing steel",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "spindle bearing"
+    },
+    {
+      "allowed_edge_candidate": "located_at",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-583",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:583",
+      "external_relation": "LOCATED_IN_CLUSTER",
+      "mapping_status": "CANDIDATE_STAGING",
+      "object": "Bengaluru-Hosur cluster",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "BFW"
+    },
+    {
+      "allowed_edge_candidate": "has_capacity",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-584",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:584",
+      "external_relation": "HAS_CAPACITY",
+      "mapping_status": "CANDIDATE_STAGING",
+      "object": "6,000 aggregate machines/year",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "Jyoti CNC India facility"
+    },
+    {
+      "allowed_edge_candidate": null,
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-585",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:585",
+      "external_relation": "CAPACITY_SCOPE",
+      "mapping_status": "UNSUPPORTED_SEMANTICS_STAGING",
+      "object": "aggregate CNC machines, not high-end 5-axis",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "6,000/year"
+    },
+    {
+      "allowed_edge_candidate": "derived_from",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-586",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:586",
+      "external_relation": "EVIDENCED_BY",
+      "mapping_status": "PROVENANCE_STAGING",
+      "object": "annual report",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "capacity claim"
+    },
+    {
+      "allowed_edge_candidate": "contradicts",
+      "artifact_sha256": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+      "candidate_id": "manus-09:relation-587",
+      "caveat": "The package row is an ontology/example relation; it is not a promoted graph edge and direction/scope must be resolved.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE WORLD Research Package.md:587",
+      "external_relation": "CONFLICTS_WITH",
+      "mapping_status": "CANDIDATE_STAGING",
+      "object": "high-quality qualified subset unknown",
+      "promotion_status": "STAGING_ONLY",
+      "subject": "aggregate capacity claim"
+    }
+  ],
+  "repair_metadata": [
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "raw_field_count": 11,
+      "raw_fields": [
+        "E021",
+        "Cluster",
+        "Bengaluru-Hosur-Tumakuru",
+        "",
+        "Karnataka and Tamil Nadu India",
+        "Builder R&D foundry mother machines metrology aerospace and engineering",
+        "DERIVED",
+        "Anchor cluster based on BFW CMTI AMTTF and supplier presence",
+        "https://bfwindia.com/aboutus/infrastructure/",
+        "2026-08-24",
+        "Cluster-wide density and capacity need mapping"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 22,
+      "raw_row_sha256": "a71f04f5eeeec103f5d0ca609b8f01acd05cafee3495339b222fa378135ede6d",
+      "repaired_field_count": 12,
+      "repaired_fields": [
+        "E021",
+        "Cluster",
+        "Bengaluru-Hosur-Tumakuru",
+        "",
+        "Karnataka and Tamil Nadu India",
+        "Builder R&D foundry mother machines metrology aerospace and engineering",
+        "DERIVED",
+        "Anchor cluster based on BFW CMTI AMTTF and supplier presence",
+        "",
+        "https://bfwindia.com/aboutus/infrastructure/",
+        "2026-08-24",
+        "Cluster-wide density and capacity need mapping"
+      ],
+      "repaired_row_sha256": "390e9b4717d7ea4b2e3e5b840a916ab4dc2075a9ddad9748f50d18e2de64cc75",
+      "rule_id": "EVIDENCE_ENTITIES_MISSING_CAPACITY_SCOPE_BEFORE_URL",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-09\\FORGE_WORLD_CNC_evidence_entities.csv",
+      "artifact_sha256": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+      "raw_field_count": 11,
+      "raw_fields": [
+        "E022",
+        "Cluster",
+        "Coimbatore",
+        "",
+        "Tamil Nadu India",
+        "Foundry machine tools pneumatics precision engineering",
+        "DERIVED",
+        "Industrial-cluster role from company and association evidence",
+        "https://www.lmwglobal.com/investors/financial-and-meeting-information/annual-report.html",
+        "2026-08-24",
+        "Cluster-wide capacity UNKNOWN"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 23,
+      "raw_row_sha256": "b5610eeab5f3391af3816449a217214d154b8b012eb1911755a6e8640ff196cb",
+      "repaired_field_count": 12,
+      "repaired_fields": [
+        "E022",
+        "Cluster",
+        "Coimbatore",
+        "",
+        "Tamil Nadu India",
+        "Foundry machine tools pneumatics precision engineering",
+        "DERIVED",
+        "Industrial-cluster role from company and association evidence",
+        "",
+        "https://www.lmwglobal.com/investors/financial-and-meeting-information/annual-report.html",
+        "2026-08-24",
+        "Cluster-wide capacity UNKNOWN"
+      ],
+      "repaired_row_sha256": "7a3a78be389d0c2fb963df53c7f389892b3e1516cb14f8da0649555df14768b1",
+      "rule_id": "EVIDENCE_ENTITIES_MISSING_CAPACITY_SCOPE_BEFORE_URL",
+      "scope": "in_memory_parse_only"
+    }
+  ],
+  "report_id": "wave3-manus-09-machine-tools-cnc",
+  "report_version": "1.0.0",
+  "schemas": {
+    "FORGE WORLD Research Package.md": {
+      "format": "Markdown with pipe tables",
+      "line_count": 710,
+      "parse_errors": 0,
+      "reference_count": 32,
+      "table_count": 19,
+      "table_headers_and_rows": [
+        {
+          "header": [
+            "Layer",
+            "India status supported by public evidence",
+            "Implication for a 100-machine program"
+          ],
+          "header_locator": 36,
+          "row_count": 7
+        },
+        {
+          "header": [
+            "Label",
+            "Meaning"
+          ],
+          "header_locator": 66,
+          "row_count": 8
+        },
+        {
+          "header": [
+            "Reference class",
+            "Kinematic architecture",
+            "Typical use",
+            "Strategic value"
+          ],
+          "header_locator": 87,
+          "row_count": 5
+        },
+        {
+          "header": [
+            "System",
+            "Representative elements",
+            "Typical process and qualification concerns",
+            "100-machine strategy"
+          ],
+          "header_locator": 101,
+          "row_count": 14
+        },
+        {
+          "header": [
+            "Stage",
+            "Main operation",
+            "Required equipment/capability",
+            "Exit evidence"
+          ],
+          "header_locator": 120,
+          "row_count": 13
+        },
+        {
+          "header": [
+            "Entity",
+            "Facility / geography",
+            "Role and products",
+            "Evidence and maturity",
+            "Capacity status"
+          ],
+          "header_locator": 260,
+          "row_count": 7
+        },
+        {
+          "header": [
+            "Entity",
+            "Geography",
+            "Role",
+            "What is evidenced",
+            "What is not evidenced"
+          ],
+          "header_locator": 272,
+          "row_count": 12
+        },
+        {
+          "header": [
+            "Geography",
+            "Representative entities",
+            "Industrial signature",
+            "Evidence status"
+          ],
+          "header_locator": 289,
+          "row_count": 8
+        },
+        {
+          "header": [
+            "Capacity item",
+            "Value",
+            "Evidence class",
+            "Scope and limitation"
+          ],
+          "header_locator": 334,
+          "row_count": 12
+        },
+        {
+          "header": [
+            "Planning parameter",
+            "Modelled value",
+            "Rationale / uncertainty"
+          ],
+          "header_locator": 357,
+          "row_count": 11
+        },
+        {
+          "header": [
+            "Subsystem",
+            "Typical material families",
+            "Upstream risks",
+            "India position"
+          ],
+          "header_locator": 379,
+          "row_count": 10
+        },
+        {
+          "header": [
+            "Measurement layer",
+            "Example instruments",
+            "Purpose"
+          ],
+          "header_locator": 422,
+          "row_count": 8
+        },
+        {
+          "header": [
+            "Capability",
+            "India today",
+            "Japan/Germany/Taiwan/Korea/US benchmark",
+            "Gap interpretation"
+          ],
+          "header_locator": 443,
+          "row_count": 11
+        },
+        {
+          "header": [
+            "Rank",
+            "Bottleneck",
+            "Why it matters",
+            "Near-term mitigation"
+          ],
+          "header_locator": 469,
+          "row_count": 8
+        },
+        {
+          "header": [
+            "Downstream output",
+            "Mother capability required",
+            "Upstream dependency",
+            "India status"
+          ],
+          "header_locator": 496,
+          "row_count": 9
+        },
+        {
+          "header": [
+            "ID",
+            "Exact unknown",
+            "Why it matters",
+            "Likely resolving source",
+            "Concrete research query"
+          ],
+          "header_locator": 514,
+          "row_count": 18
+        },
+        {
+          "header": [
+            "ID",
+            "Conflicting or ambiguous evidence",
+            "Resolution used in this package"
+          ],
+          "header_locator": 539,
+          "row_count": 9
+        },
+        {
+          "header": [
+            "Entity class",
+            "Example entities",
+            "Required evidence fields"
+          ],
+          "header_locator": 557,
+          "row_count": 10
+        },
+        {
+          "header": [
+            "Relationship",
+            "Example"
+          ],
+          "header_locator": 572,
+          "row_count": 14
+        }
+      ],
+      "unique_url_count": 33
+    },
+    "FORGE_WORLD_CNC_evidence_entities.csv": {
+      "fields": [
+        "entity_id",
+        "entity_type",
+        "canonical_name",
+        "parent_or_owner",
+        "facility_or_geography",
+        "role_or_product",
+        "evidence_label",
+        "capacity_or_metric",
+        "capacity_scope",
+        "source_url",
+        "source_date",
+        "uncertainty_or_limitation"
+      ],
+      "format": "CSV",
+      "parse_errors_repaired": 2,
+      "parse_errors_unrepaired": 0,
+      "raw_data_rows": 31,
+      "raw_field_length_counts": {
+        "11": 2,
+        "12": 29
+      },
+      "repaired_data_rows": 31
+    },
+    "FORGE_WORLD_CNC_source_ledger.csv": {
+      "data_rows": 31,
+      "field_length_counts": {
+        "9": 31
+      },
+      "fields": [
+        "source_id",
+        "publisher",
+        "title",
+        "publication_or_access_date",
+        "url",
+        "source_type",
+        "primary_or_secondary",
+        "claims_supported",
+        "quality_or_limitation"
+      ],
+      "format": "CSV",
+      "parse_errors": 0
+    },
+    "cnc_capacity_context.png": {
+      "dimensions": {
+        "height": 1016,
+        "width": 1754
+      },
+      "format": "PNG",
+      "semantic_parse": "not_performed"
+    },
+    "cnc_chart.py": {
+      "execution": "skipped",
+      "format": "Python source",
+      "line_count": 17
+    },
+    "cnc_ecosystem_research_streams.json": {
+      "error_rows": [],
+      "format": "JSON",
+      "output_keys": [
+        "confidence",
+        "memo",
+        "stream"
+      ],
+      "row_count": 10,
+      "row_keys": [
+        "error",
+        "input",
+        "output"
+      ],
+      "row_path": "results[]",
+      "top_level_keys": [
+        "results"
+      ]
+    },
+    "cnc_research_notes.md": {
+      "format": "Markdown text",
+      "line_count": 33,
+      "parse_errors": 0
+    },
+    "pasted_content.txt": {
+      "format": "UTF-8 text",
+      "line_count": 43,
+      "parse_errors": 0
+    }
+  },
+  "scope": {
+    "actual_corpus_id": "manus-09",
+    "actual_topic": "Machine Tools, CNC, and Precision Manufacturing",
+    "campaign_expected_number": "07",
+    "geography_date_grade_preservation": true,
+    "job_type": "Wave 3 bounded staging/enrichment",
+    "source_of_truth_policy": "Manus evidence is staged evidence, not canonical truth; canonical pack is a read-only comparison target.",
+    "trade_production_capacity_guard": "Not applicable to the primary topic, but aggregate/nameplate/product presence is never treated as qualified effective capacity."
+  },
+  "validation": {
+    "canonical_pack_edited": false,
+    "code_changes": false,
+    "commits": false,
+    "json_tool": "PASS (python -m json.tool)",
+    "raw_corpus_edited": false
+  },
+  "zip_comparison": {
+    "all_bytes_and_hashes_match": true,
+    "all_extracted_entries_present_in_zip": true,
+    "all_zip_entries_present_extracted": true,
+    "directory_entries": 0,
+    "expected_manifest_file_count": 8,
+    "extra_zip_entries": [],
+    "extracted_file_count": 8,
+    "mismatched_entries": [],
+    "missing_extracted_entries": [],
+    "raw_zip_file_entry_count": 8
+  }
+}

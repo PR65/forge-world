@@ -1,0 +1,2449 @@
+{
+  "report_schema_version": "homi-wave1-manus04.v1",
+  "report_kind": "workforce_tacit_knowledge_human_capability",
+  "report_scope": "All five extracted artifacts in manus-04. The report is a bounded, evidence-preserving conditioning artifact for workforce, tacit knowledge, skills, qualification, ramp, organization, facility, and related industrial graph candidates.",
+  "generated_for": "HOMI Wave 1 corpus conditioning",
+  "corpus_id": "manus-04",
+  "campaign_expected_number": "04",
+  "verified_theme": "Workforce, Tacit Knowledge, and Human Capability",
+  "source_research_date": "2026-08-24",
+  "analysis_date": "2026-08-25",
+  "raw_vault_immutable": true,
+  "canonical_promotion": "NONE",
+  "report_only": true,
+  "code_modified": false,
+  "epistemic_classes": [
+    "MEASURED",
+    "REPORTED",
+    "DERIVED",
+    "ESTIMATED",
+    "MODELLED",
+    "ASSUMPTION",
+    "SCENARIO",
+    "UNKNOWN",
+    "CONFLICTED"
+  ],
+  "scope": {
+    "included_extracted_root": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04",
+    "included_raw_zip": "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips/Guide to Conducting Thorough Research other.zip",
+    "included_manifest": "C:/FORGE-RESEARCH-CORPUS/manus/_meta/manus_corpus_manifest.csv",
+    "excluded_roots": [
+      "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips (other corpus archives)",
+      "C:/FORGE-RESEARCH-CORPUS/HOMI_MANUS_20_RAW_BUNDLE.tar.gz (not needed for this bounded comparison)",
+      "forge/ and packs/ (no canonical or code ingestion)"
+    ],
+    "raw_vault_modified": false,
+    "analysis_method": "Deterministic inventory, SHA-256 hashing, ZIP-member byte comparison, UTF-8/JSON/CSV parsing, bounded claim extraction with exact locators, surface-form entity candidates, and ALLOWED_EDGES review candidates only."
+  },
+  "source_manifest_mapping": {
+    "manifest_path": "C:/FORGE-RESEARCH-CORPUS/manus/_meta/manus_corpus_manifest.csv",
+    "manifest_row": {
+      "corpus_id": "manus-04",
+      "zip_name": "Guide to Conducting Thorough Research other.zip",
+      "file_count": 5,
+      "status": "OK"
+    },
+    "raw_zip": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips/Guide to Conducting Thorough Research other.zip",
+      "bytes": 221018,
+      "sha256": "78230e6c650ded0427a8135ff81ffb44a0f1eb69cec13be0b1e8edb9e3e8726f",
+      "zip_member_count": 5,
+      "zip_test_result": "PASS",
+      "member_uncompressed_byte_sum": 220268,
+      "member_compressed_byte_sum": 220268,
+      "extracted_member_count": 5,
+      "mapping_verified": true
+    },
+    "raw_zip_byte_comparison": [
+      {
+        "raw_member": "FORGE WORLD: Human-Capability Layer for Industrial Execution.md",
+        "extracted_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+        "raw_member_bytes": 62860,
+        "extracted_bytes": 62860,
+        "raw_member_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+        "extracted_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+        "byte_identical": true,
+        "name_normalized": true,
+        "name_normalization": "Windows extraction replaced the raw colon with underscore; content bytes and hash are identical."
+      },
+      {
+        "raw_member": "forge_world_research_domains.csv",
+        "extracted_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/forge_world_research_domains.csv",
+        "raw_member_bytes": 69538,
+        "extracted_bytes": 69538,
+        "raw_member_sha256": "5e95b55ea9a46423ecabac394b860e0659de618cfb893cd49646be62c6737e1c",
+        "extracted_sha256": "5e95b55ea9a46423ecabac394b860e0659de618cfb893cd49646be62c6737e1c",
+        "byte_identical": true,
+        "name_normalized": false
+      },
+      {
+        "raw_member": "forge_world_research_domains.json",
+        "extracted_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/forge_world_research_domains.json",
+        "raw_member_bytes": 70705,
+        "extracted_bytes": 70705,
+        "raw_member_sha256": "bbea5b719613e05dea3a43b3de8e0b10a21acce1e4892bf78a9ae584cf6f3f98",
+        "extracted_sha256": "bbea5b719613e05dea3a43b3de8e0b10a21acce1e4892bf78a9ae584cf6f3f98",
+        "byte_identical": true,
+        "name_normalized": false
+      },
+      {
+        "raw_member": "pasted_content.txt",
+        "extracted_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/pasted_content.txt",
+        "raw_member_bytes": 4700,
+        "extracted_bytes": 4700,
+        "raw_member_sha256": "767e579a7b5c2be8e4b7925d094bf55af9b16000ab41cc554b78643b21ee9d79",
+        "extracted_sha256": "767e579a7b5c2be8e4b7925d094bf55af9b16000ab41cc554b78643b21ee9d79",
+        "byte_identical": true,
+        "name_normalized": false
+      },
+      {
+        "raw_member": "Verified browser findings.md",
+        "extracted_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/Verified browser findings.md",
+        "raw_member_bytes": 12465,
+        "extracted_bytes": 12465,
+        "raw_member_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+        "extracted_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+        "byte_identical": true,
+        "name_normalized": false
+      }
+    ],
+    "raw_zip_mapping_mismatch_count": 0,
+    "byte_identical_member_count": 5
+  },
+  "artifact_accounting": {
+    "artifact_count": 5,
+    "analysis_artifact_count": 4,
+    "evidence_artifact_count": 4,
+    "non_evidence_artifact_count": 1,
+    "malformed_artifact_count": 0,
+    "skipped_artifact_count": 1,
+    "duplicate_physical_export_pair_count": 1,
+    "hash_algorithm": "SHA-256",
+    "artifacts": [
+      {
+        "path": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+        "absolute_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+        "format": "markdown",
+        "role": "primary_research_memo",
+        "bytes": 62860,
+        "sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+        "line_count": 554,
+        "parse_status": "PASS",
+        "schema_or_structure": "1 H1; 17 H2; 38 H3; 15 Markdown table separator rows; 2 fenced code blocks; 13 numbered reference definitions",
+        "row_count": null,
+        "error_field_count": 0,
+        "evidence_posture": "evidence-bearing research memo with source references"
+      },
+      {
+        "path": "manus-04/forge_world_research_domains.csv",
+        "absolute_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/forge_world_research_domains.csv",
+        "format": "csv",
+        "role": "structured_research_export",
+        "bytes": 69538,
+        "sha256": "5e95b55ea9a46423ecabac394b860e0659de618cfb893cd49646be62c6737e1c",
+        "line_count": 9,
+        "parse_status": "PASS",
+        "schema_or_structure": [
+          "Subject",
+          "Research Domain",
+          "Research Memo",
+          "Sources",
+          "Confidence Assessment",
+          "Error"
+        ],
+        "row_count": 8,
+        "column_count": 6,
+        "width_error_count": 0,
+        "error_field_count": 0,
+        "evidence_posture": "structured rows; CSV escape sequences require lossless normalization before mirror comparison"
+      },
+      {
+        "path": "manus-04/forge_world_research_domains.json",
+        "absolute_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/forge_world_research_domains.json",
+        "format": "json",
+        "role": "structured_research_export",
+        "bytes": 70705,
+        "sha256": "bbea5b719613e05dea3a43b3de8e0b10a21acce1e4892bf78a9ae584cf6f3f98",
+        "line_count": 84,
+        "parse_status": "PASS",
+        "schema_or_structure": "object.results[]; result keys input, output, error; output keys confidence, domain, memo, sources",
+        "row_count": 8,
+        "error_field_count": 0,
+        "evidence_posture": "structured rows; JSON-decoded newline and quote escapes"
+      },
+      {
+        "path": "manus-04/pasted_content.txt",
+        "absolute_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/pasted_content.txt",
+        "format": "txt",
+        "role": "prompt_not_evidence",
+        "bytes": 4700,
+        "sha256": "767e579a7b5c2be8e4b7925d094bf55af9b16000ab41cc554b78643b21ee9d79",
+        "line_count": 64,
+        "parse_status": "PASS_BUT_SKIPPED",
+        "schema_or_structure": "task prompt and deliverable instructions; not a world-state evidence record",
+        "row_count": null,
+        "error_field_count": 0,
+        "evidence_posture": "excluded from claim/entity promotion"
+      },
+      {
+        "path": "manus-04/Verified browser findings.md",
+        "absolute_path": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-04/Verified browser findings.md",
+        "format": "markdown",
+        "role": "browser_findings",
+        "bytes": 12465,
+        "sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+        "line_count": 73,
+        "parse_status": "PASS",
+        "schema_or_structure": "1 H1; 14 H2 source sections; 14 Source lines; 14 evidence-label lines",
+        "row_count": 14,
+        "error_field_count": 0,
+        "evidence_posture": "source-section observations, not facility throughput measurements"
+      }
+    ],
+    "duplicate_accounting": {
+      "physical_duplicate_export_pairs": 1,
+      "pair": [
+        "manus-04/forge_world_research_domains.csv",
+        "manus-04/forge_world_research_domains.json"
+      ],
+      "logical_workstream_rows": 8,
+      "exact_rows_after_escape_normalization": 6,
+      "rows_requiring_extra_quote_escape_normalization": [
+        1,
+        5
+      ],
+      "dedupe_rule": "CSV and JSON are one logical eight-row research export. Preserve both artifact hashes, count the workstreams once for evidence, and retain serialization drift as an audit signal.",
+      "repeated_source_url_occurrences_beyond_first": 143
+    }
+  },
+  "parse_schema_audit": {
+    "utf8_decode": "PASS for all five artifacts; no NUL bytes or replacement characters",
+    "markdown_main": {
+      "line_count": 554,
+      "h1_count": 1,
+      "h2_count": 17,
+      "h3_count": 38,
+      "table_separator_row_count": 15,
+      "malformed_table_row_count": 0,
+      "url_occurrence_count": 13,
+      "numbered_reference_count": 13,
+      "parse_errors": []
+    },
+    "csv": {
+      "header": [
+        "Subject",
+        "Research Domain",
+        "Research Memo",
+        "Sources",
+        "Confidence Assessment",
+        "Error"
+      ],
+      "data_row_count": 8,
+      "column_count": 6,
+      "uniform_width": true,
+      "error_column_nonempty_rows": 0,
+      "parse_errors": []
+    },
+    "json": {
+      "root_schema": "object.results[]",
+      "result_count": 8,
+      "result_keys": [
+        "input",
+        "output",
+        "error"
+      ],
+      "output_keys": [
+        "confidence",
+        "domain",
+        "memo",
+        "sources"
+      ],
+      "error_field_nonempty_rows": 0,
+      "parse_errors": []
+    },
+    "browser_findings": {
+      "finding_count": 14,
+      "source_line_count": 14,
+      "evidence_label_line_count": 14,
+      "parse_errors": []
+    },
+    "prompt_artifact": {
+      "line_count": 64,
+      "parse_status": "SKIPPED_AS_EVIDENCE",
+      "reason": "Instruction text explicitly says it is a research task, not a finding or source record.",
+      "parse_errors": []
+    }
+  },
+  "source_inventory": {
+    "source_url_occurrences": 273,
+    "unique_source_url_count": 130,
+    "unique_host_count": 96,
+    "source_url_occurrences_by_artifact": {
+      "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md": 13,
+      "manus-04/forge_world_research_domains.csv": 123,
+      "manus-04/forge_world_research_domains.json": 123,
+      "manus-04/pasted_content.txt": 0,
+      "manus-04/Verified browser findings.md": 14
+    },
+    "unique_urls_by_artifact": {
+      "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md": 13,
+      "manus-04/forge_world_research_domains.csv": 122,
+      "manus-04/forge_world_research_domains.json": 122,
+      "manus-04/pasted_content.txt": 0,
+      "manus-04/Verified browser findings.md": 14
+    },
+    "license_metadata": {
+      "status": "UNSPECIFIED",
+      "rule": "Corpus URLs are references; no source-specific license, access date, or immutable page snapshot was supplied in these artifacts.",
+      "promotion_effect": "Do not create exportable EvidenceRecords or canonical source snapshots from URL references alone."
+    },
+    "selected_source_register": [
+      {
+        "source_id": "m04-src-01",
+        "url": "https://certification.asnt.org/certification/asnt-9712-level-ii",
+        "publisher": "ASNT",
+        "source_type": "certification_body",
+        "scope": "method-specific NDT Level II training and experience requirements",
+        "source_class": "PRIMARY_AUTHORITATIVE",
+        "date": "UNKNOWN",
+        "use_guard": "Credential scope is bounded; it does not prove all-method competence or throughput."
+      },
+      {
+        "source_id": "m04-src-02",
+        "url": "https://www.aws.org/certification-and-education/professional-certification/certified-welding-inspector/",
+        "publisher": "AWS",
+        "source_type": "certification_body",
+        "scope": "CWI education, experience, vision, and examination pathway",
+        "source_class": "PRIMARY_AUTHORITATIVE",
+        "date": "UNKNOWN",
+        "use_guard": "Eligibility and certification are not equivalent to local autonomous process competence."
+      },
+      {
+        "source_id": "m04-src-03",
+        "url": "https://www.bibb.de/en/77203.php",
+        "publisher": "BIBB",
+        "source_type": "government_institution",
+        "scope": "Germany dual vocational training venues, duration, employers, and examinations",
+        "source_class": "PRIMARY_AUTHORITATIVE",
+        "date": "UNKNOWN",
+        "use_guard": "Pathway design is evidence; national mastery or throughput is not."
+      },
+      {
+        "source_id": "m04-src-04",
+        "url": "https://www.ite.edu.sg/course-finder/work-study-diploma-in-advanced-manufacturing/",
+        "publisher": "ITE Singapore",
+        "source_type": "official_training_program",
+        "scope": "30-month advanced-manufacturing work-study pathway and workplace equipment links",
+        "source_class": "PRIMARY_AUTHORITATIVE",
+        "date": "UNKNOWN",
+        "use_guard": "Program structure does not establish graduate retention or line qualification."
+      },
+      {
+        "source_id": "m04-src-05",
+        "url": "https://www.msde.gov.in/offerings/schemes-and-services/details/national-apprenticeship-promotion-scheme-naps-YjM4ATMtQWa",
+        "publisher": "MSDE",
+        "source_type": "government_scheme",
+        "scope": "NAPS-2 OJT, duration, stipend, and institutional roles",
+        "source_class": "PRIMARY_AUTHORITATIVE",
+        "date": "UNKNOWN",
+        "use_guard": "Scheme duration is not autonomous high-precision competence."
+      },
+      {
+        "source_id": "m04-src-06",
+        "url": "https://www.tsmc.com/static/abouttsmcaz/apprenticeship.htm",
+        "publisher": "TSMC Arizona",
+        "source_type": "official_employer_program",
+        "scope": "technician apprenticeship entry requirements and benefits",
+        "source_class": "PRIMARY_COMPANY",
+        "date": "UNKNOWN",
+        "use_guard": "The extracted page does not establish duration, completion, or autonomous fab authorization."
+      },
+      {
+        "source_id": "m04-src-07",
+        "url": "https://ism.gov.in/",
+        "publisher": "India Semiconductor Mission",
+        "source_type": "government_mission",
+        "scope": "semiconductor ecosystem mission and facilities/program framing",
+        "source_class": "PRIMARY_AUTHORITATIVE",
+        "date": "UNKNOWN",
+        "use_guard": "Mission, projects, and announcements do not establish qualified workforce stock or throughput."
+      },
+      {
+        "source_id": "m04-src-08",
+        "url": "https://www.nist.gov/publications/analysis-manufacturing-usa-occupation-and-competency-framework",
+        "publisher": "NIST",
+        "source_type": "government_framework",
+        "scope": "advanced-manufacturing occupations, KSAs, competencies, and sub-competencies",
+        "source_class": "PRIMARY_AUTHORITATIVE",
+        "date": "2026-06-02",
+        "use_guard": "Framework taxonomy is not a supply, qualification, or facility-capacity measurement."
+      },
+      {
+        "source_id": "m04-src-09",
+        "url": "https://www.semiconductors.org/chipping-away-assessing-and-addressing-the-labor-market-gap-facing-the-u-s-semiconductor-industry/",
+        "publisher": "Semiconductor Industry Association",
+        "source_type": "industry_association_forecast",
+        "scope": "U.S. semiconductor employment and projected unfilled roles",
+        "source_class": "MODELLED_REPORTED",
+        "date": "UNKNOWN",
+        "use_guard": "Projection and degree-completion model are not measured qualified staffing or fab output."
+      },
+      {
+        "source_id": "m04-src-10",
+        "url": "https://netl.doe.gov/bwi",
+        "publisher": "U.S. Department of Energy",
+        "source_type": "government_workforce_initiative",
+        "scope": "battery job-task analysis, facility visits, SME interviews, and employer validation",
+        "source_class": "PRIMARY_AUTHORITATIVE",
+        "date": "UNKNOWN",
+        "use_guard": "Validated training architecture does not guarantee cross-chemistry or cross-vendor competence."
+      },
+      {
+        "source_id": "m04-src-11",
+        "url": "https://www.oecd.org/en/publications/2023/03/the-impact-of-ai-on-the-workplace-evidence-from-oecd-case-studies-of-ai-implementation_b4c2c6ee.html",
+        "publisher": "OECD",
+        "source_type": "comparative_case_study",
+        "scope": "AI implementation case studies and job reorganization/displacement observations",
+        "source_class": "AUTHORITATIVE_SECONDARY",
+        "date": "2023",
+        "use_guard": "Case-study direction is not universal across occupations, countries, or process regimes."
+      },
+      {
+        "source_id": "m04-src-12",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30487087/",
+        "publisher": "Johnson, Fletcher, Baker, and Charles",
+        "source_type": "peer_reviewed_study",
+        "scope": "two UK aerospace visual-inspection case studies and tacit-knowledge elicitation",
+        "source_class": "PEER_REVIEWED",
+        "date": "2019",
+        "use_guard": "Findings are task-specific and do not justify a universal tacit-knowledge percentage."
+      },
+      {
+        "source_id": "m04-src-13",
+        "url": "https://www.manufacturing.gov/topic/workforce",
+        "publisher": "Manufacturing.gov",
+        "source_type": "government_program_page",
+        "scope": "registered apprenticeship and Manufacturing USA workforce framing",
+        "source_class": "PRIMARY_AUTHORITATIVE",
+        "date": "UNKNOWN",
+        "use_guard": "Program landing page; not a quantified labor-market study."
+      },
+      {
+        "source_id": "m04-src-14",
+        "url": "https://nsdcindia.org/nos",
+        "publisher": "NSDC",
+        "source_type": "institutional_page",
+        "scope": "India National Occupational Standards URL check",
+        "source_class": "UNAVAILABLE_AT_EXTRACTION",
+        "date": "UNKNOWN",
+        "use_guard": "The extracted browser finding reports Page not found; do not treat the prior claim as verified."
+      }
+    ]
+  },
+  "candidate_id_contract": {
+    "ordered_fields": [
+      "source_corpus",
+      "artifact",
+      "source_locator",
+      "record_kind",
+      "observed_name",
+      "normalized_name",
+      "scope",
+      "relation_type"
+    ],
+    "algorithm": "SHA-256 of UTF-8 pipe-joined ordered field values; candidate_id is homi-candidate: plus the first 20 hexadecimal characters.",
+    "normalization": "NFKC, trim, and casefold for matching only; observed surface names and locators are retained.",
+    "promotion_rule": "Candidate IDs are deterministic analysis handles only. No candidate is a canonical ID and no candidate is promoted."
+  },
+  "claim_candidate_samples": [
+    {
+      "claim_id": "m04-claim-01",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L9-L23",
+      "subject": "industrial human capability",
+      "predicate": "is_a_structured_capability_system",
+      "text": "The missing layer is a structured capability system of qualified people, experienced teams, supervision, certifications, equipment familiarity, tacit knowledge, training capacity, institutional memory, and organizational routines.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [],
+      "source_class": "CORPUS_PRIMARY_RESEARCH_MEMO",
+      "observed_class": "DERIVED",
+      "proposed_epistemic_class": "DERIVED",
+      "caveat": "This is an architectural synthesis, not a measured workforce stock or production rate.",
+      "unknowns": [
+        "Qualified people and experienced team counts by process, equipment, product, location, and shift."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:experienced_team",
+        "entity:qualification",
+        "entity:tacit_knowledge",
+        "entity:training_pipeline",
+        "entity:institutional_memory"
+      ],
+      "escalation": "Collect site-level authorization, shift, supervision, quality, maintenance, trainer, and transfer records before using the system as capacity."
+    },
+    {
+      "claim_id": "m04-claim-02",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L13-L16; L116-L120",
+      "subject": "industrial worker capability",
+      "predicate": "is_specific_to_occupation_process_equipment_and_conditions",
+      "text": "A machinist, NDT technician, controls engineer, or cleanroom technician is not a generic interchangeable unit; the relation must include process, equipment, product, conditions, quality, rate, and evidence.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://certification.asnt.org/certification/asnt-9712-level-ii",
+        "https://www.aws.org/certification-and-education/professional-certification/certified-welding-inspector/"
+      ],
+      "source_class": "PRIMARY_CERTIFICATION_SOURCES_PLUS_CORPUS_SYNTHESIS",
+      "observed_class": "DERIVED",
+      "proposed_epistemic_class": "DERIVED",
+      "caveat": "The relation grammar is a model requirement; public sources do not provide a complete named-person or named-site inventory.",
+      "unknowns": [
+        "Current authorization and recency by person, team, equipment configuration, material, and product."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:machinist",
+        "entity:ndt_technician",
+        "entity:controls_engineer",
+        "entity:cleanroom_technician",
+        "entity:process_scope",
+        "entity:equipment_family"
+      ],
+      "escalation": "Require a scoped capability record with local authorization, demonstrated quality/rate, supervision, and evidence date."
+    },
+    {
+      "claim_id": "m04-claim-03",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L15-L16; L194-L198",
+      "subject": "formal qualification",
+      "predicate": "is_a_bounded_gate_not_complete_capability",
+      "text": "A certificate or completed course can establish a formal threshold, but it does not automatically establish independent production competence, unusual-failure mastery, or qualified annual throughput.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://certification.asnt.org/certification/asnt-9712-level-ii",
+        "https://www.aws.org/certification-and-education/professional-certification/certified-welding-inspector/"
+      ],
+      "source_class": "PRIMARY_CERTIFICATION_SOURCES",
+      "observed_class": "DERIVED",
+      "proposed_epistemic_class": "DERIVED",
+      "caveat": "Credential requirements are measured or reported by issuers; the distinction between credential and production capability is a model guard.",
+      "unknowns": [
+        "Post-certification autonomous performance, defect escape rate, deviation recovery, and throughput."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:credential",
+        "entity:qualification_state",
+        "entity:qualified_supplier"
+      ],
+      "escalation": "Link each credential to method, scope, issue/expiry, local authorization, demonstrated jobs, and customer or regulatory acceptance."
+    },
+    {
+      "claim_id": "m04-claim-04",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L15-L18",
+      "subject": "Germany dual VET",
+      "predicate": "combines_company_and_vocational_school_learning_with_external_assessment",
+      "text": "BIBB describes company and vocational-school venues, apprentices as employees, more than 300 recognized training occupations, typical two-to-three-and-a-half-year duration, and chamber examinations.",
+      "numbers": [
+        {
+          "raw": "more than 300",
+          "value": 300,
+          "unit": "occupations",
+          "qualifier": "lower_bound"
+        },
+        {
+          "raw": "two to three and a half years",
+          "value": [
+            2,
+            3.5
+          ],
+          "unit": "years",
+          "qualifier": "reported_duration_range"
+        }
+      ],
+      "units": [
+        "occupations",
+        "years"
+      ],
+      "geography": [
+        "Germany"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "source_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://www.bibb.de/en/77203.php"
+      ],
+      "source_class": "PRIMARY_GOVERNMENT_INSTITUTION",
+      "observed_class": "MEASURED/REPORTED",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "Pathway duration and structure do not prove mastery of every employer's equipment, product, or failure mode.",
+      "unknowns": [
+        "Completion, retention, independent qualification, and process-specific output by occupation and employer."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:germany_dual_vet",
+        "entity:company_training_venue",
+        "entity:vocational_school",
+        "entity:chamber_exam",
+        "entity:qualified_company_trainer"
+      ],
+      "escalation": "Obtain occupation-level completion, dropout, equipment exposure, trainer capacity, and employer outcome records."
+    },
+    {
+      "claim_id": "m04-claim-05",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L20-L23",
+      "subject": "Singapore ITE advanced-manufacturing WSDip",
+      "predicate": "links_30_month_work_study_to_specific_processes_and_equipment",
+      "text": "ITE lists a 30-month work-study diploma with classroom blocks and workplace OJT tied to CAD/CAM, CNC, additive manufacturing, automation, quality, lean, and production management.",
+      "numbers": [
+        {
+          "raw": "30-month",
+          "value": 30,
+          "unit": "months",
+          "qualifier": "program_duration"
+        }
+      ],
+      "units": [
+        "months"
+      ],
+      "geography": [
+        "Singapore"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "source_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://www.ite.edu.sg/course-finder/work-study-diploma-in-advanced-manufacturing/"
+      ],
+      "source_class": "PRIMARY_OFFICIAL_TRAINING_PROGRAM",
+      "observed_class": "REPORTED",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "The page establishes pathway design and named employer links, not graduate placement, retention, or autonomous production competence.",
+      "unknowns": [
+        "Machine hours per trainee, completion, retention, line authorization, and first-pass quality."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:singapore_ite_wsdip",
+        "entity:cnc_process",
+        "entity:automation_process",
+        "entity:workplace_ojt"
+      ],
+      "escalation": "Request cohort outcomes by employer, equipment family, task qualification, line qualification, and post-graduation retention."
+    },
+    {
+      "claim_id": "m04-claim-06",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L55-L58",
+      "subject": "NIST advanced-manufacturing occupation framework",
+      "predicate": "defines_a_common_occupation_and_competency_language",
+      "text": "NIST identifies 132 entry-level occupations, 235 knowledge/skill/ability items, 13 competencies, and 68 sub-competencies.",
+      "numbers": [
+        {
+          "raw": "132",
+          "value": 132,
+          "unit": "occupations"
+        },
+        {
+          "raw": "235",
+          "value": 235,
+          "unit": "KSA_items"
+        },
+        {
+          "raw": "13",
+          "value": 13,
+          "unit": "competencies"
+        },
+        {
+          "raw": "68",
+          "value": 68,
+          "unit": "sub_competencies"
+        }
+      ],
+      "units": [
+        "occupations",
+        "KSA_items",
+        "competencies",
+        "sub_competencies"
+      ],
+      "geography": [
+        "United States",
+        "GLOBAL_REUSE_CANDIDATE"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "source_date": "2026-06-02"
+      },
+      "source_url": [
+        "https://www.nist.gov/publications/analysis-manufacturing-usa-occupation-and-competency-framework"
+      ],
+      "source_class": "PRIMARY_GOVERNMENT_FRAMEWORK",
+      "observed_class": "REPORTED",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "A taxonomy of required KSAs is not a measurement of worker supply, qualification, or facility capacity.",
+      "unknowns": [
+        "Crosswalk completeness, local authorization, active practice, and supply by industrial process and geography."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:nist_occupation_framework",
+        "entity:occupation",
+        "entity:skill",
+        "entity:competency"
+      ],
+      "escalation": "Crosswalk framework terms to process/equipment-specific authorization and observed work outcomes without inferring supply."
+    },
+    {
+      "claim_id": "m04-claim-07",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L8-L13",
+      "subject": "United States semiconductor workforce",
+      "predicate": "has_modelled_job_growth_and_unfilled_role_projection",
+      "text": "SIA projects employment from approximately 345,000 to 460,000 by 2030 and estimates roughly 67,000 new jobs could go unfilled at current degree-completion rates.",
+      "numbers": [
+        {
+          "raw": "345,000",
+          "value": 345000,
+          "unit": "jobs"
+        },
+        {
+          "raw": "460,000",
+          "value": 460000,
+          "unit": "jobs"
+        },
+        {
+          "raw": "115,000",
+          "value": 115000,
+          "unit": "jobs",
+          "qualifier": "difference"
+        },
+        {
+          "raw": "67,000",
+          "value": 67000,
+          "unit": "jobs",
+          "qualifier": "projected_unfilled"
+        },
+        {
+          "raw": "2030",
+          "value": 2030,
+          "unit": "year"
+        }
+      ],
+      "units": [
+        "jobs",
+        "year"
+      ],
+      "geography": [
+        "United States"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "2030"
+      },
+      "source_url": [
+        "https://www.semiconductors.org/chipping-away-assessing-and-addressing-the-labor-market-gap-facing-the-u-s-semiconductor-industry/"
+      ],
+      "source_class": "INDUSTRY_ASSOCIATION_FORECAST",
+      "observed_class": "MODELLED/ESTIMATED",
+      "proposed_epistemic_class": "MODELLED",
+      "caveat": "This is a modelled labor-market projection, not a direct measurement of fab-ready technicians, qualified teams, or production capacity.",
+      "unknowns": [
+        "Qualified stock by tool family, facility, shift, authorization, recency, and independent productivity."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:semiconductor_equipment_technician",
+        "entity:semiconductor_process_engineer",
+        "entity:semiconductor_yield_engineer",
+        "entity:training_pipeline"
+      ],
+      "escalation": "Replace projected job counts with facility-level staffing matrices, authorization records, yield outcomes, and retention."
+    },
+    {
+      "claim_id": "m04-claim-08",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L25-L28",
+      "subject": "ASNT 9712 Level II NDT credential",
+      "predicate": "sets_method_specific_training_and_experience_requirements",
+      "text": "ASNT lists MT and PT at 5 training days and 60 experience days, RT at 15 and 180, and UT at 18 and 180.",
+      "numbers": [
+        {
+          "raw": "MT/PT 5/60",
+          "value": {
+            "training_days": 5,
+            "experience_days": 60
+          },
+          "unit": "days"
+        },
+        {
+          "raw": "RT 15/180",
+          "value": {
+            "training_days": 15,
+            "experience_days": 180
+          },
+          "unit": "days"
+        },
+        {
+          "raw": "UT 18/180",
+          "value": {
+            "training_days": 18,
+            "experience_days": 180
+          },
+          "unit": "days"
+        }
+      ],
+      "units": [
+        "training_days",
+        "experience_days"
+      ],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "source_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://certification.asnt.org/certification/asnt-9712-level-ii"
+      ],
+      "source_class": "PRIMARY_CERTIFICATION_BODY",
+      "observed_class": "MEASURED/REPORTED",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "Requirements are method-specific and do not prove every defect class, product scope, local authorization, or release throughput.",
+      "unknowns": [
+        "Detection performance and independent competence under representative production defects."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:ndt_technician",
+        "entity:credential_asnt_9712_level_ii",
+        "entity:ultrasonic_testing",
+        "entity:radiographic_testing"
+      ],
+      "escalation": "Capture method, sector, product scope, issue/expiry, employer authorization, proficiency tests, and current practice."
+    },
+    {
+      "claim_id": "m04-claim-09",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L30-L33",
+      "subject": "AWS Certified Welding Inspector",
+      "predicate": "uses_education_and_welding_experience_combinations_as_eligibility",
+      "text": "AWS examples include a bachelor's route with at least one year of welding experience, an associate route with at least two years, and a high-school route with at least five years.",
+      "numbers": [
+        {
+          "raw": "1",
+          "value": 1,
+          "unit": "years",
+          "qualifier": "bachelors_route_experience"
+        },
+        {
+          "raw": "2",
+          "value": 2,
+          "unit": "years",
+          "qualifier": "associate_route_experience"
+        },
+        {
+          "raw": "5",
+          "value": 5,
+          "unit": "years",
+          "qualifier": "high_school_route_experience"
+        }
+      ],
+      "units": [
+        "years"
+      ],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "source_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://www.aws.org/certification-and-education/professional-certification/certified-welding-inspector/"
+      ],
+      "source_class": "PRIMARY_CERTIFICATION_BODY",
+      "observed_class": "MEASURED/REPORTED",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "Eligibility and examination do not prove independent judgment for every code, material, geometry, plant, or abnormal condition.",
+      "unknowns": [
+        "Plant-specific authorization, recency, defect detection, release authority, and production impact."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:weld_inspector",
+        "entity:credential_aws_cwi",
+        "entity:welding_process",
+        "entity:inspection_release"
+      ],
+      "escalation": "Link credential evidence to code, product, material, employer authorization, audit, and observed inspection outcomes."
+    },
+    {
+      "claim_id": "m04-claim-10",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L40-L43",
+      "subject": "India NAPS-2 apprenticeship scheme",
+      "predicate": "defines_workplace_training_pathways_and_administrative_durations",
+      "text": "MSDE describes designated-trade durations of one year for ITI pass-outs and two years for freshers or non-ITI pass-outs; optional trades are generally six, nine, or twelve months.",
+      "numbers": [
+        {
+          "raw": "1",
+          "value": 1,
+          "unit": "years",
+          "qualifier": "ITI_pass_out_designated_trade"
+        },
+        {
+          "raw": "2",
+          "value": 2,
+          "unit": "years",
+          "qualifier": "fresher_or_non_ITI_designated_trade"
+        },
+        {
+          "raw": "6, 9, 12",
+          "value": [
+            6,
+            9,
+            12
+          ],
+          "unit": "months",
+          "qualifier": "optional_trade_typical_durations"
+        },
+        {
+          "raw": "2 weeks",
+          "value": 2,
+          "unit": "weeks",
+          "qualifier": "optional_trade_basic_orientation_minimum"
+        },
+        {
+          "raw": "25% up to INR 1,500/month",
+          "value": {
+            "share": 25,
+            "maximum": 1500
+          },
+          "unit": "percent_and_INR_per_month",
+          "qualifier": "scheme_stipend_support"
+        }
+      ],
+      "units": [
+        "years",
+        "months",
+        "weeks",
+        "percent",
+        "INR_per_month"
+      ],
+      "geography": [
+        "India"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "source_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://www.msde.gov.in/offerings/schemes-and-services/details/national-apprenticeship-promotion-scheme-naps-YjM4ATMtQWa"
+      ],
+      "source_class": "PRIMARY_GOVERNMENT_SCHEME",
+      "observed_class": "MEASURED/REPORTED",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "Administrative scheme duration and stipend rules do not establish high-precision, safety-critical, or autonomous competence.",
+      "unknowns": [
+        "Completion, retention, task and line qualification, trainer ratio, first-pass yield, and post-apprenticeship quality outcomes."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:naps2",
+        "entity:iti",
+        "entity:apprentice",
+        "entity:employer_training_site",
+        "entity:trainer_assessor"
+      ],
+      "escalation": "Obtain cohort-level completion, retention, assessment, authorization, quality, safety, and employer conversion data by trade and cluster."
+    },
+    {
+      "claim_id": "m04-claim-11",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L45-L48",
+      "subject": "TSMC Arizona technician apprenticeship",
+      "predicate": "provides_an_employer_sponsored_entry_pathway_but_not_publicly_verified_autonomous_fab_qualification",
+      "text": "The official page describes application, skills assessment, interview, high-school or GED baseline, wages, benefits, college credit, and a journeyman-card feature; exact duration and autonomous fab qualification are not stated.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "United States",
+        "Arizona"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "source_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://www.tsmc.com/static/abouttsmcaz/apprenticeship.htm"
+      ],
+      "source_class": "PRIMARY_COMPANY_PROGRAM_PAGE",
+      "observed_class": "REPORTED plus UNKNOWN",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "Program existence is evidence of a capability-building mechanism, not evidence of completed qualification, retention, or throughput.",
+      "unknowns": [
+        "Program duration, cohort size, completion, equipment scope, time to line qualification, and independent fab authorization."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:tsmc_arizona_apprenticeship",
+        "entity:semiconductor_equipment_technician",
+        "entity:employer_academy",
+        "entity:cleanroom_fab"
+      ],
+      "escalation": "Request program outcomes and link them to named equipment families, supervised hours, authorization gates, retention, and quality records."
+    },
+    {
+      "claim_id": "m04-claim-12",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L50-L53",
+      "subject": "India Semiconductor Mission",
+      "predicate": "establishes_ecosystem_policy_activity_but_not_qualified_workforce_stock",
+      "text": "The official site describes a semiconductor and display ecosystem mission, facilities, schemes, press releases, and a roadmap, but does not quantify qualified technician stock, retention, yield competence, or autonomous fab-running capability.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "India"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "source_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://ism.gov.in/"
+      ],
+      "source_class": "PRIMARY_GOVERNMENT_MISSION_PAGE",
+      "observed_class": "REPORTED plus UNKNOWN",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "Announcements, investment, and mission scope are not measured qualified staffing or operating capacity.",
+      "unknowns": [
+        "Advanced-equipment technicians, cleanroom supervisors, yield engineers, facilities specialists, trainers, retention, and independent production competence."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:india_semiconductor_mission",
+        "entity:india_semiconductor_workforce",
+        "entity:cleanroom_fab",
+        "entity:yield_engineer"
+      ],
+      "escalation": "Collect site-specific staffing matrices, OEM training records, authorization scopes, yield history, and local-versus-expatriate dependency."
+    },
+    {
+      "claim_id": "m04-claim-13",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L70-L73",
+      "subject": "tacit knowledge in manufacturing inspection",
+      "predicate": "is_task_specific_and_partly_elicitable_under_subjective_standards",
+      "text": "Two UK aerospace visual-inspection case studies report that tacit skills matter where standards are underspecified or subjective and that systematic task analysis can elicit this knowledge.",
+      "numbers": [
+        {
+          "raw": "two",
+          "value": 2,
+          "unit": "case_studies"
+        }
+      ],
+      "units": [
+        "case_studies"
+      ],
+      "geography": [
+        "United Kingdom",
+        "aerospace_manufacturing"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "study_date": "2019"
+      },
+      "source_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/30487087/"
+      ],
+      "source_class": "PEER_REVIEWED_STUDY",
+      "observed_class": "REPORTED/MEASURED",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "The study is limited to visual-inspection cases; it does not support a universal percentage of tacit expertise or universal codifiability.",
+      "unknowns": [
+        "Generalization to machining, grinding, welding, foundry, semiconductor yield, rotating equipment, and other sectors."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:tacit_knowledge",
+        "entity:visual_inspector",
+        "entity:task_analysis",
+        "entity:annotated_exemplar"
+      ],
+      "escalation": "Replicate task analysis across high-consequence processes and measure trainee outcomes, deviation-time reduction, and defect escapes."
+    },
+    {
+      "claim_id": "m04-claim-14",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L265-L304",
+      "subject": "institutional know-how",
+      "predicate": "is_often_a_team_property_with_retention_and_succession_risk",
+      "text": "A nuclear QA system, semiconductor fab, turbine overhaul shop, or precision machine-tool plant requires cross-functional coordination; a single master technician cannot replace an experienced team.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [],
+      "source_class": "CORPUS_PRIMARY_RESEARCH_MEMO",
+      "observed_class": "DERIVED",
+      "proposed_epistemic_class": "MODELLED",
+      "caveat": "Team-level requirement is an architectural hypothesis until site-level response and recovery records measure it.",
+      "unknowns": [
+        "Minimum role mix, supervision ratio, escalation response, succession depth, and replaceability by process."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:experienced_shift_team",
+        "entity:process_engineering",
+        "entity:maintenance",
+        "entity:quality_release",
+        "entity:institutional_memory"
+      ],
+      "escalation": "Capture shift composition, response times, failure-mode libraries, mentor links, trainer outcomes, retention, and succession plans."
+    },
+    {
+      "claim_id": "m04-claim-15",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L177-L192",
+      "subject": "time_to_competence",
+      "predicate": "should_be_conditioned_on_role_process_equipment_product_quality_prior_experience_supervision_and_training_quality",
+      "text": "TTC should be represented as a distribution with entry readiness, task qualification, line independence, deviation competence, transfer competence, and trainer competence stages.",
+      "numbers": [
+        {
+          "raw": "six",
+          "value": 6,
+          "unit": "competence_stages"
+        }
+      ],
+      "units": [
+        "competence_stages"
+      ],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [],
+      "source_class": "CORPUS_MODEL_PROPOSAL",
+      "observed_class": "MODELLED",
+      "proposed_epistemic_class": "MODELLED",
+      "caveat": "No universal time-to-competence law is established; evidence resolution must remain process- and site-specific.",
+      "unknowns": [
+        "Distribution parameters, covariates, supervision effect, machine exposure, process complexity, and quality-regime effect."
+      ],
+      "conflicts": [
+        "Different workstreams report short courses, multi-year apprenticeships, and long mastery periods with incompatible denominators."
+      ],
+      "entity_candidates": [
+        "entity:time_to_competence",
+        "entity:task_qualification",
+        "entity:line_qualification",
+        "entity:deviation_competence",
+        "entity:transfer_competence",
+        "entity:trainer_competence"
+      ],
+      "escalation": "Collect entry-to-stage timestamps, supervised hours, completed jobs, first-pass yield, defect escapes, deviations, repair times, assessments, and recency."
+    },
+    {
+      "claim_id": "m04-claim-16",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L308-L342",
+      "subject": "automation_and_skill",
+      "predicate": "changes_human_tasks_and_failure_modes_rather_than_proving_skill_elimination",
+      "text": "Automation can remove repetitive manual tasks while increasing setup, integration, monitoring, data interpretation, exception handling, maintenance, and cybersecurity requirements.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://www.oecd.org/en/publications/2023/03/the-impact-of-ai-on-the-workplace-evidence-from-oecd-case-studies-of-ai-implementation_b4c2c6ee.html"
+      ],
+      "source_class": "COMPARATIVE_CASE_STUDY_PLUS_CORPUS_MODEL",
+      "observed_class": "REPORTED/SCENARIO",
+      "proposed_epistemic_class": "MODELLED",
+      "caveat": "OECD findings are based on studied cases; they do not establish a universal occupation-level outcome.",
+      "unknowns": [
+        "Net displacement, work intensity, training delta, and exception-recovery burden by automation technology and process."
+      ],
+      "conflicts": [
+        "Transformation and displacement may coexist; broad statements about every industrial occupation are not adjudicated."
+      ],
+      "entity_candidates": [
+        "entity:automated_system",
+        "entity:exception_handling",
+        "entity:maintenance",
+        "entity:cybersecurity",
+        "entity:training_delta"
+      ],
+      "escalation": "Measure before/after task mix, authorized roles, failure modes, training hours, quality, safety, and staffing by automated line."
+    },
+    {
+      "claim_id": "m04-claim-17",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L279-L288",
+      "subject": "tacit_knowledge_risk",
+      "predicate": "appears_in_process_specific_diagnostics_and_can_be_partly_captured",
+      "text": "Precision grinding depends on coupled thermal drift, wheel condition, vibration, coolant behavior, and part response; capture strategies include signatures, setup records, expert debriefs, and trend analysis.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://www.mdpi.com/2504-4494/10/5/164"
+      ],
+      "source_class": "CORPUS_PROCESS_SYNTHESIS",
+      "observed_class": "DERIVED",
+      "proposed_epistemic_class": "MODELLED",
+      "caveat": "The cited source is about hand scraping and human-AI collaboration; the extension to precision grinding is a model hypothesis, not a measured universal law.",
+      "unknowns": [
+        "Which rare combinations remain uncodified and how knowledge capture changes yield, diagnosis time, and transfer."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:precision_grinder",
+        "entity:thermal_drift_diagnosis",
+        "entity:process_signature",
+        "entity:failure_mode_library"
+      ],
+      "escalation": "Obtain machine/process histories, expert observation, controlled trials, and trainee outcome evidence for each grinder and part family."
+    },
+    {
+      "claim_id": "m04-claim-18",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L420-L468",
+      "subject": "facility_and_workforce_presence",
+      "predicate": "does_not_imply_qualified_annual_throughput",
+      "text": "An announced semiconductor fab does not imply qualified annual throughput; it requires a cleanroom equipment-maintenance team and other site-specific human capability.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://ism.gov.in/"
+      ],
+      "source_class": "CORPUS_MODEL_PROPOSAL_PLUS_OFFICIAL_MISSION_PAGE",
+      "observed_class": "DERIVED",
+      "proposed_epistemic_class": "DERIVED",
+      "caveat": "The claim is a guard against capacity laundering; it is not evidence that a named facility cannot operate.",
+      "unknowns": [
+        "Facility status, staffing, authorization, equipment uptime, yield, product qualification, and sustainable output."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:announced_fab",
+        "entity:cleanroom_maintenance_team",
+        "entity:facility",
+        "entity:qualified_throughput"
+      ],
+      "escalation": "Require commissioning, staffing, training, equipment, qualification, yield, and time-windowed good-output evidence before capacity promotion."
+    },
+    {
+      "claim_id": "m04-claim-19",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L60-L63",
+      "subject": "DOE Battery Workforce Initiative",
+      "predicate": "uses_job_task_analysis_and_employer_validation_to_build_training_standards",
+      "text": "DOE describes facility site visits, subject-matter interviews, job-task analysis, and employer-based testing and validation for battery operator and repair-technician standards.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "United States",
+        "GLOBAL_REUSE_CANDIDATE"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "source_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://netl.doe.gov/bwi"
+      ],
+      "source_class": "PRIMARY_GOVERNMENT_WORKFORCE_INITIATIVE",
+      "observed_class": "REPORTED",
+      "proposed_epistemic_class": "REPORTED",
+      "caveat": "Training-standard validation is not proof that a graduate can transfer across chemistries, formats, equipment vendors, or plants.",
+      "unknowns": [
+        "Credential completion, line authorization, independent productivity, cross-vendor transfer, retention, and quality outcomes."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:doe_bwi",
+        "entity:battery_machine_operator",
+        "entity:battery_repair_technician",
+        "entity:job_task_analysis",
+        "entity:employer_validation"
+      ],
+      "escalation": "Attach employer test results, equipment scope, chemistry and format, authorization state, and post-training production outcomes."
+    },
+    {
+      "claim_id": "m04-claim-20",
+      "corpus": "manus-04",
+      "artifact": "manus-04/forge_world_research_domains.json",
+      "artifact_sha256": "bbea5b719613e05dea3a43b3de8e0b10a21acce1e4892bf78a9ae584cf6f3f98",
+      "exact_locator": "results[0].output.memo, section 6",
+      "subject": "industrial_tacit_expertise",
+      "predicate": "is_90_percent_tacit",
+      "text": "The structured workstream memo states that tacit knowledge is estimated to comprise 90% of industrial expertise.",
+      "numbers": [
+        {
+          "raw": "90%",
+          "value": 90,
+          "unit": "percent",
+          "qualifier": "unsupported_estimate"
+        }
+      ],
+      "units": [
+        "percent"
+      ],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://www.researchgate.net/publication/326803803_How_and_why_we_need_to_capture_tacit_knowledge_in_manufacturing"
+      ],
+      "source_class": "STRUCTURED_MEMO_WITH_SECONDARY_DISCOVERY_LINK",
+      "observed_class": "ESTIMATED",
+      "proposed_epistemic_class": "CONFLICTED",
+      "caveat": "The main memo explicitly rejects this as an established fact; the peer-reviewed evidence supports task-specific tacit knowledge, not a universal percentage.",
+      "unknowns": [
+        "Operational definition, denominator, task scope, sector coverage, and reproducible measurement."
+      ],
+      "conflicts": [
+        "Contradicted in scope by main memo L269-L275 and browser finding L70-L73."
+      ],
+      "entity_candidates": [
+        "entity:tacit_knowledge",
+        "entity:industrial_expertise",
+        "entity:task_specific_judgment"
+      ],
+      "escalation": "Keep UNKNOWN/CONFLICTED; replace with process-specific elicitation and outcome measurements."
+    },
+    {
+      "claim_id": "m04-claim-21",
+      "corpus": "manus-04",
+      "artifact": "manus-04/forge_world_research_domains.json",
+      "artifact_sha256": "bbea5b719613e05dea3a43b3de8e0b10a21acce1e4892bf78a9ae584cf6f3f98",
+      "exact_locator": "results[7].output.memo, sections 2-5",
+      "subject": "India_apprenticeship_and_industrial_skill_pipeline",
+      "predicate": "has_reported_but_scope-sensitive_pipeline_numbers",
+      "text": "The structured workstream reports NAPS applications falling from 4.28 million in 2022 to about 400,000 in 2025 and cites conflicting EV skill-transfer and semiconductor talent-gap figures.",
+      "numbers": [
+        {
+          "raw": "4.28 million",
+          "value": 4280000,
+          "unit": "applications",
+          "date": 2022
+        },
+        {
+          "raw": "400,000",
+          "value": 400000,
+          "unit": "applications",
+          "date": 2025
+        },
+        {
+          "raw": "250,000 to 300,000",
+          "value": [
+            250000,
+            300000
+          ],
+          "unit": "people",
+          "qualifier": "reported_semiconductor_gap"
+        },
+        {
+          "raw": "3%",
+          "value": 3,
+          "unit": "percent",
+          "qualifier": "reported_EV_skill_share"
+        },
+        {
+          "raw": "25%",
+          "value": 25,
+          "unit": "percent",
+          "qualifier": "reported_direct_ICE_to_EV_transfer"
+        }
+      ],
+      "units": [
+        "applications",
+        "people",
+        "percent"
+      ],
+      "geography": [
+        "India"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_dates": [
+          "2022",
+          "2025",
+          "2027"
+        ]
+      },
+      "source_url": [
+        "https://www.linkedin.com/news/story/apprenticeship-applications-hit-six-year-low-8288449/",
+        "https://www.impriindia.com/insights/policy-update/national-apprenticeship-promotion-scheme-naps-bridging-indias-skills-and-employment-gap/",
+        "https://www.namtech.ac/blog/from-evs-to-aerospace-which-manufacturing-sector-will-hire-the-most-engineers-next"
+      ],
+      "source_class": "SECONDARY_AND_SOCIAL_DISCOVERY_SOURCES",
+      "observed_class": "REPORTED/ESTIMATED/CONFLICTED",
+      "proposed_epistemic_class": "CONFLICTED",
+      "caveat": "The denominators, definitions, source quality, and scopes differ; the numbers must not be combined into a national qualified-capability stock.",
+      "unknowns": [
+        "Official application denominator, completion and retention, active authorization, role definition, and sector scope."
+      ],
+      "conflicts": [
+        "NAPS applications, semiconductor professional gap, EV skill share, and direct-transfer estimates are not commensurate variables."
+      ],
+      "entity_candidates": [
+        "entity:naps_applicant",
+        "entity:india_apprenticeship_pipeline",
+        "entity:ev_skill_transfer",
+        "entity:semiconductor_workforce_gap"
+      ],
+      "escalation": "Rebuild each series from dated official registers and employer records with explicit denominator, occupation, geography, and outcome."
+    },
+    {
+      "claim_id": "m04-claim-22",
+      "corpus": "manus-04",
+      "artifact": "manus-04/Verified browser findings.md",
+      "artifact_sha256": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+      "exact_locator": "L35-L38",
+      "subject": "India NSDC NOS URL",
+      "predicate": "is_not_currently_verified_at_the_supplied_url",
+      "text": "The current NSDC URL returned an explicit Page not found page, so the prior claim cannot be treated as directly verified from this URL.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "India"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "observation_date": "UNKNOWN"
+      },
+      "source_url": [
+        "https://nsdcindia.org/nos"
+      ],
+      "source_class": "URL_AVAILABILITY_CHECK",
+      "observed_class": "UNKNOWN",
+      "proposed_epistemic_class": "UNKNOWN",
+      "caveat": "A missing page is not evidence that the underlying standard or institution does not exist.",
+      "unknowns": [
+        "Current official NOS/QP source, archival version, issue date, and scope."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:nsdc",
+        "entity:national_occupational_standard",
+        "entity:qualification_pack"
+      ],
+      "escalation": "Locate a current official or archived source and preserve retrieval date and version before using NOS/QP records."
+    },
+    {
+      "claim_id": "m04-claim-23",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L51-L53; L382-L400",
+      "subject": "named_facility_workforce_and_throughput",
+      "predicate": "remains_unknown_without_site_specific_operating_evidence",
+      "text": "The package does not establish qualified throughput of any named facility or the current number of fully autonomous specialized workers; those require employer records, qualification logs, production-quality data, supervision ratios, and process-specific observation.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "GLOBAL"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [],
+      "source_class": "CORPUS_EVIDENCE_BOUNDARY",
+      "observed_class": "UNKNOWN",
+      "proposed_epistemic_class": "UNKNOWN",
+      "caveat": "This is an absence-of-public-evidence statement, not a claim that the capability does not exist.",
+      "unknowns": [
+        "Qualified workforce stock, team structure, supervision, yield, downtime, authorized process scope, and available capacity."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:named_facility",
+        "entity:qualified_workforce",
+        "entity:available_capacity",
+        "entity:production_quality_record"
+      ],
+      "escalation": "Request time-stamped staffing, authorization, process, quality, yield, maintenance, and production records at the same resolution as the objective."
+    },
+    {
+      "claim_id": "m04-claim-24",
+      "corpus": "manus-04",
+      "artifact": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+      "artifact_sha256": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+      "exact_locator": "L516-L526",
+      "subject": "FORGE workforce model",
+      "predicate": "should_generate_a_qualification_aware_workforce_bill_and_preserve_uncertainty",
+      "text": "The immediate priority is a capability ledger linking required skill, equipment, quality regime, credential, training route, actual people, team composition, evidence freshness, and bottleneck status.",
+      "numbers": [],
+      "units": [],
+      "geography": [
+        "GLOBAL",
+        "India"
+      ],
+      "dates": {
+        "research_date": "2026-08-24",
+        "claim_date": "UNKNOWN"
+      },
+      "source_url": [],
+      "source_class": "CORPUS_IMPLEMENTATION_PROPOSAL",
+      "observed_class": "MODELLED",
+      "proposed_epistemic_class": "MODELLED",
+      "caveat": "This is a proposed representation, not an already populated canonical registry.",
+      "unknowns": [
+        "Required staffing and authorization vectors for each target process, facility, shift, product, and ramp stage."
+      ],
+      "conflicts": [],
+      "entity_candidates": [
+        "entity:capability_ledger",
+        "entity:workforce_bill_of_capability",
+        "entity:qualification_regime",
+        "entity:ramp_stage",
+        "entity:bottleneck"
+      ],
+      "escalation": "Pilot one high-consequence process with employer records and validate the ledger against commissioning, yield-ramp, qualification, and sustained-rate outcomes."
+    }
+  ],
+  "entity_candidates": {
+    "promotion_state": "NOT_PROMOTED",
+    "entity_resolution_state": "SURFACE_FORM_CANDIDATES_ONLY",
+    "candidate_count": 85,
+    "candidate_groups": {
+      "occupations": {
+        "count": 16,
+        "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L76-L91;L406-L419",
+        "names": [
+          "toolmaker",
+          "machinist",
+          "CNC programmer",
+          "precision grinder",
+          "machine assembler",
+          "spindle and ball-screw specialist",
+          "foundry or metallurgy engineer",
+          "forging and heat-treatment specialist",
+          "welder",
+          "NDT technician",
+          "metrologist or calibration engineer",
+          "industrial electrician",
+          "PLC or controls engineer",
+          "semiconductor equipment or process engineer",
+          "battery process engineer or machine operator",
+          "turbine or rotating-equipment reliability engineer"
+        ]
+      },
+      "skills_and_knowledge": {
+        "count": 10,
+        "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L112-L155;L265-L304",
+        "names": [
+          "GD&T and datum interpretation",
+          "toolpath, offsets, and tool-wear compensation",
+          "wheel dressing and thermal-drift diagnosis",
+          "measurement uncertainty and calibration",
+          "defect and indication interpretation",
+          "contamination control and cleanroom behavior",
+          "alarm response, SIS, PLC, and motion troubleshooting",
+          "process-window tuning and yield-excursion analysis",
+          "mentor and trainer assessment",
+          "institutional failure-mode memory"
+        ]
+      },
+      "processes": {
+        "count": 9,
+        "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L122-L141;L404-L420",
+        "names": [
+          "precision machining",
+          "precision grinding",
+          "toolmaking and fixturing",
+          "foundry and casting",
+          "forging and heat treatment",
+          "welding and joining",
+          "composites fabrication",
+          "inspection, metrology, and NDT",
+          "industrial controls commissioning and maintenance"
+        ]
+      },
+      "advanced_processes": {
+        "count": 4,
+        "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L137-L141",
+        "names": [
+          "semiconductor fabrication and yield control",
+          "battery coating, drying, formation, and pack assembly",
+          "chemical and refining operations",
+          "turbine, compressor, and rotating-equipment overhaul"
+        ]
+      },
+      "equipment": {
+        "count": 8,
+        "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L124-L155",
+        "names": [
+          "five-axis CNC mill or turn center",
+          "cylindrical or centerless grinder",
+          "EDM and manual toolmaking cell",
+          "CMM, optical system, or laser interferometer",
+          "UT, RT, MT, PT, VT, or phased-array NDT system",
+          "PLC, HMI, SCADA, VFD, servo, and sensor network",
+          "lithography, etch, deposition, vacuum, RF, and metrology tools",
+          "battery mixer, coater, dryer, calender, slitter, formation, and pack line"
+        ]
+      },
+      "credentials_and_training": {
+        "count": 9,
+        "source_locator": "manus-04/Verified browser findings.md:L15-L63; manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L159-L198",
+        "names": [
+          "ASNT 9712 Level II",
+          "AWS Certified Welding Inspector",
+          "Germany dual VET and chamber examination",
+          "Singapore ITE advanced-manufacturing Work-Study Diploma",
+          "India NAPS-2 apprenticeship",
+          "TSMC Arizona technician apprenticeship",
+          "DOE Battery Workforce Initiative standards",
+          "NIST advanced-manufacturing occupation and competency framework",
+          "local equipment or line authorization"
+        ]
+      },
+      "organizations_and_facilities": {
+        "count": 10,
+        "source_locator": "manus-04/Verified browser findings.md:L3-L73; manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L202-L235;L406-L419",
+        "names": [
+          "BIBB",
+          "ITE Singapore",
+          "ASNT",
+          "AWS",
+          "MSDE",
+          "NIST",
+          "Semiconductor Industry Association",
+          "TSMC Arizona",
+          "India Semiconductor Mission",
+          "employer training site or cleanroom fab"
+        ]
+      },
+      "teams_knowledge_bottlenecks_and_ramp": {
+        "count": 11,
+        "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L61-L74;L177-L192;L265-L304;L472-L526",
+        "names": [
+          "experienced multi-role shift team",
+          "process-transfer team",
+          "trainer and assessor pool",
+          "failure-mode library",
+          "annotated inspection exemplars",
+          "recipe and process history",
+          "qualified workforce-stock bottleneck",
+          "trainer-capacity bottleneck",
+          "tacit-knowledge-transfer bottleneck",
+          "entry-to-task and task-to-line ramp",
+          "deviation-to-transfer and line-to-mature ramp"
+        ]
+      },
+      "geographies": {
+        "count": 8,
+        "source_locator": "claim samples m04-claim-04 through m04-claim-12 and m04-claim-21",
+        "names": [
+          "Germany",
+          "Singapore",
+          "India",
+          "United States",
+          "Arizona",
+          "United Kingdom",
+          "Taiwan",
+          "Japan"
+        ]
+      }
+    },
+    "canonical_match_candidates": [
+      {
+        "candidate_id": "homi-candidate:occupation-process-equipment",
+        "observed_name": "occupation-process-equipment-specific capability",
+        "canonical_target_candidate": "capability_vector",
+        "proposed_epistemic_class": "MODELLED",
+        "promotion_state": "NOT_PROMOTED",
+        "escalation": "Need facility/person/team evidence at the same product, process, equipment, quality, and rate scope."
+      },
+      {
+        "candidate_id": "homi-candidate:time-to-competence",
+        "observed_name": "time-to-competence distribution",
+        "canonical_target_candidate": "ramp_or_training_state",
+        "proposed_epistemic_class": "MODELLED",
+        "promotion_state": "NOT_PROMOTED",
+        "escalation": "Need timestamped stage transitions and covariates; no universal scalar."
+      },
+      {
+        "candidate_id": "homi-candidate:institutional-memory",
+        "observed_name": "institutional know-how and failure-mode memory",
+        "canonical_target_candidate": "knowledge_asset",
+        "proposed_epistemic_class": "MODELLED",
+        "promotion_state": "NOT_PROMOTED",
+        "escalation": "Need validated knowledge assets and measured trainee or recovery outcomes."
+      },
+      {
+        "candidate_id": "homi-candidate:qualified-workforce",
+        "observed_name": "qualified workforce and experienced team",
+        "canonical_target_candidate": "capability_vector",
+        "proposed_epistemic_class": "UNKNOWN",
+        "promotion_state": "NOT_PROMOTED",
+        "escalation": "No public named-site staffing and authorization record in this slice."
+      }
+    ]
+  },
+  "relation_normalization_candidates": [
+    {
+      "candidate_key": "m04-rel-01",
+      "observed_relation": "Occupation REQUIRES Skill",
+      "orientation": "occupation -> skill",
+      "normalized_relation_candidate": "requires_capability",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "requires_capability"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "requires_capability is a broad approximation; retain proficiency, task context, equipment, and evidence in metadata.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L423-L434"
+    },
+    {
+      "candidate_key": "m04-rel-02",
+      "observed_relation": "Process USES Equipment",
+      "orientation": "process -> equipment",
+      "normalized_relation_candidate": "requires_equipment",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "requires_equipment"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Usage, availability, and qualified operation are distinct; do not infer facility possession or human authorization.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L423-L439"
+    },
+    {
+      "candidate_key": "m04-rel-03",
+      "observed_relation": "Process REQUIRES Credential",
+      "orientation": "process -> credential",
+      "normalized_relation_candidate": "requires_qualification",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "requires_qualification"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Credential scope, jurisdiction, product, issue/expiry, and local authorization must remain explicit.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L423-L439"
+    },
+    {
+      "candidate_key": "m04-rel-04",
+      "observed_relation": "Facility HAS_CAPABILITY Process",
+      "orientation": "facility -> process",
+      "normalized_relation_candidate": "supports",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "supports"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "supports is weaker than qualified capability; do not promote without process, staffing, quality, and rate evidence.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L437-L442"
+    },
+    {
+      "candidate_key": "m04-rel-05",
+      "observed_relation": "Facility DEPENDS_ON Team or Person",
+      "orientation": "facility -> team_or_person",
+      "normalized_relation_candidate": "requires_capability",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "requires_capability"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Dependency type, substitution difficulty, succession risk, and time scope are mandatory metadata.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L437-L439"
+    },
+    {
+      "candidate_key": "m04-rel-06",
+      "observed_relation": "TrainingProgram USES Equipment",
+      "orientation": "training_program -> equipment",
+      "normalized_relation_candidate": "requires_equipment",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "requires_equipment"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Simulator, classroom, and production-equipment access must not be conflated.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L439-L440"
+    },
+    {
+      "candidate_key": "m04-rel-07",
+      "observed_relation": "KnowledgeAsset SUPPORTS Skill or Process",
+      "orientation": "knowledge_asset -> skill_or_process",
+      "normalized_relation_candidate": "supports",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "supports"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Support requires validation status, owner, review date, and measured trainee or process outcome.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L440-L442"
+    },
+    {
+      "candidate_key": "m04-rel-08",
+      "observed_relation": "EvidenceArtifact SUPPORTS Claim",
+      "orientation": "evidence_artifact -> claim",
+      "normalized_relation_candidate": "supports",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "supports"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Source hierarchy, date, scope, denominator, and contradiction links remain required.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L440-L442"
+    },
+    {
+      "candidate_key": "m04-rel-09",
+      "observed_relation": "Facility located in Geography",
+      "orientation": "facility -> geography",
+      "normalized_relation_candidate": "located_at",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "located_at"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "The corpus has geography labels but no named facility coordinates or current operating records in this slice.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L202-L235;L406-L419"
+    },
+    {
+      "candidate_key": "m04-rel-10",
+      "observed_relation": "Organization owns Facility",
+      "orientation": "facility -> organization",
+      "normalized_relation_candidate": "owned_by",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "owned_by"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Organization and facility identity, legal ownership, operator, and date are not established for the named examples here.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L406-L419"
+    },
+    {
+      "candidate_key": "m04-rel-11",
+      "observed_relation": "Organization operates Facility",
+      "orientation": "facility -> organization",
+      "normalized_relation_candidate": "operated_by",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "operated_by"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Do not infer operation from a program page, announcement, or organization name.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L406-L419"
+    },
+    {
+      "candidate_key": "m04-rel-12",
+      "observed_relation": "TrainingProgram produces Skill",
+      "orientation": "training_program -> skill",
+      "normalized_relation_candidate": "supports",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "supports"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Program completion cannot silently become task, line, deviation, or transfer qualification.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L423-L440"
+    },
+    {
+      "candidate_key": "m04-rel-13",
+      "observed_relation": "Person HAS_CREDENTIAL Credential",
+      "orientation": "person -> credential",
+      "normalized_relation_candidate": null,
+      "current_forge_allowed_edge": false,
+      "current_forge_allowed_edges_checked": [],
+      "mapping_status": "NO_EXACT_EDGE_REVIEW_REQUIRED",
+      "forced_mapping": false,
+      "guard": "Do not use requires_qualification as a forced substitute for possession or verification of a person credential.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L423-L430"
+    },
+    {
+      "candidate_key": "m04-rel-14",
+      "observed_relation": "Person QUALIFIED_FOR Process or Equipment",
+      "orientation": "person -> process_or_equipment",
+      "normalized_relation_candidate": null,
+      "current_forge_allowed_edge": false,
+      "current_forge_allowed_edges_checked": [],
+      "mapping_status": "NO_EXACT_EDGE_REVIEW_REQUIRED",
+      "forced_mapping": false,
+      "guard": "requires_capability or supports would erase qualification state, scope, recency, and evidence unless a richer typed edge is added by a future schema decision.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L427-L430"
+    },
+    {
+      "candidate_key": "m04-rel-15",
+      "observed_relation": "Person TRAINED_BY TrainingProgram",
+      "orientation": "person -> training_program",
+      "normalized_relation_candidate": null,
+      "current_forge_allowed_edge": false,
+      "current_forge_allowed_edges_checked": [],
+      "mapping_status": "NO_EXACT_EDGE_REVIEW_REQUIRED",
+      "forced_mapping": false,
+      "guard": "No current ALLOWED_EDGES relation captures cohort, completion, assessment, retention, and trainer outcomes without semantic loss.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L429-L431"
+    },
+    {
+      "candidate_key": "m04-rel-16",
+      "observed_relation": "Person MENTORS Person",
+      "orientation": "person -> person",
+      "normalized_relation_candidate": null,
+      "current_forge_allowed_edge": false,
+      "current_forge_allowed_edges_checked": [],
+      "mapping_status": "NO_EXACT_EDGE_REVIEW_REQUIRED",
+      "forced_mapping": false,
+      "guard": "Do not map mentoring to supports without duration, skill scope, observed trainee outcomes, and authority.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L430-L432"
+    },
+    {
+      "candidate_key": "m04-rel-17",
+      "observed_relation": "Team EXECUTES Process",
+      "orientation": "team -> process",
+      "normalized_relation_candidate": null,
+      "current_forge_allowed_edge": false,
+      "current_forge_allowed_edges_checked": [],
+      "mapping_status": "NO_EXACT_EDGE_REVIEW_REQUIRED",
+      "forced_mapping": false,
+      "guard": "supports is not an exact substitute for execution at a shift, quality, safety, and response-time scope.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L431-L433"
+    },
+    {
+      "candidate_key": "m04-rel-18",
+      "observed_relation": "Skill TRANSFERS_TO Skill",
+      "orientation": "skill -> skill",
+      "normalized_relation_candidate": null,
+      "current_forge_allowed_edge": false,
+      "current_forge_allowed_edges_checked": [],
+      "mapping_status": "NO_EXACT_EDGE_REVIEW_REQUIRED",
+      "forced_mapping": false,
+      "guard": "substitutable_with is not equivalent to skill transfer; retain similarity basis, destination delta, confidence, and orientation time.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L433-L435"
+    },
+    {
+      "candidate_key": "m04-rel-19",
+      "observed_relation": "Bottleneck AFFECTS Process",
+      "orientation": "bottleneck -> process",
+      "normalized_relation_candidate": null,
+      "current_forge_allowed_edge": false,
+      "current_forge_allowed_edges_checked": [],
+      "mapping_status": "NO_EXACT_EDGE_REVIEW_REQUIRED",
+      "forced_mapping": false,
+      "guard": "Do not use affected_by_shock; workforce bottleneck causality needs its own typed relation or proof object.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L440-L442"
+    },
+    {
+      "candidate_key": "m04-rel-20",
+      "observed_relation": "TrainingProgram HAS_CAPACITY",
+      "orientation": "training_program -> training_output",
+      "normalized_relation_candidate": "has_capacity",
+      "current_forge_allowed_edge": true,
+      "current_forge_allowed_edges_checked": [
+        "has_capacity"
+      ],
+      "mapping_status": "REVIEW_CANDIDATE_ONLY",
+      "forced_mapping": false,
+      "guard": "Capacity means supervised, assessable, equipment-specific training throughput, not seats or enrollment alone.",
+      "source_locator": "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L239-L257;L472-L506"
+    }
+  ],
+  "current_forge_allowed_edges_snapshot": [
+    "decomposes_into",
+    "satisfies_function",
+    "produced_via",
+    "requires_input",
+    "consumes_energy",
+    "consumes_water",
+    "requires_capability",
+    "requires_equipment",
+    "requires_tool",
+    "requires_qualification",
+    "has_capacity",
+    "located_at",
+    "owned_by",
+    "operated_by",
+    "licensed_from",
+    "supplied_by",
+    "transported_via",
+    "competes_for",
+    "substitutable_with",
+    "gated_by",
+    "enabled_by_project",
+    "affected_by_shock",
+    "supports",
+    "contradicts",
+    "supersedes",
+    "derived_from",
+    "recurses_into"
+  ],
+  "unknown_conflict_ledger": {
+    "unknowns": [
+      {
+        "id": "m04-U01",
+        "status": "UNKNOWN",
+        "question": "What is the current qualified workforce stock by occupation, process, equipment family, product, quality regime, facility, and shift?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L51-L54",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L478-L482"
+        ],
+        "why_it_matters": "Headcount and training seats cannot substitute for qualified, authorized, current capability.",
+        "escalation": "Collect anonymized site-level capability matrices, authorization records, shift rosters, and practice recency."
+      },
+      {
+        "id": "m04-U02",
+        "status": "UNKNOWN",
+        "question": "What qualified annual throughput can any named facility deliver with its current human teams?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L51-L54",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L464-L468"
+        ],
+        "why_it_matters": "Facility existence, announced investment, or a workforce program does not establish usable capacity.",
+        "escalation": "Request time-windowed good output, yield, downtime, staffing, qualification, rework, and competing-demand records."
+      },
+      {
+        "id": "m04-U03",
+        "status": "UNKNOWN",
+        "question": "What are entry-to-task, task-to-line, deviation, transfer, and trainer time-to-competence distributions by role and process?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L177-L192",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L483-L487"
+        ],
+        "why_it_matters": "Training durations and formal courses are not universal competence times.",
+        "escalation": "Collect stage timestamps, supervised hours, completed jobs, assessments, quality, deviations, repair times, and recency."
+      },
+      {
+        "id": "m04-U04",
+        "status": "UNKNOWN",
+        "question": "How many active trainers and assessors exist for each critical process, equipment family, and quality regime?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L214-L221",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L478-L482"
+        ],
+        "why_it_matters": "Trainee volume without qualified trainers does not create qualified supply.",
+        "escalation": "Collect trainer authorization, trainee throughput, pass-rate stability, and inter-rater reliability by specialty."
+      },
+      {
+        "id": "m04-U05",
+        "status": "UNKNOWN",
+        "question": "What share of credentials is current, actively practiced, locally recognized, and linked to a product or customer scope?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L194-L198",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L478-L481"
+        ],
+        "why_it_matters": "Credential eligibility and current local authorization are different states.",
+        "escalation": "Capture issuer, method, scope, issue/expiry, practical examination, local authorization, last demonstrated date, and customer acceptance."
+      },
+      {
+        "id": "m04-U06",
+        "status": "UNKNOWN",
+        "question": "What team composition, supervision ratio, escalation path, and response time are required to sustain each process and shift?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L289-L304",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L520-L524"
+        ],
+        "why_it_matters": "Individuals do not necessarily substitute for cross-functional team capability.",
+        "escalation": "Collect shift records, escalation logs, role mix, incident recovery, and supervision coverage."
+      },
+      {
+        "id": "m04-U07",
+        "status": "UNKNOWN",
+        "question": "How much tacit knowledge transfers through documents, sensors, annotated exemplars, video, simulation, or supervised practice?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L265-L288",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L495-L500"
+        ],
+        "why_it_matters": "Transferability affects commissioning, yield ramp, troubleshooting, and succession.",
+        "escalation": "Run controlled knowledge-capture interventions and measure trainee quality, deviation time, and failure recovery."
+      },
+      {
+        "id": "m04-U08",
+        "status": "UNKNOWN",
+        "question": "What measurable production or quality effect follows the loss of a master technician or experienced team?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L289-L304",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L497-L500"
+        ],
+        "why_it_matters": "Succession and institutional-memory risk may be a binding ramp constraint.",
+        "escalation": "Link turnover events to yield, downtime, diagnosis time, rework, and qualification delays."
+      },
+      {
+        "id": "m04-U09",
+        "status": "UNKNOWN",
+        "question": "How many independently qualified technicians exist for advanced semiconductor tools such as EUV, lithography, vacuum, RF, and wafer handling?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L137-L138",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L350-L360"
+        ],
+        "why_it_matters": "Public job projections do not establish tool-specific capability or fab throughput.",
+        "escalation": "Obtain anonymized OEM and fab authorization, training, rotation, and active-practice data."
+      },
+      {
+        "id": "m04-U10",
+        "status": "UNKNOWN",
+        "question": "What is the qualified semiconductor technician, facilities, yield, and trainer stock in India by site and tool family?",
+        "locators": [
+          "manus-04/Verified browser findings.md:L50-L53",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L202-L221"
+        ],
+        "why_it_matters": "Mission and project activity is not evidence of a local operating workforce.",
+        "escalation": "Collect site-level staffing, OEM training, authorization, yield, retention, and expatriate-to-local transfer records."
+      },
+      {
+        "id": "m04-U11",
+        "status": "UNKNOWN",
+        "question": "What is the current official or archived NSDC NOS/QP source and version?",
+        "locators": [
+          "manus-04/Verified browser findings.md:L35-L38"
+        ],
+        "why_it_matters": "The supplied URL returned Page not found, so a prior structured claim is not directly verified.",
+        "escalation": "Locate a dated official replacement or archive and preserve retrieval metadata."
+      },
+      {
+        "id": "m04-U12",
+        "status": "UNKNOWN",
+        "question": "What is the duration, cohort size, completion, equipment scope, and autonomous qualification rate of the TSMC Arizona apprenticeship?",
+        "locators": [
+          "manus-04/Verified browser findings.md:L45-L48"
+        ],
+        "why_it_matters": "Employer program existence is only a pipeline signal.",
+        "escalation": "Request cohort and authorization outcomes or leave the fields UNKNOWN."
+      },
+      {
+        "id": "m04-U13",
+        "status": "UNKNOWN",
+        "question": "Does training-program completion equal task, line, deviation, transfer, or trainer competence?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L159-L198",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L398-L400"
+        ],
+        "why_it_matters": "Completion can be mistaken for capability and inflate ramp estimates.",
+        "escalation": "Require post-training work samples, quality, safety, deviation, and retention outcomes."
+      },
+      {
+        "id": "m04-U14",
+        "status": "UNKNOWN",
+        "question": "What training delta and supervision are required when a skill transfers across sectors, equipment vendors, materials, or quality regimes?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L329-L342",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L495-L500"
+        ],
+        "why_it_matters": "Skill transfer is not a free substitution.",
+        "escalation": "Measure destination-specific orientation time, assessment, quality, safety, and independent recovery."
+      },
+      {
+        "id": "m04-U15",
+        "status": "UNKNOWN",
+        "question": "What are national NAPS completion, retention, autonomous qualification, and quality outcomes by trade and region?",
+        "locators": [
+          "manus-04/Verified browser findings.md:L40-L43",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L214-L221"
+        ],
+        "why_it_matters": "Scheme rules do not establish realized qualified supply.",
+        "escalation": "Obtain dated cohort records linked to employer task and line authorization."
+      },
+      {
+        "id": "m04-U16",
+        "status": "UNKNOWN",
+        "question": "How do automation, AI assistance, and machine vision change staffing, training, exception handling, and work intensity for each process?",
+        "locators": [
+          "manus-04/Verified browser findings.md:L65-L68",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L308-L327"
+        ],
+        "why_it_matters": "A generic automation multiplier can miss new failure modes and qualification burdens.",
+        "escalation": "Collect before/after task maps, staffing, failure modes, training delta, quality, safety, and repair records."
+      },
+      {
+        "id": "m04-U17",
+        "status": "UNKNOWN",
+        "question": "Which workforce bottlenecks have causally delayed commissioning, yield ramp, maintenance recovery, qualification, release, or expansion?",
+        "locators": [
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L489-L493"
+        ],
+        "why_it_matters": "A shortage claim without a causal industrial effect is not a blocker.",
+        "escalation": "Build dated incident and project records linking workforce state to physical delay or quality loss."
+      },
+      {
+        "id": "m04-U18",
+        "status": "UNKNOWN",
+        "question": "What source licenses, access dates, and immutable snapshots apply to the 130 referenced URLs?",
+        "locators": [
+          "all source-bearing artifacts"
+        ],
+        "why_it_matters": "Reference URLs alone do not satisfy evidence-record rights and versioning requirements.",
+        "escalation": "Attach source-specific license, publisher, access date, snapshot hash, and permitted-use metadata."
+      }
+    ],
+    "conflict_signals": [
+      {
+        "id": "m04-C01",
+        "status": "CONFLICTED",
+        "signal": "Structured JSON says 90% of industrial expertise is tacit; the main memo and peer-reviewed finding reject a universal percentage.",
+        "locators": [
+          "manus-04/forge_world_research_domains.json:results[0].output.memo section 6",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L269-L275",
+          "manus-04/Verified browser findings.md:L70-L73"
+        ],
+        "escalation": "Keep the percentage CONFLICTED/UNKNOWN and replace with task-specific operational measurements."
+      },
+      {
+        "id": "m04-C02",
+        "status": "CONFLICTED",
+        "signal": "Structured workstreams cite Indian employability and workforce-gap percentages/counts with different populations and denominators.",
+        "locators": [
+          "manus-04/forge_world_research_domains.json:results[0], results[1], results[7]",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L202-L225;L382-L400"
+        ],
+        "escalation": "Reconcile occupation, denominator, date, geography, and instrument before any aggregate inference."
+      },
+      {
+        "id": "m04-C03",
+        "status": "CONFLICTED",
+        "signal": "India semiconductor talent-gap numbers range from broad social-media estimates to program and mission evidence without a shared definition of qualified capability.",
+        "locators": [
+          "manus-04/forge_world_research_domains.json:results[7].output.memo sections 5 and 7",
+          "manus-04/Verified browser findings.md:L50-L53"
+        ],
+        "escalation": "Use site/tool/role-specific staffing and authorization records; leave national qualified stock UNKNOWN."
+      },
+      {
+        "id": "m04-C04",
+        "status": "SCOPE_CONFLICT",
+        "signal": "EV skill-transfer claims report less than 3% EV-related skills and 25% direct ICE-to-EV transfer, but the populations and definitions differ.",
+        "locators": [
+          "manus-04/forge_world_research_domains.json:results[7].output.memo section 5"
+        ],
+        "escalation": "Split skills, people, occupations, task families, and direct-transfer definitions; do not average."
+      },
+      {
+        "id": "m04-C05",
+        "status": "SCOPE_CONFLICT",
+        "signal": "Automation evidence supports job reorganization in studied cases, while broader workstreams imply general transformation or displacement effects.",
+        "locators": [
+          "manus-04/Verified browser findings.md:L65-L68",
+          "manus-04/forge_world_research_domains.json:results[4].output.memo",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L308-L342"
+        ],
+        "escalation": "Model automation by process, task, failure mode, training delta, and observed staffing outcome."
+      },
+      {
+        "id": "m04-C06",
+        "status": "SCOPE_CONFLICT",
+        "signal": "Short course, apprenticeship, task qualification, and master-level exposure durations are presented across workstreams with different competence endpoints.",
+        "locators": [
+          "manus-04/forge_world_research_domains.json:results[0..7].output.memo",
+          "manus-04/FORGE WORLD_ Human-Capability Layer for Industrial Execution.md:L159-L198"
+        ],
+        "escalation": "Represent entry, task, line, deviation, transfer, and trainer stages separately; no cross-stage averaging."
+      }
+    ],
+    "absence_guard": "An absent named facility, worker, or qualified output in this bounded corpus means evidence not found at this resolution, not non-existence."
+  },
+  "malformed_duplicate_skipped": {
+    "malformed_count": 0,
+    "malformed_signals": [
+      {
+        "signal": "No malformed Markdown table rows, CSV width errors, JSON parse errors, NUL bytes, or nonempty structured Error fields were found.",
+        "severity": "NONE_FOUND"
+      }
+    ],
+    "duplicate_count": 4,
+    "duplicate_signals": [
+      {
+        "signal": "CSV and JSON are a physical export pair with eight logical workstream rows.",
+        "severity": "LOGICAL_DUPLICATE",
+        "count": 1,
+        "action": "Count once for claims; retain both artifact hashes and serialization drift."
+      },
+      {
+        "signal": "The CSV and JSON each repeat one URL within their 123 URL occurrences after normalization.",
+        "severity": "DUPLICATE_SOURCE_REFERENCE",
+        "count": 2,
+        "action": "Deduplicate source URL identity while preserving artifact and row locators."
+      },
+      {
+        "signal": "The same source URLs recur across the main memo, structured exports, and browser findings.",
+        "severity": "CROSS_ARTIFACT_REFERENCE_DUPLICATION",
+        "count": 1,
+        "action": "Do not treat repeated URLs as independent corroboration."
+      }
+    ],
+    "serialization_drift": {
+      "status": "PRESENT_BUT_NON_SEMANTIC",
+      "rows": [
+        1,
+        5
+      ],
+      "description": "Two CSV rows retain extra quote escaping relative to JSON decoding; after lossless escape normalization their substantive fields align. Preserve the drift as an artifact audit signal."
+    },
+    "skipped_count": 1,
+    "skipped_artifacts": [
+      {
+        "artifact": "manus-04/pasted_content.txt",
+        "reason": "Prompt/instruction text, explicitly not a research evidence record.",
+        "raw_bytes_and_hash_retained": true
+      }
+    ]
+  },
+  "promotion_boundary": {
+    "canonical_promotion_performed": false,
+    "observations_created": false,
+    "evidence_records_created": false,
+    "source_snapshots_created": false,
+    "registry_nodes_created": false,
+    "relation_edges_created": false,
+    "solver_state_changed": false,
+    "raw_vault_modified": false,
+    "code_modified": false,
+    "report_only": true,
+    "blockers": [
+      "Source-specific license, access-date, and immutable snapshot metadata are unspecified.",
+      "Named facility, person, team, authorization, yield, and qualified-throughput observations are not present at operational resolution.",
+      "Training pathways and job projections cannot be promoted as qualified capability or capacity.",
+      "Entity identities and facility/organization hierarchy remain surface-form candidates.",
+      "Several workforce percentages and counts are CONFLICTED or denominator-sensitive.",
+      "Human-specific relation vocabulary is richer than current forge.model.ALLOWED_EDGES; no forced mappings were applied."
+    ]
+  },
+  "totals": {
+    "artifact_count": 5,
+    "analysis_artifact_count": 4,
+    "evidence_artifact_count": 4,
+    "source_count": 130,
+    "source_url_occurrence_count": 273,
+    "claim_count": 24,
+    "claim_candidate_sample_count": 24,
+    "structured_workstream_record_count": 8,
+    "entity_count": 85,
+    "entity_candidate_count": 85,
+    "relation_count": 20,
+    "relation_candidate_count": 20,
+    "unknown_count": 18,
+    "conflicted_count": 6,
+    "duplicate_count": 4,
+    "physical_duplicate_export_pair_count": 1,
+    "malformed_count": 0,
+    "skipped_count": 1,
+    "raw_zip_member_count": 5,
+    "raw_zip_byte_identical_member_count": 5,
+    "raw_zip_mapping_mismatch_count": 0,
+    "canonical_promotion_count": 0,
+    "code_change_count": 0,
+    "count_semantics": {
+      "source_count": "130 unique normalized URL references, not 130 verified source snapshots.",
+      "claim_count": "24 bounded claim-centric samples with exact locators; not an exhaustive sentence-level segmentation of all prose.",
+      "entity_count": "85 surface-form entity candidates grouped by occupation, skill, process, equipment, qualification/training, organization/facility, team/knowledge/bottleneck/ramp, and geography.",
+      "relation_count": "20 review-only relation candidates compared against the current ALLOWED_EDGES set; no graph edges were created.",
+      "unknown_count": "18 named decision-sensitive unknowns in this report's ledger.",
+      "conflicted_count": "6 substantive scope or evidence conflicts; serialization drift and duplicate signals are counted separately.",
+      "duplicate_count": "4 duplicate signals, including the logical CSV/JSON pair and repeated source references.",
+      "malformed_count": "Zero parse or structural errors found.",
+      "skipped_count": "One prompt-only artifact excluded from evidence analysis but retained in artifact accounting."
+    }
+  }
+}

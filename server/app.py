@@ -1,6 +1,7 @@
 """FORGE WORLD API server (FastAPI). Serves the computational core to the console."""
 from __future__ import annotations
 
+import json
 import math
 import os
 import re
@@ -582,6 +583,38 @@ def official_record_adapter():
     }
 
 
+@app.get("/api/adapter/official/targeted")
+def targeted_official_record_adapter():
+    """Reviewed HOMI gap-closure observations with canonical bindings."""
+    from forge.adapters import AdapterError, OfficialRecordCatalogAdapter
+
+    try:
+        results = OfficialRecordCatalogAdapter(
+            ROOT / "data" / "ingestion" / "homi_targeted_observations.yaml"
+        ).load()
+    except AdapterError as exc:
+        raise HTTPException(500, str(exc))
+    registry = get_registry()
+    rows = []
+    for result in results:
+        payload = _adapter_result_json(result)
+        payload["entity_bindings"] = [
+            {
+                "observation_id": observation.observation_id,
+                "subject": observation.subject,
+                "resolved_entity": registry.get_entity(observation.subject),
+                "automatic_model_mutation": False,
+            }
+            for observation in result.observations
+        ]
+        rows.append(payload)
+    return {
+        "pathway": "HOMI_TARGETED_PRIMARY_SOURCE_CATALOG",
+        "registry_snapshot_id": registry.snapshot_id,
+        "results": rows,
+    }
+
+
 @app.get("/api/ingestion/status")
 def ingestion_status():
     """Show which operational pathways reach resolvable world entities."""
@@ -590,9 +623,20 @@ def ingestion_status():
     results = OfficialRecordCatalogAdapter(
         ROOT / "data" / "ingestion" / "official_observations.yaml"
     ).load()
+    targeted_results = OfficialRecordCatalogAdapter(
+        ROOT / "data" / "ingestion" / "homi_targeted_observations.yaml"
+    ).load()
     registry = get_registry()
     observations = [observation for result in results for observation in result.observations]
     resolved = [observation for observation in observations if registry.get_entity(observation.subject)]
+    targeted_observations = [
+        observation for result in targeted_results for observation in result.observations
+    ]
+    targeted_resolved = [
+        observation
+        for observation in targeted_observations
+        if registry.get_entity(observation.subject)
+    ]
     return {
         "pathways": [
             {
@@ -614,14 +658,28 @@ def ingestion_status():
                 "model_role": "primary document observation and explicit entity binding",
             },
             {
+                "id": "homi_targeted_primary_sources",
+                "mode": "REVIEWED_SOURCE_SNAPSHOT_OBSERVATION_PROMOTION",
+                "operational": True,
+                "model_role": "decision-ranked facility/process/test observations mapped to canonical world state",
+            },
+            {
                 "id": "research_resolution",
                 "mode": "HUMAN_REVIEWED_CAPTURE_TO_SCENARIO_OVERLAY",
                 "operational": True,
                 "model_role": "UNKNOWN resolution without silent persistent mutation",
             },
+            {
+                "id": "local_corpus_claim_staging",
+                "mode": "DETERMINISTIC_LOCAL_CORPUS_STAGING",
+                "operational": True,
+                "model_role": "non-authoritative claims blocked pending rights, identity, relation, conflict, and promotion review",
+            },
         ],
         "official_catalog_observations": len(observations),
         "resolved_world_subjects": len(resolved),
+        "targeted_catalog_observations": len(targeted_observations),
+        "targeted_resolved_world_subjects": len(targeted_resolved),
         "unresolved_world_subjects": sorted(
             observation.subject
             for observation in observations
@@ -629,6 +687,92 @@ def ingestion_status():
         ),
         "registry_snapshot_id": registry.snapshot_id,
     }
+
+
+def _read_homi_json(relative_path: str) -> Dict[str, Any]:
+    path = ROOT / "research" / "homi" / relative_path
+    if not path.exists():
+        raise HTTPException(404, f"HOMI artifact '{relative_path}' is not available")
+    with path.open("r", encoding="utf-8") as handle:
+        value = json.load(handle)
+    if not isinstance(value, dict):
+        raise HTTPException(500, f"HOMI artifact '{relative_path}' is malformed")
+    return value
+
+
+@app.get("/api/reality/status")
+def reality_status():
+    """Expose raw integrity, staging, promotion, conflict, and rights posture."""
+
+    barrier = _read_homi_json("gate0/barrier.json")
+    ledger = _read_homi_json("gate0/claim_ledger.json")
+    conditioning = _read_homi_json("staging/conditioning_report.json")
+    targeted = _read_homi_json("targeted/promotion_ledger.json")
+    closure = _read_homi_json("targeted/closure_summary.json")
+    return {
+        "layers": {
+            "L0_raw": "EXTERNAL_IMMUTABLE",
+            "L1_staging": "NON_AUTHORITATIVE",
+            "L2_canonical": "EXPLICIT_REVIEW_ONLY",
+            "L3_derived_scenario": "NEVER_OVERWRITES_BASELINE",
+        },
+        "gate0": barrier,
+        "staged_claims": ledger["claim_count"],
+        "promotions": ledger["promotion_count"],
+        "epistemic_class_counts": ledger["epistemic_class_counts"],
+        "conflict_candidates": ledger["conflict_candidate_count"],
+        "source_license_unspecified": ledger["source_license_unspecified_count"],
+        "targeted_closure": {
+            "sources": targeted["source_count"],
+            "observations": targeted["observation_count"],
+            "promotions": targeted["promotion_count"],
+            "effective_capacity_promotions": targeted[
+                "effective_capacity_promotion_count"
+            ],
+            "composition": closure["composition_after_targeted_closure"],
+        },
+        "conditioning": {
+            "artifacts": conditioning["artifact_count"],
+            "unique_hashes": conditioning["unique_hash_count"],
+            "duplicates": conditioning["duplicate_artifact_count"],
+            "structured": conditioning["structured_artifact_count"],
+            "repaired": conditioning["repaired_artifact_count"],
+            "status_counts": conditioning["status_counts"],
+            "raw_integrity_failures": conditioning["raw_integrity_failure_count"],
+        },
+        "registry_snapshot_id": get_registry().snapshot_id,
+    }
+
+
+@app.get("/api/reality/claims")
+def reality_claims(limit: int = 50):
+    """Return a bounded deterministic view of non-authoritative staged claims."""
+
+    ledger = _read_homi_json("gate0/claim_ledger.json")
+    bounded = max(1, min(int(limit), 200))
+    return {
+        "authority": ledger["authority"],
+        "claim_count": ledger["claim_count"],
+        "promotion_count": ledger["promotion_count"],
+        "claims": ledger["claims"][:bounded],
+        "truncated": ledger["claim_count"] > bounded,
+        "ledger_hash": ledger["ledger_hash"],
+    }
+
+
+@app.get("/api/composition/novel")
+def novel_objective_composition():
+    """Compose the frozen novel objectives without claiming solver verdicts."""
+
+    from forge.composition import (
+        compose_benchmark_set,
+        load_objective_seeds,
+        rank_decision_gaps,
+    )
+
+    benchmark = load_objective_seeds(ROOT / "data" / "objectives" / "novel_objectives.yaml")
+    composition = compose_benchmark_set(get_registry(), benchmark)
+    return {"composition": composition, "decision_gaps": rank_decision_gaps(composition)}
 
 
 @app.get("/api/optionvalue")

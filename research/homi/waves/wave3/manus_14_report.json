@@ -1,0 +1,4007 @@
+{
+  "schema_version": "homi-wave3-corpus-report.v1",
+  "report_identity": {
+    "wave": "wave3",
+    "observed_manus": "manus-14",
+    "campaign_expected_manus": "manus-13",
+    "campaign_mapping_mismatch_preserved": true,
+    "actual_theme": "Semiconductors, electronics, compute, equipment, materials, packaging and India capability gaps",
+    "generated_from_read_only_sources": true,
+    "report_reference_date": "2026-08-25",
+    "evidence_cutoff": "2026-08-24"
+  },
+  "source_boundaries": {
+    "no_external_browsing": true,
+    "raw_vault_immutable": true,
+    "no_code_changes": true,
+    "no_canonical_changes": true,
+    "canonical_promotions": [],
+    "candidate_status": "All records, entities, relations, capacities and canonical matches are staging candidates only."
+  },
+  "epistemic_and_semantic_rules": {
+    "allowed_classes": [
+      "MEASURED",
+      "REPORTED",
+      "DERIVED",
+      "ESTIMATED",
+      "MODELLED",
+      "ASSUMPTION",
+      "SCENARIO",
+      "UNKNOWN",
+      "CONFLICTED"
+    ],
+    "announced_is_not_approved": true,
+    "approved_is_not_financed": true,
+    "financed_is_not_construction": true,
+    "construction_is_not_operating": true,
+    "operating_is_not_qualified": true,
+    "facility_presence_is_not_effective_capacity": true,
+    "nameplate_is_not_available_capacity": true,
+    "forecast_is_not_measured_output": true,
+    "qualified_available_capacity_requires": [
+      "exact facility",
+      "product/process/node/package scope",
+      "dated operating evidence",
+      "yield and test evidence",
+      "customer qualification",
+      "material/equipment/sub-tier constraints"
+    ]
+  },
+  "corpus_accounting": {
+    "manifest": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/_meta/manus_corpus_manifest.csv",
+      "row": {
+        "corpus_id": "manus-14",
+        "zip_name": "How to Conduct Thorough Research_454.zip",
+        "declared_file_count": 11,
+        "status": "OK"
+      }
+    },
+    "raw_zip": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips/How to Conduct Thorough Research_454.zip",
+      "sha256": "ba17528a73ffc4374cc124f1d376fd878f6e20e4c4dc54f6e25636c2574d67fa",
+      "expected_sha256": "ba17528a73ffc4374cc124f1d376fd878f6e20e4c4dc54f6e25636c2574d67fa",
+      "sha256_match": true,
+      "zip_member_count_total": 15,
+      "zip_directory_member_count": 2,
+      "zip_file_member_count": 13,
+      "zip_test_result": "PASS",
+      "extracted_file_count": 13,
+      "member_names_and_sha256_exact": true,
+      "archive_integrity_report_ref": "research/homi/staging/archive_integrity.json",
+      "manifest_declared_vs_actual_file_delta": 2
+    },
+    "extracted_root": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-14",
+    "artifacts": [
+      {
+        "path": "manus-14/FORGE WORLD Semiconductor / Electronics Research Protocol.md",
+        "format": "markdown",
+        "bytes": 5183,
+        "sha256": "8ebae1b9423ac2bca57638325d5d3e8351b9a11f1d22e2c8534559cd49e4c6cf",
+        "raw_zip_member": "FORGE WORLD Semiconductor / Electronics Research Protocol.md",
+        "raw_zip_member_bytes": 5183,
+        "raw_zip_member_sha256": "8ebae1b9423ac2bca57638325d5d3e8351b9a11f1d22e2c8534559cd49e4c6cf",
+        "raw_zip_match": true,
+        "line_count": 64,
+        "row_count": null,
+        "role": "research_protocol_or_memo",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "8ebae1b9423ac2bca57638325d5d3e8351b9a11f1d22e2c8534559cd49e4c6cf",
+          "post_condition_hash": "8ebae1b9423ac2bca57638325d5d3e8351b9a11f1d22e2c8534559cd49e4c6cf",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/knowledge_graph_seed.csv",
+        "format": "csv",
+        "bytes": 3923,
+        "sha256": "492f0070d8fedd5c3174d286f2e49c09a1c7468b9556c7d6f84c88d6e3bd114a",
+        "raw_zip_member": "knowledge_graph_seed.csv",
+        "raw_zip_member_bytes": 3923,
+        "raw_zip_member_sha256": "492f0070d8fedd5c3174d286f2e49c09a1c7468b9556c7d6f84c88d6e3bd114a",
+        "raw_zip_match": true,
+        "line_count": 28,
+        "row_count": 27,
+        "role": "structured_knowledge_graph_seed",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "record_type",
+            "subject",
+            "predicate",
+            "object",
+            "location_or_scope",
+            "status",
+            "evidence_status",
+            "source_ids",
+            "uncertainty_note"
+          ],
+          "rows_excluding_header": 27,
+          "width_anomaly_rows": 1
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "492f0070d8fedd5c3174d286f2e49c09a1c7468b9556c7d6f84c88d6e3bd114a",
+          "post_condition_hash": "492f0070d8fedd5c3174d286f2e49c09a1c7468b9556c7d6f84c88d6e3bd114a",
+          "raw_unchanged": true,
+          "repair_action_count": 1,
+          "ambiguous_repair_count": 1,
+          "repair_actions": [
+            {
+              "after_hash": "f86de1445e26ad20e31271b5a2bbb906f6203d912eefcf4ab8953b9de5c41faa",
+              "before_hash": "a909b74986759529f1d3be58eb68ed2e769338cd4c5ddf2783e72d5686c7d784",
+              "code": "JOIN_OVERFLOW_FIELDS",
+              "locator": "row:15",
+              "note": "Overflow joined into final field; semantic review required",
+              "severity": "AMBIGUOUS"
+            }
+          ]
+        }
+      },
+      {
+        "path": "manus-14/map_global_semiconductor_industrial_stack.csv",
+        "format": "csv",
+        "bytes": 70113,
+        "sha256": "4810bec8da0d55671b29f3faa3dd05b33ee6d85f5f4bcdbaf6087bfc7c3e3655",
+        "raw_zip_member": "map_global_semiconductor_industrial_stack.csv",
+        "raw_zip_member_bytes": 70113,
+        "raw_zip_member_sha256": "4810bec8da0d55671b29f3faa3dd05b33ee6d85f5f4bcdbaf6087bfc7c3e3655",
+        "raw_zip_match": true,
+        "line_count": 9,
+        "row_count": 8,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Research Memo",
+            "Source Ledger",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8,
+          "width_anomaly_rows": 0
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "4810bec8da0d55671b29f3faa3dd05b33ee6d85f5f4bcdbaf6087bfc7c3e3655",
+          "post_condition_hash": "4810bec8da0d55671b29f3faa3dd05b33ee6d85f5f4bcdbaf6087bfc7c3e3655",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/map_global_semiconductor_industrial_stack.json",
+        "format": "json",
+        "bytes": 71405,
+        "sha256": "87401a06c3f30ee8fc765354050cd6fe65e7cc5e5b329314aed2e946117896d7",
+        "raw_zip_member": "map_global_semiconductor_industrial_stack.json",
+        "raw_zip_member_bytes": 71405,
+        "raw_zip_member_sha256": "87401a06c3f30ee8fc765354050cd6fe65e7cc5e5b329314aed2e946117896d7",
+        "raw_zip_match": true,
+        "line_count": 84,
+        "row_count": 8,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "87401a06c3f30ee8fc765354050cd6fe65e7cc5e5b329314aed2e946117896d7",
+          "post_condition_hash": "87401a06c3f30ee8fc765354050cd6fe65e7cc5e5b329314aed2e946117896d7",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/pasted_content.txt",
+        "format": "txt",
+        "bytes": 4440,
+        "sha256": "edbe579278834ae2d16c36c89e710ef27d140cb008d998cae65623dd0c6e2c1a",
+        "raw_zip_member": "pasted_content.txt",
+        "raw_zip_member_bytes": 4440,
+        "raw_zip_member_sha256": "edbe579278834ae2d16c36c89e710ef27d140cb008d998cae65623dd0c6e2c1a",
+        "raw_zip_match": true,
+        "line_count": 41,
+        "row_count": null,
+        "role": "prompt_not_evidence",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "prompt_or_instruction_text": true
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "edbe579278834ae2d16c36c89e710ef27d140cb008d998cae65623dd0c6e2c1a",
+          "post_condition_hash": "edbe579278834ae2d16c36c89e710ef27d140cb008d998cae65623dd0c6e2c1a",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/research_equipment_packaging_compute_chain.csv",
+        "format": "csv",
+        "bytes": 70661,
+        "sha256": "7421b5bc55d698dc2e189abc1ceff6fafe02c08e45d812c0283b0c1c455e881f",
+        "raw_zip_member": "research_equipment_packaging_compute_chain.csv",
+        "raw_zip_member_bytes": 70661,
+        "raw_zip_member_sha256": "7421b5bc55d698dc2e189abc1ceff6fafe02c08e45d812c0283b0c1c455e881f",
+        "raw_zip_match": true,
+        "line_count": 9,
+        "row_count": 8,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Research Memo",
+            "Source Ledger",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8,
+          "width_anomaly_rows": 0
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "7421b5bc55d698dc2e189abc1ceff6fafe02c08e45d812c0283b0c1c455e881f",
+          "post_condition_hash": "7421b5bc55d698dc2e189abc1ceff6fafe02c08e45d812c0283b0c1c455e881f",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/research_equipment_packaging_compute_chain.json",
+        "format": "json",
+        "bytes": 72048,
+        "sha256": "c537c141830c68544aef3369fe176b03645cb6125b6665922173be6cfcb9eb9f",
+        "raw_zip_member": "research_equipment_packaging_compute_chain.json",
+        "raw_zip_member_bytes": 72048,
+        "raw_zip_member_sha256": "c537c141830c68544aef3369fe176b03645cb6125b6665922173be6cfcb9eb9f",
+        "raw_zip_match": true,
+        "line_count": 84,
+        "row_count": 8,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "c537c141830c68544aef3369fe176b03645cb6125b6665922173be6cfcb9eb9f",
+          "post_condition_hash": "c537c141830c68544aef3369fe176b03645cb6125b6665922173be6cfcb9eb9f",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/research_india_semiconductor_capability_gaps.csv",
+        "format": "csv",
+        "bytes": 64074,
+        "sha256": "b065bf3d279339b460c46ccc878039c7b094a1d1da7c1cfa97ead9503e0fa9f5",
+        "raw_zip_member": "research_india_semiconductor_capability_gaps.csv",
+        "raw_zip_member_bytes": 64074,
+        "raw_zip_member_sha256": "b065bf3d279339b460c46ccc878039c7b094a1d1da7c1cfa97ead9503e0fa9f5",
+        "raw_zip_match": true,
+        "line_count": 9,
+        "row_count": 8,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Research Memo",
+            "Source Ledger",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8,
+          "width_anomaly_rows": 0
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "b065bf3d279339b460c46ccc878039c7b094a1d1da7c1cfa97ead9503e0fa9f5",
+          "post_condition_hash": "b065bf3d279339b460c46ccc878039c7b094a1d1da7c1cfa97ead9503e0fa9f5",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/research_india_semiconductor_capability_gaps.json",
+        "format": "json",
+        "bytes": 65481,
+        "sha256": "056fa60626b0318e5033ae1024d8646b04c4ce11a463fc6c1b3de6832248a895",
+        "raw_zip_member": "research_india_semiconductor_capability_gaps.json",
+        "raw_zip_member_bytes": 65481,
+        "raw_zip_member_sha256": "056fa60626b0318e5033ae1024d8646b04c4ce11a463fc6c1b3de6832248a895",
+        "raw_zip_match": true,
+        "line_count": 84,
+        "row_count": 8,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "056fa60626b0318e5033ae1024d8646b04c4ce11a463fc6c1b3de6832248a895",
+          "post_condition_hash": "056fa60626b0318e5033ae1024d8646b04c4ce11a463fc6c1b3de6832248a895",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/research_upstream_semiconductor_chain.csv",
+        "format": "csv",
+        "bytes": 68877,
+        "sha256": "5aa004bb9d5f70abf561609a57840476aef357fe4c93201ecdf6f5bafb905889",
+        "raw_zip_member": "research_upstream_semiconductor_chain.csv",
+        "raw_zip_member_bytes": 68877,
+        "raw_zip_member_sha256": "5aa004bb9d5f70abf561609a57840476aef357fe4c93201ecdf6f5bafb905889",
+        "raw_zip_match": true,
+        "line_count": 9,
+        "row_count": 8,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Research Memo",
+            "Source Ledger",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8,
+          "width_anomaly_rows": 0
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "5aa004bb9d5f70abf561609a57840476aef357fe4c93201ecdf6f5bafb905889",
+          "post_condition_hash": "5aa004bb9d5f70abf561609a57840476aef357fe4c93201ecdf6f5bafb905889",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/research_upstream_semiconductor_chain.json",
+        "format": "json",
+        "bytes": 70177,
+        "sha256": "38e7de4722130c3b5d87b4692c23720840917bc7abbef96cc7d36c5521461be6",
+        "raw_zip_member": "research_upstream_semiconductor_chain.json",
+        "raw_zip_member_bytes": 70177,
+        "raw_zip_member_sha256": "38e7de4722130c3b5d87b4692c23720840917bc7abbef96cc7d36c5521461be6",
+        "raw_zip_match": true,
+        "line_count": 84,
+        "row_count": 8,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "38e7de4722130c3b5d87b4692c23720840917bc7abbef96cc7d36c5521461be6",
+          "post_condition_hash": "38e7de4722130c3b5d87b4692c23720840917bc7abbef96cc7d36c5521461be6",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/Semiconductor / Electronics Industrial Stack.md",
+        "format": "markdown",
+        "bytes": 72027,
+        "sha256": "e0c52ca7e5d799a8b076d1ed2c32fbab092167124df289bdba246eaf08c89aa5",
+        "raw_zip_member": "Semiconductor / Electronics Industrial Stack.md",
+        "raw_zip_member_bytes": 72027,
+        "raw_zip_member_sha256": "e0c52ca7e5d799a8b076d1ed2c32fbab092167124df289bdba246eaf08c89aa5",
+        "raw_zip_match": true,
+        "line_count": 678,
+        "row_count": null,
+        "role": "research_protocol_or_memo",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "e0c52ca7e5d799a8b076d1ed2c32fbab092167124df289bdba246eaf08c89aa5",
+          "post_condition_hash": "e0c52ca7e5d799a8b076d1ed2c32fbab092167124df289bdba246eaf08c89aa5",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      },
+      {
+        "path": "manus-14/Verified findings captured during research.md",
+        "format": "markdown",
+        "bytes": 11916,
+        "sha256": "737d6b45569e0709366d6e083ea2c49c7960bef2862b06e6d3ba9bb792c03d38",
+        "raw_zip_member": "Verified findings captured during research.md",
+        "raw_zip_member_bytes": 11916,
+        "raw_zip_member_sha256": "737d6b45569e0709366d6e083ea2c49c7960bef2862b06e6d3ba9bb792c03d38",
+        "raw_zip_match": true,
+        "line_count": 101,
+        "row_count": null,
+        "role": "validated_findings_memo",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "conditioning": {
+          "source": "research/homi/staging/conditioning_report.json",
+          "original_hash": "737d6b45569e0709366d6e083ea2c49c7960bef2862b06e6d3ba9bb792c03d38",
+          "post_condition_hash": "737d6b45569e0709366d6e083ea2c49c7960bef2862b06e6d3ba9bb792c03d38",
+          "raw_unchanged": true,
+          "repair_action_count": 0,
+          "ambiguous_repair_count": 0,
+          "repair_actions": []
+        }
+      }
+    ]
+  },
+  "schemas_and_rows": {
+    "artifact_schemas": [
+      {
+        "artifact": "manus-14/FORGE WORLD Semiconductor / Electronics Research Protocol.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "format": "csv",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "record_type",
+            "subject",
+            "predicate",
+            "object",
+            "location_or_scope",
+            "status",
+            "evidence_status",
+            "source_ids",
+            "uncertainty_note"
+          ],
+          "rows_excluding_header": 27,
+          "width_anomaly_rows": 1
+        },
+        "rows": 27
+      },
+      {
+        "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+        "format": "csv",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Research Memo",
+            "Source Ledger",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8,
+          "width_anomaly_rows": 0
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-14/map_global_semiconductor_industrial_stack.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-14/pasted_content.txt",
+        "format": "txt",
+        "schema": {
+          "prompt_or_instruction_text": true
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-14/research_equipment_packaging_compute_chain.csv",
+        "format": "csv",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Research Memo",
+            "Source Ledger",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8,
+          "width_anomaly_rows": 0
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-14/research_equipment_packaging_compute_chain.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-14/research_india_semiconductor_capability_gaps.csv",
+        "format": "csv",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Research Memo",
+            "Source Ledger",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8,
+          "width_anomaly_rows": 0
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-14/research_india_semiconductor_capability_gaps.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-14/research_upstream_semiconductor_chain.csv",
+        "format": "csv",
+        "schema": {
+          "root_type": "csv",
+          "columns": [
+            "Subject",
+            "Workstream",
+            "Research Memo",
+            "Source Ledger",
+            "Confidence",
+            "Error"
+          ],
+          "rows_excluding_header": 8,
+          "width_anomaly_rows": 0
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-14/research_upstream_semiconductor_chain.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "keys": [
+            "results"
+          ],
+          "results": 8,
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ]
+        },
+        "rows": 8
+      },
+      {
+        "artifact": "manus-14/Semiconductor / Electronics Industrial Stack.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0
+          }
+        },
+        "rows": null
+      }
+    ],
+    "structured_physical_rows": 91,
+    "conditioning_references": [
+      {
+        "artifact": "manus-14/FORGE WORLD Semiconductor / Electronics Research Protocol.md",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "8ebae1b9423ac2bca57638325d5d3e8351b9a11f1d22e2c8534559cd49e4c6cf",
+        "post_condition_hash": "8ebae1b9423ac2bca57638325d5d3e8351b9a11f1d22e2c8534559cd49e4c6cf",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "492f0070d8fedd5c3174d286f2e49c09a1c7468b9556c7d6f84c88d6e3bd114a",
+        "post_condition_hash": "492f0070d8fedd5c3174d286f2e49c09a1c7468b9556c7d6f84c88d6e3bd114a",
+        "raw_unchanged": true,
+        "repair_action_count": 1,
+        "ambiguous_repair_count": 1,
+        "repair_actions": [
+          {
+            "after_hash": "f86de1445e26ad20e31271b5a2bbb906f6203d912eefcf4ab8953b9de5c41faa",
+            "before_hash": "a909b74986759529f1d3be58eb68ed2e769338cd4c5ddf2783e72d5686c7d784",
+            "code": "JOIN_OVERFLOW_FIELDS",
+            "locator": "row:15",
+            "note": "Overflow joined into final field; semantic review required",
+            "severity": "AMBIGUOUS"
+          }
+        ]
+      },
+      {
+        "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "4810bec8da0d55671b29f3faa3dd05b33ee6d85f5f4bcdbaf6087bfc7c3e3655",
+        "post_condition_hash": "4810bec8da0d55671b29f3faa3dd05b33ee6d85f5f4bcdbaf6087bfc7c3e3655",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/map_global_semiconductor_industrial_stack.json",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "87401a06c3f30ee8fc765354050cd6fe65e7cc5e5b329314aed2e946117896d7",
+        "post_condition_hash": "87401a06c3f30ee8fc765354050cd6fe65e7cc5e5b329314aed2e946117896d7",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/pasted_content.txt",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "edbe579278834ae2d16c36c89e710ef27d140cb008d998cae65623dd0c6e2c1a",
+        "post_condition_hash": "edbe579278834ae2d16c36c89e710ef27d140cb008d998cae65623dd0c6e2c1a",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/research_equipment_packaging_compute_chain.csv",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "7421b5bc55d698dc2e189abc1ceff6fafe02c08e45d812c0283b0c1c455e881f",
+        "post_condition_hash": "7421b5bc55d698dc2e189abc1ceff6fafe02c08e45d812c0283b0c1c455e881f",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/research_equipment_packaging_compute_chain.json",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "c537c141830c68544aef3369fe176b03645cb6125b6665922173be6cfcb9eb9f",
+        "post_condition_hash": "c537c141830c68544aef3369fe176b03645cb6125b6665922173be6cfcb9eb9f",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/research_india_semiconductor_capability_gaps.csv",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "b065bf3d279339b460c46ccc878039c7b094a1d1da7c1cfa97ead9503e0fa9f5",
+        "post_condition_hash": "b065bf3d279339b460c46ccc878039c7b094a1d1da7c1cfa97ead9503e0fa9f5",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/research_india_semiconductor_capability_gaps.json",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "056fa60626b0318e5033ae1024d8646b04c4ce11a463fc6c1b3de6832248a895",
+        "post_condition_hash": "056fa60626b0318e5033ae1024d8646b04c4ce11a463fc6c1b3de6832248a895",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/research_upstream_semiconductor_chain.csv",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "5aa004bb9d5f70abf561609a57840476aef357fe4c93201ecdf6f5bafb905889",
+        "post_condition_hash": "5aa004bb9d5f70abf561609a57840476aef357fe4c93201ecdf6f5bafb905889",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/research_upstream_semiconductor_chain.json",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "original_hash": "38e7de4722130c3b5d87b4692c23720840917bc7abbef96cc7d36c5521461be6",
+        "post_condition_hash": "38e7de4722130c3b5d87b4692c23720840917bc7abbef96cc7d36c5521461be6",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/Semiconductor / Electronics Industrial Stack.md",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "e0c52ca7e5d799a8b076d1ed2c32fbab092167124df289bdba246eaf08c89aa5",
+        "post_condition_hash": "e0c52ca7e5d799a8b076d1ed2c32fbab092167124df289bdba246eaf08c89aa5",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      },
+      {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "parse_status": "INVENTORIED_CONTEXT",
+        "original_hash": "737d6b45569e0709366d6e083ea2c49c7960bef2862b06e6d3ba9bb792c03d38",
+        "post_condition_hash": "737d6b45569e0709366d6e083ea2c49c7960bef2862b06e6d3ba9bb792c03d38",
+        "raw_unchanged": true,
+        "repair_action_count": 0,
+        "ambiguous_repair_count": 0,
+        "repair_actions": []
+      }
+    ],
+    "deduplication": {
+      "physical_structured_rows": 91,
+      "logical_records_after_csv_json_dedupe": 59,
+      "csv_json_duplicate_records_removed": 32,
+      "duplicate_artifact_pairs": 0,
+      "rule": "Four CSV/JSON research families are counted once per 8 logical rows; knowledge_graph_seed remains 27 logical rows. Raw bytes and all 13 artifact hashes are retained."
+    }
+  },
+  "source_inventory": {
+    "unique_original_urls": 328,
+    "bounded_sample_count": 24,
+    "source_urls_are_unverified_tokens": true,
+    "verified_findings_memo_source_sections": 10
+  },
+  "source_candidates": [
+    {
+      "source_id": "src_manus14_001",
+      "original_url": "https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_002",
+      "original_url": "https://counterpointresearch.com/en/insights/global-semiconductor-foundry-market-share",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_003",
+      "original_url": "https://newsroom.intel.com/intel-foundry/updates-intel-10-largest-construction-projects",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_004",
+      "original_url": "https://www.cnbc.com/2025/12/19/intel-aims-to-find-clients-and-catch-tsmc-with-new-chip-fab-in-arizona.html",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_005",
+      "original_url": "https://semiwiki.com/forum/threads/advanced-packaging-the-new-bottleneck.22130/",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_006",
+      "original_url": "https://tech-insider.org/tsmc-arizona-165-billion-expansion-gigafab-2026/",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_007",
+      "original_url": "https://semiconductor.samsung.com/foundry/manufacturing/manufacturing-sites/",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_008",
+      "original_url": "https://www.kxan.com/news/local/taylor/samsung-taylor-plant-still-on-schedule-for-2026/",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_009",
+      "original_url": "https://siliconheartland.newalbanyohio.org/",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_010",
+      "original_url": "https://www.scmp.com/tech/big-tech/article/3255678/china-semiconductor-self-sufficiency-smic-expansion",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_011",
+      "original_url": "https://www.huahonggrace.com/html/about.php",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_012",
+      "original_url": "https://towersemi.com/about/history/",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_013",
+      "original_url": "https://www.taiwannews.com.tw/news/6286089",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_014",
+      "original_url": "https://www.rapidus.inc/en/tech/te0008/",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L2",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_015",
+      "original_url": "https://www.trendforce.com/presscenter",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_016",
+      "original_url": "https://www.trendforce.com/presscenter)\\n2",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_017",
+      "original_url": "https://news.skhynix.com/en/rulebreaker-revolutions-mr-muf-unlocks-hbm-heat-control/",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_018",
+      "original_url": "https://news.skhynix.com/en/rulebreaker-revolutions-mr-muf-unlocks-hbm-heat-control/)\\n3",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_019",
+      "original_url": "https://www.tomshardware.com/pc-components/dram/cxmt-close-to-matching-microns-memory-capacity-in-2026-research-claims",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_020",
+      "original_url": "https://www.tomshardware.com/pc-components/dram/cxmt-close-to-matching-microns-memory-capacity-in-2026-research-claims)\\n4",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_021",
+      "original_url": "https://www.cnbc.com/2026/08/13/chinese-firm-tops-micron-kioxia-shipments-nand-memory-chips.html",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_022",
+      "original_url": "https://www.cnbc.com/2026/08/13/chinese-firm-tops-micron-kioxia-shipments-nand-memory-chips.html)\\n5",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_023",
+      "original_url": "https://www.eetimes.com/chinas-nand-specialist-ymtc-moves-closer-to-ipo/",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "src_manus14_024",
+      "original_url": "https://www.eetimes.com/chinas-nand-specialist-ymtc-moves-closer-to-ipo/)\\n6",
+      "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+      "exact_locator": "manus-14/map_global_semiconductor_industrial_stack.csv:L3",
+      "url_token_status": "RAW_URL",
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "claim_candidates": [
+    {
+      "claim_id": "clm_manus14_01",
+      "subject": "Semicon 2.0",
+      "predicate": "policy_approval_and_target",
+      "observed_claim": "Semicon 2.0 is reported approved with INR 1,27,500 crore outlay; the first fab is scheduled for 2028 and the initial journey centers on 28nm-110nm.",
+      "source_locator": "Verified findings captured during research.md:L5-L14",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284784&reg=48&lang=2",
+      "geography": "India",
+      "date_or_period": "2026 policy; 2028 target",
+      "scope": "semiconductor policy/programme",
+      "epistemic_class": "REPORTED",
+      "caveat": "Policy approval and future schedule do not prove commissioned fab output.",
+      "unknowns": [
+        "Fab site, construction, first silicon, node, yield, product and customer qualification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Semicon 2.0",
+          "Tata-PSMC Dholera fab"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Verify project-level milestones and first-silicon/qualification records.",
+      "capacity_type": "approved_policy_target",
+      "value": "127500; 2028",
+      "unit": "INR crore; year",
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_02",
+      "subject": "ISM 1.0",
+      "predicate": "approved_units_and_commercial_status",
+      "observed_claim": "The government reports 12 approved manufacturing units, cumulative investment above INR 1.64 lakh crore, and three companies started commercial production; this is a status claim, not audited throughput/yield.",
+      "source_locator": "Verified findings captured during research.md:L12-L14",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284784&reg=48&lang=2",
+      "geography": "India",
+      "date_or_period": "15 Jul 2026",
+      "scope": "fab/SiC/GaN/OSAT project inventory",
+      "epistemic_class": "REPORTED",
+      "caveat": "Aggregate approved/invested counts mix project stages and do not establish qualified output.",
+      "unknowns": [
+        "Facility-level operating state, output, yield, product scope and customer qualification for Micron, Kaynes, CG Semi and others."
+      ],
+      "conflicts": [
+        "Earlier 5 May 2026 wording says two commercial shipments and two expected soon; later wording says three commercial production."
+      ],
+      "entity_resolution": {
+        "observed_entities": [
+          "Micron Sanand",
+          "Kaynes Semicon",
+          "CG Semi"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Reconcile time-stamped government statements with site filings and production evidence.",
+      "capacity_type": "approved_and_operating_claim",
+      "value": "12; >1.64 lakh crore; 3",
+      "unit": "units; INR; companies",
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_03",
+      "subject": "Crystal Matrix Limited",
+      "predicate": "proposed_capacity",
+      "observed_claim": "CML is reported approved for an integrated compound semiconductor/display facility targeting 72,000 square metres of panels and 24,000 RGB wafer sets annually.",
+      "source_locator": "Verified findings captured during research.md:L16-L23",
+      "original_url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-two-more-semiconductor-manufacturing-units-with-cumulative-investment-of-more-than-rs-3900-crore/",
+      "geography": "Dholera, Gujarat, India",
+      "date_or_period": "5 May 2026",
+      "scope": "GaN/display facility",
+      "epistemic_class": "REPORTED",
+      "caveat": "Proposed capacity is not construction, operating, qualified, or available output.",
+      "unknowns": [
+        "Site construction, process node/product, yield, customers and qualification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Crystal Matrix Limited",
+          "Crystal Matrix Dholera"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Request project finance/construction/commissioning and product qualification evidence.",
+      "capacity_type": "announced_nameplate",
+      "value": "72000; 24000",
+      "unit": "m2/year; RGB wafer sets/year",
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_04",
+      "subject": "Suchi Semicon Private Limited",
+      "predicate": "proposed_capacity",
+      "observed_claim": "Suchi is reported approved for a Surat OSAT facility with proposed production capacity of 1,033.20 million chips/year.",
+      "source_locator": "Verified findings captured during research.md:L19-L23",
+      "original_url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-two-more-semiconductor-manufacturing-units-with-cumulative-investment-of-more-than-rs-3900-crore/",
+      "geography": "Surat, Gujarat, India",
+      "date_or_period": "5 May 2026",
+      "scope": "discrete OSAT",
+      "epistemic_class": "REPORTED",
+      "caveat": "Proposed capacity is not commissioned or qualified throughput.",
+      "unknowns": [
+        "Facility construction, package types, test coverage, yield and customer qualification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Suchi Semicon",
+          "Suchi Semicon Surat"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Verify site status and production/qualification records.",
+      "capacity_type": "announced_nameplate",
+      "value": "1033.20",
+      "unit": "million chips/year",
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_05",
+      "subject": "SEMI 300mm outlook",
+      "predicate": "global_forecast",
+      "observed_claim": "The SEMI outlook tracks 413 300mm fabs/production lines and forecasts US$142bn front-end equipment spending in 2026 using project-level estimates.",
+      "source_locator": "Verified findings captured during research.md:L25-L30",
+      "original_url": "https://www.semi.org/en/products-services/market-data/300mm-fab-outlook",
+      "geography": "Global",
+      "date_or_period": "Q2 2026 outlook; forecast through 2029",
+      "scope": "300mm fab/equipment market",
+      "epistemic_class": "ESTIMATED",
+      "caveat": "Forecast includes R&D/pilot lines and educated estimates; it is not measured qualified output.",
+      "unknowns": [
+        "Facility-by-facility operating status, capacity, product and qualification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "SEMI 300mm fabs",
+          "front-end equipment market"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Use project-level source data before capacity modelling.",
+      "capacity_type": "forecast_and_spend",
+      "value": "413; 142",
+      "unit": "fabs/lines; USD billion",
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_06",
+      "subject": "ASML",
+      "predicate": "company_metrics",
+      "observed_claim": "ASML reports 2025 net sales of EUR32.7bn, R&D EUR4.7bn, 535 system sales, 5,100 suppliers and over 44,000 FTEs; these are company-wide metrics.",
+      "source_locator": "Verified findings captured during research.md:L45-L50",
+      "original_url": "https://www.asml.com/en/investors/annual-report/2025",
+      "geography": "Global",
+      "date_or_period": "2025 annual report",
+      "scope": "lithography/equipment company",
+      "epistemic_class": "MEASURED",
+      "caveat": "Metrics do not establish EUV share, facility-specific qualified output, market share or available capacity.",
+      "unknowns": [
+        "Product-family and facility-specific output, acceptance and customer qualification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "ASML",
+          "ASML Veldhoven ecosystem"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Separate company-wide measured metrics from product/facility capacity evidence.",
+      "capacity_type": "company_wide_measured",
+      "value": "535; 5100",
+      "unit": "systems sold; suppliers",
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_07",
+      "subject": "Semiconductor process chain",
+      "predicate": "process_architecture",
+      "observed_claim": "Deposition, coating, lithography, etch, implantation, packaging, inspection and testing are distinct process stages; DUV/EUV ranges from 365nm to 13.5nm.",
+      "source_locator": "Verified findings captured during research.md:L69-L76",
+      "original_url": "https://www.asml.com/company/stories/2021/semiconductor-manufacturing-process-steps",
+      "geography": "Global/India",
+      "date_or_period": "engineering explainer updated 2023",
+      "scope": "front-end and back-end process",
+      "epistemic_class": "MODELLED",
+      "caveat": "Engineering description does not prove a named Indian facility has the process or qualification.",
+      "unknowns": [
+        "Site-level equipment, recipes, process capability, metrology and product qualification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "lithography",
+          "etch",
+          "implantation",
+          "packaging"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Map each facility to process step, equipment and qualification evidence.",
+      "capacity_type": null,
+      "value": null,
+      "unit": null,
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_08",
+      "subject": "Lam Research processes",
+      "predicate": "equipment_and_metrology",
+      "observed_claim": "Lam describes ECD/CVD/ALD/PECVD/HDP-CVD deposition, RIE/ALE etch, strip/clean and angstrom-level mass metrology for closed-loop control.",
+      "source_locator": "Verified findings captured during research.md:L78-L84",
+      "original_url": "https://www.lamresearch.com/products/our-processes/",
+      "geography": "Global",
+      "date_or_period": "current product description",
+      "scope": "semiconductor equipment",
+      "epistemic_class": "REPORTED",
+      "caveat": "Supplier technology description is not independent installed-base, customer acceptance or India availability evidence.",
+      "unknowns": [
+        "Specific equipment installed, qualified, maintained and available in target facilities."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Lam Research",
+          "deposition",
+          "etch",
+          "metrology"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Require facility-level equipment and qualification records.",
+      "capacity_type": null,
+      "value": null,
+      "unit": null,
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_09",
+      "subject": "Infineon Kulim SiC fab",
+      "predicate": "facility_expansion",
+      "observed_claim": "Infineon reports phase-one inauguration of a 200mm SiC power fab with EUR2bn investment and a planned second phase up to EUR5bn; qualified throughput is not provided.",
+      "source_locator": "Verified findings captured during research.md:L86-L92",
+      "original_url": "https://www.infineon.com/press-release/2024/infxx202408-133",
+      "geography": "Kulim, Malaysia",
+      "date_or_period": "8 Aug 2024; expansion plan",
+      "scope": "SiC/GaN power semiconductor",
+      "epistemic_class": "REPORTED",
+      "caveat": "Investment and inauguration do not establish sustained qualified output.",
+      "unknowns": [
+        "Phase-level commissioning, wafer/device yield, product and customer qualification."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Infineon",
+          "Infineon Kulim 200mm SiC fab"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Obtain current phase status and facility-level output/qualification.",
+      "capacity_type": "financed_and_operating_claim",
+      "value": "2; 5",
+      "unit": "EUR billion",
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_10",
+      "subject": "ST Catania SiC campus",
+      "predicate": "announced_capacity",
+      "observed_claim": "ST targets production start in 2026 and full build-out by 2033 up to 15,000 wafers/week for an integrated 200mm SiC campus.",
+      "source_locator": "Verified findings captured during research.md:L94-L101",
+      "original_url": "https://newsroom.st.com/media-center/press-item.html/c3262.html",
+      "geography": "Catania, Italy",
+      "date_or_period": "2026 start; 2033 target",
+      "scope": "SiC substrate/epitaxy/fab/test/package",
+      "epistemic_class": "REPORTED",
+      "caveat": "Targeted full-build capacity is not current operating qualified output.",
+      "unknowns": [
+        "Construction, first wafer, yield, qualification, product mix and available capacity."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "STMicroelectronics",
+          "ST Catania SiC campus"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Revalidate construction and production milestones before modelling capacity.",
+      "capacity_type": "announced_nameplate",
+      "value": "15000",
+      "unit": "wafers/week",
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_11",
+      "subject": "Micron Sanand",
+      "predicate": "commercial_production_status",
+      "observed_claim": "Micron Sanand is recorded as an ATMP facility with an operating/commercial-production claim, while output and yield are not publicly evidenced in the seed record.",
+      "source_locator": "knowledge_graph_seed.csv:row 5",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284784&reg=48&lang=2",
+      "geography": "Sanand, Gujarat, India",
+      "date_or_period": "2026",
+      "scope": "memory ATMP",
+      "epistemic_class": "REPORTED",
+      "caveat": "Operating claim is not a measured throughput or qualified customer supply record.",
+      "unknowns": [
+        "Package mix, throughput, yield, customer qualification and available output."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Micron Technology",
+          "Micron Sanand ATMP"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Request dated shipment, yield and qualification evidence.",
+      "capacity_type": "operating_claim",
+      "value": null,
+      "unit": null,
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "claim_id": "clm_manus14_12",
+      "subject": "Knowledge graph seed row 15",
+      "predicate": "conditioning_repair",
+      "observed_claim": "The raw knowledge_graph_seed CSV has one JOIN_OVERFLOW_FIELDS repair at row 15; the repair is staged, raw bytes remain unchanged, and semantic review is required.",
+      "source_locator": "knowledge_graph_seed.csv:row 15; research/homi/staging/conditioning_report.json",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284784&reg=48&lang=2",
+      "geography": "India",
+      "date_or_period": "source conditioning event",
+      "scope": "structured evidence conditioning",
+      "epistemic_class": "CONFLICTED",
+      "caveat": "Repair metadata is deterministic but does not resolve the row's intended field assignment.",
+      "unknowns": [
+        "Whether overflow belongs to uncertainty_note or another field; relation/entity semantics after repair."
+      ],
+      "conflicts": [
+        "Raw row width and repaired staging representation differ."
+      ],
+      "entity_resolution": {
+        "observed_entities": [
+          "knowledge_graph_seed row 15"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "source locator/name/geography only; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Review repaired row before using it in any relation or capacity promotion.",
+      "capacity_type": null,
+      "value": null,
+      "unit": null,
+      "status_semantics": {
+        "announced_is_not_operating": true,
+        "approved_is_not_commissioned": true,
+        "operating_claim_is_not_qualified": true,
+        "facility_presence_is_not_effective_capacity": true,
+        "available_qualified_output": "UNKNOWN"
+      },
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "entity_candidates": {
+    "organizations": [
+      {
+        "candidate_id": "homi-candidate:181cd009b37b044c89de",
+        "observed_name": "ASML",
+        "normalized_name": "asml",
+        "entity_type": "organization",
+        "geography": "Veldhoven, Netherlands/global",
+        "observed_role": "lithography/equipment company",
+        "source_locator": "Verified findings captured during research.md:L45-L50",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:d8ee985d146a5f05b733",
+        "observed_name": "ZEISS SMT",
+        "normalized_name": "zeiss smt",
+        "entity_type": "organization",
+        "geography": "Germany/global",
+        "observed_role": "lithography optics supplier",
+        "source_locator": "knowledge_graph_seed.csv:row 3",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:03c87b837351aeff0088",
+        "observed_name": "TSMC",
+        "normalized_name": "tsmc",
+        "entity_type": "organization",
+        "geography": "Taiwan/global",
+        "observed_role": "logic foundry",
+        "source_locator": "knowledge_graph_seed.csv:row 4",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:170d2f89f898d1c4f9d1",
+        "observed_name": "Samsung Electronics",
+        "normalized_name": "samsung electronics",
+        "entity_type": "organization",
+        "geography": "South Korea/global",
+        "observed_role": "logic/memory IDM",
+        "source_locator": "map_global_semiconductor_industrial_stack.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:53eda50438111ede27f7",
+        "observed_name": "Intel",
+        "normalized_name": "intel",
+        "entity_type": "organization",
+        "geography": "USA/global",
+        "observed_role": "logic IDM/foundry",
+        "source_locator": "map_global_semiconductor_industrial_stack.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:52a9102024147131fd78",
+        "observed_name": "Micron Technology",
+        "normalized_name": "micron technology",
+        "entity_type": "organization",
+        "geography": "USA/Sanand India",
+        "observed_role": "memory and ATMP",
+        "source_locator": "Verified findings captured during research.md:L12-L14",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:ddf391f1e21f9872be6f",
+        "observed_name": "Tata Electronics",
+        "normalized_name": "tata electronics",
+        "entity_type": "organization",
+        "geography": "India",
+        "observed_role": "fab/OSAT project developer",
+        "source_locator": "knowledge_graph_seed.csv:row 6",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:79fe5c0eac8a11e67fbf",
+        "observed_name": "PSMC",
+        "normalized_name": "psmc",
+        "entity_type": "organization",
+        "geography": "Taiwan",
+        "observed_role": "fab technology partner",
+        "source_locator": "knowledge_graph_seed.csv:row 18",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:e8b5f22d526914bf57eb",
+        "observed_name": "CG Semi",
+        "normalized_name": "cg semi",
+        "entity_type": "organization",
+        "geography": "Sanand, Gujarat, India",
+        "observed_role": "OSAT JV",
+        "source_locator": "knowledge_graph_seed.csv:row 9",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:07e1aecc4b80d8550624",
+        "observed_name": "Kaynes Semicon",
+        "normalized_name": "kaynes semicon",
+        "entity_type": "organization",
+        "geography": "Sanand, Gujarat, India",
+        "observed_role": "OSAT facility",
+        "source_locator": "knowledge_graph_seed.csv:row 10",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:8adb8981b83ce798e13e",
+        "observed_name": "Sahasra Semiconductors",
+        "normalized_name": "sahasra semiconductors",
+        "entity_type": "organization",
+        "geography": "Bhiwadi, Rajasthan, India",
+        "observed_role": "memory packaging",
+        "source_locator": "knowledge_graph_seed.csv:row 11",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:2487b4388b0720a50752",
+        "observed_name": "Crystal Matrix Limited",
+        "normalized_name": "crystal matrix limited",
+        "entity_type": "organization",
+        "geography": "Dholera, Gujarat, India",
+        "observed_role": "compound semiconductor/display project",
+        "source_locator": "Verified findings captured during research.md:L16-L23",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:7710e4aee7b77dd3cefb",
+        "observed_name": "Suchi Semicon Private Limited",
+        "normalized_name": "suchi semicon private limited",
+        "entity_type": "organization",
+        "geography": "Surat, Gujarat, India",
+        "observed_role": "discrete OSAT project",
+        "source_locator": "Verified findings captured during research.md:L16-L23",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:21efb276f2f609ca1003",
+        "observed_name": "SiCSem",
+        "normalized_name": "sicsem",
+        "entity_type": "organization",
+        "geography": "Odisha, India",
+        "observed_role": "SiC integrated project",
+        "source_locator": "knowledge_graph_seed.csv:row 14",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:058117272affb6de840d",
+        "observed_name": "Infineon Technologies",
+        "normalized_name": "infineon technologies",
+        "entity_type": "organization",
+        "geography": "Kulim, Malaysia/Villach, Austria",
+        "observed_role": "SiC/GaN power semiconductor",
+        "source_locator": "Verified findings captured during research.md:L86-L92",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:110eeee3e8ff2e6754c5",
+        "observed_name": "STMicroelectronics",
+        "normalized_name": "stmicroelectronics",
+        "entity_type": "organization",
+        "geography": "Catania, Italy/global",
+        "observed_role": "SiC campus",
+        "source_locator": "Verified findings captured during research.md:L94-L101",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:b0ee1e4dde798fba1ba6",
+        "observed_name": "Applied Materials",
+        "normalized_name": "applied materials",
+        "entity_type": "organization",
+        "geography": "USA/global",
+        "observed_role": "semiconductor equipment",
+        "source_locator": "map_global_semiconductor_industrial_stack.csv:row 7",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:9dd04f5be163368bd777",
+        "observed_name": "Lam Research",
+        "normalized_name": "lam research",
+        "entity_type": "organization",
+        "geography": "USA/global",
+        "observed_role": "etch/deposition/clean equipment",
+        "source_locator": "Verified findings captured during research.md:L78-L84",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:790748a0789a5a00f177",
+        "observed_name": "Bharat Heavy Electricals Limited",
+        "normalized_name": "bharat heavy electricals limited",
+        "entity_type": "organization",
+        "geography": "India",
+        "observed_role": "heavy engineering/electronics candidate",
+        "source_locator": "research_india_semiconductor_capability_gaps.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:32c9520997f4250633f3",
+        "observed_name": "C-DAC",
+        "normalized_name": "c-dac",
+        "entity_type": "organization",
+        "geography": "India",
+        "observed_role": "compute/design/R&D candidate",
+        "source_locator": "research_india_semiconductor_capability_gaps.csv:row 7",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:75fbf494551641e22380",
+        "observed_name": "SCL Mohali",
+        "normalized_name": "scl mohali",
+        "entity_type": "organization",
+        "geography": "Mohali, India",
+        "observed_role": "legacy semiconductor R&D/fab candidate",
+        "source_locator": "research_india_semiconductor_capability_gaps.csv:row 7",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:a2b15db2edb4c4f8e2fd",
+        "observed_name": "ISRO",
+        "normalized_name": "isro",
+        "entity_type": "organization",
+        "geography": "India",
+        "observed_role": "space electronics and qualification candidate",
+        "source_locator": "research_india_semiconductor_capability_gaps.csv:row 7",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      }
+    ],
+    "facilities": [
+      {
+        "candidate_id": "homi-candidate:40b3f522686a98ac3062",
+        "observed_name": "Micron Sanand ATMP",
+        "normalized_name": "micron sanand atmp",
+        "entity_type": "facility",
+        "geography": "Sanand, Gujarat, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 5",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:2d7c15d4412d03384cc1",
+        "observed_name": "Tata-PSMC Dholera fab",
+        "normalized_name": "tata-psmc dholera fab",
+        "entity_type": "facility",
+        "geography": "Dholera, Gujarat, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 6",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:0a5c0f7d81e6c223c9ad",
+        "observed_name": "Tata Jagiroad OSAT",
+        "normalized_name": "tata jagiroad osat",
+        "entity_type": "facility",
+        "geography": "Jagiroad, Assam, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 7",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:f854d233d438bfbc6af9",
+        "observed_name": "CG Semi Sanand",
+        "normalized_name": "cg semi sanand",
+        "entity_type": "facility",
+        "geography": "Sanand, Gujarat, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 8",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:4cea16c667d5a1434a6a",
+        "observed_name": "Kaynes Semicon Sanand",
+        "normalized_name": "kaynes semicon sanand",
+        "entity_type": "facility",
+        "geography": "Sanand, Gujarat, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 9",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:addb5aaa9fb9d0981e69",
+        "observed_name": "Sahasra Bhiwadi",
+        "normalized_name": "sahasra bhiwadi",
+        "entity_type": "facility",
+        "geography": "Bhiwadi, Rajasthan, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 10",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:50d7d8c3671ff8301a56",
+        "observed_name": "Crystal Matrix Dholera",
+        "normalized_name": "crystal matrix dholera",
+        "entity_type": "facility",
+        "geography": "Dholera, Gujarat, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 11",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:a626021b831a0b110b80",
+        "observed_name": "Suchi Semicon Surat",
+        "normalized_name": "suchi semicon surat",
+        "entity_type": "facility",
+        "geography": "Surat, Gujarat, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 12",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:7be4a00f0bca8a374db6",
+        "observed_name": "SiCSem Odisha",
+        "normalized_name": "sicsem odisha",
+        "entity_type": "facility",
+        "geography": "Odisha, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 13",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:465e8a60de800e5c68e6",
+        "observed_name": "Infineon Kulim 200mm SiC fab",
+        "normalized_name": "infineon kulim 200mm sic fab",
+        "entity_type": "facility",
+        "geography": "Kulim, Malaysia",
+        "observed_role": "facility_candidate",
+        "source_locator": "Verified findings captured during research.md:L86-L92",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:d7c4814ed251b9ba5bf6",
+        "observed_name": "ST Catania SiC campus",
+        "normalized_name": "st catania sic campus",
+        "entity_type": "facility",
+        "geography": "Catania, Italy",
+        "observed_role": "facility_candidate",
+        "source_locator": "Verified findings captured during research.md:L94-L101",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:b2e933967ce84b5a492e",
+        "observed_name": "ASML Veldhoven ecosystem",
+        "normalized_name": "asml veldhoven ecosystem",
+        "entity_type": "facility",
+        "geography": "Veldhoven, Netherlands/global",
+        "observed_role": "facility_candidate",
+        "source_locator": "Verified findings captured during research.md:L45-L50",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:300a811a712bbc78fa8e",
+        "observed_name": "TSMC Taiwan fabs",
+        "normalized_name": "tsmc taiwan fabs",
+        "entity_type": "facility",
+        "geography": "Taiwan",
+        "observed_role": "facility_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 4",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:bdc6fc34c76b799f7c24",
+        "observed_name": "Samsung memory/logic fabs",
+        "normalized_name": "samsung memory/logic fabs",
+        "entity_type": "facility",
+        "geography": "South Korea/global",
+        "observed_role": "facility_candidate",
+        "source_locator": "map_global_semiconductor_industrial_stack.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:cf5a88940fe20491116d",
+        "observed_name": "SCL Mohali facilities",
+        "normalized_name": "scl mohali facilities",
+        "entity_type": "facility",
+        "geography": "Mohali, India",
+        "observed_role": "facility_candidate",
+        "source_locator": "research_india_semiconductor_capability_gaps.csv:row 7",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:54cd45b2fa7214fdda16",
+        "observed_name": "India semiconductor design/startup network",
+        "normalized_name": "india semiconductor design/startup network",
+        "entity_type": "facility",
+        "geography": "India",
+        "observed_role": "facility_candidate",
+        "source_locator": "Verified findings captured during research.md:L12-L14",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:33cb62544a05c97a9647",
+        "observed_name": "Japan semiconductor materials/equipment cluster",
+        "normalized_name": "japan semiconductor materials/equipment cluster",
+        "entity_type": "facility",
+        "geography": "Japan",
+        "observed_role": "facility_candidate",
+        "source_locator": "Verified findings captured during research.md:L60-L65",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "facility presence/status claim is not qualified output"
+      }
+    ],
+    "projects": [
+      {
+        "candidate_id": "homi-candidate:d2f1170e8c8c0f4408eb",
+        "observed_name": "Semicon 2.0",
+        "normalized_name": "semicon 2.0",
+        "entity_type": "project",
+        "geography": "India",
+        "observed_role": "project_candidate",
+        "source_locator": "Verified findings captured during research.md:L5-L14",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:c808c8a1458fbf894386",
+        "observed_name": "ISM 1.0 approved manufacturing units",
+        "normalized_name": "ism 1.0 approved manufacturing units",
+        "entity_type": "project",
+        "geography": "India",
+        "observed_role": "project_candidate",
+        "source_locator": "Verified findings captured during research.md:L12-L14",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:43d82c198208d5a1b13b",
+        "observed_name": "Micron Sanand project",
+        "normalized_name": "micron sanand project",
+        "entity_type": "project",
+        "geography": "Sanand, Gujarat, India",
+        "observed_role": "project_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 5",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:4118a797fc88e6341b68",
+        "observed_name": "Tata-PSMC Dholera fab",
+        "normalized_name": "tata-psmc dholera fab",
+        "entity_type": "project",
+        "geography": "Dholera, Gujarat, India",
+        "observed_role": "project_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 6",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:7d670836095893043423",
+        "observed_name": "Tata Jagiroad OSAT",
+        "normalized_name": "tata jagiroad osat",
+        "entity_type": "project",
+        "geography": "Jagiroad, Assam, India",
+        "observed_role": "project_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 7",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:6e5ea0b01fc7ce4248d4",
+        "observed_name": "CG Semi Sanand",
+        "normalized_name": "cg semi sanand",
+        "entity_type": "project",
+        "geography": "Sanand, Gujarat, India",
+        "observed_role": "project_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 8",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:6fb70ee84bc2bebd8397",
+        "observed_name": "Kaynes Semicon Sanand",
+        "normalized_name": "kaynes semicon sanand",
+        "entity_type": "project",
+        "geography": "Sanand, Gujarat, India",
+        "observed_role": "project_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 9",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:ba2b9760b980156a07c3",
+        "observed_name": "Crystal Matrix compound/display facility",
+        "normalized_name": "crystal matrix compound/display facility",
+        "entity_type": "project",
+        "geography": "Dholera, Gujarat, India",
+        "observed_role": "project_candidate",
+        "source_locator": "Verified findings captured during research.md:L16-L23",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:6cb73dc9b78b56888e73",
+        "observed_name": "Suchi Semicon OSAT",
+        "normalized_name": "suchi semicon osat",
+        "entity_type": "project",
+        "geography": "Surat, Gujarat, India",
+        "observed_role": "project_candidate",
+        "source_locator": "Verified findings captured during research.md:L16-L23",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:8b70625bcbcfe62cd107",
+        "observed_name": "Infineon Kulim 3",
+        "normalized_name": "infineon kulim 3",
+        "entity_type": "project",
+        "geography": "Kulim, Malaysia",
+        "observed_role": "project_candidate",
+        "source_locator": "Verified findings captured during research.md:L86-L92",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:eaf2cb4a06d88baa31ed",
+        "observed_name": "ST Catania 200mm SiC campus",
+        "normalized_name": "st catania 200mm sic campus",
+        "entity_type": "project",
+        "geography": "Catania, Italy",
+        "observed_role": "project_candidate",
+        "source_locator": "Verified findings captured during research.md:L94-L101",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      },
+      {
+        "candidate_id": "homi-candidate:d68f2f0935939e16079d",
+        "observed_name": "India semiconductor design projects",
+        "normalized_name": "india semiconductor design projects",
+        "entity_type": "project",
+        "geography": "India",
+        "observed_role": "project_candidate",
+        "source_locator": "Verified findings captured during research.md:L12-L14",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "status_semantics": "approved/financed/construction/operating labels remain separate; no promotion"
+      }
+    ],
+    "processes": [
+      {
+        "candidate_id": "homi-candidate:0a231bb4a7bfe0cb9241",
+        "observed_name": "Photoresist coating",
+        "normalized_name": "photoresist coating",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "Verified findings captured during research.md:L69-L76",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "coating resist on wafer"
+      },
+      {
+        "candidate_id": "homi-candidate:d5bd52eab010509e29f4",
+        "observed_name": "DUV/EUV lithography",
+        "normalized_name": "duv/euv lithography",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "Verified findings captured during research.md:L69-L76",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "pattern transfer using masks/reticles and projection optics"
+      },
+      {
+        "candidate_id": "homi-candidate:8f913a3a9ba551551705",
+        "observed_name": "Deposition",
+        "normalized_name": "deposition",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "Verified findings captured during research.md:L78-L84",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "CVD/ALD/PECVD/HDP-CVD/ECD film deposition"
+      },
+      {
+        "candidate_id": "homi-candidate:15cb5cccc730bfceba68",
+        "observed_name": "Etch",
+        "normalized_name": "etch",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "Verified findings captured during research.md:L69-L84",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "wet/dry etch, RIE/ALE and high-aspect-ratio structures"
+      },
+      {
+        "candidate_id": "homi-candidate:14030093931cca95b803",
+        "observed_name": "Ion implantation",
+        "normalized_name": "ion implantation",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "Verified findings captured during research.md:L69-L76",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "dopant implantation"
+      },
+      {
+        "candidate_id": "homi-candidate:fc9c17ccb0896596109d",
+        "observed_name": "CMP",
+        "normalized_name": "cmp",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "research_upstream_semiconductor_chain.csv:row 2",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "chemical-mechanical planarization"
+      },
+      {
+        "candidate_id": "homi-candidate:45a9e2dff34cd98163f8",
+        "observed_name": "Wafer dicing and die attach",
+        "normalized_name": "wafer dicing and die attach",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "Verified findings captured during research.md:L69-L76",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "back-end package preparation"
+      },
+      {
+        "candidate_id": "homi-candidate:1087380f3ccbf45cf2cd",
+        "observed_name": "Wire bonding/flip-chip",
+        "normalized_name": "wire bonding/flip-chip",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "research_equipment_packaging_compute_chain.csv:row 2",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "package interconnect"
+      },
+      {
+        "candidate_id": "homi-candidate:07de4e90be19d7891048",
+        "observed_name": "Encapsulation and final test",
+        "normalized_name": "encapsulation and final test",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 19",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "OSAT/ATMP package completion and test"
+      },
+      {
+        "candidate_id": "homi-candidate:2bec73f069691302d01e",
+        "observed_name": "SiC epitaxy and power-device fabrication",
+        "normalized_name": "sic epitaxy and power-device fabrication",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "Verified findings captured during research.md:L86-L101",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "compound semiconductor process chain"
+      },
+      {
+        "candidate_id": "homi-candidate:38fe95ab404c5832b987",
+        "observed_name": "PCB/IC substrate/EMS assembly",
+        "normalized_name": "pcb/ic substrate/ems assembly",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "map_global_semiconductor_industrial_stack.csv:row 6",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "electronics interconnect and assembly"
+      },
+      {
+        "candidate_id": "homi-candidate:14fbadbdda0cccfaa46d",
+        "observed_name": "In-line metrology and inspection",
+        "normalized_name": "in-line metrology and inspection",
+        "entity_type": "process",
+        "geography": "global/India",
+        "observed_role": "process_candidate",
+        "source_locator": "Verified findings captured during research.md:L47-L50;L78-L84",
+        "evidence_class": "MODELLED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "overlay, thickness, defect, yield and process control"
+      }
+    ],
+    "equipment": [
+      {
+        "candidate_id": "homi-candidate:f05329e8947b6af5e294",
+        "observed_name": "EUV scanner",
+        "normalized_name": "euv scanner",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "lithography equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:69c3738cb1f2a9776eac",
+        "observed_name": "DUV scanner",
+        "normalized_name": "duv scanner",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "Verified findings captured during research.md:L69-L76",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "lithography equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:ecce1fe72f95565e8bc8",
+        "observed_name": "Photoresist coater/developer",
+        "normalized_name": "photoresist coater/developer",
+        "entity_type": "equipment",
+        "geography": "Japan/global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "Verified findings captured during research.md:L60-L65",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "coater/developer equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:0cf36fd9244427ed5fc1",
+        "observed_name": "CVD/ALD deposition tool",
+        "normalized_name": "cvd/ald deposition tool",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "Verified findings captured during research.md:L78-L84",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "thin-film equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:217d0dacffec0ff8a989",
+        "observed_name": "RIE/ALE etch tool",
+        "normalized_name": "rie/ale etch tool",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "Verified findings captured during research.md:L78-L84",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "etch equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:8943380a030dc5b42ad8",
+        "observed_name": "Ion implanter",
+        "normalized_name": "ion implanter",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "map_global_semiconductor_industrial_stack.csv:row 7",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "doping equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:7cf59d89f3218b2d2bcb",
+        "observed_name": "CMP tool",
+        "normalized_name": "cmp tool",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "research_upstream_semiconductor_chain.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "planarization equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:0057d8533ec3db7ac85f",
+        "observed_name": "Wafer inspection/metrology tool",
+        "normalized_name": "wafer inspection/metrology tool",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "Verified findings captured during research.md:L45-L50",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "inspection and process control"
+      },
+      {
+        "candidate_id": "homi-candidate:cff58817e950678dc352",
+        "observed_name": "Die bonder and wire bonder",
+        "normalized_name": "die bonder and wire bonder",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "research_equipment_packaging_compute_chain.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "advanced packaging equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:f727b113cf813af1f48c",
+        "observed_name": "Flip-chip/TCB tool",
+        "normalized_name": "flip-chip/tcb tool",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "research_equipment_packaging_compute_chain.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "advanced packaging equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:53f2d33408a28d1c6689",
+        "observed_name": "Package test handler",
+        "normalized_name": "package test handler",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "research_equipment_packaging_compute_chain.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "OSAT/ATMP test equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:08bbca3cd77aae1401eb",
+        "observed_name": "300mm wafer line",
+        "normalized_name": "300mm wafer line",
+        "entity_type": "equipment",
+        "geography": "global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "Verified findings captured during research.md:L25-L30",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "fab manufacturing line"
+      },
+      {
+        "candidate_id": "homi-candidate:514633b765810ab835df",
+        "observed_name": "SiC epitaxy reactor",
+        "normalized_name": "sic epitaxy reactor",
+        "entity_type": "equipment",
+        "geography": "global/India",
+        "observed_role": "equipment_candidate",
+        "source_locator": "Verified findings captured during research.md:L86-L101",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "compound semiconductor equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:94afcf93b817407882be",
+        "observed_name": "EDA compute infrastructure",
+        "normalized_name": "eda compute infrastructure",
+        "entity_type": "equipment",
+        "geography": "India/global",
+        "observed_role": "equipment_candidate",
+        "source_locator": "Verified findings captured during research.md:L12-L14",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "design enablement equipment/software"
+      }
+    ],
+    "materials": [
+      {
+        "candidate_id": "homi-candidate:cfdb21a394103b899dbb",
+        "observed_name": "300mm silicon wafers",
+        "normalized_name": "300mm silicon wafers",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 19",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "front-end fab substrate"
+      },
+      {
+        "candidate_id": "homi-candidate:8185bfb6a3c95feb5258",
+        "observed_name": "Photoresist",
+        "normalized_name": "photoresist",
+        "entity_type": "material",
+        "geography": "Japan/global",
+        "observed_role": "material_candidate",
+        "source_locator": "Verified findings captured during research.md:L60-L65",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "lithography material"
+      },
+      {
+        "candidate_id": "homi-candidate:0a99675b30ddd707c439",
+        "observed_name": "Mask blanks/reticles",
+        "normalized_name": "mask blanks/reticles",
+        "entity_type": "material",
+        "geography": "global",
+        "observed_role": "material_candidate",
+        "source_locator": "Verified findings captured during research.md:L69-L76",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "lithography patterning material"
+      },
+      {
+        "candidate_id": "homi-candidate:aa92c1ba413cffd94626",
+        "observed_name": "High-purity specialty gases",
+        "normalized_name": "high-purity specialty gases",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "research_india_semiconductor_capability_gaps.csv:row 8",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "fab process gases"
+      },
+      {
+        "candidate_id": "homi-candidate:68de59af0a54f85a5348",
+        "observed_name": "High-purity chemicals",
+        "normalized_name": "high-purity chemicals",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "research_india_semiconductor_capability_gaps.csv:row 8",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "cleanroom/fab chemicals"
+      },
+      {
+        "candidate_id": "homi-candidate:7df7c23bcfb3e513529b",
+        "observed_name": "Silicon carbide substrates",
+        "normalized_name": "silicon carbide substrates",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "Verified findings captured during research.md:L86-L101",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "SiC power device substrate"
+      },
+      {
+        "candidate_id": "homi-candidate:676fad27683538c73eb4",
+        "observed_name": "Gallium nitride",
+        "normalized_name": "gallium nitride",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 13",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "GaN epitaxy/device material"
+      },
+      {
+        "candidate_id": "homi-candidate:64319843ec0314344642",
+        "observed_name": "Sapphire substrates",
+        "normalized_name": "sapphire substrates",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "research_upstream_semiconductor_chain.csv:row 5",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "compound semiconductor/display substrate"
+      },
+      {
+        "candidate_id": "homi-candidate:cbd97fe842de6b80833d",
+        "observed_name": "Copper interconnect material",
+        "normalized_name": "copper interconnect material",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "Verified findings captured during research.md:L78-L84",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "ECD/TSV/packaging material"
+      },
+      {
+        "candidate_id": "homi-candidate:40abc2cb55a2760e5043",
+        "observed_name": "ABF/IC substrate materials",
+        "normalized_name": "abf/ic substrate materials",
+        "entity_type": "material",
+        "geography": "Japan/global",
+        "observed_role": "material_candidate",
+        "source_locator": "map_global_semiconductor_industrial_stack.csv:row 6",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "advanced package substrate"
+      },
+      {
+        "candidate_id": "homi-candidate:5ec002b1b3569a84323a",
+        "observed_name": "Mold compound and package materials",
+        "normalized_name": "mold compound and package materials",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "research_equipment_packaging_compute_chain.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "OSAT packaging material"
+      },
+      {
+        "candidate_id": "homi-candidate:949108256e170dcab16b",
+        "observed_name": "Silicon ingot",
+        "normalized_name": "silicon ingot",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "research_upstream_semiconductor_chain.csv:row 2",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "wafer upstream"
+      },
+      {
+        "candidate_id": "homi-candidate:a5deb2c602c4cf957514",
+        "observed_name": "Rare/critical process minerals",
+        "normalized_name": "rare/critical process minerals",
+        "entity_type": "material",
+        "geography": "global/India",
+        "observed_role": "material_candidate",
+        "source_locator": "research_upstream_semiconductor_chain.csv:row 8",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "gallium/indium and other process inputs"
+      }
+    ],
+    "qualification": [
+      {
+        "candidate_id": "homi-candidate:1c92b63f547218eb5cca",
+        "observed_name": "First silicon",
+        "normalized_name": "first silicon",
+        "entity_type": "qualification",
+        "geography": "fab commissioning gate",
+        "observed_role": "qualification_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 6",
+        "evidence_class": "UNKNOWN",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "Tata-PSMC Dholera first silicon unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:19297d4b74cb6ac6da69",
+        "observed_name": "Wafer/device yield",
+        "normalized_name": "wafer/device yield",
+        "entity_type": "qualification",
+        "geography": "process qualification gate",
+        "observed_role": "qualification_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 14",
+        "evidence_class": "UNKNOWN",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "SiC/GaN and fab yields not publicly evidenced"
+      },
+      {
+        "candidate_id": "homi-candidate:3b651dc1d0aaa48d20e7",
+        "observed_name": "Customer product qualification",
+        "normalized_name": "customer product qualification",
+        "entity_type": "qualification",
+        "geography": "commercial supply gate",
+        "observed_role": "qualification_candidate",
+        "source_locator": "knowledge_graph_seed.csv:rows 5-10",
+        "evidence_class": "UNKNOWN",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "exact product/customer qualification unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:224756d5394746ec8f61",
+        "observed_name": "OSAT package qualification",
+        "normalized_name": "osat package qualification",
+        "entity_type": "qualification",
+        "geography": "package release gate",
+        "observed_role": "qualification_candidate",
+        "source_locator": "knowledge_graph_seed.csv:rows 5-12",
+        "evidence_class": "UNKNOWN",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "package mix/throughput/customer qualification unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:a5236a47bc2d24bf5be1",
+        "observed_name": "Node qualification",
+        "normalized_name": "node qualification",
+        "entity_type": "qualification",
+        "geography": "process-design gate",
+        "observed_role": "qualification_candidate",
+        "source_locator": "Verified findings captured during research.md:L8-L14",
+        "evidence_class": "UNKNOWN",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "28nm-110nm programme scope does not prove qualified output"
+      },
+      {
+        "candidate_id": "homi-candidate:43b0b5a9f1e08231d39c",
+        "observed_name": "EUV/DUV tool acceptance",
+        "normalized_name": "euv/duv tool acceptance",
+        "entity_type": "qualification",
+        "geography": "equipment acceptance gate",
+        "observed_role": "qualification_candidate",
+        "source_locator": "Verified findings captured during research.md:L45-L50",
+        "evidence_class": "UNKNOWN",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "company delivery is not customer production qualification"
+      },
+      {
+        "candidate_id": "homi-candidate:6d2be70805a05718dfc9",
+        "observed_name": "Metrology/yield control",
+        "normalized_name": "metrology/yield control",
+        "entity_type": "qualification",
+        "geography": "process-control gate",
+        "observed_role": "qualification_candidate",
+        "source_locator": "Verified findings captured during research.md:L78-L84",
+        "evidence_class": "UNKNOWN",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "\u00c5-level/mass metrology capability is described, site evidence unresolved"
+      },
+      {
+        "candidate_id": "homi-candidate:28b0523d75ef9a081e71",
+        "observed_name": "Commercial shipment verification",
+        "normalized_name": "commercial shipment verification",
+        "entity_type": "qualification",
+        "geography": "operating-state gate",
+        "observed_role": "qualification_candidate",
+        "source_locator": "Verified findings captured during research.md:L12-L23",
+        "evidence_class": "UNKNOWN",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "government commercial-production wording conflicts across dates"
+      }
+    ],
+    "clusters": [
+      {
+        "candidate_id": "homi-candidate:b4b36fce90f34bde3e41",
+        "observed_name": "Gujarat semiconductor cluster",
+        "normalized_name": "gujarat semiconductor cluster",
+        "entity_type": "industrial_cluster",
+        "geography": "Sanand/Dholera, Gujarat, India",
+        "observed_role": "cluster_candidate",
+        "source_locator": "knowledge_graph_seed.csv:rows 5-13",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "fab/OSAT/compound projects"
+      },
+      {
+        "candidate_id": "homi-candidate:9c07839256c05e9f934a",
+        "observed_name": "Assam OSAT cluster",
+        "normalized_name": "assam osat cluster",
+        "entity_type": "industrial_cluster",
+        "geography": "Jagiroad, Assam, India",
+        "observed_role": "cluster_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 7",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "OSAT project and logistics cluster"
+      },
+      {
+        "candidate_id": "homi-candidate:39cc1bb489cbba637887",
+        "observed_name": "Japan materials/equipment cluster",
+        "normalized_name": "japan materials/equipment cluster",
+        "entity_type": "industrial_cluster",
+        "geography": "Japan",
+        "observed_role": "cluster_candidate",
+        "source_locator": "Verified findings captured during research.md:L60-L65",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "coater/developer, wafers, photoresists, equipment"
+      },
+      {
+        "candidate_id": "homi-candidate:116986d49c222685f644",
+        "observed_name": "Taiwan foundry cluster",
+        "normalized_name": "taiwan foundry cluster",
+        "entity_type": "industrial_cluster",
+        "geography": "Taiwan",
+        "observed_role": "cluster_candidate",
+        "source_locator": "knowledge_graph_seed.csv:row 4",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "logic foundry, packaging, process ecosystem"
+      },
+      {
+        "candidate_id": "homi-candidate:4b40282dcf4ab419280f",
+        "observed_name": "Kulim-Villach SiC virtual fab",
+        "normalized_name": "kulim-villach sic virtual fab",
+        "entity_type": "industrial_cluster",
+        "geography": "Malaysia/Austria",
+        "observed_role": "cluster_candidate",
+        "source_locator": "Verified findings captured during research.md:L86-L92",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "SiC/GaN technology and process-sharing cluster"
+      },
+      {
+        "candidate_id": "homi-candidate:578b1cdbbf53fda2e752",
+        "observed_name": "Catania SiC campus",
+        "normalized_name": "catania sic campus",
+        "entity_type": "industrial_cluster",
+        "geography": "Catania, Italy",
+        "observed_role": "cluster_candidate",
+        "source_locator": "Verified findings captured during research.md:L94-L101",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "role": "integrated SiC substrate-to-package cluster"
+      }
+    ]
+  },
+  "relation_candidates": [
+    {
+      "relation_id": "rel_manus14_01",
+      "subject_candidate": "homi-candidate:181cd009b37b044c89de",
+      "raw_predicate": "depends_on",
+      "object_candidate": "homi-candidate:d8ee985d146a5f05b733",
+      "semantic_qualifier": "Deep optics supplier relation; product scope remains unresolved.",
+      "evidence": {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "locator": "knowledge_graph_seed.csv:row 17"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_02",
+      "subject_candidate": "homi-candidate:4118a797fc88e6341b68",
+      "raw_predicate": "partners_with",
+      "object_candidate": "homi-candidate:79fe5c0eac8a11e67fbf",
+      "semantic_qualifier": "Licensed/partner relation; transfer milestones require confirmation.",
+      "evidence": {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "locator": "knowledge_graph_seed.csv:row 18"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_03",
+      "subject_candidate": "homi-candidate:4118a797fc88e6341b68",
+      "raw_predicate": "requires",
+      "object_candidate": "homi-candidate:cfdb21a394103b899dbb",
+      "semantic_qualifier": "Engineering dependency; domestic source not evidenced.",
+      "evidence": {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "locator": "knowledge_graph_seed.csv:row 19"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_04",
+      "subject_candidate": "Micron Sanand",
+      "raw_predicate": "performs",
+      "object_candidate": "homi-candidate:07de4e90be19d7891048",
+      "semantic_qualifier": "Operating claim; package mix and throughput unknown.",
+      "evidence": {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "locator": "knowledge_graph_seed.csv:row 20"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_05",
+      "subject_candidate": "homi-candidate:50d7d8c3671ff8301a56",
+      "raw_predicate": "proposes",
+      "object_candidate": "homi-candidate:ba2b9760b980156a07c3",
+      "semantic_qualifier": "Project/nameplate relation; not qualified output.",
+      "evidence": {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "locator": "knowledge_graph_seed.csv:row 21"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_06",
+      "subject_candidate": "homi-candidate:52a9102024147131fd78",
+      "raw_predicate": "has_facility_presence",
+      "object_candidate": "homi-candidate:40b3f522686a98ac3062",
+      "semantic_qualifier": "Facility/status claim; no effective qualified capacity promotion.",
+      "evidence": {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "locator": "knowledge_graph_seed.csv:row 5"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_07",
+      "subject_candidate": "homi-candidate:ddf391f1e21f9872be6f",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:4118a797fc88e6341b68",
+      "semantic_qualifier": "Approved/under-construction project state.",
+      "evidence": {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "locator": "knowledge_graph_seed.csv:row 6"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_08",
+      "subject_candidate": "homi-candidate:ddf391f1e21f9872be6f",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:7d670836095893043423",
+      "semantic_qualifier": "Status varies across dated sources; conflicted staging relation.",
+      "evidence": {
+        "artifact": "manus-14/knowledge_graph_seed.csv",
+        "locator": "knowledge_graph_seed.csv:row 7"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_09",
+      "subject_candidate": "homi-candidate:7710e4aee7b77dd3cefb",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:6cb73dc9b78b56888e73",
+      "semantic_qualifier": "Approved/proposed project; no operating qualification.",
+      "evidence": {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "locator": "Verified findings captured during research.md:L16-L23"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_10",
+      "subject_candidate": "homi-candidate:058117272affb6de840d",
+      "raw_predicate": "operates_candidate",
+      "object_candidate": "homi-candidate:465e8a60de800e5c68e6",
+      "semantic_qualifier": "Company-reported phase-one operating/expanding claim.",
+      "evidence": {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "locator": "Verified findings captured during research.md:L86-L92"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_11",
+      "subject_candidate": "homi-candidate:110eeee3e8ff2e6754c5",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:eaf2cb4a06d88baa31ed",
+      "semantic_qualifier": "Announced/targeted buildout relation.",
+      "evidence": {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "locator": "Verified findings captured during research.md:L94-L101"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_12",
+      "subject_candidate": "homi-candidate:d2f1170e8c8c0f4408eb",
+      "raw_predicate": "targets",
+      "object_candidate": "homi-candidate:1c92b63f547218eb5cca",
+      "semantic_qualifier": "2028 commissioning target; not operating capacity.",
+      "evidence": {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "locator": "Verified findings captured during research.md:L5-L14"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_13",
+      "subject_candidate": "homi-candidate:4118a797fc88e6341b68",
+      "raw_predicate": "requires_process",
+      "object_candidate": "homi-candidate:d5bd52eab010509e29f4",
+      "semantic_qualifier": "Process dependency; facility capability unknown.",
+      "evidence": {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "locator": "Verified findings captured during research.md:L69-L76"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_14",
+      "subject_candidate": "homi-candidate:7be4a00f0bca8a374db6",
+      "raw_predicate": "requires_material",
+      "object_candidate": "homi-candidate:7df7c23bcfb3e513529b",
+      "semantic_qualifier": "Compound-semiconductor material dependency.",
+      "evidence": {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "locator": "Verified findings captured during research.md:L86-L101"
+      },
+      "canonical_target": null,
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_15",
+      "subject_candidate": "India semiconductor qualified output",
+      "raw_predicate": "requires",
+      "object_candidate": "homi-candidate:3b651dc1d0aaa48d20e7",
+      "semantic_qualifier": "Qualification gate remains UNKNOWN.",
+      "evidence": {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "locator": "Verified findings captured during research.md:L16-L23"
+      },
+      "canonical_target": "cap:industrial-product-qualification",
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_16",
+      "subject_candidate": "India semiconductor qualified output",
+      "raw_predicate": "requires",
+      "object_candidate": "homi-candidate:14fbadbdda0cccfaa46d",
+      "semantic_qualifier": "Metrology relation is a staging capability mapping.",
+      "evidence": {
+        "artifact": "manus-14/Verified findings captured during research.md",
+        "locator": "Verified findings captured during research.md:L45-L50;L78-L84"
+      },
+      "canonical_target": "cap:metrology",
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_17",
+      "subject_candidate": "Power semiconductor",
+      "raw_predicate": "maps_to",
+      "object_candidate": "Power electronics",
+      "semantic_qualifier": "Existing canonical power-electronics vocabulary only; no shadow semiconductor ID.",
+      "evidence": {
+        "artifact": "manus-14/map_global_semiconductor_industrial_stack.csv",
+        "locator": "map_global_semiconductor_industrial_stack.csv:row 3"
+      },
+      "canonical_target": "cap:power-electronics",
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus14_18",
+      "subject_candidate": "Semiconductor process control",
+      "raw_predicate": "maps_to",
+      "object_candidate": "Industrial electronics",
+      "semantic_qualifier": "Existing industrial-electronics vocabulary only.",
+      "evidence": {
+        "artifact": "manus-14/research_india_semiconductor_capability_gaps.csv",
+        "locator": "research_india_semiconductor_capability_gaps.csv:row 8"
+      },
+      "canonical_target": "cap:industrial-electronics",
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    }
+  ],
+  "capacity_claims": [
+    {
+      "capacity_claim_id": "clm_manus14_01",
+      "subject": "Semicon 2.0",
+      "capacity_type": "approved_policy_target",
+      "value": "127500; 2028",
+      "unit": "INR crore; year",
+      "epistemic_class": "REPORTED",
+      "source_locator": "Verified findings captured during research.md:L5-L14",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284784&reg=48&lang=2",
+      "geography": "India",
+      "date_or_period": "2026 policy; 2028 target",
+      "status_state": "ANNOUNCED_OR_APPROVED_OR_OPERATING_CLAIM",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "Policy approval and future schedule do not prove commissioned fab output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus14_02",
+      "subject": "ISM 1.0",
+      "capacity_type": "approved_and_operating_claim",
+      "value": "12; >1.64 lakh crore; 3",
+      "unit": "units; INR; companies",
+      "epistemic_class": "REPORTED",
+      "source_locator": "Verified findings captured during research.md:L12-L14",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284784&reg=48&lang=2",
+      "geography": "India",
+      "date_or_period": "15 Jul 2026",
+      "status_state": "ANNOUNCED_OR_APPROVED_OR_OPERATING_CLAIM",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "Aggregate approved/invested counts mix project stages and do not establish qualified output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus14_03",
+      "subject": "Crystal Matrix Limited",
+      "capacity_type": "announced_nameplate",
+      "value": "72000; 24000",
+      "unit": "m2/year; RGB wafer sets/year",
+      "epistemic_class": "REPORTED",
+      "source_locator": "Verified findings captured during research.md:L16-L23",
+      "original_url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-two-more-semiconductor-manufacturing-units-with-cumulative-investment-of-more-than-rs-3900-crore/",
+      "geography": "Dholera, Gujarat, India",
+      "date_or_period": "5 May 2026",
+      "status_state": "ANNOUNCED_OR_APPROVED_OR_OPERATING_CLAIM",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "Proposed capacity is not construction, operating, qualified, or available output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus14_04",
+      "subject": "Suchi Semicon Private Limited",
+      "capacity_type": "announced_nameplate",
+      "value": "1033.20",
+      "unit": "million chips/year",
+      "epistemic_class": "REPORTED",
+      "source_locator": "Verified findings captured during research.md:L19-L23",
+      "original_url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-two-more-semiconductor-manufacturing-units-with-cumulative-investment-of-more-than-rs-3900-crore/",
+      "geography": "Surat, Gujarat, India",
+      "date_or_period": "5 May 2026",
+      "status_state": "ANNOUNCED_OR_APPROVED_OR_OPERATING_CLAIM",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "Proposed capacity is not commissioned or qualified throughput.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus14_05",
+      "subject": "SEMI 300mm outlook",
+      "capacity_type": "forecast_and_spend",
+      "value": "413; 142",
+      "unit": "fabs/lines; USD billion",
+      "epistemic_class": "ESTIMATED",
+      "source_locator": "Verified findings captured during research.md:L25-L30",
+      "original_url": "https://www.semi.org/en/products-services/market-data/300mm-fab-outlook",
+      "geography": "Global",
+      "date_or_period": "Q2 2026 outlook; forecast through 2029",
+      "status_state": "ANNOUNCED_OR_APPROVED_OR_OPERATING_CLAIM",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "Forecast includes R&D/pilot lines and educated estimates; it is not measured qualified output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus14_06",
+      "subject": "ASML",
+      "capacity_type": "company_wide_measured",
+      "value": "535; 5100",
+      "unit": "systems sold; suppliers",
+      "epistemic_class": "MEASURED",
+      "source_locator": "Verified findings captured during research.md:L45-L50",
+      "original_url": "https://www.asml.com/en/investors/annual-report/2025",
+      "geography": "Global",
+      "date_or_period": "2025 annual report",
+      "status_state": "ANNOUNCED_OR_APPROVED_OR_OPERATING_CLAIM",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "Metrics do not establish EUV share, facility-specific qualified output, market share or available capacity.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus14_09",
+      "subject": "Infineon Kulim SiC fab",
+      "capacity_type": "financed_and_operating_claim",
+      "value": "2; 5",
+      "unit": "EUR billion",
+      "epistemic_class": "REPORTED",
+      "source_locator": "Verified findings captured during research.md:L86-L92",
+      "original_url": "https://www.infineon.com/press-release/2024/infxx202408-133",
+      "geography": "Kulim, Malaysia",
+      "date_or_period": "8 Aug 2024; expansion plan",
+      "status_state": "ANNOUNCED_OR_APPROVED_OR_OPERATING_CLAIM",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "Investment and inauguration do not establish sustained qualified output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus14_10",
+      "subject": "ST Catania SiC campus",
+      "capacity_type": "announced_nameplate",
+      "value": "15000",
+      "unit": "wafers/week",
+      "epistemic_class": "REPORTED",
+      "source_locator": "Verified findings captured during research.md:L94-L101",
+      "original_url": "https://newsroom.st.com/media-center/press-item.html/c3262.html",
+      "geography": "Catania, Italy",
+      "date_or_period": "2026 start; 2033 target",
+      "status_state": "ANNOUNCED_OR_APPROVED_OR_OPERATING_CLAIM",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "Targeted full-build capacity is not current operating qualified output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "clm_manus14_11",
+      "subject": "Micron Sanand",
+      "capacity_type": "operating_claim",
+      "value": null,
+      "unit": null,
+      "epistemic_class": "REPORTED",
+      "source_locator": "knowledge_graph_seed.csv:row 5",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284784&reg=48&lang=2",
+      "geography": "Sanand, Gujarat, India",
+      "date_or_period": "2026",
+      "status_state": "ANNOUNCED_OR_APPROVED_OR_OPERATING_CLAIM",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "Operating claim is not a measured throughput or qualified customer supply record.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus14_13",
+      "subject": "India semiconductor qualified output",
+      "capacity_type": "qualified_effective_capacity_unknown",
+      "value": "UNKNOWN",
+      "unit": "site/product-specific",
+      "epistemic_class": "UNKNOWN",
+      "source_locator": "Verified findings captured during research.md:L16-L23;L32-L37",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284784&reg=48&lang=2",
+      "geography": "India",
+      "date_or_period": "2026",
+      "status_state": "UNKNOWN",
+      "qualification_state": "UNKNOWN",
+      "available_state": "UNKNOWN",
+      "caveat": "No site-level good qualified output, yield, customer acceptance or available capacity is established by this slice.",
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "capacity_semantics": {
+    "capacity_type_counts": {
+      "announced_nameplate": 3,
+      "approved_and_operating_claim": 1,
+      "approved_policy_target": 1,
+      "company_wide_measured": 1,
+      "financed_and_operating_claim": 1,
+      "forecast_and_spend": 1,
+      "operating_claim": 1,
+      "qualified_effective_capacity_unknown": 1
+    },
+    "operating_qualified_capacity_claims": 0,
+    "effective_available_capacity_claims": 0,
+    "qualified_available_state": "UNKNOWN",
+    "distinction_guard": "Announced, approved, financed, under-construction, operating claim, company-wide measured metric, facility presence, forecast, nameplate, qualified and available states remain distinct."
+  },
+  "canonical_reconciliation": {
+    "registry_manifest": "data/registry/manifest.yaml",
+    "existing_canonical_capability_ids": [
+      "cap:industrial-electronics",
+      "cap:industrial-product-qualification",
+      "cap:metrology",
+      "cap:power-electronics",
+      "cap:thermal-management"
+    ],
+    "staging_matches": [
+      {
+        "observed_name": "Semiconductor process control",
+        "canonical_id": "cap:industrial-electronics",
+        "match_basis": "existing canonical vocabulary only; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "observed_name": "Power semiconductor",
+        "canonical_id": "cap:power-electronics",
+        "match_basis": "existing canonical vocabulary only; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "observed_name": "In-line metrology and inspection",
+        "canonical_id": "cap:metrology",
+        "match_basis": "existing canonical vocabulary only; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "observed_name": "Customer product qualification",
+        "canonical_id": "cap:industrial-product-qualification",
+        "match_basis": "existing canonical vocabulary only; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      },
+      {
+        "observed_name": "Thermal management",
+        "canonical_id": "cap:thermal-management",
+        "match_basis": "existing canonical vocabulary only; no fuzzy merge",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false
+      }
+    ],
+    "no_shadow_identities": true,
+    "fuzzy_merge": false,
+    "canonical_promotion": "NONE",
+    "reconciliation_rule": "Use existing canonical capability IDs only as references; do not create semiconductor shadow IDs or promote candidates."
+  },
+  "unknown_candidates": [
+    {
+      "unknown_id": "unk_manus14_01",
+      "question": "Current qualified output, yield, package mix and customer acceptance at Micron Sanand, Kaynes and CG Semi.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_02",
+      "question": "Whether Tata-PSMC Dholera has begun construction, first silicon, and node/product qualification.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_03",
+      "question": "Tata Jagiroad OSAT execution/operating status and the reason for conflicting dated government statements.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_04",
+      "question": "CML and Suchi project finance, construction, commissioning and qualified product output.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_05",
+      "question": "India's current front-end equipment, materials, specialty gases, wafers and metrology availability.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_06",
+      "question": "SiC/GaN wafer/device yield, customer qualification and effective capacity in SiCSem, Infineon and ST facilities.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_07",
+      "question": "ASML product-family output, EUV share, lead time and customer-qualified wafer impact.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_08",
+      "question": "SEMI 300mm forecast conversion from project estimate to operating qualified lines.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_09",
+      "question": "First-silicon and process-node qualification for approved Indian fabs.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_10",
+      "question": "Commercial shipment versus commercial-production wording across government releases.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_11",
+      "question": "Semantic interpretation of repaired knowledge_graph_seed row 15 after overflow joining.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    },
+    {
+      "unknown_id": "unk_manus14_12",
+      "question": "Available qualified capacity by facility/product/customer; no such capacity is established in this slice.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Dated primary filings, site audits, first-silicon/wafer/shipments data, yield and customer qualification records."
+    }
+  ],
+  "conflict_candidates": [
+    {
+      "conflict_id": "cnf_manus14_01",
+      "signal": "Three firms reported commercial production in July 2026 versus two commercial shipments in May 2026.",
+      "resolution": "Retain dated statements separately and reconcile against primary shipment/production records.",
+      "resolution_state": "CONFLICTED",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus14_02",
+      "signal": "Tata Jagiroad execution/operating status varies in the knowledge seed and official releases.",
+      "resolution": "Keep CONFLICTED until site and dated production evidence resolves status.",
+      "resolution_state": "CONFLICTED",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus14_03",
+      "signal": "Knowledge graph row 15 has CSV overflow and an ambiguous staging repair.",
+      "resolution": "Do not promote row semantics before manual semantic review.",
+      "resolution_state": "CONFLICTED",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus14_04",
+      "signal": "Parallel memo exact capacities and operating dates are cautioned as unsupported in verified findings.",
+      "resolution": "Downgrade to UNKNOWN/REPORTED/CONFLICTED unless directly sourced.",
+      "resolution_state": "CONFLICTED",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus14_05",
+      "signal": "Approved, financed, under-construction, opening and operating labels are mixed in project inventories.",
+      "resolution": "Represent state transitions separately; never collapse to qualified available capacity.",
+      "resolution_state": "CONFLICTED",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus14_06",
+      "signal": "Company equipment metrics and fab capacity forecasts can be mistaken for customer-qualified output.",
+      "resolution": "Preserve company-wide/forecast scope and require facility-level qualification.",
+      "resolution_state": "CONFLICTED",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus14_07",
+      "signal": "CML/Suchi proposed capacity and ISM aggregate project count use different status and denominator scopes.",
+      "resolution": "Reconcile project boundaries before aggregation.",
+      "resolution_state": "CONFLICTED",
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "freshness_flags": {
+    "evidence_cutoff": "2026-08-24",
+    "revalidation_reference_date": "2026-08-25",
+    "flag": "2026 project/status/forecast claims require dated primary revalidation; no web refresh was performed."
+  },
+  "explicit_accounting": {
+    "artifacts": 13,
+    "manifest_declared_artifacts": 11,
+    "actual_file_artifacts": 13,
+    "zip_total_members": 15,
+    "logical_records_after_csv_json_dedupe": 59,
+    "physical_structured_rows": 91,
+    "duplicate_records_removed": 32,
+    "sources": 328,
+    "claims": 91,
+    "structured_claim_blocks": 64,
+    "knowledge_graph_claim_blocks": 27,
+    "claim_count_basis": "Four 8-row CSV/JSON research families x 2 populated claim fields (Research Memo and Source Ledger) + 27 knowledge-graph rows; CSV/JSON mirrors counted once.",
+    "entity_candidates": 104,
+    "entity_candidate_breakdown": {
+      "organizations": 22,
+      "facilities": 17,
+      "projects": 12,
+      "processes": 12,
+      "equipment": 14,
+      "materials": 13,
+      "qualification": 8,
+      "clusters": 6
+    },
+    "relations": 18,
+    "facilities": 17,
+    "projects": 12,
+    "processes": 12,
+    "equipment": 14,
+    "materials": 13,
+    "qualification_candidates": 8,
+    "capacity_claims": 10,
+    "capacity_claims_by_type": {
+      "announced_nameplate": 3,
+      "approved_and_operating_claim": 1,
+      "approved_policy_target": 1,
+      "company_wide_measured": 1,
+      "financed_and_operating_claim": 1,
+      "forecast_and_spend": 1,
+      "operating_claim": 1,
+      "qualified_effective_capacity_unknown": 1
+    },
+    "operating_qualified_capacity_claims": 0,
+    "effective_available_capacity_claims": 0,
+    "unknown_label_occurrences": 128,
+    "conflicted_label_occurrences": 37,
+    "unknown_candidate_records": 12,
+    "conflict_candidate_records": 7,
+    "duplicate_artifact_pairs": 0,
+    "malformed_artifacts": 1,
+    "malformed_records": 1,
+    "repaired_artifacts": 1,
+    "repaired_records": 1,
+    "ambiguous_repairs": 1,
+    "skipped_as_non_evidence_artifacts": 1,
+    "escalation_count": 19,
+    "raw_zip_mismatch_count": 0,
+    "manifest_actual_count_mismatch": true,
+    "evidence_artifacts_before_deduplication": 12
+  },
+  "escalation_packets": [
+    {
+      "escalation_id": "esc_manus14_01",
+      "trigger": "Current qualified output, yield, package mix and customer acceptance at Micron Sanand, Kaynes and CG Semi.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_02",
+      "trigger": "Whether Tata-PSMC Dholera has begun construction, first silicon, and node/product qualification.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_03",
+      "trigger": "Tata Jagiroad OSAT execution/operating status and the reason for conflicting dated government statements.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_04",
+      "trigger": "CML and Suchi project finance, construction, commissioning and qualified product output.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_05",
+      "trigger": "India's current front-end equipment, materials, specialty gases, wafers and metrology availability.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_06",
+      "trigger": "SiC/GaN wafer/device yield, customer qualification and effective capacity in SiCSem, Infineon and ST facilities.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_07",
+      "trigger": "ASML product-family output, EUV share, lead time and customer-qualified wafer impact.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_08",
+      "trigger": "SEMI 300mm forecast conversion from project estimate to operating qualified lines.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_09",
+      "trigger": "First-silicon and process-node qualification for approved Indian fabs.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_10",
+      "trigger": "Commercial shipment versus commercial-production wording across government releases.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_11",
+      "trigger": "Semantic interpretation of repaired knowledge_graph_seed row 15 after overflow joining.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_12",
+      "trigger": "Available qualified capacity by facility/product/customer; no such capacity is established in this slice.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_13",
+      "trigger": "Three firms reported commercial production in July 2026 versus two commercial shipments in May 2026.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_14",
+      "trigger": "Tata Jagiroad execution/operating status varies in the knowledge seed and official releases.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_15",
+      "trigger": "Knowledge graph row 15 has CSV overflow and an ambiguous staging repair.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_16",
+      "trigger": "Parallel memo exact capacities and operating dates are cautioned as unsupported in verified findings.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_17",
+      "trigger": "Approved, financed, under-construction, opening and operating labels are mixed in project inventories.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_18",
+      "trigger": "Company equipment metrics and fab capacity forecasts can be mistaken for customer-qualified output.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus14_19",
+      "trigger": "CML/Suchi proposed capacity and ISM aggregate project count use different status and denominator scopes.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact facility/geography",
+        "process/node/package scope",
+        "qualification or operating evidence",
+        "yield and available-output evidence"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    }
+  ],
+  "validation": {
+    "archive_integrity": "PASS",
+    "all_actual_artifacts_hash_and_byte_match": true,
+    "conditioning_raw_unchanged": true,
+    "knowledge_graph_repair_metadata_present": true,
+    "malformed_artifact_count": 1,
+    "python_minus_m_json_tool": "PASS (after materialization)",
+    "deterministic": true,
+    "canonical_changes": 0
+  }
+}
+
+

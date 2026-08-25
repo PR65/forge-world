@@ -1,0 +1,80 @@
+version: "1.0.0"
+frozen: true
+frozen_reason: "Campaign benchmark set fixed before world-model expansion or gap closure."
+objectives:
+  - id: india_heat_pumps_50k
+    title: "India manufactures 50,000 industrial heat pumps per year"
+    geography: IND
+    target: {annual_units: 50000, unit: industrial_heat_pumps, deadline_year: 2030}
+    requirements:
+      - {id: compressor, label: "Industrial compressor manufacturing", role: core_process_hardware, canonical_id: "cap:industrial-compressors", decision_weight: 5, decision_critical: true, research_question: "Which Indian facilities can manufacture and qualify objective-scale industrial heat-pump compressors?"}
+      - {id: heat_exchanger, label: "Industrial heat exchangers", role: thermal_hardware, canonical_id: "cap:heat-exchangers", decision_weight: 4, decision_critical: true, research_question: "What qualified heat-exchanger product envelope and effective capacity exist?"}
+      - {id: motor, label: "Precision electric motors", role: drive_system, canonical_id: "cap:electric-motors", decision_weight: 4, decision_critical: true}
+      - {id: power_electronics, label: "Variable-speed power electronics", role: drive_system, canonical_id: "cap:power-electronics", decision_weight: 4, decision_critical: true}
+      - {id: controls, label: "Industrial controls", role: controls, canonical_id: "cap:industrial-electronics", decision_weight: 3, decision_critical: false}
+      - {id: metrology, label: "Industrial metrology", role: qualification, canonical_id: "cap:metrology", decision_weight: 2, decision_critical: false}
+
+  - id: india_electrolyzers_multi_gw
+    title: "India develops 5 GW/year electrolyzer manufacturing capability"
+    geography: IND
+    target: {annual_output: 5, unit: GW_electrolyzer_per_year, deadline_year: 2030}
+    requirements:
+      - {id: electrochemistry, label: "Electrochemical stack manufacturing", role: core_stack, canonical_id: "cap:electrochemical-stacks", decision_weight: 5, decision_critical: true, research_question: "What stack technology, yield, durability qualification, and effective capacity exist in India?"}
+      - {id: membrane, label: "Membranes and catalyst-coated electrodes", role: critical_material, canonical_id: "cap:membrane-electrode-assemblies", decision_weight: 5, decision_critical: true, research_question: "Which membrane/electrode chemistries have qualified domestic production and what is their allocation?"}
+      - {id: power_electronics, label: "High-current rectifiers and power electronics", role: balance_of_plant, canonical_id: "cap:power-electronics", decision_weight: 4, decision_critical: true}
+      - {id: gas_handling, label: "Hydrogen gas handling and purification", role: balance_of_plant, canonical_id: "cap:industrial-gas-systems", decision_weight: 4, decision_critical: true}
+      - {id: precision_assembly, label: "Precision assembly and calibration", role: production, canonical_id: "cap:precision-assembly-calibration", decision_weight: 3, decision_critical: false}
+      - {id: qualification, label: "Pressure/electrical safety qualification", role: qualification, canonical_id: "cap:industrial-product-qualification", decision_weight: 3, decision_critical: true}
+
+  - id: kenya_ag_drones_100k
+    title: "Kenya manufactures 100,000 agricultural drones per year"
+    geography: KEN
+    target: {annual_units: 100000, unit: agricultural_drones, deadline_year: 2030}
+    requirements:
+      - {id: motors, label: "High-efficiency electric motors", role: propulsion, canonical_id: "cap:electric-motors", decision_weight: 4, decision_critical: true}
+      - {id: power_electronics, label: "Motor drives and power electronics", role: propulsion, canonical_id: "cap:power-electronics", decision_weight: 4, decision_critical: true}
+      - {id: battery_pack, label: "Battery-pack integration", role: energy_storage, canonical_id: "cap:battery-pack-integration", decision_weight: 4, decision_critical: true}
+      - {id: avionics, label: "Embedded avionics and industrial electronics", role: control, canonical_id: "cap:industrial-electronics", decision_weight: 4, decision_critical: true}
+      - {id: composite_structures, label: "Lightweight composite structures", role: airframe, canonical_id: "cap:composite-structures", decision_weight: 3, decision_critical: false}
+      - {id: tooling, label: "Production tooling and fixtures", role: production, canonical_id: "cap:tooling-fixtures", decision_weight: 2, decision_critical: false}
+      - {id: field_service, label: "Agricultural field-service and repair network", role: lifecycle, canonical_id: "cap:distributed-field-service", decision_weight: 3, decision_critical: true}
+
+  - id: rare_earth_minimized_motor
+    title: "Industrial electric-motor architecture minimizing Chinese rare-earth permanent-magnet dependency"
+    geography: GLOBAL
+    target: {design_objective: minimize_CHN_rare_earth_PM_dependency, unit: architecture_selection}
+    requirements:
+      - {id: motors, label: "Precision electric-motor manufacturing", role: architecture_family, canonical_id: "cap:electric-motors", decision_weight: 5, decision_critical: true}
+      - {id: controls, label: "Advanced motor controls", role: architecture_enabler, canonical_id: "cap:industrial-electronics", decision_weight: 4, decision_critical: true}
+      - {id: power_electronics, label: "Power electronics", role: architecture_enabler, canonical_id: "cap:power-electronics", decision_weight: 4, decision_critical: true}
+      - {id: electrical_steel, label: "Motor-grade electrical steel", role: critical_material, canonical_id: "cap:electrical-steel", decision_weight: 5, decision_critical: true, research_question: "What motor-grade electrical-steel specifications, qualification, and effective capacity are available outside China?"}
+      - {id: copper_rotor, label: "Copper rotor and high-integrity casting", role: substitution_route, canonical_id: "cap:advanced-copper-casting", decision_weight: 3, decision_critical: false}
+      - {id: bearings, label: "Precision bearings", role: motion_system, canonical_id: "cap:precision-bearings", decision_weight: 3, decision_critical: false}
+      - {id: magnet_chain, label: "Rare-earth permanent-magnet chain", role: residual_dependency, canonical_id: "cap:rare-earth-magnet", decision_weight: 4, decision_critical: true}
+
+  - id: india_12u_satellites_10k
+    title: "India manufactures 10,000 twelve-unit hyperspectral satellites per year"
+    geography: IND
+    target: {annual_units: 10000, unit: 12U_hyperspectral_satellites, deadline_year: 2032}
+    requirements:
+      - {id: hirel, label: "High-reliability qualification", role: qualification, canonical_id: "cap:hirel-qualification", decision_weight: 5, decision_critical: true}
+      - {id: precision_assembly, label: "Precision assembly and calibration", role: production, canonical_id: "cap:precision-assembly-calibration", decision_weight: 4, decision_critical: true}
+      - {id: thermal, label: "Thermal-management systems", role: spacecraft_bus, canonical_id: "cap:thermal-management", decision_weight: 3, decision_critical: false}
+      - {id: electronics, label: "Industrial/space electronics", role: avionics, canonical_id: "cap:industrial-electronics", decision_weight: 5, decision_critical: true}
+      - {id: optical_payload, label: "Hyperspectral optical payload production", role: payload, canonical_id: "cap:space-optical-payloads", decision_weight: 5, decision_critical: true, research_question: "Which facilities can serially produce and calibrate hyperspectral payloads at the target cadence?"}
+      - {id: test, label: "Environmental test infrastructure", role: qualification, canonical_id: "cap:environmental-test", decision_weight: 4, decision_critical: true}
+      - {id: tooling, label: "Production tooling and fixtures", role: production, canonical_id: "cap:tooling-fixtures", decision_weight: 2, decision_critical: false}
+
+  - id: shared_cnc_robotics_aerospace_ev
+    title: "Shared capabilities constraining CNC, robotics, aerospace, and EV manufacturing"
+    geography: GLOBAL
+    target: {analysis: cross_sector_shared_constraint_discovery, sectors: [CNC, robotics, aerospace, EV]}
+    requirements:
+      - {id: grinding, label: "Precision grinding", role: shared_foundation, canonical_id: "cap:precision-grinding", decision_weight: 5, decision_critical: true}
+      - {id: bearings, label: "Precision bearings", role: shared_foundation, canonical_id: "cap:precision-bearings", decision_weight: 5, decision_critical: true}
+      - {id: metrology, label: "Industrial metrology", role: shared_foundation, canonical_id: "cap:metrology", decision_weight: 5, decision_critical: true}
+      - {id: motors, label: "Precision electric motors", role: shared_foundation, canonical_id: "cap:electric-motors", decision_weight: 4, decision_critical: true}
+      - {id: encoders, label: "Encoders and position sensing", role: shared_foundation, canonical_id: "cap:encoders-position-sensing", decision_weight: 4, decision_critical: true}
+      - {id: power_electronics, label: "Power electronics", role: shared_foundation, canonical_id: "cap:power-electronics", decision_weight: 4, decision_critical: true}
+      - {id: tooling, label: "Production tooling and fixtures", role: shared_foundation, canonical_id: "cap:tooling-fixtures", decision_weight: 3, decision_critical: false}
+      - {id: qualification, label: "Cross-sector product qualification", role: shared_foundation, canonical_id: "cap:industrial-product-qualification", decision_weight: 4, decision_critical: true}

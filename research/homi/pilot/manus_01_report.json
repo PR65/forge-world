@@ -1,0 +1,542 @@
+{
+  "report_schema_version": "homi-gate-0-pilot.v1",
+  "report_kind": "supplier_qualification_pilot",
+  "report_scope": "All seven extracted artifacts in manus-01; supplier-to-process, supplier-to-equipment, qualification, facility, and capacity semantics only.",
+  "generated_for": "HOMI Gate-0 bounded pilot",
+  "corpus_id": "manus-01",
+  "campaign_expected_number": "01",
+  "verified_theme": "Supplier Qualification & Industrial Sourcing Intelligence",
+  "raw_vault_immutable": true,
+  "canonical_promotion": "NONE",
+  "source_manifest_mapping": {
+    "manifest_path": "C:/FORGE-RESEARCH-CORPUS/manus/_meta/manus_corpus_manifest.csv",
+    "manifest_row": {
+      "corpus_id": "manus-01",
+      "zip_name": "2222.zip",
+      "file_count": 7,
+      "status": "ALREADY EXTRACTED"
+    },
+    "raw_zip": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips/2222.zip",
+      "sha256": "612b9e1c068623fe081ccdfd86a2bef1ae48f7b07cb0da5d3eecaf84c2f5bad7",
+      "zip_member_count": 7,
+      "zip_test_result": "PASS",
+      "extracted_member_count": 7,
+      "member_names_and_sha256_exact": true
+    },
+    "extracted_root": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-01",
+    "mapping_verified": true
+  },
+  "artifact_accounting": {
+    "artifact_count": 7,
+    "analysis_artifact_count": 5,
+    "non_evidence_artifact_count": 2,
+    "malformed_artifact_count": 0,
+    "artifacts": [
+      {
+        "path": "manus-01/extract_research.py",
+        "format": "python",
+        "bytes": 830,
+        "sha256": "f424528e60b4308e3155bc898e800656ec8ec22d84b78eebabc803c1064ff232",
+        "line_count": 18,
+        "header_or_schema": null,
+        "row_count": null,
+        "role": "utility_not_evidence",
+        "parse_status": "INVENTORIED"
+      },
+      {
+        "path": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md",
+        "format": "markdown",
+        "bytes": 45460,
+        "sha256": "3b2e787314fe365b90d65704c96cb49a402dfd92a7807e3a3f78d1d2be9ed018",
+        "line_count": 334,
+        "header_or_schema": "1 H1; 15 H2; 14 H3",
+        "row_count": null,
+        "role": "primary_research_memo",
+        "parse_status": "INVENTORIED"
+      },
+      {
+        "path": "manus-01/industrial_supplier_qualification_research.csv",
+        "format": "csv",
+        "bytes": 91835,
+        "sha256": "f98b9d177389f03ac0fa7229da8be50dd6e51bd3803919f160eab4b993be1250",
+        "line_count": 10,
+        "header_or_schema": ["Subject", "Workstream", "Research Memo", "Sources", "Evidence Quality", "Error"],
+        "row_count": 9,
+        "role": "structured_research_export",
+        "duplicate_group": "supplier_research_export",
+        "parse_status": "VALID_WIDTH_6_ERRORS_EMPTY"
+      },
+      {
+        "path": "manus-01/industrial_supplier_qualification_research.json",
+        "format": "json",
+        "bytes": 93250,
+        "sha256": "554d50479fca6a0aeac363c246e741820d1e1886e58402ee7f3183cd9e35ed16",
+        "line_count": 94,
+        "header_or_schema": "object.results[]; result keys input, output, error; output keys evidence_quality, memo, sources, workstream",
+        "row_count": 9,
+        "role": "structured_research_export",
+        "duplicate_group": "supplier_research_export",
+        "parse_status": "VALID_ERRORS_EMPTY"
+      },
+      {
+        "path": "manus-01/pasted_content.txt",
+        "format": "txt",
+        "bytes": 4654,
+        "sha256": "67435bd81ef70ce0b8e3ddf331537b0af6206354c2426a554768da43560bec82",
+        "line_count": 58,
+        "header_or_schema": "prompt/instruction text; not an evidence record",
+        "row_count": null,
+        "role": "prompt_not_evidence",
+        "parse_status": "INVENTORIED"
+      },
+      {
+        "path": "manus-01/research_memos.md",
+        "format": "markdown",
+        "bytes": 69605,
+        "sha256": "d499b0190ac487fcc1c8ad92c891190fb3c990c0e3573997305391916a095822",
+        "line_count": 666,
+        "header_or_schema": "17 H1; 54 H2; nine workstream blocks",
+        "row_count": null,
+        "role": "research_memo_compilation",
+        "parse_status": "INVENTORIED"
+      },
+      {
+        "path": "manus-01/Verified browser findings.md",
+        "format": "markdown",
+        "bytes": 12318,
+        "sha256": "8e5a15fe45836f455adf5d143040e0873c0d97dda2c6fac9ed887af651471adc",
+        "line_count": 105,
+        "header_or_schema": "1 H1; 17 H2 source sections; 17 URL-bearing sections",
+        "row_count": null,
+        "role": "browser_findings",
+        "parse_status": "INVENTORIED"
+      }
+    ],
+    "duplicate_accounting": {
+      "physical_duplicate_export_pairs": 1,
+      "pair": [
+        "manus-01/industrial_supplier_qualification_research.csv",
+        "manus-01/industrial_supplier_qualification_research.json"
+      ],
+      "dedupe_rule": "The CSV and JSON contain the same nine workstreams after decoding literal newline and quote escapes; count once for evidence, retain both hashes for artifact accounting."
+    }
+  },
+  "candidate_id_contract": {
+    "ordered_fields": [
+      "source_corpus",
+      "artifact",
+      "source_locator",
+      "record_kind",
+      "observed_name",
+      "normalized_name",
+      "scope",
+      "relation_type"
+    ],
+    "algorithm": "SHA-256 of UTF-8 pipe-joined ordered field values; candidate_id is homi-candidate: plus the first 20 hexadecimal characters.",
+    "normalization": "NFKC, trim, and casefold for matching only; observed names and source locators are preserved.",
+    "promotion_rule": "Candidate IDs are deterministic analysis handles, not canonical IDs; no candidate in this report is promoted."
+  },
+  "epistemic_classes": [
+    "MEASURED",
+    "REPORTED",
+    "DERIVED",
+    "ESTIMATED",
+    "MODELLED",
+    "ASSUMPTION",
+    "SCENARIO",
+    "UNKNOWN",
+    "CONFLICTED"
+  ],
+  "status_semantics": {
+    "manufacturer": {
+      "meaning": "A legal entity with an independently identified physical site and current evidence linking the entity to that site and relevant process.",
+      "not_sufficient": ["company name", "website claim", "certificate alone", "equipment listing"],
+      "observed_instance_count_in_this_slice": 0
+    },
+    "potential_supplier": {
+      "meaning": "A site whose process, material, envelope, and preliminary quality controls are plausibly compatible, while part-specific qualification remains incomplete.",
+      "not_sufficient": ["factory existence", "machine possession", "export history", "generic capability statement"],
+      "observed_instance_count_in_this_slice": 0
+    },
+    "qualified_supplier": {
+      "meaning": "An exact site, requirement revision, process route, material, customer or regulatory context, and approval evidence are linked; examples include FAI, PPAP/PPA, process qualification, traceability, and current approval or expiry.",
+      "observed_instance_count_in_this_slice": 0,
+      "required_evidence_gaps": ["site identity", "requirement revision", "route and material", "customer/regulatory approval", "expiry or surveillance state"],
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L195-L207"
+    },
+    "available_capacity": {
+      "meaning": "Current time-windowed good qualified output net of committed or reserved demand and all relevant tooling, test, material, labor, maintenance, logistics, and sub-tier constraints.",
+      "supplier_statement_epistemic_class": "REPORTED",
+      "observed_instance_count_in_this_slice": 0,
+      "current_value": "UNKNOWN",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L209-L211"
+    },
+    "qualification_lifecycle": {
+      "gates": [
+        "identity",
+        "pre_screen",
+        "QMS",
+        "audit",
+        "sample",
+        "process_qualification",
+        "FAI_PPAP_PPA",
+        "run_at_rate_and_capacity",
+        "release",
+        "surveillance"
+      ],
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L42-L59",
+      "epistemic_class": "MODELLED"
+    }
+  },
+  "structured_claim_samples": [
+    {
+      "claim_id": "m01-claim-01",
+      "observed_claim": "Supplier identity, potential suitability, qualification, and available output are separate states.",
+      "epistemic_class": "DERIVED",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L14-L38",
+      "interpretation": "Do not collapse a manufacturer label or capability lead into qualified supply.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m01-claim-02",
+      "observed_claim": "Qualification is a lifecycle of identity, QMS, audit, sample, process qualification, customer approval, run-at-rate, release, and surveillance gates.",
+      "epistemic_class": "MODELLED",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L42-L59",
+      "interpretation": "A relation to a certification or machine should not be normalized as qualified supplier without the applicable gates.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m01-claim-03",
+      "observed_claim": "Capacity decomposes from installed to operational to qualified to good to available; only available answers order acceptance.",
+      "epistemic_class": "DERIVED",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L107-L117",
+      "interpretation": "Nameplate, installed machines, or supplier statements cannot be used as available capacity without a scoped time window and deductions.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m01-claim-04",
+      "observed_claim": "Factory existence, a generic certificate, installed capacity, export history, a customer website, or a project announcement is not proof of qualified supply.",
+      "epistemic_class": "DERIVED",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L278-L284",
+      "interpretation": "These are lead signals and escalation triggers, not supplier-state transitions.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m01-claim-05",
+      "observed_claim": "The structured CSV and JSON exports each contain the same nine workstreams after lossless escape decoding.",
+      "epistemic_class": "MEASURED",
+      "source_locator": "manus-01/industrial_supplier_qualification_research.csv:header+rows 2-10; manus-01/industrial_supplier_qualification_research.json:results[0..8]",
+      "interpretation": "The two exports are one logical evidence set and must not be counted as independent corroboration.",
+      "promotion_state": "NOT_PROMOTED"
+    },
+    {
+      "claim_id": "m01-claim-06",
+      "observed_claim": "No site-specific, part-specific, customer-specific qualified-supplier or available-capacity observation is present in the bounded extracted slice.",
+      "epistemic_class": "UNKNOWN",
+      "source_locator": "all seven manus-01 artifacts; structured rows 9/9 and source sections reviewed",
+      "interpretation": "This is an absence-of-evidence ledger entry, not a claim that no such supplier exists.",
+      "promotion_state": "NOT_PROMOTED"
+    }
+  ],
+  "entities_products_processes_equipment": {
+    "entity_roles": [
+      "legal_entity",
+      "manufacturer",
+      "supplier_site_or_facility",
+      "potential_supplier",
+      "qualified_supplier",
+      "customer_or_regulator",
+      "subtier_supplier",
+      "auditor_or_qualification_body"
+    ],
+    "facilities_and_locations": [
+      "manufacturing site",
+      "audit site",
+      "test and measurement site",
+      "sub-tier site",
+      "logistics or receiving location"
+    ],
+    "products_and_materials": [
+      "part or product",
+      "requirement revision",
+      "material lot",
+      "tooling",
+      "sample and first-article lot"
+    ],
+    "processes": [
+      "machining",
+      "casting",
+      "forging",
+      "heat treatment",
+      "grinding",
+      "assembly",
+      "special process",
+      "inspection and testing",
+      "qualification and surveillance"
+    ],
+    "equipment_and_enablers": [
+      "machine and tooling envelope",
+      "metrology and test equipment",
+      "fixtures and gauges",
+      "quality-management system",
+      "traceability system",
+      "operator and process know-how"
+    ],
+    "observed_concept_instances": {
+      "facility": 0,
+      "product_or_part": 0,
+      "process": 0,
+      "equipment": 0,
+      "supplier_state": 0,
+      "qualification_record": 0,
+      "capacity_window": 0
+    },
+    "interpretation": "The package supplies a supplier-qualification ontology and research leads; it does not supply facility-level records suitable for canonical promotion."
+  },
+  "relation_normalization_candidates": [
+    {
+      "candidate_key": "m01-rel-01",
+      "observed_relation": "LEGAL_ENTITY_OPERATES_SITE",
+      "normalized_relation_candidate": "located_at",
+      "orientation": "legal_entity -> facility",
+      "current_registry_status": "CURRENT_VOCABULARY_APPROXIMATION",
+      "guard": "Require independently verified entity-site identity and effective date.",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L217-L235"
+    },
+    {
+      "candidate_key": "m01-rel-02",
+      "observed_relation": "SITE_PERFORMS_PROCESS",
+      "normalized_relation_candidate": "site_performs_process",
+      "orientation": "facility -> process",
+      "current_registry_status": "RICHER_THAN_CURRENT_EDGE_VOCABULARY",
+      "guard": "Do not infer qualified performance from a machine list or generic process statement.",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L217-L235"
+    },
+    {
+      "candidate_key": "m01-rel-03",
+      "observed_relation": "SITE_HAS_CERTIFICATION",
+      "normalized_relation_candidate": "holds_certification",
+      "orientation": "facility -> certification",
+      "current_registry_status": "DEFERRED_NOT_QUALIFIED_BY",
+      "guard": "Certification is evidence about a control system, not equivalent to part/customer qualification.",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L217-L235;L278-L284"
+    },
+    {
+      "candidate_key": "m01-rel-04",
+      "observed_relation": "SUPPLIER_USES_SUBTIER",
+      "normalized_relation_candidate": "depends_on",
+      "orientation": "supplier -> subtier_supplier",
+      "current_registry_status": "CURRENT_VOCABULARY_MATCH",
+      "guard": "Keep tier depth, material lot, process, and audit/traceability scope explicit.",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L219-L235"
+    },
+    {
+      "candidate_key": "m01-rel-05",
+      "observed_relation": "SUPPLIER_PASSED_FAI_PPAP_PPA",
+      "normalized_relation_candidate": "qualified_by",
+      "orientation": "supplier_site -> qualification_record",
+      "current_registry_status": "CURRENT_VOCABULARY_MATCH_WITH_SCOPE_GUARD",
+      "guard": "Require exact part, revision, process route, material, customer/regulator, date, and expiry/surveillance.",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L217-L235"
+    },
+    {
+      "candidate_key": "m01-rel-06",
+      "observed_relation": "SITE_HAS_CAPACITY_WINDOW",
+      "normalized_relation_candidate": "has_capacity_window",
+      "orientation": "facility -> capacity_observation",
+      "current_registry_status": "MISSING_FROM_CURRENT_EDGE_VOCABULARY",
+      "guard": "Capacity must be good qualified output net of commitments and constraints; supplier statement remains REPORTED.",
+      "source_locator": "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L107-L117;L230"
+    }
+  ],
+  "canonical_match_candidates": [
+    {
+      "candidate_id": "homi-candidate:de88bedbf78d3a50bc64",
+      "stable_id_inputs": {
+        "source_corpus": "manus-01",
+        "artifact": "FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md",
+        "source_locator": "L87-L105",
+        "record_kind": "capability_concept",
+        "observed_name": "site/process capability vector",
+        "normalized_name": "site-process-capability-vector",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capability_vector",
+      "match_basis": "The memo defines site/process capability dimensions and evidence requirements.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Need a facility-specific record with process envelope, machine, tooling, metrology, qualification, yield, and time scope."
+    },
+    {
+      "candidate_id": "homi-candidate:c3a70fe9617d70a7cc7a",
+      "stable_id_inputs": {
+        "source_corpus": "manus-01",
+        "artifact": "FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md",
+        "source_locator": "L107-L117",
+        "record_kind": "capacity_concept",
+        "observed_name": "available capacity",
+        "normalized_name": "available-capacity",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "capacity_observation",
+      "match_basis": "The memo explicitly separates installed, operational, qualified, good, and available output.",
+      "evidence_class": "DERIVED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Need current time-windowed good qualified output and deductions for committed demand, tooling, labor, material, maintenance, logistics, and sub-tier constraints."
+    },
+    {
+      "candidate_id": "homi-candidate:04a9b19ef918bb43170d",
+      "stable_id_inputs": {
+        "source_corpus": "manus-01",
+        "artifact": "FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md",
+        "source_locator": "L217-L235",
+        "record_kind": "relation_concept",
+        "observed_name": "SITE_PERFORMS_PROCESS",
+        "normalized_name": "site-performs-process",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "site_performs_process",
+      "match_basis": "The memo lists site-to-process as a required relation with provenance, date, class, scope, conflict, and expiry.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "No facility-specific site/process assertion in this slice is supported for promotion."
+    },
+    {
+      "candidate_id": "homi-candidate:72671f52ff17db430cbf",
+      "stable_id_inputs": {
+        "source_corpus": "manus-01",
+        "artifact": "FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md",
+        "source_locator": "L237-L249",
+        "record_kind": "qualification_concept",
+        "observed_name": "supplier qualification evidence",
+        "normalized_name": "supplier-qualification",
+        "scope": "cross-sector",
+        "relation_type": "canonical_match"
+      },
+      "canonical_target": "qualification_record",
+      "match_basis": "The memo defines an unknown ledger and provenance requirements for qualification evidence.",
+      "evidence_class": "MODELLED",
+      "promotion_state": "NOT_PROMOTED",
+      "escalation": "Need approval artifacts tied to exact site, product revision, route, material, customer/regulator, and validity window."
+    }
+  ],
+  "unknowns_conflicts": {
+    "unknowns": [
+      {
+        "id": "m01-U01",
+        "question": "What is the current qualified output by exact supplier site, process route, product revision, and delivery window?",
+        "status": "UNKNOWN",
+        "why_it_matters": "Available capacity cannot be inferred from nameplate, installed equipment, or a generic statement.",
+        "next_action": "Collect time-stamped run-at-rate, good-output, committed-demand, and constraint records."
+      },
+      {
+        "id": "m01-U02",
+        "question": "Which customer or regulator approved the exact part and process, and when does approval expire or require surveillance?",
+        "status": "UNKNOWN",
+        "why_it_matters": "A generic QMS certificate does not establish part-specific qualification.",
+        "next_action": "Request FAI/PPAP/PPA or equivalent approval package with revision and scope."
+      },
+      {
+        "id": "m01-U03",
+        "question": "What is the qualified sub-tier depth and material/process traceability?",
+        "status": "UNKNOWN",
+        "why_it_matters": "Hidden sub-tier constraints can invalidate apparent supply and capacity.",
+        "next_action": "Map sub-tier sites, lots, approvals, and change-control obligations."
+      },
+      {
+        "id": "m01-U04",
+        "question": "What are audited yield, nonconformance, and field-event rates for the relevant route?",
+        "status": "UNKNOWN",
+        "why_it_matters": "Good qualified output depends on yield and quality, not gross throughput.",
+        "next_action": "Obtain quality records under appropriate confidentiality and time scope."
+      },
+      {
+        "id": "m01-U05",
+        "question": "Can tooling, fixtures, test, and operators transfer or ramp at the required site and date?",
+        "status": "UNKNOWN",
+        "why_it_matters": "Equipment presence does not establish repeatable production or ramp time.",
+        "next_action": "Audit tooling ownership, maintenance, calibration, staffing, and ramp plan."
+      }
+    ],
+    "conflict_signals": [
+      {
+        "id": "m01-C01",
+        "signal": "Self-reported capability can diverge from audited or customer-accepted capability.",
+        "status": "CONFLICTED",
+        "resolution": "Keep claim-level provenance and prefer current primary audit or acceptance evidence; do not collapse the values."
+      }
+    ],
+    "absence_guard": "Zero observed supplier-state instances is an UNKNOWN/coverage result, not a negative finding about the industrial world."
+  },
+  "ambiguities_escalations": [
+    {
+      "id": "m01-E01",
+      "issue": "The nine structured rows are a duplicate CSV/JSON export.",
+      "impact": "Counting both would manufacture corroboration.",
+      "escalation": "Retain one logical claim set and both artifact hashes."
+    },
+    {
+      "id": "m01-E02",
+      "issue": "Many source links are discovery or secondary sources mixed with primary-source leads.",
+      "impact": "A URL does not establish facility, qualification, or current capacity.",
+      "escalation": "Verify each decision-sensitive claim against a dated primary source."
+    },
+    {
+      "id": "m01-E03",
+      "issue": "Process and equipment examples are not linked to an exact facility, part, revision, or customer.",
+      "impact": "They are useful taxonomy, not canonical supplier records.",
+      "escalation": "Request site-level capability and approval evidence."
+    },
+    {
+      "id": "m01-E04",
+      "issue": "The prompt file is mixed with evidence exports.",
+      "impact": "Instructions must not be promoted as world-state evidence.",
+      "escalation": "Keep prompt_not_evidence role in artifact accounting."
+    },
+    {
+      "id": "m01-E05",
+      "issue": "Project announcements, certificates, equipment presence, or export history can launder into supplier or capacity claims.",
+      "impact": "Creates false qualified-supply and available-capacity edges.",
+      "escalation": "Require the status-specific evidence gates recorded above."
+    }
+  ],
+  "source_locators": [
+    "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L14-L38",
+    "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L42-L59",
+    "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L107-L117",
+    "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L197-L212",
+    "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L217-L249",
+    "manus-01/FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md:L278-L284",
+    "manus-01/industrial_supplier_qualification_research.csv:header and rows 2-10",
+    "manus-01/industrial_supplier_qualification_research.json:results[0..8]",
+    "manus-01/research_memos.md:workstream blocks",
+    "manus-01/Verified browser findings.md:H2 source sections"
+  ],
+  "totals": {
+    "artifact_count": 7,
+    "evidence_artifact_count": 5,
+    "non_evidence_artifact_count": 2,
+    "csv_row_count": 9,
+    "json_record_count": 9,
+    "logical_research_record_count_after_dedupe": 9,
+    "source_url_unique_count": 110,
+    "numbered_source_reference_count": 118,
+    "malformed_artifact_count": 0,
+    "duplicate_export_pair_count": 1,
+    "structured_claim_sample_count": 6,
+    "relation_normalization_candidate_count": 6,
+    "canonical_match_candidate_count": 4,
+    "manufacturer_observation_count": 0,
+    "potential_supplier_observation_count": 0,
+    "qualified_supplier_observation_count": 0,
+    "available_capacity_observation_count": 0,
+    "unknown_item_count": 5,
+    "conflict_signal_count": 1,
+    "escalation_count": 5,
+    "raw_zip_mapping_mismatch_count": 0
+  }
+}

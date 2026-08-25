@@ -1,0 +1,1493 @@
+{
+  "report_schema_version": "homi_gate0_pilot_staging.v1",
+  "corpus_id": "manus-11",
+  "generated_for": "HOMI Gate-0 bounded pilot",
+  "generated_on": "2026-08-25",
+  "analysis_scope": {
+    "included": [
+      "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-11",
+      "the corresponding manifest row and raw ZIP entry mapping"
+    ],
+    "excluded": [
+      "all other manus extracted directories",
+      "all canonical registry promotion",
+      "all code changes",
+      "C:/FORGE-RESEARCH-CORPUS raw vault mutation",
+      "C:/FORGE-GLM-FOUNDRY mutation"
+    ],
+    "raw_vault_posture": "read_only_immutable",
+    "analysis_method": "deterministic local byte/hash, parser, schema/header, lexical signal, relation, and candidate extraction; no external browsing or source revalidation"
+  },
+  "scope_integrity": {
+    "observed_title": "FORGE WORLD — Factory Build, Ramp-Up & Production Scaling",
+    "observed_theme": "factory buildout, production-system fundamentals, ramp states, capacity-status semantics, bottlenecks, utilities, qualification, and cross-sector ramp case studies",
+    "observed_workstream_count": 8,
+    "routing_discrepancy": true,
+    "routing_note": "The extracted manus-11 content is factory/ramp-up/production-scaling research. Manufacturing-process/unit-process content is routed elsewhere in the corpus (reported by the parent task as manus-12); this report does not read or ingest that corpus.",
+    "gate_escalation": "Do not treat manus-11 as a manufacturing-process encyclopedia or as coverage of manus-12."
+  },
+  "raw_references": {
+    "corpus_manifest": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/_meta/manus_corpus_manifest.csv",
+      "locator": "line 12; CorpusID=manus-11",
+      "sha256": "5b60e5026abb70a2298ba28d00d190b5b9e434231201f82ff59daaa055b388e",
+      "original_zip": "How to Conduct Thorough Research_.zip",
+      "declared_file_count": 9,
+      "declared_status": "OK"
+    },
+    "raw_zip": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips/How to Conduct Thorough Research_.zip",
+      "bytes": 530165,
+      "sha256": "20b65aec4a443399346d99eb08c88d48329d96141dc91191a867e41c7e1fa87c",
+      "entry_count": 9,
+      "entry_compression_observation": "all nine entries have compressed length equal to uncompressed length",
+      "entry_match_summary": {
+        "matched_extracted_bytes_and_sha256": 9,
+        "mismatched": 0,
+        "missing_extracted": 0,
+        "unexpected_zip_entries": 0
+      }
+    },
+    "extracted_root": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-11"
+  },
+  "artifact_accounting": {
+    "artifact_count": 9,
+    "extracted_total_bytes": 528739,
+    "hash_algorithm": "SHA-256 over extracted raw bytes",
+    "artifacts": [
+      {
+        "artifact": "FORGE WORLD — Factory Build, Ramp-Up & Production Scaling.md",
+        "relative_path": "FORGE WORLD — Factory Build, Ramp-Up & Production Scaling.md",
+        "format": "Markdown",
+        "bytes": 68317,
+        "sha256": "15b262566d2ec54edffb9722cb4900a66faa7c7117e62dc1bfb29f7ef609750e",
+        "raw_zip_entry": "FORGE WORLD — Factory Build, Ramp-Up & Production Scaling.md",
+        "raw_zip_entry_sha256": "15b262566d2ec54edffb9722cb4900a66faa7c7117e62dc1bfb29f7ef609750e",
+        "extracted_matches_raw_zip": true,
+        "schema_or_header": "Free-form Markdown; 15 numbered sections; Markdown tables; no machine-readable schema",
+        "line_count": 555,
+        "heading_count": 57,
+        "source_locator_examples": [
+          "#L28-L52 evidence labels and scope discipline",
+          "#L71-L109 ramp phases",
+          "#L117-L211 equations and limitations",
+          "#L217-L224 bottleneck classes",
+          "#L274-L287 sector archetypes",
+          "#L317-L367 named ramp case studies",
+          "#L379-L389 evidence-backed examples",
+          "#L468-L510 unknowns, conflicts, and follow-up questions"
+        ]
+      },
+      {
+        "artifact": "forge_ramp_dependency.mmd",
+        "relative_path": "forge_ramp_dependency.mmd",
+        "format": "Mermaid flowchart",
+        "bytes": 1501,
+        "sha256": "26c9db9f2730e7d7fee79250d8037b084ec0c7fff896f98f9f04a095f574831e",
+        "raw_zip_entry": "forge_ramp_dependency.mmd",
+        "raw_zip_entry_sha256": "26c9db9f2730e7d7fee79250d8037b084ec0c7fff896f98f9f04a095f574831e",
+        "extracted_matches_raw_zip": true,
+        "schema_or_header": "flowchart TD; node labels and directed arrows; classDef gate/risk",
+        "line_count": 35,
+        "node_count": 21,
+        "unique_node_id_count": 21,
+        "directed_edge_count": 29,
+        "class_definition_count": 2,
+        "source_locator_examples": [
+          "#L1 flowchart declaration",
+          "#L2-L29 dependency edges",
+          "#L31-L35 gate/risk classes"
+        ]
+      },
+      {
+        "artifact": "forge_ramp_dependency.png",
+        "relative_path": "forge_ramp_dependency.png",
+        "format": "PNG raster render",
+        "bytes": 258732,
+        "sha256": "b24800d4cde5f1d346f5c01e1d61b4526597eef977404e13f3832d4b2f9fc9c6",
+        "raw_zip_entry": "forge_ramp_dependency.png",
+        "raw_zip_entry_sha256": "b24800d4cde5f1d346f5c01e1d61b4526597eef977404e13f3832d4b2f9fc9c6",
+        "extracted_matches_raw_zip": true,
+        "schema_or_header": "PNG signature and IHDR; no tabular schema",
+        "dimensions_px": {
+          "width": 3120,
+          "height": 2228
+        },
+        "bit_depth": 8,
+        "color_type": "RGB",
+        "source_locator_examples": [
+          "render counterpart of forge_ramp_dependency.mmd",
+          "PNG IHDR"
+        ]
+      },
+      {
+        "artifact": "forge_world_research_notes.md",
+        "relative_path": "forge_world_research_notes.md",
+        "format": "Markdown",
+        "bytes": 24717,
+        "sha256": "e29bdb0fa9864c077e1005fe9afb3451efe5162fbcd485ccbe26eb126fdaf413",
+        "raw_zip_entry": "forge_world_research_notes.md",
+        "raw_zip_entry_sha256": "e29bdb0fa9864c077e1005fe9afb3451efe5162fbcd485ccbe26eb126fdaf413",
+        "extracted_matches_raw_zip": true,
+        "schema_or_header": "Research notes with reference-style source list and evidence-ledger tables",
+        "line_count": 282,
+        "heading_count": 67,
+        "evidence_ledger_claim_count": 10,
+        "source_locator_examples": [
+          "#L78-L83 initial evidence ledger",
+          "#L163-L169 NIST/FAA evidence ledger additions",
+          "#L207-L212 battery/FAI evidence ledger additions",
+          "#L237-L242 TSMC/Tesla evidence ledger additions",
+          "#L267-L271 Tesla/Airbus evidence ledger additions"
+        ]
+      },
+      {
+        "artifact": "forge_world_structured_concepts.json",
+        "relative_path": "forge_world_structured_concepts.json",
+        "format": "JSON",
+        "bytes": 8002,
+        "sha256": "5c5a25c77c6edaeeaee1d17aaed5d5b0934b26dd24be288283c077831242c6df",
+        "raw_zip_entry": "forge_world_structured_concepts.json",
+        "raw_zip_entry_sha256": "5c5a25c77c6edaeeaee1d17aaed5d5b0934b26dd24be288283c077831242c6df",
+        "extracted_matches_raw_zip": true,
+        "schema_or_header": "schema_version=0.1; top-level object",
+        "top_level_keys": [
+          "schema_version",
+          "as_of",
+          "purpose",
+          "evidence_labels",
+          "capacity_status_types",
+          "ramp_states",
+          "entities",
+          "relations",
+          "capacity_equations",
+          "case_studies",
+          "unknowns_policy"
+        ],
+        "entity_type_count": 16,
+        "field_count": 134,
+        "relation_line_count": 10,
+        "capacity_equation_count": 9,
+        "ramp_state_count": 8,
+        "case_study_count": 6,
+        "evidence_label_count": 9,
+        "source_locator_examples": [
+          "#/entities",
+          "#/relations",
+          "#/capacity_equations",
+          "#/ramp_states",
+          "#/case_studies",
+          "#/unknowns_policy"
+        ]
+      },
+      {
+        "artifact": "industrial_scaleup_research.csv",
+        "relative_path": "industrial_scaleup_research.csv",
+        "format": "CSV UTF-8",
+        "bytes": 59941,
+        "sha256": "968ad5da955fcd0b6d883b35578992b22ebb18273e7f634b0df517e638714a7f",
+        "raw_zip_entry": "industrial_scaleup_research.csv",
+        "raw_zip_entry_sha256": "968ad5da955fcd0b6d883b35578992b22ebb18273e7f634b0df517e638714a7f",
+        "extracted_matches_raw_zip": true,
+        "schema_or_header": [
+          "Subject",
+          "Workstream",
+          "Synthesis Summary",
+          "Key Claims",
+          "Sources",
+          "Unknowns And Follow-ups",
+          "Error"
+        ],
+        "column_count": 7,
+        "data_row_count": 8,
+        "malformed_row_count": 0,
+        "exact_duplicate_data_row_count": 0,
+        "blank_error_row_count": 8,
+        "source_locator_examples": [
+          "#row=2..9; one row per workstream",
+          "#column=Key Claims",
+          "#column=Sources",
+          "#column=Unknowns And Follow-ups"
+        ]
+      },
+      {
+        "artifact": "industrial_scaleup_research.json",
+        "relative_path": "industrial_scaleup_research.json",
+        "format": "JSON",
+        "bytes": 61310,
+        "sha256": "9e57109cb95cab8577e6a15d60901879fb305bf0f966cadf27db57c6d9e6d741",
+        "raw_zip_entry": "industrial_scaleup_research.json",
+        "raw_zip_entry_sha256": "9e57109cb95cab8577e6a15d60901879fb305bf0f966cadf27db57c6d9e6d741",
+        "extracted_matches_raw_zip": true,
+        "schema_or_header": "top-level object {results:[...]}; every result has input/output/error",
+        "top_level_keys": [
+          "results"
+        ],
+        "result_count": 8,
+        "uniform_result_keys": [
+          "error",
+          "input",
+          "output"
+        ],
+        "uniform_output_keys": [
+          "key_claims",
+          "sources",
+          "summary",
+          "unknowns",
+          "workstream"
+        ],
+        "blank_error_result_count": 8,
+        "source_locator_examples": [
+          "#/results/0/output/key_claims",
+          "#/results/0/output/sources",
+          "#/results/0/output/unknowns",
+          "#/results/1..7/output/*"
+        ]
+      },
+      {
+        "artifact": "pasted_content.txt",
+        "relative_path": "pasted_content.txt",
+        "format": "Plain text research brief/task prompt",
+        "bytes": 4576,
+        "sha256": "b0d45c824e7643709b254b923fe4379a90a638d75f41a29770d76ba0faf9de5a",
+        "raw_zip_entry": "pasted_content.txt",
+        "raw_zip_entry_sha256": "b0d45c824e7643709b254b923fe4379a90a638d75f41a29770d76ba0faf9de5a",
+        "extracted_matches_raw_zip": true,
+        "schema_or_header": "Prompt text; no data schema or source URLs",
+        "line_count": 72,
+        "source_locator_examples": [
+          "#L1-L2 task title/copy instruction",
+          "#L13-L25 epistemic and source-priority rules",
+          "#L40-L64 research scope and deliverables"
+        ]
+      },
+      {
+        "artifact": "validate_ramp_case_studies.json",
+        "relative_path": "validate_ramp_case_studies.json",
+        "format": "JSON",
+        "bytes": 41643,
+        "sha256": "c73f9fd0f5d146e7e442f969c9b704d0bf0470a47e58143d8281f99f3c1b0778",
+        "raw_zip_entry": "validate_ramp_case_studies.json",
+        "raw_zip_entry_sha256": "c73f9fd0f5d146e7e442f969c9b704d0bf0470a47e58143d8281f99f3c1b0778",
+        "extracted_matches_raw_zip": true,
+        "schema_or_header": "top-level object {results:[...]}; every result has input/output/error",
+        "top_level_keys": [
+          "results"
+        ],
+        "result_count": 8,
+        "uniform_result_keys": [
+          "error",
+          "input",
+          "output"
+        ],
+        "uniform_output_keys": [
+          "capacity_status",
+          "case_study",
+          "evidence_quality",
+          "sources",
+          "timeline",
+          "unknowns_followups"
+        ],
+        "blank_error_result_count": 8,
+        "source_locator_examples": [
+          "#/results/0/capacity_status",
+          "#/results/0/timeline",
+          "#/results/0/evidence_quality",
+          "#/results/0/unknowns_followups",
+          "#/results/1..7/output/*"
+        ]
+      }
+    ]
+  },
+  "coverage_totals": {
+    "structured_entities": 16,
+    "structured_entity_fields": 134,
+    "structured_relation_lines": 10,
+    "normalized_structured_relation_verbs": [
+      "constrains",
+      "uses",
+      "requires",
+      "contains",
+      "provides",
+      "has",
+      "gates",
+      "describes",
+      "cites",
+      "updates",
+      "propagates",
+      "modifies",
+      "supports"
+    ],
+    "capacity_equations": 9,
+    "ramp_states": 8,
+    "structured_case_studies": 6,
+    "validated_case_study_results": 8,
+    "main_markdown_case_study_sections": 8,
+    "main_markdown_capacity_example_rows": 9,
+    "research_notes_evidence_ledger_claims": 10,
+    "industrial_workstream_rows": 8,
+    "structured_claim_candidate_sample_count": 19,
+    "canonical_match_candidate_count": 20,
+    "unknown_followup_field_counts": {
+      "industrial_scaleup_research_json": 8,
+      "validate_ramp_case_studies_json": 8
+    },
+    "main_markdown_unknown_items": 15,
+    "main_markdown_conflict_topic_groups": 4,
+    "all_error_fields_blank": true,
+    "all_nine_epistemic_classes_lexically_present": true,
+    "lexical_epistemic_token_count_total": 425,
+    "epistemic_token_counts_by_artifact": {
+      "FORGE WORLD — Factory Build, Ramp-Up & Production Scaling.md": {
+        "MEASURED": 5,
+        "REPORTED": 26,
+        "DERIVED": 3,
+        "ESTIMATED": 7,
+        "MODELLED": 4,
+        "ASSUMPTION": 2,
+        "SCENARIO": 7,
+        "UNKNOWN": 9,
+        "CONFLICTED": 1
+      },
+      "forge_world_research_notes.md": {
+        "MEASURED": 4,
+        "REPORTED": 20,
+        "DERIVED": 1,
+        "ESTIMATED": 1,
+        "MODELLED": 1,
+        "ASSUMPTION": 1,
+        "SCENARIO": 1,
+        "UNKNOWN": 4,
+        "CONFLICTED": 1
+      },
+      "forge_world_structured_concepts.json": {
+        "MEASURED": 1,
+        "REPORTED": 1,
+        "DERIVED": 1,
+        "ESTIMATED": 1,
+        "MODELLED": 1,
+        "ASSUMPTION": 1,
+        "SCENARIO": 1,
+        "UNKNOWN": 1,
+        "CONFLICTED": 1
+      },
+      "industrial_scaleup_research.csv": {
+        "MEASURED": 27,
+        "REPORTED": 36,
+        "DERIVED": 10,
+        "ESTIMATED": 7,
+        "MODELLED": 8,
+        "ASSUMPTION": 0,
+        "SCENARIO": 2,
+        "UNKNOWN": 7,
+        "CONFLICTED": 2
+      },
+      "industrial_scaleup_research.json": {
+        "MEASURED": 27,
+        "REPORTED": 36,
+        "DERIVED": 10,
+        "ESTIMATED": 7,
+        "MODELLED": 8,
+        "ASSUMPTION": 0,
+        "SCENARIO": 2,
+        "UNKNOWN": 7,
+        "CONFLICTED": 2
+      },
+      "pasted_content.txt": {
+        "MEASURED": 1,
+        "REPORTED": 1,
+        "DERIVED": 1,
+        "ESTIMATED": 1,
+        "MODELLED": 1,
+        "ASSUMPTION": 1,
+        "SCENARIO": 1,
+        "UNKNOWN": 4,
+        "CONFLICTED": 1
+      },
+      "validate_ramp_case_studies.json": {
+        "MEASURED": 32,
+        "REPORTED": 58,
+        "DERIVED": 5,
+        "ESTIMATED": 9,
+        "MODELLED": 0,
+        "ASSUMPTION": 0,
+        "SCENARIO": 2,
+        "UNKNOWN": 1,
+        "CONFLICTED": 1
+      },
+      "forge_ramp_dependency.mmd": {
+        "MEASURED": 0,
+        "REPORTED": 0,
+        "DERIVED": 0,
+        "ESTIMATED": 0,
+        "MODELLED": 0,
+        "ASSUMPTION": 0,
+        "SCENARIO": 0,
+        "UNKNOWN": 0,
+        "CONFLICTED": 0
+      },
+      "forge_ramp_dependency.png": {
+        "MEASURED": 0,
+        "REPORTED": 0,
+        "DERIVED": 0,
+        "ESTIMATED": 0,
+        "MODELLED": 0,
+        "ASSUMPTION": 0,
+        "SCENARIO": 0,
+        "UNKNOWN": 0,
+        "CONFLICTED": 0
+      }
+    },
+    "source_locator_coverage": {
+      "raw_url_like_occurrences": 310,
+      "unique_url_strings_after_decoding_structured_values": 201,
+      "repeated_url_strings": 55,
+      "duplicate_url_occurrences_beyond_first": 109,
+      "http_url_occurrences": 4,
+      "https_url_occurrences": 306,
+      "malformed_or_format_bleed_tokens": 1,
+      "malformed_token_note": "One JSON source-list token carries citation/list formatting after the URL (large.stanford.edu/.../)\\n8; retain the local source locator and repair before promotion."
+    },
+    "duplicate_signals": {
+      "industrial_csv_json_projection": {
+        "same_workstream_rows": 8,
+        "same_unknowns_rows": 8,
+        "same_error_values": 8,
+        "exact_same_key_claim_strings": 6,
+        "claim_text_drift_data_row_indexes_zero_based": [
+          0,
+          7
+        ],
+        "interpretation": "CSV is a flattened projection of the JSON workstream results, but two key-claim cells drift in serialization/content; do not merge without row-level provenance."
+      },
+      "industrial_csv_exact_duplicate_data_rows": 0,
+      "json_duplicate_keys": {
+        "forge_world_structured_concepts.json": 0,
+        "industrial_scaleup_research.json": 0,
+        "validate_ramp_case_studies.json": 0
+      },
+      "render_pair": "forge_ramp_dependency.mmd and forge_ramp_dependency.png are a source/render pair; PNG is not independently structured data.",
+      "prompt_overlap": "pasted_content.txt repeats the epistemic vocabulary and scope rules represented in structured_concepts.json; it is a task brief, not an additional evidence set."
+    }
+  },
+  "domain_field_coverage": {
+    "Objective": {
+      "field_count": 8,
+      "fields": [
+        "objective_id",
+        "product",
+        "demand_distribution",
+        "horizon",
+        "service_level",
+        "quality_target",
+        "cost_target",
+        "risk_constraints"
+      ]
+    },
+    "ProductConfiguration": {
+      "field_count": 6,
+      "fields": [
+        "configuration_id",
+        "revision",
+        "variant_mix",
+        "bom",
+        "critical_characteristics",
+        "release_state"
+      ]
+    },
+    "ProcessRoute": {
+      "field_count": 7,
+      "fields": [
+        "route_id",
+        "operations",
+        "precedence",
+        "cycle_time_distribution",
+        "yield_by_operation",
+        "rework_loops",
+        "special_processes"
+      ],
+      "process_relation_coverage": "requires equipment, tooling/fixtures/gauges, workforce skills, materials, and utility systems"
+    },
+    "EquipmentAsset": {
+      "field_count": 8,
+      "fields": [
+        "equipment_id",
+        "capability",
+        "ideal_cycle_time",
+        "install_state",
+        "availability",
+        "software_revision",
+        "calibration_state",
+        "maintenance_plan"
+      ]
+    },
+    "ToolingFixtureGauge": {
+      "field_count": 7,
+      "fields": [
+        "tooling_id",
+        "design_revision",
+        "compatibility",
+        "calibration",
+        "qualified_state",
+        "life",
+        "spare_state"
+      ]
+    },
+    "Metrology": {
+      "explicit_structured_entity": false,
+      "text_lexical_mentions": 8,
+      "proxy_fields": [
+        "EquipmentAsset.calibration_state",
+        "ToolingFixtureGauge.calibration",
+        "Qualification.evidence"
+      ],
+      "canonical_capability_candidate": "cap:metrology",
+      "coverage_gap": "No standalone metrology facility/service/traceability entity or throughput field."
+    },
+    "Supplier": {
+      "field_count": 9,
+      "fields": [
+        "supplier_id",
+        "tier",
+        "site",
+        "process",
+        "approved_state",
+        "effective_capacity",
+        "lead_time_distribution",
+        "single_source",
+        "contingency"
+      ]
+    },
+    "Material": {
+      "field_count": 8,
+      "fields": [
+        "material_id",
+        "specification",
+        "lot",
+        "source",
+        "inventory",
+        "lead_time",
+        "certificate",
+        "substitution_rules"
+      ]
+    },
+    "WorkforceSkill": {
+      "field_count": 8,
+      "fields": [
+        "skill_id",
+        "role",
+        "proficiency",
+        "certification",
+        "training_time",
+        "time_to_competence",
+        "shift_coverage",
+        "attrition"
+      ]
+    },
+    "UtilitySystem": {
+      "field_count": 8,
+      "fields": [
+        "utility_id",
+        "type",
+        "rated_capacity",
+        "available_capacity",
+        "quality",
+        "redundancy",
+        "planned_downtime",
+        "expansion_lead_time"
+      ]
+    },
+    "Facility": {
+      "field_count": 8,
+      "fields": [
+        "facility_id",
+        "site",
+        "building",
+        "area",
+        "floor_load",
+        "environmental_class",
+        "permits",
+        "expansion_zones"
+      ]
+    },
+    "Qualification": {
+      "field_count": 8,
+      "fields": [
+        "qualification_id",
+        "scope",
+        "standard",
+        "authority",
+        "evidence",
+        "validity",
+        "requalification_triggers",
+        "status"
+      ]
+    },
+    "CapacityClaim": {
+      "field_count": 12,
+      "fields": [
+        "claim_id",
+        "facility_id",
+        "line_id",
+        "configuration_id",
+        "value",
+        "unit",
+        "period",
+        "capacity_status",
+        "evidence_label",
+        "source_scope",
+        "denominator",
+        "confidence"
+      ]
+    },
+    "BottleneckObservation": {
+      "field_count": 9,
+      "fields": [
+        "observation_id",
+        "interval",
+        "constraint_class",
+        "resource_or_gate",
+        "utilization",
+        "queue",
+        "evidence",
+        "intervention",
+        "post_intervention_result"
+      ]
+    },
+    "Disturbance": {
+      "field_count": 8,
+      "fields": [
+        "disturbance_id",
+        "5m_category",
+        "cause",
+        "effect",
+        "probability",
+        "duration",
+        "response",
+        "preventive_action"
+      ]
+    },
+    "EvidenceRecord": {
+      "field_count": 12,
+      "fields": [
+        "evidence_id",
+        "source_url",
+        "source_title",
+        "source_date",
+        "retrieved_date",
+        "claim_text",
+        "evidence_label",
+        "scope",
+        "denominator",
+        "quote_or_field",
+        "confidence",
+        "conflict_set_id"
+      ]
+    }
+  },
+  "relation_normalization_candidates": [
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/0",
+      "raw_relation": "Objective constrains RampPlan",
+      "normalized_verb": "constrains",
+      "normalized_triplets": [
+        {
+          "source": "Objective",
+          "relation": "constrains",
+          "target": "RampPlan"
+        }
+      ],
+      "unresolved_endpoint_names": [
+        "RampPlan"
+      ],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/1",
+      "raw_relation": "ProductConfiguration uses ProcessRoute",
+      "normalized_verb": "uses",
+      "normalized_triplets": [
+        {
+          "source": "ProductConfiguration",
+          "relation": "uses",
+          "target": "ProcessRoute"
+        }
+      ],
+      "unresolved_endpoint_names": [],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/2",
+      "raw_relation": "ProcessRoute requires EquipmentAsset, ToolingFixtureGauge, WorkforceSkill, Material, UtilitySystem",
+      "normalized_verb": "requires",
+      "normalized_triplets": [
+        {
+          "source": "ProcessRoute",
+          "relation": "requires",
+          "target": "EquipmentAsset"
+        },
+        {
+          "source": "ProcessRoute",
+          "relation": "requires",
+          "target": "ToolingFixtureGauge"
+        },
+        {
+          "source": "ProcessRoute",
+          "relation": "requires",
+          "target": "WorkforceSkill"
+        },
+        {
+          "source": "ProcessRoute",
+          "relation": "requires",
+          "target": "Material"
+        },
+        {
+          "source": "ProcessRoute",
+          "relation": "requires",
+          "target": "UtilitySystem"
+        }
+      ],
+      "unresolved_endpoint_names": [],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/3",
+      "raw_relation": "Facility contains EquipmentAsset, UtilitySystem, Warehouse, and Line",
+      "normalized_verb": "contains",
+      "normalized_triplets": [
+        {
+          "source": "Facility",
+          "relation": "contains",
+          "target": "EquipmentAsset"
+        },
+        {
+          "source": "Facility",
+          "relation": "contains",
+          "target": "UtilitySystem"
+        },
+        {
+          "source": "Facility",
+          "relation": "contains",
+          "target": "Warehouse"
+        },
+        {
+          "source": "Facility",
+          "relation": "contains",
+          "target": "Line"
+        }
+      ],
+      "unresolved_endpoint_names": [
+        "Warehouse",
+        "Line"
+      ],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/4",
+      "raw_relation": "Supplier provides Material and has Qualification",
+      "normalized_verb": "provides/has",
+      "normalized_triplets": [
+        {
+          "source": "Supplier",
+          "relation": "provides",
+          "target": "Material"
+        },
+        {
+          "source": "Supplier",
+          "relation": "has",
+          "target": "Qualification"
+        }
+      ],
+      "unresolved_endpoint_names": [],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/5",
+      "raw_relation": "Qualification gates ProductConfiguration, ProcessRoute, Supplier, and RampState",
+      "normalized_verb": "gates",
+      "normalized_triplets": [
+        {
+          "source": "Qualification",
+          "relation": "gates",
+          "target": "ProductConfiguration"
+        },
+        {
+          "source": "Qualification",
+          "relation": "gates",
+          "target": "ProcessRoute"
+        },
+        {
+          "source": "Qualification",
+          "relation": "gates",
+          "target": "Supplier"
+        },
+        {
+          "source": "Qualification",
+          "relation": "gates",
+          "target": "RampState"
+        }
+      ],
+      "unresolved_endpoint_names": [],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/6",
+      "raw_relation": "CapacityClaim describes Facility/Line/ProductConfiguration and cites EvidenceRecord",
+      "normalized_verb": "describes/cites",
+      "normalized_triplets": [
+        {
+          "source": "CapacityClaim",
+          "relation": "describes",
+          "target": "Facility"
+        },
+        {
+          "source": "CapacityClaim",
+          "relation": "describes",
+          "target": "Line"
+        },
+        {
+          "source": "CapacityClaim",
+          "relation": "describes",
+          "target": "ProductConfiguration"
+        },
+        {
+          "source": "CapacityClaim",
+          "relation": "cites",
+          "target": "EvidenceRecord"
+        }
+      ],
+      "unresolved_endpoint_names": [
+        "Line"
+      ],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/7",
+      "raw_relation": "BottleneckObservation updates RampPlan and CapacityEnvelope",
+      "normalized_verb": "updates",
+      "normalized_triplets": [
+        {
+          "source": "BottleneckObservation",
+          "relation": "updates",
+          "target": "RampPlan"
+        },
+        {
+          "source": "BottleneckObservation",
+          "relation": "updates",
+          "target": "CapacityEnvelope"
+        }
+      ],
+      "unresolved_endpoint_names": [
+        "RampPlan",
+        "CapacityEnvelope"
+      ],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/8",
+      "raw_relation": "Disturbance propagates through dependency graph and modifies CapacityEnvelope",
+      "normalized_verb": "propagates/modifies",
+      "normalized_triplets": [
+        {
+          "source": "Disturbance",
+          "relation": "propagates",
+          "target": "dependency_graph"
+        },
+        {
+          "source": "Disturbance",
+          "relation": "modifies",
+          "target": "CapacityEnvelope"
+        }
+      ],
+      "unresolved_endpoint_names": [
+        "dependency_graph",
+        "CapacityEnvelope"
+      ],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_world_structured_concepts.json#/relations/9",
+      "raw_relation": "EvidenceRecord supports every world-state claim",
+      "normalized_verb": "supports",
+      "normalized_triplets": [
+        {
+          "source": "EvidenceRecord",
+          "relation": "supports",
+          "target": "world_state_claim"
+        }
+      ],
+      "unresolved_endpoint_names": [
+        "world_state_claim"
+      ],
+      "normalization_status": "candidate_only"
+    },
+    {
+      "source_locator": "forge_ramp_dependency.mmd#L2-L29",
+      "raw_relation": "29 unlabeled directed Mermaid arrows including yes/no conditional branch and feedback loops",
+      "normalized_verb": "depends_on/precedes/feedback/conditional_branch",
+      "normalized_triplets": [],
+      "unresolved_endpoint_names": [
+        "semantic direction for each unlabeled arrow"
+      ],
+      "normalization_status": "inferred_from_graph_layout_only"
+    }
+  ],
+  "structured_claim_candidate_samples": [
+    {
+      "candidate_id": "cc-manus11-df228ad6d4f8f754",
+      "candidate_id_input": {
+        "artifact": "FORGE WORLD — Factory Build, Ramp-Up & Production Scaling.md",
+        "corpus_id": "manus-11",
+        "epistemic_class": "REPORTED",
+        "locator": "#L28",
+        "predicate": "has_phase_dependency",
+        "source_locator": "main_md_ref_1",
+        "subject": "factory_ramp",
+        "value_text": "multi-phase disturbance-prone process with targets milestones responsibilities and feedback"
+      },
+      "extraction_note": "Executive-synthesis table; engineering/ramp framing, not a named-facility throughput claim.",
+      "triage": "candidate for structural model after source-scope review"
+    },
+    {
+      "candidate_id": "cc-manus11-7996ee892d977154",
+      "candidate_id_input": {
+        "artifact": "FORGE WORLD — Factory Build, Ramp-Up & Production Scaling.md",
+        "corpus_id": "manus-11",
+        "epistemic_class": "REPORTED",
+        "locator": "#L29",
+        "predicate": "distinguishes_capacity_status",
+        "source_locator": "main_md_refs_4_7_8_9",
+        "subject": "capacity_claim",
+        "value_text": "planned nameplate rated demonstrated qualified and shipped are distinct quantities"
+      },
+      "extraction_note": "Scope discipline rule; preserves capacity-status typing and denominator checks.",
+      "triage": "candidate for ontology/model contract; do not collapse statuses"
+    },
+    {
+      "candidate_id": "cc-manus11-cebf783d9495fdd7",
+      "candidate_id_input": {
+        "artifact": "forge_world_structured_concepts.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "MODELLED",
+        "locator": "#/capacity_equations/effective_station_capacity",
+        "predicate": "defined_by",
+        "source_locator": "structured_concepts",
+        "subject": "effective_station_capacity",
+        "value_text": "C_i = N_i * H_planned / t_i * A_i * P_i * Q_i * M_i"
+      },
+      "extraction_note": "Equation candidate; parameters and denominator must remain explicit.",
+      "triage": "model equation only; not an observed capacity"
+    },
+    {
+      "candidate_id": "cc-manus11-0e68334c3ac7a012",
+      "candidate_id_input": {
+        "artifact": "industrial_scaleup_research.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "MEASURED",
+        "locator": "#/results/0/output/key_claims",
+        "predicate": "has_benchmark",
+        "source_locator": "https://www.leanproduction.com/oee/",
+        "subject": "discrete_manufacturing_oee",
+        "value_text": "world-class OEE benchmark 85 percent and typical performance 40-60 percent"
+      },
+      "extraction_note": "Explicit MEASURED token in the workstream claim string; source is commercial/secondary and denominator is not supplied here.",
+      "triage": "retain as reported benchmark candidate pending primary and time-model validation"
+    },
+    {
+      "candidate_id": "cc-manus11-57df6f2e941fd690",
+      "candidate_id_input": {
+        "artifact": "industrial_scaleup_research.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "MODELLED",
+        "locator": "#/results/0/output/key_claims",
+        "predicate": "modeled_by",
+        "source_locator": "https://www.allaboutlean.com/kingman-formula/",
+        "subject": "queue_waiting_time",
+        "value_text": "Kingman VUT approximation; waiting time rises as utilization approaches 100 percent"
+      },
+      "extraction_note": "Mathematical approximation; not a plant measurement.",
+      "triage": "candidate engineering relation; preserve assumptions and variability terms"
+    },
+    {
+      "candidate_id": "cc-manus11-0f1d6934c91fd739",
+      "candidate_id_input": {
+        "artifact": "industrial_scaleup_research.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "REPORTED",
+        "locator": "#/results/1/output/key_claims",
+        "predicate": "has_overrun_rate",
+        "source_locator": "https://ifactoryapp.com/greenfield-consulting/greenfield-factory-readiness-checklist-50-items",
+        "subject": "greenfield_factory_projects",
+        "value_text": "70 percent exceed initial budgets and deadlines"
+      },
+      "extraction_note": "Numerical claim from a secondary checklist; population, period, and denominator are absent in the artifact.",
+      "triage": "escalate for primary dataset; not a generic model parameter"
+    },
+    {
+      "candidate_id": "cc-manus11-68ff2254ca164c43",
+      "candidate_id_input": {
+        "artifact": "industrial_scaleup_research.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "MEASURED",
+        "locator": "#/results/2/output/key_claims",
+        "predicate": "correlates_with_rework",
+        "source_locator": "https://ieeexplore.ieee.org/abstract/document/11644826/",
+        "subject": "workforce_training",
+        "value_text": "correlation r = 0.593 between inadequate training and rework/repair"
+      },
+      "extraction_note": "Correlation candidate; study population and causal interpretation are not present in the record.",
+      "triage": "retain as scoped reported/measured lead; do not infer causality"
+    },
+    {
+      "candidate_id": "cc-manus11-c252f84edf991b03",
+      "candidate_id_input": {
+        "artifact": "industrial_scaleup_research.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "MEASURED",
+        "locator": "#/results/3/output/key_claims",
+        "predicate": "has_cycle_time",
+        "source_locator": "https://gehring-group.com/en/laser/laser-welding/",
+        "subject": "hairpin_stator_laser_welding",
+        "value_text": "0.05-0.2 seconds per pin pair"
+      },
+      "extraction_note": "Operation-level timing; not motor-level good-output capacity.",
+      "triage": "retain only with product, process, and test-denominator scope"
+    },
+    {
+      "candidate_id": "cc-manus11-ea48e69d92631877",
+      "candidate_id_input": {
+        "artifact": "industrial_scaleup_research.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "MEASURED",
+        "locator": "#/results/4/output/key_claims",
+        "predicate": "has_water_consumption",
+        "source_locator": "https://www.sciencedirect.com/science/article/pii/S2589004225018371",
+        "subject": "semiconductor_300mm_wafer",
+        "value_text": "approximately 2200 gallons total including 1500 gallons ultrapure water"
+      },
+      "extraction_note": "Utility claim with process-boundary and unit-conversion sensitivity.",
+      "triage": "resolve boundary and unit before scenario use"
+    },
+    {
+      "candidate_id": "cc-manus11-7aecf4d2a721aa13",
+      "candidate_id_input": {
+        "artifact": "validate_ramp_case_studies.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "REPORTED",
+        "locator": "#/results/0/capacity_status",
+        "predicate": "has_planned_capacity",
+        "source_locator": "https://pr.tsmc.com/english/news/1951",
+        "subject": "TSMC Fab 18 5nm",
+        "value_text": "over 1000000 12-inch wafers/year for phases 1-3; planned/nameplate not realized qualified throughput"
+      },
+      "extraction_note": "Explicitly separates planned/nameplate from realized qualified output.",
+      "triage": "plan/nameplate evidence only; do not promote to qualified capacity"
+    },
+    {
+      "candidate_id": "cc-manus11-43d374d6fe41e44b",
+      "candidate_id_input": {
+        "artifact": "validate_ramp_case_studies.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "REPORTED",
+        "locator": "#/results/3/capacity_status",
+        "predicate": "has_regulatory_rate_cap",
+        "source_locator": "https://www.faa.gov/newsroom/updates-boeing-737-9-max-aircraft",
+        "subject": "Boeing 737 MAX",
+        "value_text": "38 aircraft/month Jan 2024-Oct 2025; 42 aircraft/month from Oct 2025"
+      },
+      "extraction_note": "Regulatory permission/rate cap is distinct from realized factory output.",
+      "triage": "retain as regulatory constraint; never substitute for demonstrated or shipped rate"
+    },
+    {
+      "candidate_id": "cc-manus11-14573f8fa74bcf58",
+      "candidate_id_input": {
+        "artifact": "validate_ramp_case_studies.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "MEASURED",
+        "locator": "#/results/7/capacity_status",
+        "predicate": "has_shipped_output",
+        "source_locator": "https://www.airbus.com/en/newsroom/press-releases/2026-02-airbus-reports-full-year-fy-2025-results",
+        "subject": "Airbus A320 Family",
+        "value_text": "607 aircraft FY2025 and 602 aircraft FY2024"
+      },
+      "extraction_note": "Annual shipment observation; aggregate family denominator.",
+      "triage": "shipment evidence only; not per-line qualified capacity"
+    },
+    {
+      "candidate_id": "cc-manus11-f5abd2cb0ce04f09",
+      "candidate_id_input": {
+        "artifact": "forge_world_research_notes.md",
+        "corpus_id": "manus-11",
+        "epistemic_class": "REPORTED",
+        "locator": "#L270",
+        "predicate": "has_planned_capacity",
+        "source_locator": "https://ir.tesla.com/press-release/panasonic-and-tesla-sign-agreement-gigafactory",
+        "subject": "Tesla Gigafactory Nevada plan",
+        "value_text": "35 GWh/year cells and 50 GWh/year packs by 2020"
+      },
+      "extraction_note": "Forward-looking company agreement; ownership split and risk caveats are retained in notes.",
+      "triage": "reported plan only; not realized or qualified output"
+    },
+    {
+      "candidate_id": "cc-manus11-a7083f31eeb7623a",
+      "candidate_id_input": {
+        "artifact": "forge_world_research_notes.md",
+        "corpus_id": "manus-11",
+        "epistemic_class": "UNKNOWN",
+        "locator": "#L241",
+        "predicate": "has_validated_output",
+        "source_locator": "https://www.tesla.com/blog/continuing-our-investment-nevada",
+        "subject": "Tesla Nevada later output",
+        "value_text": "official later output page inaccessible; parallel 37 GWh claim not accepted"
+      },
+      "extraction_note": "Explicit UNKNOWN/UNVALIDATED ledger entry.",
+      "triage": "keep UNKNOWN; investigate accessible primary filing or page"
+    },
+    {
+      "candidate_id": "cc-manus11-80a418128efca874",
+      "candidate_id_input": {
+        "artifact": "validate_ramp_case_studies.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "REPORTED",
+        "locator": "#/results/5/capacity_status",
+        "predicate": "has_nameplate_capacity",
+        "source_locator": "https://world-nuclear.org/information-library/nuclear-power-reactors/other/heavy-manufacturing-of-power-plants",
+        "subject": "Japan Steel Works RPV expansion",
+        "value_text": "about 4 to about 12 RPV sets/year; set denominator unresolved"
+      },
+      "extraction_note": "Historical nameplate expansion; set/unit component bundle and completion date require primary reconciliation.",
+      "triage": "preserve denominator/date escalation"
+    },
+    {
+      "candidate_id": "cc-manus11-557f0a6054e08ac3",
+      "candidate_id_input": {
+        "artifact": "validate_ramp_case_studies.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "UNKNOWN",
+        "locator": "#/results/6/capacity_status",
+        "predicate": "has_qualified_output",
+        "source_locator": "https://stegra.com/en/the-boden-plant",
+        "subject": "Stegra Boden",
+        "value_text": "0.0 Mt/y qualified/shipped; construction-stage and commercial output pending"
+      },
+      "extraction_note": "Construction progress and offtake are explicitly not treated as qualified/shipped production.",
+      "triage": "do not convert project state to operating capacity"
+    },
+    {
+      "candidate_id": "cc-manus11-41ede608d87e388c",
+      "candidate_id_input": {
+        "artifact": "industrial_scaleup_research.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "CONFLICTED",
+        "locator": "#/results/7/output/key_claims",
+        "predicate": "has_conflicting_yield_range",
+        "source_locator": "https://siliconanalysts.com/analysis/tsmc-profit-surges-35-percent-on-3nm-ai-chip-dominance",
+        "subject": "TSMC N3 yield",
+        "value_text": "55-80 percent public reports conflict because wafer and die yield definitions differ"
+      },
+      "extraction_note": "Conflict is denominator/definition based, not an averaging opportunity.",
+      "triage": "preserve competing values and yield definitions in a ConflictSet"
+    },
+    {
+      "candidate_id": "cc-manus11-77ec17f7e3e8f9dc",
+      "candidate_id_input": {
+        "artifact": "validate_ramp_case_studies.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "UNKNOWN",
+        "locator": "#/results/2/evidence_quality",
+        "predicate": "has_unknown_production_rate",
+        "source_locator": "https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/ba-20251231.htm",
+        "subject": "Boeing 787",
+        "value_text": "public delivery data are stronger than monthly factory production data"
+      },
+      "extraction_note": "Explicitly blocks delivery-to-production substitution.",
+      "triage": "keep monthly production UNKNOWN until direct production records are found"
+    },
+    {
+      "candidate_id": "cc-manus11-d5a35f65ffe8dc63",
+      "candidate_id_input": {
+        "artifact": "industrial_scaleup_research.json",
+        "corpus_id": "manus-11",
+        "epistemic_class": "ESTIMATED",
+        "locator": "#/results/4/output/key_claims",
+        "predicate": "has_supply_demand_estimate",
+        "source_locator": "https://www.anl.gov/article/how-do-we-bridge-the-battery-scaleup-gap",
+        "subject": "US battery pre-production pilot lines",
+        "value_text": "demand 400 MWh by 2030; supply about 33.75 MWh; support scenario 69-174 MWh"
+      },
+      "extraction_note": "Reported estimates and scenario bounds for pilot capacity, not commercial-factory output.",
+      "triage": "retain as scoped estimate with source definitions and scenario label"
+    }
+  ],
+  "canonical_match_candidates": [
+    {
+      "input_concept": "ProcessRoute",
+      "candidate_schema_type": "process",
+      "candidate_canonical_id": null,
+      "match_basis": "exact role match to research/forge_world_capability_schema.json node type process",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "Facility",
+      "candidate_schema_type": "facility",
+      "candidate_canonical_id": null,
+      "match_basis": "exact schema node type",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "Material",
+      "candidate_schema_type": "material",
+      "candidate_canonical_id": null,
+      "match_basis": "exact schema node type",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "Supplier",
+      "candidate_schema_type": "organization",
+      "candidate_canonical_id": null,
+      "match_basis": "supplier is an organization role; builder identity and supply capability remain separate",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "EquipmentAsset",
+      "candidate_schema_type": "machine_tool",
+      "candidate_canonical_id": null,
+      "match_basis": "conditional only when asset is a machine tool; generic equipment needs an equipment_asset extension",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "ToolingFixtureGauge",
+      "candidate_schema_type": "resource",
+      "candidate_canonical_id": "cap:tooling-fixtures",
+      "match_basis": "registry capability alias tooling/fixtures; gauge/metrology scope is not fully represented",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "metrology, calibration, inspection",
+      "candidate_schema_type": "resource",
+      "candidate_canonical_id": "cap:metrology",
+      "match_basis": "registry alias industrial metrology / measurement and inspection; source content has no standalone metrology entity",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "WorkforceSkill",
+      "candidate_schema_type": "resource",
+      "candidate_canonical_id": null,
+      "match_basis": "resource is a weak placeholder; no workforce/skill node type or canonical capability is present",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "escalate ontology gap"
+    },
+    {
+      "input_concept": "UtilitySystem",
+      "candidate_schema_type": "energy_node",
+      "candidate_canonical_id": null,
+      "match_basis": "energy_node/resource are possible schema roles; power, water, gases, cooling, and wastewater need utility subtypes",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "escalate subtype decision"
+    },
+    {
+      "input_concept": "Qualification",
+      "candidate_schema_type": "standard",
+      "candidate_canonical_id": null,
+      "match_basis": "standard is only a partial match; qualification is a gate/state with authority, validity, and requalification triggers",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "EvidenceRecord",
+      "candidate_schema_type": "evidence_record",
+      "candidate_canonical_id": "forge.evidence.EvidenceRecord",
+      "match_basis": "direct internal contract shape: claim, label, scope, denominator, confidence, conflict set, source",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "battery cell, electrode, formation, aging",
+      "candidate_schema_type": "process/material",
+      "candidate_canonical_id": "cap:battery-cell",
+      "match_basis": "registry alias battery cell/cell manufacturing; content describes process prerequisites but no facility qualification",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "battery module/pack integration",
+      "candidate_schema_type": "component/process",
+      "candidate_canonical_id": "cap:battery-pack-integration",
+      "match_basis": "registry alias battery pack/pack assembly/BMS integration",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "motor winding, rotor, balancing, test",
+      "candidate_schema_type": "process/component",
+      "candidate_canonical_id": "cap:electric-motors",
+      "match_basis": "registry alias servo motors/BLDC motors/motor winding",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "heavy press, large forging, RPV forging",
+      "candidate_schema_type": "machine_tool/process/component",
+      "candidate_canonical_id": "cap:heavy-forging",
+      "match_basis": "registry alias heavy forging/large forging/forging press capability",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "RPV/pressure-boundary production",
+      "candidate_schema_type": "component/process",
+      "candidate_canonical_id": "cap:nuclear-pressure-boundary",
+      "match_basis": "registry alias reactor pressure boundary/nuclear pressure vessels/nuclear heavy components",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "CNC controls, servo, feedback",
+      "candidate_schema_type": "machine_tool/component",
+      "candidate_canonical_id": "cap:cnc-controls",
+      "match_basis": "registry alias CNC controls/numerical controls/machine tool controls",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "none"
+    },
+    {
+      "input_concept": "semiconductor fab, wafer/die yield",
+      "candidate_schema_type": "facility/process",
+      "candidate_canonical_id": null,
+      "match_basis": "no semiconductor-specific canonical capability appears in data/registry/manifest.yaml; do not force to generic electronics",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "escalate capability gap"
+    },
+    {
+      "input_concept": "factory ramp state / bottleneck / disturbance",
+      "candidate_schema_type": "resource/event",
+      "candidate_canonical_id": null,
+      "match_basis": "state, observation, and disturbance concepts are not node types in research/forge_world_capability_schema.json",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "escalate event/state extension"
+    },
+    {
+      "input_concept": "TSMC Fab 18, Tesla Nevada, Boeing 787, JSW Muroran, Stegra Boden, Airbus FAL",
+      "candidate_schema_type": "facility/organization/final_product",
+      "candidate_canonical_id": null,
+      "match_basis": "named entities are candidate facility/org/product identities only; no direct facility registry IDs in the current registry manifest",
+      "mapping_source": "ASSUMPTION",
+      "mapping_epistemic_class": "UNKNOWN",
+      "promotion": "requires entity resolution and evidence snapshots"
+    }
+  ],
+  "ambiguities_and_escalations": [
+    {
+      "severity": "P0",
+      "topic": "corpus routing",
+      "signal": "manus-11 is factory/ramp-up content, while the expected manufacturing-process scope is routed to manus-12",
+      "required_action": "confirm corpus-to-theme map before Gate-0 aggregation"
+    },
+    {
+      "severity": "P0",
+      "topic": "qualified capacity",
+      "signal": "main Markdown explicitly says no facility-specific qualified-capacity world-state data were supplied",
+      "required_action": "keep facility, supplier, and line capacity UNKNOWN until direct qualified good-output evidence exists"
+    },
+    {
+      "severity": "P1",
+      "topic": "capacity-status semantics",
+      "signal": "planned/nameplate/rated/demonstrated/qualified/shipped values coexist and use different denominators",
+      "required_action": "retain status, product mix, time basis, good-output state, and denominator as separate fields"
+    },
+    {
+      "severity": "P1",
+      "topic": "CSV/JSON projection drift",
+      "signal": "eight workstreams and unknown fields align, but two key-claim rows drift between flattened CSV and JSON",
+      "required_action": "select a source-of-truth artifact per row and retain both hashes/provenance"
+    },
+    {
+      "severity": "P1",
+      "topic": "TSMC Fab 18",
+      "signal": "planned wafer capacity and volume-production milestones are reported; realized qualified throughput is not established",
+      "required_action": "do not promote plan/nameplate candidate C10 to qualified capacity"
+    },
+    {
+      "severity": "P1",
+      "topic": "Tesla Nevada",
+      "signal": "official later-output page was inaccessible and the notes explicitly reject the parallel 37 GWh claim",
+      "required_action": "preserve UNKNOWN and seek accessible primary filing/page"
+    },
+    {
+      "severity": "P1",
+      "topic": "JSW RPV sets",
+      "signal": "about 4 to 12 sets/year has unresolved set/unit component bundle and conflicting completion-date reports",
+      "required_action": "reconcile JSW primary annual reports, WNA, and WNN before quantitative use"
+    },
+    {
+      "severity": "P1",
+      "topic": "Boeing production versus shipment",
+      "signal": "delivery totals and inventory/rework are stronger than monthly factory production evidence",
+      "required_action": "do not infer production rate from deliveries"
+    },
+    {
+      "severity": "P1",
+      "topic": "Airbus aggregate denominator",
+      "signal": "602/607 A320 Family shipments are aggregate annual family output; 75/month is forward-looking and per-line output is absent",
+      "required_action": "retain shipment, rate target, and per-line qualified capacity as separate claims"
+    },
+    {
+      "severity": "P1",
+      "topic": "Stegra Boden",
+      "signal": "construction, financing, electrolyzer installation, and offtake are not qualified or shipped steel",
+      "required_action": "keep qualified/shipped output UNKNOWN/zero only where the explicit status is scoped; do not infer operating capacity"
+    },
+    {
+      "severity": "P1",
+      "topic": "yield conflicts",
+      "signal": "N3 public 55-80 percent values conflict because wafer/die/parametric/final-test denominators differ",
+      "required_action": "create a ConflictSet with yield type, denominator, scope, date, and source"
+    },
+    {
+      "severity": "P2",
+      "topic": "URL/source hygiene",
+      "signal": "201 unique URL strings, 55 repeated strings, and one citation/list-format bleed token; source quality mixes primary, secondary, commercial, and discovery links",
+      "required_action": "normalize URLs, classify source tier, and validate high-impact numerical claims before promotion"
+    },
+    {
+      "severity": "P1",
+      "topic": "metrology and workforce ontology",
+      "signal": "metrology is text/calibration coverage without a standalone entity; workforce is modeled as fields but lacks a canonical schema node",
+      "required_action": "resolve registry extensions before canonical matching"
+    }
+  ],
+  "promotion_posture": {
+    "canonical_promotion_count": 0,
+    "evidence_record_promotion_count": 0,
+    "source_snapshot_promotion_count": 0,
+    "registry_mutation": false,
+    "code_change": false,
+    "report_role": "staging_only",
+    "epistemic_rule": "All claim candidates remain candidates; UNKNOWN and CONFLICTED are preserved; no factory existence, project plan, trade-like signal, or source assertion is silently promoted to qualified supply or effective capacity."
+  }
+}

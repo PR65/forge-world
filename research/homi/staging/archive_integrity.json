@@ -1,0 +1,2342 @@
+{
+  "archive_integrity_version": "1.0.0",
+  "entry_count": 254,
+  "failure_count": 0,
+  "matched_entry_count": 254,
+  "package_count": 20,
+  "packages": [
+    {
+      "corpus_id": "manus-01",
+      "declared_file_count": 7,
+      "entries": [
+        {
+          "extracted_hash": "f424528e60b4308e3155bc898e800656ec8ec22d84b78eebabc803c1064ff232",
+          "extracted_path": "extract_research.py",
+          "status": "MATCH",
+          "zip_entry": "extract_research.py",
+          "zip_entry_bytes": 830,
+          "zip_entry_hash": "f424528e60b4308e3155bc898e800656ec8ec22d84b78eebabc803c1064ff232"
+        },
+        {
+          "extracted_hash": "3b2e787314fe365b90d65704c96cb49a402dfd92a7807e3a3f78d1d2be9ed018",
+          "extracted_path": "FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Supplier Qualification & Industrial Sourcing Intelligence.md",
+          "zip_entry_bytes": 45460,
+          "zip_entry_hash": "3b2e787314fe365b90d65704c96cb49a402dfd92a7807e3a3f78d1d2be9ed018"
+        },
+        {
+          "extracted_hash": "f98b9d177389f03ac0fa7229da8be50dd6e51bd3803919f160eab4b993be1250",
+          "extracted_path": "industrial_supplier_qualification_research.csv",
+          "status": "MATCH",
+          "zip_entry": "industrial_supplier_qualification_research.csv",
+          "zip_entry_bytes": 91835,
+          "zip_entry_hash": "f98b9d177389f03ac0fa7229da8be50dd6e51bd3803919f160eab4b993be1250"
+        },
+        {
+          "extracted_hash": "554d50479fca6a0aeac363c246e741820d1e1886e58402ee7f3183cd9e35ed16",
+          "extracted_path": "industrial_supplier_qualification_research.json",
+          "status": "MATCH",
+          "zip_entry": "industrial_supplier_qualification_research.json",
+          "zip_entry_bytes": 93250,
+          "zip_entry_hash": "554d50479fca6a0aeac363c246e741820d1e1886e58402ee7f3183cd9e35ed16"
+        },
+        {
+          "extracted_hash": "67435bd81ef70ce0b8e3ddf331537b0af6206354c2426a554768da43560bec82",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4654,
+          "zip_entry_hash": "67435bd81ef70ce0b8e3ddf331537b0af6206354c2426a554768da43560bec82"
+        },
+        {
+          "extracted_hash": "d499b0190ac487fcc1c8ad92c891190fb3c990c0e3573997305391916a095822",
+          "extracted_path": "research_memos.md",
+          "status": "MATCH",
+          "zip_entry": "research_memos.md",
+          "zip_entry_bytes": 69605,
+          "zip_entry_hash": "d499b0190ac487fcc1c8ad92c891190fb3c990c0e3573997305391916a095822"
+        },
+        {
+          "extracted_hash": "8e5a15fe45836f455adf5d143040e0873c0d97dda2c6fac9ed887af651471adc",
+          "extracted_path": "Verified browser findings.md",
+          "status": "MATCH",
+          "zip_entry": "Verified browser findings.md",
+          "zip_entry_bytes": 12318,
+          "zip_entry_hash": "8e5a15fe45836f455adf5d143040e0873c0d97dda2c6fac9ed887af651471adc"
+        }
+      ],
+      "extracted_file_count": 7,
+      "failure_count": 0,
+      "match_count": 7,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 7,
+      "zip_hash": "612b9e1c068623fe081ccdfd86a2bef1ae48f7b07cb0da5d3eecaf84c2f5bad7",
+      "zip_name": "2222.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-02",
+      "declared_file_count": 12,
+      "entries": [
+        {
+          "extracted_hash": "03516f7718cbff10a487c2f1ff1e4479c4a5d5ccb5b5f53fa615f90f59d67ce8",
+          "extracted_path": "build_indiabuild_report.py",
+          "status": "MATCH",
+          "zip_entry": "build_indiabuild_report.py",
+          "zip_entry_bytes": 54644,
+          "zip_entry_hash": "03516f7718cbff10a487c2f1ff1e4479c4a5d5ccb5b5f53fa615f90f59d67ce8"
+        },
+        {
+          "extracted_hash": "dadab7c4bdff28cf54124b1bbb29f9093fe2a3dca7f81ff7e0e5a8241378d6d5",
+          "extracted_path": "IndiaBUILD++ validated source notes.md",
+          "status": "MATCH",
+          "zip_entry": "IndiaBUILD++ validated source notes.md",
+          "zip_entry_bytes": 8423,
+          "zip_entry_hash": "dadab7c4bdff28cf54124b1bbb29f9093fe2a3dca7f81ff7e0e5a8241378d6d5"
+        },
+        {
+          "extracted_hash": "e1641bf0ab058e7dd62a7480531d0301aac0ca2dd9b321e311d6041573d800f5",
+          "extracted_path": "indiabuild_capability_heatmap.png",
+          "status": "MATCH",
+          "zip_entry": "indiabuild_capability_heatmap.png",
+          "zip_entry_bytes": 348117,
+          "zip_entry_hash": "e1641bf0ab058e7dd62a7480531d0301aac0ca2dd9b321e311d6041573d800f5"
+        },
+        {
+          "extracted_hash": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+          "extracted_path": "IndiaBUILD_plus_plus_baseline.md",
+          "status": "MATCH",
+          "zip_entry": "IndiaBUILD_plus_plus_baseline.md",
+          "zip_entry_bytes": 337009,
+          "zip_entry_hash": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a"
+        },
+        {
+          "extracted_hash": "d0de9fc1cc9569c50f95c951de782a4db6772a37c89b099c80716de1f8458d58",
+          "extracted_path": "IndiaBUILD_plus_plus_cluster_table.csv",
+          "status": "MATCH",
+          "zip_entry": "IndiaBUILD_plus_plus_cluster_table.csv",
+          "zip_entry_bytes": 108059,
+          "zip_entry_hash": "d0de9fc1cc9569c50f95c951de782a4db6772a37c89b099c80716de1f8458d58"
+        },
+        {
+          "extracted_hash": "834340757dce061d1306da98db63b84b31fe41fc7b013972d0cee75a8dd840ae",
+          "extracted_path": "IndiaBUILD_plus_plus_domain_table.csv",
+          "status": "MATCH",
+          "zip_entry": "IndiaBUILD_plus_plus_domain_table.csv",
+          "zip_entry_bytes": 139808,
+          "zip_entry_hash": "834340757dce061d1306da98db63b84b31fe41fc7b013972d0cee75a8dd840ae"
+        },
+        {
+          "extracted_hash": "779307f52da16f25888e82a0a657e0614efdc1a7c9e351950a68f9b55bc5e1e8",
+          "extracted_path": "indiabuild_source_index.csv",
+          "status": "MATCH",
+          "zip_entry": "indiabuild_source_index.csv",
+          "zip_entry_bytes": 36825,
+          "zip_entry_hash": "779307f52da16f25888e82a0a657e0614efdc1a7c9e351950a68f9b55bc5e1e8"
+        },
+        {
+          "extracted_hash": "49c2ca5fd580c32727fdd4ada99831576e63af0cd02d4b4cc0b188c83f2cda2d",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4981,
+          "zip_entry_hash": "49c2ca5fd580c32727fdd4ada99831576e63af0cd02d4b4cc0b188c83f2cda2d"
+        },
+        {
+          "extracted_hash": "ae1b313ff7bc04ed884943b8836b8e7cd2af7aa2b502a329572b49e134e0165f",
+          "extracted_path": "research_india_industrial_domains.csv",
+          "status": "MATCH",
+          "zip_entry": "research_india_industrial_domains.csv",
+          "zip_entry_bytes": 159034,
+          "zip_entry_hash": "ae1b313ff7bc04ed884943b8836b8e7cd2af7aa2b502a329572b49e134e0165f"
+        },
+        {
+          "extracted_hash": "bed6fcebf8b2197f69edfcd98bd4b8abe119f145457f43d1abf956c9ba0a4d68",
+          "extracted_path": "research_india_industrial_domains.json",
+          "status": "MATCH",
+          "zip_entry": "research_india_industrial_domains.json",
+          "zip_entry_bytes": 166422,
+          "zip_entry_hash": "bed6fcebf8b2197f69edfcd98bd4b8abe119f145457f43d1abf956c9ba0a4d68"
+        },
+        {
+          "extracted_hash": "c6a0f348602c54f662978a8621b7039258f8a8c046669436d643a0c8ee0a6288",
+          "extracted_path": "research_india_regional_clusters.csv",
+          "status": "MATCH",
+          "zip_entry": "research_india_regional_clusters.csv",
+          "zip_entry_bytes": 134011,
+          "zip_entry_hash": "c6a0f348602c54f662978a8621b7039258f8a8c046669436d643a0c8ee0a6288"
+        },
+        {
+          "extracted_hash": "a6dab0d53620115f578a48db5e1abc7531094377153324b24481313632e532be",
+          "extracted_path": "research_india_regional_clusters.json",
+          "status": "MATCH",
+          "zip_entry": "research_india_regional_clusters.json",
+          "zip_entry_bytes": 138796,
+          "zip_entry_hash": "a6dab0d53620115f578a48db5e1abc7531094377153324b24481313632e532be"
+        }
+      ],
+      "extracted_file_count": 12,
+      "failure_count": 0,
+      "match_count": 12,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 12,
+      "zip_hash": "a0568bd73b6e22b0be8d8f0b34ce674f072bbe556b356e80009568b250e67230",
+      "zip_name": "Guidance for Conducting Thorough Research.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-03",
+      "declared_file_count": 13,
+      "entries": [
+        {
+          "extracted_hash": "a303c85ccae3089fa8eb1fa789d5546a3f3218fa2a3f88ec74346d964a7fbeea",
+          "extracted_path": "01_steel__aluminium__copper__integrated_mills__smelters__and_refineries.md",
+          "status": "MATCH",
+          "zip_entry": "01_steel__aluminium__copper__integrated_mills__smelters__and_refineries.md",
+          "zip_entry_bytes": 11405,
+          "zip_entry_hash": "a303c85ccae3089fa8eb1fa789d5546a3f3218fa2a3f88ec74346d964a7fbeea"
+        },
+        {
+          "extracted_hash": "04d25ced3d8e6cdea8a5d347c27d0a240548db6c2a0698d20a3d413f28e460f6",
+          "extracted_path": "02_semiconductors__advanced_packaging__electronics_manufacturing__and_osat_facilities.md",
+          "status": "MATCH",
+          "zip_entry": "02_semiconductors__advanced_packaging__electronics_manufacturing__and_osat_facilities.md",
+          "zip_entry_bytes": 10212,
+          "zip_entry_hash": "04d25ced3d8e6cdea8a5d347c27d0a240548db6c2a0698d20a3d413f28e460f6"
+        },
+        {
+          "extracted_hash": "cfd2e4628c634db0b0746942695eb8a7801f27ea47919eec3e9cf87bcde7c84b",
+          "extracted_path": "04_chemicals__petrochemicals__and_fertilizers.md",
+          "status": "MATCH",
+          "zip_entry": "04_chemicals__petrochemicals__and_fertilizers.md",
+          "zip_entry_bytes": 12007,
+          "zip_entry_hash": "cfd2e4628c634db0b0746942695eb8a7801f27ea47919eec3e9cf87bcde7c84b"
+        },
+        {
+          "extracted_hash": "ae97c024b905b7de5feb243d20dcde3b105ed11493a723e400b04899ff71ef09",
+          "extracted_path": "05_aerospace__aero_engines__and_space_launch_systems.md",
+          "status": "MATCH",
+          "zip_entry": "05_aerospace__aero_engines__and_space_launch_systems.md",
+          "zip_entry_bytes": 10931,
+          "zip_entry_hash": "ae97c024b905b7de5feb243d20dcde3b105ed11493a723e400b04899ff71ef09"
+        },
+        {
+          "extracted_hash": "804559629b577302066116a63b47beda0ea85c4ce9b9128b1a47be03075a5b19",
+          "extracted_path": "06_shipyards__marine_systems__nuclear_power_equipment__nuclear_fuel_cycle__and_strategic_heav.md",
+          "status": "MATCH",
+          "zip_entry": "06_shipyards__marine_systems__nuclear_power_equipment__nuclear_fuel_cycle__and_strategic_heav.md",
+          "zip_entry_bytes": 9603,
+          "zip_entry_hash": "804559629b577302066116a63b47beda0ea85c4ce9b9128b1a47be03075a5b19"
+        },
+        {
+          "extracted_hash": "4e8622ad2125003b902bfcbda2d75d8cd158b2de69729c3be17b4bfb4b24d137",
+          "extracted_path": "07_machine_tools__precision_machining__forging__casting__additive_manufacturing__tooling__met.md",
+          "status": "MATCH",
+          "zip_entry": "07_machine_tools__precision_machining__forging__casting__additive_manufacturing__tooling__met.md",
+          "zip_entry_bytes": 13278,
+          "zip_entry_hash": "4e8622ad2125003b902bfcbda2d75d8cd158b2de69729c3be17b4bfb4b24d137"
+        },
+        {
+          "extracted_hash": "b1415fe2fd19e38fec6d173841d19a0525e95d92b1b1467f426b7cbc9610fc56",
+          "extracted_path": "08_mining__mineral_beneficiation__alumina__lithium__nickel__cobalt__rare_earths__graphite__an.md",
+          "status": "MATCH",
+          "zip_entry": "08_mining__mineral_beneficiation__alumina__lithium__nickel__cobalt__rare_earths__graphite__an.md",
+          "zip_entry_bytes": 12496,
+          "zip_entry_hash": "b1415fe2fd19e38fec6d173841d19a0525e95d92b1b1467f426b7cbc9610fc56"
+        },
+        {
+          "extracted_hash": "41a0b7017473034dd55606c86b0026e3f993b4e300d0c61aa605c126b113a96f",
+          "extracted_path": "extract_forge_research.py",
+          "status": "MATCH",
+          "zip_entry": "extract_forge_research.py",
+          "zip_entry_bytes": 1005,
+          "zip_entry_hash": "41a0b7017473034dd55606c86b0026e3f993b4e300d0c61aa605c126b113a96f"
+        },
+        {
+          "extracted_hash": "b6ef5676cc37b62a7adbab6330395cb899987b4b9a50f89061ef53bde05abacc",
+          "extracted_path": "FORGE WORLD — Global Industrial Capability & Facility Atlas.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Global Industrial Capability & Facility Atlas.md",
+          "zip_entry_bytes": 40532,
+          "zip_entry_hash": "b6ef5676cc37b62a7adbab6330395cb899987b4b9a50f89061ef53bde05abacc"
+        },
+        {
+          "extracted_hash": "20c65f6114484fe514e99d2e6c05bf5978ecf305a3165bb710526c8a670786e6",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 5035,
+          "zip_entry_hash": "20c65f6114484fe514e99d2e6c05bf5978ecf305a3165bb710526c8a670786e6"
+        },
+        {
+          "extracted_hash": "2817b1f3583cee74e8abfe73b5ae4018c728b94260415e9b7beeccee07401d4a",
+          "extracted_path": "research_industrial_sectors.csv",
+          "status": "MATCH",
+          "zip_entry": "research_industrial_sectors.csv",
+          "zip_entry_bytes": 116574,
+          "zip_entry_hash": "2817b1f3583cee74e8abfe73b5ae4018c728b94260415e9b7beeccee07401d4a"
+        },
+        {
+          "extracted_hash": "b997ba3e3aa99e287dc1907923989f868b452ba07cd11138eb9a3fad3debfde4",
+          "extracted_path": "research_industrial_sectors.json",
+          "status": "MATCH",
+          "zip_entry": "research_industrial_sectors.json",
+          "zip_entry_bytes": 118613,
+          "zip_entry_hash": "b997ba3e3aa99e287dc1907923989f868b452ba07cd11138eb9a3fad3debfde4"
+        },
+        {
+          "extracted_hash": "89ac3c6c7a42399e9ededdfd2d165f6d3f3abe022cab7b58b4a1715aa2bf6d5f",
+          "extracted_path": "Verified research notes.md",
+          "status": "MATCH",
+          "zip_entry": "Verified research notes.md",
+          "zip_entry_bytes": 4229,
+          "zip_entry_hash": "89ac3c6c7a42399e9ededdfd2d165f6d3f3abe022cab7b58b4a1715aa2bf6d5f"
+        }
+      ],
+      "extracted_file_count": 13,
+      "failure_count": 0,
+      "match_count": 13,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 13,
+      "zip_hash": "df95e484bba00d9b82b66047cfcfdcefae81a16cef680c927385e62559d5b42f",
+      "zip_name": "Guide to Conducting Thorough Research 555.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-04",
+      "declared_file_count": 5,
+      "entries": [
+        {
+          "extracted_hash": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532",
+          "extracted_path": "FORGE WORLD_ Human-Capability Layer for Industrial Execution.md",
+          "status": "MATCH_SANITIZED_PATH",
+          "zip_entry": "FORGE WORLD: Human-Capability Layer for Industrial Execution.md",
+          "zip_entry_bytes": 62860,
+          "zip_entry_hash": "5686cada518b99911d50508ce1342d909568ef40dacecec46020b2c44051f532"
+        },
+        {
+          "extracted_hash": "5e95b55ea9a46423ecabac394b860e0659de618cfb893cd49646be62c6737e1c",
+          "extracted_path": "forge_world_research_domains.csv",
+          "status": "MATCH",
+          "zip_entry": "forge_world_research_domains.csv",
+          "zip_entry_bytes": 69538,
+          "zip_entry_hash": "5e95b55ea9a46423ecabac394b860e0659de618cfb893cd49646be62c6737e1c"
+        },
+        {
+          "extracted_hash": "bbea5b719613e05dea3a43b3de8e0b10a21acce1e4892bf78a9ae584cf6f3f98",
+          "extracted_path": "forge_world_research_domains.json",
+          "status": "MATCH",
+          "zip_entry": "forge_world_research_domains.json",
+          "zip_entry_bytes": 70705,
+          "zip_entry_hash": "bbea5b719613e05dea3a43b3de8e0b10a21acce1e4892bf78a9ae584cf6f3f98"
+        },
+        {
+          "extracted_hash": "767e579a7b5c2be8e4b7925d094bf55af9b16000ab41cc554b78643b21ee9d79",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4700,
+          "zip_entry_hash": "767e579a7b5c2be8e4b7925d094bf55af9b16000ab41cc554b78643b21ee9d79"
+        },
+        {
+          "extracted_hash": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300",
+          "extracted_path": "Verified browser findings.md",
+          "status": "MATCH",
+          "zip_entry": "Verified browser findings.md",
+          "zip_entry_bytes": 12465,
+          "zip_entry_hash": "1ff7226af53d404424b18e80a8f226983183dbcbbe98a90dac0077be46034300"
+        }
+      ],
+      "extracted_file_count": 5,
+      "failure_count": 0,
+      "match_count": 5,
+      "sanitized_path_match_count": 1,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 5,
+      "zip_hash": "78230e6c650ded0427a8135ff81ffb44a0f1eb69cec13be0b1e8edb9e3e8726f",
+      "zip_name": "Guide to Conducting Thorough Research other.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-05",
+      "declared_file_count": 5,
+      "entries": [
+        {
+          "extracted_hash": "5309280a8e32a4d22954daffb1e8fa08af6db9e6af9f944ff995006321260903",
+          "extracted_path": "FORGE WORLD Research Notes.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD Research Notes.md",
+          "zip_entry_bytes": 15273,
+          "zip_entry_hash": "5309280a8e32a4d22954daffb1e8fa08af6db9e6af9f944ff995006321260903"
+        },
+        {
+          "extracted_hash": "d01aeec211ca96242ab11af418d2211d750d9b60053629c6bd2b18e1a2a21558",
+          "extracted_path": "FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Metrology, Testing, Qualification & Standards Infrastructure.md",
+          "zip_entry_bytes": 54234,
+          "zip_entry_hash": "d01aeec211ca96242ab11af418d2211d750d9b60053629c6bd2b18e1a2a21558"
+        },
+        {
+          "extracted_hash": "f53e01100a096b01af317abb5647aea7bbce3bfd1c94381a4a741c3350ca1f0e",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4640,
+          "zip_entry_hash": "f53e01100a096b01af317abb5647aea7bbce3bfd1c94381a4a741c3350ca1f0e"
+        },
+        {
+          "extracted_hash": "95373b69d8bdde09656b5c0beb0e9555bf141b0ac0b93dce4f9701e8d99425a1",
+          "extracted_path": "research_infrastructure_workstreams.json",
+          "status": "MATCH",
+          "zip_entry": "research_infrastructure_workstreams.json",
+          "zip_entry_bytes": 131674,
+          "zip_entry_hash": "95373b69d8bdde09656b5c0beb0e9555bf141b0ac0b93dce4f9701e8d99425a1"
+        },
+        {
+          "extracted_hash": "7fc1d8c4f02538bf3a06f510e4bc1d213bb8218fdc3694f148d4a29001d99027",
+          "extracted_path": "validate_high_risk_claims.json",
+          "status": "MATCH",
+          "zip_entry": "validate_high_risk_claims.json",
+          "zip_entry_bytes": 31626,
+          "zip_entry_hash": "7fc1d8c4f02538bf3a06f510e4bc1d213bb8218fdc3694f148d4a29001d99027"
+        }
+      ],
+      "extracted_file_count": 5,
+      "failure_count": 0,
+      "match_count": 5,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 5,
+      "zip_hash": "7a52ec8024ed291cc8b8d7d8d487045bf8d94a806373b125c6363aba5136f458",
+      "zip_name": "Guide to Conducting Thorough Research.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-06",
+      "declared_file_count": 16,
+      "entries": [
+        {
+          "extracted_hash": "26006279f1640a6948a1e3771872d7502ead119da2d7c917cafcb038c214ab70",
+          "extracted_path": "compute_india_dependencies.py",
+          "status": "MATCH",
+          "zip_entry": "compute_india_dependencies.py",
+          "zip_entry_bytes": 3846,
+          "zip_entry_hash": "26006279f1640a6948a1e3771872d7502ead119da2d7c917cafcb038c214ab70"
+        },
+        {
+          "extracted_hash": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9",
+          "extracted_path": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Global Trade, Import Dependency & Supply-Chain Dependency Graph.md",
+          "zip_entry_bytes": 60446,
+          "zip_entry_hash": "90559aa154919d019663f79c5cdb868b9748286da9a6cb3b41284afb500ee0f9"
+        },
+        {
+          "extracted_hash": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3",
+          "extracted_path": "FORGE_WORLD_relationship_proposals.csv",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_relationship_proposals.csv",
+          "zip_entry_bytes": 3020,
+          "zip_entry_hash": "0d1f30a348c6a17ff8c310d9716c1bece4c4f0cabbe0cab687c21acb2a5b81e3"
+        },
+        {
+          "extracted_hash": "1758d2fd21e4b7c2e067b2658bf0914276e9dd190c50f35a0fceafc834daab1d",
+          "extracted_path": "forge_world_research_notes.md",
+          "status": "MATCH",
+          "zip_entry": "forge_world_research_notes.md",
+          "zip_entry_bytes": 15526,
+          "zip_entry_hash": "1758d2fd21e4b7c2e067b2658bf0914276e9dd190c50f35a0fceafc834daab1d"
+        },
+        {
+          "extracted_hash": "84a118ad30a7af2bc17d94e873b33c894443255d06910c2d0aa1a68cd1618b33",
+          "extracted_path": "forge_world_research_scope.md",
+          "status": "MATCH",
+          "zip_entry": "forge_world_research_scope.md",
+          "zip_entry_bytes": 5189,
+          "zip_entry_hash": "84a118ad30a7af2bc17d94e873b33c894443255d06910c2d0aa1a68cd1618b33"
+        },
+        {
+          "extracted_hash": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f",
+          "extracted_path": "forge_world_research_tracks.json",
+          "status": "MATCH",
+          "zip_entry": "forge_world_research_tracks.json",
+          "zip_entry_bytes": 214147,
+          "zip_entry_hash": "5db57e8e2178aed2af2d8de6db12f0cd50287871d5204195f640e2a7a060573f"
+        },
+        {
+          "extracted_hash": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94",
+          "extracted_path": "FORGE_WORLD_source_inventory.csv",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_source_inventory.csv",
+          "zip_entry_bytes": 4808,
+          "zip_entry_hash": "4d3c351686a3e4fdc8b614844f16a5b5b06391d35d7e4d9a568881a7e2dd7e94"
+        },
+        {
+          "extracted_hash": "759099b2ac6a2764b034902227bce4df03b276a3a5d5384cc28b55e5478f1c65",
+          "extracted_path": "index.tsv",
+          "status": "MATCH",
+          "zip_entry": "index.tsv",
+          "zip_entry_bytes": 3154,
+          "zip_entry_hash": "759099b2ac6a2764b034902227bce4df03b276a3a5d5384cc28b55e5478f1c65"
+        },
+        {
+          "extracted_hash": "e983560d90031fe8d261d77b6bd75371525e3f72d66b47fbb51ec5c0fe1c256a",
+          "extracted_path": "india_2024_strategic_china_share_hhi.png",
+          "status": "MATCH",
+          "zip_entry": "india_2024_strategic_china_share_hhi.png",
+          "zip_entry_bytes": 325197,
+          "zip_entry_hash": "e983560d90031fe8d261d77b6bd75371525e3f72d66b47fbb51ec5c0fe1c256a"
+        },
+        {
+          "extracted_hash": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f",
+          "extracted_path": "india_2024_strategic_dependency_map.csv",
+          "status": "MATCH",
+          "zip_entry": "india_2024_strategic_dependency_map.csv",
+          "zip_entry_bytes": 2197,
+          "zip_entry_hash": "7780e4e9321409535988cbebc324e79965ba8557c138ca7ebbbd6ae6b959833f"
+        },
+        {
+          "extracted_hash": "7167ced726cb239119b534b358dacc35384c6b906f8e30737257a4e9a43ff180",
+          "extracted_path": "india_2024_strategic_dependency_map.json",
+          "status": "MATCH",
+          "zip_entry": "india_2024_strategic_dependency_map.json",
+          "zip_entry_bytes": 5461,
+          "zip_entry_hash": "7167ced726cb239119b534b358dacc35384c6b906f8e30737257a4e9a43ff180"
+        },
+        {
+          "extracted_hash": "b42a4d59acedfe5052b735717fb1c597b5cc74d1665b6cc68196a708bca14c39",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4629,
+          "zip_entry_hash": "b42a4d59acedfe5052b735717fb1c597b5cc74d1665b6cc68196a708bca14c39"
+        },
+        {
+          "extracted_hash": "d29de76c43cad9b4d92d7f06583db740790b8f9b283d9831169b1b09dde87f98",
+          "extracted_path": "plot_india_dependencies.py",
+          "status": "MATCH",
+          "zip_entry": "plot_india_dependencies.py",
+          "zip_entry_bytes": 1673,
+          "zip_entry_hash": "d29de76c43cad9b4d92d7f06583db740790b8f9b283d9831169b1b09dde87f98"
+        },
+        {
+          "extracted_hash": "8e19e85012e787b05944ebde79758a8b31b800e4c78b589c7b2420a499917ef1",
+          "extracted_path": "track_03.md",
+          "status": "MATCH",
+          "zip_entry": "track_03.md",
+          "zip_entry_bytes": 13488,
+          "zip_entry_hash": "8e19e85012e787b05944ebde79758a8b31b800e4c78b589c7b2420a499917ef1"
+        },
+        {
+          "extracted_hash": "31dc198bcc47e58385d14b34ca919b7b614c1f04b57e01e6dca609e24b12b723",
+          "extracted_path": "track_13.md",
+          "status": "MATCH",
+          "zip_entry": "track_13.md",
+          "zip_entry_bytes": 14397,
+          "zip_entry_hash": "31dc198bcc47e58385d14b34ca919b7b614c1f04b57e01e6dca609e24b12b723"
+        },
+        {
+          "extracted_hash": "64e0fdd77e2df9c98c23a0d633130a1d71f45d3defee158a2b51f8d05764b25c",
+          "extracted_path": "track_14.md",
+          "status": "MATCH",
+          "zip_entry": "track_14.md",
+          "zip_entry_bytes": 14899,
+          "zip_entry_hash": "64e0fdd77e2df9c98c23a0d633130a1d71f45d3defee158a2b51f8d05764b25c"
+        }
+      ],
+      "extracted_file_count": 16,
+      "failure_count": 0,
+      "match_count": 16,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 16,
+      "zip_hash": "15fef209a479a7e2b83bc02fa1a7e84849ae2b51fa50bbb91b6143ca0b0c2f86",
+      "zip_name": "How to Conduct Thorough and Deep Research.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-07",
+      "declared_file_count": 12,
+      "entries": [
+        {
+          "extracted_hash": "6226abaf4b833816de0e11b57bb863cfb9983db9842dead073ac2eed26e1a1c8",
+          "extracted_path": "build_forge_data.py",
+          "status": "MATCH",
+          "zip_entry": "build_forge_data.py",
+          "zip_entry_bytes": 19830,
+          "zip_entry_hash": "6226abaf4b833816de0e11b57bb863cfb9983db9842dead073ac2eed26e1a1c8"
+        },
+        {
+          "extracted_hash": "866558a25765b5ed3ee738b800f5d2baac7e1d148aa34880150af34fc343278c",
+          "extracted_path": "FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Cross-Sector Foundational Capability & Industrial Option-Value Research.md",
+          "zip_entry_bytes": 66402,
+          "zip_entry_hash": "866558a25765b5ed3ee738b800f5d2baac7e1d148aa34880150af34fc343278c"
+        },
+        {
+          "extracted_hash": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e",
+          "extracted_path": "forge_world_capability_research.json",
+          "status": "MATCH",
+          "zip_entry": "forge_world_capability_research.json",
+          "zip_entry_bytes": 71648,
+          "zip_entry_hash": "70ef6626cade89f3769687dc3cbd84d382d8b628adb8963e62a6ddec6719f96e"
+        },
+        {
+          "extracted_hash": "d5f124c4cc874d4a713c3312868b5b6a454f50f9540fe71f9f0d779b66692e47",
+          "extracted_path": "forge_world_dependency_matrix.csv",
+          "status": "MATCH",
+          "zip_entry": "forge_world_dependency_matrix.csv",
+          "zip_entry_bytes": 660,
+          "zip_entry_hash": "d5f124c4cc874d4a713c3312868b5b6a454f50f9540fe71f9f0d779b66692e47"
+        },
+        {
+          "extracted_hash": "48334db1edc9e105972d0ee6dc03106499ca2b8bd363e22d580e3fb36bf59fe7",
+          "extracted_path": "forge_world_option_value_scoring.csv",
+          "status": "MATCH",
+          "zip_entry": "forge_world_option_value_scoring.csv",
+          "zip_entry_bytes": 6330,
+          "zip_entry_hash": "48334db1edc9e105972d0ee6dc03106499ca2b8bd363e22d580e3fb36bf59fe7"
+        },
+        {
+          "extracted_hash": "754df4964ada3c709491b4cd7bc79f5751615cdeac2ac70a0f2d7525ea97a7b2",
+          "extracted_path": "forge_world_research_scope.md",
+          "status": "MATCH",
+          "zip_entry": "forge_world_research_scope.md",
+          "zip_entry_bytes": 4536,
+          "zip_entry_hash": "754df4964ada3c709491b4cd7bc79f5751615cdeac2ac70a0f2d7525ea97a7b2"
+        },
+        {
+          "extracted_hash": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868",
+          "extracted_path": "forge_world_structured_relationships.csv",
+          "status": "MATCH",
+          "zip_entry": "forge_world_structured_relationships.csv",
+          "zip_entry_bytes": 12522,
+          "zip_entry_hash": "11b4c5c46b8ec112aeecc8782b7ca6d63431540be2ae9372860860beca76d868"
+        },
+        {
+          "extracted_hash": "7e2a2fc63714a1dd08992d6c8b8b242880389e869fce7af0466bb298ae73e077",
+          "extracted_path": "forge_world_unknown_conflict_ledger.csv",
+          "status": "MATCH",
+          "zip_entry": "forge_world_unknown_conflict_ledger.csv",
+          "zip_entry_bytes": 3951,
+          "zip_entry_hash": "7e2a2fc63714a1dd08992d6c8b8b242880389e869fce7af0466bb298ae73e077"
+        },
+        {
+          "extracted_hash": "8ec502bef3628c7a7beac9ab329810d98b5c5a25fc968cff0d39bba2455688db",
+          "extracted_path": "Parallel Research Stream Syntheses.md",
+          "status": "MATCH",
+          "zip_entry": "Parallel Research Stream Syntheses.md",
+          "zip_entry_bytes": 61861,
+          "zip_entry_hash": "8ec502bef3628c7a7beac9ab329810d98b5c5a25fc968cff0d39bba2455688db"
+        },
+        {
+          "extracted_hash": "ddd9a941585c75b9b977f2353671d4c7ce5c9fa29484e9ecb1c4b1c6d98e6570",
+          "extracted_path": "parallel_ledger_index.txt",
+          "status": "MATCH",
+          "zip_entry": "parallel_ledger_index.txt",
+          "zip_entry_bytes": 27373,
+          "zip_entry_hash": "ddd9a941585c75b9b977f2353671d4c7ce5c9fa29484e9ecb1c4b1c6d98e6570"
+        },
+        {
+          "extracted_hash": "6e4d1e7db7e35e5e143d90883f9c90ba2f81dd3db8bd90109cf7b78adc8070ee",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 5393,
+          "zip_entry_hash": "6e4d1e7db7e35e5e143d90883f9c90ba2f81dd3db8bd90109cf7b78adc8070ee"
+        },
+        {
+          "extracted_hash": "45e65f199149f0a4cd98daa5840e69c9a6e2240ada6dd3f09f235bd51a9f4fe9",
+          "extracted_path": "Validated Findings — Initial Browser Review.md",
+          "status": "MATCH",
+          "zip_entry": "Validated Findings — Initial Browser Review.md",
+          "zip_entry_bytes": 21322,
+          "zip_entry_hash": "45e65f199149f0a4cd98daa5840e69c9a6e2240ada6dd3f09f235bd51a9f4fe9"
+        }
+      ],
+      "extracted_file_count": 12,
+      "failure_count": 0,
+      "match_count": 12,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 12,
+      "zip_hash": "7d490d85d26970a3247ea9238ef802c11e0ff1af7eac091f4ff2f38a2b6dab8c",
+      "zip_name": "How to Conduct Thorough Research and Analysis.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-08",
+      "declared_file_count": 12,
+      "entries": [
+        {
+          "extracted_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+          "extracted_path": "01_baseline_sources.md",
+          "status": "MATCH",
+          "zip_entry": "01_baseline_sources.md",
+          "zip_entry_bytes": 29711,
+          "zip_entry_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75"
+        },
+        {
+          "extracted_hash": "293142d8117854025c13d5cfc3a3c7c614c234ca9ac0cc3c6434864d35ac8387",
+          "extracted_path": "entity_record_extraction.csv",
+          "status": "MATCH",
+          "zip_entry": "entity_record_extraction.csv",
+          "zip_entry_bytes": 198014,
+          "zip_entry_hash": "293142d8117854025c13d5cfc3a3c7c614c234ca9ac0cc3c6434864d35ac8387"
+        },
+        {
+          "extracted_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+          "extracted_path": "entity_record_extraction.json",
+          "status": "MATCH",
+          "zip_entry": "entity_record_extraction.json",
+          "zip_entry_bytes": 200128,
+          "zip_entry_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea"
+        },
+        {
+          "extracted_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea",
+          "extracted_path": "extract_industrial_entity_records.json",
+          "status": "MATCH",
+          "zip_entry": "extract_industrial_entity_records.json",
+          "zip_entry_bytes": 200128,
+          "zip_entry_hash": "cafe84576e08f7919808b7f3c4c0d1151a997926e3e1d0e44bfafa8a686d19ea"
+        },
+        {
+          "extracted_hash": "bda8cbffda9944cae861fcc431565476a7c4388adb1eb790ac3ad18724e036cf",
+          "extracted_path": "FORGE WORLD Clean-Energy Industrial Research Package.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD Clean-Energy Industrial Research Package.md",
+          "zip_entry_bytes": 2224,
+          "zip_entry_hash": "bda8cbffda9944cae861fcc431565476a7c4388adb1eb790ac3ad18724e036cf"
+        },
+        {
+          "extracted_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75",
+          "extracted_path": "FORGE WORLD Research — Baseline Findings.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD Research — Baseline Findings.md",
+          "zip_entry_bytes": 29711,
+          "zip_entry_hash": "b4af7c537f572701b69130ef4a6494252c5e879ac83109d5a626a3ccbdfdff75"
+        },
+        {
+          "extracted_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+          "extracted_path": "FORGE WORLD — Industrial Systems Research Package.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Industrial Systems Research Package.md",
+          "zip_entry_bytes": 73800,
+          "zip_entry_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad"
+        },
+        {
+          "extracted_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad",
+          "extracted_path": "FORGE_WORLD_06_Clean_Energy_Industrial_Systems_Research.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_06_Clean_Energy_Industrial_Systems_Research.md",
+          "zip_entry_bytes": 73800,
+          "zip_entry_hash": "d888a5eae432906ba0aa8b114017dcb10af7194b041f0ed1d93d12cde169a9ad"
+        },
+        {
+          "extracted_hash": "6b9ee7cd9fd0821810b85b6f47178ddb9dee5c4cb3e1cc9b0d682761b0f95c7f",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4426,
+          "zip_entry_hash": "6b9ee7cd9fd0821810b85b6f47178ddb9dee5c4cb3e1cc9b0d682761b0f95c7f"
+        },
+        {
+          "extracted_hash": "fbf2e4b6955e81d92bc526d69af7082915f66b6957e1252d897e5ae0c252a41c",
+          "extracted_path": "raw_workstream_research.csv",
+          "status": "MATCH",
+          "zip_entry": "raw_workstream_research.csv",
+          "zip_entry_bytes": 170897,
+          "zip_entry_hash": "fbf2e4b6955e81d92bc526d69af7082915f66b6957e1252d897e5ae0c252a41c"
+        },
+        {
+          "extracted_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+          "extracted_path": "raw_workstream_research.json",
+          "status": "MATCH",
+          "zip_entry": "raw_workstream_research.json",
+          "zip_entry_bytes": 173178,
+          "zip_entry_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb"
+        },
+        {
+          "extracted_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb",
+          "extracted_path": "research_industrial_workstreams.json",
+          "status": "MATCH",
+          "zip_entry": "research_industrial_workstreams.json",
+          "zip_entry_bytes": 173178,
+          "zip_entry_hash": "daa12f84fc570ee604fc75f26f57e3b2effeb47080581f8880207af0c0a041bb"
+        }
+      ],
+      "extracted_file_count": 12,
+      "failure_count": 0,
+      "match_count": 12,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 12,
+      "zip_hash": "8ed76f26b8ec24f711ff3efd09d2658d463ae7575ae2a8575cc1fcfc0c104a8d",
+      "zip_name": "How to Conduct Thorough Research and Analysis_.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-09",
+      "declared_file_count": 8,
+      "entries": [
+        {
+          "extracted_hash": "a9e8601b5df9ab5fe118c6346d3b782a24b6d49f67dce7c6ebeca9430e6ab98c",
+          "extracted_path": "cnc_capacity_context.png",
+          "status": "MATCH",
+          "zip_entry": "cnc_capacity_context.png",
+          "zip_entry_bytes": 98669,
+          "zip_entry_hash": "a9e8601b5df9ab5fe118c6346d3b782a24b6d49f67dce7c6ebeca9430e6ab98c"
+        },
+        {
+          "extracted_hash": "0b70f4e82c87c044e9e877f659f07046cbc02a060b2a4182c54443ebdc512721",
+          "extracted_path": "cnc_chart.py",
+          "status": "MATCH",
+          "zip_entry": "cnc_chart.py",
+          "zip_entry_bytes": 1036,
+          "zip_entry_hash": "0b70f4e82c87c044e9e877f659f07046cbc02a060b2a4182c54443ebdc512721"
+        },
+        {
+          "extracted_hash": "21648bcaf78b5eb00b60f16ed39fca94934974504e349ef0c50eb6675694f895",
+          "extracted_path": "cnc_ecosystem_research_streams.json",
+          "status": "MATCH",
+          "zip_entry": "cnc_ecosystem_research_streams.json",
+          "zip_entry_bytes": 86673,
+          "zip_entry_hash": "21648bcaf78b5eb00b60f16ed39fca94934974504e349ef0c50eb6675694f895"
+        },
+        {
+          "extracted_hash": "7e27a2220f130b4aae1a7e33b932a429026b3555cefdcf8f6915ed14016d1ed3",
+          "extracted_path": "cnc_research_notes.md",
+          "status": "MATCH",
+          "zip_entry": "cnc_research_notes.md",
+          "zip_entry_bytes": 3228,
+          "zip_entry_hash": "7e27a2220f130b4aae1a7e33b932a429026b3555cefdcf8f6915ed14016d1ed3"
+        },
+        {
+          "extracted_hash": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2",
+          "extracted_path": "FORGE WORLD Research Package.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD Research Package.md",
+          "zip_entry_bytes": 87580,
+          "zip_entry_hash": "962cbb19f3b662f68353145534fbb0bf6fab29a246a55054d8bd47d556b694a2"
+        },
+        {
+          "extracted_hash": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f",
+          "extracted_path": "FORGE_WORLD_CNC_evidence_entities.csv",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_CNC_evidence_entities.csv",
+          "zip_entry_bytes": 10661,
+          "zip_entry_hash": "54f0199a2c94ff4180b2efcae2bbfa432ca0182ebea5651e33a706b0d2770a8f"
+        },
+        {
+          "extracted_hash": "1b395bd9d7e4657dbac97014eec9e43743955139b9a07f79ea00124c64580427",
+          "extracted_path": "FORGE_WORLD_CNC_source_ledger.csv",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_CNC_source_ledger.csv",
+          "zip_entry_bytes": 8220,
+          "zip_entry_hash": "1b395bd9d7e4657dbac97014eec9e43743955139b9a07f79ea00124c64580427"
+        },
+        {
+          "extracted_hash": "3e26dd2db0be0bf9c923bdd44e5ac3a7edd893e08f19bcbee342fbc21f766d51",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4732,
+          "zip_entry_hash": "3e26dd2db0be0bf9c923bdd44e5ac3a7edd893e08f19bcbee342fbc21f766d51"
+        }
+      ],
+      "extracted_file_count": 8,
+      "failure_count": 0,
+      "match_count": 8,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 8,
+      "zip_hash": "4af0c8f158913fded28e8018be9e75707e04fcee522ec7f41764ec1502959e4d",
+      "zip_name": "How to Conduct Thorough Research and Analysis0145.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-10",
+      "declared_file_count": 14,
+      "entries": [
+        {
+          "extracted_hash": "74cb9537ad73a600c89c2d8083e70f59235e6bad94de471481acc5791e2e79d6",
+          "extracted_path": "00_scope_taxonomy.md",
+          "status": "MATCH",
+          "zip_entry": "00_scope_taxonomy.md",
+          "zip_entry_bytes": 6808,
+          "zip_entry_hash": "74cb9537ad73a600c89c2d8083e70f59235e6bad94de471481acc5791e2e79d6"
+        },
+        {
+          "extracted_hash": "5f39f37b353c2ddc5712577d0f92a5da58f16864fc4285ec60aaf97fbe4158d7",
+          "extracted_path": "assemble_package.py",
+          "status": "MATCH",
+          "zip_entry": "assemble_package.py",
+          "zip_entry_bytes": 6276,
+          "zip_entry_hash": "5f39f37b353c2ddc5712577d0f92a5da58f16864fc4285ec60aaf97fbe4158d7"
+        },
+        {
+          "extracted_hash": "8d878f475d0af82c9589076ae440914edd3823b963f42082fd51e892970675f0",
+          "extracted_path": "build_final_report.py",
+          "status": "MATCH",
+          "zip_entry": "build_final_report.py",
+          "zip_entry_bytes": 4585,
+          "zip_entry_hash": "8d878f475d0af82c9589076ae440914edd3823b963f42082fd51e892970675f0"
+        },
+        {
+          "extracted_hash": "af607fe56af3042fa36957351fcc58437bdcc01257c22bc1776de6d3ed6c7967",
+          "extracted_path": "Direct source review notes — 24 August 2026.md",
+          "status": "MATCH",
+          "zip_entry": "Direct source review notes — 24 August 2026.md",
+          "zip_entry_bytes": 1293,
+          "zip_entry_hash": "af607fe56af3042fa36957351fcc58437bdcc01257c22bc1776de6d3ed6c7967"
+        },
+        {
+          "extracted_hash": "34762e20cb496ea1f2f79de9d17407847ab6191f7f42bbf8da43ab9fa1e06dde",
+          "extracted_path": "fetch_memos.py",
+          "status": "MATCH",
+          "zip_entry": "fetch_memos.py",
+          "zip_entry_bytes": 1127,
+          "zip_entry_hash": "34762e20cb496ea1f2f79de9d17407847ab6191f7f42bbf8da43ab9fa1e06dde"
+        },
+        {
+          "extracted_hash": "e1dc5d7e2b9273b64309a0e0f192c405a3bf3d3e34cde15d3a273bba42af6671",
+          "extracted_path": "forge_evidence_unknown_conflict_ledger.csv",
+          "status": "MATCH",
+          "zip_entry": "forge_evidence_unknown_conflict_ledger.csv",
+          "zip_entry_bytes": 6811,
+          "zip_entry_hash": "e1dc5d7e2b9273b64309a0e0f192c405a3bf3d3e34cde15d3a273bba42af6671"
+        },
+        {
+          "extracted_hash": "38c59527f52e4bb4c874540b02ef64cb2d6121f1675ac326ff6907280f5de481",
+          "extracted_path": "forge_ready_scenario_encoding.md",
+          "status": "MATCH",
+          "zip_entry": "forge_ready_scenario_encoding.md",
+          "zip_entry_bytes": 10056,
+          "zip_entry_hash": "38c59527f52e4bb4c874540b02ef64cb2d6121f1675ac326ff6907280f5de481"
+        },
+        {
+          "extracted_hash": "be3f90864b1f32985fec632a7a1884db9597d4adc4a23b63fa9124faabf8ae6b",
+          "extracted_path": "forge_scenario_inputs.json",
+          "status": "MATCH",
+          "zip_entry": "forge_scenario_inputs.json",
+          "zip_entry_bytes": 33488,
+          "zip_entry_hash": "be3f90864b1f32985fec632a7a1884db9597d4adc4a23b63fa9124faabf8ae6b"
+        },
+        {
+          "extracted_hash": "ea1163a2479fbdbd11c40663b31e5dddf795d4b0e8dc9ed5dbd97d1c9f19d373",
+          "extracted_path": "FORGE_WORLD_industrial_resilience_research_bundle.zip",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_industrial_resilience_research_bundle.zip",
+          "zip_entry_bytes": 181851,
+          "zip_entry_hash": "ea1163a2479fbdbd11c40663b31e5dddf795d4b0e8dc9ed5dbd97d1c9f19d373"
+        },
+        {
+          "extracted_hash": "b5a39505d5fcd9f18b2c84d7fb1c436b203d1d6db163b8a3c6ef162ec96f7922",
+          "extracted_path": "FORGE_WORLD_industrial_resilience_research_package.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_industrial_resilience_research_package.md",
+          "zip_entry_bytes": 196430,
+          "zip_entry_hash": "b5a39505d5fcd9f18b2c84d7fb1c436b203d1d6db163b8a3c6ef162ec96f7922"
+        },
+        {
+          "extracted_hash": "383ee9c378aa3f3fc172edf310258c85e0ce851142171a957eb74f2e3d695f28",
+          "extracted_path": "memo_index.txt",
+          "status": "MATCH",
+          "zip_entry": "memo_index.txt",
+          "zip_entry_bytes": 1306,
+          "zip_entry_hash": "383ee9c378aa3f3fc172edf310258c85e0ce851142171a957eb74f2e3d695f28"
+        },
+        {
+          "extracted_hash": "b7036cb78be44c198b6593228d00d87d5b403a0be66d5cf13357985f90326716",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4685,
+          "zip_entry_hash": "b7036cb78be44c198b6593228d00d87d5b403a0be66d5cf13357985f90326716"
+        },
+        {
+          "extracted_hash": "bcbd65448c0a23d619c2b8d6c4463ba527d2bc628fc9d4764411721876558e36",
+          "extracted_path": "research_industrial_shock_cases.json",
+          "status": "MATCH",
+          "zip_entry": "research_industrial_shock_cases.json",
+          "zip_entry_bytes": 22200,
+          "zip_entry_hash": "bcbd65448c0a23d619c2b8d6c4463ba527d2bc628fc9d4764411721876558e36"
+        },
+        {
+          "extracted_hash": "f0970aeef947819740c02d68bec786348e9feccd9b0b01e6b92c0d5b72c849e4",
+          "extracted_path": "SKILL.md",
+          "status": "MATCH",
+          "zip_entry": "SKILL.md",
+          "zip_entry_bytes": 14347,
+          "zip_entry_hash": "f0970aeef947819740c02d68bec786348e9feccd9b0b01e6b92c0d5b72c849e4"
+        }
+      ],
+      "extracted_file_count": 14,
+      "failure_count": 0,
+      "match_count": 14,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 14,
+      "zip_hash": "00e47461b4f2525cff8f4528b74f15a295b45f80e2863c13237fb2b6158da4b0",
+      "zip_name": "How to Conduct Thorough Research.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-11",
+      "declared_file_count": 9,
+      "entries": [
+        {
+          "extracted_hash": "15b262566d2ec54edffb9722cb4900a66faa7c7117e62dc1bfb29f7ef609750e",
+          "extracted_path": "FORGE WORLD — Factory Build, Ramp-Up & Production Scaling.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Factory Build, Ramp-Up & Production Scaling.md",
+          "zip_entry_bytes": 68317,
+          "zip_entry_hash": "15b262566d2ec54edffb9722cb4900a66faa7c7117e62dc1bfb29f7ef609750e"
+        },
+        {
+          "extracted_hash": "26c9db9f2730e7d7fee79250d8037b084ec0c7fff896f98f9f04a095f574831e",
+          "extracted_path": "forge_ramp_dependency.mmd",
+          "status": "MATCH",
+          "zip_entry": "forge_ramp_dependency.mmd",
+          "zip_entry_bytes": 1501,
+          "zip_entry_hash": "26c9db9f2730e7d7fee79250d8037b084ec0c7fff896f98f9f04a095f574831e"
+        },
+        {
+          "extracted_hash": "b24800d4cde5f1d346f5c01e1d61b4526597eef977404e13f3832d4b2f9fc9c6",
+          "extracted_path": "forge_ramp_dependency.png",
+          "status": "MATCH",
+          "zip_entry": "forge_ramp_dependency.png",
+          "zip_entry_bytes": 258732,
+          "zip_entry_hash": "b24800d4cde5f1d346f5c01e1d61b4526597eef977404e13f3832d4b2f9fc9c6"
+        },
+        {
+          "extracted_hash": "e29bdb0fa9864c077e1005fe9afb3451efe5162fbcd485ccbe26eb126fdaf413",
+          "extracted_path": "forge_world_research_notes.md",
+          "status": "MATCH",
+          "zip_entry": "forge_world_research_notes.md",
+          "zip_entry_bytes": 24717,
+          "zip_entry_hash": "e29bdb0fa9864c077e1005fe9afb3451efe5162fbcd485ccbe26eb126fdaf413"
+        },
+        {
+          "extracted_hash": "5c5a25c77c6edaeeaee1d17aaed5d5b0934b26dd24be288283c077831242c6df",
+          "extracted_path": "forge_world_structured_concepts.json",
+          "status": "MATCH",
+          "zip_entry": "forge_world_structured_concepts.json",
+          "zip_entry_bytes": 8002,
+          "zip_entry_hash": "5c5a25c77c6edaeeaee1d17aaed5d5b0934b26dd24be288283c077831242c6df"
+        },
+        {
+          "extracted_hash": "968ad5da955fcd0b6d883b35578992b22ebb18273e7f634b0df517e638714a7f",
+          "extracted_path": "industrial_scaleup_research.csv",
+          "status": "MATCH",
+          "zip_entry": "industrial_scaleup_research.csv",
+          "zip_entry_bytes": 59941,
+          "zip_entry_hash": "968ad5da955fcd0b6d883b35578992b22ebb18273e7f634b0df517e638714a7f"
+        },
+        {
+          "extracted_hash": "9e57109cb95cab8577e6a15d60901879fb305bf0f966cadf27db57c6d9e6d741",
+          "extracted_path": "industrial_scaleup_research.json",
+          "status": "MATCH",
+          "zip_entry": "industrial_scaleup_research.json",
+          "zip_entry_bytes": 61310,
+          "zip_entry_hash": "9e57109cb95cab8577e6a15d60901879fb305bf0f966cadf27db57c6d9e6d741"
+        },
+        {
+          "extracted_hash": "b0d45c824e7643709b254b923fe4379a90a638d75f41a29770d76ba0faf9de5a",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4576,
+          "zip_entry_hash": "b0d45c824e7643709b254b923fe4379a90a638d75f41a29770d76ba0faf9de5a"
+        },
+        {
+          "extracted_hash": "c73f9fd0f5d146e7e442f969c9b704d0bf0470a47e58143d8281f99f3c1b0778",
+          "extracted_path": "validate_ramp_case_studies.json",
+          "status": "MATCH",
+          "zip_entry": "validate_ramp_case_studies.json",
+          "zip_entry_bytes": 41643,
+          "zip_entry_hash": "c73f9fd0f5d146e7e442f969c9b704d0bf0470a47e58143d8281f99f3c1b0778"
+        }
+      ],
+      "extracted_file_count": 9,
+      "failure_count": 0,
+      "match_count": 9,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 9,
+      "zip_hash": "20b65aec4a443399346d99eb08c88d48329d96141dc91191a867e41c7e1fa87c",
+      "zip_name": "How to Conduct Thorough Research_.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-12",
+      "declared_file_count": 17,
+      "entries": [
+        {
+          "extracted_hash": "892a6e60c36f881e528fe18457b447cbae6f9ac6b98b7b42196154e9d04680dd",
+          "extracted_path": "01_01_casting_and_solidification_variants_normalized.md",
+          "status": "MATCH",
+          "zip_entry": "01_01_casting_and_solidification_variants_normalized.md",
+          "zip_entry_bytes": 8728,
+          "zip_entry_hash": "892a6e60c36f881e528fe18457b447cbae6f9ac6b98b7b42196154e9d04680dd"
+        },
+        {
+          "extracted_hash": "9443d444c897e0223905a8643bfc145e0feac41498a4cb289404a626e84ad8e8",
+          "extracted_path": "build_forge_models.py",
+          "status": "MATCH",
+          "zip_entry": "build_forge_models.py",
+          "zip_entry_bytes": 8516,
+          "zip_entry_hash": "9443d444c897e0223905a8643bfc145e0feac41498a4cb289404a626e84ad8e8"
+        },
+        {
+          "extracted_hash": "7f07051f062fef6e0c4745af6d54146ef22c51738d44e8567fdb6a1cf41a6139",
+          "extracted_path": "consolidate_audit.py",
+          "status": "MATCH",
+          "zip_entry": "consolidate_audit.py",
+          "zip_entry_bytes": 3350,
+          "zip_entry_hash": "7f07051f062fef6e0c4745af6d54146ef22c51738d44e8567fdb6a1cf41a6139"
+        },
+        {
+          "extracted_hash": "529b9195db33622c08de12e28d9869a1ecd8b24869baeff85556096f9ac4e44e",
+          "extracted_path": "download_audits.py",
+          "status": "MATCH",
+          "zip_entry": "download_audits.py",
+          "zip_entry_bytes": 864,
+          "zip_entry_hash": "529b9195db33622c08de12e28d9869a1ecd8b24869baeff85556096f9ac4e44e"
+        },
+        {
+          "extracted_hash": "abf44a491f88df725b52eef4c1059a69309e7fba59ec8591c291ecc80ee840c8",
+          "extracted_path": "download_normalized.py",
+          "status": "MATCH",
+          "zip_entry": "download_normalized.py",
+          "zip_entry_bytes": 795,
+          "zip_entry_hash": "abf44a491f88df725b52eef4c1059a69309e7fba59ec8591c291ecc80ee840c8"
+        },
+        {
+          "extracted_hash": "9f748259446bdd64912c4facf6acdee345adf98f0da9a29e40b921c173009ffe",
+          "extracted_path": "download_reports.py",
+          "status": "MATCH",
+          "zip_entry": "download_reports.py",
+          "zip_entry_bytes": 903,
+          "zip_entry_hash": "9f748259446bdd64912c4facf6acdee345adf98f0da9a29e40b921c173009ffe"
+        },
+        {
+          "extracted_hash": "25a774f0cb26a3a2feb0c8c017e96e6775e90660863b1224bcd10af1f93279bd",
+          "extracted_path": "evidence_audit_ledger.csv",
+          "status": "MATCH",
+          "zip_entry": "evidence_audit_ledger.csv",
+          "zip_entry_bytes": 6165,
+          "zip_entry_hash": "25a774f0cb26a3a2feb0c8c017e96e6775e90660863b1224bcd10af1f93279bd"
+        },
+        {
+          "extracted_hash": "f73dcf9cf8f4e15d4996d4dc50d2bbc21fca9c44d83dc4794019844e4ddff7a0",
+          "extracted_path": "FORGE WORLD representative process chains.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD representative process chains.md",
+          "zip_entry_bytes": 16316,
+          "zip_entry_hash": "f73dcf9cf8f4e15d4996d4dc50d2bbc21fca9c44d83dc4794019844e4ddff7a0"
+        },
+        {
+          "extracted_hash": "adc758d5651c906621d9165149e1089a6f4c793b519c0a57411dc7d55eb50db5",
+          "extracted_path": "FORGE WORLD — Manufacturing Processes & Unit-Process Encyclopedia.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Manufacturing Processes & Unit-Process Encyclopedia.md",
+          "zip_entry_bytes": 51176,
+          "zip_entry_hash": "adc758d5651c906621d9165149e1089a6f4c793b519c0a57411dc7d55eb50db5"
+        },
+        {
+          "extracted_hash": "d36a1bfca7b75bf2272282ea598b32e48367038951dc27895d1aa33e249eb90c",
+          "extracted_path": "forge_world_crosscutting_findings.md",
+          "status": "MATCH",
+          "zip_entry": "forge_world_crosscutting_findings.md",
+          "zip_entry_bytes": 4288,
+          "zip_entry_hash": "d36a1bfca7b75bf2272282ea598b32e48367038951dc27895d1aa33e249eb90c"
+        },
+        {
+          "extracted_hash": "eef2a51706eb137031d7b5aaefc89beacaf7be7d38c300b646daef07d34087cd",
+          "extracted_path": "FORGE_WORLD_package.zip",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_package.zip",
+          "zip_entry_bytes": 373109,
+          "zip_entry_hash": "eef2a51706eb137031d7b5aaefc89beacaf7be7d38c300b646daef07d34087cd"
+        },
+        {
+          "extracted_hash": "1de7e1ff9ce867d13909a9540534977ab12de20a5196a2d7693a460d9164c282",
+          "extracted_path": "FORGE_WORLD_PACKAGE_README.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_PACKAGE_README.md",
+          "zip_entry_bytes": 2339,
+          "zip_entry_hash": "1de7e1ff9ce867d13909a9540534977ab12de20a5196a2d7693a460d9164c282"
+        },
+        {
+          "extracted_hash": "e74342354452190f9dca4c6e3e9b5b8a2535a41cfce180dcbd00eba427e13ef7",
+          "extracted_path": "graph_relations.tsv",
+          "status": "MATCH",
+          "zip_entry": "graph_relations.tsv",
+          "zip_entry_bytes": 81783,
+          "zip_entry_hash": "e74342354452190f9dca4c6e3e9b5b8a2535a41cfce180dcbd00eba427e13ef7"
+        },
+        {
+          "extracted_hash": "9eab0e47198d65a15ad41d3c359c8e73c91ba96659ee644c1f43c19d2c67958b",
+          "extracted_path": "material_process_compatibility.csv",
+          "status": "MATCH",
+          "zip_entry": "material_process_compatibility.csv",
+          "zip_entry_bytes": 51836,
+          "zip_entry_hash": "9eab0e47198d65a15ad41d3c359c8e73c91ba96659ee644c1f43c19d2c67958b"
+        },
+        {
+          "extracted_hash": "152bffc94ca17fafae3ddf4313a47d23c8958f4e72f0413a6a38e6d66aa01fc5",
+          "extracted_path": "normalize_process_reports.json",
+          "status": "MATCH",
+          "zip_entry": "normalize_process_reports.json",
+          "zip_entry_bytes": 25314,
+          "zip_entry_hash": "152bffc94ca17fafae3ddf4313a47d23c8958f4e72f0413a6a38e6d66aa01fc5"
+        },
+        {
+          "extracted_hash": "513391bbd68fbf1f284c4027c67213bff7df9282368a75072ecec25295e7fd33",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4939,
+          "zip_entry_hash": "513391bbd68fbf1f284c4027c67213bff7df9282368a75072ecec25295e7fd33"
+        },
+        {
+          "extracted_hash": "989f9d0027785b8c356d8b32c6d524d50c5cf643c39a85e681a0784a71af34fc",
+          "extracted_path": "research_unit_process_workstreams.json",
+          "status": "MATCH",
+          "zip_entry": "research_unit_process_workstreams.json",
+          "zip_entry_bytes": 29016,
+          "zip_entry_hash": "989f9d0027785b8c356d8b32c6d524d50c5cf643c39a85e681a0784a71af34fc"
+        }
+      ],
+      "extracted_file_count": 17,
+      "failure_count": 0,
+      "match_count": 17,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 17,
+      "zip_hash": "7c4cfe9998ffb4ff542a1eb86ab5dc75653372fc07d71ab4326d782ad7ed1160",
+      "zip_name": "How to Conduct Thorough Research_22.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-13",
+      "declared_file_count": 7,
+      "entries": [
+        {
+          "extracted_hash": "ecc128a50c17ef404b87cdf4e72510c50b164d59bbd0256501437dacb3c40c55",
+          "extracted_path": "FORGE WORLD — Materials / Minerals / Foundational Upstream Industry.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Materials / Minerals / Foundational Upstream Industry.md",
+          "zip_entry_bytes": 6754,
+          "zip_entry_hash": "ecc128a50c17ef404b87cdf4e72510c50b164d59bbd0256501437dacb3c40c55"
+        },
+        {
+          "extracted_hash": "b2a00d3a9efa1570a214a23bb4d981bac91f3f3f907599891bcc7a7236639340",
+          "extracted_path": "FORGE WORLD — Materials, Minerals, Chemicals and Foundational Upstream Industry.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Materials, Minerals, Chemicals and Foundational Upstream Industry.md",
+          "zip_entry_bytes": 62099,
+          "zip_entry_hash": "b2a00d3a9efa1570a214a23bb4d981bac91f3f3f907599891bcc7a7236639340"
+        },
+        {
+          "extracted_hash": "7cfadc38cdd7dac9d476f638b929f5f6f454109fb6438f8f5e43ab8fbb02094f",
+          "extracted_path": "iea_gcmoutlook2025.txt",
+          "status": "MATCH",
+          "zip_entry": "iea_gcmoutlook2025.txt",
+          "zip_entry_bytes": 954515,
+          "zip_entry_hash": "7cfadc38cdd7dac9d476f638b929f5f6f454109fb6438f8f5e43ab8fbb02094f"
+        },
+        {
+          "extracted_hash": "32caeea7c55478faf90b1ca43cfcd6d826fea137b0fcbf05e98079f596429b48",
+          "extracted_path": "india_mines_annual_report_2024_25.txt",
+          "status": "MATCH",
+          "zip_entry": "india_mines_annual_report_2024_25.txt",
+          "zip_entry_bytes": 1339660,
+          "zip_entry_hash": "32caeea7c55478faf90b1ca43cfcd6d826fea137b0fcbf05e98079f596429b48"
+        },
+        {
+          "extracted_hash": "8e74b2b77414ef1b3a55ccd92ffcce1d871cd0aa779389c47eb9b40671a912c4",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4354,
+          "zip_entry_hash": "8e74b2b77414ef1b3a55ccd92ffcce1d871cd0aa779389c47eb9b40671a912c4"
+        },
+        {
+          "extracted_hash": "f181ec5373c4a21b7d83ea5bc779ceedade3bcd745cc9d280d01bdf488b29819",
+          "extracted_path": "research_materials_chain_modules.csv",
+          "status": "MATCH",
+          "zip_entry": "research_materials_chain_modules.csv",
+          "zip_entry_bytes": 53717,
+          "zip_entry_hash": "f181ec5373c4a21b7d83ea5bc779ceedade3bcd745cc9d280d01bdf488b29819"
+        },
+        {
+          "extracted_hash": "ab828dce5617a335f0f5fea8066f17b2533a15036b04da7277b01584a5c23d96",
+          "extracted_path": "research_materials_chain_modules.json",
+          "status": "MATCH",
+          "zip_entry": "research_materials_chain_modules.json",
+          "zip_entry_bytes": 55366,
+          "zip_entry_hash": "ab828dce5617a335f0f5fea8066f17b2533a15036b04da7277b01584a5c23d96"
+        },
+        {
+          "extracted_hash": "15223776797ada0001e271994d58482fed7535f70a085e6d6ba01e10a7376e76",
+          "extracted_path": "Source notes — initial authoritative sources.md",
+          "status": "MATCH",
+          "zip_entry": "Source notes — initial authoritative sources.md",
+          "zip_entry_bytes": 6289,
+          "zip_entry_hash": "15223776797ada0001e271994d58482fed7535f70a085e6d6ba01e10a7376e76"
+        }
+      ],
+      "extracted_file_count": 8,
+      "failure_count": 0,
+      "match_count": 8,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 8,
+      "zip_hash": "9b155e4d1e40c67e1af88d89161b9f3605fb7bb87a94f6cdeff88cb94379216c",
+      "zip_name": "How to Conduct Thorough Research_44.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-14",
+      "declared_file_count": 11,
+      "entries": [
+        {
+          "extracted_hash": "8ebae1b9423ac2bca57638325d5d3e8351b9a11f1d22e2c8534559cd49e4c6cf",
+          "extracted_path": "FORGE WORLD Semiconductor / Electronics Research Protocol.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD Semiconductor / Electronics Research Protocol.md",
+          "zip_entry_bytes": 5183,
+          "zip_entry_hash": "8ebae1b9423ac2bca57638325d5d3e8351b9a11f1d22e2c8534559cd49e4c6cf"
+        },
+        {
+          "extracted_hash": "492f0070d8fedd5c3174d286f2e49c09a1c7468b9556c7d6f84c88d6e3bd114a",
+          "extracted_path": "knowledge_graph_seed.csv",
+          "status": "MATCH",
+          "zip_entry": "knowledge_graph_seed.csv",
+          "zip_entry_bytes": 3923,
+          "zip_entry_hash": "492f0070d8fedd5c3174d286f2e49c09a1c7468b9556c7d6f84c88d6e3bd114a"
+        },
+        {
+          "extracted_hash": "4810bec8da0d55671b29f3faa3dd05b33ee6d85f5f4bcdbaf6087bfc7c3e3655",
+          "extracted_path": "map_global_semiconductor_industrial_stack.csv",
+          "status": "MATCH",
+          "zip_entry": "map_global_semiconductor_industrial_stack.csv",
+          "zip_entry_bytes": 70113,
+          "zip_entry_hash": "4810bec8da0d55671b29f3faa3dd05b33ee6d85f5f4bcdbaf6087bfc7c3e3655"
+        },
+        {
+          "extracted_hash": "87401a06c3f30ee8fc765354050cd6fe65e7cc5e5b329314aed2e946117896d7",
+          "extracted_path": "map_global_semiconductor_industrial_stack.json",
+          "status": "MATCH",
+          "zip_entry": "map_global_semiconductor_industrial_stack.json",
+          "zip_entry_bytes": 71405,
+          "zip_entry_hash": "87401a06c3f30ee8fc765354050cd6fe65e7cc5e5b329314aed2e946117896d7"
+        },
+        {
+          "extracted_hash": "edbe579278834ae2d16c36c89e710ef27d140cb008d998cae65623dd0c6e2c1a",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4440,
+          "zip_entry_hash": "edbe579278834ae2d16c36c89e710ef27d140cb008d998cae65623dd0c6e2c1a"
+        },
+        {
+          "extracted_hash": "7421b5bc55d698dc2e189abc1ceff6fafe02c08e45d812c0283b0c1c455e881f",
+          "extracted_path": "research_equipment_packaging_compute_chain.csv",
+          "status": "MATCH",
+          "zip_entry": "research_equipment_packaging_compute_chain.csv",
+          "zip_entry_bytes": 70661,
+          "zip_entry_hash": "7421b5bc55d698dc2e189abc1ceff6fafe02c08e45d812c0283b0c1c455e881f"
+        },
+        {
+          "extracted_hash": "c537c141830c68544aef3369fe176b03645cb6125b6665922173be6cfcb9eb9f",
+          "extracted_path": "research_equipment_packaging_compute_chain.json",
+          "status": "MATCH",
+          "zip_entry": "research_equipment_packaging_compute_chain.json",
+          "zip_entry_bytes": 72048,
+          "zip_entry_hash": "c537c141830c68544aef3369fe176b03645cb6125b6665922173be6cfcb9eb9f"
+        },
+        {
+          "extracted_hash": "b065bf3d279339b460c46ccc878039c7b094a1d1da7c1cfa97ead9503e0fa9f5",
+          "extracted_path": "research_india_semiconductor_capability_gaps.csv",
+          "status": "MATCH",
+          "zip_entry": "research_india_semiconductor_capability_gaps.csv",
+          "zip_entry_bytes": 64074,
+          "zip_entry_hash": "b065bf3d279339b460c46ccc878039c7b094a1d1da7c1cfa97ead9503e0fa9f5"
+        },
+        {
+          "extracted_hash": "056fa60626b0318e5033ae1024d8646b04c4ce11a463fc6c1b3de6832248a895",
+          "extracted_path": "research_india_semiconductor_capability_gaps.json",
+          "status": "MATCH",
+          "zip_entry": "research_india_semiconductor_capability_gaps.json",
+          "zip_entry_bytes": 65481,
+          "zip_entry_hash": "056fa60626b0318e5033ae1024d8646b04c4ce11a463fc6c1b3de6832248a895"
+        },
+        {
+          "extracted_hash": "5aa004bb9d5f70abf561609a57840476aef357fe4c93201ecdf6f5bafb905889",
+          "extracted_path": "research_upstream_semiconductor_chain.csv",
+          "status": "MATCH",
+          "zip_entry": "research_upstream_semiconductor_chain.csv",
+          "zip_entry_bytes": 68877,
+          "zip_entry_hash": "5aa004bb9d5f70abf561609a57840476aef357fe4c93201ecdf6f5bafb905889"
+        },
+        {
+          "extracted_hash": "38e7de4722130c3b5d87b4692c23720840917bc7abbef96cc7d36c5521461be6",
+          "extracted_path": "research_upstream_semiconductor_chain.json",
+          "status": "MATCH",
+          "zip_entry": "research_upstream_semiconductor_chain.json",
+          "zip_entry_bytes": 70177,
+          "zip_entry_hash": "38e7de4722130c3b5d87b4692c23720840917bc7abbef96cc7d36c5521461be6"
+        },
+        {
+          "extracted_hash": "e0c52ca7e5d799a8b076d1ed2c32fbab092167124df289bdba246eaf08c89aa5",
+          "extracted_path": "Semiconductor / Electronics Industrial Stack.md",
+          "status": "MATCH",
+          "zip_entry": "Semiconductor / Electronics Industrial Stack.md",
+          "zip_entry_bytes": 72027,
+          "zip_entry_hash": "e0c52ca7e5d799a8b076d1ed2c32fbab092167124df289bdba246eaf08c89aa5"
+        },
+        {
+          "extracted_hash": "737d6b45569e0709366d6e083ea2c49c7960bef2862b06e6d3ba9bb792c03d38",
+          "extracted_path": "Verified findings captured during research.md",
+          "status": "MATCH",
+          "zip_entry": "Verified findings captured during research.md",
+          "zip_entry_bytes": 11916,
+          "zip_entry_hash": "737d6b45569e0709366d6e083ea2c49c7960bef2862b06e6d3ba9bb792c03d38"
+        }
+      ],
+      "extracted_file_count": 13,
+      "failure_count": 0,
+      "match_count": 13,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 13,
+      "zip_hash": "ba17528a73ffc4374cc124f1d376fd878f6e20e4c4dc54f6e25636c2574d67fa",
+      "zip_name": "How to Conduct Thorough Research_454.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-15",
+      "declared_file_count": 21,
+      "entries": [
+        {
+          "extracted_hash": "ad13a4339938d714c7bf6cc1c338283b1ce12d556a4450639002fc752e89a28b",
+          "extracted_path": "aerospace_capability_tree.mmd",
+          "status": "MATCH",
+          "zip_entry": "aerospace_capability_tree.mmd",
+          "zip_entry_bytes": 2214,
+          "zip_entry_hash": "ad13a4339938d714c7bf6cc1c338283b1ce12d556a4450639002fc752e89a28b"
+        },
+        {
+          "extracted_hash": "6b1f9c567dce8db97c321d882592763e51f80df6d1949a777ac35d3c9e38e977",
+          "extracted_path": "aerospace_capability_tree.png",
+          "status": "MATCH",
+          "zip_entry": "aerospace_capability_tree.png",
+          "zip_entry_bytes": 181253,
+          "zip_entry_hash": "6b1f9c567dce8db97c321d882592763e51f80df6d1949a777ac35d3c9e38e977"
+        },
+        {
+          "extracted_hash": "6d9283be38601bb285cca5f8dcbd6e9e303e9ca66bb69144d3994aaa5958f96d",
+          "extracted_path": "aerospace_conflict_ledger.csv",
+          "status": "MATCH",
+          "zip_entry": "aerospace_conflict_ledger.csv",
+          "zip_entry_bytes": 4430,
+          "zip_entry_hash": "6d9283be38601bb285cca5f8dcbd6e9e303e9ca66bb69144d3994aaa5958f96d"
+        },
+        {
+          "extracted_hash": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+          "extracted_path": "aerospace_entities.csv",
+          "status": "MATCH",
+          "zip_entry": "aerospace_entities.csv",
+          "zip_entry_bytes": 10198,
+          "zip_entry_hash": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b"
+        },
+        {
+          "extracted_hash": "affa46f5f34323f1c36c0b99238b2f8f21d3fc4cc68eaeaf24dce688fa23c350",
+          "extracted_path": "aerospace_industrial_research_workstreams.json",
+          "status": "MATCH",
+          "zip_entry": "aerospace_industrial_research_workstreams.json",
+          "zip_entry_bytes": 19541,
+          "zip_entry_hash": "affa46f5f34323f1c36c0b99238b2f8f21d3fc4cc68eaeaf24dce688fa23c350"
+        },
+        {
+          "extracted_hash": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+          "extracted_path": "aerospace_relationships.csv",
+          "status": "MATCH",
+          "zip_entry": "aerospace_relationships.csv",
+          "zip_entry_bytes": 6063,
+          "zip_entry_hash": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799"
+        },
+        {
+          "extracted_hash": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+          "extracted_path": "aerospace_throughput_evidence.csv",
+          "status": "MATCH",
+          "zip_entry": "aerospace_throughput_evidence.csv",
+          "zip_entry_bytes": 6140,
+          "zip_entry_hash": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e"
+        },
+        {
+          "extracted_hash": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+          "extracted_path": "aerospace_unknown_ledger.csv",
+          "status": "MATCH",
+          "zip_entry": "aerospace_unknown_ledger.csv",
+          "zip_entry_bytes": 6082,
+          "zip_entry_hash": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00"
+        },
+        {
+          "extracted_hash": "b36495eafe2be06286e92cb8f6637df14c3a77e3cc290c0a0c6337779916fae9",
+          "extracted_path": "benchmark_clusters_bottlenecks_substitutions.md",
+          "status": "MATCH",
+          "zip_entry": "benchmark_clusters_bottlenecks_substitutions.md",
+          "zip_entry_bytes": 10380,
+          "zip_entry_hash": "b36495eafe2be06286e92cb8f6637df14c3a77e3cc290c0a0c6337779916fae9"
+        },
+        {
+          "extracted_hash": "2588af20a239ea236a08fe4cde934c60d720e5d8521230c2ae51ffec99d3ffd0",
+          "extracted_path": "download_research_memos.py",
+          "status": "MATCH",
+          "zip_entry": "download_research_memos.py",
+          "zip_entry_bytes": 956,
+          "zip_entry_hash": "2588af20a239ea236a08fe4cde934c60d720e5d8521230c2ae51ffec99d3ffd0"
+        },
+        {
+          "extracted_hash": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+          "extracted_path": "FORGE WORLD Research Package.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD Research Package.md",
+          "zip_entry_bytes": 74077,
+          "zip_entry_hash": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5"
+        },
+        {
+          "extracted_hash": "2d266136234eba0764cd5b7f6cd02348e9c6b35d314b8af9249067885c73e110",
+          "extracted_path": "global_aircraft_aerospace.md",
+          "status": "MATCH",
+          "zip_entry": "global_aircraft_aerospace.md",
+          "zip_entry_bytes": 10464,
+          "zip_entry_hash": "2d266136234eba0764cd5b7f6cd02348e9c6b35d314b8af9249067885c73e110"
+        },
+        {
+          "extracted_hash": "1c37a8a5b53fc54b3c94512650bb63f4c917682663beb53adb8ee85b27b80c61",
+          "extracted_path": "global_launch_propulsion.md",
+          "status": "MATCH",
+          "zip_entry": "global_launch_propulsion.md",
+          "zip_entry_bytes": 9630,
+          "zip_entry_hash": "1c37a8a5b53fc54b3c94512650bb63f4c917682663beb53adb8ee85b27b80c61"
+        },
+        {
+          "extracted_hash": "06cf435fa36edc361fd087e0c3974a242aa1c2b9db4bf5e63d824889ced9e2b7",
+          "extracted_path": "global_satellite_spacecraft.md",
+          "status": "MATCH",
+          "zip_entry": "global_satellite_spacecraft.md",
+          "zip_entry_bytes": 9705,
+          "zip_entry_hash": "06cf435fa36edc361fd087e0c3974a242aa1c2b9db4bf5e63d824889ced9e2b7"
+        },
+        {
+          "extracted_hash": "120e20b98422539310c327d18f481458ea0f61309b64153014850008c71aacc0",
+          "extracted_path": "india_space_aerospace_industry.md",
+          "status": "MATCH",
+          "zip_entry": "india_space_aerospace_industry.md",
+          "zip_entry_bytes": 11698,
+          "zip_entry_hash": "120e20b98422539310c327d18f481458ea0f61309b64153014850008c71aacc0"
+        },
+        {
+          "extracted_hash": "29f69deb4a9ce52d70654a31f5ee303608e159047f5368839d9c4ad976a9dddd",
+          "extracted_path": "manufacturing_equipment_machine_tools.md",
+          "status": "MATCH",
+          "zip_entry": "manufacturing_equipment_machine_tools.md",
+          "zip_entry_bytes": 9554,
+          "zip_entry_hash": "29f69deb4a9ce52d70654a31f5ee303608e159047f5368839d9c4ad976a9dddd"
+        },
+        {
+          "extracted_hash": "6ef6ca74346da84d4b8bed2aa0e7b65c8c4d11c4419ac485d0e640ace15e26a8",
+          "extracted_path": "materials_minerals_alloys_composites.md",
+          "status": "MATCH",
+          "zip_entry": "materials_minerals_alloys_composites.md",
+          "zip_entry_bytes": 10584,
+          "zip_entry_hash": "6ef6ca74346da84d4b8bed2aa0e7b65c8c4d11c4419ac485d0e640ace15e26a8"
+        },
+        {
+          "extracted_hash": "f5ae0424853872a8f083ea3e4c97e8c7a99f0263dd3b5d4f97d54af82c988edf",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4392,
+          "zip_entry_hash": "f5ae0424853872a8f083ea3e4c97e8c7a99f0263dd3b5d4f97d54af82c988edf"
+        },
+        {
+          "extracted_hash": "50bbd2e8f051a1ffcf10207d6ae5f7dd9e0eade938f9c6a2d650b869b6fad7c9",
+          "extracted_path": "qualification_test_launch_infrastructure.md",
+          "status": "MATCH",
+          "zip_entry": "qualification_test_launch_infrastructure.md",
+          "zip_entry_bytes": 9678,
+          "zip_entry_hash": "50bbd2e8f051a1ffcf10207d6ae5f7dd9e0eade938f9c6a2d650b869b6fad7c9"
+        },
+        {
+          "extracted_hash": "9c00bdaa8a9b1d2742ed65161ff732a6084e8408fae07f028491fde70c900c67",
+          "extracted_path": "research_scope.md",
+          "status": "MATCH",
+          "zip_entry": "research_scope.md",
+          "zip_entry_bytes": 5630,
+          "zip_entry_hash": "9c00bdaa8a9b1d2742ed65161ff732a6084e8408fae07f028491fde70c900c67"
+        },
+        {
+          "extracted_hash": "d6c8015fb61892f5a4eedce4430d108c8d7aa8eca13fb35fe2fc793265be09f4",
+          "extracted_path": "Validated primary-source findings gathered so far.md",
+          "status": "MATCH",
+          "zip_entry": "Validated primary-source findings gathered so far.md",
+          "zip_entry_bytes": 20021,
+          "zip_entry_hash": "d6c8015fb61892f5a4eedce4430d108c8d7aa8eca13fb35fe2fc793265be09f4"
+        }
+      ],
+      "extracted_file_count": 21,
+      "failure_count": 0,
+      "match_count": 21,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 21,
+      "zip_hash": "7b6dc0669dff0a42330f399079e70e54fe857a53ba8d0abe2a5bbe9e477987a2",
+      "zip_name": "How to Conduct Thorough Research_4854.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-16",
+      "declared_file_count": 7,
+      "entries": [
+        {
+          "extracted_hash": "0a9b51af4b68aa48fbbe53dcc8dc6fbc96bb7851acce7c9e2ebddfd3c654c71b",
+          "extracted_path": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Industrial Machines & Production Equipment Universe.md",
+          "zip_entry_bytes": 71846,
+          "zip_entry_hash": "0a9b51af4b68aa48fbbe53dcc8dc6fbc96bb7851acce7c9e2ebddfd3c654c71b"
+        },
+        {
+          "extracted_hash": "bb280bccd862f5996208551212cbd8f60184eb3bbae7f92ac4cf8cc8f62d4777",
+          "extracted_path": "FORGE WORLD — validated research notes.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — validated research notes.md",
+          "zip_entry_bytes": 3737,
+          "zip_entry_hash": "bb280bccd862f5996208551212cbd8f60184eb3bbae7f92ac4cf8cc8f62d4777"
+        },
+        {
+          "extracted_hash": "799825013da0edc9866806834c84ad44e8ac9590c1a179a5ae7f6a605b603499",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4871,
+          "zip_entry_hash": "799825013da0edc9866806834c84ad44e8ac9590c1a179a5ae7f6a605b603499"
+        },
+        {
+          "extracted_hash": "42077c92b77c181d38baa933d2e5f6b5d30d19c41f144b947369b37712aacbf1",
+          "extracted_path": "research_equipment_universe_clusters.csv",
+          "status": "MATCH",
+          "zip_entry": "research_equipment_universe_clusters.csv",
+          "zip_entry_bytes": 117581,
+          "zip_entry_hash": "42077c92b77c181d38baa933d2e5f6b5d30d19c41f144b947369b37712aacbf1"
+        },
+        {
+          "extracted_hash": "98d7c1af1b63c6a6345396aaa77cc2196b8caa7bedab4f152cd17db96ae98d94",
+          "extracted_path": "research_equipment_universe_clusters.json",
+          "status": "MATCH",
+          "zip_entry": "research_equipment_universe_clusters.json",
+          "zip_entry_bytes": 119867,
+          "zip_entry_hash": "98d7c1af1b63c6a6345396aaa77cc2196b8caa7bedab4f152cd17db96ae98d94"
+        },
+        {
+          "extracted_hash": "b048bb5cbc04e55dacfa0a4c8fdb9332cfa8b6f31630a446c339859d89c31552",
+          "extracted_path": "research_india_equipment_capability.csv",
+          "status": "MATCH",
+          "zip_entry": "research_india_equipment_capability.csv",
+          "zip_entry_bytes": 94546,
+          "zip_entry_hash": "b048bb5cbc04e55dacfa0a4c8fdb9332cfa8b6f31630a446c339859d89c31552"
+        },
+        {
+          "extracted_hash": "e38de56c39708649864ecd2562cf04b77d8aa28953789a94bcdc1973fcd6e588",
+          "extracted_path": "research_india_equipment_capability.json",
+          "status": "MATCH",
+          "zip_entry": "research_india_equipment_capability.json",
+          "zip_entry_bytes": 96827,
+          "zip_entry_hash": "e38de56c39708649864ecd2562cf04b77d8aa28953789a94bcdc1973fcd6e588"
+        }
+      ],
+      "extracted_file_count": 7,
+      "failure_count": 0,
+      "match_count": 7,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 7,
+      "zip_hash": "fc82795ba7f3f27017e9c824531d550c3a40dc7e634916ed2c9e47c090e67e39",
+      "zip_name": "How to Conduct Thorough Research_5555.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-17",
+      "declared_file_count": 22,
+      "entries": [
+        {
+          "extracted_hash": "edb01fc40114f1d5e41f14d26816532246650c9d5df8ac2676c8528bce839c7d",
+          "extracted_path": "02_Materials__minerals__and_upstream_chains__steel__aluminum__copper__polymers__ceramics__gla.md",
+          "status": "MATCH",
+          "zip_entry": "02_Materials__minerals__and_upstream_chains__steel__aluminum__copper__polymers__ceramics__gla.md",
+          "zip_entry_bytes": 13601,
+          "zip_entry_hash": "edb01fc40114f1d5e41f14d26816532246650c9d5df8ac2676c8528bce839c7d"
+        },
+        {
+          "extracted_hash": "f331367161bf901664a15a0c332ff2d771036cda74d3547680f72a385b271728",
+          "extracted_path": "03_Machine_tools__tooling__metrology__and_machine_builds_machine_recursion.md",
+          "status": "MATCH",
+          "zip_entry": "03_Machine_tools__tooling__metrology__and_machine_builds_machine_recursion.md",
+          "zip_entry_bytes": 22290,
+          "zip_entry_hash": "f331367161bf901664a15a0c332ff2d771036cda74d3547680f72a385b271728"
+        },
+        {
+          "extracted_hash": "ca5f615ef9ef41b4656a17880257925c51e4a4cfcbb66a0dadaade3fb27751ee",
+          "extracted_path": "04_Fluid_systems__pumps__compressors__valves__seals__piping__water_and_wastewater_equipment.md",
+          "status": "MATCH",
+          "zip_entry": "04_Fluid_systems__pumps__compressors__valves__seals__piping__water_and_wastewater_equipment.md",
+          "zip_entry_bytes": 15139,
+          "zip_entry_hash": "ca5f615ef9ef41b4656a17880257925c51e4a4cfcbb66a0dadaade3fb27751ee"
+        },
+        {
+          "extracted_hash": "3452ca15e1beb0c74bf548b8afc14f6c9b0e38284f80aa1378288e927b4ce1e9",
+          "extracted_path": "05_Motion_and_control_systems__motors__generators__drives__gearboxes__bearings__fasteners__se.md",
+          "status": "MATCH",
+          "zip_entry": "05_Motion_and_control_systems__motors__generators__drives__gearboxes__bearings__fasteners__se.md",
+          "zip_entry_bytes": 23590,
+          "zip_entry_hash": "3452ca15e1beb0c74bf548b8afc14f6c9b0e38284f80aa1378288e927b4ce1e9"
+        },
+        {
+          "extracted_hash": "3e13a44fc4da6040945e2535e88fdb730d63dbdd53496d478b35254dcd458a77",
+          "extracted_path": "06_Consumer_and_durable_products__furniture_tables__appliances__hand_and_power_tools__and_gen.md",
+          "status": "MATCH",
+          "zip_entry": "06_Consumer_and_durable_products__furniture_tables__appliances__hand_and_power_tools__and_gen.md",
+          "zip_entry_bytes": 14537,
+          "zip_entry_hash": "3e13a44fc4da6040945e2535e88fdb730d63dbdd53496d478b35254dcd458a77"
+        },
+        {
+          "extracted_hash": "679aa12cb201bb26f911d0b068abb1ce3e40dfd4443855937ccbb1e12210c21d",
+          "extracted_path": "07_Agriculture__food_processing__packaging__and_textile_apparel_machinery__tractors_and_imple.md",
+          "status": "MATCH",
+          "zip_entry": "07_Agriculture__food_processing__packaging__and_textile_apparel_machinery__tractors_and_imple.md",
+          "zip_entry_bytes": 12888,
+          "zip_entry_hash": "679aa12cb201bb26f911d0b068abb1ce3e40dfd4443855937ccbb1e12210c21d"
+        },
+        {
+          "extracted_hash": "073adb8f4fc04d7d0caa311d546ca54dc98c229df868ea28a70e1e18bd790a77",
+          "extracted_path": "08_Refrigeration_HVAC__construction_equipment__and_building_materials__compressors__chillers.md",
+          "status": "MATCH",
+          "zip_entry": "08_Refrigeration_HVAC__construction_equipment__and_building_materials__compressors__chillers.md",
+          "zip_entry_bytes": 12353,
+          "zip_entry_hash": "073adb8f4fc04d7d0caa311d546ca54dc98c229df868ea28a70e1e18bd790a77"
+        },
+        {
+          "extracted_hash": "636add9d954fdbc7dfa06f4c9635b5a38e5f6b4d83212dd754224b40620586a7",
+          "extracted_path": "09_India_industrial_capabilities.md",
+          "status": "MATCH",
+          "zip_entry": "09_India_industrial_capabilities.md",
+          "zip_entry_bytes": 19098,
+          "zip_entry_hash": "636add9d954fdbc7dfa06f4c9635b5a38e5f6b4d83212dd754224b40620586a7"
+        },
+        {
+          "extracted_hash": "b1dd803d5c539e43323911e1bc8bb4710af295ee0dd0efd35ec3d1cab072e18f",
+          "extracted_path": "10_Standards__qualification__capacity_evidence__bottlenecks__substitutions__alternative_archi.md",
+          "status": "MATCH",
+          "zip_entry": "10_Standards__qualification__capacity_evidence__bottlenecks__substitutions__alternative_archi.md",
+          "zip_entry_bytes": 14354,
+          "zip_entry_hash": "b1dd803d5c539e43323911e1bc8bb4710af295ee0dd0efd35ec3d1cab072e18f"
+        },
+        {
+          "extracted_hash": "566b3d7fdc52d870eece2a2dd2dea02eba59f54da95d5ac172827bda2c79048c",
+          "extracted_path": "capacities.csv",
+          "status": "MATCH",
+          "zip_entry": "capacities.csv",
+          "zip_entry_bytes": 2336,
+          "zip_entry_hash": "566b3d7fdc52d870eece2a2dd2dea02eba59f54da95d5ac172827bda2c79048c"
+        },
+        {
+          "extracted_hash": "d6805c17f4de829679c70d5f8e1a1d1256a9493a71b707ba96cf198120bd7ffe",
+          "extracted_path": "conflicts.csv",
+          "status": "MATCH",
+          "zip_entry": "conflicts.csv",
+          "zip_entry_bytes": 1970,
+          "zip_entry_hash": "d6805c17f4de829679c70d5f8e1a1d1256a9493a71b707ba96cf198120bd7ffe"
+        },
+        {
+          "extracted_hash": "aa5ab7d41d2e13ae28ec328399f26a81d84136a2d3b8f3b353f9a8b48d0bf113",
+          "extracted_path": "create_forge_ledgers.py",
+          "status": "MATCH",
+          "zip_entry": "create_forge_ledgers.py",
+          "zip_entry_bytes": 25729,
+          "zip_entry_hash": "aa5ab7d41d2e13ae28ec328399f26a81d84136a2d3b8f3b353f9a8b48d0bf113"
+        },
+        {
+          "extracted_hash": "763d456d31f89c3a5e48086ebedfcbebeaa811097845e5136bc7ab1ded71c589",
+          "extracted_path": "entities.csv",
+          "status": "MATCH",
+          "zip_entry": "entities.csv",
+          "zip_entry_bytes": 3651,
+          "zip_entry_hash": "763d456d31f89c3a5e48086ebedfcbebeaa811097845e5136bc7ab1ded71c589"
+        },
+        {
+          "extracted_hash": "2194b6e6623dad1f7ed077b3e64f14ebe8dea3da5222fd3d316a8104562395b1",
+          "extracted_path": "extract_research.py",
+          "status": "MATCH",
+          "zip_entry": "extract_research.py",
+          "zip_entry_bytes": 1375,
+          "zip_entry_hash": "2194b6e6623dad1f7ed077b3e64f14ebe8dea3da5222fd3d316a8104562395b1"
+        },
+        {
+          "extracted_hash": "f2fe99fc8540b46d9fe17274534c4ea24e72780af4e7233f5da30b3f06dab43c",
+          "extracted_path": "FORGE WORLD_ Universal Manufactured-Product and Industrial Capability Universe.md",
+          "status": "MATCH_SANITIZED_PATH",
+          "zip_entry": "FORGE WORLD: Universal Manufactured-Product and Industrial Capability Universe.md",
+          "zip_entry_bytes": 69257,
+          "zip_entry_hash": "f2fe99fc8540b46d9fe17274534c4ea24e72780af4e7233f5da30b3f06dab43c"
+        },
+        {
+          "extracted_hash": "b991cff5ccd86f0bfa9176e708613110be8d9ab4bf713ef133a11c36d7d7d105",
+          "extracted_path": "FORGE_WORLD_industrial_capability_research_package.zip",
+          "status": "MATCH",
+          "zip_entry": "FORGE_WORLD_industrial_capability_research_package.zip",
+          "zip_entry_bytes": 218124,
+          "zip_entry_hash": "b991cff5ccd86f0bfa9176e708613110be8d9ab4bf713ef133a11c36d7d7d105"
+        },
+        {
+          "extracted_hash": "d72e6bd2177d7046cbad9e988fb977cf01ec5f329a9d526aa3f4cc0bda202f01",
+          "extracted_path": "industrial_universe_research.json",
+          "status": "MATCH",
+          "zip_entry": "industrial_universe_research.json",
+          "zip_entry_bytes": 166408,
+          "zip_entry_hash": "d72e6bd2177d7046cbad9e988fb977cf01ec5f329a9d526aa3f4cc0bda202f01"
+        },
+        {
+          "extracted_hash": "1e0c339ed6fad824da07c48b0bdd3ac30bf9b3fd73b298422a4b1a52c678b588",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4457,
+          "zip_entry_hash": "1e0c339ed6fad824da07c48b0bdd3ac30bf9b3fd73b298422a4b1a52c678b588"
+        },
+        {
+          "extracted_hash": "b026441a6a5ee6dea5da44cf7d6faccac7c40951dc383216a05f8bf5401bb4f0",
+          "extracted_path": "relationships.csv",
+          "status": "MATCH",
+          "zip_entry": "relationships.csv",
+          "zip_entry_bytes": 2279,
+          "zip_entry_hash": "b026441a6a5ee6dea5da44cf7d6faccac7c40951dc383216a05f8bf5401bb4f0"
+        },
+        {
+          "extracted_hash": "7b4572a286dc2f2cfd8e5cc1e146fcdd9a00f9de1c834bbace3b051763df3d21",
+          "extracted_path": "sources.csv",
+          "status": "MATCH",
+          "zip_entry": "sources.csv",
+          "zip_entry_bytes": 3360,
+          "zip_entry_hash": "7b4572a286dc2f2cfd8e5cc1e146fcdd9a00f9de1c834bbace3b051763df3d21"
+        },
+        {
+          "extracted_hash": "c05464857870e8315a14cbd05b934c9a3aa2009c2b7177d3fac24ca47a14c695",
+          "extracted_path": "unknowns.csv",
+          "status": "MATCH",
+          "zip_entry": "unknowns.csv",
+          "zip_entry_bytes": 2770,
+          "zip_entry_hash": "c05464857870e8315a14cbd05b934c9a3aa2009c2b7177d3fac24ca47a14c695"
+        },
+        {
+          "extracted_hash": "461e7ee3ae0975944b65f3e44d151b5fd1250985d02dfeb7a25cb73016002c6f",
+          "extracted_path": "Verified web findings.md",
+          "status": "MATCH",
+          "zip_entry": "Verified web findings.md",
+          "zip_entry_bytes": 5676,
+          "zip_entry_hash": "461e7ee3ae0975944b65f3e44d151b5fd1250985d02dfeb7a25cb73016002c6f"
+        }
+      ],
+      "extracted_file_count": 22,
+      "failure_count": 0,
+      "match_count": 22,
+      "sanitized_path_match_count": 1,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 22,
+      "zip_hash": "2ec7e95fbd1390b5fea24402a163cdc19a0f8c2f706d0bb99028993f3d809fd5",
+      "zip_name": "Importance of Thorough Research0254.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-18",
+      "declared_file_count": 14,
+      "entries": [
+        {
+          "extracted_hash": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "extracted_path": "entities.csv",
+          "status": "MATCH",
+          "zip_entry": "entities.csv",
+          "zip_entry_bytes": 5072,
+          "zip_entry_hash": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f"
+        },
+        {
+          "extracted_hash": "0f7953249f7cf7163c12ea5c4be3f9c16b453675f9ace0746b0714f723e57525",
+          "extracted_path": "FORGE WORLD Industrial Geography Atlas — Package Manifest.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD Industrial Geography Atlas — Package Manifest.md",
+          "zip_entry_bytes": 2531,
+          "zip_entry_hash": "0f7953249f7cf7163c12ea5c4be3f9c16b453675f9ace0746b0714f723e57525"
+        },
+        {
+          "extracted_hash": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120",
+          "extracted_path": "FORGE WORLD Research Notes.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD Research Notes.md",
+          "zip_entry_bytes": 20071,
+          "zip_entry_hash": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120"
+        },
+        {
+          "extracted_hash": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "extracted_path": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "zip_entry_bytes": 71827,
+          "zip_entry_hash": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49"
+        },
+        {
+          "extracted_hash": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120",
+          "extracted_path": "forge_world_research_notes.md",
+          "status": "MATCH",
+          "zip_entry": "forge_world_research_notes.md",
+          "zip_entry_bytes": 20071,
+          "zip_entry_hash": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120"
+        },
+        {
+          "extracted_hash": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "extracted_path": "forge_world_research_workstreams.json",
+          "status": "MATCH",
+          "zip_entry": "forge_world_research_workstreams.json",
+          "zip_entry_bytes": 61491,
+          "zip_entry_hash": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555"
+        },
+        {
+          "extracted_hash": "bcaf8d996df75a3f1f573542e6c29ef8da57d84936a9c14052ee06fb653a802d",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4688,
+          "zip_entry_hash": "bcaf8d996df75a3f1f573542e6c29ef8da57d84936a9c14052ee06fb653a802d"
+        },
+        {
+          "extracted_hash": "14240ff0be5b4f0bf60d7b59d1e25716d5986cec8f45fc47315e7d66e460285c",
+          "extracted_path": "raw_workstream_outputs.csv",
+          "status": "MATCH",
+          "zip_entry": "raw_workstream_outputs.csv",
+          "zip_entry_bytes": 60395,
+          "zip_entry_hash": "14240ff0be5b4f0bf60d7b59d1e25716d5986cec8f45fc47315e7d66e460285c"
+        },
+        {
+          "extracted_hash": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "extracted_path": "raw_workstream_outputs.json",
+          "status": "MATCH",
+          "zip_entry": "raw_workstream_outputs.json",
+          "zip_entry_bytes": 61491,
+          "zip_entry_hash": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555"
+        },
+        {
+          "extracted_hash": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "extracted_path": "relations.csv",
+          "status": "MATCH",
+          "zip_entry": "relations.csv",
+          "zip_entry_bytes": 4878,
+          "zip_entry_hash": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2"
+        },
+        {
+          "extracted_hash": "a95409497a91e34b5bf622ddbffa662177cc91e1a868602c9571498812a2adb2",
+          "extracted_path": "sector_infrastructure_matrix.csv",
+          "status": "MATCH",
+          "zip_entry": "sector_infrastructure_matrix.csv",
+          "zip_entry_bytes": 5632,
+          "zip_entry_hash": "a95409497a91e34b5bf622ddbffa662177cc91e1a868602c9571498812a2adb2"
+        },
+        {
+          "extracted_hash": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+          "extracted_path": "source_register.csv",
+          "status": "MATCH",
+          "zip_entry": "source_register.csv",
+          "zip_entry_bytes": 7386,
+          "zip_entry_hash": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52"
+        },
+        {
+          "extracted_hash": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "extracted_path": "unknown_ledger.csv",
+          "status": "MATCH",
+          "zip_entry": "unknown_ledger.csv",
+          "zip_entry_bytes": 6022,
+          "zip_entry_hash": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e"
+        },
+        {
+          "extracted_hash": "0ea205edd1fb283a04c4f731cada310d89de96bb06443c9dabb1d426b301877a",
+          "extracted_path": "validate_atlas.py",
+          "status": "MATCH",
+          "zip_entry": "validate_atlas.py",
+          "zip_entry_bytes": 2289,
+          "zip_entry_hash": "0ea205edd1fb283a04c4f731cada310d89de96bb06443c9dabb1d426b301877a"
+        }
+      ],
+      "extracted_file_count": 14,
+      "failure_count": 0,
+      "match_count": 14,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 14,
+      "zip_hash": "7a43c52da442f89832ba434744317c53ebce0f3d93d152d31d0adc8c63c78c49",
+      "zip_name": "Thorough Research and In-Depth Analysis Guide.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-19",
+      "declared_file_count": 12,
+      "entries": [
+        {
+          "extracted_hash": "72fd13405c9477493656ce17ec7454135476a7aa36e1fb113b23c916c07047e1",
+          "extracted_path": "FORGE WORLD — Robotics / Humanoids / Industrial Automation.md",
+          "status": "MATCH",
+          "zip_entry": "FORGE WORLD — Robotics / Humanoids / Industrial Automation.md",
+          "zip_entry_bytes": 65605,
+          "zip_entry_hash": "72fd13405c9477493656ce17ec7454135476a7aa36e1fb113b23c916c07047e1"
+        },
+        {
+          "extracted_hash": "e314e95980aab3cc694fdf3293c5b61040e019cec0fee07347101a8d8f4dec6d",
+          "extracted_path": "forge_robotics_knowledge_graph_seed.csv",
+          "status": "MATCH",
+          "zip_entry": "forge_robotics_knowledge_graph_seed.csv",
+          "zip_entry_bytes": 4604,
+          "zip_entry_hash": "e314e95980aab3cc694fdf3293c5b61040e019cec0fee07347101a8d8f4dec6d"
+        },
+        {
+          "extracted_hash": "4b189ee0a40e99100e99ea6beb2e7bbccdf1afb4a207c73ef5e8b0176cd2bd2b",
+          "extracted_path": "forge_robotics_scale_model.csv",
+          "status": "MATCH",
+          "zip_entry": "forge_robotics_scale_model.csv",
+          "zip_entry_bytes": 795,
+          "zip_entry_hash": "4b189ee0a40e99100e99ea6beb2e7bbccdf1afb4a207c73ef5e8b0176cd2bd2b"
+        },
+        {
+          "extracted_hash": "e671b14218abd89a81574a2826f64b17da1610d7e3ed086aacc38224166de025",
+          "extracted_path": "forge_robotics_scale_model.py",
+          "status": "MATCH",
+          "zip_entry": "forge_robotics_scale_model.py",
+          "zip_entry_bytes": 3085,
+          "zip_entry_hash": "e671b14218abd89a81574a2826f64b17da1610d7e3ed086aacc38224166de025"
+        },
+        {
+          "extracted_hash": "636a51ff25c657fcb5f21fe7dcf3c3eb151a12227f23fb178b308071404353c5",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4487,
+          "zip_entry_hash": "636a51ff25c657fcb5f21fe7dcf3c3eb151a12227f23fb178b308071404353c5"
+        },
+        {
+          "extracted_hash": "c3d74283647474321b91f4b1b321d440e94032f703c52a8bf2f9c0a7e429d2a3",
+          "extracted_path": "Representative 1M/year scaling model.md",
+          "status": "MATCH",
+          "zip_entry": "Representative 1M/year scaling model.md",
+          "zip_entry_bytes": 1329,
+          "zip_entry_hash": "c3d74283647474321b91f4b1b321d440e94032f703c52a8bf2f9c0a7e429d2a3"
+        },
+        {
+          "extracted_hash": "8bce3f729778efa1c438e3f97d038d25c5162634dcf2906bcfa992c455d633b1",
+          "extracted_path": "robotics_industrial_research.csv",
+          "status": "MATCH",
+          "zip_entry": "robotics_industrial_research.csv",
+          "zip_entry_bytes": 62049,
+          "zip_entry_hash": "8bce3f729778efa1c438e3f97d038d25c5162634dcf2906bcfa992c455d633b1"
+        },
+        {
+          "extracted_hash": "cf2811007c9f1e739f62ae2a0739793d2a54a5a5ba2ebe852155beefb7dae596",
+          "extracted_path": "robotics_industrial_research.json",
+          "status": "MATCH",
+          "zip_entry": "robotics_industrial_research.json",
+          "zip_entry_bytes": 63443,
+          "zip_entry_hash": "cf2811007c9f1e739f62ae2a0739793d2a54a5a5ba2ebe852155beefb7dae596"
+        },
+        {
+          "extracted_hash": "e1f93f36d9e2087157339956abbbf2d8d799ba799da80df28cd93521f1509e49",
+          "extracted_path": "robotics_supplier_facility_mapping.csv",
+          "status": "MATCH",
+          "zip_entry": "robotics_supplier_facility_mapping.csv",
+          "zip_entry_bytes": 77428,
+          "zip_entry_hash": "e1f93f36d9e2087157339956abbbf2d8d799ba799da80df28cd93521f1509e49"
+        },
+        {
+          "extracted_hash": "ea24d873a299642ca8d2ddcc10136c21ad0e48fb15e9f6d0a7fb456bc3278b9b",
+          "extracted_path": "robotics_supplier_facility_mapping.json",
+          "status": "MATCH",
+          "zip_entry": "robotics_supplier_facility_mapping.json",
+          "zip_entry_bytes": 79755,
+          "zip_entry_hash": "ea24d873a299642ca8d2ddcc10136c21ad0e48fb15e9f6d0a7fb456bc3278b9b"
+        },
+        {
+          "extracted_hash": "e693519adb051b00c857aa97484eb01ba698c9fc009a83994e61261037536f49",
+          "extracted_path": "robotics_upstream_process_qualification.csv",
+          "status": "MATCH",
+          "zip_entry": "robotics_upstream_process_qualification.csv",
+          "zip_entry_bytes": 72094,
+          "zip_entry_hash": "e693519adb051b00c857aa97484eb01ba698c9fc009a83994e61261037536f49"
+        },
+        {
+          "extracted_hash": "3d63ffd9667fff00e709cffad785114d7bdaf2e0117f004f47a3714004cf3fd2",
+          "extracted_path": "robotics_upstream_process_qualification.json",
+          "status": "MATCH",
+          "zip_entry": "robotics_upstream_process_qualification.json",
+          "zip_entry_bytes": 73609,
+          "zip_entry_hash": "3d63ffd9667fff00e709cffad785114d7bdaf2e0117f004f47a3714004cf3fd2"
+        },
+        {
+          "extracted_hash": "f82e2dc593b0e45e750f9b708a25e3aa3941f2a2ccccbc2c5780eb6e75160ae3",
+          "extracted_path": "Validated evidence notes.md",
+          "status": "MATCH",
+          "zip_entry": "Validated evidence notes.md",
+          "zip_entry_bytes": 9437,
+          "zip_entry_hash": "f82e2dc593b0e45e750f9b708a25e3aa3941f2a2ccccbc2c5780eb6e75160ae3"
+        }
+      ],
+      "extracted_file_count": 13,
+      "failure_count": 0,
+      "match_count": 13,
+      "sanitized_path_match_count": 0,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 13,
+      "zip_hash": "753c2d6e4b366bf2a8dbd5ab92e4197126ff692b4c369bb83c38f2fa91796d9b",
+      "zip_name": "Thorough Research and In-Depth Analysis Techniques.zip",
+      "zip_unchanged": true
+    },
+    {
+      "corpus_id": "manus-20",
+      "declared_file_count": 25,
+      "entries": [
+        {
+          "extracted_hash": "6e9c84c4708603c8b03fd90e9e3cbff761d50f53128c1dd9ee89464f022d2be4",
+          "extracted_path": "memo_1.md",
+          "status": "MATCH",
+          "zip_entry": "memo_1.md",
+          "zip_entry_bytes": 11958,
+          "zip_entry_hash": "6e9c84c4708603c8b03fd90e9e3cbff761d50f53128c1dd9ee89464f022d2be4"
+        },
+        {
+          "extracted_hash": "e534695e73729b52c77728b83fc08b01aaf8f921792a8d419c654637fde1e9f0",
+          "extracted_path": "memo_10.md",
+          "status": "MATCH",
+          "zip_entry": "memo_10.md",
+          "zip_entry_bytes": 20639,
+          "zip_entry_hash": "e534695e73729b52c77728b83fc08b01aaf8f921792a8d419c654637fde1e9f0"
+        },
+        {
+          "extracted_hash": "7642cbf97d0c097cb815231b0472341139222ce55d22ce65e361cda5360190c8",
+          "extracted_path": "memo_11.md",
+          "status": "MATCH",
+          "zip_entry": "memo_11.md",
+          "zip_entry_bytes": 17510,
+          "zip_entry_hash": "7642cbf97d0c097cb815231b0472341139222ce55d22ce65e361cda5360190c8"
+        },
+        {
+          "extracted_hash": "93671131c53367d908757e068a002af09dbb4b2445f16f4cbb78b3cc83b239a3",
+          "extracted_path": "memo_2.md",
+          "status": "MATCH",
+          "zip_entry": "memo_2.md",
+          "zip_entry_bytes": 15212,
+          "zip_entry_hash": "93671131c53367d908757e068a002af09dbb4b2445f16f4cbb78b3cc83b239a3"
+        },
+        {
+          "extracted_hash": "ae3583ad45ccd9de2eecc85c8836939841cf75afe5ba35f6276e8bfbb9619c33",
+          "extracted_path": "memo_3.md",
+          "status": "MATCH",
+          "zip_entry": "memo_3.md",
+          "zip_entry_bytes": 14617,
+          "zip_entry_hash": "ae3583ad45ccd9de2eecc85c8836939841cf75afe5ba35f6276e8bfbb9619c33"
+        },
+        {
+          "extracted_hash": "d9b63c4645287a448d6b0027755e2fcd81b72e0f3eec66a29db2ba99232c4810",
+          "extracted_path": "memo_6.md",
+          "status": "MATCH",
+          "zip_entry": "memo_6.md",
+          "zip_entry_bytes": 14952,
+          "zip_entry_hash": "d9b63c4645287a448d6b0027755e2fcd81b72e0f3eec66a29db2ba99232c4810"
+        },
+        {
+          "extracted_hash": "c406757f7af55f34d9f2e4b01adbb8388ab2e3ae716c3fa09145c49b18663140",
+          "extracted_path": "memo_7.md",
+          "status": "MATCH",
+          "zip_entry": "memo_7.md",
+          "zip_entry_bytes": 14407,
+          "zip_entry_hash": "c406757f7af55f34d9f2e4b01adbb8388ab2e3ae716c3fa09145c49b18663140"
+        },
+        {
+          "extracted_hash": "78ad881e0e18bc44f2b24999dc11e5c3a6726e75f117750e50fb915f0dafe7ed",
+          "extracted_path": "memo_8.md",
+          "status": "MATCH",
+          "zip_entry": "memo_8.md",
+          "zip_entry_bytes": 12658,
+          "zip_entry_hash": "78ad881e0e18bc44f2b24999dc11e5c3a6726e75f117750e50fb915f0dafe7ed"
+        },
+        {
+          "extracted_hash": "40b3ba059b4ec1f52fe5204a1f8063831a14b873697d919e7710feffd2338ec2",
+          "extracted_path": "memo_9.md",
+          "status": "MATCH",
+          "zip_entry": "memo_9.md",
+          "zip_entry_bytes": 16304,
+          "zip_entry_hash": "40b3ba059b4ec1f52fe5204a1f8063831a14b873697d919e7710feffd2338ec2"
+        },
+        {
+          "extracted_hash": "a705e28c128c7fc8303213742f3fd0dca16ede1fad5a86e0d30b3663f542993e",
+          "extracted_path": "Nuclear / Heavy Industry / Grid_ India-Centred Industrial System for Massive Nuclear Buildout.md",
+          "status": "MATCH_SANITIZED_PATH",
+          "zip_entry": "Nuclear / Heavy Industry / Grid: India-Centred Industrial System for Massive Nuclear Buildout.md",
+          "zip_entry_bytes": 70486,
+          "zip_entry_hash": "a705e28c128c7fc8303213742f3fd0dca16ede1fad5a86e0d30b3663f542993e"
+        },
+        {
+          "extracted_hash": "bfd8c5b648e8769469fb6db0b8e3712dc02abfe17243556eed5e79b560296ab0",
+          "extracted_path": "nuclear_analysis_notes.md",
+          "status": "MATCH",
+          "zip_entry": "nuclear_analysis_notes.md",
+          "zip_entry_bytes": 5439,
+          "zip_entry_hash": "bfd8c5b648e8769469fb6db0b8e3712dc02abfe17243556eed5e79b560296ab0"
+        },
+        {
+          "extracted_hash": "236e042e62a5925e7cfae172d0d2d2a6a33ca7c6b00193f219bf97e3b0f7801a",
+          "extracted_path": "nuclear_industry_workstreams.json",
+          "status": "MATCH",
+          "zip_entry": "nuclear_industry_workstreams.json",
+          "zip_entry_bytes": 22273,
+          "zip_entry_hash": "236e042e62a5925e7cfae172d0d2d2a6a33ca7c6b00193f219bf97e3b0f7801a"
+        },
+        {
+          "extracted_hash": "7ca7f20e2f3ba9c81dae807324e85a093dc7de1e1cb4688180c409793051fc19",
+          "extracted_path": "nuclear_knowledge_graph_seed.csv",
+          "status": "MATCH",
+          "zip_entry": "nuclear_knowledge_graph_seed.csv",
+          "zip_entry_bytes": 7916,
+          "zip_entry_hash": "7ca7f20e2f3ba9c81dae807324e85a093dc7de1e1cb4688180c409793051fc19"
+        },
+        {
+          "extracted_hash": "49f9cfc656c76559ef01fad3a93ec8fb7fdb6d6516c03cae98941a8f65607ae3",
+          "extracted_path": "nuclear_memo_index.txt",
+          "status": "MATCH",
+          "zip_entry": "nuclear_memo_index.txt",
+          "zip_entry_bytes": 37020,
+          "zip_entry_hash": "49f9cfc656c76559ef01fad3a93ec8fb7fdb6d6516c03cae98941a8f65607ae3"
+        },
+        {
+          "extracted_hash": "a87e48d28a7fa0135ed6d2f8109d90cccc853b5354f2319ee518659d4467b063",
+          "extracted_path": "pasted_content.txt",
+          "status": "MATCH",
+          "zip_entry": "pasted_content.txt",
+          "zip_entry_bytes": 4686,
+          "zip_entry_hash": "a87e48d28a7fa0135ed6d2f8109d90cccc853b5354f2319ee518659d4467b063"
+        },
+        {
+          "extracted_hash": "2724ec554788519be0eae82ce2479b8778c581e7a7366e170b89e5a11927cd52",
+          "extracted_path": "research_scope.md",
+          "status": "MATCH",
+          "zip_entry": "research_scope.md",
+          "zip_entry_bytes": 3967,
+          "zip_entry_hash": "2724ec554788519be0eae82ce2479b8778c581e7a7366e170b89e5a11927cd52"
+        },
+        {
+          "extracted_hash": "f1790f9f91b32a432a4b8e965d9727a3600d4357874f4dc7b25c6e28f82b5495",
+          "extracted_path": "verified_findings_1.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_1.md",
+          "zip_entry_bytes": 1910,
+          "zip_entry_hash": "f1790f9f91b32a432a4b8e965d9727a3600d4357874f4dc7b25c6e28f82b5495"
+        },
+        {
+          "extracted_hash": "bdc0036192bb53da343377d93ad8e4c83b8267ba8d4fafd9738db765664f2458",
+          "extracted_path": "verified_findings_10.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_10.md",
+          "zip_entry_bytes": 2317,
+          "zip_entry_hash": "bdc0036192bb53da343377d93ad8e4c83b8267ba8d4fafd9738db765664f2458"
+        },
+        {
+          "extracted_hash": "c48a948b65258bda2af68afb3071cdd7d9777df510ae25b4db2188d8eb1269fa",
+          "extracted_path": "verified_findings_2.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_2.md",
+          "zip_entry_bytes": 2172,
+          "zip_entry_hash": "c48a948b65258bda2af68afb3071cdd7d9777df510ae25b4db2188d8eb1269fa"
+        },
+        {
+          "extracted_hash": "e74c872c0ed8af14e4c8cd6c0b5b98305881048c19fed18ce34e754ffe8173e7",
+          "extracted_path": "verified_findings_3.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_3.md",
+          "zip_entry_bytes": 3176,
+          "zip_entry_hash": "e74c872c0ed8af14e4c8cd6c0b5b98305881048c19fed18ce34e754ffe8173e7"
+        },
+        {
+          "extracted_hash": "64fe05a6ab20630bf9931add7a6053df85fa9e2bbba33f17dcd142e0b44a992a",
+          "extracted_path": "verified_findings_4.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_4.md",
+          "zip_entry_bytes": 1933,
+          "zip_entry_hash": "64fe05a6ab20630bf9931add7a6053df85fa9e2bbba33f17dcd142e0b44a992a"
+        },
+        {
+          "extracted_hash": "1af8122c3227c6a612993e28baafe9e00214dd389c25d503c4421ccd4db2ec77",
+          "extracted_path": "verified_findings_5.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_5.md",
+          "zip_entry_bytes": 2225,
+          "zip_entry_hash": "1af8122c3227c6a612993e28baafe9e00214dd389c25d503c4421ccd4db2ec77"
+        },
+        {
+          "extracted_hash": "b9195926ebf5acae5f43dd99c87234bae3199719d97842f1a06d251faf490b8a",
+          "extracted_path": "verified_findings_6.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_6.md",
+          "zip_entry_bytes": 2893,
+          "zip_entry_hash": "b9195926ebf5acae5f43dd99c87234bae3199719d97842f1a06d251faf490b8a"
+        },
+        {
+          "extracted_hash": "8d83c27cb5dd6177f152125544b43e50a05883ade8bc4c4aca346dcffe5b4eac",
+          "extracted_path": "verified_findings_7.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_7.md",
+          "zip_entry_bytes": 3400,
+          "zip_entry_hash": "8d83c27cb5dd6177f152125544b43e50a05883ade8bc4c4aca346dcffe5b4eac"
+        },
+        {
+          "extracted_hash": "d0d29bbea33a658cfc0ff3ab6737512d6808a0f9433e943235095ae921bec99d",
+          "extracted_path": "verified_findings_8.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_8.md",
+          "zip_entry_bytes": 3200,
+          "zip_entry_hash": "d0d29bbea33a658cfc0ff3ab6737512d6808a0f9433e943235095ae921bec99d"
+        },
+        {
+          "extracted_hash": "11cab9f8bad47ccea0252ddf068bbb108cfdf9e81fbf19ade466cc243a6ad8f4",
+          "extracted_path": "verified_findings_9.md",
+          "status": "MATCH",
+          "zip_entry": "verified_findings_9.md",
+          "zip_entry_bytes": 3108,
+          "zip_entry_hash": "11cab9f8bad47ccea0252ddf068bbb108cfdf9e81fbf19ade466cc243a6ad8f4"
+        }
+      ],
+      "extracted_file_count": 26,
+      "failure_count": 0,
+      "match_count": 26,
+      "sanitized_path_match_count": 1,
+      "unexpected_extracted_paths": [],
+      "zip_entry_count": 26,
+      "zip_hash": "f24c944f9b8680c71ebf566ecd424b9b54203cf9230246407bd1b6f5a49cb3d6",
+      "zip_name": "Thorough Research and Result Analysis1254.zip",
+      "zip_unchanged": true
+    }
+  ],
+  "report_hash": "6abea6023eaf2ed410edfbe8e42f715568846568ddbfae57f2d5b8ddd02da756"
+}

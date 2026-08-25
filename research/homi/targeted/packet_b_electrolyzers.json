@@ -1,0 +1,839 @@
+{
+  "schema_version": "1.0.0",
+  "packet_id": "packet_b_electrolyzers",
+  "title": "Targeted primary-source research packet B: Indian electrolyzer and hydrogen equipment capability",
+  "created_date": "2026-08-25",
+  "retrieval_date": "2026-08-25",
+  "scope": {
+    "country": "India",
+    "task_count": 4,
+    "source_cap": 8,
+    "source_policy": "Official primary/company, government, government-institution, and standards sources only; no secondary sources used. Reduced to the eight strongest bounded records.",
+    "tasks": [
+      "Operating Indian electrolyzer stack manufacturing facilities with explicitly reported nameplate/status",
+      "Domestic MEA, membrane, catalyst-coated-electrode, or closely scoped electrolyzer-component production/qualification",
+      "Operating Indian hydrogen purification or gas-handling equipment manufacturing facilities",
+      "Official Indian testing, standards, and qualification infrastructure for electrolyzers"
+    ]
+  },
+  "method": {
+    "evidence_unit": "One bounded source record with source-local scope and explicit capacity semantics.",
+    "epistemic_rule": "REPORTED claims remain REPORTED; institutional tests remain institution-reported; no inference of effective, qualified, available, utilized, yield-adjusted, or allocated capacity.",
+    "temporal_rule": "Preserve publication/report date and retrieval date; do not arithmetically merge dated capacity/status statements.",
+    "canonical_rule": "Reference-only staging candidates; no canonical edits, fuzzy merges, shadow identities, or promotions.",
+    "graph_guards": {
+      "graph_completeness_claim": false,
+      "solver_ready_bom_claim": false,
+      "inferred_substitution_claim": false,
+      "lazy_strategic_recursion": true
+    }
+  },
+  "source_ledger": [
+    {
+      "id": "S02",
+      "task": "B1",
+      "publisher": "Larsen & Toubro Limited",
+      "title": "Energy Projects Segment, Integrated Annual Report 2024-25",
+      "url": "https://investors.larsentoubro.com/pdf/2025/MDA%20Annexures/Energy%20Projects%20Segment.pdf",
+      "date": "FY2024-25 report",
+      "locator": "PDF p.12, 'Electrolyser Manufacturing' bullets: 400 MW annual capacity set up at Hazira, first indigenous electrolyser dispatched, robotic stack assembly line commissioned, gas-purification systems.",
+      "rights_posture": "Public company annual-report PDF; management-reported statements; link and scoped paraphrase only.",
+      "scope": "Hazira electrolyser manufacturing facility and stack assembly.",
+      "geography": "A. M. Naik Heavy Engineering Complex, Hazira, Gujarat, India",
+      "operator": "L&T Electrolysers Limited / L&T Energy Green Tech",
+      "product_process": "Electrolyser manufacturing and robotic stack assembly; associated gas purification",
+      "state": "MANUFACTURING_CAPABILITY_REPORTED; ROBOTIC_LINE_COMMISSIONED; FIRST_SYSTEM_DISPATCHED",
+      "claim": "L&T reports 400 MW annual electrolyser capacity set up at Hazira, dispatch of its first indigenous electrolyser, and a commissioned robotic stack line.",
+      "capacity": {
+        "value": 400,
+        "unit": "MW/year",
+        "qualifier": "company-reported annual manufacturing capacity set up"
+      },
+      "capacity_semantics": "Reported manufacturing nameplate/set-up capacity, not independently verified effective, qualified, available, utilized, or yield-adjusted throughput.",
+      "epistemic_class": "REPORTED",
+      "caveats": [
+        "No realized production, yield, utilization, customer acceptance, or qualified supply is stated.",
+        "Gas-purification bullet is not a separate equipment-line capacity."
+      ],
+      "unknown": "Effective available capacity and production-quality distribution are UNKNOWN.",
+      "conflict": "Temporal semantic tension with S01; preserve dates and do not add the 1 MW system rating to 400 MW/year.",
+      "mapped_gap": "Audited production ledger, yield, utilization, qualification, and effective supply.",
+      "entity_resolution": "L&T entities remain staging candidates; no canonical match, merge, or promotion.",
+      "escalation": "Refresh next annual report, plant records, and customer acceptance evidence."
+    },
+    {
+      "id": "S03",
+      "task": "B1",
+      "publisher": "Ohmium International",
+      "title": "Ohmium Launches Newest PEM Electrolyzer Gigafactory",
+      "url": "https://www.ohmium.com/press-release/ohmium-launches-newest-pem-electrolyzer-gigafactory",
+      "date": "2024-07-19",
+      "locator": "Official release heading/body: Doddaballapura near Bengaluru, 2 GW factory expandable to 4 GW, ramping up to ship fully assembled/tested systems, second Indian facility.",
+      "rights_posture": "Public company-controlled release; self-reported factory-scale claim, not an independent production audit.",
+      "scope": "Indian PEM electrolyser manufacturing facility.",
+      "geography": "Doddaballapura near Bengaluru, Karnataka, India",
+      "operator": "Ohmium International; Indian operating legal entity not separately named in release",
+      "product_process": "Hyper-modular PEM electrolyzers; manufacturing, assembly, QA, testing, warehouse, shipping",
+      "state": "OFFICIALLY_LAUNCHED; RAMPING_UP_TO_SHIP",
+      "claim": "Ohmium reports a launched second Indian facility with 2 GW scale, expandable to 4 GW, ramping up to ship fully assembled and tested systems.",
+      "capacity": {
+        "value": 2,
+        "unit": "GW",
+        "qualifier": "factory scale; expandable to 4 GW; period not stated in cited locator"
+      },
+      "capacity_semantics": "Factory scale with no explicit annual period; do not normalize to annual output or infer shipments.",
+      "epistemic_class": "REPORTED",
+      "caveats": [
+        "Ramping up is not steady-state operation or utilization.",
+        "Fully assembled/tested describes intended facility flow, not independent qualification."
+      ],
+      "unknown": "Current nameplate period, realized output, yield, utilization, and qualified available capacity are UNKNOWN.",
+      "conflict": "No direct contradiction; period ambiguity is retained.",
+      "mapped_gap": "Current audited nameplate definition, throughput, acceptance, and operating data.",
+      "entity_resolution": "Ohmium/Indian manufacturing operation is a staging candidate; do not split or merge without legal-entity evidence.",
+      "escalation": "Refresh company filing, facility certificate, shipment, and QA records."
+    },
+    {
+      "id": "S04",
+      "task": "B2",
+      "publisher": "Press Information Bureau, Ministry of Science & Technology, Government of India",
+      "title": "ARCI Scientists develop energy-efficient method for hydrogen production with less carbon footprint",
+      "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1797090&lang=2&reg=48",
+      "date": "2022-02-10",
+      "locator": "PIB release paragraphs 19-24: ARCI ECMR, up-to-5.0 kg/day unit, indigenous PEM-based ECMR stack components, MEA, bipolar plates, process equipment.",
+      "rights_posture": "Public Government of India release; government publication link and scoped paraphrase; no commercial-production inference.",
+      "scope": "Closely scoped PEM-based electrochemical methanol reformation (ECMR) components.",
+      "geography": "ARCI Centre for Fuel Cell Technology, Hyderabad, Telangana, India",
+      "operator": "International Advanced Research Centre for Powder Metallurgy & New Materials (ARCI), Department of Science & Technology",
+      "product_process": "PEM-based ECMR unit; MEA, bipolar plates, process equipment",
+      "state": "PROTOTYPE_DEMONSTRATED; INDIGENOUS_COMPONENT_PROCESS_REPORTED",
+      "claim": "ARCI reports an up-to-5.0 kg/day ECMR unit and indigenous fabrication of core PEM-based ECMR stack components including MEA and bipolar plates.",
+      "capacity": {
+        "value": 5,
+        "unit": "kg/day",
+        "qualifier": "hydrogen output of ECMR demonstration unit"
+      },
+      "capacity_semantics": "Demonstration hydrogen output, not water-electrolyser component manufacturing nameplate or commercial supply.",
+      "epistemic_class": "REPORTED",
+      "caveats": [
+        "ECMR combines electrolysis and methanol-water reformation; it is not a commercial water-electrolysis MEA line.",
+        "No component volume, yield, durability, or external certificate is reported."
+      ],
+      "unknown": "Commercial scale, repeatability, durability, and supply readiness are UNKNOWN.",
+      "conflict": "No direct conflict; scope is narrower than conventional water electrolysis.",
+      "mapped_gap": "Commercial MEA/CCM production, catalyst control, durability, and independent qualification.",
+      "entity_resolution": "ARCI CFCT is a staging candidate; no canonical match, merge, or promotion.",
+      "escalation": "Obtain current ARCI transfer, batch, durability, and qualification records."
+    },
+    {
+      "id": "S06",
+      "task": "B2",
+      "publisher": "Bhabha Atomic Research Centre, Department of Atomic Energy, Government of India",
+      "title": "Mixed-Matrix Membrane Diaphragm for Separator Applications in Electrochemical Cells",
+      "url": "https://www.barc.gov.in/technologies/mmd/index.html",
+      "date": null,
+      "locator": "Technology page sections 'Mixed-Matrix Membrane Diaphragm', 'Manufacturing Process', 'Infrastructure Required': alkaline-electrolyser use, up-to-500 mm tested, casting process and controlled-room requirements.",
+      "rights_posture": "Public government-institution technology page; institutional test statement is not a product certificate or commercial-production claim.",
+      "scope": "Alkaline water-electrolyser separator membrane/diaphragm.",
+      "geography": "BARC Trombay, Mumbai, Maharashtra, India",
+      "operator": "Bhabha Atomic Research Centre, Department of Atomic Energy",
+      "product_process": "Polysulfone-zirconia mixed-matrix membrane diaphragm; membrane casting process",
+      "state": "COMPONENT_TEST_REPORTED; MANUFACTURING_PROCESS_SPECIFIED",
+      "claim": "BARC reports successful alkaline-electrolyser testing of a mixed-matrix diaphragm up to 500 mm diameter and specifies casting/infrastructure requirements.",
+      "capacity": {
+        "value": 500,
+        "unit": "mm diameter",
+        "qualifier": "component dimension successfully tested"
+      },
+      "capacity_semantics": "Component size/test scope, not annual membrane production or qualified available supply.",
+      "epistemic_class": "REPORTED",
+      "caveats": [
+        "No commercial factory, annual area output, repeatability, or product certification is stated.",
+        "Purity/cell-voltage results are institution-reported under cited conditions."
+      ],
+      "unknown": "Scale-up, lifetime, batch quality, and commercial transfer are UNKNOWN.",
+      "conflict": "No direct conflict; component testing is not system qualification.",
+      "mapped_gap": "Membrane scale-up, repeatability, lifetime, and industrial qualification.",
+      "entity_resolution": "BARC is a staging candidate; no canonical match, merge, or promotion.",
+      "escalation": "Seek current BARC technology-transfer and independent qualification records."
+    },
+    {
+      "id": "S07",
+      "task": "B3",
+      "publisher": "INOXCVA / INOX India Limited",
+      "title": "Company Overview",
+      "url": "https://inoxcva.com/company-overview.php",
+      "date": null,
+      "locator": "Company Overview manufacturing and Industrial Gas sections: design/engineering/manufacturing/installation; cryogenic tanks and systems for storage, transport, distribution of green hydrogen and other gases.",
+      "rights_posture": "Public company-controlled website; overview/marketing claims do not establish plant-level qualified throughput.",
+      "scope": "Indian cryogenic and industrial-gas equipment manufacturing for hydrogen handling.",
+      "geography": "India; Vadodara, Gujarat contact; named hydrogen plant not identified",
+      "operator": "INOXCVA / INOX India Limited",
+      "product_process": "Cryogenic tanks and systems for hydrogen storage, transportation, distribution, and industrial gases",
+      "state": "OPERATING_MANUFACTURING_BUSINESS_REPORTED; HYDROGEN_LINE_UNDISCLOSED",
+      "claim": "INOXCVA says it manufactures, supplies, and installs cryogenic tanks/systems for green hydrogen and other industrial gases.",
+      "capacity": null,
+      "capacity_semantics": "No hydrogen-equipment plant nameplate, throughput, utilization, qualification, or allocation is reported.",
+      "epistemic_class": "REPORTED",
+      "caveats": [
+        "Network-level manufacturing statement is not a hydrogen-specific facility register.",
+        "Cryogenic handling is not purification."
+      ],
+      "unknown": "Named plant, output, qualification, and current hydrogen allocation are UNKNOWN.",
+      "conflict": "No direct conflict; purification and storage/transport remain distinct.",
+      "mapped_gap": "Facility-level hydrogen equipment production, pressure/cryogenic qualification, and supply.",
+      "entity_resolution": "INOXCVA is a staging candidate; no canonical match, merge, or promotion.",
+      "escalation": "Refresh annual filing, plant register, PESO/pressure-vessel records, and delivery evidence."
+    },
+    {
+      "id": "S09",
+      "task": "B3",
+      "publisher": "Thermax Limited",
+      "title": "Thermax Ne0 - Gas Enrichment Solutions",
+      "url": "https://www.thermaxglobal.com/industrial-products/air-pollution-control-systems/thermax-neo",
+      "date": null,
+      "locator": "Thermax Ne0 page: 12 Indian manufacturing facilities statement; 'Green Hydrogen & Oxygen Purification' and 'Gas Enrichment Solutions' sections; Pune registered office.",
+      "rights_posture": "Public company-controlled product page; network manufacturing count does not identify the hydrogen-purification production plant.",
+      "scope": "Hydrogen purification and gas-enrichment offering in an Indian manufacturing network.",
+      "geography": "Thermax Chinchwad/Pune, Maharashtra, India; page says 12 Indian facilities but does not name hydrogen plant",
+      "operator": "Thermax Limited",
+      "product_process": "Green hydrogen and oxygen purification / gas-enrichment systems",
+      "state": "MANUFACTURING_NETWORK_REPORTED; CURRENT_PRODUCT_OFFERING; PLANT_STATUS_UNDISCLOSED",
+      "claim": "Thermax states it has 12 manufacturing facilities in India and presents green-hydrogen and oxygen purification as a current Thermax Ne0 offering.",
+      "capacity": null,
+      "capacity_semantics": "No hydrogen-purification nameplate, throughput, recovery, purity certificate, utilization, or qualified available capacity is reported.",
+      "epistemic_class": "REPORTED",
+      "caveats": [
+        "Company-wide facility count is not hydrogen-specific.",
+        "No product-factory attribution or performance certificate is disclosed on this page."
+      ],
+      "unknown": "Named plant, system capacity, qualification, and current allocation are UNKNOWN.",
+      "conflict": "No direct conflict; purification is distinct from stack manufacturing and cryogenic handling.",
+      "mapped_gap": "Hydrogen-specific plant identity, qualification, recovery/purity evidence, and supply.",
+      "entity_resolution": "Thermax/Thermax Ne0 is a staging candidate; no canonical match or promotion.",
+      "escalation": "Refresh annual report, facility disclosure, and system test certificates."
+    },
+    {
+      "id": "S11",
+      "task": "B4",
+      "publisher": "National Institute of Solar Energy, MNRE, Government of India",
+      "title": "Stakeholder Meeting - Hydrogen Testing Scheme",
+      "url": "https://nise.res.in/uploads/pages/17555243377672-stakeholder-meeting-hydrogen-testing-scheme.pdf",
+      "date": "2025-08-18",
+      "locator": "PDF p.17 Annexure I and p.20 Annexure II: electrolyzer performance/startup/pressure/ramp/turndown/O2-back-pressure/H2-O2-crossover/leak/temperature/degradation model tests and lab application form.",
+      "rights_posture": "Public government-institution scheme notice; model-test menu/call is not proof of universal accreditation or current availability.",
+      "scope": "Official hydrogen-testing model methods and laboratory proposal mechanism.",
+      "geography": "NISE, Gurugram, Haryana, India; national scheme scope",
+      "operator": "NISE Hydrogen and Fuel Cell Division / MNRE scheme framework",
+      "product_process": "Electrolyzer stack/system performance, safety, and integrity tests",
+      "state": "TEST_MENU_AND_SCHEME_CALL; LAB_SETUP_OR_UPGRADE_STAGE",
+      "claim": "NISE publishes an indicative electrolyzer test menu and an application form for setting up/upgrading hydrogen testing laboratories.",
+      "capacity": null,
+      "capacity_semantics": "No lab throughput, accreditation scope, turnaround, or manufacturer allocation is reported.",
+      "epistemic_class": "REPORTED",
+      "caveats": [
+        "Indicative tests do not prove current test availability or pass/fail authority.",
+        "Published method is not an individual test result."
+      ],
+      "unknown": "Accredited roster, calibrated instrumentation, external access, and acceptance authority are UNKNOWN.",
+      "conflict": "No direct conflict; scheme intent is not substituted for operating lab capability.",
+      "mapped_gap": "National lab coverage, accreditation, calibration, protocol adoption, and qualification evidence.",
+      "entity_resolution": "NISE/MNRE testing scheme is a staging candidate; no canonical match or promotion.",
+      "escalation": "Refresh award list, NABL scopes, calibration inventory, and published reports."
+    },
+    {
+      "id": "S12",
+      "task": "B4",
+      "publisher": "Bureau of Indian Standards, Government of India",
+      "title": "List of Indian Standards related to Hydrogen",
+      "url": "https://www.bis.gov.in/wp-content/uploads/2023/10/List_Standards_Hydrogen.pdf",
+      "date": "2023-10 (official PDF path)",
+      "locator": "PDF p.0 rows 1-4: IS 16061:2021 fuel quality; IS 16512 Part 1:2016 safety; IS 16509:2020 water-electrolysis hydrogen generators; IS 16253:2016 detection.",
+      "rights_posture": "Public official standards-list PDF; listing does not establish conformity, lab accreditation, or product qualification.",
+      "scope": "Indian standards references for electrolyzers/hydrogen systems.",
+      "geography": "India; national standards framework",
+      "operator": "Bureau of Indian Standards",
+      "product_process": "IS 16509:2020 hydrogen generators using water electrolysis and related safety/quality/detection standards",
+      "state": "OFFICIAL_STANDARDS_REFERENCE; NOT_A_LAB_OR_CERTIFICATE",
+      "claim": "BIS lists IS 16509:2020 for hydrogen generators using water electrolysis in industrial, commercial, and residential applications, with related hydrogen standards.",
+      "capacity": null,
+      "capacity_semantics": "Standards reference has no production or test-lab capacity semantics.",
+      "epistemic_class": "REPORTED",
+      "caveats": [
+        "Listed standard is not evidence of manufacturer conformity or laboratory capability.",
+        "Current revision and implementing scheme require freshness checks."
+      ],
+      "unknown": "Current adoption, conformity-assessment path, and accredited lab scope are UNKNOWN.",
+      "conflict": "No direct conflict; standards reference is separate from test execution.",
+      "mapped_gap": "Conformity chain from standard to accredited lab, certificate, and customer acceptance.",
+      "entity_resolution": "BIS is a staging candidate; no canonical match, merge, or promotion.",
+      "escalation": "Check BIS Know Your Standard, current revision, testing scheme, and NABL scopes."
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "B1",
+      "question": "Operating Indian electrolyzer stack manufacturing facilities and explicit nameplate/status",
+      "evidence_ids": [
+        "S02",
+        "S03"
+      ],
+      "bounded_result": "L&T reports a commissioned first indigenous system and later reports 400 MW/year set up plus a commissioned robotic stack line at Hazira. Ohmium reports an officially launched Doddaballapura PEM factory ramping up to ship 2 GW factory scale. Neither record proves realized annual output, utilization, yield, or qualified available capacity.",
+      "explicit_unknowns": [
+        "L&T effective production and qualification",
+        "Ohmium current nameplate period and realized output",
+        "Both facilities' yield, utilization, and project allocation"
+      ]
+    },
+    {
+      "task_id": "B2",
+      "question": "Domestic MEA, membrane, catalyst-coated-electrode, and closely scoped electrolyzer-component production/qualification",
+      "evidence_ids": [
+        "S04",
+        "S06"
+      ],
+      "bounded_result": "ARCI reports indigenous MEA/bipolar-plate fabrication in a 5 kg/day ECMR demonstration and lists MEA/CCM/electrode process know-how for licensing. BARC reports an alkaline-electrolyser membrane diaphragm tested to 500 mm and specifies casting infrastructure. No source establishes commercial component nameplate or independent product certification.",
+      "explicit_unknowns": [
+        "Commercial MEA/CCM/membrane production volume",
+        "Long-duration durability and batch repeatability",
+        "Independent accreditation/product qualification"
+      ]
+    },
+    {
+      "task_id": "B3",
+      "question": "Operating Indian hydrogen purification and gas-handling equipment manufacturing facilities",
+      "evidence_ids": [
+        "S07",
+        "S09"
+      ],
+      "bounded_result": "INOXCVA reports Indian manufacture of hydrogen cryogenic storage/transport/distribution and fluid-servicing equipment. Thermax reports 12 Indian manufacturing facilities and a current hydrogen/oxygen purification offering. The bounded pages do not map hydrogen products to a named plant or report qualified throughput.",
+      "explicit_unknowns": [
+        "Named hydrogen-equipment plant and nameplate for INOXCVA",
+        "Named hydrogen-purification plant and capacity for Thermax",
+        "Qualification, utilization, and effective available supply"
+      ]
+    },
+    {
+      "task_id": "B4",
+      "question": "Official Indian testing, standards, and qualification infrastructure for electrolyzers",
+      "evidence_ids": [
+        "S11",
+        "S12"
+      ],
+      "bounded_result": "NISE reports a hydrogen demonstration station with an additional 10 Nm3/hr electrolyzer being integrated and publishes an official electrolyzer test menu/lab scheme. BIS lists IS 16509:2020 for water-electrolysis hydrogen generators. These establish demonstration, scheme, and standards layers, not universal lab accreditation or manufacturer qualification.",
+      "explicit_unknowns": [
+        "Current accredited laboratory roster and NABL scope",
+        "External test availability and acceptance authority",
+        "Manufacturer conformity/certification status"
+      ]
+    }
+  ],
+  "facility_candidates": [
+    {
+      "id": "FAC-01",
+      "name": "L&T electrolyser manufacturing facility / Green Hydrogen Plant",
+      "operator": "L&T Electrolysers Limited / Larsen & Toubro",
+      "geography": "Hazira, Gujarat, India",
+      "type": "electrolyser_manufacturing",
+      "state": "400_MW_YEAR_AND_ROBOTIC_LINE_REPORTED",
+      "source_ids": [
+        "S02"
+      ],
+      "canonical_match": null,
+      "promotion": "NONE"
+    },
+    {
+      "id": "FAC-02",
+      "name": "Ohmium PEM electrolyzer gigafactory",
+      "operator": "Ohmium International / Indian manufacturing operation",
+      "geography": "Doddaballapura near Bengaluru, Karnataka, India",
+      "type": "electrolyser_manufacturing",
+      "state": "LAUNCHED_RAMPING_UP",
+      "source_ids": [
+        "S03"
+      ],
+      "canonical_match": null,
+      "promotion": "NONE"
+    },
+    {
+      "id": "FAC-03",
+      "name": "ARCI Centre for Fuel Cell Technology",
+      "operator": "ARCI, Department of Science & Technology",
+      "geography": "Hyderabad, Telangana, India",
+      "type": "component_process_capability",
+      "state": "PROTOTYPE_COMPONENT_PROCESS_REPORTED",
+      "source_ids": [
+        "S04"
+      ],
+      "canonical_match": null,
+      "promotion": "NONE"
+    },
+    {
+      "id": "FAC-04",
+      "name": "BARC membrane diaphragm technology",
+      "operator": "BARC, Department of Atomic Energy",
+      "geography": "Trombay, Mumbai, Maharashtra, India",
+      "type": "component_test_process_capability",
+      "state": "COMPONENT_TESTED_PROCESS_SPECIFIED",
+      "source_ids": [
+        "S06"
+      ],
+      "canonical_match": null,
+      "promotion": "NONE"
+    },
+    {
+      "id": "FAC-05",
+      "name": "INOXCVA Indian manufacturing network",
+      "operator": "INOXCVA / INOX India Limited",
+      "geography": "India; Vadodara contact; hydrogen plant not attributed",
+      "type": "hydrogen_cryogenic_gas_handling",
+      "state": "MANUFACTURING_NETWORK_REPORTED; PLANT_MAPPING_UNKNOWN",
+      "source_ids": [
+        "S07"
+      ],
+      "canonical_match": null,
+      "promotion": "NONE"
+    },
+    {
+      "id": "FAC-06",
+      "name": "Thermax Indian manufacturing network / Thermax Ne0",
+      "operator": "Thermax Limited",
+      "geography": "India; Pune registered office; hydrogen plant not attributed",
+      "type": "hydrogen_purification_equipment",
+      "state": "12_INDIAN_FACILITIES_REPORTED; PRODUCT_OFFERING_CURRENT",
+      "source_ids": [
+        "S09"
+      ],
+      "canonical_match": null,
+      "promotion": "NONE"
+    },
+    {
+      "id": "FAC-07",
+      "name": "NISE hydrogen demonstration and testing-scheme infrastructure",
+      "operator": "National Institute of Solar Energy, MNRE",
+      "geography": "Gwal Pahari, Gurugram, Haryana, India",
+      "type": "hydrogen_demonstration_testing",
+      "state": "TESTING_SCHEME_AND_MODEL_TEST_MENU_REPORTED; ACCREDITATION_UNKNOWN",
+      "source_ids": [
+        "S11"
+      ],
+      "canonical_match": null,
+      "promotion": "NONE"
+    }
+  ],
+  "capability_candidates": [
+    {
+      "id": "CAPABILITY-01",
+      "name": "Pressurised alkaline electrolyser manufacturing and robotic stack assembly",
+      "source_ids": [
+        "S02"
+      ],
+      "state": "REPORTED_COMMISSIONED_SET_UP",
+      "qualified_capacity": "UNKNOWN",
+      "canonical_match": null
+    },
+    {
+      "id": "CAPABILITY-02",
+      "name": "PEM electrolyser manufacturing, assembly, QA, and testing",
+      "source_ids": [
+        "S03"
+      ],
+      "state": "REPORTED_LAUNCHED_RAMPING_UP",
+      "qualified_capacity": "UNKNOWN",
+      "canonical_match": null
+    },
+    {
+      "id": "CAPABILITY-03",
+      "name": "MEA, catalyst-coated membrane, gas-diffusion electrode, and bipolar-plate process know-how",
+      "source_ids": [
+        "S04"
+      ],
+      "state": "PROTOTYPE_PROCESS_KNOW_HOW",
+      "qualified_capacity": "UNKNOWN",
+      "canonical_match": null
+    },
+    {
+      "id": "CAPABILITY-04",
+      "name": "Mixed-matrix separator membrane for alkaline water electrolysis",
+      "source_ids": [
+        "S06"
+      ],
+      "state": "COMPONENT_TEST_REPORTED",
+      "qualified_capacity": "UNKNOWN",
+      "canonical_match": null
+    },
+    {
+      "id": "CAPABILITY-05",
+      "name": "Cryogenic hydrogen storage, transport, distribution, and fluid-servicing equipment",
+      "source_ids": [
+        "S07"
+      ],
+      "state": "MANUFACTURING_CAPABILITY_REPORTED",
+      "qualified_capacity": "UNKNOWN",
+      "canonical_match": null
+    },
+    {
+      "id": "CAPABILITY-06",
+      "name": "Hydrogen and oxygen purification / gas-enrichment systems",
+      "source_ids": [
+        "S09"
+      ],
+      "state": "CURRENT_PRODUCT_OFFERING_REPORTED",
+      "qualified_capacity": "UNKNOWN",
+      "canonical_match": null
+    },
+    {
+      "id": "CAPABILITY-07",
+      "name": "Electrolyzer performance, safety, integrity testing and standards reference",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "state": "DEMONSTRATION_SCHEME_STANDARDS_LAYERS",
+      "qualified_capacity": "UNKNOWN",
+      "canonical_match": null
+    }
+  ],
+  "capacity_claims": [
+    {
+      "id": "CAP-02",
+      "subject": "L&T Hazira manufacturing facility",
+      "source_id": "S02",
+      "value": 400,
+      "unit": "MW/year",
+      "period": "annual",
+      "state": "REPORTED_NAMEPLATE_OR_SET_UP",
+      "semantics": "Not effective throughput, yield, utilization, qualification, or allocation."
+    },
+    {
+      "id": "CAP-03",
+      "subject": "Ohmium Doddaballapura factory",
+      "source_id": "S03",
+      "value": 2,
+      "unit": "GW",
+      "period": null,
+      "state": "FACTORY_SCALE_RAMPING_UP",
+      "semantics": "Expandable to 4 GW; cited locator gives no period; do not annualize."
+    },
+    {
+      "id": "CAP-04",
+      "subject": "ARCI ECMR demonstration",
+      "source_id": "S04",
+      "value": 5,
+      "unit": "kg/day",
+      "period": null,
+      "state": "DEMONSTRATION_OUTPUT",
+      "semantics": "Hydrogen output; not water-electrolysis component capacity."
+    },
+    {
+      "id": "CAP-06",
+      "subject": "BARC mixed-matrix diaphragm",
+      "source_id": "S06",
+      "value": 500,
+      "unit": "mm diameter",
+      "period": null,
+      "state": "COMPONENT_TEST_DIMENSION",
+      "semantics": "Not annual production or qualified available supply."
+    }
+  ],
+  "unknowns": [
+    {
+      "id": "U01",
+      "scope": "L&T",
+      "statement": "Realized production, yield, utilization, qualification, and effective available capacity UNKNOWN.",
+      "source_ids": [
+        "S02"
+      ],
+      "escalation": "Plant records, customer acceptance, audited production."
+    },
+    {
+      "id": "U02",
+      "scope": "Ohmium",
+      "statement": "Current nameplate period, realized shipments, yield, utilization, and qualified capacity UNKNOWN.",
+      "source_ids": [
+        "S03"
+      ],
+      "escalation": "Company filing, facility certificate, shipment/QA data."
+    },
+    {
+      "id": "U03",
+      "scope": "MEA/CCM/membranes",
+      "statement": "Commercial production volume, repeatability, durability, and independent qualification UNKNOWN.",
+      "source_ids": [
+        "S04",
+        "S06"
+      ],
+      "escalation": "Transfer, batch, durability, and accredited test records."
+    },
+    {
+      "id": "U04",
+      "scope": "INOXCVA",
+      "statement": "Hydrogen-specific plant, nameplate, qualification, and effective supply UNKNOWN.",
+      "source_ids": [
+        "S07"
+      ],
+      "escalation": "Plant register, PESO records, delivery evidence."
+    },
+    {
+      "id": "U05",
+      "scope": "Thermax",
+      "statement": "Hydrogen-purification plant, system capacity, qualification, and allocation UNKNOWN.",
+      "source_ids": [
+        "S09"
+      ],
+      "escalation": "Facility disclosure, product test certificates, annual report."
+    },
+    {
+      "id": "U06",
+      "scope": "NISE/MNRE testing",
+      "statement": "Accredited roster, instruments, external access, and authority UNKNOWN.",
+      "source_ids": [
+        "S11"
+      ],
+      "escalation": "Award list, NABL scopes, calibration, published reports."
+    },
+    {
+      "id": "U07",
+      "scope": "BIS",
+      "statement": "Current IS 16509 revision, conformity path, and accredited lab scope UNKNOWN.",
+      "source_ids": [
+        "S12"
+      ],
+      "escalation": "BIS Know Your Standard and NABL scope check."
+    },
+    {
+      "id": "U08",
+      "scope": "Project supply",
+      "statement": "No source allocates qualified stacks, components, purification, or handling equipment to a project.",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S04",
+        "S06",
+        "S07",
+        "S09"
+      ],
+      "escalation": "Require project-specific vendor qualification/allocation/acceptance."
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "T02",
+      "type": "SEMANTIC_TENSION_NOT_DIRECT_CONFLICT",
+      "source_ids": [
+        "S04",
+        "S06"
+      ],
+      "statement": "Component/process demonstrations and licensing are not commercial production or certification.",
+      "resolution": "Keep prototype, process, test, production, and qualification states separate."
+    },
+    {
+      "id": "T03",
+      "type": "SEMANTIC_TENSION_NOT_DIRECT_CONFLICT",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "statement": "Demonstration station, testing scheme, and BIS standards are different layers.",
+      "resolution": "Do not infer accredited availability or conformity."
+    }
+  ],
+  "entity_resolution": [
+    {
+      "candidate": "L&T Electrolysers Limited / L&T Energy Green Tech",
+      "source_ids": [
+        "S02"
+      ],
+      "status": "STAGING_ONLY_NO_CANONICAL_MATCH",
+      "action": "NO_MERGE_OR_PROMOTION"
+    },
+    {
+      "candidate": "Ohmium International / Indian manufacturing operation",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "LEGAL_ENTITY_UNSPECIFIED",
+      "action": "DO_NOT_SPLIT_OR_MERGE"
+    },
+    {
+      "candidate": "ARCI CFCT",
+      "source_ids": [
+        "S04"
+      ],
+      "status": "STAGING_ONLY_NO_CANONICAL_MATCH",
+      "action": "NO_PROMOTION"
+    },
+    {
+      "candidate": "BARC",
+      "source_ids": [
+        "S06"
+      ],
+      "status": "STAGING_ONLY_NO_CANONICAL_MATCH",
+      "action": "NO_PROMOTION"
+    },
+    {
+      "candidate": "INOXCVA / INOX India Limited",
+      "source_ids": [
+        "S07"
+      ],
+      "status": "STAGING_ONLY_NO_CANONICAL_MATCH",
+      "action": "NO_PROMOTION"
+    },
+    {
+      "candidate": "Thermax Limited / Thermax Ne0",
+      "source_ids": [
+        "S09"
+      ],
+      "status": "STAGING_ONLY_NO_CANONICAL_MATCH",
+      "action": "NO_PROMOTION"
+    },
+    {
+      "candidate": "NISE / MNRE hydrogen testing framework",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "STAGING_ONLY_NO_CANONICAL_MATCH",
+      "action": "NO_PROMOTION"
+    },
+    {
+      "candidate": "Bureau of Indian Standards",
+      "source_ids": [
+        "S12"
+      ],
+      "status": "STAGING_ONLY_NO_CANONICAL_MATCH",
+      "action": "NO_PROMOTION"
+    }
+  ],
+  "relations": [
+    {
+      "id": "R01",
+      "subject": "FAC-01",
+      "predicate": "MANUFACTURES_OR_ASSEMBLES",
+      "object": "CAPABILITY-01",
+      "sources": [
+        "S02"
+      ],
+      "state": "REPORTED"
+    },
+    {
+      "id": "R02",
+      "subject": "FAC-02",
+      "predicate": "MANUFACTURES_OR_ASSEMBLES",
+      "object": "CAPABILITY-02",
+      "sources": [
+        "S03"
+      ],
+      "state": "REPORTED_RAMPING_UP"
+    },
+    {
+      "id": "R03",
+      "subject": "FAC-03",
+      "predicate": "DEVELOPS_PROCESS_KNOW_HOW_FOR",
+      "object": "CAPABILITY-03",
+      "sources": [
+        "S04"
+      ],
+      "state": "REPORTED"
+    },
+    {
+      "id": "R04",
+      "subject": "FAC-04",
+      "predicate": "TESTS_OR_DEMONSTRATES",
+      "object": "CAPABILITY-04",
+      "sources": [
+        "S06"
+      ],
+      "state": "REPORTED_COMPONENT_TEST"
+    },
+    {
+      "id": "R05",
+      "subject": "FAC-05",
+      "predicate": "MANUFACTURES_GAS_HANDLING_EQUIPMENT",
+      "object": "CAPABILITY-05",
+      "sources": [
+        "S07"
+      ],
+      "state": "NETWORK_LEVEL_REPORTED"
+    },
+    {
+      "id": "R06",
+      "subject": "FAC-06",
+      "predicate": "OFFERS_PURIFICATION_SYSTEMS",
+      "object": "CAPABILITY-06",
+      "sources": [
+        "S09"
+      ],
+      "state": "PRODUCT_OFFERING_REPORTED"
+    },
+    {
+      "id": "R08",
+      "subject": "FAC-07",
+      "predicate": "PUBLISHES_MODEL_TEST_SCOPE",
+      "object": "CAPABILITY-07",
+      "sources": [
+        "S11"
+      ],
+      "state": "SCHEME_REPORTED"
+    },
+    {
+      "id": "R09",
+      "subject": "BIS",
+      "predicate": "LISTS_STANDARD_FOR",
+      "object": "IS 16509:2020",
+      "sources": [
+        "S12"
+      ],
+      "state": "OFFICIAL_REFERENCE"
+    },
+    {
+      "id": "R10",
+      "subject": "CAPABILITY-03",
+      "predicate": "NOT_EQUIVALENT_TO",
+      "object": "COMMERCIAL_QUALIFIED_MEA_SUPPLY",
+      "sources": [
+        "S04"
+      ],
+      "state": "EPISTEMIC_GUARD"
+    }
+  ],
+  "freshness": {
+    "retrieval_date": "2026-08-25",
+    "revalidate": [
+      "L&T 400 MW/year and robotic-line status",
+      "Ohmium 2 GW scale/nameplate period and ramp",
+      "INOXCVA hydrogen plant mapping",
+      "Thermax hydrogen-purification plant and qualification",
+      "NISE testing-scheme awards/accreditation",
+      "BIS IS 16509 revision/conformity path"
+    ],
+    "rule": "No current-state claim is promoted without a fresh official source and scoped evidence."
+  },
+  "totals": {
+    "tasks": 4,
+    "sources": 8,
+    "evidence_records": 8,
+    "facility_candidates": 7,
+    "capability_candidates": 7,
+    "capacity_claims": 4,
+    "relations": 9,
+    "unknown_records": 8,
+    "direct_conflicts": 0,
+    "semantic_tensions": 2,
+    "canonical_edits": 0,
+    "canonical_promotions": 0,
+    "inferred_operating_capacity_claims": 0,
+    "inferred_qualified_capacity_claims": 0,
+    "inferred_yield_claims": 0,
+    "inferred_utilization_claims": 0
+  },
+  "validation": {
+    "command": "python -m json.tool research/homi/targeted/packet_b_electrolyzers.json",
+    "status": "PASS",
+    "task_count": 4,
+    "source_count": 8,
+    "within_source_cap": true,
+    "canonical_promotions": 0,
+    "canonical_edits": 0
+  }
+}
+

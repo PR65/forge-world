@@ -1,0 +1,4536 @@
+{
+  "accounting": {
+    "CONFLICTED": 15,
+    "UNKNOWN": 20,
+    "artifacts": {
+      "expected": 21,
+      "hash_byte_matches": 21,
+      "mismatches": 0,
+      "observed_extracted": 21,
+      "observed_zip_entries": 21
+    },
+    "canonical_promotions": 0,
+    "claims": 134,
+    "duplicates": 0,
+    "entities": 28,
+    "malformed": 24,
+    "relations": 33,
+    "repaired": 24,
+    "shadow_identities": 0,
+    "skipped": 2,
+    "sources": 37
+  },
+  "artifacts": [
+    {
+      "bytes": 74077,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "raw_zip_entry": "FORGE WORLD Research Package.md",
+      "relative_path": "manus-15/FORGE WORLD Research Package.md",
+      "role": "integrated package and references",
+      "schema": {
+        "format": "Markdown",
+        "line_count": 541,
+        "parse_errors": 0,
+        "reference_count": 36,
+        "table_count": 18,
+        "table_headers_and_rows": [
+          {
+            "header": [
+              "Layer",
+              "Aircraft",
+              "Satellites / spacecraft",
+              "Reusable launch vehicles",
+              "Industrial implication"
+            ],
+            "header_locator": 45,
+            "row_count": 6
+          },
+          {
+            "header": [
+              "Product block",
+              "Representative content",
+              "Materials / processes",
+              "Machines / test assets",
+              "Qualification or evidence gate"
+            ],
+            "header_locator": 56,
+            "row_count": 5
+          },
+          {
+            "header": [
+              "Product block",
+              "Representative content",
+              "Materials / processes",
+              "Machines / test assets",
+              "Qualification or evidence gate"
+            ],
+            "header_locator": 66,
+            "row_count": 7
+          },
+          {
+            "header": [
+              "Product block",
+              "Representative content",
+              "Materials / processes",
+              "Machines / test assets",
+              "Rate-sensitive dependency"
+            ],
+            "header_locator": 78,
+            "row_count": 6
+          },
+          {
+            "header": [
+              "Level",
+              "Dependency",
+              "Representative nodes",
+              "Why it matters"
+            ],
+            "header_locator": 110,
+            "row_count": 6
+          },
+          {
+            "header": [
+              "Level",
+              "Dependency",
+              "Representative nodes",
+              "Rate implication"
+            ],
+            "header_locator": 121,
+            "row_count": 6
+          },
+          {
+            "header": [
+              "Company/facility",
+              "Location",
+              "Product/process role",
+              "Public evidence",
+              "Evidence treatment"
+            ],
+            "header_locator": 155,
+            "row_count": 6
+          },
+          {
+            "header": [
+              "Company/facility",
+              "Location",
+              "Product/process role",
+              "Public evidence",
+              "Evidence treatment"
+            ],
+            "header_locator": 166,
+            "row_count": 6
+          },
+          {
+            "header": [
+              "Company/facility",
+              "Location",
+              "Product/process role",
+              "Public evidence",
+              "Evidence treatment"
+            ],
+            "header_locator": 177,
+            "row_count": 11
+          },
+          {
+            "header": [
+              "Cluster",
+              "Anchor capabilities",
+              "Representative nodes",
+              "Strategic advantage",
+              "Main risk"
+            ],
+            "header_locator": 207,
+            "row_count": 8
+          },
+          {
+            "header": [
+              "System/facility",
+              "Metric",
+              "Value",
+              "Status",
+              "Evidence label",
+              "Interpretation"
+            ],
+            "header_locator": 224,
+            "row_count": 27
+          },
+          {
+            "header": [
+              "Upstream layer",
+              "Example aerospace node",
+              "Equipment dependency",
+              "Qualification question"
+            ],
+            "header_locator": 282,
+            "row_count": 6
+          },
+          {
+            "header": [
+              "Gate",
+              "Hardware level",
+              "Typical evidence",
+              "Production consequence"
+            ],
+            "header_locator": 321,
+            "row_count": 7
+          },
+          {
+            "header": [
+              "Capability",
+              "India position",
+              "Evidence strength",
+              "Gap to high-rate global benchmark"
+            ],
+            "header_locator": 341,
+            "row_count": 9
+          },
+          {
+            "header": [
+              "Bottleneck",
+              "Why it gates output",
+              "Substitution or mitigation",
+              "Maturity / caveat"
+            ],
+            "header_locator": 365,
+            "row_count": 10
+          },
+          {
+            "header": [
+              "Aerospace machine",
+              "It requires",
+              "Upstream machine/equipment chain",
+              "Recursive implication"
+            ],
+            "header_locator": 392,
+            "row_count": 9
+          },
+          {
+            "header": [
+              "Unknown",
+              "Why it matters",
+              "Resolution path"
+            ],
+            "header_locator": 412,
+            "row_count": 18
+          },
+          {
+            "header": [
+              "Entity type",
+              "Required attributes"
+            ],
+            "header_locator": 455,
+            "row_count": 11
+          }
+        ],
+        "unique_url_count": 36
+      },
+      "sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 74077,
+      "zip_entry_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5"
+    },
+    {
+      "bytes": 20021,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\Validated primary-source findings gathered so far.md",
+      "raw_zip_entry": "Validated primary-source findings gathered so far.md",
+      "relative_path": "manus-15/Validated primary-source findings gathered so far.md",
+      "role": "validated findings memo",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 15,
+        "line_count": 66,
+        "parse_errors": 0,
+        "table_count": 0,
+        "url_count": 34
+      },
+      "sha256": "d6c8015fb61892f5a4eedce4430d108c8d7aa8eca13fb35fe2fc793265be09f4",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 20021,
+      "zip_entry_sha256": "d6c8015fb61892f5a4eedce4430d108c8d7aa8eca13fb35fe2fc793265be09f4"
+    },
+    {
+      "bytes": 2214,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_capability_tree.mmd",
+      "raw_zip_entry": "aerospace_capability_tree.mmd",
+      "relative_path": "manus-15/aerospace_capability_tree.mmd",
+      "role": "capability/dependency diagram source",
+      "schema": {
+        "format": "Mermaid text",
+        "line_count": 57,
+        "node_or_edge_lines": 50,
+        "parse_status": "text-inventoried"
+      },
+      "sha256": "ad13a4339938d714c7bf6cc1c338283b1ce12d556a4450639002fc752e89a28b",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 2214,
+      "zip_entry_sha256": "ad13a4339938d714c7bf6cc1c338283b1ce12d556a4450639002fc752e89a28b"
+    },
+    {
+      "bytes": 181253,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_capability_tree.png",
+      "raw_zip_entry": "aerospace_capability_tree.png",
+      "relative_path": "manus-15/aerospace_capability_tree.png",
+      "role": "rendered capability diagram; semantic parse skipped",
+      "schema": {
+        "dimensions": {
+          "height": 732,
+          "width": 3120
+        },
+        "format": "PNG",
+        "semantic_parse": "not_performed"
+      },
+      "sha256": "6b1f9c567dce8db97c321d882592763e51f80df6d1949a777ac35d3c9e38e977",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 181253,
+      "zip_entry_sha256": "6b1f9c567dce8db97c321d882592763e51f80df6d1949a777ac35d3c9e38e977"
+    },
+    {
+      "bytes": 4430,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_conflict_ledger.csv",
+      "raw_zip_entry": "aerospace_conflict_ledger.csv",
+      "relative_path": "manus-15/aerospace_conflict_ledger.csv",
+      "role": "conflict ledger",
+      "schema": {
+        "field_normalizations": 0,
+        "fields": [
+          "conflict_id",
+          "topic",
+          "claim_a",
+          "source_or_date_a",
+          "claim_b",
+          "source_or_date_b",
+          "working_treatment",
+          "why_conflict_matters"
+        ],
+        "format": "CSV",
+        "parse_errors_repaired": 2,
+        "parse_errors_unrepaired": 0,
+        "raw_data_rows": 15,
+        "raw_field_length_counts": {
+          "7": 1,
+          "8": 13,
+          "9": 1
+        },
+        "repaired_data_rows": 15,
+        "repaired_field_count": 8
+      },
+      "sha256": "6d9283be38601bb285cca5f8dcbd6e9e303e9ca66bb69144d3994aaa5958f96d",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 4430,
+      "zip_entry_sha256": "6d9283be38601bb285cca5f8dcbd6e9e303e9ca66bb69144d3994aaa5958f96d"
+    },
+    {
+      "bytes": 10198,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "raw_zip_entry": "aerospace_entities.csv",
+      "relative_path": "manus-15/aerospace_entities.csv",
+      "role": "entity ledger",
+      "schema": {
+        "field_normalizations": 0,
+        "fields": [
+          "entity_id",
+          "canonical_name",
+          "parent_or_owner",
+          "entity_type",
+          "facility_or_location",
+          "country",
+          "products_or_processes",
+          "role_or_relationship",
+          "qualification_or_maturity",
+          "capacity_or_throughput",
+          "evidence_label",
+          "source_ids",
+          "uncertainty"
+        ],
+        "format": "CSV",
+        "parse_errors_repaired": 2,
+        "parse_errors_unrepaired": 0,
+        "raw_data_rows": 28,
+        "raw_field_length_counts": {
+          "13": 26,
+          "14": 1,
+          "16": 1
+        },
+        "repaired_data_rows": 28,
+        "repaired_field_count": 13
+      },
+      "sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 10198,
+      "zip_entry_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b"
+    },
+    {
+      "bytes": 19541,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_industrial_research_workstreams.json",
+      "raw_zip_entry": "aerospace_industrial_research_workstreams.json",
+      "relative_path": "manus-15/aerospace_industrial_research_workstreams.json",
+      "role": "structured workstream outputs",
+      "schema": {
+        "declared_source_count_sum": 112,
+        "error_rows": [],
+        "format": "JSON",
+        "output_keys": [
+          "confidence",
+          "key_findings",
+          "memo",
+          "source_count",
+          "workstream"
+        ],
+        "row_count": 8,
+        "row_keys": [
+          "error",
+          "input",
+          "output"
+        ],
+        "row_path": "results[]",
+        "top_level_keys": [
+          "results"
+        ]
+      },
+      "sha256": "affa46f5f34323f1c36c0b99238b2f8f21d3fc4cc68eaeaf24dce688fa23c350",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 19541,
+      "zip_entry_sha256": "affa46f5f34323f1c36c0b99238b2f8f21d3fc4cc68eaeaf24dce688fa23c350"
+    },
+    {
+      "bytes": 6063,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "raw_zip_entry": "aerospace_relationships.csv",
+      "relative_path": "manus-15/aerospace_relationships.csv",
+      "role": "relationship ledger",
+      "schema": {
+        "field_normalizations": 0,
+        "fields": [
+          "relationship_id",
+          "source_entity",
+          "target_entity",
+          "relationship_type",
+          "domain",
+          "description",
+          "evidence_label",
+          "source_ids",
+          "uncertainty"
+        ],
+        "format": "CSV",
+        "parse_errors_repaired": 8,
+        "parse_errors_unrepaired": 0,
+        "raw_data_rows": 33,
+        "raw_field_length_counts": {
+          "10": 6,
+          "11": 1,
+          "13": 1,
+          "9": 25
+        },
+        "repaired_data_rows": 33,
+        "repaired_field_count": 9
+      },
+      "sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 6063,
+      "zip_entry_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799"
+    },
+    {
+      "bytes": 6140,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "raw_zip_entry": "aerospace_throughput_evidence.csv",
+      "relative_path": "manus-15/aerospace_throughput_evidence.csv",
+      "role": "throughput/capacity evidence ledger",
+      "schema": {
+        "field_normalizations": 1,
+        "fields": [
+          "throughput_id",
+          "system_or_facility",
+          "metric",
+          "value",
+          "unit",
+          "time_or_date",
+          "status",
+          "evidence_label",
+          "source_ids",
+          "interpretation_and_caveat"
+        ],
+        "format": "CSV",
+        "parse_errors_repaired": 4,
+        "parse_errors_unrepaired": 0,
+        "raw_data_rows": 36,
+        "raw_field_length_counts": {
+          "10": 32,
+          "11": 3,
+          "12": 1
+        },
+        "repaired_data_rows": 36,
+        "repaired_field_count": 10
+      },
+      "sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 6140,
+      "zip_entry_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e"
+    },
+    {
+      "bytes": 6082,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_unknown_ledger.csv",
+      "raw_zip_entry": "aerospace_unknown_ledger.csv",
+      "relative_path": "manus-15/aerospace_unknown_ledger.csv",
+      "role": "unknown ledger",
+      "schema": {
+        "field_normalizations": 0,
+        "fields": [
+          "unknown_id",
+          "unknown",
+          "why_it_matters",
+          "likely_resolution_source_or_owner",
+          "concrete_research_query",
+          "priority"
+        ],
+        "format": "CSV",
+        "parse_errors_repaired": 8,
+        "parse_errors_unrepaired": 0,
+        "raw_data_rows": 20,
+        "raw_field_length_counts": {
+          "10": 2,
+          "6": 12,
+          "7": 5,
+          "8": 1
+        },
+        "repaired_data_rows": 20,
+        "repaired_field_count": 6
+      },
+      "sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 6082,
+      "zip_entry_sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00"
+    },
+    {
+      "bytes": 10380,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\benchmark_clusters_bottlenecks_substitutions.md",
+      "raw_zip_entry": "benchmark_clusters_bottlenecks_substitutions.md",
+      "relative_path": "manus-15/benchmark_clusters_bottlenecks_substitutions.md",
+      "role": "benchmark, bottleneck, substitution memo",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 13,
+        "line_count": 92,
+        "parse_errors": 0,
+        "table_count": 3,
+        "url_count": 10
+      },
+      "sha256": "b36495eafe2be06286e92cb8f6637df14c3a77e3cc290c0a0c6337779916fae9",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 10380,
+      "zip_entry_sha256": "b36495eafe2be06286e92cb8f6637df14c3a77e3cc290c0a0c6337779916fae9"
+    },
+    {
+      "bytes": 956,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\download_research_memos.py",
+      "raw_zip_entry": "download_research_memos.py",
+      "relative_path": "manus-15/download_research_memos.py",
+      "role": "memo retrieval source; not executed",
+      "schema": {
+        "execution": "skipped",
+        "format": "Python source",
+        "line_count": 23
+      },
+      "sha256": "2588af20a239ea236a08fe4cde934c60d720e5d8521230c2ae51ffec99d3ffd0",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 956,
+      "zip_entry_sha256": "2588af20a239ea236a08fe4cde934c60d720e5d8521230c2ae51ffec99d3ffd0"
+    },
+    {
+      "bytes": 10464,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\global_aircraft_aerospace.md",
+      "raw_zip_entry": "global_aircraft_aerospace.md",
+      "relative_path": "manus-15/global_aircraft_aerospace.md",
+      "role": "aircraft workstream memo",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 11,
+        "line_count": 81,
+        "parse_errors": 0,
+        "table_count": 3,
+        "url_count": 18
+      },
+      "sha256": "2d266136234eba0764cd5b7f6cd02348e9c6b35d314b8af9249067885c73e110",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 10464,
+      "zip_entry_sha256": "2d266136234eba0764cd5b7f6cd02348e9c6b35d314b8af9249067885c73e110"
+    },
+    {
+      "bytes": 9630,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\global_launch_propulsion.md",
+      "raw_zip_entry": "global_launch_propulsion.md",
+      "relative_path": "manus-15/global_launch_propulsion.md",
+      "role": "launch propulsion workstream memo",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 11,
+        "line_count": 80,
+        "parse_errors": 0,
+        "table_count": 3,
+        "url_count": 15
+      },
+      "sha256": "1c37a8a5b53fc54b3c94512650bb63f4c917682663beb53adb8ee85b27b80c61",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 9630,
+      "zip_entry_sha256": "1c37a8a5b53fc54b3c94512650bb63f4c917682663beb53adb8ee85b27b80c61"
+    },
+    {
+      "bytes": 9705,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\global_satellite_spacecraft.md",
+      "raw_zip_entry": "global_satellite_spacecraft.md",
+      "relative_path": "manus-15/global_satellite_spacecraft.md",
+      "role": "satellite workstream memo",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 11,
+        "line_count": 84,
+        "parse_errors": 0,
+        "table_count": 5,
+        "url_count": 10
+      },
+      "sha256": "06cf435fa36edc361fd087e0c3974a242aa1c2b9db4bf5e63d824889ced9e2b7",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 9705,
+      "zip_entry_sha256": "06cf435fa36edc361fd087e0c3974a242aa1c2b9db4bf5e63d824889ced9e2b7"
+    },
+    {
+      "bytes": 11698,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\india_space_aerospace_industry.md",
+      "raw_zip_entry": "india_space_aerospace_industry.md",
+      "relative_path": "manus-15/india_space_aerospace_industry.md",
+      "role": "India industry workstream memo",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 11,
+        "line_count": 91,
+        "parse_errors": 0,
+        "table_count": 4,
+        "url_count": 20
+      },
+      "sha256": "120e20b98422539310c327d18f481458ea0f61309b64153014850008c71aacc0",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 11698,
+      "zip_entry_sha256": "120e20b98422539310c327d18f481458ea0f61309b64153014850008c71aacc0"
+    },
+    {
+      "bytes": 9554,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\manufacturing_equipment_machine_tools.md",
+      "raw_zip_entry": "manufacturing_equipment_machine_tools.md",
+      "relative_path": "manus-15/manufacturing_equipment_machine_tools.md",
+      "role": "manufacturing equipment workstream memo",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 11,
+        "line_count": 76,
+        "parse_errors": 0,
+        "table_count": 3,
+        "url_count": 10
+      },
+      "sha256": "29f69deb4a9ce52d70654a31f5ee303608e159047f5368839d9c4ad976a9dddd",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 9554,
+      "zip_entry_sha256": "29f69deb4a9ce52d70654a31f5ee303608e159047f5368839d9c4ad976a9dddd"
+    },
+    {
+      "bytes": 10584,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\materials_minerals_alloys_composites.md",
+      "raw_zip_entry": "materials_minerals_alloys_composites.md",
+      "relative_path": "manus-15/materials_minerals_alloys_composites.md",
+      "role": "materials workstream memo",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 11,
+        "line_count": 88,
+        "parse_errors": 0,
+        "table_count": 3,
+        "url_count": 16
+      },
+      "sha256": "6ef6ca74346da84d4b8bed2aa0e7b65c8c4d11c4419ac485d0e640ace15e26a8",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 10584,
+      "zip_entry_sha256": "6ef6ca74346da84d4b8bed2aa0e7b65c8c4d11c4419ac485d0e640ace15e26a8"
+    },
+    {
+      "bytes": 4392,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\pasted_content.txt",
+      "raw_zip_entry": "pasted_content.txt",
+      "relative_path": "manus-15/pasted_content.txt",
+      "role": "pasted corpus text",
+      "schema": {
+        "format": "UTF-8 text",
+        "line_count": 41,
+        "parse_errors": 0
+      },
+      "sha256": "f5ae0424853872a8f083ea3e4c97e8c7a99f0263dd3b5d4f97d54af82c988edf",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 4392,
+      "zip_entry_sha256": "f5ae0424853872a8f083ea3e4c97e8c7a99f0263dd3b5d4f97d54af82c988edf"
+    },
+    {
+      "bytes": 9678,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\qualification_test_launch_infrastructure.md",
+      "raw_zip_entry": "qualification_test_launch_infrastructure.md",
+      "relative_path": "manus-15/qualification_test_launch_infrastructure.md",
+      "role": "qualification/test/launch workstream memo",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 11,
+        "line_count": 82,
+        "parse_errors": 0,
+        "table_count": 4,
+        "url_count": 12
+      },
+      "sha256": "50bbd2e8f051a1ffcf10207d6ae5f7dd9e0eade938f9c6a2d650b869b6fad7c9",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 9678,
+      "zip_entry_sha256": "50bbd2e8f051a1ffcf10207d6ae5f7dd9e0eade938f9c6a2d650b869b6fad7c9"
+    },
+    {
+      "bytes": 5630,
+      "extracted_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\research_scope.md",
+      "raw_zip_entry": "research_scope.md",
+      "relative_path": "manus-15/research_scope.md",
+      "role": "scope/evidence protocol",
+      "schema": {
+        "format": "Markdown",
+        "heading_count": 14,
+        "line_count": 68,
+        "parse_errors": 0,
+        "table_count": 0,
+        "url_count": 0
+      },
+      "sha256": "9c00bdaa8a9b1d2742ed65161ff732a6084e8408fae07f028491fde70c900c67",
+      "zip_byte_match": true,
+      "zip_entry_bytes": 5630,
+      "zip_entry_sha256": "9c00bdaa8a9b1d2742ed65161ff732a6084e8408fae07f028491fde70c900c67"
+    }
+  ],
+  "canonical_reconciliation": {
+    "canonical_pack_id": "smallsat_india",
+    "canonical_pack_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+    "canonical_pack_sha256": "0e53f4edfcc304c2b108623db21faede78c29d08828a8c7938a7fe72fc6931b1",
+    "canonical_promotions": 0,
+    "mapping_count": 28,
+    "mappings": [
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": ">600 Raptor engines; >3 dozen Starships; >5M sq ft Starship production/integration space reported",
+          "country": "United States",
+          "geography": "Hawthorne CA; Starbase TX; McGregor TX; Florida facilities",
+          "qualification_or_maturity": "Operational flight programs; Starship development"
+        },
+        "manus_entity_id": "manus-15:E001",
+        "manus_name": "SpaceX",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Annual engine-test count not independently disclosed",
+          "country": "United States",
+          "geography": "McGregor Texas",
+          "qualification_or_maturity": "Operational"
+        },
+        "manus_entity_id": "manus-15:E002",
+        "manus_name": "SpaceX McGregor Test Site",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Full-rate production stated for Blue thrusters; engine unit throughput not disclosed",
+          "country": "United States",
+          "geography": "Huntsville AL; Kent WA; West Texas",
+          "qualification_or_maturity": "Operational engine programs; New Glenn flight program"
+        },
+        "manus_entity_id": "manus-15:E003",
+        "manus_name": "Blue Origin",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "77 RS-68 flight-certified engines over program life; 341 hot-fire tests",
+          "country": "United States",
+          "geography": "Stennis MS; Huntsville AL; other US sites",
+          "qualification_or_maturity": "Operational flight-qualified programs"
+        },
+        "manus_entity_id": "manus-15:E004",
+        "manus_name": "L3Harris/Aerojet Rocketdyne",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Exact qualified annual SRM capacity not publicly established",
+          "country": "United States",
+          "geography": "Promontory UT; other US sites",
+          "qualification_or_maturity": "Operational flight programs; expansion reported"
+        },
+        "manus_entity_id": "manus-15:E005",
+        "manus_name": "Northrop Grumman",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Four engines in a row planned as production demonstration",
+          "country": "France",
+          "geography": "Vernon France",
+          "qualification_or_maturity": "Prometheus development and hot-fire testing"
+        },
+        "manus_entity_id": "manus-15:E006",
+        "manus_name": "ArianeGroup Vernon",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Semi-cryogenic facility reported capable to 2600 kN test thrust",
+          "country": "India",
+          "geography": "Mahendragiri Tamil Nadu",
+          "qualification_or_maturity": "Operational agency facility; semi-cryogenic development"
+        },
+        "manus_entity_id": "manus-15:E007",
+        "manus_name": "ISRO Propulsion Complex",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Two orbital pads plus sounding-rocket pad; annual cadence not isolated",
+          "country": "India",
+          "geography": "Sriharikota Andhra Pradesh",
+          "qualification_or_maturity": "Operational; two PSLV/GSLV pads"
+        },
+        "manus_entity_id": "manus-15:E008",
+        "manus_name": "Satish Dhawan Space Centre SHAR",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "No sustained qualified annual rocket rate publicly evidenced",
+          "country": "India",
+          "geography": "Chennai; private pad at SDSC SHAR",
+          "qualification_or_maturity": "Development/early operations"
+        },
+        "manus_entity_id": "manus-15:E009",
+        "manus_name": "Agnikul Cosmos",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "350 kg LEO for Vikram-I; 900 kg LEO for Vikram-II reported",
+          "country": "India",
+          "geography": "Hyderabad",
+          "qualification_or_maturity": "Planned 2026/2027 vehicles"
+        },
+        "manus_entity_id": "manus-15:E010",
+        "manus_name": "Skyroot Aerospace",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "124 international and 3 Indian customer satellites stated on requisition page",
+          "country": "India",
+          "geography": "Bengaluru India",
+          "qualification_or_maturity": "Operational commercial services; technology transfer"
+        },
+        "manus_entity_id": "manus-15:E011",
+        "manus_name": "NewSpace India Limited",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Program",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "ISRO handholding 36 months or until two vehicles stated",
+          "country": "India",
+          "geography": "Bengaluru India",
+          "qualification_or_maturity": "EOI/selection process"
+        },
+        "manus_entity_id": "manus-15:E012",
+        "manus_name": "IN-SPACe PSLV Technology Transfer",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": "pack:smallsat_india:eo_smallsat_300kg",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Two satellites per day reported; >600 OneWeb Gen1 satellites on orbit",
+          "country": "France/United States",
+          "geography": "Toulouse France; Merritt Island Florida",
+          "qualification_or_maturity": "Flight-proven; serial line demonstrated"
+        },
+        "manus_entity_id": "manus-15:E013",
+        "manus_name": "Airbus OneWeb Satellites/AOS",
+        "match_basis": "Serial small-satellite line is a related product-family context, not the India 300 kg canonical product or current capacity.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": "pack:smallsat_india:eo_smallsat_300kg",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "618 ARROW150 satellites stated on orbit",
+          "country": "United States",
+          "geography": "Merritt Island Florida",
+          "qualification_or_maturity": "ARROW150 flight-proven"
+        },
+        "manus_entity_id": "manus-15:E014",
+        "manus_name": "Airbus US Small Satellite Manufacturing",
+        "match_basis": "ARROW150/450 flight heritage is related to a small-satellite product family, not identical to the canonical EO variant.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": "pack:smallsat_india:eo_smallsat_300kg",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Annual satellite output not publicly disaggregated in cited primary sources",
+          "country": "India",
+          "geography": "Bengaluru India",
+          "qualification_or_maturity": "Operational"
+        },
+        "manus_entity_id": "manus-15:E015",
+        "manus_name": "UR Rao Satellite Centre",
+        "match_basis": "URSC is a government spacecraft facility; the canonical product is not a facility identity or output claim.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": "pack:smallsat_india:harness_spacegrade",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "107 ISRO satellites and 87 launch vehicles claimed",
+          "country": "India",
+          "geography": "Hyderabad and two other locations",
+          "qualification_or_maturity": "AS9100D/CMMI Level 3/SAMAR Level-4 claimed"
+        },
+        "manus_entity_id": "manus-15:E016",
+        "manus_name": "Ananth Technologies",
+        "match_basis": "Ananth's avionics/AIT role is related to a reusable space-harness concept; company participation is not part qualification.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": "pack:smallsat_india:obc_board_radhard",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Unit throughput not publicly evidenced",
+          "country": "India",
+          "geography": "Bengaluru India",
+          "qualification_or_maturity": "Design/manufacturing capability claimed"
+        },
+        "manus_entity_id": "manus-15:E017",
+        "manus_name": "Centum Electronics",
+        "match_basis": "Centum embedded-computer role maps to a reusable rad-tolerant OBC concept, not qualified annual supply.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "40 C295 in India by Aug 2031 planned; H125 first India-made delivery early 2027 planned",
+          "country": "India",
+          "geography": "Hyderabad; Vadodara; Vemagal Karnataka",
+          "qualification_or_maturity": "Active industrial collaborations"
+        },
+        "manus_entity_id": "manus-15:E018",
+        "manus_name": "Tata Advanced Systems",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "40 aircraft; 13,000 detail parts; 21 certified special processes; 37 India-based suppliers reported",
+          "country": "India",
+          "geography": "Vadodara Gujarat",
+          "qualification_or_maturity": "First private-sector aircraft FAL in India"
+        },
+        "manus_entity_id": "manus-15:E019",
+        "manus_name": "Airbus C295 Vadodara FAL",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "No public annual unit capacity found",
+          "country": "India",
+          "geography": "Vemagal Karnataka",
+          "qualification_or_maturity": "Facility inaugurated 2026; first delivery planned early 2027"
+        },
+        "manus_entity_id": "manus-15:E020",
+        "manus_name": "TASL H125 FAL",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Company",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "In-house melting-to-finished fasteners claimed; no space-specific throughput disclosed",
+          "country": "India",
+          "geography": "Hyderabad India",
+          "qualification_or_maturity": "Operational; aerospace fastener facility inaugurated"
+        },
+        "manus_entity_id": "manus-15:E021",
+        "manus_name": "MIDHANI",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Company/Facility",
+        "canonical_target_id": "pack:smallsat_india:sat_bus_structure",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Tacoma supports 777/787/777X structures; Decatur precursor-to-fiber; Spartanburg integrated line",
+          "country": "United States",
+          "geography": "Tacoma WA; Decatur AL; Spartanburg SC",
+          "qualification_or_maturity": "Operational aerospace supply"
+        },
+        "manus_entity_id": "manus-15:E022",
+        "manus_name": "Toray Composite Materials America",
+        "match_basis": "Toray composite materials are upstream of bus structures; facility role and aerospace allocation are not identical to the part.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Dataset",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Commodity data available by publication; use specific MCS tables",
+          "country": "United States",
+          "geography": "United States/global",
+          "qualification_or_maturity": "Active annual/quarterly publications"
+        },
+        "manus_entity_id": "manus-15:E023",
+        "manus_name": "USGS Titanium Data",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": "pack:smallsat_india:thermal_vac_chamber",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "30.5 m x 37.2 m chamber; <4e-6 Torr; 34,000 kg shaker; 162.7 dB RATF",
+          "country": "United States",
+          "geography": "Sandusky Ohio",
+          "qualification_or_maturity": "Operational reimbursable facility"
+        },
+        "manus_entity_id": "manus-15:E024",
+        "manus_name": "NASA Space Environments Complex",
+        "match_basis": "NASA SEC is a facility; the pack's equipment-class dependency is not a facility identity or booking throughput.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Facility",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Historical RS-68 program: 341 hot fires and 77 delivered flight-certified engines",
+          "country": "United States",
+          "geography": "Mississippi United States",
+          "qualification_or_maturity": "Operational government facility"
+        },
+        "manus_entity_id": "manus-15:E025",
+        "manus_name": "NASA Stennis",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Program",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "Low-volume case study 18 to 5 months and $310k to $125k reported",
+          "country": "United States",
+          "geography": "Marshall Space Flight Center Alabama",
+          "qualification_or_maturity": "Development-to-flight infusion"
+        },
+        "manus_entity_id": "manus-15:E026",
+        "manus_name": "NASA AM Propulsion Program",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      },
+      {
+        "candidate_kind": "Program",
+        "canonical_target_id": "pack:smallsat_india:metrology_cmm",
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "No production rate",
+          "country": "United States",
+          "geography": "Gaithersburg Maryland",
+          "qualification_or_maturity": "Research/standards development"
+        },
+        "manus_entity_id": "manus-15:E027",
+        "manus_name": "NIST Five-Axis Metrology",
+        "match_basis": "NIST five-axis metrology is a program/measurement concept related to the pack's metrology class, not a CMM facility or qualification result.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "RELATED_NOT_IDENTICAL"
+      },
+      {
+        "candidate_kind": "Study",
+        "canonical_target_id": null,
+        "canonical_target_path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+        "grade_scope_geography_date": {
+          "capacity_or_throughput": "15/17 interviewed manufacturers reported workforce difficulty and 15 reported material-procurement difficulty",
+          "country": "United States",
+          "geography": "United States/global",
+          "qualification_or_maturity": "Published 2024"
+        },
+        "manus_entity_id": "manus-15:E028",
+        "manus_name": "GAO Commercial Aviation Supply Chain",
+        "match_basis": "No exact smallsat pack identity; retain as bounded external candidate.",
+        "promotion_status": "STAGING_ONLY",
+        "shadow_identity_created": false,
+        "status": "UNRESOLVED_STAGING"
+      }
+    ],
+    "policy": "Only existing smallsat pack concepts are referenced as exact/related candidates; external facilities, companies, projects, and rates are never inserted into the pack.",
+    "registry_manifest_path": "C:\\GitHub\\forge-world\\data\\registry\\manifest.yaml",
+    "registry_manifest_sha256": "fe147ab3b339f2d35d1a2dd8f4cb293ae8b168038ac69de3ef3f84cb5ff7c038",
+    "shadow_identity_created": 0,
+    "status_counts": {
+      "RELATED_NOT_IDENTICAL": 8,
+      "UNRESOLVED_STAGING": 20
+    }
+  },
+  "claim_samples": [
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "caveat": "Company cumulative statement; not annual qualified rate",
+      "claim_id": "manus-15:T001",
+      "conflicts": [
+        "C002"
+      ],
+      "dates": [
+        "to 2025-10-30"
+      ],
+      "entity_candidates": [
+        "manus-15:T001"
+      ],
+      "escalation": "Obtain annual accepted-engine flow, yield/scrap, inventory, and refurbishment records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv:2 (record T001)",
+      "geography": [
+        "United States"
+      ],
+      "numeric_ranges": [
+        {
+          "max": null,
+          "min": 600,
+          "qualifier": "cumulative",
+          "raw": ">600 engines",
+          "unit": "engines"
+        },
+        {
+          "max": null,
+          "min": 36,
+          "qualifier": "cumulative",
+          "raw": ">3 dozen Starships",
+          "unit": "Starships"
+        }
+      ],
+      "predicate": "cumulative_output_not_annual_rate",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R1"
+      ],
+      "source_urls": [
+        "https://www.spacex.com/updates"
+      ],
+      "status": "KNOWN_AS_REPORTED",
+      "subject": "SpaceX Starship/Raptor",
+      "text": "Cumulative engine and Starship counts are reported; no annual qualified rate is established.",
+      "units": [
+        "engines",
+        "Starships"
+      ],
+      "unknowns": [
+        "U001",
+        "U011"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "caveat": "Company statement; usable production area/utilization unknown",
+      "claim_id": "manus-15:T002",
+      "conflicts": [
+        "C001"
+      ],
+      "dates": [
+        "to 2025-10-30"
+      ],
+      "entity_candidates": [
+        "manus-15:T002"
+      ],
+      "escalation": "Obtain usable area, installed equipment, utilization, labor, and qualified output by line.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv:3 (record T002)",
+      "geography": [
+        "Texas/Florida, United States"
+      ],
+      "numeric_ranges": [
+        {
+          "max": null,
+          "min": 5000000,
+          "qualifier": "reported footprint",
+          "raw": ">5,000,000 square feet",
+          "unit": "square feet"
+        }
+      ],
+      "predicate": "reported_manufacturing_footprint",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "repair_applied": true,
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R1"
+      ],
+      "source_urls": [
+        "https://www.spacex.com/updates"
+      ],
+      "status": "KNOWN_AS_REPORTED",
+      "subject": "SpaceX Starship infrastructure",
+      "text": "Reported manufacturing/integration footprint is not usable production capacity without utilization, process, and test constraints.",
+      "units": [
+        "square feet"
+      ],
+      "unknowns": [
+        "U001",
+        "U002"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "caveat": "Planned investment; operating capacity and yield unknown",
+      "claim_id": "manus-15:T003",
+      "conflicts": [
+        "C001"
+      ],
+      "dates": [
+        "2026-08-06"
+      ],
+      "entity_candidates": [
+        "manus-15:T003"
+      ],
+      "escalation": "Require construction, equipment installation, wafer starts, yield, and product qualification evidence.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv:4 (record T003)",
+      "geography": [
+        "Texas, United States"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 16.8,
+          "min": 16.8,
+          "qualifier": "announced investment",
+          "raw": "$16.8 billion",
+          "unit": "billion USD"
+        }
+      ],
+      "predicate": "announced_investment_not_operating_capacity",
+      "project_state": "ANNOUNCED",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R1"
+      ],
+      "source_urls": [
+        "https://www.spacex.com/updates"
+      ],
+      "status": "ANNOUNCED",
+      "subject": "SpaceX Terafab",
+      "text": "Planned semiconductor investment is an announced project state, not an operating fab or qualified yield.",
+      "units": [
+        "billion USD"
+      ],
+      "unknowns": [
+        "U001",
+        "U002"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "caveat": "Ramp/design target and historical line capability; current rate unknown",
+      "claim_id": "manus-15:T006",
+      "conflicts": [
+        "C008"
+      ],
+      "dates": [
+        "2017 announcement"
+      ],
+      "entity_candidates": [
+        "manus-15:T006"
+      ],
+      "escalation": "Obtain current line utilization, delivered units, product mix, yield, and test-cell queue data.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv:7 (record T006)",
+      "flight_heritage_distinct_from_cadence": true,
+      "geography": [
+        "Toulouse, France; Merritt Island, United States"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 2,
+          "min": 2,
+          "qualifier": "historical demonstration",
+          "raw": "2 satellites/day",
+          "unit": "satellites/day"
+        }
+      ],
+      "predicate": "historical_serial_demonstration",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R15"
+      ],
+      "source_urls": [
+        "https://airbusus.com/small-satellite-manufacturing/",
+        "https://www.airbus.com/en/newsroom/press-releases/2017-06-oneweb-satellites-inaugurates-serial-production-line-for-the"
+      ],
+      "status": "KNOWN_AS_REPORTED",
+      "subject": "Airbus/OneWeb Satellites",
+      "text": "Two satellites per day is retained as a historical line demonstration, not current available rate.",
+      "units": [
+        "satellites/day"
+      ],
+      "unknowns": [
+        "U003"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "caveat": "Test stand capability; not engine production capacity",
+      "claim_id": "manus-15:T010",
+      "conflicts": [],
+      "dates": [
+        "2023"
+      ],
+      "entity_candidates": [
+        "manus-15:T010"
+      ],
+      "escalation": "Obtain test-stand booking, maintenance, acceptance, and annual engine-test throughput records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv:11 (record T010)",
+      "facility_semantics": "test capability only",
+      "geography": [
+        "Mahendragiri, Tamil Nadu, India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 2600,
+          "min": 2600,
+          "qualifier": "test thrust capability",
+          "raw": "2,600 kN",
+          "unit": "kN"
+        }
+      ],
+      "predicate": "test_stand_capability_not_engine_output",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R7"
+      ],
+      "source_urls": [
+        "https://www.isro.gov.in/First_Integrated_Test_SemicryogenicEngine.html"
+      ],
+      "status": "KNOWN_AS_REPORTED",
+      "subject": "ISRO semi-cryogenic test facility",
+      "text": "Maximum reported test thrust is a test-asset specification, not engine production throughput or flight qualification.",
+      "units": [
+        "kN"
+      ],
+      "unknowns": [
+        "U012",
+        "U013"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "caveat": "Ramp target; first India-made delivery should be checked against later delivery records",
+      "claim_id": "manus-15:T015",
+      "conflicts": [
+        "C010"
+      ],
+      "dates": [
+        "planned by Aug 2031"
+      ],
+      "entity_candidates": [
+        "manus-15:T015"
+      ],
+      "escalation": "Collect first delivery, accepted aircraft, site takt, supplier qualification, and ramp records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv:16 (record T015)",
+      "geography": [
+        "Vadodara, Gujarat, India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 40,
+          "min": 40,
+          "qualifier": "planned program target",
+          "raw": "40 aircraft",
+          "unit": "aircraft"
+        }
+      ],
+      "predicate": "program_target_not_realized_output",
+      "project_state": "PLANNED",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R20"
+      ],
+      "source_urls": [
+        "https://www.airbus.com/en/newsroom/press-releases/2024-10-tata-advanced-systems-and-airbus-inaugurate-c295-final-assembly-line-vadodara-india"
+      ],
+      "status": "PLANNED",
+      "subject": "TASL C295 FAL",
+      "text": "Forty India-produced/assembled aircraft is a planned program target through August 2031, not measured annual output.",
+      "units": [
+        "aircraft"
+      ],
+      "unknowns": [
+        "U019"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "caveat": "Facility specification; throughput/booking unknown",
+      "claim_id": "manus-15:T024",
+      "conflicts": [],
+      "dates": [
+        "2025 facility page"
+      ],
+      "entity_candidates": [
+        "manus-15:T024"
+      ],
+      "escalation": "Obtain booking lead time, utilization, test profiles, and acceptance throughput.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv:25 (record T024)",
+      "facility_semantics": "facility specification only",
+      "geography": [
+        "Sandusky, Ohio, United States"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 37.2,
+          "min": 30.5,
+          "qualifier": "facility dimensions",
+          "raw": "30.5 x 37.2 m",
+          "unit": "m"
+        }
+      ],
+      "predicate": "facility_specification_not_test_throughput",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "MEASURED",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R27"
+      ],
+      "source_urls": [
+        "https://www.nasa.gov/centers-and-facilities/glenn/space-environments-complex/"
+      ],
+      "status": "KNOWN",
+      "subject": "NASA Space Environments Complex",
+      "text": "Vacuum chamber dimensions are measured facility specifications; booking and qualification throughput remain unresolved.",
+      "units": [
+        "m"
+      ],
+      "unknowns": [
+        "U013"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "caveat": "Do not use until primary source with denominator and year is found",
+      "claim_id": "manus-15:T031",
+      "conflicts": [
+        "C006"
+      ],
+      "dates": [
+        "parallel memo only"
+      ],
+      "entity_candidates": [
+        "manus-15:T031"
+      ],
+      "escalation": "Obtain URSC class-specific annual output with denominator, year, acceptance, and delivery records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv:32 (record T031)",
+      "geography": [
+        "Bengaluru, India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 8,
+          "min": 5,
+          "qualifier": "unsupported parallel memo claim",
+          "raw": "5-8 satellites/year",
+          "unit": "satellites/year"
+        }
+      ],
+      "predicate": "annual_satellite_output_unknown",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "UNKNOWN",
+      "source_class": "structured corpus ledger",
+      "source_ids": [],
+      "source_urls": [],
+      "status": "UNSUPPORTED",
+      "subject": "India URSC",
+      "text": "A 5-8 satellites/year claim is explicitly unsupported by a primary source in this corpus and is not used as throughput.",
+      "units": [
+        "satellites/year"
+      ],
+      "unknowns": [
+        "U004"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "caveat": " \"Company architecture and infrastructure are reported; throughput unknown\"",
+      "claim_id": "manus-15:E009",
+      "conflicts": [
+        "C003"
+      ],
+      "dates": [
+        "2022/2026 corpus context"
+      ],
+      "entity_candidates": [
+        "manus-15:E009"
+      ],
+      "entity_type": "Company",
+      "escalation": "Collect flight records, pad turnaround, accepted vehicles, engine qualification, and production audits.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:10 (record E009)",
+      "geography": [
+        "Chennai; SDSC SHAR, India"
+      ],
+      "numeric_ranges": [],
+      "predicate": "private_launch_capability_without_sustained_rate",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "UNKNOWN",
+      "qualification_or_maturity": "Development/early operations",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R9",
+        "R10"
+      ],
+      "source_urls": [
+        "https://agnikul.in/",
+        "https://www.isro.gov.in/first_private_launch_mission_control.html"
+      ],
+      "subject": "Agnikul Cosmos",
+      "text": "A private pad, launch vehicle, and single-piece AM engine architecture are reported; no sustained qualified annual rocket rate is evidenced.",
+      "units": [],
+      "unknowns": [
+        "U020",
+        "U012"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "caveat": " \"Historical line output; current utilization not disclosed\"",
+      "claim_id": "manus-15:E013",
+      "conflicts": [
+        "C008"
+      ],
+      "dates": [
+        "2017; current page accessed 2026"
+      ],
+      "entity_candidates": [
+        "manus-15:E013"
+      ],
+      "entity_type": "Facility",
+      "escalation": "Reconcile on-orbit heritage, delivered units, current utilization, product mix, yield, and test capacity.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:14 (record E013)",
+      "flight_heritage": "flight-proven",
+      "geography": [
+        "Toulouse, France; Merritt Island, Florida, United States"
+      ],
+      "numeric_ranges": [],
+      "predicate": "flight_proven_serial_line_not_current_rate",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R15",
+        "R16"
+      ],
+      "source_urls": [
+        "https://airbusus.com/small-satellite-manufacturing/",
+        "https://www.airbus.com/en/newsroom/press-releases/2017-06-oneweb-satellites-inaugurates-serial-production-line-for-the"
+      ],
+      "subject": "Airbus OneWeb Satellites/AOS",
+      "text": "The line is described as flight-proven and serial, with a historical two-per-day demonstration; current utilization is not disclosed.",
+      "units": [],
+      "unknowns": [
+        "U003"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "caveat": " \"Ramp target through 2031\"",
+      "claim_id": "manus-15:E019",
+      "conflicts": [
+        "C010"
+      ],
+      "dates": [
+        "2024; ramp through 2031"
+      ],
+      "entity_candidates": [
+        "manus-15:E019"
+      ],
+      "entity_type": "Facility",
+      "escalation": "Obtain site-level accepted aircraft, part-level qualification, supplier approval, and annual takt records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:20 (record E019)",
+      "geography": [
+        "Vadodara, Gujarat, India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 40,
+          "min": 40,
+          "qualifier": "program target",
+          "raw": "40 aircraft",
+          "unit": "aircraft"
+        },
+        {
+          "max": 13000,
+          "min": 13000,
+          "qualifier": "program scope",
+          "raw": "13,000 detail parts",
+          "unit": "parts"
+        },
+        {
+          "max": 21,
+          "min": 21,
+          "qualifier": "certification count",
+          "raw": "21 special processes",
+          "unit": "processes"
+        },
+        {
+          "max": 37,
+          "min": 37,
+          "qualifier": "onboarded count",
+          "raw": "37 suppliers",
+          "unit": "suppliers"
+        }
+      ],
+      "predicate": "facility_and_program_target",
+      "project_state": "active ramp target",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R20",
+        "R21"
+      ],
+      "source_urls": [
+        "https://www.airbus.com/en/newsroom/press-releases/2024-10-tata-advanced-systems-and-airbus-inaugurate-c295-final-assembly-line-vadodara-india",
+        "https://www.tataadvancedsystems.com/c295"
+      ],
+      "subject": "Airbus C295 Vadodara FAL",
+      "text": "The FAL and its supplier/process counts are reported, while the 40-aircraft ramp through 2031 remains a target rather than realized output.",
+      "units": [
+        "aircraft",
+        "parts",
+        "processes",
+        "suppliers"
+      ],
+      "unknowns": [
+        "U019"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "caveat": " \"Does not establish sole-source status for all Indian space-grade materials\"",
+      "claim_id": "manus-15:E021",
+      "conflicts": [
+        "C011"
+      ],
+      "dates": [
+        "2026 corpus context"
+      ],
+      "entity_candidates": [
+        "manus-15:E021"
+      ],
+      "entity_type": "Company",
+      "escalation": "Obtain flight-material grades, customer approvals, lot/yield records, and space-specific annual allocation.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:22 (record E021)",
+      "geography": [
+        "Hyderabad, India"
+      ],
+      "material_semantics": "capability and facility evidence, not qualified supply",
+      "numeric_ranges": [],
+      "predicate": "specialty_material_capability_not_space_specific_throughput",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "structured corpus ledger",
+      "source_ids": [
+        "R23"
+      ],
+      "source_urls": [
+        "https://midhani-india.in/news_marquee/midhani-inaugurates-its-state-of-the-art-aerospace-fasteners-facility/"
+      ],
+      "subject": "MIDHANI",
+      "text": "MIDHANI reports in-house melting-to-finished fasteners and specialty alloys; space-specific allocation, yield, and qualified throughput are not established.",
+      "units": [],
+      "unknowns": [
+        "U007",
+        "U015"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "caveat": "Institutional mandate, EOI, and handholding are not sustained private PSLV/SSLV output.",
+      "claim_id": "manus-15:MD031",
+      "conflicts": [
+        "C003",
+        "C004"
+      ],
+      "dates": [
+        "2022-2026"
+      ],
+      "entity_candidates": [
+        "manus-15:E011",
+        "manus-15:E012"
+      ],
+      "escalation": "Obtain selected party, transfer agreement, realized vehicles, launch records, and annual production denominator.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:31",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 36,
+          "min": 36,
+          "qualifier": "handholding statement",
+          "raw": "36 months",
+          "unit": "months"
+        },
+        {
+          "max": 2,
+          "min": 2,
+          "qualifier": "transfer milestone",
+          "raw": "two vehicles",
+          "unit": "vehicles"
+        }
+      ],
+      "predicate": "enabling_program_not_private_throughput",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "research-package synthesis",
+      "source_ids": [],
+      "source_urls": [
+        "https://www.nsilindia.co.in/",
+        "https://www.nsilindia.co.in/launch-service-requisition",
+        "https://www.inspace.gov.in/inspace?id=pslv_eoi_tot"
+      ],
+      "subject": "NSIL and IN-SPACe commercialization mechanisms",
+      "text": "The commercialization pathway is institutionally real but should not be confused with proven high-rate private production. NSIL states that it is the commercial arm of ISRO, the nodal agency for PSLV production through an industry consortium, and an enabler of SSLV manufacturing through Indian industry. IN-SPACe has published an EOI for PSLV end-to-end technology transfer with ISRO handholding for 36 months or until two vehicles are realized and launched. These are enabling mechanisms. They do not, by themselves, establish private annual vehicle throughput. [15] [16] [17]",
+      "units": [
+        "months",
+        "vehicles"
+      ],
+      "unknowns": [
+        "U004",
+        "U012",
+        "U020"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "caveat": "Machine or printer existence is not aerospace capability without controlled subcomponents, calibration, process monitoring, NDE, and qualification evidence.",
+      "claim_id": "manus-15:MD035",
+      "conflicts": [
+        "C007",
+        "C012"
+      ],
+      "dates": [
+        "2012-2024 evidence"
+      ],
+      "entity_candidates": [
+        "manus-15:E027",
+        "pack:smallsat_india:metrology_cmm"
+      ],
+      "escalation": "Bind each product to approved machine, material/process, test asset, calibration, and acceptance records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:35",
+      "geography": [
+        "Global; India gap analysis"
+      ],
+      "numeric_ranges": [],
+      "predicate": "qualification_constrained_capability",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "REPORTED",
+      "source_class": "research-package synthesis",
+      "source_ids": [],
+      "source_urls": [
+        "https://www.nist.gov/publications/virtual-machine-tool-evaluation-standardized-5-axis-performance-tests",
+        "https://ntrs.nasa.gov/citations/20240004310"
+      ],
+      "subject": "Aerospace metrology and qualification chain",
+      "text": "The strongest machine-builds-machine dependency is metrology and qualification. A 5-axis machining center is only an aerospace capability when its spindle, bearings, thermal stability, controller, servo performance, fixturing, tooling, calibration and process-monitoring chain are controlled. NIST notes that simultaneous five-axis geometric and servo errors compound and require standardized measurement/modeling. NASA\u2019s AM work similarly shows that a printer is not the production system: powder/feedstock control, build parameters, support removal, heat treatment, HIP, final machining, NDE, dimensional inspection and component testing are all part of the lifecycle. [21] [22]",
+      "units": [],
+      "unknowns": [
+        "U008",
+        "U013",
+        "U014",
+        "U018"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "caveat": "Factory announcements, installed machines, qualified processes, and repeated accepted deliveries are separate states and must not be merged.",
+      "claim_id": "manus-15:MD487",
+      "conflicts": [
+        "C001",
+        "C002",
+        "C003",
+        "C010"
+      ],
+      "dates": [
+        "2026-08-25"
+      ],
+      "entity_candidates": [
+        "pack:smallsat_india:seg_india_structures_space",
+        "pack:smallsat_india:prj_private_constellation_plant"
+      ],
+      "escalation": "Upgrade only with product-specific, dated, denominator-preserving qualification and accepted-delivery evidence.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:487",
+      "geography": [
+        "India and global benchmarks"
+      ],
+      "numeric_ranges": [],
+      "predicate": "unknown_capacity_hard_constraint",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "UNKNOWN",
+      "source_class": "research-package synthesis",
+      "source_ids": [],
+      "source_urls": [],
+      "subject": "Unknown qualified capacity",
+      "text": "For later FORGE simulations, the safest planning assumption is that **unknown qualified capacity is a hard constraint until evidence upgrades it**. A factory announcement may create a future-capacity node; a completed machine may create an installed-capacity node; a qualified process may create a usable-capacity node; and repeated accepted deliveries may create a demonstrated-throughput node. Those states should never be merged.",
+      "units": [],
+      "unknowns": [
+        "U001",
+        "U004",
+        "U005",
+        "U020"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_conflict_ledger.csv",
+      "artifact_sha256": "6d9283be38601bb285cca5f8dcbd6e9e303e9ca66bb69144d3994aaa5958f96d",
+      "caveat": "Cite the page as a policy signal but do not infer selection status or private throughput until the original EOI and selection record are recovered.",
+      "claim_id": "manus-15:C004",
+      "conflicts": [
+        "C004"
+      ],
+      "dates": [
+        "2026-02-23",
+        "2026-05-18",
+        "2026-08-08"
+      ],
+      "entity_candidates": [
+        "manus-15:E012"
+      ],
+      "escalation": "Recover original EOI, amendment chronology, selected party, and realized vehicle records.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_conflict_ledger.csv:5 (repaired record C004)",
+      "geography": [
+        "India"
+      ],
+      "numeric_ranges": [
+        {
+          "max": null,
+          "min": null,
+          "qualifier": "page update",
+          "raw": "2026-02-23",
+          "unit": "date"
+        },
+        {
+          "max": null,
+          "min": null,
+          "qualifier": "EOI floated",
+          "raw": "2026-05-18",
+          "unit": "date"
+        },
+        {
+          "max": null,
+          "min": null,
+          "qualifier": "proposal due",
+          "raw": "2026-08-08",
+          "unit": "date"
+        }
+      ],
+      "predicate": "chronology_conflict",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "CONFLICTED",
+      "repair_applied": true,
+      "source_class": "conflict ledger",
+      "source_ids": [
+        "R14"
+      ],
+      "source_urls": [
+        "https://www.inspace.gov.in/inspace?id=pslv_eoi_tot"
+      ],
+      "subject": "PSLV technology transfer timing",
+      "text": "IN-SPACe page update date and EOI/proposal dates are chronologically inconsistent in the extracted record.",
+      "units": [
+        "date"
+      ],
+      "unknowns": [
+        "U020"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_conflict_ledger.csv",
+      "artifact_sha256": "6d9283be38601bb285cca5f8dcbd6e9e303e9ca66bb69144d3994aaa5958f96d",
+      "caveat": "Do not use exact values without primary trace; retain only the general bottleneck finding where directly supported.",
+      "claim_id": "manus-15:C015",
+      "conflicts": [
+        "C015"
+      ],
+      "dates": [
+        "GAO 2024; source review"
+      ],
+      "entity_candidates": [
+        "manus-15:E004",
+        "manus-15:E005"
+      ],
+      "escalation": "Obtain OEM/supplier filings and regulator evidence for backlog, stalled units, and dollar impact.",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_conflict_ledger.csv:16 (repaired record C015)",
+      "geography": [
+        "Global/United States aerospace"
+      ],
+      "numeric_ranges": [
+        {
+          "max": 3500,
+          "min": 3500,
+          "qualifier": "unvalidated secondary headline",
+          "raw": "3,500 engines",
+          "unit": "engines"
+        },
+        {
+          "max": 11,
+          "min": 11,
+          "qualifier": "unvalidated secondary headline",
+          "raw": "$11B",
+          "unit": "billion USD"
+        }
+      ],
+      "predicate": "secondary_headline_not_validated",
+      "promotion_status": "STAGING_ONLY",
+      "proposed_epistemic": "CONFLICTED",
+      "repair_applied": true,
+      "source_class": "conflict ledger",
+      "source_ids": [],
+      "source_urls": [],
+      "subject": "Aircraft engine bottleneck",
+      "text": "The exact 3,500-engine and $11B headline is not carried as a hard claim because GAO supports general workforce/material shortages but not those exact numbers.",
+      "units": [
+        "engines",
+        "billion USD"
+      ],
+      "unknowns": [
+        "U010"
+      ]
+    }
+  ],
+  "entity_candidate_samples": [
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "SpaceX",
+      "capacity_or_throughput": ">600 Raptor engines; >3 dozen Starships; >5M sq ft Starship production/integration space reported",
+      "country": "United States",
+      "entity_id": "E001",
+      "entity_type": "Company",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:2",
+      "facility_or_location": "Hawthorne CA; Starbase TX; McGregor TX; Florida facilities",
+      "parent_or_owner": "Independent",
+      "products_or_processes": "Starship/Super Heavy; Raptor; Falcon; Starlink",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Operational flight programs; Starship development",
+      "role_or_relationship": "Vertically integrated launch vehicle engine satellite and launch operations",
+      "source_ids": [
+        "R1"
+      ],
+      "source_urls": [
+        "https://www.spacex.com/updates"
+      ],
+      "staging_entity_id": "manus-15:E001",
+      "uncertainty": " \"Company self-report; operational vs qualified rate not disclosed\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "SpaceX McGregor Test Site",
+      "capacity_or_throughput": "Annual engine-test count not independently disclosed",
+      "country": "United States",
+      "entity_id": "E002",
+      "entity_type": "Facility",
+      "evidence_label": "UNKNOWN",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:3",
+      "facility_or_location": "McGregor Texas",
+      "parent_or_owner": "SpaceX",
+      "products_or_processes": "Raptor and Merlin test",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Operational",
+      "role_or_relationship": "Engine acceptance/development test",
+      "source_ids": [
+        "R1"
+      ],
+      "source_urls": [
+        "https://www.spacex.com/updates"
+      ],
+      "staging_entity_id": "manus-15:E002",
+      "uncertainty": " \"Company reports multiple stands but not sustained capacity\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "ISRO Propulsion Complex",
+      "capacity_or_throughput": "Semi-cryogenic facility reported capable to 2600 kN test thrust",
+      "country": "India",
+      "entity_id": "E007",
+      "entity_type": "Facility",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:8",
+      "facility_or_location": "Mahendragiri Tamil Nadu",
+      "parent_or_owner": "ISRO/Department of Space",
+      "products_or_processes": "Storable; cryogenic; semi-cryogenic engine/stage assembly and test",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Operational agency facility; semi-cryogenic development",
+      "role_or_relationship": "India propulsion assembly/integration/test",
+      "source_ids": [
+        "R6",
+        "R7"
+      ],
+      "source_urls": [
+        "https://www.isro.gov.in/IPRC.html",
+        "https://www.isro.gov.in/First_Integrated_Test_SemicryogenicEngine.html"
+      ],
+      "staging_entity_id": "manus-15:E007",
+      "uncertainty": " \"Test capacity is not production throughput\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "Satish Dhawan Space Centre SHAR",
+      "capacity_or_throughput": "Two orbital pads plus sounding-rocket pad; annual cadence not isolated",
+      "country": "India",
+      "entity_id": "E008",
+      "entity_type": "Facility",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:9",
+      "facility_or_location": "Sriharikota Andhra Pradesh",
+      "parent_or_owner": "ISRO/Department of Space",
+      "products_or_processes": "Solid propellant processing; static tests; launch integration and operations",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Operational; two PSLV/GSLV pads",
+      "role_or_relationship": "India launch-base infrastructure",
+      "source_ids": [
+        "R8"
+      ],
+      "source_urls": [
+        "https://www.isro.gov.in/SDSC.html"
+      ],
+      "staging_entity_id": "manus-15:E008",
+      "uncertainty": " \"Public page does not establish maximum cadence\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "Agnikul Cosmos",
+      "capacity_or_throughput": "No sustained qualified annual rocket rate publicly evidenced",
+      "country": "India",
+      "entity_id": "E009",
+      "entity_type": "Company",
+      "evidence_label": "UNKNOWN",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:10",
+      "facility_or_location": "Chennai; private pad at SDSC SHAR",
+      "parent_or_owner": "Independent/IIT Madras incubated",
+      "products_or_processes": "Agnibaan; single-piece 3D-printed semi-cryogenic engine; avionics",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Development/early operations",
+      "role_or_relationship": "Private launch vehicle and mobile launchpad",
+      "source_ids": [
+        "R9",
+        "R10"
+      ],
+      "source_urls": [
+        "https://agnikul.in/",
+        "https://www.isro.gov.in/first_private_launch_mission_control.html"
+      ],
+      "staging_entity_id": "manus-15:E009",
+      "uncertainty": " \"Company architecture and infrastructure are reported; throughput unknown\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "IN-SPACe PSLV Technology Transfer",
+      "capacity_or_throughput": "ISRO handholding 36 months or until two vehicles stated",
+      "country": "India",
+      "entity_id": "E012",
+      "entity_type": "Program",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:13",
+      "facility_or_location": "Bengaluru India",
+      "parent_or_owner": "Government of India",
+      "products_or_processes": "PSLV end-to-end realization/operation/commercialization",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "EOI/selection process",
+      "role_or_relationship": "Technology-transfer mechanism to private Indian industry",
+      "source_ids": [
+        "R14"
+      ],
+      "source_urls": [
+        "https://www.inspace.gov.in/inspace?id=pslv_eoi_tot"
+      ],
+      "staging_entity_id": "manus-15:E012",
+      "uncertainty": " \"Page/date sequence contains inconsistency; original EOI needed\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "Airbus OneWeb Satellites/AOS",
+      "capacity_or_throughput": "Two satellites per day reported; >600 OneWeb Gen1 satellites on orbit",
+      "country": "France/United States",
+      "entity_id": "E013",
+      "entity_type": "Facility",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:14",
+      "facility_or_location": "Toulouse France; Merritt Island Florida",
+      "parent_or_owner": "Airbus/OneWeb JV then Airbus US ownership context",
+      "products_or_processes": "OneWeb/Arrow small satellite buses",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Flight-proven; serial line demonstrated",
+      "role_or_relationship": "Serial satellite assembly/integration/test",
+      "source_ids": [
+        "R15",
+        "R16"
+      ],
+      "source_urls": [
+        "https://airbusus.com/small-satellite-manufacturing/",
+        "https://www.airbus.com/en/newsroom/press-releases/2017-06-oneweb-satellites-inaugurates-serial-production-line-for-the"
+      ],
+      "staging_entity_id": "manus-15:E013",
+      "uncertainty": " \"Historical line output; current utilization not disclosed\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "UR Rao Satellite Centre",
+      "capacity_or_throughput": "Annual satellite output not publicly disaggregated in cited primary sources",
+      "country": "India",
+      "entity_id": "E015",
+      "entity_type": "Facility",
+      "evidence_label": "UNKNOWN",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:16",
+      "facility_or_location": "Bengaluru India",
+      "parent_or_owner": "ISRO/Department of Space",
+      "products_or_processes": "Communications; earth observation; navigation; science satellites",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Operational",
+      "role_or_relationship": "Government spacecraft design/assembly/integration",
+      "source_ids": [
+        "R17"
+      ],
+      "source_urls": [],
+      "staging_entity_id": "manus-15:E015",
+      "uncertainty": " \"Parallel memo claim of 5-8/year not independently primary-validated\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "Airbus C295 Vadodara FAL",
+      "capacity_or_throughput": "40 aircraft; 13,000 detail parts; 21 certified special processes; 37 India-based suppliers reported",
+      "country": "India",
+      "entity_id": "E019",
+      "entity_type": "Facility",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:20",
+      "facility_or_location": "Vadodara Gujarat",
+      "parent_or_owner": "Airbus/TASL",
+      "products_or_processes": "C295 detail parts; subassemblies; final assembly; testers",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "First private-sector aircraft FAL in India",
+      "role_or_relationship": "Aircraft final assembly and component manufacturing",
+      "source_ids": [
+        "R20",
+        "R21"
+      ],
+      "source_urls": [
+        "https://www.airbus.com/en/newsroom/press-releases/2024-10-tata-advanced-systems-and-airbus-inaugurate-c295-final-assembly-line-vadodara-india",
+        "https://www.tataadvancedsystems.com/c295"
+      ],
+      "staging_entity_id": "manus-15:E019",
+      "uncertainty": " \"Ramp target through 2031\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "TASL H125 FAL",
+      "capacity_or_throughput": "No public annual unit capacity found",
+      "country": "India",
+      "entity_id": "E020",
+      "entity_type": "Facility",
+      "evidence_label": "UNKNOWN",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:21",
+      "facility_or_location": "Vemagal Karnataka",
+      "parent_or_owner": "Airbus/TASL",
+      "products_or_processes": "H125/H125M helicopter assembly; testing; maintenance",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Facility inaugurated 2026; first delivery planned early 2027",
+      "role_or_relationship": "Helicopter final assembly and lifecycle support",
+      "source_ids": [
+        "R22"
+      ],
+      "source_urls": [
+        "https://www.airbus.com/en/newsroom/press-releases/2026-02-tata-advanced-systems-inaugurates-airbus-h125-helicopter-production-line-to-boost-indias-vertical"
+      ],
+      "staging_entity_id": "manus-15:E020",
+      "uncertainty": " \"Planned output unknown\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "MIDHANI",
+      "capacity_or_throughput": "In-house melting-to-finished fasteners claimed; no space-specific throughput disclosed",
+      "country": "India",
+      "entity_id": "E021",
+      "entity_type": "Company",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:22",
+      "facility_or_location": "Hyderabad India",
+      "parent_or_owner": "Government of India/Ministry of Defence PSU",
+      "products_or_processes": "Titanium; superalloys; specialty steels; aerospace fasteners",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Operational; aerospace fastener facility inaugurated",
+      "role_or_relationship": "Specialty metallurgy and fasteners",
+      "source_ids": [
+        "R23"
+      ],
+      "source_urls": [
+        "https://midhani-india.in/news_marquee/midhani-inaugurates-its-state-of-the-art-aerospace-fasteners-facility/"
+      ],
+      "staging_entity_id": "manus-15:E021",
+      "uncertainty": " \"Does not establish sole-source status for all Indian space-grade materials\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "NASA Space Environments Complex",
+      "capacity_or_throughput": "30.5 m x 37.2 m chamber; <4e-6 Torr; 34,000 kg shaker; 162.7 dB RATF",
+      "country": "United States",
+      "entity_id": "E024",
+      "entity_type": "Facility",
+      "evidence_label": "MEASURED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:25",
+      "facility_or_location": "Sandusky Ohio",
+      "parent_or_owner": "NASA",
+      "products_or_processes": "Thermal-vacuum; acoustic; vibration; EMI/EMC",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Operational reimbursable facility",
+      "role_or_relationship": "Large-spacecraft environmental qualification/test",
+      "source_ids": [
+        "R27"
+      ],
+      "source_urls": [
+        "https://www.nasa.gov/centers-and-facilities/glenn/space-environments-complex/"
+      ],
+      "staging_entity_id": "manus-15:E024",
+      "uncertainty": " \"Facility capability not test throughput\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "NASA AM Propulsion Program",
+      "capacity_or_throughput": "Low-volume case study 18 to 5 months and $310k to $125k reported",
+      "country": "United States",
+      "entity_id": "E026",
+      "entity_type": "Program",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:27",
+      "facility_or_location": "Marshall Space Flight Center Alabama",
+      "parent_or_owner": "NASA",
+      "products_or_processes": "LPBF/DED/other AM for rocket components",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Development-to-flight infusion",
+      "role_or_relationship": "Process development and qualification knowledge",
+      "source_ids": [
+        "R28",
+        "R29"
+      ],
+      "source_urls": [
+        "https://ntrs.nasa.gov/citations/20240004310",
+        "https://ntrs.nasa.gov/api/citations/20230000976/downloads/Intro%20to%20AM_SciTech23.pdf"
+      ],
+      "staging_entity_id": "manus-15:E026",
+      "uncertainty": " \"Case study not universal economics\""
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "canonical_name": "NIST Five-Axis Metrology",
+      "capacity_or_throughput": "No production rate",
+      "country": "United States",
+      "entity_id": "E027",
+      "entity_type": "Program",
+      "evidence_label": "MEASURED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv:28",
+      "facility_or_location": "Gaithersburg Maryland",
+      "parent_or_owner": "NIST",
+      "products_or_processes": "5-axis machine-tool error evaluation",
+      "promotion_status": "STAGING_ONLY",
+      "qualification_or_maturity": "Research/standards development",
+      "role_or_relationship": "Metrology and performance standardization",
+      "source_ids": [
+        "R30"
+      ],
+      "source_urls": [
+        "https://www.nist.gov/publications/virtual-machine-tool-evaluation-standardized-5-axis-performance-tests"
+      ],
+      "staging_entity_id": "manus-15:E027",
+      "uncertainty": " \"Supports machine capability dependency\""
+    }
+  ],
+  "escalation_packets": [
+    {
+      "conflicts": [
+        "C001",
+        "C002",
+        "C008"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-15-01",
+      "question": "What is SpaceX's annual qualified Raptor/Starship flow, yield, inventory, and refurbishment cadence?",
+      "required_evidence": [
+        "serial/accepted-unit records",
+        "annual output and scrap",
+        "launch/flight records",
+        "refurbishment turnaround"
+      ],
+      "status": "BLOCKED_ESCALATION",
+      "unknowns": [
+        "U001",
+        "U002",
+        "U011"
+      ]
+    },
+    {
+      "conflicts": [
+        "C003",
+        "C004",
+        "C006",
+        "C007",
+        "C010"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-15-02",
+      "question": "What private Indian launch and satellite facilities have realized qualified cadence?",
+      "required_evidence": [
+        "selected transfer records",
+        "accepted vehicles/satellites",
+        "pad turnaround",
+        "facility OEE and delivery manifests"
+      ],
+      "status": "BLOCKED_ESCALATION",
+      "unknowns": [
+        "U004",
+        "U005",
+        "U012",
+        "U020"
+      ]
+    },
+    {
+      "conflicts": [
+        "C011",
+        "C012"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-15-03",
+      "question": "Which Indian materials, composites, electronics, and machine-tool chains are flight-qualified at relevant grade and volume?",
+      "required_evidence": [
+        "approved supplier lists",
+        "grade/lot records",
+        "audited BOMs",
+        "VIM/VAR/HIP/AM and composite qualification dossiers"
+      ],
+      "status": "BLOCKED_ESCALATION",
+      "unknowns": [
+        "U006",
+        "U007",
+        "U008",
+        "U009",
+        "U015",
+        "U017",
+        "U018"
+      ]
+    },
+    {
+      "conflicts": [
+        "C008"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-15-04",
+      "question": "Can environmental and qualification test assets support the intended satellite/propulsion rate?",
+      "required_evidence": [
+        "booking lead time",
+        "utilization",
+        "test profile and queue",
+        "calibration and acceptance records"
+      ],
+      "status": "BLOCKED_ESCALATION",
+      "unknowns": [
+        "U013",
+        "U014",
+        "U018"
+      ]
+    },
+    {
+      "conflicts": [
+        "C005",
+        "C010"
+      ],
+      "no_promotion": true,
+      "packet_id": "EP-15-05",
+      "question": "What aircraft final-assembly output and C295/H125 ramp has actually been delivered?",
+      "required_evidence": [
+        "site-level accepted deliveries",
+        "line takt",
+        "supplier approval",
+        "configuration and conformity records"
+      ],
+      "status": "BLOCKED_ESCALATION",
+      "unknowns": [
+        "U019"
+      ]
+    }
+  ],
+  "field_normalizations": [
+    {
+      "artifact": "aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "field": "value",
+      "line": 2,
+      "normalized_value": "600+ engines; 3 dozen+ Starships",
+      "raw_file_unchanged": true,
+      "raw_value": "\u000b600+ engines; 3 dozen+ Starships",
+      "rule_id": "THROUGHPUT_STRIP_LEADING_VERTICAL_TAB",
+      "scope": "in_memory_parse_only"
+    }
+  ],
+  "generated_date": "2026-08-25",
+  "guardrails": [
+    "Facility existence or test-asset specification is not operating or qualified throughput.",
+    "Project/EOI/announcement state is not realized production or launch cadence.",
+    "Flight heritage, on-orbit counts, cumulative output, and historical demonstrations are not current annual flow.",
+    "Capacity preserves product, denominator, date, geography, state, qualification, utilization, and test/cadence semantics.",
+    "UNKNOWN remains UNKNOWN; all candidate mappings and relations remain staging-only."
+  ],
+  "inputs": {
+    "canonical_comparison": {
+      "bytes": 10015,
+      "path": "C:\\GitHub\\forge-world\\packs\\smallsat_india.yaml",
+      "read_only": true,
+      "registry_manifest_bytes": 55924,
+      "registry_manifest_path": "C:\\GitHub\\forge-world\\data\\registry\\manifest.yaml",
+      "registry_manifest_sha256": "fe147ab3b339f2d35d1a2dd8f4cb293ae8b168038ac69de3ef3f84cb5ff7c038",
+      "sha256": "0e53f4edfcc304c2b108623db21faede78c29d08828a8c7938a7fe72fc6931b1"
+    },
+    "extracted_root": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15",
+    "manifest": {
+      "bytes": 1431,
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\_meta\\manus_corpus_manifest.csv",
+      "row": {
+        "CorpusID": "manus-15",
+        "FileCount": "21",
+        "OriginalZip": "How to Conduct Thorough Research_4854.zip",
+        "Status": "OK"
+      },
+      "sha256": "5b60e5026abb70a2298baa28d00d190b5b9e434231201f82ff59daaa055b388e"
+    },
+    "raw_zip": {
+      "bytes": 425656,
+      "entry_count": 21,
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\How to Conduct Thorough Research_4854.zip",
+      "sha256": "7b6dc0669dff0a42330f399079e70e54fe857a53ba8d0abe2a5bbe9e477987a2"
+    }
+  },
+  "inventory": {
+    "claims": {
+      "bounded_claim_sample_count": 17,
+      "counting_note": "Layer totals intentionally preserve evidence/unknown/conflict overlap; relationship rows are counted separately.",
+      "entity_claim_rows": 28,
+      "explicit_conflict_rows": 15,
+      "explicit_unknown_rows": 20,
+      "markdown_throughput_rows": 27,
+      "non_deduplicated_claim_or_decision_records": 134,
+      "throughput_claim_rows": 36,
+      "workstream_memo_rows": 8
+    },
+    "conflicts": {
+      "conflict_ids": [
+        "C001",
+        "C002",
+        "C003",
+        "C004",
+        "C005",
+        "C006",
+        "C007",
+        "C008",
+        "C009",
+        "C010",
+        "C011",
+        "C012",
+        "C013",
+        "C014",
+        "C015"
+      ],
+      "conflict_sample_count": 2,
+      "csv_conflict_rows": 15,
+      "markdown_thematic_conflict_items": 6
+    },
+    "duplicates": {
+      "duplicate_artifact_hash_groups": [],
+      "duplicate_conflict_ids": [],
+      "duplicate_count": 0,
+      "duplicate_entity_ids": [],
+      "duplicate_relationship_ids": [],
+      "duplicate_unknown_ids": []
+    },
+    "entities": {
+      "all_entity_candidates_staging_only": true,
+      "bounded_entity_sample_count": 14,
+      "entity_type_counts": {
+        "Company": 11,
+        "Company/Facility": 1,
+        "Dataset": 1,
+        "Facility": 11,
+        "Program": 3,
+        "Study": 1
+      },
+      "rows_after_repair": 28,
+      "unique_entity_ids": 28
+    },
+    "facilities_projects_capacity": {
+      "entity_capacity_or_throughput_rows": 28,
+      "facility_and_project_promotions": 0,
+      "flight_heritage_or_on_orbit_candidates": 9,
+      "planned_or_announced_throughput_ids": [
+        "T003",
+        "T015",
+        "T019",
+        "T030"
+      ],
+      "project_or_program_entity_rows": 3,
+      "qualified_current_annual_rate_supported": 0,
+      "strict_facility_entity_rows": 11,
+      "test_asset_or_test_role_candidates": 11,
+      "throughput_evidence_label_counts": {
+        "MEASURED": 6,
+        "REPORTED": 24,
+        "UNKNOWN": 6
+      },
+      "throughput_rows": 36,
+      "throughput_status_counts": {
+        "ANNOUNCED": 1,
+        "CONFLICTED/UNSUPPORTED": 1,
+        "KNOWN": 6,
+        "KNOWN_AS_REPORTED": 20,
+        "PLANNED": 3,
+        "UNKNOWN": 1,
+        "UNSUPPORTED": 4
+      },
+      "unknown_throughput_ids": [
+        "T031",
+        "T032",
+        "T033",
+        "T034",
+        "T035",
+        "T036"
+      ]
+    },
+    "malformed": {
+      "artifacts_with_repairs": [
+        "aerospace_conflict_ledger.csv",
+        "aerospace_entities.csv",
+        "aerospace_relationships.csv",
+        "aerospace_throughput_evidence.csv",
+        "aerospace_unknown_ledger.csv"
+      ],
+      "field_normalizations": 1,
+      "raw_files_modified": 0,
+      "raw_malformed_rows": 24,
+      "repaired_in_memory_rows": 24,
+      "unrepaired_rows": 0
+    },
+    "processes_equipment_materials_qualification": {
+      "aircraft_product_block_rows": 5,
+      "bounded_process_equipment_material_samples": 12,
+      "machine_builds_machine_recursion_rows": 9,
+      "materials_upstream_table_rows": 6,
+      "propulsion_dependency_rows": 6,
+      "qualification_chain_rows": 7,
+      "qualification_promotions": 0,
+      "relationship_qualification_or_standardization_rows": 4,
+      "reusable_launch_product_block_rows": 6,
+      "satellite_dependency_rows": 6,
+      "satellite_product_block_rows": 7
+    },
+    "relations": {
+      "allowed_edges_reviewed": [
+        "affected_by_shock",
+        "competes_for",
+        "consumes_energy",
+        "consumes_water",
+        "contradicts",
+        "decomposes_into",
+        "derived_from",
+        "enabled_by_project",
+        "gated_by",
+        "has_capacity",
+        "licensed_from",
+        "located_at",
+        "operated_by",
+        "owned_by",
+        "produced_via",
+        "recurses_into",
+        "requires_capability",
+        "requires_equipment",
+        "requires_input",
+        "requires_qualification",
+        "requires_tool",
+        "substitutable_with",
+        "supplied_by",
+        "supports",
+        "supersedes",
+        "transported_via"
+      ],
+      "ambiguous_or_unsupported_mappings": 30,
+      "bounded_relation_sample_count": 12,
+      "relation_promotions": 0,
+      "relationship_rows_after_repair": 33,
+      "relationship_type_counts": {
+        "ANNOUNCES": 1,
+        "ASSEMBLES": 4,
+        "DESIGNS": 1,
+        "DEVELOPS": 1,
+        "ENABLES": 1,
+        "IDENTIFIES_BOTTLENECK": 1,
+        "INTEGRATES": 1,
+        "MANUFACTURES": 6,
+        "MEASURES": 1,
+        "OPERATES": 2,
+        "PROCESSES": 1,
+        "QUALIFIES": 2,
+        "REGULATES": 1,
+        "REQUIRES": 1,
+        "STANDARDIZES": 2,
+        "SUPPLIES": 1,
+        "TESTS": 3,
+        "TRANSFERS_TECHNOLOGY": 1,
+        "USES": 1,
+        "VERTICALLY_INTEGRATES": 1
+      },
+      "unique_relationship_ids": 33
+    },
+    "skipped": {
+      "items": [
+        {
+          "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\download_research_memos.py",
+          "reason": "memo retrieval source not executed"
+        },
+        {
+          "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_capability_tree.png",
+          "reason": "binary diagram not OCR-ed or semantically interpreted"
+        }
+      ],
+      "skipped_units": 2
+    },
+    "sources": {
+      "all_text_unique_urls": 153,
+      "main_reference_rows": 36,
+      "main_reference_unique_urls": 36,
+      "structured_source_id_count": 37,
+      "structured_source_id_occurrences": 109,
+      "workstream_declared_source_count_sum": 112,
+      "workstream_signed_memo_urls": 8
+    },
+    "unknowns": {
+      "csv_unknown_rows": 20,
+      "markdown_unknown_table_rows": 18,
+      "unknown_ids": [
+        "U001",
+        "U002",
+        "U003",
+        "U004",
+        "U005",
+        "U006",
+        "U007",
+        "U008",
+        "U009",
+        "U010",
+        "U011",
+        "U012",
+        "U013",
+        "U014",
+        "U015",
+        "U016",
+        "U017",
+        "U018",
+        "U019",
+        "U020"
+      ],
+      "unknown_sample_count": 6
+    }
+  },
+  "process_equipment_material_qualification_samples": [
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "candidate_id": "manus-15:process-aircraft-primary-structure",
+      "class": "process",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:58",
+      "promotion_status": "STAGING_ONLY",
+      "text": [
+        "Primary structure",
+        "Fuselage barrels/sections, wings, spars, frames, pressure shell",
+        "Al alloys, titanium, carbon-fiber composites; machining, forming, bonding, fastening",
+        "Large CNC, AFP/ATL, autoclave, drilling/fastening cells, CMM, ultrasonic NDT",
+        "Structural substantiation, process approval, NDT and conformity"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "candidate_id": "manus-15:process-satellite-bus",
+      "class": "process",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:68",
+      "promotion_status": "STAGING_ONLY",
+      "text": [
+        "Bus structure",
+        "Panels, deck, central cylinder, brackets, equipment trays",
+        "Al honeycomb, CFRP, Al/Ti fittings, adhesive bonds",
+        "CNC, CMM, laser tracker, bonding ovens, torque tools",
+        "Dimensional/conformity and structural test"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "candidate_id": "manus-15:process-engine",
+      "class": "process",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:81",
+      "promotion_status": "STAGING_ONLY",
+      "text": [
+        "Engines",
+        "Chamber, injector, turbopumps, gas generator/preburner, nozzle, valves",
+        "Cu alloys, Ni superalloys, Ti, C/C, seals; AM, forging, machining, brazing",
+        "LPBF/DED, HIP, 5-axis CNC, balancing, hot-fire stands",
+        "Turbopump/seal/material qualification and test cadence"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "candidate_id": "manus-15:recursion-five-axis",
+      "class": "equipment",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:394",
+      "promotion_status": "STAGING_ONLY",
+      "text": [
+        "5-axis machining center",
+        "Stable frame, guides, spindle, controller, drives, encoders",
+        "Precision castings, grinding, spindle bearings, motors, CNC electronics, calibration",
+        "Machine-tool industry quality caps aerospace part quality"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "candidate_id": "manus-15:recursion-tvac",
+      "class": "equipment/test",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:400",
+      "promotion_status": "STAGING_ONLY",
+      "text": [
+        "TVAC chamber",
+        "Large vacuum shell, cryopumps, roughing pumps, LN2/GN2, DAQ",
+        "Heavy steel/aluminum fabrication, vacuum valves, pumps, cryogenics, instrumentation",
+        "Spacecraft output can be capped by environmental-test assets"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "candidate_id": "manus-15:material-titanium",
+      "class": "material",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:262",
+      "promotion_status": "STAGING_ONLY",
+      "source_urls": [
+        "https://www.usgs.gov/centers/national-minerals-information-center/titanium-statistics-and-information"
+      ],
+      "text": "Titanium minerals/sponge/metal definitions must remain distinct from aerospace-grade qualified supply."
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "candidate_id": "manus-15:qualification-production-acceptance",
+      "class": "qualification",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:328",
+      "promotion_status": "STAGING_ONLY",
+      "text": [
+        "Production acceptance",
+        "Every flight unit or defined sample",
+        "Acceptance test, traceability, configuration and nonconformance closure",
+        "Determines actual deliverable rate"
+      ]
+    },
+    {
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md",
+      "artifact_sha256": "2d623f7508628508926a398c6ce54e82fe258b06770569787371d9745ab762a5",
+      "candidate_id": "manus-15:qualification-operational",
+      "class": "qualification",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\FORGE WORLD Research Package.md:329",
+      "promotion_status": "STAGING_ONLY",
+      "text": [
+        "Operational qualification",
+        "Launch/reuse/maintenance system",
+        "Flight safety, recovery, refurbishment, anomaly and turnaround records",
+        "Converts design cadence into operational cadence"
+      ]
+    }
+  ],
+  "relation_candidate_samples": [
+    {
+      "allowed_edge_candidate": null,
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "Engine acceptance and development testing at dedicated test site",
+      "domain": "launch propulsion",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:2",
+      "mapping_status": "UNMAPPED_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL001",
+      "relationship_type": "USES",
+      "source_entity": "SpaceX",
+      "source_ids": [
+        "R1"
+      ],
+      "source_urls": [
+        "https://www.spacex.com/updates"
+      ],
+      "staging_relation_id": "manus-15:REL001",
+      "target_entity": "SpaceX McGregor Test Site",
+      "uncertainty": "Exact test cadence unknown"
+    },
+    {
+      "allowed_edge_candidate": "operated_by",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "Starship production integration test and launch infrastructure",
+      "domain": "launch vehicle",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:3",
+      "mapping_status": "CANDIDATE_DIRECTION_INVERTED",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL002",
+      "relationship_type": "OPERATES",
+      "source_entity": "SpaceX",
+      "source_ids": [
+        "R1"
+      ],
+      "source_urls": [
+        "https://www.spacex.com/updates"
+      ],
+      "staging_relation_id": "manus-15:REL002",
+      "target_entity": "SpaceX Starbase",
+      "uncertainty": "Current qualified cadence unknown"
+    },
+    {
+      "allowed_edge_candidate": "requires_qualification",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "2, 000 kN engine PHTA/integrated test and qualification",
+      "domain": "launch propulsion",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:9",
+      "mapping_status": "AMBIGUOUS_TEST_VS_QUALIFICATION_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL008",
+      "relationship_type": "TESTS",
+      "source_entity": "ISRO Propulsion Complex",
+      "source_ids": [
+        "R6",
+        "R7"
+      ],
+      "source_urls": [
+        "https://www.isro.gov.in/IPRC.html",
+        "https://www.isro.gov.in/First_Integrated_Test_SemicryogenicEngine.html"
+      ],
+      "staging_relation_id": "manus-15:REL008",
+      "target_entity": "semi-cryogenic engine",
+      "uncertainty": "Test capability is not flight qualification"
+    },
+    {
+      "allowed_edge_candidate": "operated_by",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "Private pad and mission control inside SHAR campus",
+      "domain": "launch infrastructure",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:14",
+      "mapping_status": "CANDIDATE_DIRECTION_INVERTED",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL013",
+      "relationship_type": "OPERATES",
+      "source_entity": "Agnikul Cosmos",
+      "source_ids": [
+        "R10"
+      ],
+      "source_urls": [
+        "https://www.isro.gov.in/first_private_launch_mission_control.html"
+      ],
+      "staging_relation_id": "manus-15:REL013",
+      "target_entity": "private launchpad at SDSC",
+      "uncertainty": "Launch cadence unknown"
+    },
+    {
+      "allowed_edge_candidate": null,
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "EOI for end-to-end realization operation commercialization",
+      "domain": "commercial space",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:16",
+      "mapping_status": "UNSUPPORTED_SEMANTICS_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL015",
+      "relationship_type": "TRANSFERS_TECHNOLOGY",
+      "source_entity": "IN-SPACe PSLV technology transfer",
+      "source_ids": [
+        "R14"
+      ],
+      "source_urls": [
+        "https://www.inspace.gov.in/inspace?id=pslv_eoi_tot"
+      ],
+      "staging_relation_id": "manus-15:REL015",
+      "target_entity": "private Indian industry",
+      "uncertainty": "Selected party and realized output unresolved"
+    },
+    {
+      "allowed_edge_candidate": "produced_via",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "Serial assembly integration test line",
+      "domain": "satellites",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:17",
+      "mapping_status": "AMBIGUOUS_DIRECTION_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL016",
+      "relationship_type": "ASSEMBLES",
+      "source_entity": "Airbus OneWeb Satellites/AOS",
+      "source_ids": [
+        "R15"
+      ],
+      "source_urls": [
+        "https://airbusus.com/small-satellite-manufacturing/",
+        "https://www.airbus.com/en/newsroom/press-releases/2017-06-oneweb-satellites-inaugurates-serial-production-line-for-the"
+      ],
+      "staging_relation_id": "manus-15:REL016",
+      "target_entity": "OneWeb satellites",
+      "uncertainty": "Current utilization unknown"
+    },
+    {
+      "allowed_edge_candidate": "produced_via",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "40 India-produced/assembled aircraft planned with detail parts and special processes",
+      "domain": "aircraft",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:21",
+      "mapping_status": "AMBIGUOUS_DIRECTION_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL020",
+      "relationship_type": "ASSEMBLES",
+      "source_entity": "TASL C295 FAL",
+      "source_ids": [
+        "R20",
+        "R21"
+      ],
+      "source_urls": [
+        "https://www.airbus.com/en/newsroom/press-releases/2024-10-tata-advanced-systems-and-airbus-inaugurate-c295-final-assembly-line-vadodara-india",
+        "https://www.tataadvancedsystems.com/c295"
+      ],
+      "staging_relation_id": "manus-15:REL020",
+      "target_entity": "Airbus C295",
+      "uncertainty": "Actual output through 2031 unknown"
+    },
+    {
+      "allowed_edge_candidate": "supports",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "AM process trades and propulsion hot-fire/qualification pathway",
+      "domain": "manufacturing process",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:26",
+      "mapping_status": "AMBIGUOUS_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL025",
+      "relationship_type": "DEVELOPS",
+      "source_entity": "NASA AM Propulsion Program",
+      "source_ids": [
+        "R28",
+        "R29"
+      ],
+      "source_urls": [
+        "https://ntrs.nasa.gov/citations/20240004310",
+        "https://ntrs.nasa.gov/api/citations/20230000976/downloads/Intro%20to%20AM_SciTech23.pdf"
+      ],
+      "staging_relation_id": "manus-15:REL025",
+      "target_entity": "LPBF/DED",
+      "uncertainty": "Qualification standards still evolving"
+    },
+    {
+      "allowed_edge_candidate": "requires_qualification",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "Measurement of compound geometric and servo errors",
+      "domain": "manufacturing equipment",
+      "evidence_label": "MEASURED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:28",
+      "mapping_status": "CANDIDATE_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL027",
+      "relationship_type": "QUALIFIES",
+      "source_entity": "NIST Five-Axis Metrology",
+      "source_ids": [
+        "R30"
+      ],
+      "source_urls": [
+        "https://www.nist.gov/publications/virtual-machine-tool-evaluation-standardized-5-axis-performance-tests"
+      ],
+      "staging_relation_id": "manus-15:REL027",
+      "target_entity": "5-axis CNC, error maps/calibration",
+      "uncertainty": "Factory-specific performance unknown"
+    },
+    {
+      "allowed_edge_candidate": "requires_qualification",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "TVAC acoustic vibration EMI/EMC and data acquisition",
+      "domain": "space testing",
+      "evidence_label": "MEASURED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:29",
+      "mapping_status": "CANDIDATE_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL028",
+      "relationship_type": "QUALIFIES",
+      "source_entity": "NASA Space Environments Complex",
+      "source_ids": [
+        "R27"
+      ],
+      "source_urls": [
+        "https://www.nasa.gov/centers-and-facilities/glenn/space-environments-complex/"
+      ],
+      "staging_relation_id": "manus-15:REL028",
+      "target_entity": "spacecraft",
+      "uncertainty": "Booking/throughput unknown"
+    },
+    {
+      "allowed_edge_candidate": "requires_qualification",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "Qualification acceptance protoflight test requirements and uncertainties",
+      "domain": "qualification",
+      "evidence_label": "MEASURED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:31",
+      "mapping_status": "AMBIGUOUS_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL030",
+      "relationship_type": "STANDARDIZES",
+      "source_entity": "ECSS-E-ST-10-03C Rev1",
+      "source_ids": [
+        "R33"
+      ],
+      "source_urls": [
+        "https://ecss.nl/standard/ecss-e-st-10-03c-rev-1-testing-31-may-2022/"
+      ],
+      "staging_relation_id": "manus-15:REL030",
+      "target_entity": "space-segment equipment",
+      "uncertainty": "Launcher/GSE outside scope"
+    },
+    {
+      "allowed_edge_candidate": "enabled_by_project",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "description": "Planned vertical integration of logic memory packaging and testing",
+      "domain": "semiconductor",
+      "evidence_label": "REPORTED",
+      "exact_locator": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv:34",
+      "mapping_status": "AMBIGUOUS_STAGING",
+      "promotion_status": "STAGING_ONLY",
+      "relationship_id": "REL033",
+      "relationship_type": "ANNOUNCES",
+      "source_entity": "SpaceX",
+      "source_ids": [
+        "R1"
+      ],
+      "source_urls": [
+        "https://www.spacex.com/updates"
+      ],
+      "staging_relation_id": "manus-15:REL033",
+      "target_entity": "Terafab",
+      "uncertainty": "Planned facility not operating capacity"
+    }
+  ],
+  "repair_metadata": [
+    {
+      "artifact_name": "aerospace_entities.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "raw_field_count": 14,
+      "raw_fields": [
+        "E010",
+        "Skyroot Aerospace",
+        "Independent",
+        "Company",
+        "Hyderabad",
+        "India",
+        "Vikram launch vehicles; 3D-printed liquid engine; composite stages",
+        "Private launch vehicle developer",
+        "Planned 2026/2027 vehicles",
+        "350 kg LEO for Vikram-I; 900 kg LEO for Vikram-II reported",
+        "REPORTED",
+        "R11",
+        " \"Planned capability",
+        " not sustained production\""
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 11,
+      "raw_row_sha256": "648231463b113d0ee0b444adf5f8dadbcbe8eb7c8bed11133641d303db359ec0",
+      "repaired_field_count": 13,
+      "repaired_fields": [
+        "E010",
+        "Skyroot Aerospace",
+        "Independent",
+        "Company",
+        "Hyderabad",
+        "India",
+        "Vikram launch vehicles; 3D-printed liquid engine; composite stages",
+        "Private launch vehicle developer",
+        "Planned 2026/2027 vehicles",
+        "350 kg LEO for Vikram-I; 900 kg LEO for Vikram-II reported",
+        "REPORTED",
+        "R11",
+        "Planned capability, not sustained production"
+      ],
+      "repaired_row_sha256": "29418d3a536d6c6204fc632bdacd9c2a1daeb4bb0a29b1a3bee70623fa6779be",
+      "rule_id": "ENTITIES_MERGE_UNQUOTED_COMMA_TAIL_INTO_UNCERTAINTY",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_entities.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_entities.csv",
+      "artifact_sha256": "010de3d618730e66b8492469152a9e316e6f05b30478e4d65214effe7dd9e45b",
+      "raw_field_count": 16,
+      "raw_fields": [
+        "E023",
+        "USGS Titanium Data",
+        "USGS",
+        "Dataset",
+        "United States/global",
+        "United States",
+        "Titanium minerals/metal statistics",
+        "Authoritative upstream data source",
+        "Active annual/quarterly publications",
+        "Commodity data available by publication; use specific MCS tables",
+        "MEASURED",
+        "R25,R26",
+        " \"Definitions distinguish minerals",
+        " sponge",
+        " metal",
+        " and dioxide\""
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 24,
+      "raw_row_sha256": "488336963bba2a30375255794eb4b8235ee97193c318f7620156dd5cc557b714",
+      "repaired_field_count": 13,
+      "repaired_fields": [
+        "E023",
+        "USGS Titanium Data",
+        "USGS",
+        "Dataset",
+        "United States/global",
+        "United States",
+        "Titanium minerals/metal statistics",
+        "Authoritative upstream data source",
+        "Active annual/quarterly publications",
+        "Commodity data available by publication; use specific MCS tables",
+        "MEASURED",
+        "R25,R26",
+        "Definitions distinguish minerals, sponge, metal, and dioxide"
+      ],
+      "repaired_row_sha256": "fa085b89673d04f370edbaedbf1ac4f5315d56e2fc1950933d7198a234306a6d",
+      "rule_id": "ENTITIES_MERGE_UNQUOTED_COMMA_TAIL_INTO_UNCERTAINTY",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_conflict_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_conflict_ledger.csv",
+      "artifact_sha256": "6d9283be38601bb285cca5f8dcbd6e9e303e9ca66bb69144d3994aaa5958f96d",
+      "raw_field_count": 7,
+      "raw_fields": [
+        "C004",
+        "PSLV technology transfer timing",
+        "IN-SPACe page says updated 2026-02-23",
+        "page text says EOI floated 2026-05-18 and proposals due 2026-08-08",
+        "IN-SPACe page",
+        "Chronology is inconsistent; cite page but flag date conflict",
+        "Could misstate selection status and current private throughput"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 5,
+      "raw_row_sha256": "4847dcc2616c35278b4523a2c70d09a271b8562689c4a82154d296bf3ad21290",
+      "repaired_field_count": 8,
+      "repaired_fields": [
+        "C004",
+        "PSLV technology transfer timing",
+        "IN-SPACe page says updated 2026-02-23",
+        "",
+        "page text says EOI floated 2026-05-18 and proposals due 2026-08-08",
+        "IN-SPACe page",
+        "Chronology is inconsistent; cite page but flag date conflict",
+        "Could misstate selection status and current private throughput"
+      ],
+      "repaired_row_sha256": "9b650a437d41c9c7a68647dad85e3d8d97c70d16efbd0c5c598b56692043f617",
+      "rule_id": "CONFLICT_INSERT_MISSING_SOURCE_DATE_A",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_conflict_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_conflict_ledger.csv",
+      "artifact_sha256": "6d9283be38601bb285cca5f8dcbd6e9e303e9ca66bb69144d3994aaa5958f96d",
+      "raw_field_count": 9,
+      "raw_fields": [
+        "C015",
+        "Aircraft engine bottleneck",
+        "3,500 engines stalled and $11B impact",
+        "parallel memo secondary",
+        "GAO supports general engine/material shortages but not those exact numbers",
+        "GAO 2024 and source review",
+        "Do not use exact 3",
+        "500/$11B without primary trace",
+        "High-consequence number lacks validation"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 16,
+      "raw_row_sha256": "8bd74f2dbc102377f892e55b9f79c115ff445a33ee7f1d2295f7b1690266e4c9",
+      "repaired_field_count": 8,
+      "repaired_fields": [
+        "C015",
+        "Aircraft engine bottleneck",
+        "3,500 engines stalled and $11B impact",
+        "parallel memo secondary",
+        "GAO supports general engine/material shortages but not those exact numbers",
+        "GAO 2024 and source review",
+        "Do not use exact 3, 500/$11B without primary trace",
+        "High-consequence number lacks validation"
+      ],
+      "repaired_row_sha256": "6440b3ca4bd9ba5c47b4a0a8bd5b81c24fe3dc37f4934b64a212025be8ab7352",
+      "rule_id": "CONFLICT_MERGE_COMMA_IN_WORKING_TREATMENT",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_relationships.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "raw_field_count": 11,
+      "raw_fields": [
+        "REL008",
+        "ISRO Propulsion Complex",
+        "semi-cryogenic engine",
+        "TESTS",
+        "launch propulsion",
+        "2",
+        "000 kN engine PHTA/integrated test and qualification",
+        "REPORTED",
+        "R6",
+        "R7",
+        "Test capability is not flight qualification"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 9,
+      "raw_row_sha256": "ae7020391d79472506d277cb7c83335440805b8093e07aefd34bb94567b6bec2",
+      "repaired_field_count": 9,
+      "repaired_fields": [
+        "REL008",
+        "ISRO Propulsion Complex",
+        "semi-cryogenic engine",
+        "TESTS",
+        "launch propulsion",
+        "2, 000 kN engine PHTA/integrated test and qualification",
+        "REPORTED",
+        "R6, R7",
+        "Test capability is not flight qualification"
+      ],
+      "repaired_row_sha256": "7f9eef6b163ec4036096f9b9d0541fa39a154c39325bc382083714864e9c5a9b",
+      "rule_id": "RELATION_MERGE_DESCRIPTION_AND_SOURCE_IDS",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_relationships.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "raw_field_count": 10,
+      "raw_fields": [
+        "REL014",
+        "NSIL",
+        "Indian industry consortium",
+        "ENABLES",
+        "commercial space",
+        "PSLV production through consortium and SSLV manufacturing through partners",
+        "REPORTED",
+        "R12",
+        "R13",
+        "Partner throughput unknown"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 15,
+      "raw_row_sha256": "19a9855eb05051317af745a5201932ef3d100b3bbda81c72797e579df4adfce4",
+      "repaired_field_count": 9,
+      "repaired_fields": [
+        "REL014",
+        "NSIL",
+        "Indian industry consortium",
+        "ENABLES",
+        "commercial space",
+        "PSLV production through consortium and SSLV manufacturing through partners",
+        "REPORTED",
+        "R12, R13",
+        "Partner throughput unknown"
+      ],
+      "repaired_row_sha256": "fdd171ea5ae2e8399bfc240bcc8d553e124b0ece79fde2a378765c6549700020",
+      "rule_id": "RELATION_MERGE_COMMA_SPLIT_SOURCE_IDS",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_relationships.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "raw_field_count": 13,
+      "raw_fields": [
+        "REL019",
+        "Centum Electronics",
+        "aerospace embedded computers",
+        "MANUFACTURES",
+        "avionics",
+        "Embedded computers",
+        " power converters",
+        " smart actuators",
+        " LRUs",
+        " test tools",
+        "REPORTED",
+        "R19",
+        "Unit volume unknown"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 20,
+      "raw_row_sha256": "3ea6201326384bd3f05a04f41176a0ce5fe50c6c8c412bedf0ad325b370d1f02",
+      "repaired_field_count": 9,
+      "repaired_fields": [
+        "REL019",
+        "Centum Electronics",
+        "aerospace embedded computers",
+        "MANUFACTURES",
+        "avionics",
+        "Embedded computers, power converters, smart actuators, LRUs, test tools",
+        "REPORTED",
+        "R19",
+        "Unit volume unknown"
+      ],
+      "repaired_row_sha256": "a6540bbedfd576c04bb1da6e801b335140e54754319fa1a489f593b1db1b72e6",
+      "rule_id": "RELATION_MERGE_COMMA_SPLIT_DESCRIPTION",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_relationships.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "raw_field_count": 10,
+      "raw_fields": [
+        "REL020",
+        "TASL C295 FAL",
+        "Airbus C295",
+        "ASSEMBLES",
+        "aircraft",
+        "40 India-produced/assembled aircraft planned with detail parts and special processes",
+        "REPORTED",
+        "R20",
+        "R21",
+        "Actual output through 2031 unknown"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 21,
+      "raw_row_sha256": "d60dd4300d838566462e3277982039812123da68c1e8d84fb0bd5f6afb88c725",
+      "repaired_field_count": 9,
+      "repaired_fields": [
+        "REL020",
+        "TASL C295 FAL",
+        "Airbus C295",
+        "ASSEMBLES",
+        "aircraft",
+        "40 India-produced/assembled aircraft planned with detail parts and special processes",
+        "REPORTED",
+        "R20, R21",
+        "Actual output through 2031 unknown"
+      ],
+      "repaired_row_sha256": "4e08aafdb989fcddde0198e8a6dc85a9355f941809d03cfd429630fedf6f737b",
+      "rule_id": "RELATION_MERGE_COMMA_SPLIT_SOURCE_IDS",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_relationships.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "raw_field_count": 10,
+      "raw_fields": [
+        "REL024",
+        "USGS Titanium Data",
+        "titanium upstream",
+        "MEASURES",
+        "materials/minerals",
+        "Statistics on titanium minerals/metal flows and production",
+        "MEASURED",
+        "R25",
+        "R26",
+        "Product-definition boundaries matter"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 25,
+      "raw_row_sha256": "78458503d53dd3d451e1d55ebb88d065f1787cb0f75b3c032a260665ad2f2928",
+      "repaired_field_count": 9,
+      "repaired_fields": [
+        "REL024",
+        "USGS Titanium Data",
+        "titanium upstream",
+        "MEASURES",
+        "materials/minerals",
+        "Statistics on titanium minerals/metal flows and production",
+        "MEASURED",
+        "R25, R26",
+        "Product-definition boundaries matter"
+      ],
+      "repaired_row_sha256": "f6e2f78aa0913a0a92ee8ddaf4deba91b6817d1d9d0cb0a45d1e403f08305ba2",
+      "rule_id": "RELATION_MERGE_COMMA_SPLIT_SOURCE_IDS",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_relationships.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "raw_field_count": 10,
+      "raw_fields": [
+        "REL025",
+        "NASA AM Propulsion Program",
+        "LPBF/DED",
+        "DEVELOPS",
+        "manufacturing process",
+        "AM process trades and propulsion hot-fire/qualification pathway",
+        "REPORTED",
+        "R28",
+        "R29",
+        "Qualification standards still evolving"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 26,
+      "raw_row_sha256": "94b08a2e079dd3acaef78cd210255e56cdec8b8eeff7fa08cf2f51f75c405a0f",
+      "repaired_field_count": 9,
+      "repaired_fields": [
+        "REL025",
+        "NASA AM Propulsion Program",
+        "LPBF/DED",
+        "DEVELOPS",
+        "manufacturing process",
+        "AM process trades and propulsion hot-fire/qualification pathway",
+        "REPORTED",
+        "R28, R29",
+        "Qualification standards still evolving"
+      ],
+      "repaired_row_sha256": "1b0c911185dab6a4e1edd25ebbbdd6a1c7f509239ee606bbd5e526194ad104f5",
+      "rule_id": "RELATION_MERGE_COMMA_SPLIT_SOURCE_IDS",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_relationships.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "raw_field_count": 10,
+      "raw_fields": [
+        "REL027",
+        "NIST Five-Axis Metrology",
+        "5-axis CNC",
+        "error maps/calibration",
+        "QUALIFIES",
+        "manufacturing equipment",
+        "Measurement of compound geometric and servo errors",
+        "MEASURED",
+        "R30",
+        "Factory-specific performance unknown"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 28,
+      "raw_row_sha256": "922ae4d19615be284b8be5186beee7f3bf56d9efd3a2b9f5a22b2769f4b954be",
+      "repaired_field_count": 9,
+      "repaired_fields": [
+        "REL027",
+        "NIST Five-Axis Metrology",
+        "5-axis CNC, error maps/calibration",
+        "QUALIFIES",
+        "manufacturing equipment",
+        "Measurement of compound geometric and servo errors",
+        "MEASURED",
+        "R30",
+        "Factory-specific performance unknown"
+      ],
+      "repaired_row_sha256": "b135510febee73e2d9ab6650c7e63411c8887be61ebab3846069bfc84aec7408",
+      "rule_id": "RELATION_MERGE_TARGET_QUALIFIER",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_relationships.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_relationships.csv",
+      "artifact_sha256": "131c49ee555fb382c4066b6cb93f90e6b8614357b317e3c8058ad3c3a8288799",
+      "raw_field_count": 10,
+      "raw_fields": [
+        "REL031",
+        "FAA Part 450",
+        "launch/reentry operator",
+        "REGULATES",
+        "launch licensing",
+        "Policy payload safety environmental financial and ground requirements",
+        "MEASURED",
+        "R34",
+        "R35",
+        "Jurisdiction-specific"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 32,
+      "raw_row_sha256": "4c5bc36f50547b0dfa802b1b7ba3a82c567d16711aec3b6d387be148d2834e08",
+      "repaired_field_count": 9,
+      "repaired_fields": [
+        "REL031",
+        "FAA Part 450",
+        "launch/reentry operator",
+        "REGULATES",
+        "launch licensing",
+        "Policy payload safety environmental financial and ground requirements",
+        "MEASURED",
+        "R34, R35",
+        "Jurisdiction-specific"
+      ],
+      "repaired_row_sha256": "64d072f1767e65bd24bd42dce7a2a1f1ecce4a160544b9424cb10d93b46eeb33",
+      "rule_id": "RELATION_MERGE_COMMA_SPLIT_SOURCE_IDS",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_throughput_evidence.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "raw_field_count": 12,
+      "raw_fields": [
+        "T002",
+        "SpaceX Starship infrastructure",
+        "manufacturing/integration space",
+        ">5",
+        "000",
+        "000",
+        "square feet",
+        "to 2025-10-30",
+        "KNOWN_AS_REPORTED",
+        "REPORTED",
+        "R1",
+        "Company statement; usable production area/utilization unknown"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 3,
+      "raw_row_sha256": "3a57bcec26ac70e26b5b6dcf69e40580fcc0040510940aa291659a552682ab62",
+      "repaired_field_count": 10,
+      "repaired_fields": [
+        "T002",
+        "SpaceX Starship infrastructure",
+        "manufacturing/integration space",
+        ">5, 000, 000",
+        "square feet",
+        "to 2025-10-30",
+        "KNOWN_AS_REPORTED",
+        "REPORTED",
+        "R1",
+        "Company statement; usable production area/utilization unknown"
+      ],
+      "repaired_row_sha256": "3e6b4587c5398247fc4066c1daa3e22d849907b3e7be38ec87c0146c728a7aa0",
+      "rule_id": "THROUGHPUT_MERGE_COMMA_SPLIT_VALUE",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_throughput_evidence.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "raw_field_count": 11,
+      "raw_fields": [
+        "T016",
+        "TASL C295 program",
+        "detail parts",
+        "13000",
+        "parts",
+        "2024 program description",
+        "KNOWN_AS_REPORTED",
+        "REPORTED",
+        "R20",
+        "R21",
+        "Program scope; parts may have different make/buy content"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 17,
+      "raw_row_sha256": "d48d2f0fd1066a589308b40ee6a6fb834188c878eeca5abe2ac9143399cefe2d",
+      "repaired_field_count": 10,
+      "repaired_fields": [
+        "T016",
+        "TASL C295 program",
+        "detail parts",
+        "13000",
+        "parts",
+        "2024 program description",
+        "KNOWN_AS_REPORTED",
+        "REPORTED",
+        "R20, R21",
+        "Program scope; parts may have different make/buy content"
+      ],
+      "repaired_row_sha256": "5ac086489ff767290052079f4788a1858a9450228288a2358deced4a34069ab8",
+      "rule_id": "THROUGHPUT_MERGE_COMMA_SPLIT_SOURCE_IDS",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_throughput_evidence.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "raw_field_count": 11,
+      "raw_fields": [
+        "T017",
+        "TASL C295 program",
+        "certified special processes",
+        "21",
+        "processes",
+        "2024",
+        "KNOWN_AS_REPORTED",
+        "REPORTED",
+        "R20",
+        "R21",
+        "Process certification count; scope/standard not itemized on page"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 18,
+      "raw_row_sha256": "2412b35c2af752667ed86e44f3e86c31f0a90e6ad4b886eae32e42c7e9e15b04",
+      "repaired_field_count": 10,
+      "repaired_fields": [
+        "T017",
+        "TASL C295 program",
+        "certified special processes",
+        "21",
+        "processes",
+        "2024",
+        "KNOWN_AS_REPORTED",
+        "REPORTED",
+        "R20, R21",
+        "Process certification count; scope/standard not itemized on page"
+      ],
+      "repaired_row_sha256": "7c90c1135a8e3c6621d34c962b232605a412de736352c83a3a47a4cb8bf84961",
+      "rule_id": "THROUGHPUT_MERGE_COMMA_SPLIT_SOURCE_IDS",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_throughput_evidence.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_throughput_evidence.csv",
+      "artifact_sha256": "8684176888bf2f54bfe657be080bdd2a2110fe84e76991dba047d825f2b2b69e",
+      "raw_field_count": 11,
+      "raw_fields": [
+        "T018",
+        "TASL C295 program",
+        "India-based suppliers",
+        "37",
+        "suppliers",
+        "2024",
+        "KNOWN_AS_REPORTED",
+        "REPORTED",
+        "R20",
+        "R21",
+        "Onboarded supplier count; qualification status by part unknown"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 19,
+      "raw_row_sha256": "c9039b52f39f3e425dc709c278a7a5b8c28413f7742077e7d8f93ea2fbff70d9",
+      "repaired_field_count": 10,
+      "repaired_fields": [
+        "T018",
+        "TASL C295 program",
+        "India-based suppliers",
+        "37",
+        "suppliers",
+        "2024",
+        "KNOWN_AS_REPORTED",
+        "REPORTED",
+        "R20, R21",
+        "Onboarded supplier count; qualification status by part unknown"
+      ],
+      "repaired_row_sha256": "4b090261ade5cb476aefc63cbb04ba64b32c62444bda96437ac174567432ec99",
+      "rule_id": "THROUGHPUT_MERGE_COMMA_SPLIT_SOURCE_IDS",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_unknown_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_unknown_ledger.csv",
+      "artifact_sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+      "raw_field_count": 10,
+      "raw_fields": [
+        "U006",
+        "Indian space-grade electronics import dependence by part family",
+        "Distinguishes broad electronics dependence from specific rad-hard",
+        " RF",
+        " FPGA",
+        " sensor and power bottlenecks",
+        "IN-SPACe/ISRO procurement data",
+        "MeitY/industry association reports",
+        "India space-grade rad-hard FPGA GaN RF electronics import dependence",
+        "High"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 7,
+      "raw_row_sha256": "01623484ebb5c38963cf7a4c91b632cc9699f39e56266a3069cc7650bf39bb23",
+      "repaired_field_count": 6,
+      "repaired_fields": [
+        "U006",
+        "Indian space-grade electronics import dependence by part family",
+        "Distinguishes broad electronics dependence from specific rad-hard, RF, FPGA, sensor and power bottlenecks",
+        "IN-SPACe/ISRO procurement data, MeitY/industry association reports",
+        "India space-grade rad-hard FPGA GaN RF electronics import dependence",
+        "High"
+      ],
+      "repaired_row_sha256": "7f817056ca3e52c5775f2f8dab3badc049f1e98e8be73e562e28a848d626e4fb",
+      "rule_id": "UNKNOWN_MERGE_COMMA_SPLIT_WHY_AND_RESOLUTION",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_unknown_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_unknown_ledger.csv",
+      "artifact_sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+      "raw_field_count": 7,
+      "raw_fields": [
+        "U007",
+        "Indian aerospace-materials qualification scope and allocation at MIDHANI",
+        "Determines whether domestic metallurgy is a strategic alternative for flight hardware or only adjacent defense/fasteners",
+        " MIDHANI qualification records",
+        " HAL/ISRO supplier approvals",
+        "MIDHANI titanium superalloy aerospace qualification customer part grades annual capacity",
+        "High"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 8,
+      "raw_row_sha256": "a561f8f5339e18b296193c537202662691e5f21f0f67a34baf10732bfef02549",
+      "repaired_field_count": 6,
+      "repaired_fields": [
+        "U007",
+        "Indian aerospace-materials qualification scope and allocation at MIDHANI",
+        "Determines whether domestic metallurgy is a strategic alternative for flight hardware or only adjacent defense/fasteners",
+        "MIDHANI qualification records, HAL/ISRO supplier approvals",
+        "MIDHANI titanium superalloy aerospace qualification customer part grades annual capacity",
+        "High"
+      ],
+      "repaired_row_sha256": "2d1a9f7537a96e3da5b476636ae074b4ee66cf6ed719deef54e3ba9051905cbc",
+      "rule_id": "UNKNOWN_MERGE_COMMA_SPLIT_RESOLUTION",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_unknown_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_unknown_ledger.csv",
+      "artifact_sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+      "raw_field_count": 10,
+      "raw_fields": [
+        "U008",
+        "Exact high-end machine-tool import share in India",
+        "Quantifies machine-build dependency for 5-axis",
+        " grinding",
+        " metrology and AM rather than relying on broad market commentary",
+        "Indian Machine Tool Manufacturers Association",
+        " DGCI&S",
+        " company filings",
+        "India aerospace 5-axis CNC grinder CMM import share 2024 2025",
+        "Medium"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 9,
+      "raw_row_sha256": "5491352b751905bbc68962f3dbf086408db9fe5494ecb9066606fb2cdce2d764",
+      "repaired_field_count": 6,
+      "repaired_fields": [
+        "U008",
+        "Exact high-end machine-tool import share in India",
+        "Quantifies machine-build dependency for 5-axis, grinding, metrology and AM rather than relying on broad market commentary",
+        "Indian Machine Tool Manufacturers Association, DGCI&S, company filings",
+        "India aerospace 5-axis CNC grinder CMM import share 2024 2025",
+        "Medium"
+      ],
+      "repaired_row_sha256": "062e850d3afe5bf9b30299b8648dc42941e6d2ec66330b8884ea180d747109e0",
+      "rule_id": "UNKNOWN_MERGE_COMMA_SPLIT_WHY_AND_RESOLUTION",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_unknown_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_unknown_ledger.csv",
+      "artifact_sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+      "raw_field_count": 7,
+      "raw_fields": [
+        "U010",
+        "Global aerospace engine casting/forging backlog by supplier",
+        "Needed to validate industry-wide bottleneck claims and distinguish broad demand from specific programs",
+        "OEM/supplier filings",
+        " FAA/GAO/BCG triangulation",
+        "GE Safran engine casting forging backlog lead time 2024 2025",
+        "High"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 11,
+      "raw_row_sha256": "fa0c3786efd27e4a1986b8262e01923ef51f6d8d1d5e87c2e9eb79d626f70172",
+      "repaired_field_count": 6,
+      "repaired_fields": [
+        "U010",
+        "Global aerospace engine casting/forging backlog by supplier",
+        "Needed to validate industry-wide bottleneck claims and distinguish broad demand from specific programs",
+        "OEM/supplier filings, FAA/GAO/BCG triangulation",
+        "GE Safran engine casting forging backlog lead time 2024 2025",
+        "High"
+      ],
+      "repaired_row_sha256": "d0bad49e50a0f8654ddb2c6fd20db3971134e8c5b0d3ee1289315337ef039eae",
+      "rule_id": "UNKNOWN_MERGE_COMMA_SPLIT_RESOLUTION",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_unknown_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_unknown_ledger.csv",
+      "artifact_sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+      "raw_field_count": 7,
+      "raw_fields": [
+        "U011",
+        "SpaceX Starship refurbishment cycle and number of reuses",
+        "Core production-rate driver for reusable launch economics",
+        "FAA environmental/licensing records",
+        "SpaceX flight/inspection records",
+        "Starship booster ship refurbishment turnaround reuse count 2026",
+        "High"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 12,
+      "raw_row_sha256": "dec947a906618762902f93dde1c1f4677e6aab71888b02120b8ffba31f4e91d2",
+      "repaired_field_count": 6,
+      "repaired_fields": [
+        "U011",
+        "SpaceX Starship refurbishment cycle and number of reuses",
+        "Core production-rate driver for reusable launch economics",
+        "FAA environmental/licensing records, SpaceX flight/inspection records",
+        "Starship booster ship refurbishment turnaround reuse count 2026",
+        "High"
+      ],
+      "repaired_row_sha256": "ab386bc4b36c538842f7634b8c3b4ce456e69bee6a7e896d4808edf724152685",
+      "rule_id": "UNKNOWN_MERGE_COMMA_SPLIT_RESOLUTION",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_unknown_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_unknown_ledger.csv",
+      "artifact_sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+      "raw_field_count": 7,
+      "raw_fields": [
+        "U012",
+        "Indian launch-pad turnaround and pad-specific annual cadence",
+        "Separates facility capability from operational throughput and range/weather constraints",
+        "ISRO mission logs/SHAR annual reports",
+        "IN-SPACe and operator records",
+        "SDSC SHAR launch pad turnaround time annual launch cadence 2024 2025",
+        "High"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 13,
+      "raw_row_sha256": "a5215f417661c6b3f7e019d1ffc94f2c8824e4c84819efbf3b5ece49da27fc2c",
+      "repaired_field_count": 6,
+      "repaired_fields": [
+        "U012",
+        "Indian launch-pad turnaround and pad-specific annual cadence",
+        "Separates facility capability from operational throughput and range/weather constraints",
+        "ISRO mission logs/SHAR annual reports, IN-SPACe and operator records",
+        "SDSC SHAR launch pad turnaround time annual launch cadence 2024 2025",
+        "High"
+      ],
+      "repaired_row_sha256": "3832c93f60dbd6e6dc6c3d23495b9103324d59996bea3ea1090b62e6569ae944",
+      "rule_id": "UNKNOWN_MERGE_COMMA_SPLIT_RESOLUTION",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_unknown_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_unknown_ledger.csv",
+      "artifact_sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+      "raw_field_count": 7,
+      "raw_fields": [
+        "U014",
+        "Qualified source count for satellite star trackers and rad-hard electronics",
+        "Measures concentration risk more accurately than market-share estimates",
+        "ESA/ECSS procurement databases",
+        "manufacturer qualification lists",
+        "qualified star tracker suppliers spacecraft rad hard electronics source count",
+        "Medium"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 15,
+      "raw_row_sha256": "a05ce3f777744ff0f0c6287891378b22dbfa4994e4469a01354e8473372868fc",
+      "repaired_field_count": 6,
+      "repaired_fields": [
+        "U014",
+        "Qualified source count for satellite star trackers and rad-hard electronics",
+        "Measures concentration risk more accurately than market-share estimates",
+        "ESA/ECSS procurement databases, manufacturer qualification lists",
+        "qualified star tracker suppliers spacecraft rad hard electronics source count",
+        "Medium"
+      ],
+      "repaired_row_sha256": "73a508cb344d93497edd406da7e6361e770d1757eaa16d1947effe20fd255ba8",
+      "rule_id": "UNKNOWN_MERGE_COMMA_SPLIT_RESOLUTION",
+      "scope": "in_memory_parse_only"
+    },
+    {
+      "artifact_name": "aerospace_unknown_ledger.csv",
+      "artifact_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-15\\aerospace_unknown_ledger.csv",
+      "artifact_sha256": "07621a58587569a6043c8dd175963684ab6bc38bb497eff861302abb62543d00",
+      "raw_field_count": 8,
+      "raw_fields": [
+        "U016",
+        "Current Chinese commercial satellite/launch-factory output and utilization",
+        "Important global benchmark but limited by transparency and scope definitions",
+        "company/government releases",
+        "launch manifests",
+        "trade statistics",
+        "China G60 Guowang satellite factory actual annual output qualified satellites",
+        "Medium"
+      ],
+      "raw_file_unchanged": true,
+      "raw_line": 17,
+      "raw_row_sha256": "25c79bd16ed8e6659d250d67932ecade9dcec34a5a9a4879cc5d7c93b7671454",
+      "repaired_field_count": 6,
+      "repaired_fields": [
+        "U016",
+        "Current Chinese commercial satellite/launch-factory output and utilization",
+        "Important global benchmark but limited by transparency and scope definitions",
+        "company/government releases, launch manifests, trade statistics",
+        "China G60 Guowang satellite factory actual annual output qualified satellites",
+        "Medium"
+      ],
+      "repaired_row_sha256": "be47c899cd56044702c310a5d73c2a93e88dabeda21ad2734bc477020238d8fb",
+      "rule_id": "UNKNOWN_MERGE_COMMA_SPLIT_RESOLUTION",
+      "scope": "in_memory_parse_only"
+    }
+  ],
+  "report_id": "wave3-manus-15-aerospace-satellites-reusable-launch",
+  "report_version": "1.0.0",
+  "schemas": {
+    "FORGE WORLD Research Package.md": {
+      "format": "Markdown",
+      "line_count": 541,
+      "parse_errors": 0,
+      "reference_count": 36,
+      "table_count": 18,
+      "table_headers_and_rows": [
+        {
+          "header": [
+            "Layer",
+            "Aircraft",
+            "Satellites / spacecraft",
+            "Reusable launch vehicles",
+            "Industrial implication"
+          ],
+          "header_locator": 45,
+          "row_count": 6
+        },
+        {
+          "header": [
+            "Product block",
+            "Representative content",
+            "Materials / processes",
+            "Machines / test assets",
+            "Qualification or evidence gate"
+          ],
+          "header_locator": 56,
+          "row_count": 5
+        },
+        {
+          "header": [
+            "Product block",
+            "Representative content",
+            "Materials / processes",
+            "Machines / test assets",
+            "Qualification or evidence gate"
+          ],
+          "header_locator": 66,
+          "row_count": 7
+        },
+        {
+          "header": [
+            "Product block",
+            "Representative content",
+            "Materials / processes",
+            "Machines / test assets",
+            "Rate-sensitive dependency"
+          ],
+          "header_locator": 78,
+          "row_count": 6
+        },
+        {
+          "header": [
+            "Level",
+            "Dependency",
+            "Representative nodes",
+            "Why it matters"
+          ],
+          "header_locator": 110,
+          "row_count": 6
+        },
+        {
+          "header": [
+            "Level",
+            "Dependency",
+            "Representative nodes",
+            "Rate implication"
+          ],
+          "header_locator": 121,
+          "row_count": 6
+        },
+        {
+          "header": [
+            "Company/facility",
+            "Location",
+            "Product/process role",
+            "Public evidence",
+            "Evidence treatment"
+          ],
+          "header_locator": 155,
+          "row_count": 6
+        },
+        {
+          "header": [
+            "Company/facility",
+            "Location",
+            "Product/process role",
+            "Public evidence",
+            "Evidence treatment"
+          ],
+          "header_locator": 166,
+          "row_count": 6
+        },
+        {
+          "header": [
+            "Company/facility",
+            "Location",
+            "Product/process role",
+            "Public evidence",
+            "Evidence treatment"
+          ],
+          "header_locator": 177,
+          "row_count": 11
+        },
+        {
+          "header": [
+            "Cluster",
+            "Anchor capabilities",
+            "Representative nodes",
+            "Strategic advantage",
+            "Main risk"
+          ],
+          "header_locator": 207,
+          "row_count": 8
+        },
+        {
+          "header": [
+            "System/facility",
+            "Metric",
+            "Value",
+            "Status",
+            "Evidence label",
+            "Interpretation"
+          ],
+          "header_locator": 224,
+          "row_count": 27
+        },
+        {
+          "header": [
+            "Upstream layer",
+            "Example aerospace node",
+            "Equipment dependency",
+            "Qualification question"
+          ],
+          "header_locator": 282,
+          "row_count": 6
+        },
+        {
+          "header": [
+            "Gate",
+            "Hardware level",
+            "Typical evidence",
+            "Production consequence"
+          ],
+          "header_locator": 321,
+          "row_count": 7
+        },
+        {
+          "header": [
+            "Capability",
+            "India position",
+            "Evidence strength",
+            "Gap to high-rate global benchmark"
+          ],
+          "header_locator": 341,
+          "row_count": 9
+        },
+        {
+          "header": [
+            "Bottleneck",
+            "Why it gates output",
+            "Substitution or mitigation",
+            "Maturity / caveat"
+          ],
+          "header_locator": 365,
+          "row_count": 10
+        },
+        {
+          "header": [
+            "Aerospace machine",
+            "It requires",
+            "Upstream machine/equipment chain",
+            "Recursive implication"
+          ],
+          "header_locator": 392,
+          "row_count": 9
+        },
+        {
+          "header": [
+            "Unknown",
+            "Why it matters",
+            "Resolution path"
+          ],
+          "header_locator": 412,
+          "row_count": 18
+        },
+        {
+          "header": [
+            "Entity type",
+            "Required attributes"
+          ],
+          "header_locator": 455,
+          "row_count": 11
+        }
+      ],
+      "unique_url_count": 36
+    },
+    "Validated primary-source findings gathered so far.md": {
+      "format": "Markdown",
+      "heading_count": 15,
+      "line_count": 66,
+      "parse_errors": 0,
+      "table_count": 0,
+      "url_count": 34
+    },
+    "aerospace_capability_tree.mmd": {
+      "format": "Mermaid text",
+      "line_count": 57,
+      "node_or_edge_lines": 50,
+      "parse_status": "text-inventoried"
+    },
+    "aerospace_capability_tree.png": {
+      "dimensions": {
+        "height": 732,
+        "width": 3120
+      },
+      "format": "PNG",
+      "semantic_parse": "not_performed"
+    },
+    "aerospace_conflict_ledger.csv": {
+      "field_normalizations": 0,
+      "fields": [
+        "conflict_id",
+        "topic",
+        "claim_a",
+        "source_or_date_a",
+        "claim_b",
+        "source_or_date_b",
+        "working_treatment",
+        "why_conflict_matters"
+      ],
+      "format": "CSV",
+      "parse_errors_repaired": 2,
+      "parse_errors_unrepaired": 0,
+      "raw_data_rows": 15,
+      "raw_field_length_counts": {
+        "7": 1,
+        "8": 13,
+        "9": 1
+      },
+      "repaired_data_rows": 15,
+      "repaired_field_count": 8
+    },
+    "aerospace_entities.csv": {
+      "field_normalizations": 0,
+      "fields": [
+        "entity_id",
+        "canonical_name",
+        "parent_or_owner",
+        "entity_type",
+        "facility_or_location",
+        "country",
+        "products_or_processes",
+        "role_or_relationship",
+        "qualification_or_maturity",
+        "capacity_or_throughput",
+        "evidence_label",
+        "source_ids",
+        "uncertainty"
+      ],
+      "format": "CSV",
+      "parse_errors_repaired": 2,
+      "parse_errors_unrepaired": 0,
+      "raw_data_rows": 28,
+      "raw_field_length_counts": {
+        "13": 26,
+        "14": 1,
+        "16": 1
+      },
+      "repaired_data_rows": 28,
+      "repaired_field_count": 13
+    },
+    "aerospace_industrial_research_workstreams.json": {
+      "declared_source_count_sum": 112,
+      "error_rows": [],
+      "format": "JSON",
+      "output_keys": [
+        "confidence",
+        "key_findings",
+        "memo",
+        "source_count",
+        "workstream"
+      ],
+      "row_count": 8,
+      "row_keys": [
+        "error",
+        "input",
+        "output"
+      ],
+      "row_path": "results[]",
+      "top_level_keys": [
+        "results"
+      ]
+    },
+    "aerospace_relationships.csv": {
+      "field_normalizations": 0,
+      "fields": [
+        "relationship_id",
+        "source_entity",
+        "target_entity",
+        "relationship_type",
+        "domain",
+        "description",
+        "evidence_label",
+        "source_ids",
+        "uncertainty"
+      ],
+      "format": "CSV",
+      "parse_errors_repaired": 8,
+      "parse_errors_unrepaired": 0,
+      "raw_data_rows": 33,
+      "raw_field_length_counts": {
+        "10": 6,
+        "11": 1,
+        "13": 1,
+        "9": 25
+      },
+      "repaired_data_rows": 33,
+      "repaired_field_count": 9
+    },
+    "aerospace_throughput_evidence.csv": {
+      "field_normalizations": 1,
+      "fields": [
+        "throughput_id",
+        "system_or_facility",
+        "metric",
+        "value",
+        "unit",
+        "time_or_date",
+        "status",
+        "evidence_label",
+        "source_ids",
+        "interpretation_and_caveat"
+      ],
+      "format": "CSV",
+      "parse_errors_repaired": 4,
+      "parse_errors_unrepaired": 0,
+      "raw_data_rows": 36,
+      "raw_field_length_counts": {
+        "10": 32,
+        "11": 3,
+        "12": 1
+      },
+      "repaired_data_rows": 36,
+      "repaired_field_count": 10
+    },
+    "aerospace_unknown_ledger.csv": {
+      "field_normalizations": 0,
+      "fields": [
+        "unknown_id",
+        "unknown",
+        "why_it_matters",
+        "likely_resolution_source_or_owner",
+        "concrete_research_query",
+        "priority"
+      ],
+      "format": "CSV",
+      "parse_errors_repaired": 8,
+      "parse_errors_unrepaired": 0,
+      "raw_data_rows": 20,
+      "raw_field_length_counts": {
+        "10": 2,
+        "6": 12,
+        "7": 5,
+        "8": 1
+      },
+      "repaired_data_rows": 20,
+      "repaired_field_count": 6
+    },
+    "benchmark_clusters_bottlenecks_substitutions.md": {
+      "format": "Markdown",
+      "heading_count": 13,
+      "line_count": 92,
+      "parse_errors": 0,
+      "table_count": 3,
+      "url_count": 10
+    },
+    "download_research_memos.py": {
+      "execution": "skipped",
+      "format": "Python source",
+      "line_count": 23
+    },
+    "global_aircraft_aerospace.md": {
+      "format": "Markdown",
+      "heading_count": 11,
+      "line_count": 81,
+      "parse_errors": 0,
+      "table_count": 3,
+      "url_count": 18
+    },
+    "global_launch_propulsion.md": {
+      "format": "Markdown",
+      "heading_count": 11,
+      "line_count": 80,
+      "parse_errors": 0,
+      "table_count": 3,
+      "url_count": 15
+    },
+    "global_satellite_spacecraft.md": {
+      "format": "Markdown",
+      "heading_count": 11,
+      "line_count": 84,
+      "parse_errors": 0,
+      "table_count": 5,
+      "url_count": 10
+    },
+    "india_space_aerospace_industry.md": {
+      "format": "Markdown",
+      "heading_count": 11,
+      "line_count": 91,
+      "parse_errors": 0,
+      "table_count": 4,
+      "url_count": 20
+    },
+    "manufacturing_equipment_machine_tools.md": {
+      "format": "Markdown",
+      "heading_count": 11,
+      "line_count": 76,
+      "parse_errors": 0,
+      "table_count": 3,
+      "url_count": 10
+    },
+    "materials_minerals_alloys_composites.md": {
+      "format": "Markdown",
+      "heading_count": 11,
+      "line_count": 88,
+      "parse_errors": 0,
+      "table_count": 3,
+      "url_count": 16
+    },
+    "pasted_content.txt": {
+      "format": "UTF-8 text",
+      "line_count": 41,
+      "parse_errors": 0
+    },
+    "qualification_test_launch_infrastructure.md": {
+      "format": "Markdown",
+      "heading_count": 11,
+      "line_count": 82,
+      "parse_errors": 0,
+      "table_count": 4,
+      "url_count": 12
+    },
+    "research_scope.md": {
+      "format": "Markdown",
+      "heading_count": 14,
+      "line_count": 68,
+      "parse_errors": 0,
+      "table_count": 0,
+      "url_count": 0
+    }
+  },
+  "scope": {
+    "actual_corpus_id": "manus-15",
+    "actual_topic": "Aerospace, Satellites, and Reusable Launch",
+    "campaign_expected_number": "14",
+    "job_type": "Wave 3 bounded staging/enrichment",
+    "no_promotions": true,
+    "no_shadow_worlds": true,
+    "read_only_raw_and_canonical": true
+  },
+  "validation": {
+    "canonical_pack_edited": false,
+    "code_changes": false,
+    "commits": false,
+    "json_tool": "PASS (python -m json.tool)",
+    "raw_corpus_edited": false
+  },
+  "zip_comparison": {
+    "all_bytes_and_hashes_match": true,
+    "all_extracted_entries_present_in_zip": true,
+    "all_zip_entries_present_extracted": true,
+    "directory_entries": 0,
+    "expected_manifest_file_count": 21,
+    "extra_zip_entries": [],
+    "extracted_file_count": 21,
+    "mismatched_entries": [],
+    "missing_extracted_entries": [],
+    "raw_zip_file_entry_count": 21
+  }
+}

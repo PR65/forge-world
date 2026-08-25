@@ -1,0 +1,236 @@
+{
+  "schema_version": "wave4_staging_report.v1",
+  "report_identity": {
+    "wave": "wave4",
+    "manus_id": "manus-10",
+    "corpus_title": "Industrial Resilience, Substitution, and Geopolitical Shock Library",
+    "campaign_expected_manus_id": "manus-09",
+    "posture": "STAGING_ONLY",
+    "deterministic": true,
+    "web_used": false,
+    "canonical_promotions": 0,
+    "identity_resolution": "Keep the actual manus-10 manifest identity; do not rename or merge it into the campaign-expected manus-09 slot."
+  },
+  "source_boundaries": {
+    "raw_zip": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\How to Conduct Thorough Research.zip",
+    "extracted_root": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-10",
+    "repo_manifest": "research/homi/staging/corpus_manifest.json",
+    "manus_manifest_row": {
+      "corpus_id": "manus-10",
+      "raw_zip_name": "How to Conduct Thorough Research.zip",
+      "declared_file_count": 14,
+      "status": "OK"
+    },
+    "scope_note": "Only the immutable raw ZIP, its extracted files, the embedded research bundle, and repository manifests were used; no external source was fetched or promoted."
+  },
+  "artifact_manifest": {
+    "raw_zip": {
+      "logical_path": "How to Conduct Thorough Research.zip",
+      "byte_length": 493271,
+      "sha256": "00e47461b4f2525cff8f4528b74f15a295b45f80e2863c13237fb2b6158da4b",
+      "raw_zip_member_count": 14,
+      "raw_zip_file_entry_count": 14,
+      "raw_zip_directory_entry_count": 0,
+      "manifest_byte_match": true,
+      "manifest_hash_match": true
+    },
+    "extracted_files": [
+      {"artifact_id":"artifact:212f745294da5c4e33b4dcad","logical_path":"manus-10/00_scope_taxonomy.md","byte_length":6808,"sha256":"74cb9537ad73a600c89c2d8083e70f59235e6bad94de471481acc5791e2e79d6","raw_zip_crc32":"6c0822ad","raw_zip_match":true},
+      {"artifact_id":"artifact:916dc652723bf1449f97ae45","logical_path":"manus-10/Direct source review notes \u2014 24 August 2026.md","byte_length":1293,"sha256":"af607fe56af3042fa36957351fcc58437bdcc01257c22bc1776de6d3ed6c7967","raw_zip_crc32":"0c8eddb5","raw_zip_match":true},
+      {"artifact_id":"artifact:b21dd34e53083cb07a1bd3cc","logical_path":"manus-10/FORGE_WORLD_industrial_resilience_research_bundle.zip","byte_length":181851,"sha256":"ea1163a2479fbdbd11c40663b31e5dddf795d4b0e8dc9ed5dbd97d1c9f19d373","raw_zip_crc32":"a2cec15c","raw_zip_match":true},
+      {"artifact_id":"artifact:d90b45f985233dfe87330699","logical_path":"manus-10/FORGE_WORLD_industrial_resilience_research_package.md","byte_length":196430,"sha256":"b5a39505d5fcd9f18b2c84d7fb1c436b203d1d6db163b8a3c6ef162ec96f7922","raw_zip_crc32":"ecd50e02","raw_zip_match":true},
+      {"artifact_id":"artifact:613a5ec4cebe3ae0292867c7","logical_path":"manus-10/SKILL.md","byte_length":14347,"sha256":"f0970aeef947819740c02d68bec786348e9feccd9b0b01e6b92c0d5b72c849e4","raw_zip_crc32":"4c6e919e","raw_zip_match":true},
+      {"artifact_id":"artifact:2fe51ba5dce9633ac6e41d6b","logical_path":"manus-10/assemble_package.py","byte_length":6276,"sha256":"5f39f37b353c2ddc5712577d0f92a5da58f16864fc4285ec60aaf97fbe4158d7","raw_zip_crc32":"8c68f15f","raw_zip_match":true},
+      {"artifact_id":"artifact:fd5933bc5400efe7f50e8efb","logical_path":"manus-10/build_final_report.py","byte_length":4585,"sha256":"8d878f475d0af82c9589076ae440914edd3823b963f42082fd51e892970675f0","raw_zip_crc32":"69ad13f3","raw_zip_match":true},
+      {"artifact_id":"artifact:eca926b3d3a52a5ccc08ea77","logical_path":"manus-10/fetch_memos.py","byte_length":1127,"sha256":"34762e20cb496ea1f2f79de9d17407847ab6191f7f42bbf8da43ab9fa1e06dde","raw_zip_crc32":"bd995aab","raw_zip_match":true},
+      {"artifact_id":"artifact:23127e9943ca4bbeaa4d0085","logical_path":"manus-10/forge_evidence_unknown_conflict_ledger.csv","byte_length":6811,"sha256":"e1dc5d7e2b9273b64309a0e0f192c405a3bf3d3e34cde15d3a273bba42af6671","raw_zip_crc32":"e27496a3","raw_zip_match":true},
+      {"artifact_id":"artifact:143ad4106a8a955a168ce814","logical_path":"manus-10/forge_ready_scenario_encoding.md","byte_length":10056,"sha256":"38c59527f52e4bb4c874540b02ef64cb2d6121f1675ac326ff6907280f5de481","raw_zip_crc32":"603b4444","raw_zip_match":true},
+      {"artifact_id":"artifact:96d33f3cf8ad2381fc5d3e50","logical_path":"manus-10/forge_scenario_inputs.json","byte_length":33488,"sha256":"be3f90864b1f32985fec632a7a1884db9597d4adc4a23b63fa9124faabf8ae6b","raw_zip_crc32":"41c83742","raw_zip_match":true},
+      {"artifact_id":"artifact:72872f33a2c11b35a9e8e17f","logical_path":"manus-10/memo_index.txt","byte_length":1306,"sha256":"383ee9c378aa3f3fc172edf310258c85e0ce851142171a957eb74f2e3d695f28","raw_zip_crc32":"2602b037","raw_zip_match":true},
+      {"artifact_id":"artifact:0f75d8dd3998b5a1d1145eba","logical_path":"manus-10/pasted_content.txt","byte_length":4685,"sha256":"b7036cb78be44c198b6593228d00d87d5b403a0be66d5cf13357985f90326716","raw_zip_crc32":"3d56b52c","raw_zip_match":true},
+      {"artifact_id":"artifact:69d7a2039d37118667ddb1fa","logical_path":"manus-10/research_industrial_shock_cases.json","byte_length":22200,"sha256":"bcbd65448c0a23d619c2b8d6c4463ba527d2bc628fc9d4764411721876558e36","raw_zip_crc32":"deddfc86","raw_zip_match":true}
+    ],
+    "extracted_file_count": 14,
+    "raw_zip_byte_matches": 14,
+    "raw_zip_hash_matches": 14,
+    "top_level_duplicate_artifact_hash_groups": 0,
+    "campaign_identity_mismatch": true,
+    "nested_bundle": {
+      "member_count": 29,
+      "file_count": 26,
+      "directory_count": 3,
+      "validated_scenario_copy": {"logical_path":"forge_scenario_inputs_validated.json","byte_length":46777,"sha256":"d01d924e6982efc2d64a2537e50ade34b79ed54c3781de9c0f32ae3b91825af5"},
+      "source_index": {"logical_path":"source_urls.txt","byte_length":11122,"sha256":"34a66b7e01d3b53863ef6500f467ffbd88e5667c659d7fd0654c6b8152d6f952","lines":135},
+      "nested_duplicate_payloads_of_top_level_files": 5
+    }
+  },
+  "epistemic_and_semantic_rules": {
+    "allowed_classes": ["MEASURED","REPORTED","DERIVED","ESTIMATED","MODELLED","ASSUMPTION","SCENARIO","UNKNOWN","CONFLICTED"],
+    "taxonomy_shock_families": ["production outage","export restriction","logistics chokepoint","energy/feedstock shock","quality/qualification failure","technology denial","demand/supply synchronization","geopolitical fragmentation"],
+    "substitution_classes": ["DROP-IN","REQUALIFY","REDESIGN","NEW_PROCESS","NO_CREDIBLE_SHORT-TERM_SUBSTITUTE"],
+    "rules": [
+      "UNKNOWN stays UNKNOWN.",
+      "A facility, mine, project, export share, installed machine, or announcement is not qualified available throughput.",
+      "Inventory, stockpile, route, and spare-capacity claims require denominator, geography, date, grade, ownership, and scope.",
+      "Substitution is a dependency-graph rewrite with material, process, qualification, yield, lead-time, and ramp constraints; it is not a free switch.",
+      "A scenario variable or multiplier remains SCENARIO/ASSUMPTION and is not a baseline world-state fact."
+    ]
+  },
+  "corpus_accounting": {
+    "top_level_artifacts": 14,
+    "raw_zip_members": 14,
+    "package_markdown_table_rows": 230,
+    "scenario_case_rows": 16,
+    "ledger_rows": 24,
+    "scenario_shock_variable_rows": 71,
+    "scenario_dependency_node_rows": 86,
+    "scenario_dependency_edge_rows": 66,
+    "scenario_state_transition_rows": 103,
+    "scenario_response_action_rows": 77,
+    "scenario_unknown_rows": 65,
+    "scenario_follow_up_question_rows": 48,
+    "bounded_claim_count": 401,
+    "bounded_claim_basis": "230 package table rows + 16 scenario case records + 24 ledger rows + 66 dependency-edge candidates + 65 explicit scenario unknown items. This is a non-canonical staging count; prose, scripts, source-index lines, and exact nested mirrors are not additional claims."
+  },
+  "schemas_and_rows": {
+    "forge_evidence_unknown_conflict_ledger.csv": {"columns_expected":8,"parsed_rows":24,"row_width_anomalies":20,"repaired_rows":0},
+    "forge_scenario_inputs.json": {"schema_version":"1.0","lines":291,"case_inputs":16,"field_schema_keys":14,"json_parse_errors":0},
+    "research_industrial_shock_cases.json": {"lines":148,"results":16,"json_parse_errors":0,"nonempty_result_errors":0,"output_schema":"case_identifier/research_memo/source_quality_note"},
+    "00_scope_taxonomy.md": {"lines":92,"headings":12,"tables":3,"table_rows":25,"table_width_errors":0},
+    "forge_ready_scenario_encoding.md": {"lines":84,"headings":9,"tables":2,"table_rows":24,"table_width_errors":0,"url_occurrences":21},
+    "FORGE_WORLD_industrial_resilience_research_package.md": {"lines":1735,"headings":269,"tables":36,"table_rows":230,"table_width_errors":0,"url_occurrences":282},
+    "Direct source review notes \u2014 24 August 2026.md": {"lines":9,"headings":3,"url_occurrences":2},
+    "SKILL.md": {"lines":337,"headings":25,"tables":3,"table_rows":18,"classification":"corpus instruction artifact, not a claim source"},
+    "memo_index.txt": {"lines":16},
+    "pasted_content.txt": {"lines":67,"classification":"prompt-copy artifact"},
+    "scripts": {"assemble_package.py":54,"build_final_report.py":44,"fetch_memos.py":27,"executed":false},
+    "nested_bundle": {"source_urls.txt":{"lines":135,"unique_lines":135},"forge_scenario_inputs_validated.json":{"case_inputs":16,"json_parse_errors":0}}
+  },
+  "source_inventory": {
+    "top_level_url_occurrences": 322,
+    "top_level_unique_raw_url_tokens": 289,
+    "nested_bundle_url_occurrences": 564,
+    "nested_bundle_unique_normalized_url_tokens": 271,
+    "source_index_lines": 135,
+    "source_index_unique_lines": 135,
+    "direct_source_review_url_lines": 2,
+    "source_candidates": 271,
+    "verified_external_sources": 0,
+    "source_registry_records_created": 0,
+    "source_posture": "URL tokens and source names remain candidate provenance only; no retrieval, date/version verification, or primary-source promotion was performed."
+  },
+  "shock_candidates": {
+    "shock_case_candidates": 16,
+    "case_to_shock_family_links": 42,
+    "unique_shock_family_tokens": 12,
+    "taxonomy_defined_shock_families": 8,
+    "unmapped_or_legacy_shock_family_tokens": ["production/logistics outage","natural disaster","geographic concentration","quality/qualification"],
+    "shock_variable_candidates": 71,
+    "state_transition_candidates": 103,
+    "state_transition_vocabulary_tokens": 10,
+    "noncanonical_state_transition_tokens": 86,
+    "response_action_candidates": 77,
+    "scenario_evidence_class_rows": 16,
+    "compound_evidence_class_rows_requiring_normalization": 16
+  },
+  "substitution_candidates": {
+    "case_level_substitution_rows": 16,
+    "canonical_class_token_mentions": 46,
+    "class_presence_by_case": {"DROP-IN":9,"REQUALIFY":14,"REDESIGN":12,"NEW_PROCESS":9,"NO_CREDIBLE_SHORT-TERM_SUBSTITUTE":2},
+    "ledger_substitution_rows": 4,
+    "phrase_or_compound_substitution_rows_requiring_normalization": 16,
+    "free_switches_promoted": 0,
+    "scenario_substitution_multipliers_promoted_to_baseline": 0,
+    "semantic_rule": "Each candidate remains an edge transformation pending material/process compatibility, qualification, yield, lead time, and effective capacity evidence."
+  },
+  "entity_and_relation_candidates": {
+    "case_entities": 16,
+    "dependency_node_mentions": 86,
+    "dependency_node_exact_distinct": 84,
+    "facility_route_location_keyword_node_mentions": 24,
+    "facility_route_location_keyword_node_exact_distinct": 22,
+    "dependency_relation_edge_mentions": 66,
+    "dependency_relation_edge_exact_distinct": 66,
+    "response_action_mentions": 77,
+    "response_action_exact_distinct": 67,
+    "shock_family_relation_links": 42,
+    "canonical_entities_created": 0,
+    "canonical_relations_created": 0
+  },
+  "claim_candidates": {
+    "bounded_claim_count": 401,
+    "claim_samples": [
+      {"claim":"A foundry-to-qualified-automotive-chip dependency is explicit; qualification remains part of the edge rather than an assumed property.","class":"MEASURED/REPORTED/ESTIMATED","locator":"manus-10/forge_scenario_inputs.json#case_inputs[0].dependency_edges[0]","artifact_sha256":"be3f90864b1f32985fec632a7a1884db9597d4adc4a23b63fa9124faabf8ae6b"},
+      {"claim":"Permanent-magnet shock substitution is application-specific: redesign/new process for many high-performance uses and requalification for some alternate grades.","class":"REPORTED/MODELLED/UNKNOWN","locator":"manus-10/forge_scenario_inputs.json#case_inputs[2].substitution_class","artifact_sha256":"be3f90864b1f32985fec632a7a1884db9597d4adc4a23b63fa9124faabf8ae6b"},
+      {"claim":"EUV-equivalent capability has no credible short-term substitute for many uses; legacy DUV workarounds trade productivity and yield for availability.","class":"MEASURED/REPORTED/UNKNOWN","locator":"manus-10/forge_scenario_inputs.json#case_inputs[4].substitution_class","artifact_sha256":"be3f90864b1f32985fec632a7a1884db9597d4adc4a23b63fa9124faabf8ae6b"},
+      {"claim":"Battery critical-mineral recovery depends on mining, chemical conversion, cell/pack qualification, and system validation; the qualified chemical/cell throughput is unknown.","class":"MEASURED/ESTIMATED/REPORTED","locator":"manus-10/forge_scenario_inputs.json#case_inputs[12].unknowns[0]","artifact_sha256":"be3f90864b1f32985fec632a7a1884db9597d4adc4a23b63fa9124faabf8ae6b"},
+      {"claim":"Nameplate fab capacity and market share do not establish qualified spare mature-node automotive throughput.","class":"UNKNOWN","locator":"manus-10/forge_evidence_unknown_conflict_ledger.csv#line=3 (EL-002)","artifact_sha256":"e1dc5d7e2b9273b64309a0e0f192c405a3bf3d3e34cde15d3a273bba42af6671"},
+      {"claim":"The 2010 rare-earth restriction characterization remains conflicted between selective embargo and quota/licensing interpretations.","class":"CONFLICTED","locator":"manus-10/forge_evidence_unknown_conflict_ledger.csv#line=4 (EL-003)","artifact_sha256":"e1dc5d7e2b9273b64309a0e0f192c405a3bf3d3e34cde15d3a273bba42af6671"},
+      {"claim":"High-temperature magnet substitution remains unknown because thermal margin and coercivity requirements vary by application.","class":"UNKNOWN","locator":"manus-10/forge_evidence_unknown_conflict_ledger.csv#line=6 (EL-005)","artifact_sha256":"e1dc5d7e2b9273b64309a0e0f192c405a3bf3d3e34cde15d3a273bba42af6671"},
+      {"claim":"Technical equivalence does not establish approved commercial drop-in availability.","class":"UNKNOWN","locator":"manus-10/forge_evidence_unknown_conflict_ledger.csv#line=21 (EL-020)","artifact_sha256":"e1dc5d7e2b9273b64309a0e0f192c405a3bf3d3e34cde15d3a273bba42af6671"},
+      {"claim":"The cross-case comparison encodes shock, dependency edge, physical mechanism, and evidence label for the 16 cases.","class":"SCENARIO","locator":"manus-10/FORGE_WORLD_industrial_resilience_research_package.md#L168","artifact_sha256":"b5a39505d5fcd9f18b2c84d7fb1c436b203d1d6db163b8a3c6ef162ec96f7922"},
+      {"claim":"The scenario encoding framework includes uncertainty ranges and recovery functions; these are scenario fields, not baseline multipliers.","class":"SCENARIO","locator":"manus-10/forge_ready_scenario_encoding.md#L9","artifact_sha256":"38c59527f52e4bb4c874540b02ef64cb2d6121f1675ac326ff6907280f5de481"}
+    ]
+  },
+  "unknown_candidates": {
+    "scenario_unknown_item_candidates": 65,
+    "ledger_rows_with_unknown_in_evidence_class": 13,
+    "explicit_unknown_candidate_rows_top_level": 78,
+    "scenario_cases_with_unknown_evidence_class": 5,
+    "follow_up_question_candidates": 48,
+    "unknown_policy": "No imputation or promotion; unresolved qualified throughput, inventory, spare capacity, purity, customer acceptance, and ramp duration remain UNKNOWN."
+  },
+  "conflict_candidates": {
+    "scenario_cases_with_conflicted_evidence_class": 4,
+    "ledger_rows_with_conflicted_in_evidence_class": 6,
+    "explicit_conflict_candidate_rows_top_level": 10,
+    "auto_resolution": "none",
+    "conflict_policy": "Preserve competing interpretations with scope, denominator, date, and source trace for later resolution."
+  },
+  "duplicate_malformed_repaired": {
+    "top_level_artifact_hash_duplicate_groups": 0,
+    "nested_duplicate_payloads_of_top_level_files": 5,
+    "nested_duplicate_scenario_case_rows": 16,
+    "csv_row_width_anomaly_rows": 20,
+    "csv_max_observed_width": 11,
+    "json_parse_errors": 0,
+    "research_result_error_fields": 0,
+    "markdown_table_width_errors": 0,
+    "repaired_rows": 0,
+    "malformed_or_unresolved_schema_flags": {"shock_family_token_mismatches":6,"state_transition_enum_mismatches":86,"compound_evidence_class_rows":16,"phrase_substitution_rows":16},
+    "manifest_or_campaign_identity_anomalies": 1
+  },
+  "canonical_reconciliation": {
+    "existing_architecture_target": "Reuse the existing FORGE physical dependency graph, shock representation, evidence graph, and substitution-edge semantics.",
+    "second_shock_engine_created": false,
+    "second_substitution_engine_created": false,
+    "substitution_treated_as_free_switch": false,
+    "scenario_multipliers_promoted_to_baseline": 0,
+    "shadow_worlds_created": 0,
+    "existing_canonical_ids_reused": 0,
+    "new_canonical_ids_created": 0,
+    "canonical_promotions": 0,
+    "staging_links_only": true,
+    "reconciliation_note": "Shock cases, dependency edges, response actions, and substitution phrases are staging candidates to be linked into existing architecture; no parallel shock engine, substitution registry, or canonical world-state was created."
+  },
+  "explicit_blockers": {
+    "campaign_identity": {"status":"BLOCKED_FOR_AUTOMATION","reason":"Caller expected manus-09 while the supplied manifest and raw ZIP are manus-10; no reassignment performed."},
+    "ledger_csv_integrity": {"status":"BLOCKED","reason":"20 of 24 data rows do not have the expected eight CSV fields, consistent with unquoted or missing comma-delimited content; no repair was applied.","required_action":"Recover original row field boundaries and preserve raw-line lineage before field-level ingestion."},
+    "scenario_enum_normalization": {"status":"BLOCKED","reason":"Six shock-family token mismatches, 86 noncanonical transition tokens, 16 compound evidence labels, and 16 phrase substitutions require explicit normalization without loss of uncertainty."},
+    "qualified_capacity_inventory": {"status":"BLOCKED","reason":"Facility existence, nameplate/project announcements, aggregate storage, exports, or market share do not establish qualified available throughput or spare capacity."},
+    "substitution_semantics": {"status":"BLOCKED","reason":"No candidate may be treated as DROP-IN or as a free switch without material/process compatibility, qualification, yield, lead-time, and customer/regulatory evidence."},
+    "source_verification": {"status":"BLOCKED","reason":"Source URLs remain unverified candidate provenance because this bounded job used no web retrieval."},
+    "zero_promotions": true
+  },
+  "validation": {
+    "json_required": true,
+    "json_validated": true,
+    "report_byte_limit": 61440,
+    "report_size_bytes": 19292,
+    "artifact_hashes_verified_against_raw_zip": true,
+    "manifest_reconciliation_complete": true,
+    "schema_and_row_checks_complete": true,
+    "claim_samples_at_most_12": true,
+    "final_status": "VALIDATED_READY_FOR_PARENT_REVIEW"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "report_schema_version": "homi-canonical-import.v1",
+  "workstream": "GLM 07 Materials / Minerals",
+  "source_candidate": {
+    "path": "C:/FORGE-GLM-FOUNDRY/07-materials-minerals/import_ready/materials_minerals_foundational.yaml",
+    "sha256": "649fcc73b97e6d6a454afbd6831b614f0b169f065d53216d4119ac129fb98e6d",
+    "storage_posture": "external_immutable"
+  },
+  "canonical_destination": {
+    "path": "packs/materials_minerals_foundational.yaml",
+    "sha256": "649fcc73b97e6d6a454afbd6831b614f0b169f065d53216d4119ac129fb98e6d",
+    "byte_identical_to_source": true,
+    "pack_id": "materials_minerals_foundational",
+    "pack_version": "0.1.0"
+  },
+  "explicitly_barred_fixture": {
+    "path": "C:/FORGE-GLM-FOUNDRY/07-materials-minerals/import_ready/materials_minerals_foundational_MANUAL_TEST_DO_NOT_IMPORT.yaml",
+    "imported": false,
+    "conditioning_status": "INTENTIONALLY_SKIPPED"
+  },
+  "validation": {
+    "forge_pack_load": "PASS",
+    "cross_pack_registry_load": "PASS",
+    "entities": 137,
+    "relations": 138,
+    "sources": 31,
+    "evidence_records": 33,
+    "evidence_classes": {
+      "REPORTED": 30,
+      "ASSUMPTION": 1,
+      "UNKNOWN": 1,
+      "CONFLICTED": 1
+    },
+    "reported_records_with_source_lineage": 30,
+    "reported_records_without_source_lineage": 0,
+    "rights_posture": "Reference metadata and derived claim records only; no third-party page bodies mirrored. Imported source license labels remain subject to source-by-source rights review before redistribution.",
+    "entity_kinds": {
+      "material_grade": 33,
+      "recipe": 13,
+      "equipment_class": 37,
+      "resource_class": 9,
+      "organization": 12,
+      "facility": 6,
+      "capacity_segment": 4,
+      "project": 3,
+      "capability_claim": 9,
+      "qualification": 6,
+      "shock": 4,
+      "substitution": 1
+    }
+  },
+  "semantic_barriers": {
+    "capacity_segments": "Four ESTIMATED segments preserve nameplate separately; availability, utilization, yield, and qualification factors are explicit ASSUMPTION-class planning inputs.",
+    "project_states": {"announced": 2, "process_qualification": 1, "ramp_contribution": 0},
+    "trade_or_reserve_to_supply_conversion": false,
+    "supplier_links_assert_qualified_supply": false,
+    "conflicts_preserved": true,
+    "processed_into_forced_to_requires_input": false,
+    "accepted_chain_relation": "recurses_into"
+  },
+  "canonical_integration": {
+    "mode": "new foundational pack plus explicit ASSUMPTION-class canonical capability mappings",
+    "solver_objective_variants_added": 0,
+    "vertical_pack_identity_merges": 0,
+    "note": "Pack-local identities remain namespaced. Canonical capability bindings express reusable families, not qualified capability, supply, or capacity."
+  }
+}

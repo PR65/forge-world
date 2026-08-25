@@ -1,0 +1,2719 @@
+{
+  "schema_version": "forge_world.homi.wave2.manus18.industrial_geography_report.v1",
+  "report_identity": {
+    "observed_manus": "manus-18",
+    "theme": "Industrial Geography, Logistics & Infrastructure Atlas",
+    "manifest_campaign_mapping_preserved": true,
+    "read_only_corpus": true
+  },
+  "source_boundaries": {
+    "raw_vault_immutable": true,
+    "no_web": true,
+    "no_source_file_edits": true,
+    "csv_repairs_are_conditioned_parser_views_only": true,
+    "geography_fuzzy_or_unresolved_not_promoted": true,
+    "canonical_promotions": 0
+  },
+  "epistemic_rules": {
+    "classes": [
+      "MEASURED",
+      "REPORTED",
+      "DERIVED",
+      "ESTIMATED",
+      "MODELLED",
+      "ASSUMPTION",
+      "SCENARIO",
+      "UNKNOWN",
+      "CONFLICTED"
+    ],
+    "installed_or_design_capacity_not_qualified_supply": true,
+    "aggregate_throughput_not_spare_capacity": true,
+    "facility_existence_not_qualified_capability": true,
+    "route_presence_not_dependable_capacity": true,
+    "geography_requires_resolution_status": true
+  },
+  "corpus_accounting": {
+    "manifest": {
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\_meta\\manus_corpus_manifest.csv",
+      "bytes": 1431,
+      "sha256": "5b60e5026abb70a2298baa28d00d190b5b9e434231201f82ff59daaa055b388e",
+      "manus18_row": {
+        "CorpusID": "manus-18",
+        "OriginalZip": "Thorough Research and In-Depth Analysis Guide.zip",
+        "FileCount": "14",
+        "Status": "OK"
+      }
+    },
+    "raw_zip": {
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\raw-zips\\Thorough Research and In-Depth Analysis Guide.zip",
+      "bytes": 336060,
+      "sha256": "7a43c52da442f89832ba434744317c53ebce0f3d93d152d31d0adc8c63c78c49",
+      "entries_total": 14,
+      "file_entries": 14,
+      "directory_entries": 0,
+      "entries": [
+        {
+          "path": "FORGE WORLD Research Notes.md",
+          "bytes": 20071,
+          "compressed_bytes": 20071,
+          "is_directory": false,
+          "sha256": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120"
+        },
+        {
+          "path": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "bytes": 71827,
+          "compressed_bytes": 71827,
+          "is_directory": false,
+          "sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49"
+        },
+        {
+          "path": "entities.csv",
+          "bytes": 5072,
+          "compressed_bytes": 5072,
+          "is_directory": false,
+          "sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f"
+        },
+        {
+          "path": "relations.csv",
+          "bytes": 4878,
+          "compressed_bytes": 4878,
+          "is_directory": false,
+          "sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2"
+        },
+        {
+          "path": "sector_infrastructure_matrix.csv",
+          "bytes": 5632,
+          "compressed_bytes": 5632,
+          "is_directory": false,
+          "sha256": "a95409497a91e34b5bf622ddbffa662177cc91e1a868602c9571498812a2adb2"
+        },
+        {
+          "path": "unknown_ledger.csv",
+          "bytes": 6022,
+          "compressed_bytes": 6022,
+          "is_directory": false,
+          "sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e"
+        },
+        {
+          "path": "source_register.csv",
+          "bytes": 7386,
+          "compressed_bytes": 7386,
+          "is_directory": false,
+          "sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52"
+        },
+        {
+          "path": "FORGE WORLD Industrial Geography Atlas — Package Manifest.md",
+          "bytes": 2531,
+          "compressed_bytes": 2531,
+          "is_directory": false,
+          "sha256": "0f7953249f7cf7163c12ea5c4be3f9c16b453675f9ace0746b0714f723e57525"
+        },
+        {
+          "path": "raw_workstream_outputs.json",
+          "bytes": 61491,
+          "compressed_bytes": 61491,
+          "is_directory": false,
+          "sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555"
+        },
+        {
+          "path": "raw_workstream_outputs.csv",
+          "bytes": 60395,
+          "compressed_bytes": 60395,
+          "is_directory": false,
+          "sha256": "14240ff0be5b4f0bf60d7b59d1e25716d5986cec8f45fc47315e7d66e460285c"
+        },
+        {
+          "path": "validate_atlas.py",
+          "bytes": 2289,
+          "compressed_bytes": 2289,
+          "is_directory": false,
+          "sha256": "0ea205edd1fb283a04c4f731cada310d89de96bb06443c9dabb1d426b301877a"
+        },
+        {
+          "path": "forge_world_research_notes.md",
+          "bytes": 20071,
+          "compressed_bytes": 20071,
+          "is_directory": false,
+          "sha256": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120"
+        },
+        {
+          "path": "forge_world_research_workstreams.json",
+          "bytes": 61491,
+          "compressed_bytes": 61491,
+          "is_directory": false,
+          "sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555"
+        },
+        {
+          "path": "pasted_content.txt",
+          "bytes": 4688,
+          "compressed_bytes": 4688,
+          "is_directory": false,
+          "sha256": "bcaf8d996df75a3f1f573542e6c29ef8da57d84936a9c14052ee06fb653a802d"
+        }
+      ]
+    },
+    "extracted_root": {
+      "path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18",
+      "file_count": 14,
+      "artifacts": [
+        {
+          "path": "FORGE WORLD Industrial Geography Atlas — Package Manifest.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\FORGE WORLD Industrial Geography Atlas — Package Manifest.md",
+          "bytes": 2531,
+          "sha256": "0f7953249f7cf7163c12ea5c4be3f9c16b453675f9ace0746b0714f723e57525",
+          "format": "md",
+          "line_count": 23,
+          "url_occurrences": 0,
+          "raw_zip_entry": "FORGE WORLD Industrial Geography Atlas — Package Manifest.md",
+          "raw_zip_bytes": 2531,
+          "raw_zip_sha256": "0f7953249f7cf7163c12ea5c4be3f9c16b453675f9ace0746b0714f723e57525",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "FORGE WORLD Research Notes.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\FORGE WORLD Research Notes.md",
+          "bytes": 20071,
+          "sha256": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120",
+          "format": "md",
+          "line_count": 147,
+          "url_occurrences": 20,
+          "raw_zip_entry": "FORGE WORLD Research Notes.md",
+          "raw_zip_bytes": 20071,
+          "raw_zip_sha256": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "bytes": 71827,
+          "sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "format": "md",
+          "line_count": 417,
+          "url_occurrences": 23,
+          "raw_zip_entry": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "raw_zip_bytes": 71827,
+          "raw_zip_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "entities.csv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\entities.csv",
+          "bytes": 5072,
+          "sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "format": "csv",
+          "line_count": 24,
+          "url_occurrences": 0,
+          "raw_zip_entry": "entities.csv",
+          "raw_zip_bytes": 5072,
+          "raw_zip_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "forge_world_research_notes.md",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\forge_world_research_notes.md",
+          "bytes": 20071,
+          "sha256": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120",
+          "format": "md",
+          "line_count": 147,
+          "url_occurrences": 20,
+          "raw_zip_entry": "forge_world_research_notes.md",
+          "raw_zip_bytes": 20071,
+          "raw_zip_sha256": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "forge_world_research_workstreams.json",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\forge_world_research_workstreams.json",
+          "bytes": 61491,
+          "sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "format": "json",
+          "line_count": 64,
+          "url_occurrences": 114,
+          "raw_zip_entry": "forge_world_research_workstreams.json",
+          "raw_zip_bytes": 61491,
+          "raw_zip_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "pasted_content.txt",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\pasted_content.txt",
+          "bytes": 4688,
+          "sha256": "bcaf8d996df75a3f1f573542e6c29ef8da57d84936a9c14052ee06fb653a802d",
+          "format": "txt",
+          "line_count": 54,
+          "url_occurrences": 0,
+          "raw_zip_entry": "pasted_content.txt",
+          "raw_zip_bytes": 4688,
+          "raw_zip_sha256": "bcaf8d996df75a3f1f573542e6c29ef8da57d84936a9c14052ee06fb653a802d",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "raw_workstream_outputs.csv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\raw_workstream_outputs.csv",
+          "bytes": 60395,
+          "sha256": "14240ff0be5b4f0bf60d7b59d1e25716d5986cec8f45fc47315e7d66e460285c",
+          "format": "csv",
+          "line_count": 7,
+          "url_occurrences": 114,
+          "raw_zip_entry": "raw_workstream_outputs.csv",
+          "raw_zip_bytes": 60395,
+          "raw_zip_sha256": "14240ff0be5b4f0bf60d7b59d1e25716d5986cec8f45fc47315e7d66e460285c",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "raw_workstream_outputs.json",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\raw_workstream_outputs.json",
+          "bytes": 61491,
+          "sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "format": "json",
+          "line_count": 64,
+          "url_occurrences": 114,
+          "raw_zip_entry": "raw_workstream_outputs.json",
+          "raw_zip_bytes": 61491,
+          "raw_zip_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "relations.csv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\relations.csv",
+          "bytes": 4878,
+          "sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "format": "csv",
+          "line_count": 31,
+          "url_occurrences": 0,
+          "raw_zip_entry": "relations.csv",
+          "raw_zip_bytes": 4878,
+          "raw_zip_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "sector_infrastructure_matrix.csv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\sector_infrastructure_matrix.csv",
+          "bytes": 5632,
+          "sha256": "a95409497a91e34b5bf622ddbffa662177cc91e1a868602c9571498812a2adb2",
+          "format": "csv",
+          "line_count": 13,
+          "url_occurrences": 0,
+          "raw_zip_entry": "sector_infrastructure_matrix.csv",
+          "raw_zip_bytes": 5632,
+          "raw_zip_sha256": "a95409497a91e34b5bf622ddbffa662177cc91e1a868602c9571498812a2adb2",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "source_register.csv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\source_register.csv",
+          "bytes": 7386,
+          "sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+          "format": "csv",
+          "line_count": 25,
+          "url_occurrences": 24,
+          "raw_zip_entry": "source_register.csv",
+          "raw_zip_bytes": 7386,
+          "raw_zip_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "unknown_ledger.csv",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\unknown_ledger.csv",
+          "bytes": 6022,
+          "sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "format": "csv",
+          "line_count": 25,
+          "url_occurrences": 0,
+          "raw_zip_entry": "unknown_ledger.csv",
+          "raw_zip_bytes": 6022,
+          "raw_zip_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "raw_zip_byte_match": true
+        },
+        {
+          "path": "validate_atlas.py",
+          "absolute_path": "C:\\FORGE-RESEARCH-CORPUS\\manus\\extracted\\manus-18\\validate_atlas.py",
+          "bytes": 2289,
+          "sha256": "0ea205edd1fb283a04c4f731cada310d89de96bb06443c9dabb1d426b301877a",
+          "format": "py",
+          "line_count": 49,
+          "url_occurrences": 0,
+          "raw_zip_entry": "validate_atlas.py",
+          "raw_zip_bytes": 2289,
+          "raw_zip_sha256": "0ea205edd1fb283a04c4f731cada310d89de96bb06443c9dabb1d426b301877a",
+          "raw_zip_byte_match": true
+        }
+      ],
+      "all_extracted_files_byte_match_raw_zip": true,
+      "manifest_file_count_matches_extracted": true
+    }
+  },
+  "csv_repair_metadata": {
+    "raw_files_unchanged": true,
+    "repair_count": 3,
+    "unrepaired_malformed_count": 0,
+    "repairs": [
+      {
+        "artifact": "entities.csv",
+        "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+        "line": 13,
+        "rule_id": "entities.merge_unquoted_primary_source_ids_fields_8_9",
+        "raw_field_count": 11,
+        "repaired_field_count": 10,
+        "raw_row_sha256": "28786d122051920108c479f32c950549633741b40c7d686ba6b485634d4216e3",
+        "repaired_row_sha256": "6a432a16369408ce94563819aa0c7c3403f3ee02d62489e6e14f9d9c14100818",
+        "raw_fields": [
+          "IN-CL-TUMAKURU",
+          "Bengaluru-Tumakuru",
+          "IndustrialCluster",
+          "India/Karnataka",
+          "13.34",
+          "77.10",
+          "Approximate cluster point",
+          "Machine-tool aerospace precision engineering cluster reported",
+          "2",
+          "10",
+          "Map test certification suppliers and rail/road"
+        ],
+        "repaired_fields": [
+          "IN-CL-TUMAKURU",
+          "Bengaluru-Tumakuru",
+          "IndustrialCluster",
+          "India/Karnataka",
+          "13.34",
+          "77.10",
+          "Approximate cluster point",
+          "Machine-tool aerospace precision engineering cluster reported",
+          "2,10",
+          "Map test certification suppliers and rail/road"
+        ],
+        "raw_file_unchanged": true,
+        "repair_scope": "in_memory_parse_only"
+      },
+      {
+        "artifact": "source_register.csv",
+        "artifact_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+        "line": 15,
+        "rule_id": "source_register.merge_unquoted_reliability_note_fields_8_9",
+        "raw_field_count": 10,
+        "repaired_field_count": 9,
+        "raw_row_sha256": "4b8888002b1f0b94a19a16ffbfe45e439efedf5803f5f7ad7fcf44452899de57",
+        "repaired_row_sha256": "81e6444c9a1f6c6195a7e19f7cc8121850f243e620586ced9c1feb93b212f4a5",
+        "raw_fields": [
+          "14",
+          "Toyota Tsusho/Taiyo Nippon Sanso/Toho Gas",
+          "Hydrogen supply infrastructure Port of Nagoya",
+          "2025-05-27",
+          "https://www.toyota-tsusho.com/english/press/detail/250527_006588.html",
+          "Company/NEDO-linked release",
+          "Primary",
+          "Hydrogen logistics design verification and feasibility potential",
+          "1",
+          "500 t/y is potential not commissioned throughput"
+        ],
+        "repaired_fields": [
+          "14",
+          "Toyota Tsusho/Taiyo Nippon Sanso/Toho Gas",
+          "Hydrogen supply infrastructure Port of Nagoya",
+          "2025-05-27",
+          "https://www.toyota-tsusho.com/english/press/detail/250527_006588.html",
+          "Company/NEDO-linked release",
+          "Primary",
+          "Hydrogen logistics design verification and feasibility potential",
+          "1,500 t/y is potential not commissioned throughput"
+        ],
+        "raw_file_unchanged": true,
+        "repair_scope": "in_memory_parse_only"
+      },
+      {
+        "artifact": "source_register.csv",
+        "artifact_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+        "line": 24,
+        "rule_id": "source_register.merge_unquoted_reliability_note_fields_8_9",
+        "raw_field_count": 10,
+        "repaired_field_count": 9,
+        "raw_row_sha256": "d1a34a6375f852fbf02c634c37ecb0b08e6b45ced8081e87dd360a64fb10c1bc",
+        "repaired_row_sha256": "6a6fe59b0d50d5e69a5a073346a6beac0b72748b6e23a3ea0da781e0ecef158b",
+        "raw_fields": [
+          "23",
+          "Ideas for India",
+          "Maritime chokepoints: India energy and trade vulnerabilities",
+          "2026",
+          "https://www.ideasforindia.in/topics/trade/maritime-chokepoints-indias-energy-and-trade-vulnerabilities-and-strategic-responses",
+          "Analytical article",
+          "Secondary",
+          "Structural maritime/energy exposure and chokepoint framing",
+          "Use for discovery and scenario framing",
+          " not sole basis for current event claims"
+        ],
+        "repaired_fields": [
+          "23",
+          "Ideas for India",
+          "Maritime chokepoints: India energy and trade vulnerabilities",
+          "2026",
+          "https://www.ideasforindia.in/topics/trade/maritime-chokepoints-indias-energy-and-trade-vulnerabilities-and-strategic-responses",
+          "Analytical article",
+          "Secondary",
+          "Structural maritime/energy exposure and chokepoint framing",
+          "Use for discovery and scenario framing, not sole basis for current event claims"
+        ],
+        "raw_file_unchanged": true,
+        "repair_scope": "in_memory_parse_only"
+      }
+    ],
+    "unrepaired": []
+  },
+  "schema_inventory": {
+    "structured_artifacts": [
+      {
+        "artifact": "entities.csv",
+        "format": "csv",
+        "columns": [
+          "entity_id",
+          "entity_name",
+          "entity_type",
+          "country_or_state",
+          "latitude",
+          "longitude",
+          "coordinate_quality",
+          "status_or_evidence",
+          "primary_sources",
+          "notes"
+        ],
+        "raw_data_rows": 23,
+        "repaired_data_rows": 23,
+        "raw_malformed_rows": 1,
+        "parse_errors_after_repair": 0,
+        "repair_applied": true
+      },
+      {
+        "artifact": "relations.csv",
+        "format": "csv",
+        "columns": [
+          "relation_id",
+          "subject_id",
+          "relation_type",
+          "object_id",
+          "evidence_label",
+          "source_ids",
+          "scope_or_condition",
+          "notes"
+        ],
+        "raw_data_rows": 30,
+        "repaired_data_rows": 30,
+        "raw_malformed_rows": 0,
+        "parse_errors_after_repair": 0,
+        "repair_applied": false
+      },
+      {
+        "artifact": "sector_infrastructure_matrix.csv",
+        "format": "csv",
+        "columns": [
+          "sector_or_process",
+          "bulk_or_high_value_logistics",
+          "power_requirement_and_quality",
+          "water_and_wastewater",
+          "land_and_site",
+          "test_certification",
+          "sourcing_or_location_signals",
+          "qualified_capacity_unknowns"
+        ],
+        "raw_data_rows": 12,
+        "repaired_data_rows": 12,
+        "raw_malformed_rows": 0,
+        "parse_errors_after_repair": 0,
+        "repair_applied": false
+      },
+      {
+        "artifact": "source_register.csv",
+        "format": "csv",
+        "columns": [
+          "source_id",
+          "publisher",
+          "title",
+          "publication_or_observation_date",
+          "url",
+          "source_type",
+          "primary_or_secondary",
+          "scope_and_claims",
+          "reliability_notes"
+        ],
+        "raw_data_rows": 24,
+        "repaired_data_rows": 24,
+        "raw_malformed_rows": 2,
+        "parse_errors_after_repair": 0,
+        "repair_applied": true
+      },
+      {
+        "artifact": "unknown_ledger.csv",
+        "format": "csv",
+        "columns": [
+          "unknown_id",
+          "variable_or_claim",
+          "industrial_consequence",
+          "current_evidence_status",
+          "exact_follow_up_question",
+          "next_source_or_method"
+        ],
+        "raw_data_rows": 24,
+        "repaired_data_rows": 24,
+        "raw_malformed_rows": 0,
+        "parse_errors_after_repair": 0,
+        "repair_applied": false
+      },
+      {
+        "artifact": "raw_workstream_outputs.csv",
+        "format": "csv",
+        "columns": [
+          "Subject",
+          "Workstream",
+          "Research Memo",
+          "Key Sources",
+          "Confidence",
+          "Error"
+        ],
+        "raw_data_rows": 6,
+        "repaired_data_rows": 6,
+        "raw_malformed_rows": 0,
+        "parse_errors_after_repair": 0,
+        "repair_applied": false
+      },
+      {
+        "artifact": "forge_world_research_workstreams.json",
+        "format": "json",
+        "top_level": "object",
+        "keys": [
+          "results"
+        ],
+        "row_path": "results",
+        "data_rows": 6,
+        "parse_error": null
+      },
+      {
+        "artifact": "raw_workstream_outputs.json",
+        "format": "json",
+        "top_level": "object",
+        "keys": [
+          "results"
+        ],
+        "row_path": "results",
+        "data_rows": 6,
+        "parse_error": null
+      },
+      {
+        "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+        "format": "markdown",
+        "line_count": 417,
+        "heading_count": 26,
+        "table_count": 11,
+        "table_rows": 141,
+        "parse_error": null
+      },
+      {
+        "artifact": "validate_atlas.py",
+        "format": "python_source",
+        "line_count": 49,
+        "execution": "not_executed_read_only"
+      },
+      {
+        "artifact": "FORGE WORLD Industrial Geography Atlas — Package Manifest.md",
+        "format": "md",
+        "line_count": 23,
+        "heading_count": 2,
+        "parse_error": null
+      },
+      {
+        "artifact": "FORGE WORLD Research Notes.md",
+        "format": "md",
+        "line_count": 147,
+        "heading_count": 25,
+        "parse_error": null
+      },
+      {
+        "artifact": "forge_world_research_notes.md",
+        "format": "md",
+        "line_count": 147,
+        "heading_count": 25,
+        "parse_error": null
+      },
+      {
+        "artifact": "pasted_content.txt",
+        "format": "txt",
+        "line_count": 54,
+        "heading_count": 0,
+        "parse_error": null
+      }
+    ],
+    "markdown_table_inventory": [
+      {
+        "header_line": 19,
+        "headers": [
+          "Evidence label",
+          "Meaning in this atlas",
+          "Permitted use"
+        ],
+        "rows": 9
+      },
+      {
+        "header_line": 53,
+        "headers": [
+          "Entity class",
+          "Definition",
+          "Representative examples",
+          "Core properties"
+        ],
+        "rows": 15
+      },
+      {
+        "header_line": 73,
+        "headers": [
+          "Relationship",
+          "Direction",
+          "Meaning",
+          "Example"
+        ],
+        "rows": 16
+      },
+      {
+        "header_line": 104,
+        "headers": [
+          "Node/project",
+          "State",
+          "Stated area",
+          "Evidence/status interpretation",
+          "Primary industrial-geography implication"
+        ],
+        "rows": 12
+      },
+      {
+        "header_line": 123,
+        "headers": [
+          "Region and anchor locations",
+          "Sectoral strengths and named assets",
+          "Physical enablers",
+          "Critical dependencies and risks",
+          "Confidence"
+        ],
+        "rows": 9
+      },
+      {
+        "header_line": 193,
+        "headers": [
+          "Route/system",
+          "Industrial role",
+          "Observed evidence",
+          "Alternatives/substitutes",
+          "Principal unknowns"
+        ],
+        "rows": 6
+      },
+      {
+        "header_line": 218,
+        "headers": [
+          "Benchmark cluster",
+          "Industrial architecture",
+          "Physical infrastructure evidence",
+          "What India can learn",
+          "Main caveat"
+        ],
+        "rows": 8
+      },
+      {
+        "header_line": 239,
+        "headers": [
+          "Sector/process",
+          "Input and logistics profile",
+          "Power and utility requirements",
+          "Water/wastewater requirements",
+          "Site and testing requirements",
+          "India location signals",
+          "Key unknowns to resolve"
+        ],
+        "rows": 12
+      },
+      {
+        "header_line": 284,
+        "headers": [
+          "Risk",
+          "Concentrated asset/system",
+          "Exposure mechanism",
+          "Observable indicator",
+          "Mitigation/substitute",
+          "Current evidence status"
+        ],
+        "rows": 7
+      },
+      {
+        "header_line": 298,
+        "headers": [
+          "Entity",
+          "Type",
+          "Country/state",
+          "Approx. latitude",
+          "Approx. longitude",
+          "Coordinate quality",
+          "Why it matters"
+        ],
+        "rows": 23
+      },
+      {
+        "header_line": 326,
+        "headers": [
+          "ID",
+          "Question/variable",
+          "Why it matters",
+          "Current status",
+          "Exact next research action"
+        ],
+        "rows": 24
+      }
+    ],
+    "raw_workstream_json_rows": 6,
+    "research_workstreams_json_rows": 6,
+    "workstream_json_error_rows": 0,
+    "workstream_csv_error_rows": 0
+  },
+  "candidate_counts": {
+    "artifacts": 14,
+    "registered_sources": 24,
+    "source_url_candidates": 139,
+    "source_url_occurrences": 429,
+    "claims": {
+      "atlas_table_rows": 141,
+      "sector_matrix_requirement_rows": 12,
+      "numeric_evidence_workstream_rows": 72,
+      "bounded_claim_samples": 14
+    },
+    "entities": 23,
+    "facility_or_site_proxy_records": 8,
+    "explicit_industrial_facility_records": 0,
+    "location_records": 23,
+    "cluster_records": 5,
+    "infrastructure_node_records": 9,
+    "corridor_candidates": 7,
+    "relations": 30,
+    "relation_types": 9,
+    "unknown_records": 24,
+    "conflict_candidates": 6,
+    "duplicate_artifact_groups": 2,
+    "duplicate_extra_artifacts": 2,
+    "duplicate_structured_records": 0,
+    "malformed_csv_rows": 3,
+    "malformed_unrepaired_rows": 0,
+    "skipped_artifacts": 0,
+    "skipped_execution_units": 1,
+    "geography_fuzzy_candidates": 23,
+    "geography_unresolved_text_records": 0,
+    "geography_promotions": 0
+  },
+  "geography_resolution": {
+    "resolution_policy": "textual country/state retained; all source coordinates are explicitly approximate and remain fuzzy staging",
+    "textual_country_state_records": 23,
+    "coordinate_fuzzy_staging_records": 23,
+    "exact_coordinate_records": 0,
+    "unresolved_text_records": 0,
+    "unresolved_relation_endpoint_ids": 20,
+    "relation_endpoint_resolution": {
+      "total_relation_endpoint_references": 60,
+      "resolved_endpoint_references": 40,
+      "unresolved_unique_endpoint_ids": 20,
+      "unresolved_ids": [
+        "Capability-MachineTool-Aerospace",
+        "Capability-Semiconductor-Ecosystem",
+        "Capability-TransshipmentGateway",
+        "Cluster-SanPedroBay",
+        "Cluster-YRD",
+        "Facility-IOCL-Paradeep",
+        "IN-PORT-CHENNAI",
+        "InfrastructureLink-ICD-Rakes",
+        "InfrastructureLink-OnDockRail",
+        "InfrastructureLink-RFC-NSRM",
+        "InfrastructureLink-RailRoad-Northeast",
+        "InfrastructureLink-Yangshan-Automation",
+        "Resource-IronOre-Odisha",
+        "Utility-CETP-Dahej",
+        "Utility-Hydrogen-Logistics-Nagoya",
+        "Utility-Power-Gujarat",
+        "Utility-UPW-Taiwan",
+        "Utility-Water-EasternBasin",
+        "Utility-Water-Narmada-Dholera",
+        "Utility-Water-TamilNadu"
+      ]
+    },
+    "promotions": 0,
+    "samples": [
+      {
+        "entity_id": "IN-NICDP-DHOLERA",
+        "entity_name": "Dholera SIR",
+        "country_or_state": "India/Gujarat",
+        "coordinates": {
+          "latitude": "22.25",
+          "longitude": "72.18"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 2
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-CL-SANAND",
+        "entity_name": "Sanand",
+        "country_or_state": "India/Gujarat",
+        "coordinates": {
+          "latitude": "22.99",
+          "longitude": "72.38"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate town point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 3
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PCPIR-DAHEJ",
+        "entity_name": "Dahej PCPIR",
+        "country_or_state": "India/Gujarat",
+        "coordinates": {
+          "latitude": "21.71",
+          "longitude": "72.64"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 4
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PORT-MUNDRA",
+        "entity_name": "Mundra Port",
+        "country_or_state": "India/Gujarat",
+        "coordinates": {
+          "latitude": "22.74",
+          "longitude": "69.72"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate port point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 5
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PORT-JNPA",
+        "entity_name": "Jawaharlal Nehru Port Authority",
+        "country_or_state": "India/Maharashtra",
+        "coordinates": {
+          "latitude": "18.95",
+          "longitude": "72.95"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate port point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 6
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-NICDP-SBIA",
+        "entity_name": "Shendra-Bidkin Industrial Area",
+        "country_or_state": "India/Maharashtra",
+        "coordinates": {
+          "latitude": "20.00",
+          "longitude": "75.70"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 7
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-CL-PUNE-CHAKAN",
+        "entity_name": "Pune-Chakan",
+        "country_or_state": "India/Maharashtra",
+        "coordinates": {
+          "latitude": "18.76",
+          "longitude": "73.86"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate cluster point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 8
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-CL-KALINGANAGAR",
+        "entity_name": "Kalinganagar",
+        "country_or_state": "India/Odisha",
+        "coordinates": {
+          "latitude": "20.96",
+          "longitude": "86.10"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 9
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ]
+  },
+  "samples": {
+    "sources": [
+      {
+        "source_id": "1",
+        "publisher": "DPIIT",
+        "title": "National Industrial Corridor Development Programme",
+        "url": "https://www.dpiit.gov.in/offerings/schemes-and-services/details/industrial-corridors-YjM2UDNtQWa",
+        "scope_and_claims": "NICDP corridor list 20 approved projects 13 states 7 corridors four completed nodes 12 August 2024 projects",
+        "reliability_notes": "Official reported programme scope; not qualified output",
+        "exact_locator": {
+          "artifact": "source_register.csv",
+          "artifact_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+          "line": 2
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "source_id": "2",
+        "publisher": "PIB",
+        "title": "Travelling Across the Industrial Corridors of India",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2232996",
+        "scope_and_claims": "Durgapur East Coast announcement four completed four nearing completion budget and node descriptions",
+        "reliability_notes": "Official reported policy/status; investments and readiness not equivalent to output",
+        "exact_locator": {
+          "artifact": "source_register.csv",
+          "artifact_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+          "line": 3
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "source_id": "14",
+        "publisher": "Toyota Tsusho/Taiyo Nippon Sanso/Toho Gas",
+        "title": "Hydrogen supply infrastructure Port of Nagoya",
+        "url": "https://www.toyota-tsusho.com/english/press/detail/250527_006588.html",
+        "scope_and_claims": "Hydrogen logistics design verification and feasibility potential",
+        "reliability_notes": "1,500 t/y is potential not commissioned throughput",
+        "exact_locator": {
+          "artifact": "source_register.csv",
+          "artifact_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+          "line": 15
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "source_id": "23",
+        "publisher": "Ideas for India",
+        "title": "Maritime chokepoints: India energy and trade vulnerabilities",
+        "url": "https://www.ideasforindia.in/topics/trade/maritime-chokepoints-indias-energy-and-trade-vulnerabilities-and-strategic-responses",
+        "scope_and_claims": "Structural maritime/energy exposure and chokepoint framing",
+        "reliability_notes": "Use for discovery and scenario framing, not sole basis for current event claims",
+        "exact_locator": {
+          "artifact": "source_register.csv",
+          "artifact_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+          "line": 24
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "source_id": "24",
+        "publisher": "Ministry of Ports Shipping and Waterways",
+        "title": "Basic Port Statistics of India 2024-25",
+        "url": "https://shipmin.gov.in/en/content/basic-port-statistics-india-2024-25",
+        "scope_and_claims": "Official latest port-statistics record",
+        "reliability_notes": "Underlying downloadable table not exposed in browser extraction; use PIB/port authority data meanwhile",
+        "exact_locator": {
+          "artifact": "source_register.csv",
+          "artifact_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+          "line": 25
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "clm_manus18_node_01",
+        "subject": "Khurpia Farm",
+        "predicate": "atlas_table_row",
+        "text": "Khurpia Farm | Uttarakhand | 1,002 acres | REPORTED approved project | North Indian manufacturing and hill-state connectivity; road/rail and water need verification",
+        "numeric_ranges": [
+          {
+            "raw": "1",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "002 acres",
+            "min": 2.0,
+            "max": 2.0,
+            "comparator": "=",
+            "unit": "acres"
+          }
+        ],
+        "units": [
+          "acres"
+        ],
+        "geography": "INDIA",
+        "dates": [],
+        "source_url": null,
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "REPORTED",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "Khurpia Farm"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "artifact_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "line": 106
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_node_12",
+        "subject": "Zaheerabad",
+        "predicate": "atlas_table_row",
+        "text": "Zaheerabad | Telangana | 3,245 acres | REPORTED approved project | Hyderabad–Mumbai manufacturing axis; road, power and automotive/equipment linkages",
+        "numeric_ranges": [
+          {
+            "raw": "3",
+            "min": 3.0,
+            "max": 3.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "245 acres",
+            "min": 245.0,
+            "max": 245.0,
+            "comparator": "=",
+            "unit": "acres"
+          }
+        ],
+        "units": [
+          "acres"
+        ],
+        "geography": "GLOBAL_OR_UNSPECIFIED",
+        "dates": [],
+        "source_url": null,
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "REPORTED",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "Zaheerabad"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "artifact_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "line": 117
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_route_01",
+        "subject": "Dadri/NCR–WDFC–JNPA/Mumbai",
+        "predicate": "atlas_table_row",
+        "text": "Dadri/NCR–WDFC–JNPA/Mumbai | Containerized machinery, electronics, automotive and general manufacturing inputs/outputs | JNPA reports 7.30m TEUs in FY2024-25 and 8.17m in FY2025-26, plus 1.15m TEUs through ICD rakes in FY2025-26.[4] | Mundra, Kandla, Pipavav, rail/road diversion; substitution depends on shipping-line calls, rail paths and inland cost | Section-level dependable rail capacity, terminal dwell by commodity, peak spare capacity",
+        "numeric_ranges": [
+          {
+            "raw": "7.30",
+            "min": 7.3,
+            "max": 7.3,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2024-25",
+            "min": 2024.0,
+            "max": 25.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "8.17",
+            "min": 8.17,
+            "max": 8.17,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2025-26",
+            "min": 2025.0,
+            "max": 26.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "1.15",
+            "min": 1.15,
+            "max": 1.15,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2025-26",
+            "min": 2025.0,
+            "max": 26.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "4",
+            "min": 4.0,
+            "max": 4.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL_OR_UNSPECIFIED",
+        "dates": [
+          "FY2024",
+          "FY2025"
+        ],
+        "source_url": null,
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "UNKNOWN",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [
+          "Section-level dependable rail capacity, terminal dwell by commodity, peak spare capacity"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Dadri/NCR–WDFC–JNPA/Mumbai"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "artifact_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "line": 195
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_route_06",
+        "subject": "Assam/Northeast–Siliguri–rest of India",
+        "predicate": "atlas_table_row",
+        "text": "Assam/Northeast–Siliguri–rest of India | Consumer, industrial and construction supply; proposed high-tech packaging flows | Official node and waterway sources establish policy/logistics context; qualified facility output is not established.[1] [16] | Bangladesh routes where politically/operationally available, air cargo, NW-2, alternate rail/road alignments | Border capacity, transshipment rules, flood resilience, route security, annual MMLP throughput",
+        "numeric_ranges": [
+          {
+            "raw": "1",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "16",
+            "min": 16.0,
+            "max": 16.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2",
+            "min": 2.0,
+            "max": 2.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "INDIA",
+        "dates": [],
+        "source_url": null,
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "UNKNOWN",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [
+          "Border capacity, transshipment rules, flood resilience, route security, annual MMLP throughput"
+        ],
+        "conflicts": [],
+        "entity_candidates": [
+          "Assam/Northeast–Siliguri–rest of India"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "artifact_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "line": 200
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_sector_01",
+        "subject": "**Integrated steel BF–BOF**",
+        "predicate": "atlas_table_row",
+        "text": "**Integrated steel BF–BOF** | High-volume iron ore, coking coal/coke, limestone; bulk port, rail, stockyards and continuous material handling | Large continuous thermal and electrical loads; captive/grid balance; reliability matters for furnaces and rolling | High circulating water; cooling, treatment, reuse and discharge; basin allocation is decisive | Large contiguous land, blast-furnace safety, environmental controls, rail/port evacuation | Odisha–Jharkhand–Chhattisgarh, coastal Odisha, Andhra/Gujarat import-linked systems | Plant-specific water withdrawal, coke/ore quality, rail evacuation, furnace availability and grade qualification",
+        "numeric_ranges": [],
+        "units": [],
+        "geography": "INDIA",
+        "dates": [],
+        "source_url": null,
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "UNKNOWN",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "**Integrated steel BF–BOF**"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "artifact_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "line": 241
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_sector_12",
+        "subject": "**Hydrogen / industrial gases**",
+        "predicate": "atlas_table_row",
+        "text": "**Hydrogen / industrial gases** | Electricity, water, gas feedstock, storage, pipelines, tube trailers, ammonia/LOHC options and port exports | Electrolyzer/compressor/cryogenic loads; firm low-carbon power and safety systems | High-purity water and cooling; treatment/recycle and discharge are site-specific | Hazardous zoning, pressure systems, separation distances, standards, port compatibility | Kandla, Paradip, Tuticorin/VOC, Dahej, coastal renewable hubs, Nagoya benchmark | Actual electrolyzer uptime, water source, H2 quality, storage, pipeline access, offtake and certification",
+        "numeric_ranges": [
+          {
+            "raw": "2",
+            "min": 2.0,
+            "max": 2.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL_OR_UNSPECIFIED",
+        "dates": [],
+        "source_url": null,
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "UNKNOWN",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "**Hydrogen / industrial gases**"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "artifact_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "line": 252
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_matrix_01",
+        "subject": "Integrated steel BF-BOF",
+        "predicate": "infrastructure_requirement",
+        "text": "Integrated steel BF-BOF | Iron ore coking coal limestone via bulk port rail and stockyards | Large continuous thermal/electrical loads with furnace continuity | High circulating water cooling treatment reuse and discharge | Large contiguous industrial parcel and environmental controls | Metallurgy labs product standards environmental permits | Odisha Jharkhand Chhattisgarh coastal Odisha AP Gujarat import systems | Plant uptime grade qualification rail evacuation water allocation",
+        "numeric_ranges": [],
+        "units": [],
+        "geography": "GLOBAL/INDIA",
+        "dates": [],
+        "source_url": null,
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "REPORTED_OR_ENGINEERING_KNOWLEDGE",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "Integrated steel BF-BOF"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "sector_infrastructure_matrix.csv",
+          "artifact_sha256": "a95409497a91e34b5bf622ddbffa662177cc91e1a868602c9571498812a2adb2",
+          "line": 2
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_matrix_12",
+        "subject": "Hydrogen and industrial gases",
+        "predicate": "infrastructure_requirement",
+        "text": "Hydrogen and industrial gases | Electricity water gas feedstock storage pipelines tube trailers ammonia/LOHC ports | Firm low-carbon power electrolyzer compressor cryogenic loads | High-purity water cooling treatment recycle discharge | Hazardous zoning pressure systems separation distances | Gas quality safety standards port compatibility | Kandla Paradip VOC Dahej coastal renewable hubs | Electrolyzer uptime water source H2 quality storage pipeline offtake certification",
+        "numeric_ranges": [
+          {
+            "raw": "2",
+            "min": 2.0,
+            "max": 2.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL/INDIA",
+        "dates": [],
+        "source_url": null,
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "REPORTED_OR_ENGINEERING_KNOWLEDGE",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "Hydrogen and industrial gases"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "sector_infrastructure_matrix.csv",
+          "artifact_sha256": "a95409497a91e34b5bf622ddbffa662177cc91e1a868602c9571498812a2adb2",
+          "line": 13
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_workstream_01",
+        "subject": "India national transport and logistics infrastructure: DMIC and other industrial corridors, Dedicated Freight Corridors, major container/bulk/RO-RO ports, port-hinterland links, freight rail, highways, airports/air cargo, inland waterways, logistics parks, warehouses and cold-chain infrastructure.",
+        "predicate": "workstream_evidence_statement",
+        "text": "*   **Total Container Throughput (National):** **24 million TEUs** (2025) [**REPORTED**] [3].",
+        "numeric_ranges": [
+          {
+            "raw": "24",
+            "min": 24.0,
+            "max": 24.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2025",
+            "min": 2025.0,
+            "max": 2025.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "3",
+            "min": 3.0,
+            "max": 3.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL_OR_UNSPECIFIED",
+        "dates": [
+          "2025"
+        ],
+        "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2050136",
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "REPORTED",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "India national transport and logistics infrastructure: DMIC and other industrial corridors, Dedicated Freight Corridors, major container/bulk/RO-RO ports, port-hinterland links, freight rail, highways, airports/air cargo, inland waterways, logistics parks, warehouses and cold-chain infrastructure."
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 17
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_workstream_02",
+        "subject": "India industrial utilities and resource geography: power generation, transmission, reliability, industrial power pricing where comparable, natural-gas/LNG networks, hydrogen and industrial-gas clusters, water availability and industrial water systems, mining regions, mineral belts, steel and nonferrous clusters, petrochemical and chemical clusters.",
+        "predicate": "workstream_evidence_statement",
+        "text": "| Total Installed Power Capacity | 548,858 | MW | 30-Jun-2026 | MEASURED [1] |",
+        "numeric_ranges": [
+          {
+            "raw": "548",
+            "min": 548.0,
+            "max": 548.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "858",
+            "min": 858.0,
+            "max": 858.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "30",
+            "min": 30.0,
+            "max": 30.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "2026",
+            "min": 2026.0,
+            "max": 2026.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "1",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL_OR_UNSPECIFIED",
+        "dates": [
+          "2026"
+        ],
+        "source_url": "https://cea.nic.in/wp-content/uploads/installed/2026/06/Website_June.pdf",
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "India industrial utilities and resource geography: power generation, transmission, reliability, industrial power pricing where comparable, natural-gas/LNG networks, hydrogen and industrial-gas clusters, water availability and industrial water systems, mining regions, mineral belts, steel and nonferrous clusters, petrochemical and chemical clusters."
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 26
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_workstream_03",
+        "subject": "India sector clusters and industrial research infrastructure: electronics and semiconductor ecosystems, automotive and machine-tool clusters, aerospace and defence clusters, major test/research infrastructure, industrial parks and SEZs, state-level specialization.",
+        "predicate": "workstream_evidence_statement",
+        "text": "| **WDFC Length** | 1,506 | km | Dadri (UP) to JNPT (MH) | MEASURED [1] |",
+        "numeric_ranges": [
+          {
+            "raw": "1",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "506",
+            "min": 506.0,
+            "max": 506.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "1",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL_OR_UNSPECIFIED",
+        "dates": [],
+        "source_url": "https://ism.gov.in/",
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "India sector clusters and industrial research infrastructure: electronics and semiconductor ecosystems, automotive and machine-tool clusters, aerospace and defence clusters, major test/research infrastructure, industrial parks and SEZs, state-level specialization."
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 25
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_workstream_04",
+        "subject": "Global benchmark industrial clusters: Yangtze River Delta, Pearl River Delta/Greater Bay Area, Japan, South Korea, Taiwan, Germany/Central Europe, United States industrial corridors, plus other relevant clusters.",
+        "predicate": "workstream_evidence_statement",
+        "text": "| **Shanghai Yangshan Port** | Container Throughput | 28.71 Million TEU | **MEASURED** [1] |",
+        "numeric_ranges": [
+          {
+            "raw": "28.71",
+            "min": 28.71,
+            "max": 28.71,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "1",
+            "min": 1.0,
+            "max": 1.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL_OR_UNSPECIFIED",
+        "dates": [],
+        "source_url": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260107/981624ec9df14b6a9810893afcf1cad8.html",
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "Global benchmark industrial clusters: Yangtze River Delta, Pearl River Delta/Greater Bay Area, Japan, South Korea, Taiwan, Germany/Central Europe, United States industrial corridors, plus other relevant clusters."
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 14
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_workstream_05",
+        "subject": "Cross-cutting logistics chokepoints and route dependencies",
+        "predicate": "workstream_evidence_statement",
+        "text": "*   **Maritime Throughput (Hormuz):** 95% traffic drop from ~130 ships/day to ~6-7 ships/day (MEASURED, 2026) [11].",
+        "numeric_ranges": [
+          {
+            "raw": "95%",
+            "min": 95.0,
+            "max": 95.0,
+            "comparator": "=",
+            "unit": "%"
+          },
+          {
+            "raw": "~130",
+            "min": 130.0,
+            "max": 130.0,
+            "comparator": "~",
+            "unit": ""
+          },
+          {
+            "raw": "~6-7",
+            "min": 6.0,
+            "max": 7.0,
+            "comparator": "~",
+            "unit": ""
+          },
+          {
+            "raw": "2026",
+            "min": 2026.0,
+            "max": 2026.0,
+            "comparator": "=",
+            "unit": ""
+          },
+          {
+            "raw": "11",
+            "min": 11.0,
+            "max": 11.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [
+          "%"
+        ],
+        "geography": "GLOBAL_OR_UNSPECIFIED",
+        "dates": [
+          "2026"
+        ],
+        "source_url": "https://www.facebook.com/UNCTAD/posts/a-95-drop-in-traffic-through-the-strait-of-hormuz-from-around-130-ships-a-day-to/",
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "Cross-cutting logistics chokepoints and route dependencies"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 20
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "claim_id": "clm_manus18_workstream_06",
+        "subject": "Sector infrastructure requirements and ontology",
+        "predicate": "workstream_evidence_statement",
+        "text": "> - **MEASURED**: Semiconductor UPW resistivity (>18.2 MΩ·cm) [9].",
+        "numeric_ranges": [
+          {
+            "raw": ">18.2",
+            "min": 18.2,
+            "max": 18.2,
+            "comparator": ">",
+            "unit": ""
+          },
+          {
+            "raw": "9",
+            "min": 9.0,
+            "max": 9.0,
+            "comparator": "=",
+            "unit": ""
+          }
+        ],
+        "units": [],
+        "geography": "GLOBAL_OR_UNSPECIFIED",
+        "dates": [],
+        "source_url": "https://www.iea.org/reports/energy-technology-perspectives-2024/industry",
+        "class": "industrial_geography_claim",
+        "proposed_epistemic": "MEASURED",
+        "caveat": "Facility existence, announced investment, installed machinery, export presence or aggregate throughput does not prove qualified available capability.",
+        "unknowns": [],
+        "conflicts": [],
+        "entity_candidates": [
+          "Sector infrastructure requirements and ontology"
+        ],
+        "escalation": "resolve facility/route denominator and source scope before model use",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 39
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "entities": [
+      {
+        "entity_id": "IN-NICDP-DHOLERA",
+        "entity_name": "Dholera SIR",
+        "entity_type": "IndustrialNode",
+        "country_or_state": "India/Gujarat",
+        "latitude": "22.25",
+        "longitude": "72.18",
+        "coordinate_quality": "Approximate regional point",
+        "status_or_evidence": "Trunk infrastructure reported almost complete in activation area; qualified output UNKNOWN",
+        "primary_sources": "1;2",
+        "notes": "Use regional coordinate only; 920 sq km overall and 22.54 sq km activation area reported by PIB",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 2
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-CL-SANAND",
+        "entity_name": "Sanand",
+        "entity_type": "IndustrialCluster",
+        "country_or_state": "India/Gujarat",
+        "latitude": "22.99",
+        "longitude": "72.38",
+        "coordinate_quality": "Approximate town point",
+        "status_or_evidence": "Semiconductor/electronics and automotive cluster reported; qualified output UNKNOWN",
+        "primary_sources": "8;9",
+        "notes": "Map utilities and suppliers at facility level",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 3
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PCPIR-DAHEJ",
+        "entity_name": "Dahej PCPIR",
+        "entity_type": "PCPIR",
+        "country_or_state": "India/Gujarat",
+        "latitude": "21.71",
+        "longitude": "72.64",
+        "coordinate_quality": "Approximate regional point",
+        "status_or_evidence": "Operational PCPIR reported; terminal/CETP design figures reported",
+        "primary_sources": "7",
+        "notes": "Store each port/terminal/CETP separately",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 4
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PORT-MUNDRA",
+        "entity_name": "Mundra Port",
+        "entity_type": "Port",
+        "country_or_state": "India/Gujarat",
+        "latitude": "22.74",
+        "longitude": "69.72",
+        "coordinate_quality": "Approximate port point",
+        "status_or_evidence": "Operational gateway; spare capacity UNKNOWN",
+        "primary_sources": "3",
+        "notes": "Container and bulk gateway",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 5
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PORT-JNPA",
+        "entity_name": "Jawaharlal Nehru Port Authority",
+        "entity_type": "Port",
+        "country_or_state": "India/Maharashtra",
+        "latitude": "18.95",
+        "longitude": "72.95",
+        "coordinate_quality": "Approximate port point",
+        "status_or_evidence": "8.173276m TEUs FY2025-26 reported by JNPA; spare capacity UNKNOWN",
+        "primary_sources": "4",
+        "notes": "Container and ICD-rake gateway",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 6
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-NICDP-SBIA",
+        "entity_name": "Shendra-Bidkin Industrial Area",
+        "entity_type": "IndustrialNode",
+        "country_or_state": "India/Maharashtra",
+        "latitude": "20.00",
+        "longitude": "75.70",
+        "coordinate_quality": "Approximate regional point",
+        "status_or_evidence": "Trunk infrastructure reported complete",
+        "primary_sources": "1;2",
+        "notes": "Automotive EV aerospace electronics focus reported",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 7
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-CL-PUNE-CHAKAN",
+        "entity_name": "Pune-Chakan",
+        "entity_type": "IndustrialCluster",
+        "country_or_state": "India/Maharashtra",
+        "latitude": "18.76",
+        "longitude": "73.86",
+        "coordinate_quality": "Approximate cluster point",
+        "status_or_evidence": "Automotive and engineering cluster; qualified output UNKNOWN",
+        "primary_sources": "2",
+        "notes": "Map road congestion and rail access",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 8
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-CL-KALINGANAGAR",
+        "entity_name": "Kalinganagar",
+        "entity_type": "IndustrialCluster",
+        "country_or_state": "India/Odisha",
+        "latitude": "20.96",
+        "longitude": "86.10",
+        "coordinate_quality": "Approximate regional point",
+        "status_or_evidence": "Steel/metals cluster; plant-level qualified output UNKNOWN",
+        "primary_sources": "6",
+        "notes": "Map ore rail water and port links",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 9
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "facilities": [
+      {
+        "entity_id": "IN-NICDP-DHOLERA",
+        "entity_name": "Dholera SIR",
+        "entity_type": "IndustrialNode",
+        "status_or_evidence": "Trunk infrastructure reported almost complete in activation area; qualified output UNKNOWN",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 2
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PCPIR-DAHEJ",
+        "entity_name": "Dahej PCPIR",
+        "entity_type": "PCPIR",
+        "status_or_evidence": "Operational PCPIR reported; terminal/CETP design figures reported",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 4
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-NICDP-SBIA",
+        "entity_name": "Shendra-Bidkin Industrial Area",
+        "entity_type": "IndustrialNode",
+        "status_or_evidence": "Trunk infrastructure reported complete",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 7
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PCPIR-PARADEEP",
+        "entity_name": "Paradeep PCPIR",
+        "entity_type": "PCPIR",
+        "status_or_evidence": "Operational PCPIR; IOCL 15 MMTPA refinery anchor reported",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 10
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PROJ-JAGIROAD",
+        "entity_name": "Jagiroad-Morigaon",
+        "entity_type": "IndustrialProjectArea",
+        "status_or_evidence": "Semiconductor packaging project reported; qualified output UNKNOWN",
+        "coordinate_quality": "Approximate district point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 14
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "TW-CL-STSP",
+        "entity_name": "Southern Taiwan Science Park/Tainan",
+        "entity_type": "SciencePark",
+        "status_or_evidence": "NT$2.97054tn turnover and 98513 workers in 2025 reported by STSP",
+        "coordinate_quality": "Approximate park/metro point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 18
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "TW-CL-HSINCHU",
+        "entity_name": "Hsinchu Science Park",
+        "entity_type": "SciencePark",
+        "status_or_evidence": "TSMC headquarters and facility leases confirmed in SEC filing",
+        "coordinate_quality": "Approximate park point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 19
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "US-CL-TAYLOR",
+        "entity_name": "Taylor semiconductor project area",
+        "entity_type": "IndustrialProjectArea",
+        "status_or_evidence": "Project location; facility-level water/power/qualified output UNKNOWN",
+        "coordinate_quality": "Approximate city point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 24
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "locations": [
+      {
+        "entity_id": "IN-NICDP-DHOLERA",
+        "entity_name": "Dholera SIR",
+        "country_or_state": "India/Gujarat",
+        "coordinates": {
+          "latitude": "22.25",
+          "longitude": "72.18"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 2
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-CL-SANAND",
+        "entity_name": "Sanand",
+        "country_or_state": "India/Gujarat",
+        "coordinates": {
+          "latitude": "22.99",
+          "longitude": "72.38"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate town point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 3
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PCPIR-DAHEJ",
+        "entity_name": "Dahej PCPIR",
+        "country_or_state": "India/Gujarat",
+        "coordinates": {
+          "latitude": "21.71",
+          "longitude": "72.64"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 4
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PORT-MUNDRA",
+        "entity_name": "Mundra Port",
+        "country_or_state": "India/Gujarat",
+        "coordinates": {
+          "latitude": "22.74",
+          "longitude": "69.72"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate port point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 5
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-PORT-JNPA",
+        "entity_name": "Jawaharlal Nehru Port Authority",
+        "country_or_state": "India/Maharashtra",
+        "coordinates": {
+          "latitude": "18.95",
+          "longitude": "72.95"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate port point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 6
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-NICDP-SBIA",
+        "entity_name": "Shendra-Bidkin Industrial Area",
+        "country_or_state": "India/Maharashtra",
+        "coordinates": {
+          "latitude": "20.00",
+          "longitude": "75.70"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 7
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-CL-PUNE-CHAKAN",
+        "entity_name": "Pune-Chakan",
+        "country_or_state": "India/Maharashtra",
+        "coordinates": {
+          "latitude": "18.76",
+          "longitude": "73.86"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate cluster point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 8
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "entity_id": "IN-CL-KALINGANAGAR",
+        "entity_name": "Kalinganagar",
+        "country_or_state": "India/Odisha",
+        "coordinates": {
+          "latitude": "20.96",
+          "longitude": "86.10"
+        },
+        "resolution_status": "FUZZY_STAGING",
+        "coordinate_quality": "Approximate regional point",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 9
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "corridors": [
+      {
+        "corridor_id": "IN-ROUTE-SILIGURI",
+        "name": "Siliguri Corridor",
+        "kind": "entity_route",
+        "resolution_status": "FUZZY_STAGING",
+        "exact_locator": {
+          "artifact": "entities.csv",
+          "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+          "line": 16
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "corridor_id": "route_manus18_01",
+        "name": "Dadri/NCR–WDFC–JNPA/Mumbai",
+        "kind": "route_table",
+        "statement": "Dadri/NCR–WDFC–JNPA/Mumbai | Containerized machinery, electronics, automotive and general manufacturing inputs/outputs | JNPA reports 7.30m TEUs in FY2024-25 and 8.17m in FY2025-26, plus 1.15m TEUs through ICD rakes in FY2025-26.[4] | Mundra, Kandla, Pipavav, rail/road diversion; substitution depends on shipping-line calls, rail paths and inland cost | Section-level dependable rail capacity, terminal dwell by commodity, peak spare capacity",
+        "resolution_status": "FUZZY_STAGING",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "artifact_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "line": 195
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "corridor_id": "route_manus18_02",
+        "name": "NCR–EDFC–eastern ports",
+        "kind": "route_table",
+        "statement": "NCR–EDFC–eastern ports | Coal, steel, bulk materials and northern/eastern industrial flows | DPIIT and PIB establish DFC/corridor policy integration; facility-level flow data requires DFCCIL/Indian Railways records.[1] [2] | Conventional rail, road, coastal shipping, inland waterways | Section-by-section train paths, axle-load mix, rake turnaround and commodity allocation",
+        "resolution_status": "FUZZY_STAGING",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "artifact_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "line": 196
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "corridor_id": "route_manus18_06",
+        "name": "Assam/Northeast–Siliguri–rest of India",
+        "kind": "route_table",
+        "statement": "Assam/Northeast–Siliguri–rest of India | Consumer, industrial and construction supply; proposed high-tech packaging flows | Official node and waterway sources establish policy/logistics context; qualified facility output is not established.[1] [16] | Bangladesh routes where politically/operationally available, air cargo, NW-2, alternate rail/road alignments | Border capacity, transshipment rules, flood resilience, route security, annual MMLP throughput",
+        "resolution_status": "FUZZY_STAGING",
+        "exact_locator": {
+          "artifact": "FORGE WORLD — Industrial Geography, Logistics & Infrastructure Atlas.md",
+          "artifact_sha256": "2f1a205c2e022419c767f045d72565b520cdbae052d1dfa3cb725c7d834d3d49",
+          "line": 200
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "R001",
+        "subject_id": "IN-NICDP-DHOLERA",
+        "relation_type": "DEPENDS_ON_NODE",
+        "object_id": "IN-PORT-MUNDRA",
+        "evidence_label": "DERIVED",
+        "source_ids": "1;2;3",
+        "scope_or_condition": "Potential western gateway relationship",
+        "notes": "Must validate actual route and service",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 2
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "RESOLVED_ID",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation_id": "R002",
+        "subject_id": "IN-NICDP-DHOLERA",
+        "relation_type": "DEPENDS_ON_NODE",
+        "object_id": "IN-CL-SANAND",
+        "evidence_label": "REPORTED",
+        "source_ids": "8;9",
+        "scope_or_condition": "Regional semiconductor/electronics ecosystem",
+        "notes": "Cluster adjacency does not prove supplier qualification",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 3
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "RESOLVED_ID",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation_id": "R003",
+        "subject_id": "IN-PCPIR-DAHEJ",
+        "relation_type": "SERVED_BY_UTILITY",
+        "object_id": "IN-PORT-MUNDRA",
+        "evidence_label": "ASSUMPTION",
+        "source_ids": "",
+        "scope_or_condition": "Western port system alternative",
+        "notes": "Needs route and commodity compatibility validation",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 4
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "RESOLVED_ID",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation_id": "R005",
+        "subject_id": "IN-PCPIR-DAHEJ",
+        "relation_type": "LOCATED_IN",
+        "object_id": "IN-NICDP-DHOLERA",
+        "evidence_label": "UNKNOWN",
+        "source_ids": "",
+        "scope_or_condition": "Same broader Gujarat geography only",
+        "notes": "Not physically co-located; relationship should be region-based if used",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 6
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "RESOLVED_ID",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation_id": "R008",
+        "subject_id": "IN-PCPIR-PARADEEP",
+        "relation_type": "ANCHORS",
+        "object_id": "Facility-IOCL-Paradeep",
+        "evidence_label": "REPORTED",
+        "source_ids": "7",
+        "scope_or_condition": "15 MMTPA refinery reported as anchor",
+        "notes": "Refinery capacity is design/operational claim and not spare capacity",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 9
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "UNRESOLVED_ID_STAGING",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation_id": "R009",
+        "subject_id": "IN-PCPIR-PARADEEP",
+        "relation_type": "DEPENDS_ON_NODE",
+        "object_id": "IN-PORT-VIZAG",
+        "evidence_label": "ASSUMPTION",
+        "source_ids": "",
+        "scope_or_condition": "Eastern coastal gateway alternative",
+        "notes": "Needs actual route mapping",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 10
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "RESOLVED_ID",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation_id": "R010",
+        "subject_id": "IN-CL-CHENNAI",
+        "relation_type": "DEPENDS_ON_NODE",
+        "object_id": "IN-PORT-CHENNAI",
+        "evidence_label": "REPORTED",
+        "source_ids": "2",
+        "scope_or_condition": "Automotive/electronics export-import gateway",
+        "notes": "Port entity should be expanded",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 11
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "UNRESOLVED_ID_STAGING",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation_id": "R015",
+        "subject_id": "CN-PORT-SHANGHAI",
+        "relation_type": "ANCHORS",
+        "object_id": "Cluster-YRD",
+        "evidence_label": "DERIVED",
+        "source_ids": "12",
+        "scope_or_condition": "Port gateway to YRD manufacturing system",
+        "notes": "Industrial cluster boundary not formally defined in source",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 16
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "UNRESOLVED_ID_STAGING",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation_id": "R021",
+        "subject_id": "US-PORT-LA",
+        "relation_type": "CONNECTED_BY",
+        "object_id": "InfrastructureLink-OnDockRail",
+        "evidence_label": "MEASURED",
+        "source_ids": "13",
+        "scope_or_condition": "122 miles rail and five on-dock railyards",
+        "notes": "Physical asset presence not spare capacity",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 22
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "UNRESOLVED_ID_STAGING",
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "relation_id": "R030",
+        "subject_id": "IN-CL-TUMAKURU",
+        "relation_type": "QUALIFIED_FOR",
+        "object_id": "Capability-MachineTool-Aerospace",
+        "evidence_label": "REPORTED",
+        "source_ids": "2;10",
+        "scope_or_condition": "Cluster specialization reported",
+        "notes": "Specific certification scope and annual output UNKNOWN",
+        "exact_locator": {
+          "artifact": "relations.csv",
+          "artifact_sha256": "f819a6940e8a15112a4d883245c044a3abe9ce691bd1ff6198ff557ea51511f2",
+          "line": 31
+        },
+        "subject_resolution": "RESOLVED_ID",
+        "object_resolution": "UNRESOLVED_ID_STAGING",
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "unknowns": [
+      {
+        "unknown_id": "U-01",
+        "variable_or_claim": "Qualified annual throughput of each NICDP node",
+        "industrial_consequence": "Determines whether node can satisfy production objective",
+        "current_evidence_status": "UNKNOWN",
+        "exact_follow_up_question": "What output and utility service has each node delivered by month and sector since commissioning?",
+        "next_source_or_method": "NICDC SPV reports plot allotment utility certificates tenant filings",
+        "exact_locator": {
+          "artifact": "unknown_ledger.csv",
+          "artifact_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "line": 2
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-02",
+        "variable_or_claim": "Section-level dependable capacity and spare paths on WDFC/EDFC",
+        "industrial_consequence": "Determines route substitutability",
+        "current_evidence_status": "UNKNOWN",
+        "exact_follow_up_question": "How many train paths and tonnes by section are available at peak and normal periods?",
+        "next_source_or_method": "DFCCIL annual reports train-path and terminal interface data",
+        "exact_locator": {
+          "artifact": "unknown_ledger.csv",
+          "artifact_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "line": 3
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-03",
+        "variable_or_claim": "JNPA/Mundra spare container capacity by terminal and peak month",
+        "industrial_consequence": "Needed for port diversion",
+        "current_evidence_status": "UNKNOWN",
+        "exact_follow_up_question": "What is observed peak yard berth rail and gate utilization by terminal?",
+        "next_source_or_method": "Port authority terminal operator and carrier data",
+        "exact_locator": {
+          "artifact": "unknown_ledger.csv",
+          "artifact_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "line": 4
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-06",
+        "variable_or_claim": "Comparable industrial power tariffs across states",
+        "industrial_consequence": "Determines location economics",
+        "current_evidence_status": "CONFLICTED",
+        "exact_follow_up_question": "How do tariffs normalize for voltage demand charge time-of-day open access cross-subsidy and taxes?",
+        "next_source_or_method": "State tariff orders and utility bills",
+        "exact_locator": {
+          "artifact": "unknown_ledger.csv",
+          "artifact_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "line": 7
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-10",
+        "variable_or_claim": "Qualified wafer/day package/day and yield by Indian semiconductor projects",
+        "industrial_consequence": "Separates announced from operating capability",
+        "current_evidence_status": "UNKNOWN",
+        "exact_follow_up_question": "Which facilities have customer qualification and audited production by process/package?",
+        "next_source_or_method": "ISM project milestones company filings customer qualification",
+        "exact_locator": {
+          "artifact": "unknown_ledger.csv",
+          "artifact_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "line": 11
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-13",
+        "variable_or_claim": "Siliguri route closure probability and recovery time",
+        "industrial_consequence": "Quantifies Northeast risk",
+        "current_evidence_status": "UNKNOWN/SCENARIO",
+        "exact_follow_up_question": "What historical closures and recovery distributions exist for road rail bridges and border?",
+        "next_source_or_method": "NHAI Indian Railways NDMA event database",
+        "exact_locator": {
+          "artifact": "unknown_ledger.csv",
+          "artifact_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "line": 14
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-20",
+        "variable_or_claim": "Nagoya hydrogen project commissioning and actual use",
+        "industrial_consequence": "Separates feasibility from decarbonization",
+        "current_evidence_status": "DESIGN/VERIFICATION REPORTED; OUTPUT UNKNOWN",
+        "exact_follow_up_question": "Has the NEDO project commissioned equipment and what fuel use is measured?",
+        "next_source_or_method": "NEDO milestones port safety approvals fuel records",
+        "exact_locator": {
+          "artifact": "unknown_ledger.csv",
+          "artifact_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "line": 21
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "unknown_id": "U-24",
+        "variable_or_claim": "End-to-end disruption recovery time for key routes",
+        "industrial_consequence": "Inventory and substitution policy",
+        "current_evidence_status": "UNKNOWN",
+        "exact_follow_up_question": "What route event cost diversion and production-impact distributions exist?",
+        "next_source_or_method": "AIS port rail road outage and company event data",
+        "exact_locator": {
+          "artifact": "unknown_ledger.csv",
+          "artifact_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "line": 25
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "conflicts": [
+      {
+        "conflict_id": "cnf_manus18_workstream_01",
+        "topic": "India national transport and logistics infrastructure: DMIC and other industrial corridors, Dedicated Freight Corridors, major container/bulk/RO-RO ports, port-hinterland links, freight rail, highways, airports/air cargo, inland waterways, logistics parks, warehouses and cold-chain infrastructure.",
+        "statement": "*   **Logistics Cost:** Figures for \"logistics cost as % of GDP\" vary between **13%** and **16%** across sources due to differing calculation methodologies (e.g., inclusion of inventory carrying costs) [**CONFLICTED**].",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 36
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "conflict_id": "cnf_manus18_workstream_03",
+        "topic": "India sector clusters and industrial research infrastructure: electronics and semiconductor ecosystems, automotive and machine-tool clusters, aerospace and defence clusters, major test/research infrastructure, industrial parks and SEZs, state-level specialization.",
+        "statement": "*   **Ford Chennai Re-entry:** Reports of Ford’s return to the Chennai cluster remain **CONFLICTED** as of Aug 2026 [REPORTED].",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 46
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "conflict_id": "cnf_manus18_workstream_04",
+        "topic": "Global benchmark industrial clusters: Yangtze River Delta, Pearl River Delta/Greater Bay Area, Japan, South Korea, Taiwan, Germany/Central Europe, United States industrial corridors, plus other relevant clusters.",
+        "statement": "*   **CONFLICTED:** Reports on Taiwan's nighttime reserve margin vary between government claims of >10% and independent editorial models suggesting single-digit margins during summer peaks [3].",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 35
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "conflict_id": "cnf_manus18_workstream_05",
+        "topic": "Cross-cutting logistics chokepoints and route dependencies",
+        "statement": "*   **CONFLICTED:** Reports on Mundra port congestion vary; official statements claim \"normal operations\" while carrier reports indicate 49-day delays (CONFLICTED, 2026) [6].",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 41
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "conflict_id": "cnf_manus18_workstream_06",
+        "topic": "Sector infrastructure requirements and ontology",
+        "statement": "2.  **CONFLICTED**: Estimates for \"Green Steel\" water consumption vary by **40%** depending on the cooling technology assumed (Air-cooled vs. Water-cooled).",
+        "exact_locator": {
+          "artifact": "forge_world_research_workstreams.json",
+          "artifact_sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+          "line": 72
+        },
+        "promotion_status": "staging_candidate"
+      },
+      {
+        "conflict_id": "cnf_manus18_U-06",
+        "topic": "Industrial tariff comparability across Indian states",
+        "statement": "Comparable industrial power tariffs across states",
+        "current_status": "CONFLICTED",
+        "exact_locator": {
+          "artifact": "unknown_ledger.csv",
+          "artifact_sha256": "e204a012a3634b20d65e862e055fad6ed51855dde468f6350bdeaa156d9f987e",
+          "line": 7
+        },
+        "promotion_status": "staging_candidate"
+      }
+    ],
+    "duplicates": [
+      {
+        "sha256": "7fa3454ab7f392518ba89fddb181a9522fb295e6ff4ada612bf9023e1a4f1120",
+        "artifacts": [
+          {
+            "path": "FORGE WORLD Research Notes.md",
+            "bytes": 20071
+          },
+          {
+            "path": "forge_world_research_notes.md",
+            "bytes": 20071
+          }
+        ],
+        "duplicate_extra_artifacts": 1
+      },
+      {
+        "sha256": "dace6ec8bb3d6304d9749812907ea3ac7e67b7e6bf35f6e95a0acbf9b266b555",
+        "artifacts": [
+          {
+            "path": "forge_world_research_workstreams.json",
+            "bytes": 61491
+          },
+          {
+            "path": "raw_workstream_outputs.json",
+            "bytes": 61491
+          }
+        ],
+        "duplicate_extra_artifacts": 1
+      }
+    ],
+    "malformed": [
+      {
+        "artifact": "entities.csv",
+        "artifact_sha256": "ba2eff4e13137862951758ea4a9b6a8d1efca921fc9b4f0501a97914f287370f",
+        "line": 13,
+        "rule_id": "entities.merge_unquoted_primary_source_ids_fields_8_9",
+        "raw_field_count": 11,
+        "repaired_field_count": 10,
+        "raw_row_sha256": "28786d122051920108c479f32c950549633741b40c7d686ba6b485634d4216e3",
+        "repaired_row_sha256": "6a432a16369408ce94563819aa0c7c3403f3ee02d62489e6e14f9d9c14100818",
+        "raw_fields": [
+          "IN-CL-TUMAKURU",
+          "Bengaluru-Tumakuru",
+          "IndustrialCluster",
+          "India/Karnataka",
+          "13.34",
+          "77.10",
+          "Approximate cluster point",
+          "Machine-tool aerospace precision engineering cluster reported",
+          "2",
+          "10",
+          "Map test certification suppliers and rail/road"
+        ],
+        "repaired_fields": [
+          "IN-CL-TUMAKURU",
+          "Bengaluru-Tumakuru",
+          "IndustrialCluster",
+          "India/Karnataka",
+          "13.34",
+          "77.10",
+          "Approximate cluster point",
+          "Machine-tool aerospace precision engineering cluster reported",
+          "2,10",
+          "Map test certification suppliers and rail/road"
+        ],
+        "raw_file_unchanged": true,
+        "repair_scope": "in_memory_parse_only"
+      },
+      {
+        "artifact": "source_register.csv",
+        "artifact_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+        "line": 15,
+        "rule_id": "source_register.merge_unquoted_reliability_note_fields_8_9",
+        "raw_field_count": 10,
+        "repaired_field_count": 9,
+        "raw_row_sha256": "4b8888002b1f0b94a19a16ffbfe45e439efedf5803f5f7ad7fcf44452899de57",
+        "repaired_row_sha256": "81e6444c9a1f6c6195a7e19f7cc8121850f243e620586ced9c1feb93b212f4a5",
+        "raw_fields": [
+          "14",
+          "Toyota Tsusho/Taiyo Nippon Sanso/Toho Gas",
+          "Hydrogen supply infrastructure Port of Nagoya",
+          "2025-05-27",
+          "https://www.toyota-tsusho.com/english/press/detail/250527_006588.html",
+          "Company/NEDO-linked release",
+          "Primary",
+          "Hydrogen logistics design verification and feasibility potential",
+          "1",
+          "500 t/y is potential not commissioned throughput"
+        ],
+        "repaired_fields": [
+          "14",
+          "Toyota Tsusho/Taiyo Nippon Sanso/Toho Gas",
+          "Hydrogen supply infrastructure Port of Nagoya",
+          "2025-05-27",
+          "https://www.toyota-tsusho.com/english/press/detail/250527_006588.html",
+          "Company/NEDO-linked release",
+          "Primary",
+          "Hydrogen logistics design verification and feasibility potential",
+          "1,500 t/y is potential not commissioned throughput"
+        ],
+        "raw_file_unchanged": true,
+        "repair_scope": "in_memory_parse_only"
+      },
+      {
+        "artifact": "source_register.csv",
+        "artifact_sha256": "4b6c413df291d21abfcd8d763f245d9c2355b91d4e3267fac24f7fd1f639ce52",
+        "line": 24,
+        "rule_id": "source_register.merge_unquoted_reliability_note_fields_8_9",
+        "raw_field_count": 10,
+        "repaired_field_count": 9,
+        "raw_row_sha256": "d1a34a6375f852fbf02c634c37ecb0b08e6b45ced8081e87dd360a64fb10c1bc",
+        "repaired_row_sha256": "6a6fe59b0d50d5e69a5a073346a6beac0b72748b6e23a3ea0da781e0ecef158b",
+        "raw_fields": [
+          "23",
+          "Ideas for India",
+          "Maritime chokepoints: India energy and trade vulnerabilities",
+          "2026",
+          "https://www.ideasforindia.in/topics/trade/maritime-chokepoints-indias-energy-and-trade-vulnerabilities-and-strategic-responses",
+          "Analytical article",
+          "Secondary",
+          "Structural maritime/energy exposure and chokepoint framing",
+          "Use for discovery and scenario framing",
+          " not sole basis for current event claims"
+        ],
+        "repaired_fields": [
+          "23",
+          "Ideas for India",
+          "Maritime chokepoints: India energy and trade vulnerabilities",
+          "2026",
+          "https://www.ideasforindia.in/topics/trade/maritime-chokepoints-indias-energy-and-trade-vulnerabilities-and-strategic-responses",
+          "Analytical article",
+          "Secondary",
+          "Structural maritime/energy exposure and chokepoint framing",
+          "Use for discovery and scenario framing, not sole basis for current event claims"
+        ],
+        "raw_file_unchanged": true,
+        "repair_scope": "in_memory_parse_only"
+      }
+    ]
+  },
+  "accounting": {
+    "artifacts": 14,
+    "sources": 24,
+    "source_url_candidates": 139,
+    "claims": {
+      "atlas_table_rows": 141,
+      "sector_matrix_requirement_rows": 12,
+      "numeric_evidence_workstream_rows": 72,
+      "bounded_claim_samples": 14
+    },
+    "entities": 23,
+    "facilities": 8,
+    "locations": 23,
+    "corridors": 7,
+    "relations": 30,
+    "unknown": 24,
+    "conflicts": 6,
+    "duplicates": {
+      "artifact_groups": 2,
+      "extra_artifacts": 2,
+      "structured_records": 0
+    },
+    "malformed": {
+      "csv_rows": 3,
+      "unrepaired": 0
+    },
+    "skipped": {
+      "artifacts": 0,
+      "execution_units": 1
+    },
+    "canonical_promotions": 0
+  },
+  "blockers": [
+    {
+      "blocker_id": "B18-01",
+      "topic": "qualified_facility_and_utility_capacity",
+      "count": 24,
+      "detail": "Node, facility, port, route and utility records mostly lack dependable qualified throughput, spare capacity, allocation, utilization or reliability denominators."
+    },
+    {
+      "blocker_id": "B18-02",
+      "topic": "geography_resolution",
+      "count": 23,
+      "detail": "All entity coordinates are approximate regional/port/cluster points; unresolved relation endpoint IDs remain staging and no geographic promotion is made."
+    },
+    {
+      "blocker_id": "B18-03",
+      "topic": "relation_endpoint_completeness",
+      "count": 20,
+      "detail": "Relations reference 20 unique resources, utilities, infrastructure links, facilities or clusters absent from entities.csv."
+    },
+    {
+      "blocker_id": "B18-04",
+      "topic": "source_and_scope_conflicts",
+      "count": 6,
+      "detail": "Tariff, logistics-cost, port-congestion, water-intensity, reserve-margin and facility-status claims retain conflicting scopes/denominators."
+    },
+    {
+      "blocker_id": "B18-05",
+      "topic": "csv_malformed_rows",
+      "count": 3,
+      "detail": "Three unquoted-comma rows were repaired only in-memory; raw files remain byte-identical and repair metadata is attached."
+    }
+  ],
+  "validation": {
+    "json_tool": "PASS (python -m json.tool)",
+    "raw_zip_match": true,
+    "repair_validation": true,
+    "promotion_count": 0,
+    "output": "C:\\GitHub\\forge-world\\research\\homi\\waves\\wave2\\manus_18_report.json"
+  }
+}

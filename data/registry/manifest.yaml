@@ -25,6 +25,16 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "The CNC pack names grinding routes/equipment; no qualified Indian output is inferred."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [precision_grinder]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The NdFeB route requires a precision grinder; an equipment-class dependency is not a facility or qualified capability claim."
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_precision_grinding]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Primary-source promotion establishes reported Indian grinding-machine manufacture; model-specific precision, qualification, and effective capacity remain UNKNOWN."
 
   - id: "cap:metrology"
     name: "Industrial metrology"
@@ -54,6 +64,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "The nuclear pack references metrology/labs and an explicit evidence gap; qualified throughput remains UNKNOWN."
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_metrology]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "STQC reports accredited calibration/test scope; method scope, uncertainty, traceability, queue, and throughput remain evidence gaps."
 
   - id: "cap:power-electronics"
     name: "Power electronics"
@@ -73,6 +88,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "The CNC pack names servo-drive/power routes; qualification and effective supply remain UNKNOWN."
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_power_electronics]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "ABB's reported Peenya drive-module line establishes scoped production presence, not qualified effective capacity."
 
   - id: "cap:battery-cell"
     name: "Battery-cell manufacturing"
@@ -116,6 +136,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "The CNC pack includes a permanent-magnet material input; grade-compatible supply is UNKNOWN."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [mat_ndfeb_block, rec_ndfeb_magnet, qual_ndfeb_motor_grade, cc_india_ndfeb_magnets]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The foundational pack exposes material, process, qualification, and explicit India UNKNOWN records; it does not establish available magnet capacity."
 
   - id: "cap:hirel-qualification"
     name: "High-reliability (HiRel) qualification"
@@ -191,6 +216,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Robot crossed-roller bearing requirements reuse the bearing capability concept; grade-qualified capacity remains UNKNOWN."
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_precision_bearings]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "NBC's reported manufacturing network establishes family-level production scope; precision class and variant-specific qualified supply remain UNKNOWN."
 
   - id: "cap:precision-reducers"
     name: "Precision reducer manufacturing"
@@ -224,6 +254,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Machine-tool spindle and feed motors share motor-production primitives but not necessarily qualification."
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_electric_motors]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "WEG's reported Hosur scope establishes industrial-motor manufacture, not objective-grade qualification or effective supply."
 
   - id: "cap:encoders-position-sensing"
     name: "Encoder and position-sensing systems"
@@ -243,6 +278,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Machine-axis feedback shares encoder primitives while retaining pack-specific accuracy gates."
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_encoders]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Reported Indian encoder manufacture establishes product-family presence; accuracy traceability and objective qualification remain UNKNOWN."
 
   - id: "cap:structural-castings"
     name: "Structural casting and stabilization"
@@ -338,6 +378,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Nuclear safety electronics require a stricter qualification envelope; this is ontology reuse only."
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_industrial_electronics]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "BEL's reported Bengaluru manufacturing/test scope establishes presence while product qualification and scalable output remain UNKNOWN."
 
   - id: "cap:wiring-harnesses"
     name: "Wiring-harness manufacturing"
@@ -385,6 +430,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Material-chain nodes expose beneficiation dependencies; reserves or ore occurrence are not usable supply."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [mat_ilmenite_concentrate, mat_ree_concentrate_chloride, mat_spodumene_sc6, mat_graphite_flake]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Intermediate material identities expose beneficiation requirements; they are not reserve-to-supply conversions."
 
   - id: "cap:rare-earth-separation"
     name: "Rare-earth separation and metal/alloy conversion"
@@ -399,6 +449,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Intermediate and oxide-grade nodes map the separation chain; qualified annual output remains UNKNOWN."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [mat_ndpr_oxide, rec_ree_separation, qual_ndpr_oxide_battery_class, cc_india_ree_separation]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The foundational pack separates oxide, process, qualification, and capability-gap records; chloride nameplate is not treated as separated-oxide supply."
 
   - id: "cap:lithium-refining"
     name: "Battery-grade lithium refining"
@@ -413,6 +468,11 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "The pack recursively models lithium conversion; resource announcements are not treated as battery-grade output."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [mat_li2co3_battery, rec_li_carbonate_sc6, qual_li2co3_battery]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Battery-grade material, route, and qualification gate are reusable; concentration shares and projects do not prove available supply."
 
   - id: "cap:cathode-precursors"
     name: "Cathode-material precursor production"
@@ -567,6 +627,176 @@ canonical_capabilities:
         relation: requires_or_represents
         mapping_source: ASSUMPTION
         rationale: "Institutional role and inventory requirements are distinct from target-year usable supply."
+
+  - id: "cap:industrial-product-qualification"
+    name: "Industrial product and process qualification"
+    description: "Requirement revision, process-route approval, first-article/run-at-rate evidence, surveillance, and release for a defined product and customer or regulator."
+    aliases: ["product qualification", "process qualification", "supplier qualification"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: cnc_machining_india
+        entity_ids: [qual_machine_acceptance, qual_precision_bearing, qual_control_system]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Pack-local qualification gates instantiate the family without implying transferable approval across products."
+      - pack_id: humanoid_india
+        entity_ids: [qual_motor_robot_grade, qual_battery_pack, qual_encoder_robot_grade]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Robot-grade qualification gates are product-specific members of the common lifecycle."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [qual_ndfeb_motor_grade, qual_ti_sponge_aero, qual_li2co3_battery, qual_anode_csg, qual_poly_solar]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Material-grade qualification records remain distinct by grade, customer, and status; no supplier approval is inferred."
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_electrolyser_testing]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "NISE's reported test scheme is relevant infrastructure context; accreditation, acceptance authority, access, and throughput remain UNKNOWN."
+
+  - id: "cap:environmental-test"
+    name: "Environmental test infrastructure"
+    description: "Thermal-vacuum, vibration, thermal cycling, EMC, life, and environment-specific acceptance infrastructure."
+    aliases: ["environmental testing", "thermal vacuum test", "vibration qualification"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: smallsat_india
+        entity_ids: [thermal_vac_chamber, qual_space_battery]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "A thermal-vacuum equipment dependency and one space qualification gate identify the family; facility throughput remains UNKNOWN."
+
+  - id: "cap:electrical-steel"
+    name: "Motor-grade electrical steel"
+    description: "Electrical-steel chemistry, sheet processing, insulation, lamination, magnetic-loss characterization, and motor-grade qualification."
+    aliases: ["electrical steel", "motor laminations", "CRGO and CRNO steel"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: humanoid_india
+        entity_ids: [hq_electrical_steel]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The humanoid route names high-grade laminations; grade-specific origin, yield, and supply remain UNKNOWN."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [proj_tata_crgo_phases]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "A process-qualification-stage CRGO project is context only and is never counted as operating grade-qualified capacity."
+
+  - id: "cap:composite-structures"
+    name: "Composite structural manufacturing"
+    description: "Material preparation, layup, cure/bond, trimming, inspection, and product-specific structural qualification."
+    aliases: ["composite structures", "carbon-fiber structures", "composite layup"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: smallsat_india
+        entity_ids: [sat_bus_structure, rec_sat_bus_structure, autoclave]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "The satellite pack exposes a composite/honeycomb route and equipment; this is not agricultural-drone airframe qualification."
+      - pack_id: materials_minerals_foundational
+        entity_ids: [rcls_carbon_fiber_capacity]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Carbon-fiber supply context is upstream of composite structures and remains CONFLICTED where source baselines disagree."
+
+  - id: "cap:space-optical-payloads"
+    name: "Space optical payload production"
+    description: "Optical design, detector/electronics integration, contamination control, alignment, calibration, and space-environment qualification."
+    aliases: ["space optical payload", "earth-observation payload", "hyperspectral payload"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: smallsat_india
+        entity_ids: [optical_payload_300kg]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "A 300 kg-class electro-optical payload is related family context, not proof of 12U hyperspectral architecture, cadence, or qualification."
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_space_optical_payloads]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "ISRO LEOS establishes reported electro-optical facility scope; 12U hyperspectral architecture, access, cadence, and capacity remain UNKNOWN."
+
+  - id: "cap:electrochemical-stacks"
+    name: "Electrochemical stack manufacturing"
+    description: "Cell repeating-unit production, stack assembly, sealing, compression, controls integration, and stack acceptance."
+    aliases: ["electrolyzer stacks", "electrochemical stacks", "stack assembly"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_electrochemical_stacks]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "L&T reports a commissioned stack line and nameplate-like set-up figure; realized qualified effective throughput remains UNKNOWN."
+
+  - id: "cap:membrane-electrode-assemblies"
+    name: "Membrane-electrode assemblies and electrodes"
+    description: "Membrane, catalyst ink, coating, catalyst-coated membrane/electrode, hot-press, inspection, durability, and lot qualification."
+    aliases: ["MEA", "catalyst-coated membrane", "electrolyzer electrodes"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_membrane_electrode_assemblies]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "ARCI establishes demonstration-scale indigenous fabrication, not commercial volume, durability qualification, or available supply."
+
+  - id: "cap:industrial-gas-systems"
+    name: "Industrial gas handling and purification systems"
+    description: "Compression, purification, storage, pressure reduction, transport, distribution, safety, and control for industrial gases."
+    aliases: ["hydrogen gas systems", "gas purification", "industrial gas handling"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_industrial_gas_systems]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "INOX reports design/manufacturing scope, but plant binding, hydrogen-grade qualification, and effective throughput remain UNKNOWN."
+
+  - id: "cap:industrial-compressors"
+    name: "Industrial compressor manufacturing"
+    description: "Compressor design, airend and pressure-part manufacture, assembly, controls, performance test, and application qualification."
+    aliases: ["industrial compressors", "high-pressure compressors", "compressor manufacturing"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_industrial_compressors]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "ELGi reports an operating manufacturing/development facility; heat-pump-specific envelope, qualification, and effective capacity remain UNKNOWN."
+
+  - id: "cap:heat-exchangers"
+    name: "Industrial heat-exchanger manufacturing"
+    description: "Thermal design, plate/tube/core manufacture, joining, pressure/leak test, materials compatibility, and duty-specific qualification."
+    aliases: ["heat exchangers", "industrial heat transfer", "plate heat exchangers"]
+    status: UNKNOWN
+    epistemic_class: UNKNOWN
+    mapping_source: ASSUMPTION
+    mappings:
+      - pack_id: targeted_industrial_reality
+        entity_ids: [tr_cc_heat_exchangers]
+        relation: requires_or_represents
+        mapping_source: ASSUMPTION
+        rationale: "Alfa Laval reports Indian heat-transfer manufacturing scope; product-to-site mapping and qualified effective capacity remain UNKNOWN."
 
 aliases:
   - id: "alias:precision-grinding"

@@ -1,0 +1,3820 @@
+{
+  "schema_version": "homi-wave2-corpus-report.v1",
+  "report_identity": {
+    "wave": "wave2",
+    "observed_manus": "manus-02",
+    "campaign_expected_manus": "manus-02",
+    "actual_theme": "IndiaBUILD++ capability, industrial-domain, and regional-cluster baseline",
+    "campaign_mapping_mismatch_preserved": false,
+    "generated_from_read_only_sources": true,
+    "evidence_cutoff": "2026-08-24"
+  },
+  "source_boundaries": {
+    "no_external_browsing": true,
+    "raw_vault_immutable": true,
+    "canonical_pack_not_assumed_truth": true,
+    "no_canonical_changes": true,
+    "no_code_changes": true,
+    "canonical_promotions": [],
+    "candidate_status": "All entities, relations, capacities, and matches are staging candidates only."
+  },
+  "epistemic_and_semantic_rules": {
+    "allowed_classes": [
+      "MEASURED",
+      "REPORTED",
+      "DERIVED",
+      "ESTIMATED",
+      "MODELLED",
+      "ASSUMPTION",
+      "SCENARIO",
+      "UNKNOWN",
+      "CONFLICTED"
+    ],
+    "eligibility_is_not_supply": true,
+    "factory_existence_is_not_qualified_capability": true,
+    "nameplate_is_not_effective_capacity": true,
+    "project_announcement_is_not_operating_capacity": true,
+    "trade_is_not_production_capability": true,
+    "operating_qualified_capacity_requires": [
+      "exact facility",
+      "product/process/grade scope",
+      "current dated evidence",
+      "quality/qualification evidence",
+      "good-output and utilization deductions",
+      "material/tooling/workforce/sub-tier constraints"
+    ]
+  },
+  "corpus_accounting": {
+    "manifest": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/_meta/manus_corpus_manifest.csv",
+      "row": {
+        "corpus_id": "manus-02",
+        "zip_name": "Guidance for Conducting Thorough Research.zip",
+        "file_count": 12,
+        "status": "ALREADY EXTRACTED"
+      }
+    },
+    "raw_zip": {
+      "path": "C:/FORGE-RESEARCH-CORPUS/manus/raw-zips/Guidance for Conducting Thorough Research.zip",
+      "sha256": "a0568bd73b6e22b0be8d8f0b34ce674f072bbe556b356e80009568b250e67230",
+      "expected_sha256": "a0568bd73b6e22b0be8d8f0b34ce674f072bbe556b356e80009568b250e67230",
+      "sha256_match": true,
+      "zip_member_count": 12,
+      "zip_test_result": "PASS",
+      "extracted_member_count": 12,
+      "member_names_and_sha256_exact": true
+    },
+    "extracted_root": "C:/FORGE-RESEARCH-CORPUS/manus/extracted/manus-02",
+    "artifacts": [
+      {
+        "path": "manus-02/build_indiabuild_report.py",
+        "format": "python",
+        "bytes": 54644,
+        "sha256": "03516f7718cbff10a487c2f1ff1e4479c4a5d5ccb5b5f53fa615f90f59d67ce8",
+        "raw_zip_member": "build_indiabuild_report.py",
+        "raw_zip_member_bytes": 54644,
+        "raw_zip_member_sha256": "03516f7718cbff10a487c2f1ff1e4479c4a5d5ccb5b5f53fa615f90f59d67ce8",
+        "raw_zip_match": true,
+        "line_count": 423,
+        "row_count": null,
+        "role": "utility_not_evidence",
+        "parse_status": "INVENTORIED",
+        "schema": {
+          "language": "python",
+          "executable": false
+        }
+      },
+      {
+        "path": "manus-02/IndiaBUILD++ validated source notes.md",
+        "format": "markdown",
+        "bytes": 8423,
+        "sha256": "dadab7c4bdff28cf54124b1bbb29f9093fe2a3dca7f81ff7e0e5a8241378d6d5",
+        "raw_zip_member": "IndiaBUILD++ validated source notes.md",
+        "raw_zip_member_bytes": 8423,
+        "raw_zip_member_sha256": "dadab7c4bdff28cf54124b1bbb29f9093fe2a3dca7f81ff7e0e5a8241378d6d5",
+        "raw_zip_match": true,
+        "line_count": 55,
+        "row_count": null,
+        "role": "validated_source_notes",
+        "parse_status": "INVENTORIED",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0,
+            "h4": 0
+          }
+        }
+      },
+      {
+        "path": "manus-02/indiabuild_capability_heatmap.png",
+        "format": "png",
+        "bytes": 348117,
+        "sha256": "e1641bf0ab058e7dd62a7480531d0301aac0ca2dd9b321e311d6041573d800f5",
+        "raw_zip_member": "indiabuild_capability_heatmap.png",
+        "raw_zip_member_bytes": 348117,
+        "raw_zip_member_sha256": "e1641bf0ab058e7dd62a7480531d0301aac0ca2dd9b321e311d6041573d800f5",
+        "raw_zip_match": true,
+        "line_count": null,
+        "row_count": null,
+        "role": "render_not_evidence",
+        "parse_status": "INVENTORIED",
+        "schema": {
+          "binary_render": true,
+          "evidence_rows": 0
+        }
+      },
+      {
+        "path": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "format": "markdown",
+        "bytes": 337009,
+        "sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+        "raw_zip_member": "IndiaBUILD_plus_plus_baseline.md",
+        "raw_zip_member_bytes": 337009,
+        "raw_zip_member_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+        "raw_zip_match": true,
+        "line_count": 1510,
+        "row_count": null,
+        "role": "primary_research_memo",
+        "parse_status": "INVENTORIED",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0,
+            "h4": 0
+          }
+        }
+      },
+      {
+        "path": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv",
+        "format": "csv",
+        "bytes": 108059,
+        "sha256": "d0de9fc1cc9569c50f95c951de782a4db6772a37c89b099c80716de1f8458d58",
+        "raw_zip_member": "IndiaBUILD_plus_plus_cluster_table.csv",
+        "raw_zip_member_bytes": 108059,
+        "raw_zip_member_sha256": "d0de9fc1cc9569c50f95c951de782a4db6772a37c89b099c80716de1f8458d58",
+        "raw_zip_match": true,
+        "line_count": 402,
+        "row_count": 16,
+        "role": "normalized_structured_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "columns": [
+            "cluster_id",
+            "cluster",
+            "capability_and_facilities",
+            "project_pipeline",
+            "infrastructure_and_linkages",
+            "dependence_and_gaps",
+            "unknowns_conflicts_and_questions",
+            "last_verified"
+          ],
+          "rows_excluding_header": 16
+        }
+      },
+      {
+        "path": "manus-02/IndiaBUILD_plus_plus_domain_table.csv",
+        "format": "csv",
+        "bytes": 139808,
+        "sha256": "834340757dce061d1306da98db63b84b31fe41fc7b013972d0cee75a8dd840ae",
+        "raw_zip_member": "IndiaBUILD_plus_plus_domain_table.csv",
+        "raw_zip_member_bytes": 139808,
+        "raw_zip_member_sha256": "834340757dce061d1306da98db63b84b31fe41fc7b013972d0cee75a8dd840ae",
+        "raw_zip_match": true,
+        "line_count": 31,
+        "row_count": 22,
+        "role": "normalized_structured_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "columns": [
+            "capability_id",
+            "capability_family",
+            "objective_supported",
+            "entity_or_facility_summary",
+            "location_or_cluster",
+            "design_state",
+            "manufacturing_state",
+            "qualification_state",
+            "technology_origin",
+            "critical_inputs_and_dependencies",
+            "capacity_and_projects",
+            "evidence_label",
+            "maturity_summary",
+            "adjacencies_and_prerequisites",
+            "unknowns_conflicts_and_questions",
+            "last_verified"
+          ],
+          "rows_excluding_header": 22
+        }
+      },
+      {
+        "path": "manus-02/indiabuild_source_index.csv",
+        "format": "csv",
+        "bytes": 36825,
+        "sha256": "779307f52da16f25888e82a0a657e0614efdc1a7c9e351950a68f9b55bc5e1e8",
+        "raw_zip_member": "indiabuild_source_index.csv",
+        "raw_zip_member_bytes": 36825,
+        "raw_zip_member_sha256": "779307f52da16f25888e82a0a657e0614efdc1a7c9e351950a68f9b55bc5e1e8",
+        "raw_zip_match": true,
+        "line_count": 231,
+        "row_count": 230,
+        "role": "source_index",
+        "parse_status": "STRUCTURED_VALIDATED_WITH_URL_WRAPPER_ANOMALIES",
+        "schema": {
+          "columns": [
+            "source_id",
+            "source_type",
+            "domain_or_cluster",
+            "url"
+          ],
+          "rows_excluding_header": 230
+        }
+      },
+      {
+        "path": "manus-02/pasted_content.txt",
+        "format": "txt",
+        "bytes": 4981,
+        "sha256": "49c2ca5fd580c32727fdd4ada99831576e63af0cd02d4b4cc0b188c83f2cda2d",
+        "raw_zip_member": "pasted_content.txt",
+        "raw_zip_member_bytes": 4981,
+        "raw_zip_member_sha256": "49c2ca5fd580c32727fdd4ada99831576e63af0cd02d4b4cc0b188c83f2cda2d",
+        "raw_zip_match": true,
+        "line_count": 66,
+        "row_count": null,
+        "role": "prompt_not_evidence",
+        "parse_status": "INVENTORIED",
+        "schema": {
+          "prompt_or_instruction_text": true
+        }
+      },
+      {
+        "path": "manus-02/research_india_industrial_domains.csv",
+        "format": "csv",
+        "bytes": 159034,
+        "sha256": "ae1b313ff7bc04ed884943b8836b8e7cd2af7aa2b502a329572b49e134e0165f",
+        "raw_zip_member": "research_india_industrial_domains.csv",
+        "raw_zip_member_bytes": 159034,
+        "raw_zip_member_sha256": "ae1b313ff7bc04ed884943b8836b8e7cd2af7aa2b502a329572b49e134e0165f",
+        "raw_zip_match": true,
+        "line_count": 23,
+        "row_count": 22,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "columns": [
+            "Subject",
+            "Domain",
+            "Maturity Assessment",
+            "Builders And Facilities",
+            "Ownership And Dependence",
+            "Capacity And Projects",
+            "Adjacencies And Prerequisites",
+            "Unknowns Conflicts And Questions",
+            "Sources",
+            "Error"
+          ],
+          "rows_excluding_header": 22
+        }
+      },
+      {
+        "path": "manus-02/research_india_industrial_domains.json",
+        "format": "json",
+        "bytes": 166422,
+        "sha256": "bed6fcebf8b2197f69edfcd98bd4b8abe119f145457f43d1abf956c9ba0a4d68",
+        "raw_zip_member": "research_india_industrial_domains.json",
+        "raw_zip_member_bytes": 166422,
+        "raw_zip_member_sha256": "bed6fcebf8b2197f69edfcd98bd4b8abe119f145457f43d1abf956c9ba0a4d68",
+        "raw_zip_match": true,
+        "line_count": 312,
+        "row_count": 22,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "results_key": "results",
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ],
+          "results": 22
+        }
+      },
+      {
+        "path": "manus-02/research_india_regional_clusters.csv",
+        "format": "csv",
+        "bytes": 134011,
+        "sha256": "c6a0f348602c54f662978a8621b7039258f8a8c046669436d643a0c8ee0a6288",
+        "raw_zip_member": "research_india_regional_clusters.csv",
+        "raw_zip_member_bytes": 134011,
+        "raw_zip_member_sha256": "c6a0f348602c54f662978a8621b7039258f8a8c046669436d643a0c8ee0a6288",
+        "raw_zip_match": true,
+        "line_count": 17,
+        "row_count": 16,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "columns": [
+            "Subject",
+            "Cluster",
+            "Capabilities And Facilities",
+            "Project Pipeline",
+            "Infrastructure And Linkages",
+            "Dependence And Gaps",
+            "Unknowns Conflicts And Questions",
+            "Sources",
+            "Error"
+          ],
+          "rows_excluding_header": 16
+        }
+      },
+      {
+        "path": "manus-02/research_india_regional_clusters.json",
+        "format": "json",
+        "bytes": 138796,
+        "sha256": "a6dab0d53620115f578a48db5e1abc7531094377153324b24481313632e532be",
+        "raw_zip_member": "research_india_regional_clusters.json",
+        "raw_zip_member_bytes": 138796,
+        "raw_zip_member_sha256": "a6dab0d53620115f578a48db5e1abc7531094377153324b24481313632e532be",
+        "raw_zip_match": true,
+        "line_count": 212,
+        "row_count": 16,
+        "role": "structured_research_export",
+        "parse_status": "STRUCTURED_VALIDATED",
+        "schema": {
+          "root_type": "object",
+          "results_key": "results",
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ],
+          "results": 16
+        }
+      }
+    ]
+  },
+  "schemas_and_rows": {
+    "artifact_schemas": [
+      {
+        "artifact": "manus-02/build_indiabuild_report.py",
+        "format": "python",
+        "schema": {
+          "language": "python",
+          "executable": false
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-02/IndiaBUILD++ validated source notes.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0,
+            "h4": 0
+          }
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-02/indiabuild_capability_heatmap.png",
+        "format": "png",
+        "schema": {
+          "binary_render": true,
+          "evidence_rows": 0
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "format": "markdown",
+        "schema": {
+          "headings": {
+            "h1": 0,
+            "h2": 0,
+            "h3": 0,
+            "h4": 0
+          }
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv",
+        "format": "csv",
+        "schema": {
+          "columns": [
+            "cluster_id",
+            "cluster",
+            "capability_and_facilities",
+            "project_pipeline",
+            "infrastructure_and_linkages",
+            "dependence_and_gaps",
+            "unknowns_conflicts_and_questions",
+            "last_verified"
+          ],
+          "rows_excluding_header": 16
+        },
+        "rows": 16
+      },
+      {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_domain_table.csv",
+        "format": "csv",
+        "schema": {
+          "columns": [
+            "capability_id",
+            "capability_family",
+            "objective_supported",
+            "entity_or_facility_summary",
+            "location_or_cluster",
+            "design_state",
+            "manufacturing_state",
+            "qualification_state",
+            "technology_origin",
+            "critical_inputs_and_dependencies",
+            "capacity_and_projects",
+            "evidence_label",
+            "maturity_summary",
+            "adjacencies_and_prerequisites",
+            "unknowns_conflicts_and_questions",
+            "last_verified"
+          ],
+          "rows_excluding_header": 22
+        },
+        "rows": 22
+      },
+      {
+        "artifact": "manus-02/indiabuild_source_index.csv",
+        "format": "csv",
+        "schema": {
+          "columns": [
+            "source_id",
+            "source_type",
+            "domain_or_cluster",
+            "url"
+          ],
+          "rows_excluding_header": 230
+        },
+        "rows": 230
+      },
+      {
+        "artifact": "manus-02/pasted_content.txt",
+        "format": "txt",
+        "schema": {
+          "prompt_or_instruction_text": true
+        },
+        "rows": null
+      },
+      {
+        "artifact": "manus-02/research_india_industrial_domains.csv",
+        "format": "csv",
+        "schema": {
+          "columns": [
+            "Subject",
+            "Domain",
+            "Maturity Assessment",
+            "Builders And Facilities",
+            "Ownership And Dependence",
+            "Capacity And Projects",
+            "Adjacencies And Prerequisites",
+            "Unknowns Conflicts And Questions",
+            "Sources",
+            "Error"
+          ],
+          "rows_excluding_header": 22
+        },
+        "rows": 22
+      },
+      {
+        "artifact": "manus-02/research_india_industrial_domains.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "results_key": "results",
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ],
+          "results": 22
+        },
+        "rows": 22
+      },
+      {
+        "artifact": "manus-02/research_india_regional_clusters.csv",
+        "format": "csv",
+        "schema": {
+          "columns": [
+            "Subject",
+            "Cluster",
+            "Capabilities And Facilities",
+            "Project Pipeline",
+            "Infrastructure And Linkages",
+            "Dependence And Gaps",
+            "Unknowns Conflicts And Questions",
+            "Sources",
+            "Error"
+          ],
+          "rows_excluding_header": 16
+        },
+        "rows": 16
+      },
+      {
+        "artifact": "manus-02/research_india_regional_clusters.json",
+        "format": "json",
+        "schema": {
+          "root_type": "object",
+          "results_key": "results",
+          "result_keys": [
+            "input",
+            "output",
+            "error"
+          ],
+          "results": 16
+        },
+        "rows": 16
+      }
+    ],
+    "structured_rows": {
+      "IndiaBUILD_plus_plus_domain_table.csv": 22,
+      "IndiaBUILD_plus_plus_cluster_table.csv": 16,
+      "indiabuild_source_index.csv": 230,
+      "research_india_industrial_domains.csv": 22,
+      "research_india_industrial_domains.json": 22,
+      "research_india_regional_clusters.csv": 16,
+      "research_india_regional_clusters.json": 16
+    },
+    "conditioning_repairs": [
+      {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_domain_table.csv",
+        "repair_status": "LOSSLESS_REPAIR_APPLIED",
+        "repair_operation": "CANONICALIZE_ENCODING_NEWLINES",
+        "original_sha256": "834340757dce061d1306da98db63b84b31fe41fc7b013972d0cee75a8dd840ae",
+        "repaired_sha256": "656dc26b494fe690306d1b6ff6bcae7b3f7ec4b3127567efe9ad2fba58125f4d",
+        "raw_vault_unchanged": true,
+        "conditioning_report_ref": "research/homi/staging/conditioning_report.json"
+      },
+      {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv",
+        "repair_status": "LOSSLESS_REPAIR_APPLIED",
+        "repair_operation": "CANONICALIZE_ENCODING_NEWLINES",
+        "original_sha256": "d0de9fc1cc9569c50f95c951de782a4db6772a37c89b099c80716de1f8458d58",
+        "repaired_sha256": "2738c88bdd2ee82aa9548655578a54da83b3d0656baa08f260a6658dc5539a76",
+        "raw_vault_unchanged": true,
+        "conditioning_report_ref": "research/homi/staging/conditioning_report.json"
+      },
+      {
+        "artifact": "manus-02/indiabuild_source_index.csv",
+        "repair_status": "LOSSLESS_REPAIR_APPLIED",
+        "repair_operation": "CANONICALIZE_ENCODING_NEWLINES",
+        "original_sha256": "779307f52da16f25888e82a0a657e0614efdc1a7c9e351950a68f9b55bc5e1e8",
+        "repaired_sha256": "b59b603b2c2b2f6f897963bbe1db233067707e640d7748c4bef10689657904ae",
+        "raw_vault_unchanged": true,
+        "conditioning_report_ref": "research/homi/staging/conditioning_report.json"
+      }
+    ],
+    "logical_record_dedupe": {
+      "physical_structured_rows": 344,
+      "csv_json_mirror_pairs": 2,
+      "duplicate_records_removed": 38,
+      "logical_records_after_csv_json_dedupe": 306,
+      "semantic_content_records_after_deduping_normalized_projections": 268,
+      "rule": "CSV/JSON mirrors are counted once for evidence; normalized domain/cluster projections are retained for schema coverage but collapsed for semantic content."
+    }
+  },
+  "source_inventory": {
+    "source_index_rows": 230,
+    "unique_source_ids": 230,
+    "unique_original_url_tokens": 230,
+    "url_wrapper_anomaly_rows": 90,
+    "bounded_sample_count": 34,
+    "source_candidates_are_staging": true
+  },
+  "source_candidates": [
+    {
+      "source_id": "1",
+      "source_type": "domain",
+      "domain_or_cluster": "Machine tools and precision manufacturing",
+      "original_url": "https://heavyindustries.gov.in/en/scheme-enhancement-competitiveness-indian-capital-goods-sector-phase-ii",
+      "url_for_resolution_candidate": "https://heavyindustries.gov.in/en/scheme-enhancement-competitiveness-indian-capital-goods-sector-phase-ii",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 2",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "2",
+      "source_type": "domain",
+      "domain_or_cluster": "Machine tools and precision manufacturing",
+      "original_url": "https://jyoti.co.in/investors/financial-reports-returns-and-notices/annual-reports/",
+      "url_for_resolution_candidate": "https://jyoti.co.in/investors/financial-reports-returns-and-notices/annual-reports/",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 3",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "3",
+      "source_type": "domain",
+      "domain_or_cluster": "Machine tools and precision manufacturing",
+      "original_url": "https://www.imtma.in/market-research-reports",
+      "url_for_resolution_candidate": "https://www.imtma.in/market-research-reports",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 4",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "4",
+      "source_type": "domain",
+      "domain_or_cluster": "Machine tools and precision manufacturing",
+      "original_url": "https://cmti.res.in/",
+      "url_for_resolution_candidate": "https://cmti.res.in/",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 5",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "5",
+      "source_type": "domain",
+      "domain_or_cluster": "Machine tools and precision manufacturing",
+      "original_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2232044",
+      "url_for_resolution_candidate": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2232044",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 6",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "6",
+      "source_type": "domain",
+      "domain_or_cluster": "Machine tools and precision manufacturing",
+      "original_url": "https://www.icra.in/Rating/ShowRationalReportFilePdf/138629",
+      "url_for_resolution_candidate": "https://www.icra.in/Rating/ShowRationalReportFilePdf/138629",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 7",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "7",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://www.csir.res.in/en/csir-success-stories/advances-metrology-custodian-indian-national-standards-csir-npl",
+      "url_for_resolution_candidate": "https://www.csir.res.in/en/csir-success-stories/advances-metrology-custodian-indian-national-standards-csir-npl",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 8",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "8",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://www.tofler.in/accurate-gauging-and-instruments-pvt-ltd/company/U33125MH1987PTC042232",
+      "url_for_resolution_candidate": "https://www.tofler.in/accurate-gauging-and-instruments-pvt-ltd/company/U33125MH1987PTC042232",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 9",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "9",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://www.nplindia.in/index.php/commercial-services/calibration-testing/",
+      "url_for_resolution_candidate": "https://www.nplindia.in/index.php/commercial-services/calibration-testing/",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 10",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "10",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://www.bipm.org/documents/20126/55868032/CCM-21-R25_NPLI-Report.pdf/3ceb24fe-fbcc-6db9-0145-49a1237c86ca",
+      "url_for_resolution_candidate": "https://www.bipm.org/documents/20126/55868032/CCM-21-R25_NPLI-Report.pdf/3ceb24fe-fbcc-6db9-0145-49a1237c86ca",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 11",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "11",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://www.expresshealthcare.in/news/just-5127-testing-2165-medical-1208-calibration-labs-out-of-2-5-lakh-are-nabl-accredited-nabl-director/442026/",
+      "url_for_resolution_candidate": "https://www.expresshealthcare.in/news/just-5127-testing-2165-medical-1208-calibration-labs-out-of-2-5-lakh-are-nabl-accredited-nabl-director/442026/",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 12",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "12",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://bakergauges.com/",
+      "url_for_resolution_candidate": "https://bakergauges.com/",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 13",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "13",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://metrology.news/hexagon-launch-india-manufactured-enspec-cmm-for-local-market/",
+      "url_for_resolution_candidate": "https://metrology.news/hexagon-launch-india-manufactured-enspec-cmm-for-local-market/",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 14",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "14",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://nagman.com/",
+      "url_for_resolution_candidate": "https://nagman.com/",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 15",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "15",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://idemi.org/services/calibration/dimensional-metrology",
+      "url_for_resolution_candidate": "https://idemi.org/services/calibration/dimensional-metrology",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 16",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "16",
+      "source_type": "domain",
+      "domain_or_cluster": "Metrology, calibration and dimensional inspection",
+      "original_url": "https://www.sipconinstrument.com/cmm.php",
+      "url_for_resolution_candidate": "https://www.sipconinstrument.com/cmm.php",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 17",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "17",
+      "source_type": "domain",
+      "domain_or_cluster": "Bearings, ball screws and linear guides",
+      "original_url": "https://www.nbcbearings.com/",
+      "url_for_resolution_candidate": "https://www.nbcbearings.com/",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 18",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "18",
+      "source_type": "domain",
+      "domain_or_cluster": "Bearings, ball screws and linear guides",
+      "original_url": "https://cmti.res.in/technology-transfer/",
+      "url_for_resolution_candidate": "https://cmti.res.in/technology-transfer/",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 19",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "30",
+      "source_type": "domain",
+      "domain_or_cluster": "Semiconductors and electronics manufacturing",
+      "original_url": "https://investors.micron.com/news/press-release/2026/Micron-Celebrates-Opening-of-Indias-First-Semiconductor-Assembly-and-Test-Facility-02-28-2026/default.aspx",
+      "url_for_resolution_candidate": "https://investors.micron.com/news/press-release/2026/Micron-Celebrates-Opening-of-Indias-First-Semiconductor-Assembly-and-Test-Facility-02-28-2026/default.aspx",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 31",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "31",
+      "source_type": "domain",
+      "domain_or_cluster": "Semiconductors and electronics manufacturing",
+      "original_url": "https://www.tataelectronics.com/w/manufacturing-corporation-psmc-complete-landmark-agreement-for-technology-transfer-to-build-india-s-first-semiconductor-fab",
+      "url_for_resolution_candidate": "https://www.tataelectronics.com/w/manufacturing-corporation-psmc-complete-landmark-agreement-for-technology-transfer-to-build-india-s-first-semiconductor-fab",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 32",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "73",
+      "source_type": "domain",
+      "domain_or_cluster": "Rare-earth processing, separation and permanent magnets",
+      "original_url": "https://dst.gov.in/pilot-plant-manufacture-nd-fe-b-rare-earth-permanent-magnets-established-arci-hyderabad](https://dst.gov.in/pilot-plant-manufacture-nd-fe-b-rare-earth-permanent-magnets-established-arci-hyderabad",
+      "url_for_resolution_candidate": "https://dst.gov.in/pilot-plant-manufacture-nd-fe-b-rare-earth-permanent-magnets-established-arci-hyderabad",
+      "url_token_status": "MALFORMED_MARKDOWN_WRAPPER_PRESERVED",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 74",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "85",
+      "source_type": "domain",
+      "domain_or_cluster": "Nuclear manufacturing and nuclear supply chain",
+      "original_url": "https://www.npcil.nic.in/content/328_1_AboutNPCIL.aspx](https://www.npcil.nic.in/content/328_1_AboutNPCIL.aspx",
+      "url_for_resolution_candidate": "https://www.npcil.nic.in/content/328_1_AboutNPCIL.aspx",
+      "url_token_status": "MALFORMED_MARKDOWN_WRAPPER_PRESERVED",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 86",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "103",
+      "source_type": "domain",
+      "domain_or_cluster": "Industrial machinery, tooling and test/qualification infrastructure",
+      "original_url": "https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf](https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf",
+      "url_for_resolution_candidate": "https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf",
+      "url_token_status": "MALFORMED_MARKDOWN_WRAPPER_PRESERVED",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 104",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "116",
+      "source_type": "cluster",
+      "domain_or_cluster": "Gujarat: Ahmedabad\u2013Sanand\u2013Dholera\u2013Vadodara\u2013Hazira industrial system",
+      "original_url": "https://pib.gov.in](https://pib.gov.in",
+      "url_for_resolution_candidate": "https://pib.gov.in",
+      "url_token_status": "MALFORMED_MARKDOWN_WRAPPER_PRESERVED",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 117",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "117",
+      "source_type": "cluster",
+      "domain_or_cluster": "Gujarat: Ahmedabad\u2013Sanand\u2013Dholera\u2013Vadodara\u2013Hazira industrial system",
+      "original_url": "https://tataelectronics.com](https://tataelectronics.com",
+      "url_for_resolution_candidate": "https://tataelectronics.com",
+      "url_token_status": "MALFORMED_MARKDOWN_WRAPPER_PRESERVED",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 118",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "140",
+      "source_type": "cluster",
+      "domain_or_cluster": "Tamil Nadu: Chennai\u2013Hosur\u2013Coimbatore\u2013Sriperumbudur\u2013Thoothukudi industrial system",
+      "original_url": "https://www.tataelectronics.com/news/2026-ops-update](https://www.tataelectronics.com/news/2026-ops-update",
+      "url_for_resolution_candidate": "https://www.tataelectronics.com/news/2026-ops-update",
+      "url_token_status": "MALFORMED_MARKDOWN_WRAPPER_PRESERVED",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 141",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "212",
+      "source_type": "cluster",
+      "domain_or_cluster": "Assam and Northeast India: Jagiroad\u2013Guwahati\u2013Agartala and connectivity system",
+      "original_url": "https://www.tataelectronics.com/semiconductor-assembly-and-test](https://www.tataelectronics.com/semiconductor-assembly-and-test",
+      "url_for_resolution_candidate": "https://www.tataelectronics.com/semiconductor-assembly-and-test",
+      "url_token_status": "MALFORMED_MARKDOWN_WRAPPER_PRESERVED",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 213",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "224",
+      "source_type": "cluster",
+      "domain_or_cluster": "Cross-cutting strategic projects: semiconductors, batteries, solar, rare-earth magnets, CRGO steel, aerospace, defence and nuclear",
+      "original_url": "https://pib.gov.in/FactsheetDetails.aspx?id=150860",
+      "url_for_resolution_candidate": "https://pib.gov.in/FactsheetDetails.aspx?id=150860",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 225",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "225",
+      "source_type": "cluster",
+      "domain_or_cluster": "Cross-cutting strategic projects: semiconductors, batteries, solar, rare-earth magnets, CRGO steel, aerospace, defence and nuclear",
+      "original_url": "https://dae.gov.in/pfbr-criticality-2026",
+      "url_for_resolution_candidate": "https://dae.gov.in/pfbr-criticality-2026",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 226",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "226",
+      "source_type": "cluster",
+      "domain_or_cluster": "Cross-cutting strategic projects: semiconductors, batteries, solar, rare-earth magnets, CRGO steel, aerospace, defence and nuclear",
+      "original_url": "https://investors.micron.com/news-releases/2026/02-28",
+      "url_for_resolution_candidate": "https://investors.micron.com/news-releases/2026/02-28",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 227",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "227",
+      "source_type": "cluster",
+      "domain_or_cluster": "Cross-cutting strategic projects: semiconductors, batteries, solar, rare-earth magnets, CRGO steel, aerospace, defence and nuclear",
+      "original_url": "https://ieefa.org/resources/battery-pli-2026",
+      "url_for_resolution_candidate": "https://ieefa.org/resources/battery-pli-2026",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 228",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "228",
+      "source_type": "cluster",
+      "domain_or_cluster": "Cross-cutting strategic projects: semiconductors, batteries, solar, rare-earth magnets, CRGO steel, aerospace, defence and nuclear",
+      "original_url": "https://mod.gov.in/press-release/hal-tumakuru-2026",
+      "url_for_resolution_candidate": "https://mod.gov.in/press-release/hal-tumakuru-2026",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 229",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "229",
+      "source_type": "cluster",
+      "domain_or_cluster": "Cross-cutting strategic projects: semiconductors, batteries, solar, rare-earth magnets, CRGO steel, aerospace, defence and nuclear",
+      "original_url": "https://www.jsw.in/investors/updates-2026",
+      "url_for_resolution_candidate": "https://www.jsw.in/investors/updates-2026",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 230",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "source_id": "230",
+      "source_type": "cluster",
+      "domain_or_cluster": "Cross-cutting strategic projects: semiconductors, batteries, solar, rare-earth magnets, CRGO steel, aerospace, defence and nuclear",
+      "original_url": "https://www.reuters.com/world/india/repm-2026",
+      "url_for_resolution_candidate": "https://www.reuters.com/world/india/repm-2026",
+      "url_token_status": "RAW_URL",
+      "exact_locator": "manus-02/indiabuild_source_index.csv:row 231",
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "claim_candidates": [
+    {
+      "claim_id": "clm_manus02_01",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+      "subject": "machine-tool installed capacity",
+      "predicate": "installed/nameplate",
+      "text": "Jyoti CNC is reported with 6,000 machines/year installed capacity in India and 121 in France.",
+      "source_url": "https://jyoti.co.in/investors/financial-reports-returns-and-notices/annual-reports/",
+      "original_url_token": "https://jyoti.co.in/investors/financial-reports-returns-and-notices/annual-reports/",
+      "geography": "India",
+      "dates_or_periods": [
+        "2026"
+      ],
+      "scope": "installed/nameplate",
+      "proposed_epistemic": "MEASURED",
+      "caveat": [
+        "Installed capacity is not operating good qualified output."
+      ],
+      "unknowns": [
+        "Current utilization, yield, product mix, and approval scope are UNKNOWN."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Jyoti CNC Automation Limited",
+          "Jyoti CNC Rajkot plants",
+          "Jyoti CNC Strasbourg facility"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Reconcile each site and year against filings, commissioning, run-at-rate, and qualification records.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_02",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+      "subject": "domestic CNC coverage",
+      "predicate": "market coverage",
+      "text": "The memo reports approximately 35% domestic supply coverage and 65% import dependence for CNC machine demand.",
+      "source_url": "https://heavyindustries.gov.in/en/scheme-enhancement-competitiveness-indian-capital-goods-sector-phase-ii",
+      "original_url_token": "https://heavyindustries.gov.in/en/scheme-enhancement-competitiveness-indian-capital-goods-sector-phase-ii",
+      "geography": "India",
+      "dates_or_periods": [
+        "2025"
+      ],
+      "scope": "market coverage",
+      "proposed_epistemic": "REPORTED",
+      "caveat": [
+        "Market coverage and trade share are not physical qualified capacity."
+      ],
+      "unknowns": [
+        "Denominator, product mix, and current-year methodology are UNKNOWN."
+      ],
+      "conflicts": [
+        "Coverage figures may conflict with other market estimates."
+      ],
+      "entity_resolution": {
+        "observed_entities": [
+          "India CNC market",
+          "Machine tools and precision manufacturing"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Obtain a dated production/shipments series with explicit denominator and model mix.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_03",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L246",
+      "subject": "metrology laboratory count",
+      "predicate": "accredited infrastructure presence",
+      "text": "NABL is reported with approximately 1,208 accredited calibration laboratories as of early 2024.",
+      "source_url": "https://www.expresshealthcare.in/news/just-5127-testing-2165-medical-1208-calibration-labs-out-of-2-5-lakh-are-nabl-accredited-nabl-director/442026/",
+      "original_url_token": "https://www.expresshealthcare.in/news/just-5127-testing-2165-medical-1208-calibration-labs-out-of-2-5-lakh-are-nabl-accredited-nabl-director/442026/",
+      "geography": "India",
+      "dates_or_periods": [
+        "2024"
+      ],
+      "scope": "accredited infrastructure presence",
+      "proposed_epistemic": "MEASURED",
+      "caveat": [
+        "Accreditation is eligibility and infrastructure, not product-specific qualified industrial supply."
+      ],
+      "unknowns": [
+        "Scope by dimensional capability and active validity is UNKNOWN."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "NABL",
+          "NABL-accredited calibration laboratory network"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Request current accreditation scopes, validity, equipment, measurement uncertainty, and available slots.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_04",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L228",
+      "subject": "Bharat CNC status",
+      "predicate": "project/testing presence",
+      "text": "Bharat CNC is described as a government-backed controller project in testing and early adoption.",
+      "source_url": "https://cmti.res.in/",
+      "original_url_token": "https://cmti.res.in/",
+      "geography": "India",
+      "dates_or_periods": [
+        "2026"
+      ],
+      "scope": "project/testing presence",
+      "proposed_epistemic": "REPORTED",
+      "caveat": [
+        "Project/testing status is not commercially qualified production."
+      ],
+      "unknowns": [
+        "OEM adoption, reliability, export eligibility, and current production volume are UNKNOWN."
+      ],
+      "conflicts": [
+        "CMTI testing claims and OEM adoption signals may diverge."
+      ],
+      "entity_resolution": {
+        "observed_entities": [
+          "CMTI",
+          "Bharat CNC indigenous controller project"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Collect versioned test reports, production units, customer acceptance, and field-return evidence.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_05",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L264",
+      "subject": "bearing throughput",
+      "predicate": "reported throughput",
+      "text": "NEI/NBC is reported with throughput above 200 million bearings per year across many variants.",
+      "source_url": "https://jyoti.co.in/about-us/company-profile/",
+      "original_url_token": "https://jyoti.co.in/about-us/company-profile/",
+      "geography": "India",
+      "dates_or_periods": [
+        "2024-2026"
+      ],
+      "scope": "reported throughput",
+      "proposed_epistemic": "REPORTED",
+      "caveat": [
+        "Gross or reported throughput does not establish grade-specific good qualified output."
+      ],
+      "unknowns": [
+        "Current yield, grade mix, aerospace/defence qualification, and free capacity are UNKNOWN."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "National Engineering Industries (NBC Bearings)",
+          "NEI NBC bearing sites"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Request site-, grade-, and customer-specific run-at-rate and qualification records.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_06",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L264",
+      "subject": "Jyoti ball-screw expansion",
+      "predicate": "announced/nameplate expansion",
+      "text": "The memo reports a Jyoti CNC expansion toward 16,000 machines/year and a captive high-speed ball-screw line.",
+      "source_url": "https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf",
+      "original_url_token": "https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf](https://jyoti.co.in/wp-content/uploads/2025/08/Annual-Report-JCAL-Financial-Year-2024-25.pdf",
+      "geography": "India",
+      "dates_or_periods": [
+        "2026"
+      ],
+      "scope": "announced/nameplate expansion",
+      "proposed_epistemic": "REPORTED",
+      "caveat": [
+        "Expansion/nameplate is not commissioned effective capacity or qualified ball-screw output."
+      ],
+      "unknowns": [
+        "Commissioning, utilization, grade, and customer acceptance are UNKNOWN."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Jyoti CNC Automation Limited",
+          "CMTI-Jyoti high-speed ball-screw technology transfer"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Verify project milestone, equipment acceptance, line yield, and part qualification.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_07",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L506",
+      "subject": "rare-earth pilot plant",
+      "predicate": "pilot facility presence",
+      "text": "ARCI Hyderabad is associated with an Nd-Fe-B rare-earth permanent-magnet pilot plant.",
+      "source_url": "https://dst.gov.in/pilot-plant-manufacture-nd-fe-b-rare-earth-permanent-magnets-established-arci-hyderabad",
+      "original_url_token": "https://dst.gov.in/pilot-plant-manufacture-nd-fe-b-rare-earth-permanent-magnets-established-arci-hyderabad](https://dst.gov.in/pilot-plant-manufacture-nd-fe-b-rare-earth-permanent-magnets-established-arci-hyderabad",
+      "geography": "Hyderabad, Telangana",
+      "dates_or_periods": [
+        "2024-2026"
+      ],
+      "scope": "pilot facility presence",
+      "proposed_epistemic": "REPORTED",
+      "caveat": [
+        "Pilot-plant establishment does not prove scaled operating magnet output."
+      ],
+      "unknowns": [
+        "Current throughput, composition, coercivity, yield, and customer qualification are UNKNOWN."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "ARCI",
+          "ARCI Hyderabad NdFeB pilot plant"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Obtain current production logs, test certificates, and customer/grade qualification.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_08",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L1468",
+      "subject": "semiconductor fab project",
+      "predicate": "announced project",
+      "text": "Tata Electronics and PSMC are associated with a Dholera semiconductor-fab technology-transfer project.",
+      "source_url": "https://www.tataelectronics.com/w/manufacturing-corporation-psmc-complete-landmark-agreement-for-technology-transfer-to-build-india-s-first-semiconductor-fab",
+      "original_url_token": "https://www.tataelectronics.com/w/manufacturing-corporation-psmc-complete-landmark-agreement-for-technology-transfer-to-build-india-s-first-semiconductor-fab",
+      "geography": "Dholera, Gujarat",
+      "dates_or_periods": [
+        "2024-2026"
+      ],
+      "scope": "announced project",
+      "proposed_epistemic": "REPORTED",
+      "caveat": [
+        "Announcement and site/project presence are not operating wafer capacity."
+      ],
+      "unknowns": [
+        "Construction, tool install, yield, product mix, and qualification are UNKNOWN."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Tata Electronics Private Limited",
+          "Tata-PSMC Dholera fab site"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Verify construction/commissioning milestones and audited wafer output by process node.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_09",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L1468",
+      "subject": "semiconductor ATMP facility",
+      "predicate": "facility opening/presence",
+      "text": "Micron is associated with an India semiconductor assembly-and-test facility in Sanand.",
+      "source_url": "https://investors.micron.com/news/press-release/2026/Micron-Celebrates-Opening-of-Indias-First-Semiconductor-Assembly-and-Test-Facility-02-28-2026/default.aspx",
+      "original_url_token": "https://investors.micron.com/news/press-release/2026/Micron-Celebrates-Opening-of-Indias-First-Semiconductor-Assembly-and-Test-Facility-02-28-2026/default.aspx",
+      "geography": "Sanand, Gujarat",
+      "dates_or_periods": [
+        "2026"
+      ],
+      "scope": "facility opening/presence",
+      "proposed_epistemic": "REPORTED",
+      "caveat": [
+        "Facility opening or presence is not good qualified ATMP output."
+      ],
+      "unknowns": [
+        "Current package types, yield, utilization, customer qualification, and available capacity are UNKNOWN."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Micron Technology",
+          "Micron Sanand ATMP facility"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Request dated production, yield, customer qualification, and utilization evidence.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_10",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+      "subject": "nuclear operating and pipeline totals",
+      "predicate": "operating vs pipeline vs scenario",
+      "text": "The memo separates approximately 8,880 MW operating nuclear capacity from 12,200 MW pipeline and a 7,000 MW fleet-mode target.",
+      "source_url": "https://www.npcil.nic.in/content/328_1_AboutNPCIL.aspx",
+      "original_url_token": "https://www.npcil.nic.in/content/328_1_AboutNPCIL.aspx](https://www.npcil.nic.in/content/328_1_AboutNPCIL.aspx",
+      "geography": "India",
+      "dates_or_periods": [
+        "2026",
+        "future target"
+      ],
+      "scope": "operating vs pipeline vs scenario",
+      "proposed_epistemic": "REPORTED",
+      "caveat": [
+        "Operating generation, pipeline projects, and scenario targets are distinct states."
+      ],
+      "unknowns": [
+        "Project-level operating status, commissioning dates, and equipment supply capability are UNKNOWN."
+      ],
+      "conflicts": [
+        "Headline totals may use different boundary definitions."
+      ],
+      "entity_resolution": {
+        "observed_entities": [
+          "NPCIL",
+          "BHAVINI",
+          "PFBR Kalpakkam site"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Reconcile plant-level status, boundary, date, and supplier qualification before modeling capacity.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_11",
+      "corpus": "manus-02",
+      "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+      "artifact_sha256": "a45ac1f983043dc7a263c05867099a595f58f803eb363b2fb07424d94c235d1a",
+      "exact_locator": "IndiaBUILD_plus_plus_baseline.md:L1464-L1483",
+      "subject": "future-dated project targets",
+      "predicate": "future project target",
+      "text": "Cross-cutting project claims include future/current-state targets for semiconductors, batteries, solar, magnets, aerospace, defence, and nuclear.",
+      "source_url": "https://dae.gov.in/pfbr-criticality-2026",
+      "original_url_token": "https://dae.gov.in/pfbr-criticality-2026",
+      "geography": "India",
+      "dates_or_periods": [
+        "2027",
+        "2028",
+        "2029",
+        "2030"
+      ],
+      "scope": "future project target",
+      "proposed_epistemic": "SCENARIO",
+      "caveat": [
+        "Future targets are scenarios or plans, not current operating output."
+      ],
+      "unknowns": [
+        "Milestones, financing, construction, commissioning, and qualified output are UNKNOWN."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "Cross-cutting strategic projects"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Revalidate each project against dated primary releases and site evidence at decision time.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    },
+    {
+      "claim_id": "clm_manus02_12",
+      "corpus": "manus-02",
+      "artifact": "manus-02/indiabuild_source_index.csv",
+      "artifact_sha256": "779307f52da16f25888e82a0a657e0614efdc1a7c9e351950a68f9b55bc5e1e8",
+      "exact_locator": "indiabuild_source_index.csv:rows 72-230",
+      "subject": "source URL wrapper anomaly",
+      "predicate": "source serialization",
+      "text": "Ninety source-index URL tokens contain a malformed markdown-wrapper suffix; the underlying token is retained for reversible repair.",
+      "source_url": "https://dst.gov.in/pilot-plant-manufacture-nd-fe-b-rare-earth-permanent-magnets-established-arci-hyderabad",
+      "original_url_token": "https://dst.gov.in/pilot-plant-manufacture-nd-fe-b-rare-earth-permanent-magnets-established-arci-hyderabad](https://dst.gov.in/pilot-plant-manufacture-nd-fe-b-rare-earth-permanent-magnets-established-arci-hyderabad",
+      "geography": "India",
+      "dates_or_periods": [
+        "2026"
+      ],
+      "scope": "source serialization",
+      "proposed_epistemic": "REPORTED",
+      "caveat": [
+        "URL-token cleanup is a conditioning repair/escalation, not corroboration."
+      ],
+      "unknowns": [
+        "Exact intended URL and page version require source-owner verification for affected rows."
+      ],
+      "conflicts": [],
+      "entity_resolution": {
+        "observed_entities": [
+          "source index"
+        ],
+        "resolution_status": "staging_candidate_only",
+        "method": "name/location/source-locator evidence; no fuzzy merge",
+        "canonical_promotion": "NONE"
+      },
+      "escalation": "Run deterministic URL-token repair and revalidate each source before promotion.",
+      "promotion_status": "staging_candidate",
+      "status_semantics": {
+        "announcement_is_not_operating": true,
+        "nameplate_is_not_effective_capacity": true,
+        "facility_presence_is_not_qualified_capability": true,
+        "qualified_effective_capacity": "UNKNOWN"
+      }
+    }
+  ],
+  "entity_candidates": {
+    "organizations": [
+      {
+        "candidate_id": "homi-candidate:7aba177445d32b5fbb2c",
+        "observed_name": "Jyoti CNC Automation Limited",
+        "normalized_name": "jyoti cnc automation limited",
+        "entity_type": "organization",
+        "geography": "Rajkot, Gujarat; Strasbourg, France",
+        "record_kind": "organization",
+        "observed_role": "machine-tool OEM",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:50e5b478a563290be676",
+        "observed_name": "Ace Micromatic Group",
+        "normalized_name": "ace micromatic group",
+        "entity_type": "organization",
+        "geography": "Bengaluru, Karnataka",
+        "record_kind": "organization",
+        "observed_role": "machine-tool OEM",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:32fb1f99febc150fb221",
+        "observed_name": "Bharat Fritz Werner (BFW)",
+        "normalized_name": "bharat fritz werner (bfw)",
+        "entity_type": "organization",
+        "geography": "Bengaluru, Karnataka",
+        "record_kind": "organization",
+        "observed_role": "machine-tool OEM",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:8b014b783a74a6107fed",
+        "observed_name": "Lakshmi Machine Works",
+        "normalized_name": "lakshmi machine works",
+        "entity_type": "organization",
+        "geography": "Coimbatore, Tamil Nadu",
+        "record_kind": "organization",
+        "observed_role": "machine-tool OEM",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:6049e9bce925e023db50",
+        "observed_name": "HMT Machine Tools Limited",
+        "normalized_name": "hmt machine tools limited",
+        "entity_type": "organization",
+        "geography": "Bengaluru/Ajmer/Pinjore, India",
+        "record_kind": "organization",
+        "observed_role": "machine-tool OEM",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:d7913f71b2566c4556d5",
+        "observed_name": "Central Manufacturing Technology Institute (CMTI)",
+        "normalized_name": "central manufacturing technology institute (cmti)",
+        "entity_type": "organization",
+        "geography": "Bengaluru, Karnataka",
+        "record_kind": "organization",
+        "observed_role": "R&D and technology-transfer body",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:ff33ce3707c95e2f7d91",
+        "observed_name": "National Engineering Industries (NBC Bearings)",
+        "normalized_name": "national engineering industries (nbc bearings)",
+        "entity_type": "organization",
+        "geography": "Jaipur/Newai/Savli/Bagru/Manesar, India",
+        "record_kind": "organization",
+        "observed_role": "bearing manufacturer",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L264",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:a082f2c729e7486e1f3c",
+        "observed_name": "Schaeffler India",
+        "normalized_name": "schaeffler india",
+        "entity_type": "organization",
+        "geography": "Pune/Vadodara/Hosur, India",
+        "record_kind": "organization",
+        "observed_role": "bearing and motion-component manufacturer",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L264",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:27dc494675217ccc7877",
+        "observed_name": "SKF India",
+        "normalized_name": "skf india",
+        "entity_type": "organization",
+        "geography": "Pune/Bengaluru/Haridwar/Ahmedabad, India",
+        "record_kind": "organization",
+        "observed_role": "bearing manufacturer",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L264",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:09ea81e8567bbbb12c67",
+        "observed_name": "NRB Bearings",
+        "normalized_name": "nrb bearings",
+        "entity_type": "organization",
+        "geography": "Thane/Aurangabad/Jalna/Waluj/Pantnagar, India",
+        "record_kind": "organization",
+        "observed_role": "bearing manufacturer",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L264",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:ff8a4be646c9826d087e",
+        "observed_name": "CSIR-National Physical Laboratory",
+        "normalized_name": "csir-national physical laboratory",
+        "entity_type": "organization",
+        "geography": "New Delhi, India",
+        "record_kind": "organization",
+        "observed_role": "national metrology institute",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L246",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:861a36bed381344d7f8d",
+        "observed_name": "NABL",
+        "normalized_name": "nabl",
+        "entity_type": "organization",
+        "geography": "India",
+        "record_kind": "organization",
+        "observed_role": "laboratory accreditation body",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L246",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:3c1df6e227e7f3abc8b2",
+        "observed_name": "ARCI",
+        "normalized_name": "arci",
+        "entity_type": "organization",
+        "geography": "Hyderabad, Telangana",
+        "record_kind": "organization",
+        "observed_role": "rare-earth magnet R&D/pilot body",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L506",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:b70575218fb6850a204f",
+        "observed_name": "IREL (India) Limited",
+        "normalized_name": "irel (india) limited",
+        "entity_type": "organization",
+        "geography": "Visakhapatnam, Andhra Pradesh",
+        "record_kind": "organization",
+        "observed_role": "rare-earth processing entity",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L506",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:f3f6f4b4f6b3bfbb015c",
+        "observed_name": "Tata Electronics Private Limited",
+        "normalized_name": "tata electronics private limited",
+        "entity_type": "organization",
+        "geography": "Dholera, Gujarat; Jagiroad, Assam",
+        "record_kind": "organization",
+        "observed_role": "semiconductor project developer",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1468",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:7a324299ab4ed69ee759",
+        "observed_name": "Micron Technology",
+        "normalized_name": "micron technology",
+        "entity_type": "organization",
+        "geography": "Sanand, Gujarat",
+        "record_kind": "organization",
+        "observed_role": "semiconductor ATMP project developer",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1468",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:d0d4e2b9f5b476128cbe",
+        "observed_name": "NPCIL",
+        "normalized_name": "npcil",
+        "entity_type": "organization",
+        "geography": "India; Kalpakkam and operating nuclear sites",
+        "record_kind": "organization",
+        "observed_role": "nuclear operator",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:3d5fb7418f4246a0cd63",
+        "observed_name": "BHAVINI",
+        "normalized_name": "bhavini",
+        "entity_type": "organization",
+        "geography": "Kalpakkam, Tamil Nadu",
+        "record_kind": "organization",
+        "observed_role": "fast-breeder project entity",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:a6c2264c04751b77defd",
+        "observed_name": "Department of Atomic Energy",
+        "normalized_name": "department of atomic energy",
+        "entity_type": "organization",
+        "geography": "India",
+        "record_kind": "organization",
+        "observed_role": "nuclear programme authority",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:2e38bb2641c5f8c69857",
+        "observed_name": "Larsen & Toubro",
+        "normalized_name": "larsen & toubro",
+        "entity_type": "organization",
+        "geography": "Hazira, Gujarat; India",
+        "record_kind": "organization",
+        "observed_role": "nuclear/heavy engineering supplier candidate",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:e88ad168a68fe043ab23",
+        "observed_name": "Bharat Heavy Electricals Limited",
+        "normalized_name": "bharat heavy electricals limited",
+        "entity_type": "organization",
+        "geography": "India",
+        "record_kind": "organization",
+        "observed_role": "nuclear/heavy engineering supplier candidate",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:c0566747997d57d677b1",
+        "observed_name": "Tata Steel",
+        "normalized_name": "tata steel",
+        "entity_type": "organization",
+        "geography": "Jamshedpur/Kalinganagar, India",
+        "record_kind": "organization",
+        "observed_role": "steel producer candidate",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1464",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      }
+    ],
+    "facilities": [
+      {
+        "candidate_id": "homi-candidate:a598d92d15902544a674",
+        "observed_name": "Jyoti CNC Rajkot plants",
+        "normalized_name": "jyoti cnc rajkot plants",
+        "entity_type": "facility",
+        "geography": "Rajkot, Gujarat",
+        "record_kind": "facility",
+        "observed_role": "machine-tool facility presence",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:9333b5e41f126603dc9b",
+        "observed_name": "Jyoti CNC Strasbourg facility",
+        "normalized_name": "jyoti cnc strasbourg facility",
+        "entity_type": "facility",
+        "geography": "Strasbourg, France",
+        "record_kind": "facility",
+        "observed_role": "foreign machine-tool facility presence",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:d8de85e0940cecd4e859",
+        "observed_name": "CMTI Bengaluru campus",
+        "normalized_name": "cmti bengaluru campus",
+        "entity_type": "facility",
+        "geography": "Bengaluru, Karnataka",
+        "record_kind": "facility",
+        "observed_role": "R&D/metrology facility presence",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:1b833ac9154f2326afeb",
+        "observed_name": "Tumakuru Machine Tool Park",
+        "normalized_name": "tumakuru machine tool park",
+        "entity_type": "facility",
+        "geography": "Tumakuru, Karnataka",
+        "record_kind": "facility",
+        "observed_role": "industrial cluster/facility presence",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:ce4cec56e0d9288bec1f",
+        "observed_name": "NPL New Delhi metrology facilities",
+        "normalized_name": "npl new delhi metrology facilities",
+        "entity_type": "facility",
+        "geography": "New Delhi, India",
+        "record_kind": "facility",
+        "observed_role": "primary calibration facility",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L246",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:de3da6721a760fb0436c",
+        "observed_name": "NABL-accredited calibration laboratory network",
+        "normalized_name": "nabl-accredited calibration laboratory network",
+        "entity_type": "facility",
+        "geography": "India",
+        "record_kind": "facility",
+        "observed_role": "accredited-lab network presence",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L246",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:7bc211b93594520e11ed",
+        "observed_name": "ARCI Hyderabad NdFeB pilot plant",
+        "normalized_name": "arci hyderabad ndfeb pilot plant",
+        "entity_type": "facility",
+        "geography": "Hyderabad, Telangana",
+        "record_kind": "facility",
+        "observed_role": "rare-earth magnet pilot facility",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L506",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:3a46a5997e08e6188afc",
+        "observed_name": "IREL Vizag rare-earth facility",
+        "normalized_name": "irel vizag rare-earth facility",
+        "entity_type": "facility",
+        "geography": "Visakhapatnam, Andhra Pradesh",
+        "record_kind": "facility",
+        "observed_role": "rare-earth separation facility presence",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L506",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:f904c15b527f12437926",
+        "observed_name": "Micron Sanand ATMP facility",
+        "normalized_name": "micron sanand atmp facility",
+        "entity_type": "facility",
+        "geography": "Sanand, Gujarat",
+        "record_kind": "facility",
+        "observed_role": "semiconductor assembly/test project facility",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1468",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:3d1a244d6956c97eaa19",
+        "observed_name": "Tata-PSMC Dholera fab site",
+        "normalized_name": "tata-psmc dholera fab site",
+        "entity_type": "facility",
+        "geography": "Dholera, Gujarat",
+        "record_kind": "facility",
+        "observed_role": "semiconductor fab project site",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1468",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:5871e5f2ff7fd42f6d49",
+        "observed_name": "PFBR Kalpakkam site",
+        "normalized_name": "pfbr kalpakkam site",
+        "entity_type": "facility",
+        "geography": "Kalpakkam, Tamil Nadu",
+        "record_kind": "facility",
+        "observed_role": "fast-breeder reactor project site",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:0ed09140b60ee13ab0e7",
+        "observed_name": "NPCIL operating nuclear fleet sites",
+        "normalized_name": "npcil operating nuclear fleet sites",
+        "entity_type": "facility",
+        "geography": "India",
+        "record_kind": "facility",
+        "observed_role": "operating generation sites",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:d50de51cd549e12f8bbe",
+        "observed_name": "L&T Hazira heavy engineering works",
+        "normalized_name": "l&t hazira heavy engineering works",
+        "entity_type": "facility",
+        "geography": "Hazira, Gujarat",
+        "record_kind": "facility",
+        "observed_role": "heavy engineering facility presence",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:281395205d7fb74002d7",
+        "observed_name": "HMT Bengaluru machine-tool units",
+        "normalized_name": "hmt bengaluru machine-tool units",
+        "entity_type": "facility",
+        "geography": "Bengaluru, Karnataka",
+        "record_kind": "facility",
+        "observed_role": "machine-tool facility presence",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:81f4e09648570069c51d",
+        "observed_name": "NEI NBC bearing sites",
+        "normalized_name": "nei nbc bearing sites",
+        "entity_type": "facility",
+        "geography": "India",
+        "record_kind": "facility",
+        "observed_role": "bearing facility network presence",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L264",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:5d030eacdfcfa37670d4",
+        "observed_name": "Tata Electronics Jagiroad semiconductor facility",
+        "normalized_name": "tata electronics jagiroad semiconductor facility",
+        "entity_type": "facility",
+        "geography": "Jagiroad, Assam",
+        "record_kind": "facility",
+        "observed_role": "semiconductor assembly/test project facility",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1480",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      }
+    ],
+    "clusters": [
+      {
+        "candidate_id": "homi-candidate:b8eb6bae96398d24e82d",
+        "observed_name": "Gujarat: Ahmedabad\u2013Sanand\u2013Dholera\u2013Vadodara\u2013Hazira industrial system",
+        "normalized_name": "gujarat: ahmedabad\u2013sanand\u2013dholera\u2013vadodara\u2013hazira industrial system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 2",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-01",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:2fb744b8c34e3cca4251",
+        "observed_name": "Maharashtra: Mumbai\u2013Pune\u2013Nashik\u2013Aurangabad/Nagpur industrial system",
+        "normalized_name": "maharashtra: mumbai\u2013pune\u2013nashik\u2013aurangabad/nagpur industrial system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 3",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-02",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:e2df76480f659c3b4b4f",
+        "observed_name": "Karnataka: Bengaluru\u2013Mysuru\u2013Tumakuru\u2013Mangaluru industrial system",
+        "normalized_name": "karnataka: bengaluru\u2013mysuru\u2013tumakuru\u2013mangaluru industrial system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 4",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-03",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:d69ceab2d6e60dc3941e",
+        "observed_name": "Tamil Nadu: Chennai\u2013Hosur\u2013Coimbatore\u2013Sriperumbudur\u2013Thoothukudi industrial system",
+        "normalized_name": "tamil nadu: chennai\u2013hosur\u2013coimbatore\u2013sriperumbudur\u2013thoothukudi industrial system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 5",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-04",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:90b5e63138ec324e8a29",
+        "observed_name": "Telangana and Andhra Pradesh: Hyderabad\u2013Warangal\u2013Sri City\u2013Visakhapatnam industrial system",
+        "normalized_name": "telangana and andhra pradesh: hyderabad\u2013warangal\u2013sri city\u2013visakhapatnam industrial system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 6",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-05",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:e3aeb6e0257438fe4a59",
+        "observed_name": "National Capital Region and Uttar Pradesh: Noida\u2013Greater Noida\u2013YEIDA\u2013Ghaziabad\u2013Lucknow system",
+        "normalized_name": "national capital region and uttar pradesh: noida\u2013greater noida\u2013yeida\u2013ghaziabad\u2013lucknow system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 7",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-06",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:45a85e4a3dbd6f2b4c6a",
+        "observed_name": "Odisha: Bhubaneswar\u2013Cuttack\u2013Dhamra\u2013Paradip\u2013Jharsuguda industrial system",
+        "normalized_name": "odisha: bhubaneswar\u2013cuttack\u2013dhamra\u2013paradip\u2013jharsuguda industrial system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 8",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-07",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:cd50150684cd3ba57e8d",
+        "observed_name": "Jharkhand and Chhattisgarh: Jamshedpur\u2013Bokaro\u2013Ranchi\u2013Raipur\u2013Bhilai\u2013Korba system",
+        "normalized_name": "jharkhand and chhattisgarh: jamshedpur\u2013bokaro\u2013ranchi\u2013raipur\u2013bhilai\u2013korba system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 9",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-08",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:7507e9f75c6d1722b1df",
+        "observed_name": "West Bengal: Kolkata\u2013Durgapur\u2013Haldia industrial system",
+        "normalized_name": "west bengal: kolkata\u2013durgapur\u2013haldia industrial system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 10",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-09",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:9b119257cbe092a6e6c0",
+        "observed_name": "Rajasthan: Jaipur\u2013Bhiwadi\u2013Neemrana\u2013Kota industrial system",
+        "normalized_name": "rajasthan: jaipur\u2013bhiwadi\u2013neemrana\u2013kota industrial system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 11",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-10",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:ca2ed0332fad261d12e2",
+        "observed_name": "Kerala: Kochi\u2013Thiruvananthapuram\u2013Kollam industrial and space system",
+        "normalized_name": "kerala: kochi\u2013thiruvananthapuram\u2013kollam industrial and space system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 12",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-11",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:7f83a55b3889e54c9e4a",
+        "observed_name": "Punjab and Haryana: Ludhiana\u2013Jalandhar\u2013Panipat\u2013Gurugram\u2013Manesar system",
+        "normalized_name": "punjab and haryana: ludhiana\u2013jalandhar\u2013panipat\u2013gurugram\u2013manesar system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 13",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-12",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:b1061ee11308f2d9fe25",
+        "observed_name": "Madhya Pradesh: Indore\u2013Pithampur\u2013Bhopal\u2013Jabalpur industrial system",
+        "normalized_name": "madhya pradesh: indore\u2013pithampur\u2013bhopal\u2013jabalpur industrial system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 14",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-13",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:1f8436663437e024e1fc",
+        "observed_name": "Assam and Northeast India: Jagiroad\u2013Guwahati\u2013Agartala and connectivity system",
+        "normalized_name": "assam and northeast india: jagiroad\u2013guwahati\u2013agartala and connectivity system",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 15",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-14",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:10020d241456c21861bb",
+        "observed_name": "National industrial corridors, freight corridors, ports and logistics infrastructure",
+        "normalized_name": "national industrial corridors, freight corridors, ports and logistics infrastructure",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 16",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-15",
+        "last_verified": "2026-08-24"
+      },
+      {
+        "candidate_id": "homi-candidate:10ca36c826b8aeae81df",
+        "observed_name": "Cross-cutting strategic projects: semiconductors, batteries, solar, rare-earth magnets, CRGO steel, aerospace, defence and nuclear",
+        "normalized_name": "cross-cutting strategic projects: semiconductors, batteries, solar, rare-earth magnets, crgo steel, aerospace, defence and nuclear",
+        "entity_type": "industrial_cluster",
+        "geography": "India",
+        "record_kind": "cluster",
+        "observed_role": "regional industrial system",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_cluster_table.csv:row 17",
+        "evidence_class": "MEASURED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "cluster_id_observed": "CL-16",
+        "last_verified": "2026-08-24"
+      }
+    ],
+    "capabilities": [
+      {
+        "candidate_id": "homi-candidate:63d708c2c999006aeef1",
+        "observed_name": "Machine tools and precision manufacturing",
+        "normalized_name": "machine tools and precision manufacturing",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 2",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-01",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:f53cc9d27f0aca05b1c5",
+        "observed_name": "Metrology, calibration and dimensional inspection",
+        "normalized_name": "metrology, calibration and dimensional inspection",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 3",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-02",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:d3a0b38d3cac05d6d298",
+        "observed_name": "Bearings, ball screws and linear guides",
+        "normalized_name": "bearings, ball screws and linear guides",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 4",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-03",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:61d12af7ccdceca86093",
+        "observed_name": "Motors, servo drives and industrial controls",
+        "normalized_name": "motors, servo drives and industrial controls",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 5",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-04",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:f121853b0139466d6cb5",
+        "observed_name": "Robotics and factory automation",
+        "normalized_name": "robotics and factory automation",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 6",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-05",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:ef8714f5ef48d97ba987",
+        "observed_name": "Semiconductors and electronics manufacturing",
+        "normalized_name": "semiconductors and electronics manufacturing",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 7",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-06",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:e4417d57df9a15532c8f",
+        "observed_name": "Power electronics and advanced electrical components",
+        "normalized_name": "power electronics and advanced electrical components",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 8",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-07",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:20f5a73e6418c77187b0",
+        "observed_name": "Batteries, cells and energy storage manufacturing",
+        "normalized_name": "batteries, cells and energy storage manufacturing",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 9",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-08",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:dfa58501ab7b3ba1dc9f",
+        "observed_name": "Solar photovoltaic and wind equipment",
+        "normalized_name": "solar photovoltaic and wind equipment",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 10",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-09",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:96676fd486ae1ea09647",
+        "observed_name": "Transformers, switchgear and grid equipment",
+        "normalized_name": "transformers, switchgear and grid equipment",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 11",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-10",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:fd25794c76ecbcf10982",
+        "observed_name": "Steel and specialty steel",
+        "normalized_name": "steel and specialty steel",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 12",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-11",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:144b4897715753091734",
+        "observed_name": "Aluminium, copper, titanium and nickel materials",
+        "normalized_name": "aluminium, copper, titanium and nickel materials",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 13",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-12",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:c83ad1c9cad65e18e0f3",
+        "observed_name": "Rare-earth processing, separation and permanent magnets",
+        "normalized_name": "rare-earth processing, separation and permanent magnets",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 14",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-13",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:e46603c05abb0c3a24f2",
+        "observed_name": "Industrial chemicals and high-purity gases",
+        "normalized_name": "industrial chemicals and high-purity gases",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 15",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-14",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:062a112159c25d8e7226",
+        "observed_name": "Composites, technical ceramics and advanced materials",
+        "normalized_name": "composites, technical ceramics and advanced materials",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 16",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-15",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:3bb2dc6db850da1af5f8",
+        "observed_name": "Aerospace, defence aviation and space manufacturing",
+        "normalized_name": "aerospace, defence aviation and space manufacturing",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 17",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-16",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:3ba1c54a239ab94637c8",
+        "observed_name": "Nuclear manufacturing and nuclear supply chain",
+        "normalized_name": "nuclear manufacturing and nuclear supply chain",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 18",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-17",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:9d5e19637f7f1d0d7b84",
+        "observed_name": "Turbines, generators and rotating equipment",
+        "normalized_name": "turbines, generators and rotating equipment",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 19",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-18",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:544c2fa7ac0b782d5b0b",
+        "observed_name": "Pumps, valves and compressors",
+        "normalized_name": "pumps, valves and compressors",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 20",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-19",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:056977894926eee01a11",
+        "observed_name": "Mining, refining, heavy engineering and capital goods",
+        "normalized_name": "mining, refining, heavy engineering and capital goods",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 21",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-20",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:18af8cd98abc89e676f1",
+        "observed_name": "Industrial machinery, tooling and test/qualification infrastructure",
+        "normalized_name": "industrial machinery, tooling and test/qualification infrastructure",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 22",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-21",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      },
+      {
+        "candidate_id": "homi-candidate:418c3c28b4decf82d6c0",
+        "observed_name": "Manufacturing software, industrial control software and physically consequential digital systems",
+        "normalized_name": "manufacturing software, industrial control software and physically consequential digital systems",
+        "entity_type": "capability",
+        "geography": "India-wide; see regional cluster table",
+        "record_kind": "capability",
+        "observed_role": "industrial capability family",
+        "source_locator": "manus-02/IndiaBUILD_plus_plus_domain_table.csv:row 23",
+        "evidence_class": "MIXED; inspect memo-level labels",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false,
+        "capability_id_observed": "IN-22",
+        "last_verified": "2026-08-24",
+        "qualification_state_observed": "Evidence exists in selected facilities/products; broad scope often unknown"
+      }
+    ],
+    "projects": [
+      {
+        "candidate_id": "homi-candidate:f7387df5dee0c63c1dbd",
+        "observed_name": "Bharat CNC indigenous controller project",
+        "normalized_name": "bharat cnc indigenous controller project",
+        "entity_type": "project",
+        "geography": "Bengaluru, Karnataka",
+        "record_kind": "project",
+        "observed_role": "controller development/testing and early adoption",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L228",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:3a570ec2460837a6b500",
+        "observed_name": "CMTI-Jyoti high-speed ball-screw technology transfer",
+        "normalized_name": "cmti-jyoti high-speed ball-screw technology transfer",
+        "entity_type": "project",
+        "geography": "Bengaluru/Rajkot, India",
+        "record_kind": "project",
+        "observed_role": "technology transfer/commercialization",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L264",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:c8fe59e0f0f174f44505",
+        "observed_name": "Tumakuru Machine Tool Park",
+        "normalized_name": "tumakuru machine tool park",
+        "entity_type": "project",
+        "geography": "Tumakuru, Karnataka",
+        "record_kind": "project",
+        "observed_role": "commissioned cluster project",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:1de3010c1d898ef27001",
+        "observed_name": "Capital Goods Scheme Phase II",
+        "normalized_name": "capital goods scheme phase ii",
+        "entity_type": "project",
+        "geography": "India",
+        "record_kind": "project",
+        "observed_role": "public industrial capability support scheme",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L224",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:77d038e2f2f62383416e",
+        "observed_name": "ARCI NdFeB permanent-magnet pilot plant",
+        "normalized_name": "arci ndfeb permanent-magnet pilot plant",
+        "entity_type": "project",
+        "geography": "Hyderabad, Telangana",
+        "record_kind": "project",
+        "observed_role": "pilot plant project",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L506",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:728f4c5e0e666b03ee19",
+        "observed_name": "Rare-earth magnet manufacturing scheme",
+        "normalized_name": "rare-earth magnet manufacturing scheme",
+        "entity_type": "project",
+        "geography": "India",
+        "record_kind": "project",
+        "observed_role": "announced support scheme",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L506",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:9c9862ae8299b8f30942",
+        "observed_name": "Micron Sanand ATMP",
+        "normalized_name": "micron sanand atmp",
+        "entity_type": "project",
+        "geography": "Sanand, Gujarat",
+        "record_kind": "project",
+        "observed_role": "semiconductor assembly/test project",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1468",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:939000b0d845c8913626",
+        "observed_name": "Tata-PSMC Dholera semiconductor fab",
+        "normalized_name": "tata-psmc dholera semiconductor fab",
+        "entity_type": "project",
+        "geography": "Dholera, Gujarat",
+        "record_kind": "project",
+        "observed_role": "semiconductor fab project",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1468",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:4c4ad0ccfe681325de1f",
+        "observed_name": "Tata Electronics Jagiroad semiconductor facility",
+        "normalized_name": "tata electronics jagiroad semiconductor facility",
+        "entity_type": "project",
+        "geography": "Jagiroad, Assam",
+        "record_kind": "project",
+        "observed_role": "semiconductor assembly/test project",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1480",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:cdde2699f4792498a5ae",
+        "observed_name": "PFBR Kalpakkam",
+        "normalized_name": "pfbr kalpakkam",
+        "entity_type": "project",
+        "geography": "Kalpakkam, Tamil Nadu",
+        "record_kind": "project",
+        "observed_role": "fast-breeder reactor project",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:6a34423381e8d5669cb9",
+        "observed_name": "Nuclear fleet-mode programme",
+        "normalized_name": "nuclear fleet-mode programme",
+        "entity_type": "project",
+        "geography": "India",
+        "record_kind": "project",
+        "observed_role": "future nuclear build programme",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L603",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      },
+      {
+        "candidate_id": "homi-candidate:1ad7f60f6501e3987d0b",
+        "observed_name": "HAL Tumakuru aerospace project",
+        "normalized_name": "hal tumakuru aerospace project",
+        "entity_type": "project",
+        "geography": "Tumakuru, Karnataka",
+        "record_kind": "project",
+        "observed_role": "aerospace project candidate",
+        "source_locator": "IndiaBUILD_plus_plus_baseline.md:L1480",
+        "evidence_class": "REPORTED",
+        "promotion_status": "staging_candidate",
+        "canonical_resolution": "unresolved_or_staging_only",
+        "fuzzy_merge": false
+      }
+    ],
+    "promotion_status": "staging_candidate"
+  },
+  "relation_candidates": [
+    {
+      "relation_id": "rel_manus02_01",
+      "subject_candidate": "homi-candidate:7aba177445d32b5fbb2c",
+      "raw_predicate": "has_facility_presence",
+      "object_candidate": "homi-candidate:a598d92d15902544a674",
+      "semantic_qualifier": "Facility presence/nameplate only; qualification and effective capacity remain UNKNOWN.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L224"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_02",
+      "subject_candidate": "homi-candidate:7aba177445d32b5fbb2c",
+      "raw_predicate": "has_facility_presence",
+      "object_candidate": "homi-candidate:9333b5e41f126603dc9b",
+      "semantic_qualifier": "Foreign facility observation; not India supply.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L224"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_03",
+      "subject_candidate": "homi-candidate:a598d92d15902544a674",
+      "raw_predicate": "claims_capability",
+      "object_candidate": "homi-candidate:63d708c2c999006aeef1",
+      "semantic_qualifier": "Observed capability-family association, not universal site qualification.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L224"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_04",
+      "subject_candidate": "homi-candidate:d8de85e0940cecd4e859",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:f7387df5dee0c63c1dbd",
+      "semantic_qualifier": "Testing/project relation; commercial qualification not established.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L228"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_05",
+      "subject_candidate": "homi-candidate:f7387df5dee0c63c1dbd",
+      "raw_predicate": "targets_capability",
+      "object_candidate": "CNC controllers and industrial control",
+      "semantic_qualifier": "Capability target; current qualified supply UNKNOWN.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L228"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_06",
+      "subject_candidate": "homi-candidate:d8de85e0940cecd4e859",
+      "raw_predicate": "technology_transfer_to",
+      "object_candidate": "homi-candidate:3a570ec2460837a6b500",
+      "semantic_qualifier": "Technology-transfer claim; line output and qualification need evidence.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L264"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_07",
+      "subject_candidate": "homi-candidate:3c1df6e227e7f3abc8b2",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:77d038e2f2f62383416e",
+      "semantic_qualifier": "Pilot project relation; scaled operating output not proven.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L506"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_08",
+      "subject_candidate": "ARCI NdFeB pilot plant",
+      "raw_predicate": "located_at",
+      "object_candidate": "homi-candidate:7bc211b93594520e11ed",
+      "semantic_qualifier": "Facility presence relation; not qualified capacity.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L506"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_09",
+      "subject_candidate": "homi-candidate:7a324299ab4ed69ee759",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:9c9862ae8299b8f30942",
+      "semantic_qualifier": "Project/facility presence relation; operating good output UNKNOWN.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L1468"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_10",
+      "subject_candidate": "homi-candidate:f3f6f4b4f6b3bfbb015c",
+      "raw_predicate": "develops_project",
+      "object_candidate": "homi-candidate:939000b0d845c8913626",
+      "semantic_qualifier": "Announced project relation; no operating wafer capacity promotion.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L1468"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_11",
+      "subject_candidate": "homi-candidate:cdde2699f4792498a5ae",
+      "raw_predicate": "located_at",
+      "object_candidate": "homi-candidate:5871e5f2ff7fd42f6d49",
+      "semantic_qualifier": "Project-site relation; commissioning and operating state need revalidation.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L603"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_12",
+      "subject_candidate": "homi-candidate:d0d4e2b9f5b476128cbe",
+      "raw_predicate": "operates_candidate",
+      "object_candidate": "homi-candidate:0ed09140b60ee13ab0e7",
+      "semantic_qualifier": "Operating generation relation; not manufacturing qualified capacity.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L603"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_13",
+      "subject_candidate": "homi-candidate:c8fe59e0f0f174f44505",
+      "raw_predicate": "clusters",
+      "object_candidate": "homi-candidate:c8fe59e0f0f174f44505",
+      "semantic_qualifier": "Cluster/facility naming overlap retained without fuzzy merge.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L224"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_14",
+      "subject_candidate": "homi-candidate:861a36bed381344d7f8d",
+      "raw_predicate": "accredits_candidate",
+      "object_candidate": "homi-candidate:de3da6721a760fb0436c",
+      "semantic_qualifier": "Accreditation eligibility does not prove available industrial supply.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L246"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_15",
+      "subject_candidate": "homi-candidate:81f4e09648570069c51d",
+      "raw_predicate": "claims_capability",
+      "object_candidate": "homi-candidate:d3a0b38d3cac05d6d298",
+      "semantic_qualifier": "Reported throughput and facility presence do not prove grade-specific qualified output.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L264"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    },
+    {
+      "relation_id": "rel_manus02_16",
+      "subject_candidate": "homi-candidate:4c4ad0ccfe681325de1f",
+      "raw_predicate": "located_at",
+      "object_candidate": "homi-candidate:4c4ad0ccfe681325de1f",
+      "semantic_qualifier": "Project facility presence; production qualification UNKNOWN.",
+      "evidence": {
+        "artifact": "manus-02/IndiaBUILD_plus_plus_baseline.md",
+        "locator": "IndiaBUILD_plus_plus_baseline.md:L1480"
+      },
+      "mapping_status": "allowed_candidate_staging",
+      "promotion_status": "staging_candidate",
+      "fuzzy_merge": false
+    }
+  ],
+  "capacity_claims": [
+    {
+      "capacity_claim_id": "capclaim_manus02_01",
+      "subject": "Jyoti CNC India installed capacity",
+      "capacity_type": "nameplate_or_installed",
+      "value": "6000",
+      "unit": "machines/year",
+      "epistemic_class": "MEASURED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L224",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Installed/nameplate claim; operating good qualified output is UNKNOWN.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_02",
+      "subject": "Jyoti CNC France installed capacity",
+      "capacity_type": "nameplate_or_installed",
+      "value": "121",
+      "unit": "machines/year",
+      "epistemic_class": "MEASURED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L224",
+      "geography": "France",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Installed/nameplate claim; not India supply and not qualified effective output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_03",
+      "subject": "NEI/NBC bearing throughput",
+      "capacity_type": "reported_throughput",
+      "value": ">200000000",
+      "unit": "bearings/year",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L264",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Reported throughput; grade mix, yield, customer qualification, and current availability are UNKNOWN.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_04",
+      "subject": "Domestic CNC share of Indian demand",
+      "capacity_type": "market_coverage",
+      "value": "35",
+      "unit": "% of demand",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L224",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Demand coverage is not production capability or qualified available supply.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_05",
+      "subject": "Imported CNC share of Indian demand",
+      "capacity_type": "market_coverage",
+      "value": "65",
+      "unit": "% of demand",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L224",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Trade/import share is not a direct measure of domestic production capability.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_06",
+      "subject": "NABL calibration-laboratory network",
+      "capacity_type": "infrastructure_presence",
+      "value": "1208",
+      "unit": "accredited laboratories",
+      "epistemic_class": "MEASURED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L246",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Accreditation eligibility is not product-specific qualified industrial supply.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_07",
+      "subject": "Tumakuru Machine Tool Park footprint",
+      "capacity_type": "infrastructure_presence",
+      "value": "530",
+      "unit": "acres",
+      "epistemic_class": "MEASURED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L224",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Cluster footprint is not installed or qualified machine output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_08",
+      "subject": "Jyoti CNC India expansion claim",
+      "capacity_type": "announced_nameplate",
+      "value": "16000",
+      "unit": "machines/year",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L264",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Expansion/nameplate claim; construction, commissioning, yield, and qualification gates need revalidation.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_09",
+      "subject": "Bharat CNC controller project",
+      "capacity_type": "project_presence",
+      "value": "early adoption",
+      "unit": "qualitative",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L228",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Project/testing presence is not commercial production or qualified controller supply.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_10",
+      "subject": "ARCI NdFeB pilot plant",
+      "capacity_type": "project_presence",
+      "value": "established pilot",
+      "unit": "qualitative",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L506",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Pilot facility presence is not scaled magnet production or qualified output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_11",
+      "subject": "Tata-PSMC Dholera fab",
+      "capacity_type": "announced_project",
+      "value": "project announced/technology transfer",
+      "unit": "qualitative",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L1468",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Announcement/project status is not operating wafer capacity or qualified yield.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_12",
+      "subject": "Micron Sanand ATMP facility",
+      "capacity_type": "facility_presence",
+      "value": "facility opening/ATMP",
+      "unit": "qualitative",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L1468",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "reported_or_observed_presence",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Facility presence or opening is not time-windowed good qualified output.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_13",
+      "subject": "Indian nuclear generation operating capacity",
+      "capacity_type": "operating_capacity",
+      "value": "8880",
+      "unit": "MW",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L603",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "reported_or_observed_presence",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Operating generation total is not a supplier/facility qualified manufacturing capacity measure.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_14",
+      "subject": "Indian nuclear pipeline capacity",
+      "capacity_type": "pipeline_capacity",
+      "value": "12200",
+      "unit": "MW",
+      "epistemic_class": "REPORTED",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L603",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Pipeline/under-development total is not operating capacity; commissioning dates and scope need revalidation.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_15",
+      "subject": "Nuclear fleet-mode build target",
+      "capacity_type": "scenario_target",
+      "value": "7000",
+      "unit": "MW",
+      "epistemic_class": "SCENARIO",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L603",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "NOT_PROVEN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Target/scenario is not operating or qualified capacity.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_16",
+      "subject": "Sub-micron precision machine throughput",
+      "capacity_type": "qualified_effective_capacity_unknown",
+      "value": "UNKNOWN",
+      "unit": "machines/year",
+      "epistemic_class": "UNKNOWN",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L228",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "No exact current qualified annual throughput found in the slice.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_17",
+      "subject": "P4 spindle-bearing qualified capacity",
+      "capacity_type": "qualified_effective_capacity_unknown",
+      "value": "UNKNOWN",
+      "unit": "bearings/year",
+      "epistemic_class": "UNKNOWN",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L228",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "No facility-specific qualification and good-output time window found.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "capacity_claim_id": "capclaim_manus02_18",
+      "subject": "High-precision CMM unit throughput",
+      "capacity_type": "qualified_effective_capacity_unknown",
+      "value": "UNKNOWN",
+      "unit": "units/year",
+      "epistemic_class": "UNKNOWN",
+      "source_locator": "manus-02/IndiaBUILD_plus_plus_baseline.md:L246",
+      "geography": "India",
+      "date_or_period": "2024-2026 evidence window; verify current state",
+      "qualification_state": "UNKNOWN",
+      "operating_state": "UNKNOWN",
+      "announcement_nameplate_facility_operating_distinction": "Explicitly retained; this record must not be promoted to operating qualified capacity.",
+      "caveat": "Public revenue/lab counts do not establish unit throughput or qualified availability.",
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "capacity_semantics": {
+    "capacity_type_counts": {
+      "announced_nameplate": 1,
+      "announced_project": 1,
+      "facility_presence": 1,
+      "infrastructure_presence": 2,
+      "market_coverage": 2,
+      "nameplate_or_installed": 2,
+      "operating_capacity": 1,
+      "pipeline_capacity": 1,
+      "project_presence": 2,
+      "qualified_effective_capacity_unknown": 3,
+      "reported_throughput": 1,
+      "scenario_target": 1
+    },
+    "qualified_effective_capacity_claim_count": 0,
+    "qualified_effective_capacity_observed": "UNKNOWN",
+    "distinction_guard": "Announcements, project presence, nameplate/installed, reported throughput, operating generation, pipeline, and scenario target remain separate from operating qualified good output."
+  },
+  "canonical_reconciliation": {
+    "registry_manifest": "data/registry/manifest.yaml",
+    "registry_vocabulary_count": 39,
+    "current_registry_staging_matches": [
+      {
+        "candidate_id": "homi-candidate:d9c152617d71ff1bb8d3",
+        "observed_name": "Metrology, calibration and dimensional inspection",
+        "canonical_target": "cap:metrology",
+        "match_basis": "exact/explicit vocabulary mapping from current registry manifest; no fuzzy merge",
+        "current_registry_status": "staging_match_only",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false,
+        "required_revalidation": "Verify exact capability scope, facility, grade, geography, date, and qualification before any canonical write."
+      },
+      {
+        "candidate_id": "homi-candidate:bf1a886076eb5783610c",
+        "observed_name": "Bearings, ball screws and linear guides",
+        "canonical_target": "cap:precision-bearings",
+        "match_basis": "exact/explicit vocabulary mapping from current registry manifest; no fuzzy merge",
+        "current_registry_status": "staging_match_only",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false,
+        "required_revalidation": "Verify exact capability scope, facility, grade, geography, date, and qualification before any canonical write."
+      },
+      {
+        "candidate_id": "homi-candidate:9984a737db08409d6888",
+        "observed_name": "Rare-earth processing, separation and permanent magnets",
+        "canonical_target": "cap:rare-earth-magnet",
+        "match_basis": "exact/explicit vocabulary mapping from current registry manifest; no fuzzy merge",
+        "current_registry_status": "staging_match_only",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false,
+        "required_revalidation": "Verify exact capability scope, facility, grade, geography, date, and qualification before any canonical write."
+      },
+      {
+        "candidate_id": "homi-candidate:a4e94ed7bd4f86284b8c",
+        "observed_name": "Nuclear manufacturing and nuclear supply chain",
+        "canonical_target": "cap:nuclear-construction-qa",
+        "match_basis": "exact/explicit vocabulary mapping from current registry manifest; no fuzzy merge",
+        "current_registry_status": "staging_match_only",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false,
+        "required_revalidation": "Verify exact capability scope, facility, grade, geography, date, and qualification before any canonical write."
+      },
+      {
+        "candidate_id": "homi-candidate:245b9ae188748d5d8ea0",
+        "observed_name": "Semiconductors and electronics manufacturing",
+        "canonical_target": "cap:industrial-electronics",
+        "match_basis": "exact/explicit vocabulary mapping from current registry manifest; no fuzzy merge",
+        "current_registry_status": "staging_match_only",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false,
+        "required_revalidation": "Verify exact capability scope, facility, grade, geography, date, and qualification before any canonical write."
+      },
+      {
+        "candidate_id": "homi-candidate:037dcffcf42be33ab6af",
+        "observed_name": "Electrical steel, CRGO and specialty steel",
+        "canonical_target": "cap:electrical-steel",
+        "match_basis": "exact/explicit vocabulary mapping from current registry manifest; no fuzzy merge",
+        "current_registry_status": "staging_match_only",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false,
+        "required_revalidation": "Verify exact capability scope, facility, grade, geography, date, and qualification before any canonical write."
+      },
+      {
+        "candidate_id": "homi-candidate:bdef9797ea2e3ac7e0e8",
+        "observed_name": "Power electronics and grid hardware",
+        "canonical_target": "cap:power-electronics",
+        "match_basis": "exact/explicit vocabulary mapping from current registry manifest; no fuzzy merge",
+        "current_registry_status": "staging_match_only",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false,
+        "required_revalidation": "Verify exact capability scope, facility, grade, geography, date, and qualification before any canonical write."
+      },
+      {
+        "candidate_id": "homi-candidate:603aa1a92b7041cc3ca2",
+        "observed_name": "Composites, technical ceramics and advanced materials",
+        "canonical_target": "cap:composite-structures",
+        "match_basis": "exact/explicit vocabulary mapping from current registry manifest; no fuzzy merge",
+        "current_registry_status": "staging_match_only",
+        "promotion_status": "NOT_PROMOTED",
+        "fuzzy_merge": false,
+        "required_revalidation": "Verify exact capability scope, facility, grade, geography, date, and qualification before any canonical write."
+      }
+    ],
+    "fuzzy_merge": false,
+    "canonical_promotion": "NONE",
+    "unmatched_or_unproven": "All matches require facility, scope, grade, geography, date, and qualification evidence before promotion."
+  },
+  "unknown_candidates": [
+    {
+      "unknown_id": "unk_manus02_01",
+      "question": "Current qualified good output by exact site, route, grade, product revision, and delivery window.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_02",
+      "question": "Annual throughput of sub-micron-precision CNC machines by qualified site.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_03",
+      "question": "Commercial adoption, reliability, and customer qualification of Bharat CNC.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_04",
+      "question": "P4-grade spindle-bearing and high-precision ball/roller qualification in India.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_05",
+      "question": "Indigenous value addition and sub-100nm capability in CMM and semiconductor metrology.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_06",
+      "question": "Current scaled NdFeB magnet production, grade, yield, and customer qualification.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_07",
+      "question": "Rare-earth feedstock, separation yield, and permanent-magnet material traceability.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_08",
+      "question": "Operating wafer output, yield, process node, and customer qualification at semiconductor projects.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_09",
+      "question": "Operating ATMP package output, yield, utilization, and available capacity at Sanand/Jagiroad.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_10",
+      "question": "Plant-level nuclear project commissioning status and reconciliation of operating/pipeline totals.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_11",
+      "question": "Cluster utility, power, water, logistics, workforce, and supplier-readiness constraints.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    },
+    {
+      "unknown_id": "unk_manus02_12",
+      "question": "Current validity and intended target of source-index URL tokens with wrapper anomalies.",
+      "epistemic_class": "UNKNOWN",
+      "decision_sensitivity": "high",
+      "promotion_status": "staging_candidate",
+      "resolver": "Facility-level primary filings, audits, qualification packs, dated production/yield records, and source-owner verification."
+    }
+  ],
+  "conflict_candidates": [
+    {
+      "conflict_id": "cnf_manus02_01",
+      "signal": "Bharat CNC testing success versus commercial OEM adoption",
+      "resolution_state": "CONFLICTED",
+      "resolution": "CMTI test claims and continued foreign-controller use need claim-level provenance.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus02_02",
+      "signal": "Indigenous metrology software claims versus licensed/limited implementations",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Keep competing claims; require technical architecture and customer acceptance evidence.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus02_03",
+      "signal": "Locally made linear guides versus cutting/grinding imported blanks",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Resolve material origin and process-route evidence at site and grade level.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus02_04",
+      "signal": "Rare-earth pilot/announcement language versus scaled magnet output",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Do not treat a pilot plant or scheme as operating capacity.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus02_05",
+      "signal": "Project opening/announcement versus commissioning and qualified production",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Retain status transitions as separate observations with dates.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus02_06",
+      "signal": "Nuclear operating, pipeline, and fleet-mode totals",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Different boundaries and clocks may explain headline differences; reconcile plant by plant.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus02_07",
+      "signal": "Market coverage/import share estimates",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Preserve denominator and method; do not infer domestic production from trade share.",
+      "promotion_status": "staging_candidate"
+    },
+    {
+      "conflict_id": "cnf_manus02_08",
+      "signal": "URL-token repairs and source identity",
+      "resolution_state": "CONFLICTED",
+      "resolution": "Preserve raw token and repaired candidate until source-owner or page verification.",
+      "promotion_status": "staging_candidate"
+    }
+  ],
+  "freshness_flags": {
+    "evidence_cutoff": "2026-08-24",
+    "revalidation_reference_date": "2026-08-25",
+    "current_state_rows_containing_2026": 38,
+    "future_dated_rows_2027_to_2030": 26,
+    "future_years": [
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "flag": "All current-state and future target claims require dated primary-source revalidation before decision use; no web refresh was performed."
+  },
+  "explicit_accounting": {
+    "artifacts": 12,
+    "evidence_artifacts": 9,
+    "non_evidence_artifacts": 3,
+    "logical_records_after_csv_json_dedupe": 306,
+    "semantic_content_records_after_deduping_normalized_projections": 268,
+    "sources": 230,
+    "claims": 534,
+    "claims_including_source_fields": 572,
+    "claim_count_basis": "22 raw domain rows x 6 narrative fields + 16 raw cluster rows x 5 narrative fields + 22 normalized domain rows x 11 claim fields + 16 normalized cluster rows x 5 claim fields; identity/source-only fields excluded; CSV/JSON mirrors counted once.",
+    "entity_candidates": 88,
+    "entity_candidate_breakdown": {
+      "organizations": 22,
+      "facilities": 16,
+      "clusters": 16,
+      "capabilities": 22,
+      "projects": 12
+    },
+    "relations": 16,
+    "facilities": 16,
+    "capacity_claims": 18,
+    "capacity_claims_by_type": {
+      "announced_nameplate": 1,
+      "announced_project": 1,
+      "facility_presence": 1,
+      "infrastructure_presence": 2,
+      "market_coverage": 2,
+      "nameplate_or_installed": 2,
+      "operating_capacity": 1,
+      "pipeline_capacity": 1,
+      "project_presence": 2,
+      "qualified_effective_capacity_unknown": 3,
+      "reported_throughput": 1,
+      "scenario_target": 1
+    },
+    "qualified_effective_capacity_claims": 0,
+    "unknown_claim_label_occurrences": 57,
+    "conflicted_claim_label_occurrences": 41,
+    "unknown_question_ledger_items": 12,
+    "conflicted_question_ledger_items": 1,
+    "duplicates": {
+      "physical_csv_json_mirror_pairs": 2,
+      "duplicate_records_removed": 38
+    },
+    "malformed_artifacts": 0,
+    "malformed_records": 0,
+    "repaired_artifacts": 3,
+    "repaired_records": 0,
+    "skipped_as_non_evidence_artifacts": 3,
+    "escalation_count": 12,
+    "raw_zip_mismatch_count": 0
+  },
+  "escalation_packets": [
+    {
+      "escalation_id": "esc_manus02_01",
+      "trigger": "Current qualified good output by exact site, route, grade, product revision, and delivery window.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_02",
+      "trigger": "Annual throughput of sub-micron-precision CNC machines by qualified site.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_03",
+      "trigger": "Commercial adoption, reliability, and customer qualification of Bharat CNC.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_04",
+      "trigger": "P4-grade spindle-bearing and high-precision ball/roller qualification in India.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_05",
+      "trigger": "Indigenous value addition and sub-100nm capability in CMM and semiconductor metrology.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_06",
+      "trigger": "Current scaled NdFeB magnet production, grade, yield, and customer qualification.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_07",
+      "trigger": "Rare-earth feedstock, separation yield, and permanent-magnet material traceability.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_08",
+      "trigger": "Operating wafer output, yield, process node, and customer qualification at semiconductor projects.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_09",
+      "trigger": "Operating ATMP package output, yield, utilization, and available capacity at Sanand/Jagiroad.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_10",
+      "trigger": "Plant-level nuclear project commissioning status and reconciliation of operating/pipeline totals.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_11",
+      "trigger": "Cluster utility, power, water, logistics, workforce, and supplier-readiness constraints.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "escalation_id": "esc_manus02_12",
+      "trigger": "Current validity and intended target of source-index URL tokens with wrapper anomalies.",
+      "decision_sensitivity": "high",
+      "required_evidence": [
+        "dated primary source",
+        "exact geography/facility",
+        "scope/grade/product revision",
+        "qualification or operating evidence",
+        "time-windowed output and caveats"
+      ],
+      "status": "OPEN",
+      "promotion_status": "NOT_PROMOTED"
+    }
+  ],
+  "validation": {
+    "raw_zip_test": "PASS",
+    "all_12_artifacts_hash_and_byte_match": true,
+    "csv_json_pair_semantic_match": true,
+    "malformed_artifact_count": 0,
+    "python_minus_m_json_tool": "PASS (validated after materialization)",
+    "deterministic": true,
+    "canonical_changes": 0
+  }
+}

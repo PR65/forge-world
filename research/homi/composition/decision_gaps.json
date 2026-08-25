@@ -1,0 +1,48 @@
+{
+  "not_claimed": [
+    "monetary value of information",
+    "causal intervention value"
+  ],
+  "ranking_method": "aggregate decision weight with 0.5 cross-objective reuse multiplier",
+  "task_count": 2,
+  "tasks": [
+    {
+      "aggregate_decision_weight": 4.0,
+      "canonical_id": "cap:battery-pack-integration",
+      "cross_objective_count": 1,
+      "decision_value_proxy": 4.0,
+      "epistemic_class": "UNKNOWN",
+      "gap_key": "cap:battery-pack-integration",
+      "label": "Battery-pack integration",
+      "objective_ids": [
+        "kenya_ag_drones_100k"
+      ],
+      "rank": 1,
+      "reasons": [
+        "no mapped evidence-bearing world-state record"
+      ],
+      "research_questions": [],
+      "status": "OPEN",
+      "task_id": "research-task:6d9c846c70a63b46"
+    },
+    {
+      "aggregate_decision_weight": 3.0,
+      "canonical_id": "cap:distributed-field-service",
+      "cross_objective_count": 1,
+      "decision_value_proxy": 3.0,
+      "epistemic_class": "UNKNOWN",
+      "gap_key": "cap:distributed-field-service",
+      "label": "Agricultural field-service and repair network",
+      "objective_ids": [
+        "kenya_ag_drones_100k"
+      ],
+      "rank": 2,
+      "reasons": [
+        "canonical primitive missing"
+      ],
+      "research_questions": [],
+      "status": "OPEN",
+      "task_id": "research-task:f58f12c2db6d2797"
+    }
+  ]
+}

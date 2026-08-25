@@ -1,0 +1,291 @@
+{
+  "artifact_accounting": {
+    "byte_matched_entries": 254,
+    "duplicate_artifacts": 12,
+    "inaccessible": 0,
+    "intentionally_skipped": 1,
+    "inventoried_context": 215,
+    "malformed_unrepaired": 4,
+    "raw_and_research_artifacts": 321,
+    "raw_archive_entries": 254,
+    "raw_archive_packages": 20,
+    "raw_integrity_failures": 0,
+    "staging_repairs": 30,
+    "structured_validated": 101,
+    "unique_hashes": 315
+  },
+  "canonical_registry": {
+    "canonical_capability_count": 44,
+    "capacity_segment_count": 14,
+    "cross_sector_capability_count": 20,
+    "cross_sector_capability_ids": [
+      "cap:battery-cell",
+      "cap:composite-structures",
+      "cap:electric-motors",
+      "cap:electrical-steel",
+      "cap:encoders-position-sensing",
+      "cap:industrial-electronics",
+      "cap:industrial-product-qualification",
+      "cap:lithium-refining",
+      "cap:metrology",
+      "cap:mineral-beneficiation",
+      "cap:power-electronics",
+      "cap:precision-assembly-calibration",
+      "cap:precision-bearings",
+      "cap:precision-grinding",
+      "cap:rare-earth-magnet",
+      "cap:rare-earth-separation",
+      "cap:space-optical-payloads",
+      "cap:structural-castings",
+      "cap:thermal-management",
+      "cap:tooling-fixtures"
+    ],
+    "edge_count": 1412,
+    "entity_kind_counts": {
+      "builder": 15,
+      "capability": 44,
+      "capability_claim": 55,
+      "capacity_segment": 14,
+      "demand_pool": 8,
+      "equipment_class": 191,
+      "facility": 32,
+      "functional_requirement": 22,
+      "material_grade": 46,
+      "organization": 41,
+      "part": 238,
+      "product_variant": 6,
+      "project": 20,
+      "qualification": 46,
+      "recipe": 108,
+      "resource_class": 12,
+      "shock": 20,
+      "substitution": 6
+    },
+    "evidence_count": 131,
+    "evidence_epistemic_class_counts": {
+      "ASSUMPTION": 11,
+      "CONFLICTED": 1,
+      "ESTIMATED": 2,
+      "REPORTED": 101,
+      "SCENARIO": 3,
+      "UNKNOWN": 13
+    },
+    "facility_count": 32,
+    "node_count": 924,
+    "pack_count": 7,
+    "snapshot_id": "registry-snapshot:db84f98a08835614"
+  },
+  "corpus_coverage": {
+    "complete": true,
+    "counting_note": "Corpus claim/source/entity counts use corpus-specific units and are not summed as if they were independent canonical records.",
+    "expected_manus_corpora": 20,
+    "reported_manus_corpora": 20,
+    "reports": [
+      {
+        "corpus_id": "manus-01",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/pilot/manus_01_report.json",
+        "report_bytes": 25501,
+        "report_sha256": "852bd8792c50bbd3466b8e1e528d2ec5bd9aa177740240026ae7e5d4072babbf"
+      },
+      {
+        "corpus_id": "manus-02",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave2/manus_02_report.json",
+        "report_bytes": 172902,
+        "report_sha256": "d7ec5bf264c482759d51f2811f2cba72c8b2d096811bdff04a020d50b82d3591"
+      },
+      {
+        "corpus_id": "manus-03",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave2/manus_03_report.json",
+        "report_bytes": 27205,
+        "report_sha256": "534d0c4f9b0c86609ee2591f5a03d2cc7b04fdf65c1df7f9999184d6276824cf"
+      },
+      {
+        "corpus_id": "manus-04",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave1/manus_04_report.json",
+        "report_bytes": 108288,
+        "report_sha256": "652ed273f9780d753f85c444de669a946177a8aeed729341bcf418b8bf3d83da"
+      },
+      {
+        "corpus_id": "manus-05",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/pilot/manus_05_report.json",
+        "report_bytes": 122959,
+        "report_sha256": "4223bed0e525011ea8595ef70d06fe33af3c7c5294ba8404dbcc0345a5898b98"
+      },
+      {
+        "corpus_id": "manus-06",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave2/manus_06_report.json",
+        "report_bytes": 93745,
+        "report_sha256": "7383e27f9db6f0f66c1068044325ed92409f6ddec3fb6a43bbef7b2bbccefb42"
+      },
+      {
+        "corpus_id": "manus-07",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave4/manus_07_report.json",
+        "report_bytes": 133181,
+        "report_sha256": "a02f4b14dc37f9d32de12146fcb340b2b1af9544caee00d5b1b39e8028b518bd"
+      },
+      {
+        "corpus_id": "manus-08",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave3/manus_08_report.json",
+        "report_bytes": 170344,
+        "report_sha256": "118ec39c75e94fdeb485cff60b76c848125e84c476ff0760e6c6770c516816ff"
+      },
+      {
+        "corpus_id": "manus-09",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave3/manus_09_report.json",
+        "report_bytes": 126380,
+        "report_sha256": "38fa5fd96c4a0369a893efce6956d07093b09a68ab3c0c5e5543959c46c73480"
+      },
+      {
+        "corpus_id": "manus-10",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave4/manus_10_report.json",
+        "report_bytes": 19292,
+        "report_sha256": "a030a9367d45c2737d0196eeb3e2064bcac1c0c176ce8ffb4ce49405bc1da0c7"
+      },
+      {
+        "corpus_id": "manus-11",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/pilot/manus_11_report.json",
+        "report_bytes": 56064,
+        "report_sha256": "9920fea622db2899d2fc787f7a665ad430e2b0f3515c6e39d4793c8fde4e3d08"
+      },
+      {
+        "corpus_id": "manus-12",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave1/manus_12_report.json",
+        "report_bytes": 297471,
+        "report_sha256": "ecd4289c7d943bb398d9dcfeaf2b101f390a59f21dee64f651beba2dea710549"
+      },
+      {
+        "corpus_id": "manus-13",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave2/manus_13_materials_reconciliation.json",
+        "report_bytes": 343928,
+        "report_sha256": "91cbc8fca5a66d4301c94a3482e55c3501e14be6c041bf8c819552a482ec5989"
+      },
+      {
+        "corpus_id": "manus-14",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave3/manus_14_report.json",
+        "report_bytes": 168894,
+        "report_sha256": "25aa8a3e125cb38bdc0e911779747dada046d736abd5a28c3736c7283882cf0f"
+      },
+      {
+        "corpus_id": "manus-15",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave3/manus_15_report.json",
+        "report_bytes": 179181,
+        "report_sha256": "9b9a99ae1d3782ca65b0bef17f1cbf179b6c972f3b7ddf2052be6390f3c42193"
+      },
+      {
+        "corpus_id": "manus-16",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/pilot/manus_16_context_report.json",
+        "report_bytes": 52571,
+        "report_sha256": "97d1b937d932de61713521acef134e72e199b69e64e9136a30a2d0289dd645b1"
+      },
+      {
+        "corpus_id": "manus-17",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave4/manus_17_report.json",
+        "report_bytes": 190711,
+        "report_sha256": "18e8e8ae8188e7d4a44b83584aa336722af4b270ee8681979640ec98a2ea92ef"
+      },
+      {
+        "corpus_id": "manus-18",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave2/manus_18_report.json",
+        "report_bytes": 111493,
+        "report_sha256": "e8e9860ab51f43c108df7dcf05515f0b820be26d9470f6dd35c703a309f015f6"
+      },
+      {
+        "corpus_id": "manus-19",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave3/manus_19_report.json",
+        "report_bytes": 18976,
+        "report_sha256": "ff0a3615783232c20fdc9f01f36b15ddb7902fe3ab2366dc83d5b0c04ac601e8"
+      },
+      {
+        "corpus_id": "manus-20",
+        "promotion_authority": "STAGING_ONLY",
+        "report": "research/homi/waves/wave3/manus_20_report.json",
+        "report_bytes": 204566,
+        "report_sha256": "7a771f93f226dd00df61ce5cb91478dc68d6762a63fd11562676257c63fe25c7"
+      }
+    ]
+  },
+  "derived_and_scenario_only": {
+    "note": "Derived/modelled/scenario state remains distinct and never overwrites baseline observations.",
+    "registry_derived_evidence": 0,
+    "registry_modelled_evidence": 0,
+    "registry_scenario_evidence": 3
+  },
+  "gate0_staging": {
+    "canonical_promotions": 0,
+    "claims": 58,
+    "conflict_candidates": 3,
+    "epistemic_class_counts": {
+      "ASSUMPTION": 0,
+      "CONFLICTED": 3,
+      "DERIVED": 8,
+      "ESTIMATED": 1,
+      "MEASURED": 6,
+      "MODELLED": 5,
+      "REPORTED": 23,
+      "SCENARIO": 1,
+      "UNKNOWN": 11
+    },
+    "unspecified_license_claims": 58
+  },
+  "generalization": {
+    "before_targeted_closure": {
+      "decision_critical_unknowns": 25,
+      "mean_structural_coverage": 0.795905,
+      "ranked_research_tasks": 16
+    },
+    "coverage_not_claimed": [
+      "feasibility",
+      "qualified supply",
+      "capacity closure",
+      "BOM completeness",
+      "economic viability"
+    ],
+    "decision_critical_unknowns": 2,
+    "mean_composition_coverage": 0.96131,
+    "objective_count": 6,
+    "objective_verdicts": {
+      "india_12u_satellites_10k": "NOT_ADJUDICABLE",
+      "india_electrolyzers_multi_gw": "NOT_ADJUDICABLE",
+      "india_heat_pumps_50k": "NOT_ADJUDICABLE",
+      "kenya_ag_drones_100k": "NOT_ADJUDICABLE",
+      "rare_earth_minimized_motor": "NOT_ADJUDICABLE",
+      "shared_cnc_robotics_aerospace_ev": "NOT_ADJUDICABLE"
+    },
+    "ranked_research_tasks": 2
+  },
+  "known_limitations": [
+    "Most external corpus claims remain staging because source rights and original-source snapshot metadata are unspecified.",
+    "Facility presence and product scope remain much better covered than facility-specific qualified effective capacity.",
+    "The novel-objective layer composes structural worlds but does not yet generate validated quantitative BOMs or solver-ready capacity networks automatically.",
+    "Stale evidence is flagged in corpus reports but not yet maintained by an automatic refresh scheduler."
+  ],
+  "schema_version": "1.0.0",
+  "targeted_research": {
+    "effective_qualified_capacity_promotions": 0,
+    "observations": 14,
+    "promotions": 14,
+    "research_tasks": 12,
+    "source_lineage_fraction": 1.0,
+    "source_snapshots": 14,
+    "sources": 14
+  }
+}
