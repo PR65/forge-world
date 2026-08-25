@@ -76,11 +76,11 @@ The public read API adds summary, domains, bounded search/filtering, record deta
 
 ## Validation
 
-- Existing and new Python tests pass, with the pre-existing skip retained.
+- **225 Python tests pass; one pre-existing test remains skipped.**
 - All existing scenario packs validate.
 - Atlas integrity, aliases, enums, graph references, broad product depth, ladders, API bounds, search filters, deterministic discovery, and benchmark reproducibility pass.
-- Frontend production build passes.
-- The separate `C:\GitHub\forge` repository was not touched.
+- Frontend TypeScript/Vite production build passes (20 modules; 170.50 kB JavaScript and 60.49 kB CSS before gzip).
+- The separate `C:\GitHub\forge` repository was not touched by this campaign; its unrelated pre-existing worktree changes were left intact.
 
 ## Remaining problems for Run 2
 
@@ -105,4 +105,3 @@ These are founder-level product judgments, not computed scientific metrics.
 - `research/india_v1/benchmark_results.json` — named and unseen-query results
 - `research/india_v1/indiabuild_accounting.json` — bounded machine-readable accounting
 - `scripts/forge_india_v1_benchmark.py` — deterministic benchmark runner
-
