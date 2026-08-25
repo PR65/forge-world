@@ -1,0 +1,1358 @@
+{
+  "count_level": {
+    "catalogue_claim_minus_observed_mapped": 2953,
+    "forge_direct_record_count": 12253,
+    "forge_generated_atlas_record_count": 14653,
+    "forge_generated_catalog_record_count": 14653,
+    "forge_reference_record_count": 2400,
+    "forge_source_api": "forge.india_v1.catalog.get_catalog",
+    "indiabuild_public_catalogue_claim": 10000,
+    "indiabuild_public_observed_mapped_count": 7047,
+    "parity_note": "The 7,047 mapped dashboard count and 10,000 catalogue claim are preserved as public observations. Forge generated atlas records are deterministic ontology views, not IndiaBUILD mapped capability rows, so no count-level equality or missing-row estimate is inferred.",
+    "parity_status": "NOT_COMPARABLE"
+  },
+  "observations_file": "research/indiabuild_verified_observations.md",
+  "observed_on": "2026-08-22",
+  "public_bulk_list_available": false,
+  "public_bulk_list_note": "The verified repository observations record the public dashboard and examples, but do not contain a downloadable complete capability list or a public row-level export. Reconciliation is therefore limited to explicitly observed sampled names.",
+  "reconciliation_classes": [
+    "MATCHED",
+    "FORGE_DEEPER_EQUIVALENT",
+    "UNRESOLVED",
+    "MISSING",
+    "INACCESSIBLE_OR_UNVERIFIABLE"
+  ],
+  "runner_version": "1.0.0",
+  "sample_class_counts": {
+    "FORGE_DEEPER_EQUIVALENT": 4,
+    "INACCESSIBLE_OR_UNVERIFIABLE": 0,
+    "MATCHED": 2,
+    "MISSING": 0,
+    "UNRESOLVED": 4
+  },
+  "sample_scope_note": "Only names explicitly observed in the repository's verified IndiaBUILD observations are classified. A missing sample match does not establish that a capability is absent from either system.",
+  "sample_size": 10,
+  "sampled_name_reconciliation": [
+    {
+      "classification": "UNRESOLVED",
+      "forge_result_ids": [
+        "india-v1:10:road-roller:single-drum:highway",
+        "india-v1:10:road-roller:single-drum:hot-weather",
+        "india-v1:10:road-roller:single-drum:industrial-plant",
+        "india-v1:10:road-roller:single-drum:mine",
+        "india-v1:10:road-roller:single-drum:monsoon",
+        "india-v1:10:road-roller:single-drum:rail-corridor",
+        "india-v1:10:road-roller:single-drum:rural-site",
+        "india-v1:10:road-roller:single-drum:urban-site",
+        "india-v1:10:road-roller:single-drum:water-project",
+        "india-v1:11:corrugated-box:single-wall:beverage"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "Single Drum Road roller - Highway",
+          "domain": "Infrastructure, Construction, and Heavy Equipment",
+          "id": "india-v1:10:road-roller:single-drum:highway",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Single Drum Road roller - Hot Weather",
+          "domain": "Infrastructure, Construction, and Heavy Equipment",
+          "id": "india-v1:10:road-roller:single-drum:hot-weather",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Single Drum Road roller - Industrial Plant",
+          "domain": "Infrastructure, Construction, and Heavy Equipment",
+          "id": "india-v1:10:road-roller:single-drum:industrial-plant",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Single Drum Road roller - Mine",
+          "domain": "Infrastructure, Construction, and Heavy Equipment",
+          "id": "india-v1:10:road-roller:single-drum:mine",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Single Drum Road roller - Monsoon",
+          "domain": "Infrastructure, Construction, and Heavy Equipment",
+          "id": "india-v1:10:road-roller:single-drum:monsoon",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Single Drum Road roller - Rail Corridor",
+          "domain": "Infrastructure, Construction, and Heavy Equipment",
+          "id": "india-v1:10:road-roller:single-drum:rail-corridor",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Single Drum Road roller - Rural Site",
+          "domain": "Infrastructure, Construction, and Heavy Equipment",
+          "id": "india-v1:10:road-roller:single-drum:rural-site",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Single Drum Road roller - Urban Site",
+          "domain": "Infrastructure, Construction, and Heavy Equipment",
+          "id": "india-v1:10:road-roller:single-drum:urban-site",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Single Drum Road roller - Water Project",
+          "domain": "Infrastructure, Construction, and Heavy Equipment",
+          "id": "india-v1:10:road-roller:single-drum:water-project",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Single Wall Corrugated box - Beverage",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:corrugated-box:single-wall:beverage",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Homepage spotlight: aerospace single-crystal blade casting.",
+      "public_name": "aerospace single-crystal blade casting",
+      "rationale": "The search returned only weak lexical overlap; no equivalence is asserted without a public row-level reconciliation or stronger evidence.",
+      "search_query": "single crystal blade casting"
+    },
+    {
+      "classification": "FORGE_DEEPER_EQUIVALENT",
+      "forge_result_ids": [
+        "product:06:hard-carbon-anode:integrated-batch-closed-loop",
+        "product:06:hard-carbon-anode:integrated-batch-instrumented",
+        "product:06:hard-carbon-anode:integrated-batch-operator",
+        "product:06:hard-carbon-anode:integrated-continuous-closed-loop",
+        "product:06:hard-carbon-anode:integrated-continuous-instrumented",
+        "product:06:hard-carbon-anode:integrated-continuous-operator",
+        "product:06:hard-carbon-anode:integrated-modular-closed-loop",
+        "product:06:hard-carbon-anode:integrated-modular-instrumented",
+        "product:06:hard-carbon-anode:integrated-modular-operator",
+        "product:06:hard-carbon-anode:lab-batch-closed-loop"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "hard-carbon anode material (integrated site scale, batch synthesis mode, closed-loop process assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:integrated-batch-closed-loop",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "hard-carbon anode material (integrated site scale, batch synthesis mode, instrumented process assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:integrated-batch-instrumented",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "hard-carbon anode material (integrated site scale, batch synthesis mode, operator-supervised assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:integrated-batch-operator",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "hard-carbon anode material (integrated site scale, continuous synthesis mode, closed-loop process assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:integrated-continuous-closed-loop",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "hard-carbon anode material (integrated site scale, continuous synthesis mode, instrumented process assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:integrated-continuous-instrumented",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "hard-carbon anode material (integrated site scale, continuous synthesis mode, operator-supervised assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:integrated-continuous-operator",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "hard-carbon anode material (integrated site scale, modular synthesis mode, closed-loop process assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:integrated-modular-closed-loop",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "hard-carbon anode material (integrated site scale, modular synthesis mode, instrumented process assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:integrated-modular-instrumented",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "hard-carbon anode material (integrated site scale, modular synthesis mode, operator-supervised assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:integrated-modular-operator",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "hard-carbon anode material (laboratory scale, batch synthesis mode, closed-loop process assurance)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:hard-carbon-anode:lab-batch-closed-loop",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Homepage recent status move: hard-carbon anode production.",
+      "public_name": "hard-carbon anode production",
+      "rationale": "The search returned a related generated record, but the public observation and Forge record differ in granularity or wording; this is not a claim of identity.",
+      "search_query": "hard carbon anode"
+    },
+    {
+      "classification": "FORGE_DEEPER_EQUIVALENT",
+      "forge_result_ids": [
+        "product:05:laser-cutting-machine:cell-enclosed-closed-loop",
+        "product:05:laser-cutting-machine:cell-enclosed-operator-assisted",
+        "product:05:laser-cutting-machine:cell-enclosed-programmable",
+        "product:05:laser-cutting-machine:cell-fixed-closed-loop",
+        "product:05:laser-cutting-machine:cell-fixed-operator-assisted",
+        "product:05:laser-cutting-machine:cell-fixed-programmable",
+        "product:05:laser-cutting-machine:cell-gantry-closed-loop",
+        "product:05:laser-cutting-machine:cell-gantry-operator-assisted",
+        "product:05:laser-cutting-machine:cell-gantry-programmable",
+        "shared:equipment:assembly_cell"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "industrial laser cutting machine (cell-integrated scale, enclosed process configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:laser-cutting-machine:cell-enclosed-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial laser cutting machine (cell-integrated scale, enclosed process configuration, operator-assisted control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:laser-cutting-machine:cell-enclosed-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial laser cutting machine (cell-integrated scale, enclosed process configuration, programmable control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:laser-cutting-machine:cell-enclosed-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial laser cutting machine (cell-integrated scale, fixed-floor configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:laser-cutting-machine:cell-fixed-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial laser cutting machine (cell-integrated scale, fixed-floor configuration, operator-assisted control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:laser-cutting-machine:cell-fixed-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial laser cutting machine (cell-integrated scale, fixed-floor configuration, programmable control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:laser-cutting-machine:cell-fixed-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial laser cutting machine (cell-integrated scale, gantry/modular configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:laser-cutting-machine:cell-gantry-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial laser cutting machine (cell-integrated scale, gantry/modular configuration, operator-assisted control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:laser-cutting-machine:cell-gantry-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial laser cutting machine (cell-integrated scale, gantry/modular configuration, programmable control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:laser-cutting-machine:cell-gantry-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Cross-domain equipment: Configurable assembly cell",
+          "domain": "shared_foundations",
+          "id": "shared:equipment:assembly_cell",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Homepage recent status move: battery-cell assembly equipment.",
+      "public_name": "battery-cell assembly equipment",
+      "rationale": "The search returned a related generated record, but the public observation and Forge record differ in granularity or wording; this is not a claim of identity.",
+      "search_query": "battery cell assembly equipment"
+    },
+    {
+      "classification": "MATCHED",
+      "forge_result_ids": [
+        "d04:capability:semiconductor_metrology:design",
+        "d04:capability:semiconductor_metrology:integration",
+        "d04:capability:semiconductor_metrology:process",
+        "d04:capability:semiconductor_metrology:qualification",
+        "d04:capability:semiconductor_metrology:scale",
+        "d04:equipment:advanced_package:inspection",
+        "d04:equipment:analog_mixed_signal:inspection",
+        "d04:equipment:ceramic_package:inspection",
+        "d04:equipment:compound_semiconductor_fab:inspection",
+        "d04:equipment:electronic_design_automation:inspection"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor metrology and inspection - design and architecture capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:semiconductor_metrology:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor metrology and inspection - integration and production-system capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:semiconductor_metrology:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor metrology and inspection - process knowledge and process control capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:semiconductor_metrology:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor metrology and inspection - qualification and acceptance capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:semiconductor_metrology:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor metrology and inspection - scalable effective-throughput capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:semiconductor_metrology:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Advanced semiconductor package - inspection and metrology equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:advanced_package:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Analog and mixed-signal semiconductor - inspection and metrology equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:analog_mixed_signal:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Ceramic electronic package - inspection and metrology equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:ceramic_package:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Compound-semiconductor fabrication line - inspection and metrology equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:compound_semiconductor_fab:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Electronic design automation toolchain - inspection and metrology equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:electronic_design_automation:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Homepage leading chokepoint example: semiconductor equipment metrology/inspection.",
+      "public_name": "semiconductor equipment metrology/inspection",
+      "rationale": "The observed sample name's normalized terms occur together in a generated atlas record.",
+      "search_query": "semiconductor metrology inspection"
+    },
+    {
+      "classification": "FORGE_DEEPER_EQUIVALENT",
+      "forge_result_ids": [
+        "d01:capability:turbofan_engine:design",
+        "d01:capability:turbofan_engine:process",
+        "d01:process:turbofan_engine:prototype",
+        "d01:process:turbofan_engine:qualification",
+        "d01:process:turbofan_engine:recovery",
+        "d04:capability:electronic_design_automation:process",
+        "d04:process:electronic_design_automation:prototype",
+        "d04:process:electronic_design_automation:qualification",
+        "d04:process:electronic_design_automation:recovery",
+        "d04:process:electronic_design_automation:series"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Electronic design automation toolchain - process knowledge and process control capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:electronic_design_automation:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing process: Electronic design automation toolchain - prototype process route",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:process:electronic_design_automation:prototype",
+          "is_reference_only": false,
+          "kind": "PROCESS",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing process: Electronic design automation toolchain - qualification process route",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:process:electronic_design_automation:qualification",
+          "is_reference_only": false,
+          "kind": "PROCESS",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing process: Electronic design automation toolchain - repair, recovery, and alternate-source process route",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:process:electronic_design_automation:recovery",
+          "is_reference_only": false,
+          "kind": "PROCESS",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing process: Electronic design automation toolchain - series-production process route",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:process:electronic_design_automation:series",
+          "is_reference_only": false,
+          "kind": "PROCESS",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Turbofan engine - design and architecture capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:turbofan_engine:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Turbofan engine - process knowledge and process control capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:turbofan_engine:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space process: Turbofan engine - prototype process route",
+          "domain": "Aerospace & Space",
+          "id": "d01:process:turbofan_engine:prototype",
+          "is_reference_only": false,
+          "kind": "PROCESS",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space process: Turbofan engine - qualification process route",
+          "domain": "Aerospace & Space",
+          "id": "d01:process:turbofan_engine:qualification",
+          "is_reference_only": false,
+          "kind": "PROCESS",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space process: Turbofan engine - repair, recovery, and alternate-source process route",
+          "domain": "Aerospace & Space",
+          "id": "d01:process:turbofan_engine:recovery",
+          "is_reference_only": false,
+          "kind": "PROCESS",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Homepage leading chokepoint example: advanced process design kit and EDA toolchain.",
+      "public_name": "advanced process design kit and EDA toolchain",
+      "rationale": "The search returned a related generated record, but the public observation and Forge record differ in granularity or wording; this is not a claim of identity.",
+      "search_query": "advanced process design kit EDA toolchain"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "forge_result_ids": [
+        "d04:capability:etch_deposition:design",
+        "d04:capability:etch_deposition:integration",
+        "d04:capability:etch_deposition:process",
+        "d04:capability:etch_deposition:qualification",
+        "d04:capability:etch_deposition:scale",
+        "d04:equipment:etch_deposition:inspection",
+        "d04:equipment:etch_deposition:production",
+        "d04:equipment:etch_deposition:prototype",
+        "d04:equipment:etch_deposition:test",
+        "d04:material:etch_deposition:functional"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor etch and deposition process - design and architecture capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:etch_deposition:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor etch and deposition process - integration and production-system capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:etch_deposition:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor etch and deposition process - process knowledge and process control capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:etch_deposition:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor etch and deposition process - qualification and acceptance capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:etch_deposition:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Semiconductor etch and deposition process - scalable effective-throughput capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:etch_deposition:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Semiconductor etch and deposition process - inspection and metrology equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:etch_deposition:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Semiconductor etch and deposition process - series-production equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:etch_deposition:production",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Semiconductor etch and deposition process - prototype and pilot equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:etch_deposition:prototype",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Semiconductor etch and deposition process - qualification and acceptance-test equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:etch_deposition:test",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing material: Semiconductor etch and deposition process - functional-grade material",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:material:etch_deposition:functional",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Homepage leading chokepoint example: thin-film deposition.",
+      "public_name": "thin-film deposition",
+      "rationale": "The search returned only weak lexical overlap; no equivalence is asserted without a public row-level reconciliation or stronger evidence.",
+      "search_query": "thin film deposition"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "forge_result_ids": [
+        "d04:capability:analog_mixed_signal:design",
+        "d04:capability:analog_mixed_signal:integration",
+        "d04:capability:analog_mixed_signal:process",
+        "d04:capability:analog_mixed_signal:qualification",
+        "d04:capability:analog_mixed_signal:scale",
+        "d04:capability:ceramic_package:design",
+        "d04:capability:ceramic_package:integration",
+        "d04:capability:ceramic_package:process",
+        "d04:capability:ceramic_package:qualification",
+        "d04:capability:ceramic_package:scale"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Analog and mixed-signal semiconductor - design and architecture capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:analog_mixed_signal:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Analog and mixed-signal semiconductor - integration and production-system capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:analog_mixed_signal:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Analog and mixed-signal semiconductor - process knowledge and process control capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:analog_mixed_signal:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Analog and mixed-signal semiconductor - qualification and acceptance capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:analog_mixed_signal:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Analog and mixed-signal semiconductor - scalable effective-throughput capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:analog_mixed_signal:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Ceramic electronic package - design and architecture capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:ceramic_package:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Ceramic electronic package - integration and production-system capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:ceramic_package:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Ceramic electronic package - process knowledge and process control capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:ceramic_package:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Ceramic electronic package - qualification and acceptance capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:ceramic_package:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing capability: Ceramic electronic package - scalable effective-throughput capability",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:capability:ceramic_package:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Homepage leading chokepoint example: power semiconductor valves.",
+      "public_name": "power semiconductor valves",
+      "rationale": "The search returned only weak lexical overlap; no equivalence is asserted without a public row-level reconciliation or stronger evidence.",
+      "search_query": "power semiconductor valves"
+    },
+    {
+      "classification": "MATCHED",
+      "forge_result_ids": [
+        "d03:capability:steam_generator:design",
+        "d03:capability:steam_generator:integration",
+        "d03:capability:steam_generator:process",
+        "d03:capability:steam_generator:qualification",
+        "d03:capability:steam_generator:scale",
+        "d03:capability:turbine_generator:design",
+        "d03:capability:turbine_generator:integration",
+        "d03:capability:turbine_generator:process",
+        "d03:capability:turbine_generator:qualification",
+        "d03:capability:turbine_generator:scale"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "Energy & Nuclear capability: Nuclear steam generator - design and architecture capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:steam_generator:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Nuclear steam generator - integration and production-system capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:steam_generator:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Nuclear steam generator - process knowledge and process control capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:steam_generator:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Nuclear steam generator - qualification and acceptance capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:steam_generator:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Nuclear steam generator - scalable effective-throughput capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:steam_generator:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Turbine-generator set - design and architecture capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:turbine_generator:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Turbine-generator set - integration and production-system capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:turbine_generator:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Turbine-generator set - process knowledge and process control capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:turbine_generator:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Turbine-generator set - qualification and acceptance capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:turbine_generator:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Turbine-generator set - scalable effective-throughput capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:turbine_generator:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Verified alpha observation: BHEL product-class capability includes nuclear steam generators.",
+      "public_name": "nuclear steam generator",
+      "rationale": "The observed sample name's normalized terms occur together in a generated atlas record.",
+      "search_query": "nuclear steam generator"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "forge_result_ids": [
+        "product:08:grain-mill:farm-liquid-closed-loop",
+        "product:08:grain-mill:farm-liquid-operator-assisted",
+        "product:08:grain-mill:farm-liquid-programmable",
+        "product:08:grain-mill:farm-powder-closed-loop",
+        "product:08:grain-mill:farm-powder-operator-assisted",
+        "product:08:grain-mill:farm-powder-programmable",
+        "product:08:grain-mill:farm-solid-closed-loop",
+        "product:08:grain-mill:farm-solid-operator-assisted",
+        "product:08:grain-mill:farm-solid-programmable",
+        "product:08:grain-mill:high-throughput-liquid-closed-loop"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "grain milling system (farm/workshop throughput, liquid product form, closed-loop hygienic line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:farm-liquid-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "grain milling system (farm/workshop throughput, liquid product form, operator-assisted line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:farm-liquid-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "grain milling system (farm/workshop throughput, liquid product form, programmable line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:farm-liquid-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "grain milling system (farm/workshop throughput, powder product form, closed-loop hygienic line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:farm-powder-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "grain milling system (farm/workshop throughput, powder product form, operator-assisted line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:farm-powder-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "grain milling system (farm/workshop throughput, powder product form, programmable line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:farm-powder-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "grain milling system (farm/workshop throughput, solid product form, closed-loop hygienic line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:farm-solid-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "grain milling system (farm/workshop throughput, solid product form, operator-assisted line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:farm-solid-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "grain milling system (farm/workshop throughput, solid product form, programmable line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:farm-solid-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "grain milling system (high-throughput line, liquid product form, closed-loop hygienic line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:grain-mill:high-throughput-liquid-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Verified alpha observation: Ministry of Heavy Industries programme supported turn-mill centre technology development.",
+      "public_name": "turn-mill centre",
+      "rationale": "The search returned only weak lexical overlap; no equivalence is asserted without a public row-level reconciliation or stronger evidence.",
+      "search_query": "turn mill centre"
+    },
+    {
+      "classification": "FORGE_DEEPER_EQUIVALENT",
+      "forge_result_ids": [
+        "india-v1:12:cnc-machining-center:four-axis:aerospace-and-defense",
+        "india-v1:12:cnc-machining-center:four-axis:automotive",
+        "india-v1:12:cnc-machining-center:four-axis:construction",
+        "india-v1:12:cnc-machining-center:four-axis:energy-and-grid",
+        "india-v1:12:cnc-machining-center:four-axis:hot-weather",
+        "india-v1:12:cnc-machining-center:four-axis:machine-tools",
+        "india-v1:12:cnc-machining-center:four-axis:process-plant",
+        "india-v1:12:cnc-machining-center:four-axis:rail-and-marine",
+        "india-v1:12:cnc-machining-center:four-axis:sme-workshop",
+        "product:05:cnc-turning-center:cell-enclosed-closed-loop"
+      ],
+      "forge_top_results": [
+        {
+          "canonical_name": "Four Axis CNC machining center - Aerospace And Defense",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:cnc-machining-center:four-axis:aerospace-and-defense",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Four Axis CNC machining center - Automotive",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:cnc-machining-center:four-axis:automotive",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Four Axis CNC machining center - Construction",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:cnc-machining-center:four-axis:construction",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Four Axis CNC machining center - Energy And Grid",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:cnc-machining-center:four-axis:energy-and-grid",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Four Axis CNC machining center - Hot Weather",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:cnc-machining-center:four-axis:hot-weather",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Four Axis CNC machining center - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:cnc-machining-center:four-axis:machine-tools",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Four Axis CNC machining center - Process Plant",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:cnc-machining-center:four-axis:process-plant",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Four Axis CNC machining center - Rail And Marine",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:cnc-machining-center:four-axis:rail-and-marine",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Four Axis CNC machining center - Sme Workshop",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:cnc-machining-center:four-axis:sme-workshop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "CNC turning center (cell-integrated scale, enclosed process configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:cnc-turning-center:cell-enclosed-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "limitations": "Sampled-name reconciliation only; no row-level public IndiaBUILD export was available in the verified repository observations.",
+      "observed_context": "Verified alpha observation: Ministry of Heavy Industries programme supported a four-guideway CNC lathe.",
+      "public_name": "four-guideway CNC lathe",
+      "rationale": "The search returned a related generated record, but the public observation and Forge record differ in granularity or wording; this is not a claim of identity.",
+      "search_query": "four guideway CNC lathe"
+    }
+  ],
+  "schema_version": "india_v1.indiabuild_accounting.v1"
+}

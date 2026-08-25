@@ -1,0 +1,4688 @@
+{
+  "atlas": {
+    "digest_sha256": "056b46466d28b44e7d91ebf0b251bd38ad18055165ae26af3da64c74b4f916c4",
+    "direct_record_count": 12253,
+    "domain_counts": {
+      "Aerospace & Space": 928,
+      "Consumer, Textile, Packaging, and General Manufacturing": 1080,
+      "Defense & Strategic Manufacturing": 928,
+      "Electronics, Semiconductors & Computing": 928,
+      "Energy & Nuclear": 928,
+      "Food, Agriculture, and Biological Production Systems": 1080,
+      "Foundational Industrial Capabilities": 1080,
+      "Infrastructure, Construction, and Heavy Equipment": 1080,
+      "Machines, Robotics, and Industrial Automation": 900,
+      "Materials, Metals, Chemicals, and Process Industries": 1080,
+      "Medical, Scientific, Pharma, and Biotech Equipment": 1080,
+      "Transport & Mobility": 1080,
+      "shared_foundations": 2481
+    },
+    "domain_counts_by_code": {
+      "01": 928,
+      "02": 928,
+      "03": 928,
+      "04": 928,
+      "05": 900,
+      "06": 1080,
+      "07": 1080,
+      "08": 1080,
+      "09": 1080,
+      "10": 1080,
+      "11": 1080,
+      "12": 1080
+    },
+    "integrity": {
+      "ok": true,
+      "unique_aliases": 39818,
+      "unique_ids": 14653
+    },
+    "record_count": 14653,
+    "reference_record_count": 2400,
+    "source_api": "forge.india_v1.catalog.get_catalog"
+  },
+  "config_schema_version": "india_v1.benchmark_config.v1",
+  "named_queries": [
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "MRI",
+      "record": {
+        "canonical_name": "magnetic resonance imaging system (clinic setting, compact configuration, integrated data workflow)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 21,
+        "dependency_count_displayed": 21,
+        "dependency_count_raw": 21,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 3,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 33
+        },
+        "passed": true,
+        "record_id": "product:07:mri-system:clinic-compact-integrated",
+        "status": "IMPORT_DEPENDENT"
+      },
+      "results": [
+        {
+          "canonical_name": "magnetic resonance imaging system (clinic setting, compact configuration, integrated data workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:clinic-compact-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "magnetic resonance imaging system (clinic setting, compact configuration, operator-led workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:clinic-compact-operator-led",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "magnetic resonance imaging system (clinic setting, compact configuration, protocol-guided workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:clinic-compact-protocol-guided",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "magnetic resonance imaging system (clinic setting, high-performance configuration, integrated data workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:clinic-high-performance-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "magnetic resonance imaging system (clinic setting, high-performance configuration, operator-led workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:clinic-high-performance-operator-led",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "magnetic resonance imaging system (clinic setting, high-performance configuration, protocol-guided workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:clinic-high-performance-protocol-guided",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "magnetic resonance imaging system (clinic setting, standard configuration, integrated data workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:clinic-standard-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "magnetic resonance imaging system (clinic setting, standard configuration, operator-led workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:clinic-standard-operator-led",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "magnetic resonance imaging system (clinic setting, standard configuration, protocol-guided workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:clinic-standard-protocol-guided",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "magnetic resonance imaging system (hospital setting, compact configuration, integrated data workflow)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:mri-system:hospital-compact-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "5-axis CNC",
+      "record": {
+        "canonical_name": "5-axis CNC machining center (cell-integrated scale, enclosed process configuration, closed-loop monitored control)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 18,
+        "dependency_count_displayed": 18,
+        "dependency_count_raw": 18,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Machines, Robotics, and Industrial Automation",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 28
+        },
+        "passed": true,
+        "record_id": "product:05:5-axis-cnc-machining-center:cell-enclosed-closed-loop",
+        "status": "SCALE_LIMITED"
+      },
+      "results": [
+        {
+          "canonical_name": "5-axis CNC machining center (cell-integrated scale, enclosed process configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:cell-enclosed-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "5-axis CNC machining center (cell-integrated scale, enclosed process configuration, operator-assisted control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:cell-enclosed-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "5-axis CNC machining center (cell-integrated scale, enclosed process configuration, programmable control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:cell-enclosed-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "5-axis CNC machining center (cell-integrated scale, fixed-floor configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:cell-fixed-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "5-axis CNC machining center (cell-integrated scale, fixed-floor configuration, operator-assisted control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:cell-fixed-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "5-axis CNC machining center (cell-integrated scale, fixed-floor configuration, programmable control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:cell-fixed-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "5-axis CNC machining center (cell-integrated scale, gantry/modular configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:cell-gantry-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "5-axis CNC machining center (cell-integrated scale, gantry/modular configuration, operator-assisted control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:cell-gantry-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "5-axis CNC machining center (cell-integrated scale, gantry/modular configuration, programmable control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:cell-gantry-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "5-axis CNC machining center (compact/workshop scale, enclosed process configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:5-axis-cnc-machining-center:compact-enclosed-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "freeze dryer",
+      "record": {
+        "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, cartridge format, closed-line filling)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 21,
+        "dependency_count_displayed": 21,
+        "dependency_count_raw": 21,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 33
+        },
+        "passed": true,
+        "record_id": "product:07:freeze-dryer:clinical-cartridge-closed-line",
+        "status": "IMPORT_DEPENDENT"
+      },
+      "results": [
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, cartridge format, closed-line filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:clinical-cartridge-closed-line",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, cartridge format, isolator-based filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:clinical-cartridge-isolator",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, cartridge format, operator-assisted filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:clinical-cartridge-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, syringe format, closed-line filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:clinical-syringe-closed-line",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, syringe format, isolator-based filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:clinical-syringe-isolator",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, syringe format, operator-assisted filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:clinical-syringe-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, vial format, closed-line filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:clinical-vial-closed-line",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, vial format, isolator-based filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:clinical-vial-isolator",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, vial format, operator-assisted filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:clinical-vial-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "pharmaceutical freeze dryer/lyophilizer (commercial throughput, cartridge format, closed-line filling)",
+          "domain": "Medical, Scientific, Pharma, and Biotech Equipment",
+          "id": "product:07:freeze-dryer:commercial-cartridge-closed-line",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "food dehydrator",
+      "record": {
+        "canonical_name": "industrial food dehydrator (farm/workshop throughput, liquid product form, closed-loop hygienic line)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 21,
+        "dependency_count_displayed": 21,
+        "dependency_count_raw": 21,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Food, Agriculture, and Biological Production Systems",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 33
+        },
+        "passed": true,
+        "record_id": "product:08:food-dehydrator:farm-liquid-closed-loop",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "industrial food dehydrator (farm/workshop throughput, liquid product form, closed-loop hygienic line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:farm-liquid-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial food dehydrator (farm/workshop throughput, liquid product form, operator-assisted line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:farm-liquid-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial food dehydrator (farm/workshop throughput, liquid product form, programmable line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:farm-liquid-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial food dehydrator (farm/workshop throughput, powder product form, closed-loop hygienic line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:farm-powder-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial food dehydrator (farm/workshop throughput, powder product form, operator-assisted line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:farm-powder-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial food dehydrator (farm/workshop throughput, powder product form, programmable line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:farm-powder-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial food dehydrator (farm/workshop throughput, solid product form, closed-loop hygienic line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:farm-solid-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial food dehydrator (farm/workshop throughput, solid product form, operator-assisted line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:farm-solid-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial food dehydrator (farm/workshop throughput, solid product form, programmable line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:farm-solid-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial food dehydrator (high-throughput line, liquid product form, closed-loop hygienic line)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-dehydrator:high-throughput-liquid-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "industrial heat pump",
+      "record": {
+        "canonical_name": "industrial heat pump (bench/laboratory scale, batch configuration, advanced process control)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 20,
+        "dependency_count_displayed": 20,
+        "dependency_count_raw": 20,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Materials, Metals, Chemicals, and Process Industries",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 32
+        },
+        "passed": true,
+        "record_id": "product:06:industrial-heat-pump:bench-batch-advanced",
+        "status": "SCALE_LIMITED"
+      },
+      "results": [
+        {
+          "canonical_name": "industrial heat pump (bench/laboratory scale, batch configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:bench-batch-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial heat pump (bench/laboratory scale, batch configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:bench-batch-distributed",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial heat pump (bench/laboratory scale, batch configuration, operator-supervised control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:bench-batch-operator",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial heat pump (bench/laboratory scale, continuous configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:bench-continuous-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial heat pump (bench/laboratory scale, continuous configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:bench-continuous-distributed",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial heat pump (bench/laboratory scale, continuous configuration, operator-supervised control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:bench-continuous-operator",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial heat pump (bench/laboratory scale, modular skid configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:bench-skid-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial heat pump (bench/laboratory scale, modular skid configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:bench-skid-distributed",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial heat pump (bench/laboratory scale, modular skid configuration, operator-supervised control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:bench-skid-operator",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial heat pump (industrial scale, batch configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-heat-pump:industrial-batch-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "electrolyzer",
+      "record": {
+        "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, batch configuration, advanced process control)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 21,
+        "dependency_count_displayed": 21,
+        "dependency_count_raw": 21,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Materials, Metals, Chemicals, and Process Industries",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 31
+        },
+        "passed": true,
+        "record_id": "product:06:alkaline-electrolyzer:bench-batch-advanced",
+        "status": "SCALE_LIMITED"
+      },
+      "results": [
+        {
+          "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, batch configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:bench-batch-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, batch configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:bench-batch-distributed",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, batch configuration, operator-supervised control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:bench-batch-operator",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, continuous configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:bench-continuous-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, continuous configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:bench-continuous-distributed",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, continuous configuration, operator-supervised control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:bench-continuous-operator",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, modular skid configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:bench-skid-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, modular skid configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:bench-skid-distributed",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (bench/laboratory scale, modular skid configuration, operator-supervised control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:bench-skid-operator",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (industrial scale, batch configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:industrial-batch-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "industrial motor",
+      "record": {
+        "canonical_name": "industrial electric motor (fractional-power duty, induction topology, drive-integrated motor)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 17,
+        "dependency_count_displayed": 17,
+        "dependency_count_raw": 17,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Machines, Robotics, and Industrial Automation",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 28
+        },
+        "passed": true,
+        "record_id": "product:05:industrial-motor:fractional-induction-drive-integrated",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "industrial electric motor (fractional-power duty, induction topology, drive-integrated motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:fractional-induction-drive-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial electric motor (fractional-power duty, induction topology, sensor-integrated motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:fractional-induction-sensor-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial electric motor (fractional-power duty, induction topology, standalone motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:fractional-induction-standalone",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial electric motor (fractional-power duty, permanent-magnet topology, drive-integrated motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:fractional-permanent-magnet-drive-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial electric motor (fractional-power duty, permanent-magnet topology, sensor-integrated motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:fractional-permanent-magnet-sensor-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial electric motor (fractional-power duty, permanent-magnet topology, standalone motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:fractional-permanent-magnet-standalone",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial electric motor (fractional-power duty, synchronous-reluctance topology, drive-integrated motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:fractional-reluctance-drive-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial electric motor (fractional-power duty, synchronous-reluctance topology, sensor-integrated motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:fractional-reluctance-sensor-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial electric motor (fractional-power duty, synchronous-reluctance topology, standalone motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:fractional-reluctance-standalone",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial electric motor (heavy-duty power, induction topology, drive-integrated motor)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-motor:heavy-induction-drive-integrated",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "industrial robot",
+      "record": {
+        "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, compact reach, force/torque-aware control)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 19,
+        "dependency_count_displayed": 19,
+        "dependency_count_raw": 19,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Machines, Robotics, and Industrial Automation",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 31
+        },
+        "passed": true,
+        "record_id": "product:05:industrial-robot:heavy-compact-force-aware",
+        "status": "SCALE_LIMITED"
+      },
+      "results": [
+        {
+          "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, compact reach, force/torque-aware control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:heavy-compact-force-aware",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, compact reach, teach-and-repeat control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:heavy-compact-teach-and-repeat",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, compact reach, vision-guided control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:heavy-compact-vision-guided",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, extended reach, force/torque-aware control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:heavy-extended-force-aware",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, extended reach, teach-and-repeat control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:heavy-extended-teach-and-repeat",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, extended reach, vision-guided control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:heavy-extended-vision-guided",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, standard reach, force/torque-aware control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:heavy-standard-force-aware",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, standard reach, teach-and-repeat control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:heavy-standard-teach-and-repeat",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "six-axis articulated industrial robot (heavy-payload duty, standard reach, vision-guided control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:heavy-standard-vision-guided",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "six-axis articulated industrial robot (light-payload duty, compact reach, force/torque-aware control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:industrial-robot:light-compact-force-aware",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "transformer",
+      "record": {
+        "canonical_name": "Energy & Nuclear capability: Grid transformer - design and architecture capability",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 45,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Energy & Nuclear",
+        "failure_reasons": [],
+        "kind": "CAPABILITY",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "LICENSE",
+          "JV",
+          "BUILD",
+          "SUBSTITUTE",
+          "REDESIGN",
+          "R&D"
+        ],
+        "ladder_count": 8,
+        "navigation_counts": {
+          "downstream": 0,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 45
+        },
+        "passed": true,
+        "record_id": "d03:capability:grid_transformer:design",
+        "status": "AVAILABLE"
+      },
+      "results": [
+        {
+          "canonical_name": "Energy & Nuclear capability: Grid transformer - design and architecture capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:grid_transformer:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Grid transformer - integration and production-system capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:grid_transformer:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Grid transformer - process knowledge and process control capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:grid_transformer:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Grid transformer - qualification and acceptance capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:grid_transformer:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear capability: Grid transformer - scalable effective-throughput capability",
+          "domain": "Energy & Nuclear",
+          "id": "d03:capability:grid_transformer:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear equipment: Grid transformer - inspection and metrology equipment",
+          "domain": "Energy & Nuclear",
+          "id": "d03:equipment:grid_transformer:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear equipment: Grid transformer - series-production equipment",
+          "domain": "Energy & Nuclear",
+          "id": "d03:equipment:grid_transformer:production",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear equipment: Grid transformer - prototype and pilot equipment",
+          "domain": "Energy & Nuclear",
+          "id": "d03:equipment:grid_transformer:prototype",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear equipment: Grid transformer - qualification and acceptance-test equipment",
+          "domain": "Energy & Nuclear",
+          "id": "d03:equipment:grid_transformer:test",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear material: Grid transformer - functional-grade material",
+          "domain": "Energy & Nuclear",
+          "id": "d03:material:grid_transformer:functional",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "packaging machine",
+      "record": {
+        "canonical_name": "Bottling And Capping Packaging machine - Export",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 30,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 38
+        },
+        "passed": true,
+        "record_id": "india-v1:11:packaging-machine:bottling-and-capping:export",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "Bottling And Capping Packaging machine - Export",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:export",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bottling And Capping Packaging machine - Food Contact",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:food-contact",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bottling And Capping Packaging machine - Hot Weather",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:hot-weather",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bottling And Capping Packaging machine - Mass Production",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:mass-production",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bottling And Capping Packaging machine - Monsoon",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:monsoon",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bottling And Capping Packaging machine - Pharma Contact",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:pharma-contact",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bottling And Capping Packaging machine - Repairable And Local",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:repairable-and-local",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bottling And Capping Packaging machine - Sme Workshop",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:sme-workshop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bottling And Capping Packaging machine - Textile Cluster",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:textile-cluster",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Cartoning Packaging machine - Export",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:packaging-machine:cartoning:export",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "textile machine",
+      "record": {
+        "canonical_name": "industrial textile machinery (cell-integrated scale, enclosed process configuration, closed-loop monitored control)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 16,
+        "dependency_count_displayed": 16,
+        "dependency_count_raw": 16,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Machines, Robotics, and Industrial Automation",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 3,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 27
+        },
+        "passed": true,
+        "record_id": "product:05:textile-machinery:cell-enclosed-closed-loop",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "industrial textile machinery (cell-integrated scale, enclosed process configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:cell-enclosed-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial textile machinery (cell-integrated scale, enclosed process configuration, operator-assisted control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:cell-enclosed-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial textile machinery (cell-integrated scale, enclosed process configuration, programmable control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:cell-enclosed-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial textile machinery (cell-integrated scale, fixed-floor configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:cell-fixed-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial textile machinery (cell-integrated scale, fixed-floor configuration, operator-assisted control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:cell-fixed-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial textile machinery (cell-integrated scale, fixed-floor configuration, programmable control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:cell-fixed-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial textile machinery (cell-integrated scale, gantry/modular configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:cell-gantry-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial textile machinery (cell-integrated scale, gantry/modular configuration, operator-assisted control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:cell-gantry-operator-assisted",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial textile machinery (cell-integrated scale, gantry/modular configuration, programmable control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:cell-gantry-programmable",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial textile machinery (compact/workshop scale, enclosed process configuration, closed-loop monitored control)",
+          "domain": "Machines, Robotics, and Industrial Automation",
+          "id": "product:05:textile-machinery:compact-enclosed-closed-loop",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "centrifugal pump",
+      "record": {
+        "canonical_name": "End Suction Centrifugal pump - Aerospace And Defense",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 30,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Foundational Industrial Capabilities",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 38
+        },
+        "passed": true,
+        "record_id": "india-v1:12:centrifugal-pump:end-suction:aerospace-and-defense",
+        "status": "SCALE_LIMITED"
+      },
+      "results": [
+        {
+          "canonical_name": "End Suction Centrifugal pump - Aerospace And Defense",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:end-suction:aerospace-and-defense",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "End Suction Centrifugal pump - Automotive",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:end-suction:automotive",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "End Suction Centrifugal pump - Construction",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:end-suction:construction",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "End Suction Centrifugal pump - Energy And Grid",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:end-suction:energy-and-grid",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "End Suction Centrifugal pump - Hot Weather",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:end-suction:hot-weather",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "End Suction Centrifugal pump - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:end-suction:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "End Suction Centrifugal pump - Process Plant",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:end-suction:process-plant",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "End Suction Centrifugal pump - Rail And Marine",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:end-suction:rail-and-marine",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "End Suction Centrifugal pump - Sme Workshop",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:end-suction:sme-workshop",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Multistage Centrifugal pump - Aerospace And Defense",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:centrifugal-pump:multistage:aerospace-and-defense",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "agricultural drone",
+      "record": {
+        "canonical_name": "Defense & Strategic Manufacturing capability: Counter-UAS system - design and architecture capability",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 36,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Defense & Strategic Manufacturing",
+        "failure_reasons": [],
+        "kind": "CAPABILITY",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "LICENSE",
+          "JV",
+          "BUILD",
+          "SUBSTITUTE",
+          "REDESIGN",
+          "R&D"
+        ],
+        "ladder_count": 8,
+        "navigation_counts": {
+          "downstream": 0,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 36
+        },
+        "passed": true,
+        "record_id": "d02:capability:counter_uas:design",
+        "status": "AVAILABLE"
+      },
+      "results": [
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Counter-UAS system - design and architecture capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:counter_uas:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Counter-UAS system - integration and production-system capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:counter_uas:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Counter-UAS system - process knowledge and process control capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:counter_uas:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Counter-UAS system - qualification and acceptance capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:counter_uas:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Counter-UAS system - scalable effective-throughput capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:counter_uas:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing equipment: Counter-UAS system - inspection and metrology equipment",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:equipment:counter_uas:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing equipment: Counter-UAS system - series-production equipment",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:equipment:counter_uas:production",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing equipment: Counter-UAS system - prototype and pilot equipment",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:equipment:counter_uas:prototype",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing equipment: Counter-UAS system - qualification and acceptance-test equipment",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:equipment:counter_uas:test",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing material: Counter-UAS system - functional-grade material",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:material:counter_uas:functional",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "satellite",
+      "record": {
+        "canonical_name": "Aerospace & Space capability: Communications satellite - design and architecture capability",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 38,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Aerospace & Space",
+        "failure_reasons": [],
+        "kind": "CAPABILITY",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "LICENSE",
+          "JV",
+          "BUILD",
+          "SUBSTITUTE",
+          "REDESIGN",
+          "R&D"
+        ],
+        "ladder_count": 8,
+        "navigation_counts": {
+          "downstream": 0,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 38
+        },
+        "passed": true,
+        "record_id": "d01:capability:communications_satellite:design",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "Aerospace & Space capability: Communications satellite - design and architecture capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:communications_satellite:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Communications satellite - integration and production-system capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:communications_satellite:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Communications satellite - process knowledge and process control capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:communications_satellite:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Communications satellite - qualification and acceptance capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:communications_satellite:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Communications satellite - scalable effective-throughput capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:communications_satellite:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Earth-observation satellite - design and architecture capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:earth_observation_satellite:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Earth-observation satellite - integration and production-system capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:earth_observation_satellite:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Earth-observation satellite - process knowledge and process control capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:earth_observation_satellite:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Earth-observation satellite - qualification and acceptance capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:earth_observation_satellite:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Earth-observation satellite - scalable effective-throughput capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:earth_observation_satellite:scale",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "semiconductor equipment",
+      "record": {
+        "canonical_name": "Electronics, Semiconductors & Computing equipment: Advanced semiconductor package - inspection and metrology equipment",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 40,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Electronics, Semiconductors & Computing",
+        "failure_reasons": [],
+        "kind": "EQUIPMENT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "LICENSE",
+          "JV",
+          "BUILD",
+          "SUBSTITUTE",
+          "REDESIGN",
+          "R&D"
+        ],
+        "ladder_count": 8,
+        "navigation_counts": {
+          "downstream": 0,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 40
+        },
+        "passed": true,
+        "record_id": "d04:equipment:advanced_package:inspection",
+        "status": "IMPORT_DEPENDENT"
+      },
+      "results": [
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Advanced semiconductor package - inspection and metrology equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:advanced_package:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Advanced semiconductor package - series-production equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:advanced_package:production",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Advanced semiconductor package - prototype and pilot equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:advanced_package:prototype",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Advanced semiconductor package - qualification and acceptance-test equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:advanced_package:test",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Analog and mixed-signal semiconductor - inspection and metrology equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:analog_mixed_signal:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Analog and mixed-signal semiconductor - series-production equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:analog_mixed_signal:production",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Analog and mixed-signal semiconductor - prototype and pilot equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:analog_mixed_signal:prototype",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Analog and mixed-signal semiconductor - qualification and acceptance-test equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:analog_mixed_signal:test",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Ceramic electronic package - inspection and metrology equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:ceramic_package:inspection",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Ceramic electronic package - series-production equipment",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:equipment:ceramic_package:production",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "top_k": 10
+    }
+  ],
+  "random_product_samples": [
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "Aerospace & Space: Airborne radar - structural assembly",
+      "record": {
+        "canonical_name": "Aerospace & Space: Airborne radar - structural assembly",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 37,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Aerospace & Space",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "LICENSE",
+          "JV",
+          "BUILD",
+          "SUBSTITUTE",
+          "REDESIGN",
+          "R&D"
+        ],
+        "ladder_count": 8,
+        "navigation_counts": {
+          "downstream": 0,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 37
+        },
+        "passed": true,
+        "record_id": "d01:product:airborne_radar:structure",
+        "status": "IMPORT_DEPENDENT"
+      },
+      "results": [
+        {
+          "canonical_name": "Aerospace & Space: Airborne radar - structural assembly",
+          "domain": "Aerospace & Space",
+          "id": "d01:product:airborne_radar:structure",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space material: Airborne radar - structural or base-grade material",
+          "domain": "Aerospace & Space",
+          "id": "d01:material:airborne_radar:structural",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space: Airborne radar - avionics assembly",
+          "domain": "Aerospace & Space",
+          "id": "d01:product:airborne_radar:avionics",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space: Airborne radar - propulsion assembly",
+          "domain": "Aerospace & Space",
+          "id": "d01:product:airborne_radar:propulsion",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space: Airborne radar - qualification and acceptance package",
+          "domain": "Aerospace & Space",
+          "id": "d01:product:airborne_radar:qualification",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space: Radar altimeter - structural assembly",
+          "domain": "Aerospace & Space",
+          "id": "d01:product:radar_altimeter:structure",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Airborne radar - design and architecture capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:airborne_radar:design",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Airborne radar - integration and production-system capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:airborne_radar:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Airborne radar - process knowledge and process control capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:airborne_radar:process",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Aerospace & Space capability: Airborne radar - qualification and acceptance capability",
+          "domain": "Aerospace & Space",
+          "id": "d01:capability:airborne_radar:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "Aerospace & Space: Airborne radar - structural assembly",
+        "record_id": "d01:product:airborne_radar:structure",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "Induction Motor Ceiling fan - Mass Market",
+      "record": {
+        "canonical_name": "Induction Motor Ceiling fan - Mass Market",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 30,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 38
+        },
+        "passed": true,
+        "record_id": "india-v1:11:ceiling-fan:induction-motor:mass-market",
+        "status": "SCALE_LIMITED"
+      },
+      "results": [
+        {
+          "canonical_name": "Induction Motor Ceiling fan - Mass Market",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:induction-motor:mass-market",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bldc Motor Ceiling fan - Mass Market",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:bldc-motor:mass-market",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Induction Motor Ceiling fan - Rural Market",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:induction-motor:rural-market",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Bldc Motor Ceiling fan - Rural Market",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:bldc-motor:rural-market",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Induction Motor Ceiling fan - Export",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:induction-motor:export",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Induction Motor Ceiling fan - Hot Weather",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:induction-motor:hot-weather",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Induction Motor Ceiling fan - Institutional",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:induction-motor:institutional",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Induction Motor Ceiling fan - Monsoon",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:induction-motor:monsoon",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Induction Motor Ceiling fan - Premium",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:induction-motor:premium",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Induction Motor Ceiling fan - Repairable And Local",
+          "domain": "Consumer, Textile, Packaging, and General Manufacturing",
+          "id": "india-v1:11:ceiling-fan:induction-motor:repairable-and-local",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "Induction Motor Ceiling fan - Mass Market",
+        "record_id": "india-v1:11:ceiling-fan:induction-motor:mass-market",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "Defense & Strategic Manufacturing: Electronic-warfare system - qualification and acceptance package",
+      "record": {
+        "canonical_name": "Defense & Strategic Manufacturing: Electronic-warfare system - qualification and acceptance package",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 40,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Defense & Strategic Manufacturing",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "LICENSE",
+          "JV",
+          "BUILD",
+          "SUBSTITUTE",
+          "REDESIGN",
+          "R&D"
+        ],
+        "ladder_count": 8,
+        "navigation_counts": {
+          "downstream": 0,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 40
+        },
+        "passed": true,
+        "record_id": "d02:product:electronic_warfare:qualification",
+        "status": "IMPORT_DEPENDENT"
+      },
+      "results": [
+        {
+          "canonical_name": "Defense & Strategic Manufacturing: Electronic-warfare system - qualification and acceptance package",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:product:electronic_warfare:qualification",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Electronic-warfare system - qualification and acceptance capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:electronic_warfare:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing equipment: Electronic-warfare system - qualification and acceptance-test equipment",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:equipment:electronic_warfare:test",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing: Counter-UAS system - qualification and acceptance package",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:product:counter_uas:qualification",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing: Defense test and evaluation range - qualification and acceptance package",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:product:defense_test_range:qualification",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing: Torpedo system - qualification and acceptance package",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:product:torpedo_system:qualification",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Counter-UAS system - qualification and acceptance capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:counter_uas:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Defense test and evaluation range - integration and production-system capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:defense_test_range:integration",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Defense test and evaluation range - qualification and acceptance capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:defense_test_range:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Defense & Strategic Manufacturing capability: Torpedo system - qualification and acceptance capability",
+          "domain": "Defense & Strategic Manufacturing",
+          "id": "d02:capability:torpedo_system:qualification",
+          "is_reference_only": false,
+          "kind": "CAPABILITY",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "Defense & Strategic Manufacturing: Electronic-warfare system - qualification and acceptance package",
+        "record_id": "d02:product:electronic_warfare:qualification",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - India sovereign-build configuration",
+      "record": {
+        "canonical_name": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - India sovereign-build configuration",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 45,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Electronics, Semiconductors & Computing",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "LICENSE",
+          "JV",
+          "BUILD",
+          "SUBSTITUTE",
+          "REDESIGN",
+          "R&D"
+        ],
+        "ladder_count": 8,
+        "navigation_counts": {
+          "downstream": 0,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 45
+        },
+        "passed": true,
+        "record_id": "d04:product:gan_rf_device:sovereign",
+        "status": "IMPORT_DEPENDENT"
+      },
+      "results": [
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - India sovereign-build configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:gan_rf_device:sovereign",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Ceramic electronic package - India sovereign-build configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:ceramic_package:sovereign",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Compound-semiconductor fabrication line - India sovereign-build configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:compound_semiconductor_fab:sovereign",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Semiconductor etch and deposition process - India sovereign-build configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:etch_deposition:sovereign",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - aerospace configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:gan_rf_device:aerospace",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - automotive configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:gan_rf_device:automotive",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - consumer configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:gan_rf_device:consumer",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - high-density configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:gan_rf_device:high_density",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - industrial configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:gan_rf_device:industrial",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - prototype configuration",
+          "domain": "Electronics, Semiconductors & Computing",
+          "id": "d04:product:gan_rf_device:prototype",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "Electronics, Semiconductors & Computing: Gallium-nitride RF device - India sovereign-build configuration",
+        "record_id": "d04:product:gan_rf_device:sovereign",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "Energy & Nuclear: Concentrated solar thermal system - India domestic-build configuration",
+      "record": {
+        "canonical_name": "Energy & Nuclear: Concentrated solar thermal system - India domestic-build configuration",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 49,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Energy & Nuclear",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "LICENSE",
+          "JV",
+          "BUILD",
+          "SUBSTITUTE",
+          "REDESIGN",
+          "R&D"
+        ],
+        "ladder_count": 8,
+        "navigation_counts": {
+          "downstream": 0,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 49
+        },
+        "passed": true,
+        "record_id": "d03:product:concentrated_solar:domestic",
+        "status": "SCALE_LIMITED"
+      },
+      "results": [
+        {
+          "canonical_name": "Energy & Nuclear: Concentrated solar thermal system - India domestic-build configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:concentrated_solar:domestic",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Utility-scale solar PV system - India domestic-build configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:utility_solar_pv:domestic",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Battery energy-storage system - India domestic-build configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:battery_energy_storage:domestic",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Carbon-capture system - India domestic-build configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:carbon_capture:domestic",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Concentrated solar thermal system - base-load configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:concentrated_solar:base_load",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Concentrated solar thermal system - grid-forming configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:concentrated_solar:grid_forming",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Concentrated solar thermal system - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:concentrated_solar:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Concentrated solar thermal system - licensed technology configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:concentrated_solar:licensed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Concentrated solar thermal system - modular configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:concentrated_solar:modular",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Concentrated solar thermal system - prototype configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:concentrated_solar:prototype",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "Energy & Nuclear: Concentrated solar thermal system - India domestic-build configuration",
+        "record_id": "d03:product:concentrated_solar:domestic",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "industrial cold-storage system (integrated multi-unit scale, continuous configuration, advanced process control)",
+      "record": {
+        "canonical_name": "industrial cold-storage system (integrated multi-unit scale, continuous configuration, advanced process control)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 21,
+        "dependency_count_displayed": 21,
+        "dependency_count_raw": 21,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Food, Agriculture, and Biological Production Systems",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 33
+        },
+        "passed": true,
+        "record_id": "product:08:cold-storage-system:integrated-continuous-advanced",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, continuous configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-continuous-advanced",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, batch configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-batch-advanced",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, modular skid configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-skid-advanced",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial gas separation and purification system (integrated multi-unit scale, continuous configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-gas-separation:integrated-continuous-advanced",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, continuous configuration, distributed control system)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-continuous-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, continuous configuration, operator-supervised control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-continuous-operator",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "food freeze dryer (integrated multi-unit scale, continuous configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-freeze-dryer:integrated-continuous-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial refrigeration system (integrated multi-unit scale, continuous configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:industrial-refrigeration:integrated-continuous-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (integrated multi-unit scale, continuous configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:integrated-continuous-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial centrifugal pump (integrated multi-unit scale, continuous configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:centrifugal-pump:integrated-continuous-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "industrial cold-storage system (integrated multi-unit scale, continuous configuration, advanced process control)",
+        "record_id": "product:08:cold-storage-system:integrated-continuous-advanced",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "Gate Industrial valve - Machine Tools",
+      "record": {
+        "canonical_name": "Gate Industrial valve - Machine Tools",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 30,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Foundational Industrial Capabilities",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 38
+        },
+        "passed": true,
+        "record_id": "india-v1:12:industrial-valve:gate:machine-tools",
+        "status": "SCALE_LIMITED"
+      },
+      "results": [
+        {
+          "canonical_name": "Gate Industrial valve - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:industrial-valve:gate:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Ball Industrial valve - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:industrial-valve:ball:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Butterfly Industrial valve - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:industrial-valve:butterfly:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Globe Industrial valve - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:industrial-valve:globe:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Electric Control valve - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:control-valve:electric:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Hydraulic Control valve - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:control-valve:hydraulic:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Pneumatic Control valve - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:control-valve:pneumatic:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Smart Positioner Control valve - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:control-valve:smart-positioner:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Air Cooled Industrial heat exchanger - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:heat-exchanger:air-cooled:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Plate And Frame Industrial heat exchanger - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:heat-exchanger:plate-and-frame:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "Gate Industrial valve - Machine Tools",
+        "record_id": "india-v1:12:industrial-valve:gate:machine-tools",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "ammonia and urea process plant (pilot scale, batch configuration, distributed control system)",
+      "record": {
+        "canonical_name": "ammonia and urea process plant (pilot scale, batch configuration, distributed control system)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 19,
+        "dependency_count_displayed": 19,
+        "dependency_count_raw": 19,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Materials, Metals, Chemicals, and Process Industries",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 31
+        },
+        "passed": true,
+        "record_id": "product:06:ammonia-urea-plant:pilot-batch-distributed",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "ammonia and urea process plant (pilot scale, batch configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:pilot-batch-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "ammonia and urea process plant (bench/laboratory scale, batch configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:bench-batch-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "ammonia and urea process plant (industrial scale, batch configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:industrial-batch-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "ammonia and urea process plant (integrated multi-unit scale, batch configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:integrated-batch-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "ammonia and urea process plant (pilot scale, continuous configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:pilot-continuous-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "ammonia and urea process plant (pilot scale, modular skid configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:pilot-skid-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "ammonia and urea process plant (bench/laboratory scale, continuous configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:bench-continuous-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "ammonia and urea process plant (bench/laboratory scale, modular skid configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:bench-skid-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "ammonia and urea process plant (industrial scale, continuous configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:industrial-continuous-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "ammonia and urea process plant (industrial scale, modular skid configuration, distributed control system)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:ammonia-urea-plant:industrial-skid-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "ammonia and urea process plant (pilot scale, batch configuration, distributed control system)",
+        "record_id": "product:06:ammonia-urea-plant:pilot-batch-distributed",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "Lithium Electric Warehouse forklift - Municipal",
+      "record": {
+        "canonical_name": "Lithium Electric Warehouse forklift - Municipal",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 30,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Transport & Mobility",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 38
+        },
+        "passed": true,
+        "record_id": "india-v1:09:warehouse-forklift:lithium-electric:municipal",
+        "status": "SCALE_LIMITED"
+      },
+      "results": [
+        {
+          "canonical_name": "Lithium Electric Warehouse forklift - Municipal",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lithium-electric:municipal",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Lead Acid Electric Warehouse forklift - Municipal",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lead-acid-electric:municipal",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Lithium Electric Warehouse forklift - Agriculture",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lithium-electric:agriculture",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Lithium Electric Warehouse forklift - Construction Site",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lithium-electric:construction-site",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Lithium Electric Warehouse forklift - Fleet",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lithium-electric:fleet",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Lithium Electric Warehouse forklift - Hot Weather",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lithium-electric:hot-weather",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Lithium Electric Warehouse forklift - Mine",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lithium-electric:mine",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Lithium Electric Warehouse forklift - Monsoon",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lithium-electric:monsoon",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Lithium Electric Warehouse forklift - Port",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lithium-electric:port",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Lithium Electric Warehouse forklift - Warehouse",
+          "domain": "Transport & Mobility",
+          "id": "india-v1:09:warehouse-forklift:lithium-electric:warehouse",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "Lithium Electric Warehouse forklift - Municipal",
+        "record_id": "india-v1:09:warehouse-forklift:lithium-electric:municipal",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "Rare Earth Free Servo motor - Hot Weather",
+      "record": {
+        "canonical_name": "Rare Earth Free Servo motor - Hot Weather",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 30,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Foundational Industrial Capabilities",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 38
+        },
+        "passed": true,
+        "record_id": "india-v1:12:servo-motor:rare-earth-free:hot-weather",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "Rare Earth Free Servo motor - Hot Weather",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:servo-motor:rare-earth-free:hot-weather",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Rare Earth Free Servo motor - Aerospace And Defense",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:servo-motor:rare-earth-free:aerospace-and-defense",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Rare Earth Free Servo motor - Automotive",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:servo-motor:rare-earth-free:automotive",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Rare Earth Free Servo motor - Construction",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:servo-motor:rare-earth-free:construction",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Rare Earth Free Servo motor - Energy And Grid",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:servo-motor:rare-earth-free:energy-and-grid",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Rare Earth Free Servo motor - Machine Tools",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:servo-motor:rare-earth-free:machine-tools",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Rare Earth Free Servo motor - Process Plant",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:servo-motor:rare-earth-free:process-plant",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Rare Earth Free Servo motor - Rail And Marine",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:servo-motor:rare-earth-free:rail-and-marine",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Rare Earth Free Servo motor - Sme Workshop",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:servo-motor:rare-earth-free:sme-workshop",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Servo Drive Motor drive - Hot Weather",
+          "domain": "Foundational Industrial Capabilities",
+          "id": "india-v1:12:motor-drive:servo-drive:hot-weather",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "Rare Earth Free Servo motor - Hot Weather",
+        "record_id": "india-v1:12:servo-motor:rare-earth-free:hot-weather",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "industrial cold-storage system (integrated multi-unit scale, modular skid configuration, advanced process control)",
+      "record": {
+        "canonical_name": "industrial cold-storage system (integrated multi-unit scale, modular skid configuration, advanced process control)",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 21,
+        "dependency_count_displayed": 21,
+        "dependency_count_raw": 21,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Food, Agriculture, and Biological Production Systems",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "REDESIGN",
+          "BUILD",
+          "R&D",
+          "LICENSE"
+        ],
+        "ladder_count": 6,
+        "navigation_counts": {
+          "downstream": 4,
+          "related": 6,
+          "unlock": 0,
+          "upstream": 33
+        },
+        "passed": true,
+        "record_id": "product:08:cold-storage-system:integrated-skid-advanced",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, modular skid configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-skid-advanced",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial gas separation and purification system (integrated multi-unit scale, modular skid configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:industrial-gas-separation:integrated-skid-advanced",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, batch configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-batch-advanced",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, continuous configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-continuous-advanced",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, modular skid configuration, distributed control system)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-skid-distributed",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial cold-storage system (integrated multi-unit scale, modular skid configuration, operator-supervised control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:cold-storage-system:integrated-skid-operator",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "food freeze dryer (integrated multi-unit scale, modular skid configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:food-freeze-dryer:integrated-skid-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial refrigeration system (integrated multi-unit scale, modular skid configuration, advanced process control)",
+          "domain": "Food, Agriculture, and Biological Production Systems",
+          "id": "product:08:industrial-refrigeration:integrated-skid-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "alkaline water electrolyzer system (integrated multi-unit scale, modular skid configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:alkaline-electrolyzer:integrated-skid-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "industrial centrifugal pump (integrated multi-unit scale, modular skid configuration, advanced process control)",
+          "domain": "Materials, Metals, Chemicals, and Process Industries",
+          "id": "product:06:centrifugal-pump:integrated-skid-advanced",
+          "is_reference_only": false,
+          "kind": "EQUIPMENT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "industrial cold-storage system (integrated multi-unit scale, modular skid configuration, advanced process control)",
+        "record_id": "product:08:cold-storage-system:integrated-skid-advanced",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    },
+    {
+      "checks": {
+        "dependencies_in_range": true,
+        "explanation_use_present": true,
+        "found_in_top_results": true,
+        "gap_import_notes_present": true,
+        "making_ladder_at_least_five": true,
+        "navigation_present": true,
+        "valid_india_status_and_basis": true
+      },
+      "failure_reasons": [],
+      "found": true,
+      "passed": true,
+      "query": "Energy & Nuclear: Nuclear instrumentation and control - high-efficiency configuration",
+      "record": {
+        "canonical_name": "Energy & Nuclear: Nuclear instrumentation and control - high-efficiency configuration",
+        "checks": {
+          "dependencies_in_range": true,
+          "explanation_use_present": true,
+          "found_in_top_results": true,
+          "gap_import_notes_present": true,
+          "making_ladder_at_least_five": true,
+          "navigation_present": true,
+          "valid_india_status_and_basis": true
+        },
+        "dependency_count": 30,
+        "dependency_count_displayed": 30,
+        "dependency_count_raw": 53,
+        "dependency_view": "V1_BROAD_DISPLAYED_SLICE",
+        "domain": "Energy & Nuclear",
+        "failure_reasons": [],
+        "kind": "PRODUCT",
+        "ladder_actions": [
+          "IMPORT",
+          "DEVELOP",
+          "LICENSE",
+          "JV",
+          "BUILD",
+          "SUBSTITUTE",
+          "REDESIGN",
+          "R&D"
+        ],
+        "ladder_count": 8,
+        "navigation_counts": {
+          "downstream": 0,
+          "related": 2,
+          "unlock": 0,
+          "upstream": 53
+        },
+        "passed": true,
+        "record_id": "d03:product:nuclear_instrumentation_control:high_efficiency",
+        "status": "PARTIAL"
+      },
+      "results": [
+        {
+          "canonical_name": "Energy & Nuclear: Nuclear instrumentation and control - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:nuclear_instrumentation_control:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 1,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear material: Nuclear instrumentation and control - high-purity or tightly controlled material",
+          "domain": "Energy & Nuclear",
+          "id": "d03:material:nuclear_instrumentation_control:high_purity",
+          "is_reference_only": false,
+          "kind": "MATERIAL",
+          "rank": 2,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Battery energy-storage system - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:battery_energy_storage:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 3,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Carbon-capture system - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:carbon_capture:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 4,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Concentrated solar thermal system - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:concentrated_solar:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 5,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Uranium conversion and enrichment - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:conversion_enrichment:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 6,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Distribution automation system - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:distribution_automation:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 7,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Fast breeder reactor - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:fast_breeder_reactor:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 8,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Flow-battery energy-storage system - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:flow_battery:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 9,
+          "score": [
+            0
+          ]
+        },
+        {
+          "canonical_name": "Energy & Nuclear: Fuel-cell power system - high-efficiency configuration",
+          "domain": "Energy & Nuclear",
+          "id": "d03:product:fuel_cell_system:high_efficiency",
+          "is_reference_only": false,
+          "kind": "PRODUCT",
+          "rank": 10,
+          "score": [
+            0
+          ]
+        }
+      ],
+      "selected_rank": 1,
+      "selection": {
+        "query": "Energy & Nuclear: Nuclear instrumentation and control - high-efficiency configuration",
+        "record_id": "d03:product:nuclear_instrumentation_control:high_efficiency",
+        "unseen_from_named_result_ids": true
+      },
+      "top_k": 10
+    }
+  ],
+  "runner_version": "1.0.0",
+  "schema_version": "india_v1.benchmark_results.v1",
+  "seed": 20260825,
+  "summary": {
+    "check_counts": {
+      "dependencies_in_range": 27,
+      "explanation_use_present": 27,
+      "found_in_top_results": 27,
+      "gap_import_notes_present": 27,
+      "making_ladder_at_least_five": 27,
+      "navigation_present": 27,
+      "valid_india_status_and_basis": 27
+    },
+    "check_pass_rates": {
+      "dependencies_in_range": 1.0,
+      "explanation_use_present": 1.0,
+      "found_in_top_results": 1.0,
+      "gap_import_notes_present": 1.0,
+      "making_ladder_at_least_five": 1.0,
+      "navigation_present": 1.0,
+      "valid_india_status_and_basis": 1.0
+    },
+    "check_passes": {
+      "dependencies_in_range": 27,
+      "explanation_use_present": 27,
+      "found_in_top_results": 27,
+      "gap_import_notes_present": 27,
+      "making_ladder_at_least_five": 27,
+      "navigation_present": 27,
+      "valid_india_status_and_basis": 27
+    },
+    "domain_coverage": {
+      "atlas_records_by_domain": {
+        "Aerospace & Space": 928,
+        "Consumer, Textile, Packaging, and General Manufacturing": 1080,
+        "Defense & Strategic Manufacturing": 928,
+        "Electronics, Semiconductors & Computing": 928,
+        "Energy & Nuclear": 928,
+        "Food, Agriculture, and Biological Production Systems": 1080,
+        "Foundational Industrial Capabilities": 1080,
+        "Infrastructure, Construction, and Heavy Equipment": 1080,
+        "Machines, Robotics, and Industrial Automation": 900,
+        "Materials, Metals, Chemicals, and Process Industries": 1080,
+        "Medical, Scientific, Pharma, and Biotech Equipment": 1080,
+        "Transport & Mobility": 1080,
+        "shared_foundations": 2481
+      },
+      "named_query_result_domains": {
+        "Aerospace & Space": 1,
+        "Consumer, Textile, Packaging, and General Manufacturing": 1,
+        "Defense & Strategic Manufacturing": 1,
+        "Electronics, Semiconductors & Computing": 1,
+        "Energy & Nuclear": 1,
+        "Food, Agriculture, and Biological Production Systems": 1,
+        "Foundational Industrial Capabilities": 1,
+        "Machines, Robotics, and Industrial Automation": 4,
+        "Materials, Metals, Chemicals, and Process Industries": 2,
+        "Medical, Scientific, Pharma, and Biotech Equipment": 2
+      },
+      "random_product_sample_domains": {
+        "Aerospace & Space": 1,
+        "Consumer, Textile, Packaging, and General Manufacturing": 1,
+        "Defense & Strategic Manufacturing": 1,
+        "Electronics, Semiconductors & Computing": 1,
+        "Energy & Nuclear": 2,
+        "Food, Agriculture, and Biological Production Systems": 2,
+        "Foundational Industrial Capabilities": 2,
+        "Materials, Metals, Chemicals, and Process Industries": 1,
+        "Transport & Mobility": 1
+      }
+    },
+    "failures": [],
+    "named_query_tests": 15,
+    "random_product_tests": 12,
+    "test_pass_rate": 1.0,
+    "tests_failed": 0,
+    "tests_passed": 27,
+    "tests_total": 27
+  },
+  "top_k": 10
+}
