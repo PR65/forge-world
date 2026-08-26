@@ -165,15 +165,21 @@ def _india_summary_record(catalog, record_id: str) -> Dict[str, Any]:
     return {
         "id": record["id"],
         "canonical_name": record["canonical_name"],
-        "name": record["canonical_name"],
-        "aliases": list(record["aliases"]),
+        # ``canonical_name`` remains the source-facing label; ``name`` is the
+        # compact quality-normalized display label used by the UI.
+        "name": record.get("display_name") or record["canonical_name"],
+        "display_name": record.get("display_name") or record["canonical_name"],
+        "family_key": record.get("family_key") or record["id"],
+        "family_label": record.get("family_label") or record["canonical_name"],
+        "variant_label": record.get("variant_label", ""),
+        "aliases": list(record["aliases"][:20]),
         "domain_id": record["domain_id"],
         "domain_code": record["domain_code"],
         "domain": record["domain"],
         "category": record["category"],
         "kind": record["kind"],
-        "explanation": record["explanation"],
-        "uses": list(record["uses"]),
+        "explanation": str(record["explanation"])[:1200],
+        "uses": list(record["uses"][:20]),
         "use": record["uses"][0] if record["uses"] else "",
         "status": record["status"],
         "india_status": record["status"],
@@ -181,6 +187,31 @@ def _india_summary_record(catalog, record_id: str) -> Dict[str, Any]:
         "status_basis": record["status_basis"],
         "is_reference_only": record["is_reference_only"],
         "depth_profile": INDIA_DEPTH_PROFILE,
+    }
+
+
+def _india_link_dto(catalog, record_id: str) -> Dict[str, Any]:
+    """Return a bounded graph link without recursively embedding a record."""
+
+    record = catalog.by_id.get(record_id)
+    if record is None:
+        raise HTTPException(404, f"India V1 record '{record_id}' not found")
+    display = record.get("display_name") or record["canonical_name"]
+    return {
+        "id": record["id"],
+        "canonical_name": record["canonical_name"],
+        "name": display,
+        "display_name": display,
+        "family_key": record.get("family_key") or record["id"],
+        "family_label": record.get("family_label") or display,
+        "variant_label": record.get("variant_label", ""),
+        "domain_id": record["domain_id"],
+        "domain_code": record["domain_code"],
+        "domain": record["domain"],
+        "kind": record["kind"],
+        "status": record["status"],
+        "status_epistemic_class": record["status_epistemic_class"],
+        "is_reference_only": record["is_reference_only"],
     }
 
 
@@ -193,7 +224,7 @@ def _india_full_record(catalog, record_id: str) -> Dict[str, Any]:
     dependency_ids: Dict[str, List[str]] = {}
     for group, references in record["dependencies"].items():
         dependency_ids[group] = list(references)
-        dependencies[group] = [_india_summary_record(catalog, reference) for reference in references]
+        dependencies[group] = [_india_link_dto(catalog, reference) for reference in references]
 
     # Highly reused foundations can unlock thousands of records. Keep a
     # record response readable and bounded; the graph/search endpoints retain
@@ -201,7 +232,7 @@ def _india_full_record(catalog, record_id: str) -> Dict[str, Any]:
     link_limit = 100
 
     def linked(references: Sequence[str]) -> List[Dict[str, Any]]:
-        return [_india_summary_record(catalog, reference) for reference in references[:link_limit]]
+        return [_india_link_dto(catalog, reference) for reference in references[:link_limit]]
 
     upstream = linked(record["upstream"])
     downstream = linked(record["downstream"])
@@ -324,25 +355,56 @@ def india_search_api(
     kind: Optional[str] = Query(default=None, max_length=50),
     status: Optional[str] = Query(default=None, max_length=80),
     limit: int = Query(default=25, ge=1, le=100),
+    include_variants: bool = Query(default=False),
 ):
     catalog = get_india_catalog()
     domain_code = _india_domain_filter(catalog, domain)
     kind_value = _india_kind_filter(kind)
     status_value = _india_status_filter(status)
-    ranked = catalog.ranked_search(
-        q.strip(), domain=domain_code, kind=kind_value, status=status_value, limit=limit
+    hits = catalog.search_hits(
+        q.strip(),
+        domain=domain_code,
+        kind=kind_value,
+        status=status_value,
+        limit=limit,
+        include_variants=include_variants,
     )
     results = []
-    for rank, (record, score) in enumerate(ranked, start=1):
-        results.append({**_india_summary_record(catalog, record["id"]), "rank": rank, "score": score})
+    for rank, hit in enumerate(hits, start=1):
+        record = hit["record"]
+        results.append(
+            {
+                **_india_summary_record(catalog, record["id"]),
+                "rank": rank,
+                "score": int(hit["score"]),
+                "match_type": str(hit.get("match_type", "")),
+                "matched_on": list(hit.get("matched_on", ())),
+                "coverage": float(hit.get("coverage", 0.0)),
+                "domain_match": bool(hit.get("domain_match", False)),
+            }
+        )
     return {
         "query": q,
         "domain": domain_code,
         "kind": kind_value,
         "status": status_value,
         "limit": limit,
+        "include_variants": include_variants,
         "count": len(results),
         "results": results,
+        "depth_profile": INDIA_DEPTH_PROFILE,
+    }
+
+
+@app.get("/api/india/bootstrap")
+def india_bootstrap_api(limit: int = Query(default=12, ge=1, le=24)):
+    """Return one bounded payload for first-load India V1 navigation."""
+
+    catalog = get_india_catalog()
+    return {
+        "summary": india_summary(catalog),
+        "domains": india_domains(catalog),
+        "discover": india_discover_api(limit),
         "depth_profile": INDIA_DEPTH_PROFILE,
     }
 
@@ -1091,6 +1153,34 @@ def option_value():
 
 @app.get("/")
 def index():
+    if (WEB_DIST / "index.html").exists():
+        return FileResponse(WEB_DIST / "index.html")
+    return {"error": "frontend not built; run npm run build in web/"}
+
+
+_PUBLIC_DOCS = {
+    "DATA_SOURCES.md": ROOT / "docs" / "DATA_SOURCES.md",
+    "DATA_RIGHTS.md": ROOT / "docs" / "DATA_RIGHTS.md",
+    "FORGE_INDIA_V1_KNOWN_LIMITATIONS.md": ROOT / "docs" / "FORGE_INDIA_V1_KNOWN_LIMITATIONS.md",
+}
+
+
+@app.get("/docs/{document_name}")
+def public_document(document_name: str):
+    """Serve the small, explicit public documentation surface linked by V1."""
+
+    document = _PUBLIC_DOCS.get(document_name)
+    if document is None or not document.exists():
+        raise HTTPException(404, "Public document not found")
+    return FileResponse(document, media_type="text/markdown; charset=utf-8")
+
+
+@app.get("/india")
+@app.get("/india/")
+@app.get("/india/records/{record_id:path}")
+def india_frontend(record_id: str | None = None):
+    """Return the SPA shell for launch routes and direct record deep links."""
+
     if (WEB_DIST / "index.html").exists():
         return FileResponse(WEB_DIST / "index.html")
     return {"error": "frontend not built; run npm run build in web/"}

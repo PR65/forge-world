@@ -1,0 +1,714 @@
+{
+  "baseline_only": false,
+  "battery_digest_sha256": "420dededfa575a191549e22840fd76e8ddcc01c00c3edb3287ecc0e9e9f61ac6",
+  "battery_id": "run2-founders-adversarial-20260826",
+  "by_class": {
+    "founder": {
+      "failure_counts": {
+        "bad_domain": 0,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 8,
+        "weak_related_unlock": 8,
+        "weird_generated_name": 4
+      },
+      "queries_with_any_failure": 12,
+      "query_count": 20,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 20
+    },
+    "obscure": {
+      "failure_counts": {
+        "bad_domain": 5,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 1,
+        "useless_status_gap_ladder": 10,
+        "weak_related_unlock": 12,
+        "weird_generated_name": 5
+      },
+      "queries_with_any_failure": 18,
+      "query_count": 29,
+      "search_miss_count": 1,
+      "top1_expected_domain_count": 24
+    },
+    "ordinary": {
+      "failure_counts": {
+        "bad_domain": 8,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 4,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 12,
+        "weak_related_unlock": 13,
+        "weird_generated_name": 7
+      },
+      "queries_with_any_failure": 25,
+      "query_count": 43,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 35
+    }
+  },
+  "by_domain": {
+    "01": {
+      "failure_counts": {
+        "bad_domain": 1,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 2,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 9,
+        "weak_related_unlock": 9,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 9,
+      "query_count": 9,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 8
+    },
+    "02": {
+      "failure_counts": {
+        "bad_domain": 0,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 6,
+        "weak_related_unlock": 6,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 6,
+      "query_count": 6,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 6
+    },
+    "03": {
+      "failure_counts": {
+        "bad_domain": 1,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 2,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 9,
+        "weak_related_unlock": 9,
+        "weird_generated_name": 1
+      },
+      "queries_with_any_failure": 10,
+      "query_count": 10,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 9
+    },
+    "04": {
+      "failure_counts": {
+        "bad_domain": 0,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 6,
+        "weak_related_unlock": 7,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 7,
+      "query_count": 7,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 7
+    },
+    "05": {
+      "failure_counts": {
+        "bad_domain": 4,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 1,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 0,
+        "weird_generated_name": 2
+      },
+      "queries_with_any_failure": 6,
+      "query_count": 10,
+      "search_miss_count": 1,
+      "top1_expected_domain_count": 6
+    },
+    "06": {
+      "failure_counts": {
+        "bad_domain": 0,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 0,
+        "weird_generated_name": 4
+      },
+      "queries_with_any_failure": 4,
+      "query_count": 8,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 8
+    },
+    "07": {
+      "failure_counts": {
+        "bad_domain": 0,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 0,
+        "weird_generated_name": 5
+      },
+      "queries_with_any_failure": 5,
+      "query_count": 8,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 8
+    },
+    "08": {
+      "failure_counts": {
+        "bad_domain": 0,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 0,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 0,
+      "query_count": 8,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 8
+    },
+    "09": {
+      "failure_counts": {
+        "bad_domain": 2,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 0,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 2,
+      "query_count": 6,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 4
+    },
+    "10": {
+      "failure_counts": {
+        "bad_domain": 1,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 0,
+        "weird_generated_name": 2
+      },
+      "queries_with_any_failure": 2,
+      "query_count": 6,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 5
+    },
+    "11": {
+      "failure_counts": {
+        "bad_domain": 0,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 0,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 0,
+      "query_count": 8,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 8
+    },
+    "12": {
+      "failure_counts": {
+        "bad_domain": 4,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 0,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 2,
+        "weird_generated_name": 2
+      },
+      "queries_with_any_failure": 4,
+      "query_count": 6,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 2
+    }
+  },
+  "catalog": {
+    "direct_record_count": 12253,
+    "domain_counts": {
+      "01": 928,
+      "02": 928,
+      "03": 928,
+      "04": 928,
+      "05": 900,
+      "06": 1080,
+      "07": 1080,
+      "08": 1080,
+      "09": 1080,
+      "10": 1080,
+      "11": 1080,
+      "12": 1080
+    },
+    "integrity": {
+      "all_references_resolve": true,
+      "unique_aliases": 39836,
+      "unique_ids": 14662
+    },
+    "kind_counts": {
+      "CAPABILITY": 3212,
+      "EQUIPMENT": 5017,
+      "MATERIAL": 1277,
+      "PROCESS": 947,
+      "PRODUCT": 4209
+    },
+    "record_count": 14662,
+    "reference_record_count": 2409,
+    "status_counts": {
+      "AVAILABLE": 660,
+      "CONFLICTED": 58,
+      "IMPORT_DEPENDENT": 1909,
+      "PARTIAL": 5958,
+      "SCALE_LIMITED": 3336,
+      "UNKNOWN": 2741
+    }
+  },
+  "domains_covered": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12"
+  ],
+  "failure_counts": {
+    "bad_domain": 13,
+    "broken_dependency": 0,
+    "dead_end": 0,
+    "duplicate": 0,
+    "misleading_certainty": 6,
+    "nonsense_generic_decomposition": 0,
+    "search_miss": 1,
+    "useless_status_gap_ladder": 30,
+    "weak_related_unlock": 33,
+    "weird_generated_name": 16
+  },
+  "failure_examples": {
+    "bad_domain": [
+      {
+        "id": "u05",
+        "query": "composite overwrapped pressure vessel",
+        "reasons": [
+          "expected domain 01, top result domain 03; expected ranks=none"
+        ],
+        "top_result": "Energy & Nuclear: Reactor pressure boundary - modular configuration"
+      },
+      {
+        "id": "u17",
+        "query": "industrial steam boiler",
+        "reasons": [
+          "expected domain 03, top result domain 10; expected ranks=none"
+        ],
+        "top_result": "Industrial boiler — biomass fired · monsoon"
+      },
+      {
+        "id": "u25",
+        "query": "CNC turning center",
+        "reasons": [
+          "expected domain 05, top result domain 12; expected ranks=[5]"
+        ],
+        "top_result": "CNC turning center — bar fed · automotive"
+      },
+      {
+        "id": "u26",
+        "query": "industrial compressor",
+        "reasons": [
+          "expected domain 05, top result domain 12; expected ranks=none"
+        ],
+        "top_result": "Foundational Industrial compressor — centrifugal · automotive"
+      },
+      {
+        "id": "u27",
+        "query": "precision bearing",
+        "reasons": [
+          "expected domain 05, top result domain 12; expected ranks=none"
+        ],
+        "top_result": "Precision bearing — angular contact · automotive"
+      },
+      {
+        "id": "u29",
+        "query": "C3 ground ball screw",
+        "reasons": [
+          "expected domain 05, top result domain 12; expected ranks=none"
+        ],
+        "top_result": "Precision grinding machine — cylindrical · automotive"
+      },
+      {
+        "id": "u49",
+        "query": "electric vehicle traction motor",
+        "reasons": [
+          "expected domain 09, top result domain 05; expected ranks=[7, 8, 9, 10]"
+        ],
+        "top_result": "squirrel-cage induction motor — heavy-duty power · induction topology · standalone motor"
+      },
+      {
+        "id": "u53",
+        "query": "automotive automatic transmission",
+        "reasons": [
+          "expected domain 09, top result domain 12; expected ranks=none"
+        ],
+        "top_result": "Industrial gearbox — bevel helical · automotive"
+      }
+    ],
+    "broken_dependency": [],
+    "dead_end": [],
+    "duplicate": [],
+    "misleading_certainty": [
+      {
+        "id": "f09",
+        "query": "transformer",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Energy & Nuclear: Grid transformer - modular configuration"
+      },
+      {
+        "id": "u01",
+        "query": "aircraft landing gear",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Aerospace & Space: Aircraft landing gear - avionics assembly"
+      },
+      {
+        "id": "u04",
+        "query": "flight control actuator",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Aerospace & Space: Aircraft landing gear - avionics assembly"
+      },
+      {
+        "id": "u10",
+        "query": "loitering munition",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Defense & Strategic Manufacturing: Loitering munition - platform structure"
+      },
+      {
+        "id": "u14",
+        "query": "wind turbine gearbox",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Energy & Nuclear: Wind turbine system - modular configuration"
+      },
+      {
+        "id": "u67",
+        "query": "coordinate measuring machine",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Cross-domain equipment: Coordinate measuring machine"
+      }
+    ],
+    "nonsense_generic_decomposition": [],
+    "search_miss": [
+      {
+        "id": "u29",
+        "query": "C3 ground ball screw",
+        "reasons": [
+          "no direct relevant result in top 10; anchor overlap top/max=0/0, required=2"
+        ],
+        "top_result": "Precision grinding machine — cylindrical · automotive"
+      }
+    ],
+    "useless_status_gap_ladder": [
+      {
+        "id": "f06",
+        "query": "electrolyzer",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Energy & Nuclear: Hydrogen electrolyser - modular configuration"
+      },
+      {
+        "id": "f09",
+        "query": "transformer",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Energy & Nuclear: Grid transformer - modular configuration"
+      },
+      {
+        "id": "f14",
+        "query": "satellite",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Aerospace & Space: Communications satellite - avionics assembly"
+      },
+      {
+        "id": "f15",
+        "query": "semiconductor equipment",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Electronics, Semiconductors & Computing: Advanced semiconductor package - board or module"
+      },
+      {
+        "id": "f17",
+        "query": "India add 200 GW nuclear generation",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Energy & Nuclear: Battery energy-storage system - modular configuration"
+      },
+      {
+        "id": "f18",
+        "query": "reusable rocket engine ecosystem",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Aerospace & Space: Liquid rocket engine - reusable configuration"
+      },
+      {
+        "id": "f19",
+        "query": "modern passenger aircraft supply chain",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Aerospace & Space: Aircraft actuation system - avionics assembly"
+      },
+      {
+        "id": "f20",
+        "query": "100 GW per year solar equipment",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Energy & Nuclear: Concentrated solar thermal system - modular configuration"
+      }
+    ],
+    "weak_related_unlock": [
+      {
+        "id": "f06",
+        "query": "electrolyzer",
+        "reasons": [
+          "navigation counts upstream/downstream/related=46/0/2"
+        ],
+        "top_result": "Energy & Nuclear: Hydrogen electrolyser - modular configuration"
+      },
+      {
+        "id": "f09",
+        "query": "transformer",
+        "reasons": [
+          "navigation counts upstream/downstream/related=49/0/2"
+        ],
+        "top_result": "Energy & Nuclear: Grid transformer - modular configuration"
+      },
+      {
+        "id": "f14",
+        "query": "satellite",
+        "reasons": [
+          "navigation counts upstream/downstream/related=42/0/2"
+        ],
+        "top_result": "Aerospace & Space: Communications satellite - avionics assembly"
+      },
+      {
+        "id": "f15",
+        "query": "semiconductor equipment",
+        "reasons": [
+          "navigation counts upstream/downstream/related=41/0/2"
+        ],
+        "top_result": "Electronics, Semiconductors & Computing: Advanced semiconductor package - board or module"
+      },
+      {
+        "id": "f17",
+        "query": "India add 200 GW nuclear generation",
+        "reasons": [
+          "navigation counts upstream/downstream/related=46/0/2"
+        ],
+        "top_result": "Energy & Nuclear: Battery energy-storage system - modular configuration"
+      },
+      {
+        "id": "f18",
+        "query": "reusable rocket engine ecosystem",
+        "reasons": [
+          "navigation counts upstream/downstream/related=47/0/2"
+        ],
+        "top_result": "Aerospace & Space: Liquid rocket engine - reusable configuration"
+      },
+      {
+        "id": "f19",
+        "query": "modern passenger aircraft supply chain",
+        "reasons": [
+          "navigation counts upstream/downstream/related=37/0/2"
+        ],
+        "top_result": "Aerospace & Space: Aircraft actuation system - avionics assembly"
+      },
+      {
+        "id": "f20",
+        "query": "100 GW per year solar equipment",
+        "reasons": [
+          "navigation counts upstream/downstream/related=49/0/2"
+        ],
+        "top_result": "Energy & Nuclear: Concentrated solar thermal system - modular configuration"
+      }
+    ],
+    "weird_generated_name": [
+      {
+        "id": "f01",
+        "query": "MRI",
+        "reasons": [
+          "deterministic variant marker"
+        ],
+        "top_result": "magnetic resonance imaging system — clinic setting · compact configuration · operator-led workflow"
+      },
+      {
+        "id": "f02",
+        "query": "5-axis CNC",
+        "reasons": [
+          "deterministic variant marker"
+        ],
+        "top_result": "5-axis CNC machining center — production scale · fixed-floor configuration · programmable control"
+      },
+      {
+        "id": "f05",
+        "query": "industrial heat pump",
+        "reasons": [
+          "deterministic variant marker"
+        ],
+        "top_result": "industrial heat pump — pilot scale · batch configuration · advanced process control"
+      },
+      {
+        "id": "f12",
+        "query": "centrifugal pump",
+        "reasons": [
+          "deterministic variant marker"
+        ],
+        "top_result": "industrial centrifugal pump — pilot scale · batch configuration · advanced process control"
+      },
+      {
+        "id": "u17",
+        "query": "industrial steam boiler",
+        "reasons": [
+          "deterministic variant marker"
+        ],
+        "top_result": "Industrial boiler — biomass fired · monsoon"
+      },
+      {
+        "id": "u30",
+        "query": "sub arc minute harmonic reducer",
+        "reasons": [
+          "deterministic variant marker"
+        ],
+        "top_result": "CNC gear grinding machine — production scale · fixed-floor configuration · programmable control"
+      },
+      {
+        "id": "u33",
+        "query": "carbon fiber prepreg",
+        "reasons": [
+          "deterministic variant marker"
+        ],
+        "top_result": "hard-carbon anode material — pilot scale · batch synthesis mode · closed-loop process assurance"
+      },
+      {
+        "id": "u34",
+        "query": "rare earth permanent magnet",
+        "reasons": [
+          "deterministic variant marker"
+        ],
+        "top_result": "rare-earth oxide and separated precursor — pilot scale · batch synthesis mode · closed-loop process assurance"
+      }
+    ]
+  },
+  "failure_rate": 0.5978260869565217,
+  "fixes_applied": true,
+  "founder_query_count": 20,
+  "phase": "final",
+  "queries_with_any_failure": 55,
+  "queries_with_relevant_result": 91,
+  "queries_with_results": 92,
+  "query_count": 92,
+  "query_set_frozen_before_baseline": true,
+  "relevant_result_rate": 0.9891304347826086,
+  "result_count_max": 10,
+  "result_count_min": 1,
+  "runner_version": "1.1.0",
+  "schema_version": "india_v1.run2_baseline_metrics.v1",
+  "selected_domain_counts": {
+    "01": 8,
+    "02": 6,
+    "03": 10,
+    "04": 7,
+    "05": 7,
+    "06": 11,
+    "07": 8,
+    "08": 8,
+    "09": 4,
+    "10": 6,
+    "11": 8,
+    "12": 7,
+    "shared": 2
+  },
+  "selected_status_counts": {
+    "AVAILABLE": 6,
+    "IMPORT_DEPENDENT": 14,
+    "PARTIAL": 49,
+    "SCALE_LIMITED": 20,
+    "UNKNOWN": 3
+  },
+  "top1_expected_domain_count": 79,
+  "top1_expected_domain_rate": 0.8586956521739131,
+  "top_k": 10,
+  "unseen_query_count": 72
+}

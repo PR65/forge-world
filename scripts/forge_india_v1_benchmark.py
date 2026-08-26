@@ -417,7 +417,13 @@ def _choose_random_products(
     for record in records:
         record_id = str(_value(record, "id", ""))
         domain = str(_value(record, "domain", _value(record, "domain_key", "")))
-        if not record_id or record_id in excluded_ids or not _is_product(record) or domain == "shared_foundations":
+        if (
+            not record_id
+            or record_id in excluded_ids
+            or not _is_product(record)
+            or bool(_value(record, "is_reference_only", False))
+            or domain == "shared_foundations"
+        ):
             continue
         candidates_by_domain.setdefault(domain, []).append(record)
     rng = random.Random(seed)

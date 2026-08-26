@@ -12,16 +12,24 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 from collections.abc import Mapping, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from functools import lru_cache
 import importlib.util
 import re
 from pathlib import Path
 import sys
+from threading import Lock
 import unicodedata
 from typing import Any, Iterable
 
 from .generator import generate_atlas
+from .quality import (
+    build_making_ladder as _quality_making_ladder,
+    correct_epistemic_status as _quality_correct_epistemic_status,
+    display_name as _quality_display_name,
+    family_key as _quality_family_key,
+    variant_label as _quality_variant_label,
+)
 
 try:
     from data.india_v1 import domains_05_08 as _domains_05_08
@@ -186,12 +194,271 @@ def _slug(value: Any) -> str:
 
 @lru_cache(maxsize=100_000)
 def _tokens_cached(value: str) -> tuple[str, ...]:
-    text = _normalize_cached(value)
+    # Search text treats punctuation, hyphens, and underscores as word
+    # boundaries.  IDs remain available through ``normalize_text`` for exact
+    # alias lookups, while a user can search ``5-axis`` as ``five axis``.
+    text = _normalize_cached(value).replace("_", " ")
     return tuple(dict.fromkeys(part for part in text.split() if part))
 
 
 def _tokens(value: Any) -> tuple[str, ...]:
     return _tokens_cached(str(value or ""))
+
+
+# Reusable industrial vocabulary.  These are family-level equivalences, not
+# per-query fixtures: the same terms should work for search, discovery, and
+# future evidence tasks.  Group tokens are kept separate from literal words so
+# an acronym or a common-name alias counts as one semantic match.
+_SEARCH_SYNONYM_GROUPS: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("mri", ("mri", "mr scanner", "magnetic resonance imaging", "magnetic resonance imaging system")),
+    ("ct", ("ct", "ct scanner", "computed tomography", "computed tomography scanner")),
+    ("xray", ("x ray", "xray", "x-ray", "radiography", "radiographic system")),
+    ("uav", ("uav", "drone", "unmanned aerial vehicle", "unmanned aircraft")),
+    ("agriculture", ("agricultural", "agriculture", "farm", "farming", "agri")),
+    ("cnc", ("cnc", "computer numerical control")),
+    ("machining_center", ("machining center", "machining centre", "vertical machining center", "vmc", "5 axis cnc", "five axis cnc")),
+    ("freeze_dryer", ("freeze dryer", "freeze drier", "lyophilizer", "lyophilisation", "lyophilization")),
+    ("food_dehydrator", ("food dehydrator", "food dryer", "dehydration system", "dehydrator")),
+    ("heat_pump", ("heat pump", "process heat pump", "industrial heat pump")),
+    ("electrolyzer", ("electrolyzer", "electrolyser", "water electrolyzer", "hydrogen electrolyzer")),
+    ("motor", ("motor", "electric motor", "industrial motor", "industrial electric motor")),
+    ("robot", ("robot", "robotic arm", "industrial robot", "robotics")),
+    ("humanoid", ("humanoid", "humanoids", "humanoid robot", "bipedal robot", "general purpose robot")),
+    ("transformer", ("transformer", "power transformer", "grid transformer")),
+    ("packaging", ("packaging machine", "packaging machinery", "packaging line", "packaging equipment")),
+    ("textile", ("textile machine", "textile machinery", "spinning machine", "weaving machine")),
+    ("pump", ("pump", "centrifugal pump", "process pump", "industrial pump")),
+    ("satellite", ("satellite", "spacecraft", "space satellite")),
+    ("aircraft", ("aircraft", "airplane", "passenger aircraft", "aeroplane")),
+    ("rocket_engine", ("rocket engine", "liquid rocket engine", "launch engine")),
+    ("semiconductor", ("semiconductor", "semiconductor device", "chip", "integrated circuit", "ic")),
+    ("pcb", ("pcb", "printed circuit board", "printed circuit board assembly", "pcba")),
+    ("cmm", ("cmm", "coordinate measuring machine", "coordinate measurement")),
+    ("ball_screw", ("ball screw", "ball screws", "ballscrew", "ballscrews", "ball screw manufacturing", "linear motion component")),
+    ("bearing", ("bearing", "precision bearing", "rolling bearing")),
+    ("ev", ("ev", "electric vehicle", "battery electric vehicle")),
+    ("rail", ("rail", "railway", "locomotive", "rolling stock", "metro rail")),
+    ("ship", ("ship", "marine", "vessel", "naval vessel")),
+    ("construction", ("construction", "heavy equipment", "construction equipment")),
+    ("crane", ("crane", "tower crane", "lifting crane")),
+    ("water_treatment", ("water treatment", "wastewater treatment", "water purification")),
+    ("metrology", ("metrology", "measurement", "calibration", "inspection")),
+    ("grinding", ("grinding", "precision grinding", "grinder", "grinding machine")),
+    ("heat_treatment", ("heat treatment", "thermal processing", "heat treating")),
+    ("nuclear", ("nuclear", "nuclear power", "reactor", "nuclear reactor")),
+    ("solar", ("solar", "solar pv", "photovoltaic", "photovoltaics")),
+    ("wind", ("wind", "wind turbine", "wind power")),
+    ("battery", ("battery", "energy storage", "battery storage")),
+    ("food", ("food", "food processing", "food production")),
+    ("medical", ("medical", "clinical", "diagnostic", "medical device")),
+    ("pharma", ("pharma", "pharmaceutical", "biotech", "biopharmaceutical")),
+    ("defense", ("defense", "defence", "military", "strategic manufacturing")),
+    ("radar", ("radar", "phased array radar", "airborne radar")),
+    ("munition", ("munition", "missile", "loitering munition")),
+    ("armored_vehicle", ("armored vehicle", "armoured vehicle", "combat vehicle")),
+    ("aircraft_component", ("landing gear", "flight control actuator", "aircraft actuator")),
+    ("industrial_gas", ("industrial gas", "gas separation", "air separation")),
+    ("additive_manufacturing", ("additive manufacturing", "metal additive manufacturing", "3d printing", "3d printer")),
+    ("injection_molding", ("injection molding", "injection moulding", "plastic injection machine")),
+    ("pressure_vessel", ("pressure vessel", "composite pressure vessel", "composite overwrapped pressure vessel", "overwrapped pressure vessel", "copv", "pressure")),
+    ("star_tracker", ("star tracker", "star sensor", "stellar tracker")),
+    ("night_vision", ("night vision", "night-vision", "night vision camera", "low-light camera")),
+    ("sonar", ("sonar", "naval sonar", "underwater sonar", "acoustic sonar", "naval")),
+    ("accelerometer", ("accelerometer", "mems accelerometer", "mems")),
+    ("photolithography", ("photolithography", "lithography", "lithography track")),
+    ("harmonic_reducer", ("harmonic reducer", "harmonic drive", "reducer")),
+    ("carbon_fiber", ("carbon fiber", "carbon fibre", "carbon fiber prepreg", "prepreg", "carbon")),
+    ("technical_ceramic", ("technical ceramic", "advanced ceramic", "alumina ceramic", "alumina", "ceramic")),
+    ("ventilator", ("ventilator", "icu ventilator", "mechanical ventilator", "critical care ventilator")),
+    ("pet_scanner", ("pet scanner", "positron emission tomography", "isotope scanner")),
+    ("seed_drill", ("seed drill", "precision seed drill", "seed planter", "precision planter", "seed")),
+    ("rice_transplanter", ("rice transplanter", "rice planter", "rice")),
+    ("feed_pelletizer", ("feed pelletizer", "feed pelletiser", "pelletizer", "pelletiser", "feed pellet mill", "feed")),
+    ("automatic_transmission", ("automatic transmission", "automatic gearbox", "transmission gearbox", "transmission")),
+    ("controllable_propeller", ("controllable pitch propeller", "variable pitch propeller", "controllable propeller")),
+    ("rotary_kiln", ("rotary kiln", "cement kiln", "cement rotary kiln", "kiln", "cement")),
+    ("refrigerator", ("refrigerator", "fridge", "household refrigerator", "refrigeration appliance", "household")),
+    ("shoe_stitching", ("shoe stitching", "shoe upper stitching machine", "footwear stitching", "stitching machine", "stitching")),
+    ("robotic_welding", ("robotic welding cell", "welding cell", "robotic weld cell", "robotic welding")),
+    ("compressor", ("compressor", "screw compressor", "rotary screw compressor", "industrial compressor", "air compressor")),
+    ("sewing", ("sewing", "sewing machine", "industrial sewing machine", "stitching machine", "industrial stitching")),
+    ("heat_exchanger", ("heat exchanger", "plate heat exchanger", "plate exchanger", "process heat exchanger")),
+    ("elevator_traction", ("elevator traction machine", "traction elevator", "traction machine", "hoist motor", "elevator motor")),
+    ("gear_hobbing", ("gear hobbing", "gear hobbing machine", "hobbing machine", "gear hobber", "gear cutting")),
+    ("ceramic_kiln", ("ceramic kiln", "kiln furnace", "ceramic furnace", "firing kiln", "kiln")),
+    ("vacuum_coating", ("vacuum coating", "vacuum coating machine", "physical vapor deposition", "pvd", "thin film coating", "thin-film deposition")),
+    # The atlas currently exposes semiconductor etch/deposition and thin-film
+    # process text rather than a dedicated vacuum-coater row.  Keep this as a
+    # reusable process family so coating searches can reach that evidence.
+    ("thin_film_deposition", ("thin film deposition", "thin films", "etch and deposition", "semiconductor etch and deposition", "physical vapor deposition", "pvd")),
+)
+
+_SEARCH_SYNONYM_LOOKUP: dict[str, tuple[str, ...]] = {
+    alias: (group, *aliases)
+    for group, aliases in _SEARCH_SYNONYM_GROUPS
+    for alias in aliases
+}
+_SEARCH_GROUP_ALIASES: dict[str, tuple[tuple[str, ...], ...]] = {
+    group: tuple(sorted((_tokens(alias) for alias in aliases), key=lambda value: (-len(value), value)))
+    for group, aliases in _SEARCH_SYNONYM_GROUPS
+}
+_SEARCH_GROUP_RELATIONS: dict[str, tuple[str, ...]] = {
+    # A humanoid is a specialized robot family.  Keeping the relation in the
+    # reusable vocabulary permits honest related fallback when the atlas has
+    # no dedicated humanoid row without making every robot an exact match.
+    "humanoid": ("robot",),
+    "star_tracker": ("satellite",),
+    "pet_scanner": ("mri",),
+    "controllable_propeller": ("ship",),
+    "robotic_welding": ("robot",),
+    "heat_exchanger": ("heat_pump",),
+    "elevator_traction": ("motor", "harmonic_reducer"),
+    "ceramic_kiln": ("heat_treatment", "technical_ceramic"),
+    "sewing": ("shoe_stitching",),
+    "vacuum_coating": ("thin_film_deposition",),
+}
+_SEARCH_GROUP_EXCLUSIONS: dict[str, tuple[str, ...]] = {
+    # ``vessel`` is a broad transport term; in a pressure-vessel query the
+    # engineering family should not collapse into ship results.
+    "pressure_vessel": ("ship",),
+}
+_SEARCH_ALIAS_FIRST: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {}
+_alias_first_build: dict[str, list[tuple[str, tuple[str, ...]]]] = defaultdict(list)
+for _group_name, _group_aliases in _SEARCH_GROUP_ALIASES.items():
+    for _alias_tokens in _group_aliases:
+        if _alias_tokens:
+            _alias_first_build[_alias_tokens[0]].append((_group_name, _alias_tokens))
+_SEARCH_ALIAS_FIRST = {
+    key: tuple(sorted(values, key=lambda item: (-len(item[1]), item[0], item[1])))
+    for key, values in _alias_first_build.items()
+}
+_LOW_INFORMATION_TERMS = {
+    "equipment", "machine", "system", "unit", "line", "plant", "industrial", "production", "manufacturing", "process",
+    "per", "year", "years", "annual", "million", "billion", "india", "add", "gw", "generation", "ecosystem", "supply", "chain",
+}
+
+# Coarse presentation-domain priors.  They only break ties among candidates
+# that already match a meaningful term; they never create supply or an exact
+# match.  Several concepts intentionally span domains, so values are tuples.
+_DOMAIN_HINTS: dict[str, tuple[str, ...]] = {
+    "aerospace": ("01",), "space": ("01",), "aircraft": ("01",), "airplane": ("01",), "rocket": ("01",), "satellite": ("01",),
+    "defense": ("02",), "defence": ("02",), "military": ("02",), "radar": ("02",), "munition": ("02",), "armored": ("02",), "armoured": ("02",), "sonar": ("02",),
+    "nuclear": ("03",), "reactor": ("03",), "solar": ("03",), "photovoltaic": ("03",), "wind": ("03",), "electrolyzer": ("03", "06"), "transformer": ("03",), "grid": ("03",), "battery": ("03", "09"), "energy": ("03",),
+    "semiconductor": ("04",), "chip": ("04",), "pcb": ("04",), "electronics": ("04",), "wafer": ("04",), "compute": ("04",),
+    "cnc": ("05", "12"), "robot": ("05",), "robotics": ("05",), "humanoid": ("05",), "motor": ("05",), "bearing": ("05", "12"), "pump": ("05", "06"), "compressor": ("05",), "actuator": ("05",), "reducer": ("05",),
+    "material": ("06",), "steel": ("06",), "alloy": ("06",), "chemical": ("06",), "magnet": ("06",), "heat": ("06",), "electrolyzer": ("06", "03"),
+    "mri": ("07",), "medical": ("07",), "clinical": ("07",), "diagnostic": ("07",), "pharma": ("07",), "biotech": ("07",), "freeze": ("07",),
+    "food": ("08",), "agricultural": ("08",), "agriculture": ("08",), "farm": ("08",), "grain": ("08",), "dairy": ("08",), "dehydrator": ("08",),
+    "vehicle": ("09",), "automotive": ("09",), "electric": ("09",), "ev": ("09",), "rail": ("09",), "railway": ("09",), "marine": ("09",), "ship": ("09",), "locomotive": ("09",),
+    "construction": ("10",), "crane": ("10",), "excavator": ("10",), "tunnel": ("10",), "cement": ("10",), "concrete": ("10",), "water": ("10",),
+    "textile": ("11",), "packaging": ("11",), "consumer": ("11",), "paper": ("11",), "shoe": ("11",), "apparel": ("11",),
+    "metrology": ("12",), "calibration": ("12",), "grinding": ("12",), "precision": ("12",), "machine": ("12",), "tooling": ("12",), "foundational": ("12",),
+    "pressure_vessel": ("01",), "star_tracker": ("01",), "night_vision": ("02",), "sonar": ("02",),
+    "accelerometer": ("04",), "photolithography": ("04",), "harmonic_reducer": ("05",),
+    "carbon_fiber": ("06",), "technical_ceramic": ("06",), "ventilator": ("07",), "pet_scanner": ("07",),
+    "seed_drill": ("08",), "rice_transplanter": ("08",), "feed_pelletizer": ("08",),
+    "automatic_transmission": ("09",), "controllable_propeller": ("09",), "rotary_kiln": ("10",),
+    "refrigerator": ("11",), "shoe_stitching": ("11",), "robotic_welding": ("05",), "ball_screw": ("05", "12"),
+    "compressor": ("05", "12"), "sewing": ("11",), "heat_exchanger": ("06",), "elevator_traction": ("10",),
+    "gear_hobbing": ("05",), "ceramic_kiln": ("06", "10"), "vacuum_coating": ("04", "12",),
+    "thin_film_deposition": ("04",), "harmonic_reducer": ("05",),
+}
+
+
+def _stem_search_token(token: str) -> str:
+    """Apply only conservative singular/plural normalization."""
+
+    if len(token) > 5 and token.endswith("ies"):
+        return token[:-3] + "y"
+    if len(token) > 5 and token.endswith("ses"):
+        return token[:-2]
+    if len(token) > 4 and token.endswith("s") and not token.endswith("ss"):
+        return token[:-1]
+    return token
+
+
+_SEARCH_ALIAS_FIRST_STEMMED: dict[str, tuple[tuple[str, tuple[str, ...], tuple[str, ...]], ...]] = {}
+_alias_first_stemmed_build: dict[str, list[tuple[str, tuple[str, ...], tuple[str, ...]]]] = defaultdict(list)
+for _group_name, _group_aliases in _SEARCH_GROUP_ALIASES.items():
+    for _alias_tokens in _group_aliases:
+        if _alias_tokens:
+            _alias_stemmed = tuple(_stem_search_token(value) for value in _alias_tokens)
+            _alias_first_stemmed_build[_alias_stemmed[0]].append((_group_name, _alias_tokens, _alias_stemmed))
+_SEARCH_ALIAS_FIRST_STEMMED = {
+    key: tuple(sorted(values, key=lambda item: (-len(item[2]), item[0], item[2])))
+    for key, values in _alias_first_stemmed_build.items()
+}
+
+
+def _contains_sequence(tokens: Sequence[str], candidate: Sequence[str]) -> bool:
+    if not candidate or len(candidate) > len(tokens):
+        return False
+    target = tuple(_stem_search_token(value) for value in candidate)
+    source = tuple(_stem_search_token(value) for value in tokens)
+    return any(source[index : index + len(target)] == target for index in range(len(source) - len(target) + 1))
+
+
+@lru_cache(maxsize=200_000)
+def _semantic_units_cached(value: str) -> frozenset[str]:
+    raw = tuple(_tokens(value))
+    stemmed = tuple(_stem_search_token(token) for token in raw)
+    units = {token for token in stemmed if token not in _LOW_INFORMATION_TERMS}
+    checked_groups: set[str] = set()
+    for index, token in enumerate(stemmed):
+        for group, alias, alias_stemmed in _SEARCH_ALIAS_FIRST_STEMMED.get(token, ()):
+            if group in checked_groups:
+                continue
+            end = index + len(alias_stemmed)
+            if end <= len(stemmed) and stemmed[index:end] == alias_stemmed:
+                checked_groups.add(group)
+                units.difference_update(alias_stemmed)
+                units.add(f"@{group}")
+    for group in tuple(checked_groups):
+        units.update(f"@{related}" for related in _SEARCH_GROUP_RELATIONS.get(group, ()))
+        units.difference_update(f"@{excluded}" for excluded in _SEARCH_GROUP_EXCLUSIONS.get(group, ()))
+    return frozenset(units)
+
+
+def _semantic_units(value: Any) -> frozenset[str]:
+    return _semantic_units_cached(str(value or ""))
+
+
+def _semantic_group_labels(units: Iterable[str]) -> list[str]:
+    return sorted(value[1:] if value.startswith("@") else value for value in units)
+
+
+def _domain_hints(value: Any) -> set[str]:
+    hints: set[str] = set()
+    units = _semantic_units(value)
+    for unit in units:
+        key = unit[1:] if unit.startswith("@") else unit
+        hints.update(_DOMAIN_HINTS.get(key, ()))
+    for token in _tokens(value):
+        if token not in _LOW_INFORMATION_TERMS:
+            hints.update(_DOMAIN_HINTS.get(token, ()))
+    return hints
+
+
+def _edit_distance_one(left: str, right: str) -> bool:
+    if left == right:
+        return False
+    if abs(len(left) - len(right)) > 1:
+        return False
+    if len(left) == len(right):
+        return sum(a != b for a, b in zip(left, right)) <= 1
+    if len(left) > len(right):
+        left, right = right, left
+    index_left = index_right = differences = 0
+    while index_left < len(left) and index_right < len(right):
+        if left[index_left] != right[index_right]:
+            differences += 1
+            index_right += 1
+            if differences > 1:
+                return False
+        else:
+            index_left += 1
+            index_right += 1
+    return True
 
 
 def _as_dict(record: Any) -> dict[str, Any]:
@@ -408,6 +675,28 @@ def _reference_id(value: str) -> str:
     return f"reference:{_slug(text)}"
 
 
+def _family_label(record: Mapping[str, Any]) -> str:
+    # Keep the family label aligned with the shared quality display helper.
+    # The display helper retains a compact variant suffix; the family label
+    # intentionally removes that suffix for grouping and UI explanation.
+    name = str(record.get("display_name") or _quality_display_name(record) or record.get("id") or "").strip()
+    return re.split(r"\s+[—-]\s+", name, maxsplit=1)[0].strip()
+
+
+def _family_representative_rank(record: Mapping[str, Any]) -> tuple[Any, ...]:
+    """Static fallback ordering; query-specific scoring may pick another variant."""
+
+    kind_rank = {"PRODUCT": 0, "EQUIPMENT": 1, "MATERIAL": 2, "PROCESS": 3, "CAPABILITY": 4}.get(str(record.get("kind")), 5)
+    status_rank = {"STRONG": 0, "AVAILABLE": 1, "PARTIAL": 2, "SCALE_LIMITED": 3, "IMPORT_DEPENDENT": 4, "MISSING": 5, "UNKNOWN": 6, "CONFLICTED": 7}.get(str(record.get("status")), 8)
+    return (
+        bool(record.get("is_reference_only")),
+        kind_rank,
+        status_rank,
+        len(str(record.get("canonical_name", ""))),
+        str(record.get("id", "")),
+    )
+
+
 def _normalize_refs(
     values: Any,
     ids: set[str],
@@ -491,6 +780,8 @@ def _normalize_row(
     normalized = {
         "id": record_id,
         "canonical_name": name,
+        "family_key": _quality_family_key(record_id),
+        "family_label": _family_label({"canonical_name": name, "id": record_id}),
         "aliases": aliases,
         "domain_code": code,
         "domain_id": code,
@@ -516,6 +807,15 @@ def _normalize_row(
         "is_reference_only": False,
         "_search_aliases": search_aliases,
     }
+    # Correct only unsupported assumption-backed extremes before any status
+    # or search indexes are built.  The helper returns a copy and preserves
+    # prior labels in auditable metadata when it downgrades to UNKNOWN.
+    if normalized["status"] in {"STRONG", "MISSING"} and normalized["status_epistemic_class"] == "ASSUMPTION":
+        normalized = _quality_correct_epistemic_status(normalized)
+    normalized["family_key"] = _quality_family_key(normalized)
+    normalized["family_label"] = _family_label(normalized)
+    normalized["variant_label"] = _quality_variant_label(normalized)
+    normalized["display_name"] = _quality_display_name(normalized)
     return normalized, search_aliases
 
 
@@ -539,6 +839,8 @@ def _stub_record(record_id: str) -> dict[str, Any]:
     return {
         "id": record_id,
         "canonical_name": name,
+        "family_key": _quality_family_key(record_id),
+        "family_label": _family_label({"canonical_name": name, "id": record_id}),
         "aliases": [record_id, label],
         "domain_code": "shared",
         "domain_id": "shared",
@@ -598,6 +900,14 @@ class IndiaCatalog:
     normalized_fields: dict[str, tuple[str, ...]]
     search_token_sets: dict[str, frozenset[str]]
     direct_record_count: int
+    # Semantic search indexes.  Defaults keep the adapter constructible for
+    # lightweight downstream callers that used the earlier read model.
+    search_term_index: dict[str, tuple[str, ...]] = field(default_factory=dict)
+    search_name_term_sets: dict[str, frozenset[str]] = field(default_factory=dict)
+    search_field_term_sets: dict[str, dict[str, frozenset[str]]] = field(default_factory=dict)
+    family_members: dict[str, tuple[str, ...]] = field(default_factory=dict)
+    family_representatives: dict[str, str] = field(default_factory=dict)
+    family_alias_index: dict[str, tuple[str, ...]] = field(default_factory=dict)
 
     @property
     def reference_record_count(self) -> int:
@@ -636,53 +946,253 @@ class IndiaCatalog:
         kind: str | None = None,
         status: str | None = None,
         limit: int = 25,
+        include_variants: bool = False,
     ) -> list[tuple[dict[str, Any], int]]:
-        """Return deterministic ranked records using only prebuilt indexes."""
+        """Return deterministic ranked records using the semantic search index.
+
+        ``ranked_search`` remains the compatibility pair-returning API used by
+        older callers.  New callers that need explainability should use
+        :meth:`search_hits`, which exposes ``match_type`` and ``matched_on``.
+        Family grouping is on by default: variants remain searchable, but a
+        broad query receives one strongest representative per family instead
+        of ten generated siblings.
+        """
+
+        return [
+            (hit["record"], int(hit["score"]))
+            for hit in self.search_hits(
+                query,
+                domain=domain,
+                kind=kind,
+                status=status,
+                limit=limit,
+                include_variants=include_variants,
+            )
+        ]
+
+    def search_hits(
+        self,
+        query: str = "",
+        *,
+        domain: str | None = None,
+        kind: str | None = None,
+        status: str | None = None,
+        limit: int = 25,
+        include_variants: bool = False,
+    ) -> list[dict[str, Any]]:
+        """Return ranked records with honest match and family signals.
+
+        Multi-token queries require phrase/all-token evidence for a strong hit.
+        If none exists, only candidates sharing a meaningful token *and* a
+        relevant domain prior are returned as ``related``.  This intentionally
+        leaves a query empty rather than promoting an unrelated one-token
+        collision such as ``agricultural drone`` -> ``counter-UAS``.
+        """
 
         domain_code = self.resolve_domain(domain)
         if domain is not None and domain_code is None:
             return []
         kind_value = str(kind).upper() if kind else None
         status_value = _status(status) if status else None
-        candidate: set[str] | None = None
         normalized_query = normalize_text(query)
-        query_tokens = set(_tokens(query))
-        if normalized_query:
-            exact = set(self.alias_index.get(normalized_query, ()))
-            token_sets = [set(self.token_index.get(token, ())) for token in query_tokens]
-            union = set().union(*token_sets) if token_sets else set()
-            candidate = exact | union
-        else:
-            candidate = None
+        query_units = set(_semantic_units(query))
+        # Numeric quantities and short objective glue are not retrieval keys;
+        # they still remain in the public query string and explanation signals.
+        query_units = {unit for unit in query_units if not unit.isdigit() and (unit.startswith("@") or len(unit) > 2)}
+        query_tokens = {_stem_search_token(token) for token in _tokens(query) if not token.isdigit() and len(token) > 2}
+        hints = _domain_hints(query)
         if domain_code:
-            values = set(self.domain_index.get(domain_code, ()))
-            candidate = values if candidate is None else candidate & values
-        if kind_value:
-            values = set(self.kind_index.get(kind_value, ()))
-            candidate = values if candidate is None else candidate & values
-        if status_value:
-            values = set(self.status_index.get(status_value, ()))
-            candidate = values if candidate is None else candidate & values
-        if candidate is None:
+            hints = {domain_code}
+
+        candidate: set[str] = set()
+        if normalized_query:
+            candidate.update(self.alias_index.get(normalized_query, ()))
+            for family_key in self.family_alias_index.get(normalized_query, ()):
+                candidate.update(self.family_members.get(family_key, ()))
+            for unit in query_units:
+                candidate.update(self.search_term_index.get(unit, ()))
+            # A light, bounded typo path: only literal words of four or more
+            # characters can fuzzy-match, and the penalty keeps fuzzy hits
+            # below a phrase/all-token match.
+            available_terms = tuple(self.search_term_index)
+            for token in query_tokens:
+                if len(token) < 4 or token in self.search_term_index:
+                    continue
+                for term in available_terms:
+                    if term.startswith("@") or len(term) < 4:
+                        continue
+                    if _edit_distance_one(token, term):
+                        candidate.update(self.search_term_index.get(term, ()))
+        else:
             candidate = set(self.by_id)
 
+        if domain_code:
+            candidate &= set(self.domain_index.get(domain_code, ()))
+        if kind_value:
+            candidate &= set(self.kind_index.get(kind_value, ()))
+        if status_value:
+            candidate &= set(self.status_index.get(status_value, ()))
+        if not candidate:
+            return []
+
         prefer_direct = any(not self.by_id[record_id]["is_reference_only"] for record_id in candidate)
-        scored: list[tuple[tuple[Any, ...], dict[str, Any], int]] = []
-        for record_id in candidate:
+        scored: list[dict[str, Any]] = []
+        for record_id in sorted(candidate):
             record = self.by_id[record_id]
-            fields = self.search_fields[record_id]
-            normalized_fields = self.normalized_fields[record_id]
-            exact_name = int(bool(normalized_query and normalized_query == normalized_fields[1]))
-            exact_alias = int(bool(normalized_query and normalized_query in normalized_fields))
-            starts = int(bool(normalized_query and any(field.startswith(normalized_query) for field in normalized_fields)))
-            coverage = len(query_tokens.intersection(self.search_token_sets[record_id])) if query_tokens else 0
-            source_priority = 5000 if prefer_direct and not record["is_reference_only"] else 0
-            score = source_priority + exact_name * 1000 + exact_alias * 900 + starts * 100 + coverage
-            # The negative score keeps richer matches first; ID makes every
-            # tie stable across Python process/hash seeds.
-            scored.append(((-score, -coverage, record_id), record, score))
-        scored.sort(key=lambda item: item[0])
-        return [(record, score) for _, record, score in scored[: max(1, int(limit))]]
+            field_terms = self.search_field_term_sets.get(record_id, {})
+            name_terms = self.search_name_term_sets.get(record_id, self.search_token_sets.get(record_id, frozenset()))
+            all_terms = self.search_token_sets.get(record_id, frozenset())
+            matched_units = query_units.intersection(all_terms)
+            name_matched_units = query_units.intersection(name_terms)
+            full_name = bool(query_units) and query_units.issubset(name_terms)
+            full_record = bool(query_units) and query_units.issubset(all_terms)
+            exact_field = any(normalized_query and normalized_query == normalize_text(field) for field in self.search_fields.get(record_id, ()))
+            phrase_field = any(normalized_query and normalized_query in normalize_text(field) for field in self.search_fields.get(record_id, ()))
+            fuzzy_tokens = [
+                token for token in query_tokens
+                if token not in all_terms and any(_edit_distance_one(token, term) for term in all_terms if not term.startswith("@") and len(term) >= 4)
+            ]
+            matched_on: list[str] = []
+            for field_name, terms in field_terms.items():
+                if query_units.intersection(terms):
+                    matched_on.append(field_name)
+            matched_on.extend(_semantic_group_labels(matched_units))
+            matched_on = list(dict.fromkeys(sorted(matched_on)))
+            domain_match = bool(hints and str(record.get("domain_code")) in hints)
+            direct_bonus = 250 if prefer_direct and not record["is_reference_only"] else 0
+            kind_bonus = {"PRODUCT": 55, "EQUIPMENT": 45, "MATERIAL": 35, "PROCESS": 25, "CAPABILITY": 15}.get(record.get("kind"), 0)
+            family_rep_bonus = 15 if self.family_representatives.get(record.get("family_key")) == record_id else 0
+            coverage = len(matched_units) / max(1, len(query_units))
+            if not query_units:
+                match_type = "browse"
+                base_score = 100
+            elif exact_field:
+                match_type = "exact"
+                base_score = 10_000
+            elif phrase_field and full_name:
+                match_type = "phrase"
+                base_score = 9_200
+            elif full_name:
+                match_type = "all_tokens"
+                base_score = 8_400
+            elif full_record and name_matched_units:
+                match_type = "all_tokens"
+                base_score = 7_400
+            elif full_record and domain_match:
+                # A query found in explanatory/uses text is useful context,
+                # but it is not a product-name match.  Keep it visibly below
+                # phrase/all-token matches and expose the related signal.
+                match_type = "related"
+                base_score = 1_850
+            elif len(query_units) == 1 and matched_units:
+                match_type = "alias" if any(unit.startswith("@") for unit in matched_units) else "partial"
+                base_score = 4_900
+            elif matched_units and domain_match:
+                match_type = "related"
+                base_score = 2_000
+            else:
+                # A candidate sharing only an unqualified word is not a useful
+                # search hit and is filtered below.
+                match_type = "irrelevant"
+                base_score = 0
+            if fuzzy_tokens and match_type in {"alias", "partial", "related", "irrelevant"}:
+                match_type = "fuzzy"
+                base_score = max(base_score, 2_500)
+            score = int(
+                base_score
+                + round(coverage * 1_000)
+                + (700 if domain_match else (-350 if hints and match_type in {"related", "partial", "fuzzy"} else 0))
+                + len(name_matched_units) * 80
+                + direct_bonus
+                + kind_bonus
+                + family_rep_bonus
+                - len(fuzzy_tokens) * 300
+            )
+            scored.append(
+                {
+                    "record": record,
+                    "score": score,
+                    "match_type": match_type,
+                    "matched_on": matched_on,
+                    "matched_units": sorted(matched_units),
+                    "domain_match": domain_match,
+                    "coverage": coverage,
+                    "fuzzy_tokens": fuzzy_tokens,
+                }
+            )
+
+        strong_types = {"exact", "phrase", "all_tokens", "alias", "browse"}
+        strong = [hit for hit in scored if hit["match_type"] in strong_types]
+        if query_units and not strong:
+            # Related fallback requires domain context.  It is deliberately
+            # narrower than token union and carries a visibly weaker signal.
+            strong = [hit for hit in scored if hit["match_type"] in {"related", "fuzzy"}]
+        elif query_units:
+            strong = [hit for hit in scored if hit["match_type"] in strong_types]
+            # A shared bridge may have an exact alias while the best honest
+            # answer is a domain-matched related family (robotic welding cell
+            # -> industrial robotics).  Preserve that fallback candidate so
+            # the domain gate below can prefer it over the shared bridge.
+            if not any(
+                hit["domain_match"] and not hit["record"].get("is_reference_only", False)
+                for hit in strong
+            ):
+                strong.extend(
+                    hit for hit in scored
+                    if hit["match_type"] == "related"
+                    and hit["domain_match"]
+                    and not hit["record"].get("is_reference_only", False)
+                )
+        if not strong:
+            return []
+
+        # When the vocabulary provides a domain prior, a matching direct
+        # family is more useful than an exact shared/reference bridge from a
+        # different domain.  This keeps common primitives navigable while
+        # preventing a shared alias from outranking the user's industrial
+        # context (for example, robotic welding cell -> machine robotics).
+        exact_direct = any(
+            hit["match_type"] == "exact" and not hit["record"].get("is_reference_only", False)
+            for hit in strong
+        )
+        if hints and not exact_direct:
+            domain_direct = [
+                hit for hit in strong
+                if hit["domain_match"] and not hit["record"].get("is_reference_only", False)
+            ]
+            if domain_direct:
+                strong = domain_direct
+
+        strong.sort(
+            key=lambda hit: (
+                -int(hit["score"]),
+                str(hit["record"].get("family_key", "")),
+                str(hit["record"].get("id", "")),
+            )
+        )
+        if include_variants:
+            selected = strong[: max(1, int(limit))]
+        else:
+            selected = []
+            seen_families: set[str] = set()
+            for hit in strong:
+                family_key = str(hit["record"].get("family_key") or hit["record"].get("id"))
+                if family_key in seen_families:
+                    continue
+                seen_families.add(family_key)
+                selected.append(hit)
+                if len(selected) >= max(1, int(limit)):
+                    break
+        return [
+            {
+                **hit,
+                "id": hit["record"]["id"],
+                "family_key": hit["record"].get("family_key") or hit["record"]["id"],
+                "match_type": hit["match_type"],
+                "matched_on": list(hit["matched_on"]),
+            }
+            for hit in selected
+        ]
 
     def search(
         self,
@@ -692,6 +1202,7 @@ class IndiaCatalog:
         kind: str | None = None,
         status: str | None = None,
         limit: int = 25,
+        include_variants: bool = False,
     ) -> list[dict[str, Any]]:
         """Return JSON-ready records; use :meth:`ranked_search` for scores."""
 
@@ -703,6 +1214,7 @@ class IndiaCatalog:
                 kind=kind,
                 status=status,
                 limit=limit,
+                include_variants=include_variants,
             )
         ]
 
@@ -774,11 +1286,40 @@ def _build_catalog() -> IndiaCatalog:
     # Reverse edges make a bridge node useful from the graph endpoint and
     # expose the ``unlocks`` view without changing source-pack assertions.
     reverse_downstream: dict[str, set[str]] = defaultdict(set)
+    reverse_related: dict[str, set[str]] = defaultdict(set)
     for record in all_records:
         for reference in (*record["dependency_ids"], *record["upstream"]):
             reverse_downstream[reference].add(record["id"])
+        # Reference bridges are often named only in a dependency/downstream
+        # edge.  A bounded reverse-related link gives those primitives a
+        # deterministic navigation parent without claiming a new capability.
+        for reference in (
+            *record["dependency_ids"],
+            *record["upstream"],
+            *record["downstream"],
+            *record["related"],
+        ):
+            if reference not in direct_ids:
+                reverse_related[reference].add(record["id"])
     for record in all_records:
         record["downstream"] = sorted(set(record["downstream"]) | reverse_downstream.get(record["id"], set()))
+        record["related"] = sorted(set(record["related"]) | reverse_related.get(record["id"], set()))
+
+    # The graph is now closed over direct rows and reference bridges, so the
+    # shared quality ladder can inspect dependency status without guessing.
+    # Apply the display/family contract before constructing any search index.
+    by_id = {record["id"]: record for record in all_records}
+    for record in all_records:
+        if record.get("status") in {"STRONG", "MISSING"} and record.get("status_epistemic_class") == "ASSUMPTION":
+            record.update(_quality_correct_epistemic_status(record))
+        # The 05--12 source packs already emit these normalized fields.  Reuse
+        # them instead of re-running the same regex-heavy presentation pass on
+        # thousands of records during every cold start.
+        record["family_key"] = record.get("family_key") or _quality_family_key(record)
+        record["variant_label"] = record.get("variant_label") or _quality_variant_label(record)
+        record["display_name"] = record.get("display_name") or _quality_display_name(record)
+        record["family_label"] = record.get("family_label") or _family_label(record)
+        record["making_ladder"] = _quality_making_ladder(record, by_id)
 
     # Keep the source aliases available to search while making the public
     # aliases globally unique for registry integrity.  A repeated family alias
@@ -788,6 +1329,11 @@ def _build_catalog() -> IndiaCatalog:
     search_fields: dict[str, tuple[str, ...]] = {}
     normalized_fields_build: dict[str, tuple[str, ...]] = {}
     search_token_sets_build: dict[str, frozenset[str]] = {}
+    search_term_index_build: dict[str, set[str]] = defaultdict(set)
+    search_name_term_sets_build: dict[str, frozenset[str]] = {}
+    search_field_term_sets_build: dict[str, dict[str, frozenset[str]]] = {}
+    family_members_build: dict[str, list[str]] = defaultdict(list)
+    family_alias_index_build: dict[str, set[str]] = defaultdict(set)
     alias_index_build: dict[str, set[str]] = defaultdict(set)
     token_index_build: dict[str, set[str]] = defaultdict(set)
     for record in all_records:
@@ -809,11 +1355,45 @@ def _build_catalog() -> IndiaCatalog:
             public_aliases = [record["id"]]
             alias_owner.setdefault(normalize_text(record["id"]), record["id"])
         record["aliases"] = public_aliases
-        field_values = tuple(dict.fromkeys((record["id"], record["canonical_name"], *raw_aliases, *public_aliases, record["category"], *record["uses"])))
+        field_values = tuple(
+            dict.fromkeys(
+                (
+                    record["id"],
+                    record["canonical_name"],
+                    *raw_aliases,
+                    *public_aliases,
+                    record.get("family_label", ""),
+                    record["category"],
+                    record.get("explanation", ""),
+                    *record["uses"],
+                )
+            )
+        )
         search_fields[record["id"]] = field_values
         normalized_values = tuple(normalize_text(field) for field in field_values)
         normalized_fields_build[record["id"]] = normalized_values
-        search_token_sets_build[record["id"]] = frozenset(token for field in field_values for token in _tokens(field))
+        field_term_sets = {
+            "name": frozenset(_semantic_units(" ".join((record["canonical_name"], record.get("family_label", ""))))),
+            "aliases": frozenset(_semantic_units(" ".join((*raw_aliases, *public_aliases)))),
+            "category": frozenset(_semantic_units(record["category"])),
+            "explanation": frozenset(_semantic_units(record.get("explanation", ""))),
+            "uses": frozenset(_semantic_units(" ".join(record["uses"]))),
+        }
+        search_field_term_sets_build[record["id"]] = field_term_sets
+        name_terms = frozenset(set(field_term_sets["name"]) | set(field_term_sets["aliases"]))
+        all_terms = frozenset(set().union(*(set(values) for values in field_term_sets.values())))
+        search_name_term_sets_build[record["id"]] = name_terms
+        search_token_sets_build[record["id"]] = all_terms
+        for term in all_terms:
+            search_term_index_build[term].add(record["id"])
+        family_key = str(record.get("family_key") or _quality_family_key(record["id"]))
+        record["family_key"] = family_key
+        record["family_label"] = str(record.get("family_label") or _family_label(record))
+        family_members_build[family_key].append(record["id"])
+        for alias in (*raw_aliases, *public_aliases, record["canonical_name"], record.get("family_label", "")):
+            normalized_alias = normalize_text(alias)
+            if normalized_alias:
+                family_alias_index_build[normalized_alias].add(family_key)
         for field in field_values:
             normalized = normalize_text(field)
             if normalized:
@@ -821,7 +1401,6 @@ def _build_catalog() -> IndiaCatalog:
             for token in _tokens(field):
                 token_index_build[token].add(record["id"])
 
-    by_id = {record["id"]: record for record in all_records}
     domain_index_build: dict[str, set[str]] = defaultdict(set)
     kind_index_build: dict[str, set[str]] = defaultdict(set)
     status_index_build: dict[str, set[str]] = defaultdict(set)
@@ -848,6 +1427,15 @@ def _build_catalog() -> IndiaCatalog:
         normalized_fields=normalized_fields_build,
         search_token_sets=search_token_sets_build,
         direct_record_count=len(direct),
+        search_term_index={key: tuple(sorted(value)) for key, value in search_term_index_build.items()},
+        search_name_term_sets=search_name_term_sets_build,
+        search_field_term_sets=search_field_term_sets_build,
+        family_members={key: tuple(sorted(value)) for key, value in family_members_build.items()},
+        family_representatives={
+            key: min(values, key=lambda record_id: _family_representative_rank(by_id[record_id]))
+            for key, values in family_members_build.items()
+        },
+        family_alias_index={key: tuple(sorted(value)) for key, value in family_alias_index_build.items()},
     )
     report = catalog.integrity()
     if not report["ok"]:
@@ -855,17 +1443,31 @@ def _build_catalog() -> IndiaCatalog:
     return catalog
 
 
-@lru_cache(maxsize=1)
-def get_catalog() -> IndiaCatalog:
-    """Build the combined catalog once and reuse it for all API queries."""
+_CATALOG_CACHE: IndiaCatalog | None = None
+_CATALOG_CACHE_LOCK = Lock()
 
-    return _build_catalog()
+
+def get_catalog() -> IndiaCatalog:
+    """Build the combined catalog once, with a single-flight cold start."""
+
+    global _CATALOG_CACHE
+    cached = _CATALOG_CACHE
+    if cached is not None:
+        return cached
+    with _CATALOG_CACHE_LOCK:
+        # The second check is the important part: concurrent callers waiting
+        # on the first build reuse its result instead of rebuilding 14k rows.
+        if _CATALOG_CACHE is None:
+            _CATALOG_CACHE = _build_catalog()
+        return _CATALOG_CACHE
 
 
 def clear_catalog_cache() -> None:
     """Test/dev hook; production API callers should use the cached catalog."""
 
-    get_catalog.cache_clear()
+    global _CATALOG_CACHE
+    with _CATALOG_CACHE_LOCK:
+        _CATALOG_CACHE = None
 
 
 def summary(catalog: IndiaCatalog | None = None) -> dict[str, Any]:

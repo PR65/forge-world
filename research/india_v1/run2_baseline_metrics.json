@@ -1,0 +1,924 @@
+{
+  "baseline_only": true,
+  "battery_digest_sha256": "420dededfa575a191549e22840fd76e8ddcc01c00c3edb3287ecc0e9e9f61ac6",
+  "battery_id": "run2-founders-adversarial-20260826",
+  "by_class": {
+    "founder": {
+      "failure_counts": {
+        "bad_domain": 6,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 18,
+        "misleading_certainty": 3,
+        "nonsense_generic_decomposition": 3,
+        "search_miss": 2,
+        "useless_status_gap_ladder": 7,
+        "weak_related_unlock": 7,
+        "weird_generated_name": 11
+      },
+      "queries_with_any_failure": 20,
+      "query_count": 20,
+      "search_miss_count": 2,
+      "top1_expected_domain_count": 13
+    },
+    "obscure": {
+      "failure_counts": {
+        "bad_domain": 11,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 28,
+        "misleading_certainty": 3,
+        "nonsense_generic_decomposition": 14,
+        "search_miss": 13,
+        "useless_status_gap_ladder": 13,
+        "weak_related_unlock": 15,
+        "weird_generated_name": 8
+      },
+      "queries_with_any_failure": 29,
+      "query_count": 29,
+      "search_miss_count": 13,
+      "top1_expected_domain_count": 18
+    },
+    "ordinary": {
+      "failure_counts": {
+        "bad_domain": 13,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 42,
+        "misleading_certainty": 4,
+        "nonsense_generic_decomposition": 14,
+        "search_miss": 5,
+        "useless_status_gap_ladder": 15,
+        "weak_related_unlock": 16,
+        "weird_generated_name": 11
+      },
+      "queries_with_any_failure": 42,
+      "query_count": 43,
+      "search_miss_count": 5,
+      "top1_expected_domain_count": 30
+    }
+  },
+  "by_domain": {
+    "01": {
+      "failure_counts": {
+        "bad_domain": 2,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 9,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 6,
+        "search_miss": 1,
+        "useless_status_gap_ladder": 7,
+        "weak_related_unlock": 6,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 9,
+      "query_count": 9,
+      "search_miss_count": 1,
+      "top1_expected_domain_count": 7
+    },
+    "02": {
+      "failure_counts": {
+        "bad_domain": 2,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 6,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 6,
+        "search_miss": 2,
+        "useless_status_gap_ladder": 6,
+        "weak_related_unlock": 6,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 6,
+      "query_count": 6,
+      "search_miss_count": 2,
+      "top1_expected_domain_count": 4
+    },
+    "03": {
+      "failure_counts": {
+        "bad_domain": 3,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 9,
+        "misleading_certainty": 3,
+        "nonsense_generic_decomposition": 6,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 8,
+        "weak_related_unlock": 8,
+        "weird_generated_name": 2
+      },
+      "queries_with_any_failure": 10,
+      "query_count": 10,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 7
+    },
+    "04": {
+      "failure_counts": {
+        "bad_domain": 1,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 7,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 4,
+        "search_miss": 2,
+        "useless_status_gap_ladder": 5,
+        "weak_related_unlock": 6,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 7,
+      "query_count": 7,
+      "search_miss_count": 2,
+      "top1_expected_domain_count": 6
+    },
+    "05": {
+      "failure_counts": {
+        "bad_domain": 6,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 9,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 1,
+        "search_miss": 3,
+        "useless_status_gap_ladder": 1,
+        "weak_related_unlock": 1,
+        "weird_generated_name": 3
+      },
+      "queries_with_any_failure": 10,
+      "query_count": 10,
+      "search_miss_count": 3,
+      "top1_expected_domain_count": 3
+    },
+    "06": {
+      "failure_counts": {
+        "bad_domain": 4,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 8,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 1,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 2,
+        "weird_generated_name": 4
+      },
+      "queries_with_any_failure": 8,
+      "query_count": 8,
+      "search_miss_count": 1,
+      "top1_expected_domain_count": 4
+    },
+    "07": {
+      "failure_counts": {
+        "bad_domain": 0,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 8,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 0,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 0,
+        "weak_related_unlock": 0,
+        "weird_generated_name": 8
+      },
+      "queries_with_any_failure": 8,
+      "query_count": 8,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 8
+    },
+    "08": {
+      "failure_counts": {
+        "bad_domain": 2,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 8,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 2,
+        "search_miss": 4,
+        "useless_status_gap_ladder": 2,
+        "weak_related_unlock": 2,
+        "weird_generated_name": 6
+      },
+      "queries_with_any_failure": 8,
+      "query_count": 8,
+      "search_miss_count": 4,
+      "top1_expected_domain_count": 6
+    },
+    "09": {
+      "failure_counts": {
+        "bad_domain": 2,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 6,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 2,
+        "search_miss": 3,
+        "useless_status_gap_ladder": 2,
+        "weak_related_unlock": 2,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 6,
+      "query_count": 6,
+      "search_miss_count": 3,
+      "top1_expected_domain_count": 4
+    },
+    "10": {
+      "failure_counts": {
+        "bad_domain": 2,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 4,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 2,
+        "search_miss": 1,
+        "useless_status_gap_ladder": 2,
+        "weak_related_unlock": 1,
+        "weird_generated_name": 0
+      },
+      "queries_with_any_failure": 5,
+      "query_count": 6,
+      "search_miss_count": 1,
+      "top1_expected_domain_count": 4
+    },
+    "11": {
+      "failure_counts": {
+        "bad_domain": 2,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 8,
+        "misleading_certainty": 0,
+        "nonsense_generic_decomposition": 1,
+        "search_miss": 3,
+        "useless_status_gap_ladder": 1,
+        "weak_related_unlock": 1,
+        "weird_generated_name": 6
+      },
+      "queries_with_any_failure": 8,
+      "query_count": 8,
+      "search_miss_count": 3,
+      "top1_expected_domain_count": 6
+    },
+    "12": {
+      "failure_counts": {
+        "bad_domain": 4,
+        "broken_dependency": 0,
+        "dead_end": 0,
+        "duplicate": 6,
+        "misleading_certainty": 1,
+        "nonsense_generic_decomposition": 1,
+        "search_miss": 0,
+        "useless_status_gap_ladder": 1,
+        "weak_related_unlock": 3,
+        "weird_generated_name": 1
+      },
+      "queries_with_any_failure": 6,
+      "query_count": 6,
+      "search_miss_count": 0,
+      "top1_expected_domain_count": 2
+    }
+  },
+  "catalog": {
+    "direct_record_count": 12253,
+    "domain_counts": {
+      "01": 928,
+      "02": 928,
+      "03": 928,
+      "04": 928,
+      "05": 900,
+      "06": 1080,
+      "07": 1080,
+      "08": 1080,
+      "09": 1080,
+      "10": 1080,
+      "11": 1080,
+      "12": 1080
+    },
+    "integrity": {
+      "all_references_resolve": true,
+      "unique_aliases": 39818,
+      "unique_ids": 14653
+    },
+    "kind_counts": {
+      "CAPABILITY": 3203,
+      "EQUIPMENT": 5017,
+      "MATERIAL": 1277,
+      "PROCESS": 947,
+      "PRODUCT": 4209
+    },
+    "record_count": 14653,
+    "reference_record_count": 2400,
+    "status_counts": {
+      "AVAILABLE": 660,
+      "CONFLICTED": 58,
+      "IMPORT_DEPENDENT": 1909,
+      "MISSING": 116,
+      "PARTIAL": 5958,
+      "SCALE_LIMITED": 3336,
+      "STRONG": 115,
+      "UNKNOWN": 2501
+    }
+  },
+  "domains_covered": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12"
+  ],
+  "failure_counts": {
+    "bad_domain": 30,
+    "broken_dependency": 0,
+    "dead_end": 0,
+    "duplicate": 88,
+    "misleading_certainty": 10,
+    "nonsense_generic_decomposition": 31,
+    "search_miss": 20,
+    "useless_status_gap_ladder": 35,
+    "weak_related_unlock": 38,
+    "weird_generated_name": 30
+  },
+  "failure_examples": {
+    "bad_domain": [
+      {
+        "id": "f06",
+        "query": "electrolyzer",
+        "reasons": [
+          "expected domain 03, top result domain 06; expected ranks=none"
+        ],
+        "top_result": "alkaline water electrolyzer system (bench/laboratory scale, batch configuration, advanced process control)"
+      },
+      {
+        "id": "f11",
+        "query": "textile machine",
+        "reasons": [
+          "expected domain 11, top result domain 05; expected ranks=none"
+        ],
+        "top_result": "industrial textile machinery (cell-integrated scale, enclosed process configuration, closed-loop monitored control)"
+      },
+      {
+        "id": "f12",
+        "query": "centrifugal pump",
+        "reasons": [
+          "expected domain 06, top result domain 12; expected ranks=none"
+        ],
+        "top_result": "End Suction Centrifugal pump - Aerospace And Defense"
+      },
+      {
+        "id": "f13",
+        "query": "agricultural drone",
+        "reasons": [
+          "expected domain 08, top result domain 02; expected ranks=none"
+        ],
+        "top_result": "Defense & Strategic Manufacturing capability: Counter-UAS system - design and architecture capability"
+      },
+      {
+        "id": "f19",
+        "query": "modern passenger aircraft supply chain",
+        "reasons": [
+          "expected domain 01, top result domain 09; expected ranks=[7, 8, 9, 10]"
+        ],
+        "top_result": "Diesel Coastal cargo vessel - Passenger"
+      },
+      {
+        "id": "f20",
+        "query": "100 GW per year solar equipment",
+        "reasons": [
+          "expected domain 03, top result domain 01; expected ranks=[5, 6, 7, 8, 9, 10]"
+        ],
+        "top_result": "Aerospace & Space equipment: Spacecraft solar array - inspection and metrology equipment"
+      },
+      {
+        "id": "u05",
+        "query": "composite overwrapped pressure vessel",
+        "reasons": [
+          "expected domain 01, top result domain 10; expected ranks=none"
+        ],
+        "top_result": "Composite Pressure vessel - Construction Site"
+      },
+      {
+        "id": "u07",
+        "query": "armored vehicle",
+        "reasons": [
+          "expected domain 02, top result domain 01; expected ranks=none"
+        ],
+        "top_result": "Aerospace & Space capability: Avionics display and mission interface - design and architecture capability"
+      }
+    ],
+    "broken_dependency": [],
+    "dead_end": [],
+    "duplicate": [
+      {
+        "id": "f01",
+        "query": "MRI",
+        "reasons": [
+          "10 of top 10 results collapse to one family"
+        ],
+        "top_result": "magnetic resonance imaging system (clinic setting, compact configuration, integrated data workflow)"
+      },
+      {
+        "id": "f02",
+        "query": "5-axis CNC",
+        "reasons": [
+          "10 of top 10 results collapse to one family"
+        ],
+        "top_result": "5-axis CNC machining center (cell-integrated scale, enclosed process configuration, closed-loop monitored control)"
+      },
+      {
+        "id": "f03",
+        "query": "freeze dryer",
+        "reasons": [
+          "10 of top 10 results collapse to one family"
+        ],
+        "top_result": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, cartridge format, closed-line filling)"
+      },
+      {
+        "id": "f04",
+        "query": "food dehydrator",
+        "reasons": [
+          "10 of top 10 results collapse to one family"
+        ],
+        "top_result": "industrial food dehydrator (farm/workshop throughput, liquid product form, closed-loop hygienic line)"
+      },
+      {
+        "id": "f05",
+        "query": "industrial heat pump",
+        "reasons": [
+          "10 of top 10 results collapse to one family"
+        ],
+        "top_result": "industrial heat pump (bench/laboratory scale, batch configuration, advanced process control)"
+      },
+      {
+        "id": "f06",
+        "query": "electrolyzer",
+        "reasons": [
+          "10 of top 10 results collapse to one family"
+        ],
+        "top_result": "alkaline water electrolyzer system (bench/laboratory scale, batch configuration, advanced process control)"
+      },
+      {
+        "id": "f07",
+        "query": "industrial motor",
+        "reasons": [
+          "10 of top 10 results collapse to one family"
+        ],
+        "top_result": "industrial electric motor (fractional-power duty, induction topology, drive-integrated motor)"
+      },
+      {
+        "id": "f08",
+        "query": "industrial robot",
+        "reasons": [
+          "10 of top 10 results collapse to one family"
+        ],
+        "top_result": "six-axis articulated industrial robot (heavy-payload duty, compact reach, force/torque-aware control)"
+      }
+    ],
+    "misleading_certainty": [
+      {
+        "id": "f09",
+        "query": "transformer",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Energy & Nuclear capability: Grid transformer - design and architecture capability"
+      },
+      {
+        "id": "f13",
+        "query": "agricultural drone",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Defense & Strategic Manufacturing capability: Counter-UAS system - design and architecture capability"
+      },
+      {
+        "id": "f20",
+        "query": "100 GW per year solar equipment",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Aerospace & Space equipment: Spacecraft solar array - inspection and metrology equipment"
+      },
+      {
+        "id": "u10",
+        "query": "loitering munition",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Defense & Strategic Manufacturing capability: Loitering munition - design and architecture capability"
+      },
+      {
+        "id": "u14",
+        "query": "wind turbine gearbox",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Energy & Nuclear capability: Wind turbine system - design and architecture capability"
+      },
+      {
+        "id": "u21",
+        "query": "printed circuit board",
+        "reasons": [
+          "STRONG is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Electronics, Semiconductors & Computing capability: Printed-circuit-board assembly - design and architecture capability"
+      },
+      {
+        "id": "u29",
+        "query": "C3 ground ball screw",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Aerospace & Space capability: Aircraft landing gear - design and architecture capability"
+      },
+      {
+        "id": "u53",
+        "query": "automotive automatic transmission",
+        "reasons": [
+          "AVAILABLE is backed by ASSUMPTION while its basis disclaims evidence"
+        ],
+        "top_result": "Energy & Nuclear capability: Grid transformer - design and architecture capability"
+      }
+    ],
+    "nonsense_generic_decomposition": [
+      {
+        "id": "f09",
+        "query": "transformer",
+        "reasons": [
+          "selected record is a generated lifecycle-stage capability rather than a product-specific decomposition"
+        ],
+        "top_result": "Energy & Nuclear capability: Grid transformer - design and architecture capability"
+      },
+      {
+        "id": "f13",
+        "query": "agricultural drone",
+        "reasons": [
+          "selected record is a generated lifecycle-stage capability rather than a product-specific decomposition"
+        ],
+        "top_result": "Defense & Strategic Manufacturing capability: Counter-UAS system - design and architecture capability"
+      },
+      {
+        "id": "f14",
+        "query": "satellite",
+        "reasons": [
+          "selected record is a generated lifecycle-stage capability rather than a product-specific decomposition"
+        ],
+        "top_result": "Aerospace & Space capability: Communications satellite - design and architecture capability"
+      },
+      {
+        "id": "u01",
+        "query": "aircraft landing gear",
+        "reasons": [
+          "selected record is a generated lifecycle-stage capability rather than a product-specific decomposition"
+        ],
+        "top_result": "Aerospace & Space capability: Aircraft actuation system - design and architecture capability"
+      },
+      {
+        "id": "u02",
+        "query": "satellite attitude control system",
+        "reasons": [
+          "selected record is a generated lifecycle-stage capability rather than a product-specific decomposition"
+        ],
+        "top_result": "Aerospace & Space capability: Attitude determination and control - integration and production-system capability"
+      },
+      {
+        "id": "u03",
+        "query": "liquid rocket engine turbopump",
+        "reasons": [
+          "selected record is a generated lifecycle-stage capability rather than a product-specific decomposition"
+        ],
+        "top_result": "Aerospace & Space capability: Liquid rocket engine - design and architecture capability"
+      },
+      {
+        "id": "u04",
+        "query": "flight control actuator",
+        "reasons": [
+          "selected record is a generated lifecycle-stage capability rather than a product-specific decomposition"
+        ],
+        "top_result": "Aerospace & Space capability: Aircraft actuation system - design and architecture capability"
+      },
+      {
+        "id": "u06",
+        "query": "satellite star tracker",
+        "reasons": [
+          "selected record is a generated lifecycle-stage capability rather than a product-specific decomposition"
+        ],
+        "top_result": "Aerospace & Space capability: Communications satellite - design and architecture capability"
+      }
+    ],
+    "search_miss": [
+      {
+        "id": "f13",
+        "query": "agricultural drone",
+        "reasons": [
+          "no direct relevant result in top 10; anchor overlap top/max=1/1, required=2"
+        ],
+        "top_result": "Defense & Strategic Manufacturing capability: Counter-UAS system - design and architecture capability"
+      },
+      {
+        "id": "f16",
+        "query": "one million humanoids per year",
+        "reasons": [
+          "no direct relevant result in top 10; anchor overlap top/max=0/0, required=1"
+        ],
+        "top_result": null
+      },
+      {
+        "id": "u06",
+        "query": "satellite star tracker",
+        "reasons": [
+          "no direct relevant result in top 10; anchor overlap top/max=1/1, required=2"
+        ],
+        "top_result": "Aerospace & Space capability: Communications satellite - design and architecture capability"
+      },
+      {
+        "id": "u07",
+        "query": "armored vehicle",
+        "reasons": [
+          "no direct relevant result in top 10; anchor overlap top/max=1/1, required=2"
+        ],
+        "top_result": "Aerospace & Space capability: Avionics display and mission interface - design and architecture capability"
+      },
+      {
+        "id": "u12",
+        "query": "naval sonar",
+        "reasons": [
+          "no direct relevant result in top 10; anchor overlap top/max=1/1, required=2"
+        ],
+        "top_result": "Defense & Strategic Manufacturing capability: Naval combatant platform - design and architecture capability"
+      },
+      {
+        "id": "u23",
+        "query": "MEMS accelerometer",
+        "reasons": [
+          "no direct relevant result in top 10; anchor overlap top/max=1/1, required=2"
+        ],
+        "top_result": "Electronics, Semiconductors & Computing capability: MEMS sensor - design and architecture capability"
+      },
+      {
+        "id": "u24",
+        "query": "photolithography track",
+        "reasons": [
+          "no direct relevant result in top 10; anchor overlap top/max=1/1, required=2"
+        ],
+        "top_result": "Battery Electric Rail maintenance vehicle - Commuter"
+      },
+      {
+        "id": "u29",
+        "query": "C3 ground ball screw",
+        "reasons": [
+          "no direct relevant result in top 10; anchor overlap top/max=0/0, required=2"
+        ],
+        "top_result": "Aerospace & Space capability: Aircraft landing gear - design and architecture capability"
+      }
+    ],
+    "useless_status_gap_ladder": [
+      {
+        "id": "f09",
+        "query": "transformer",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Energy & Nuclear capability: Grid transformer - design and architecture capability"
+      },
+      {
+        "id": "f13",
+        "query": "agricultural drone",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Defense & Strategic Manufacturing capability: Counter-UAS system - design and architecture capability"
+      },
+      {
+        "id": "f14",
+        "query": "satellite",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Aerospace & Space capability: Communications satellite - design and architecture capability"
+      },
+      {
+        "id": "f15",
+        "query": "semiconductor equipment",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Electronics, Semiconductors & Computing equipment: Advanced semiconductor package - inspection and metrology equipment"
+      },
+      {
+        "id": "f17",
+        "query": "India add 200 GW nuclear generation",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Energy & Nuclear: Concentrated solar thermal system - India domestic-build configuration"
+      },
+      {
+        "id": "f18",
+        "query": "reusable rocket engine ecosystem",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Aerospace & Space: Liquid rocket engine - reusable configuration"
+      },
+      {
+        "id": "f20",
+        "query": "100 GW per year solar equipment",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Aerospace & Space equipment: Spacecraft solar array - inspection and metrology equipment"
+      },
+      {
+        "id": "u01",
+        "query": "aircraft landing gear",
+        "reasons": [
+          "missing or generic gap/import note"
+        ],
+        "top_result": "Aerospace & Space capability: Aircraft actuation system - design and architecture capability"
+      }
+    ],
+    "weak_related_unlock": [
+      {
+        "id": "f09",
+        "query": "transformer",
+        "reasons": [
+          "navigation counts upstream/downstream/related=45/0/2"
+        ],
+        "top_result": "Energy & Nuclear capability: Grid transformer - design and architecture capability"
+      },
+      {
+        "id": "f13",
+        "query": "agricultural drone",
+        "reasons": [
+          "navigation counts upstream/downstream/related=36/0/2"
+        ],
+        "top_result": "Defense & Strategic Manufacturing capability: Counter-UAS system - design and architecture capability"
+      },
+      {
+        "id": "f14",
+        "query": "satellite",
+        "reasons": [
+          "navigation counts upstream/downstream/related=38/0/2"
+        ],
+        "top_result": "Aerospace & Space capability: Communications satellite - design and architecture capability"
+      },
+      {
+        "id": "f15",
+        "query": "semiconductor equipment",
+        "reasons": [
+          "navigation counts upstream/downstream/related=40/0/2"
+        ],
+        "top_result": "Electronics, Semiconductors & Computing equipment: Advanced semiconductor package - inspection and metrology equipment"
+      },
+      {
+        "id": "f17",
+        "query": "India add 200 GW nuclear generation",
+        "reasons": [
+          "navigation counts upstream/downstream/related=49/0/2"
+        ],
+        "top_result": "Energy & Nuclear: Concentrated solar thermal system - India domestic-build configuration"
+      },
+      {
+        "id": "f18",
+        "query": "reusable rocket engine ecosystem",
+        "reasons": [
+          "navigation counts upstream/downstream/related=47/0/2"
+        ],
+        "top_result": "Aerospace & Space: Liquid rocket engine - reusable configuration"
+      },
+      {
+        "id": "f20",
+        "query": "100 GW per year solar equipment",
+        "reasons": [
+          "navigation counts upstream/downstream/related=39/0/2"
+        ],
+        "top_result": "Aerospace & Space equipment: Spacecraft solar array - inspection and metrology equipment"
+      },
+      {
+        "id": "u01",
+        "query": "aircraft landing gear",
+        "reasons": [
+          "navigation counts upstream/downstream/related=33/0/2"
+        ],
+        "top_result": "Aerospace & Space capability: Aircraft actuation system - design and architecture capability"
+      }
+    ],
+    "weird_generated_name": [
+      {
+        "id": "f01",
+        "query": "MRI",
+        "reasons": [
+          "parenthesized multi-axis variant suffix",
+          "deterministic variant marker"
+        ],
+        "top_result": "magnetic resonance imaging system (clinic setting, compact configuration, integrated data workflow)"
+      },
+      {
+        "id": "f02",
+        "query": "5-axis CNC",
+        "reasons": [
+          "parenthesized multi-axis variant suffix",
+          "deterministic variant marker"
+        ],
+        "top_result": "5-axis CNC machining center (cell-integrated scale, enclosed process configuration, closed-loop monitored control)"
+      },
+      {
+        "id": "f03",
+        "query": "freeze dryer",
+        "reasons": [
+          "parenthesized multi-axis variant suffix"
+        ],
+        "top_result": "pharmaceutical freeze dryer/lyophilizer (clinical-batch throughput, cartridge format, closed-line filling)"
+      },
+      {
+        "id": "f04",
+        "query": "food dehydrator",
+        "reasons": [
+          "parenthesized multi-axis variant suffix",
+          "deterministic variant marker"
+        ],
+        "top_result": "industrial food dehydrator (farm/workshop throughput, liquid product form, closed-loop hygienic line)"
+      },
+      {
+        "id": "f05",
+        "query": "industrial heat pump",
+        "reasons": [
+          "parenthesized multi-axis variant suffix",
+          "deterministic variant marker"
+        ],
+        "top_result": "industrial heat pump (bench/laboratory scale, batch configuration, advanced process control)"
+      },
+      {
+        "id": "f06",
+        "query": "electrolyzer",
+        "reasons": [
+          "parenthesized multi-axis variant suffix",
+          "deterministic variant marker"
+        ],
+        "top_result": "alkaline water electrolyzer system (bench/laboratory scale, batch configuration, advanced process control)"
+      },
+      {
+        "id": "f07",
+        "query": "industrial motor",
+        "reasons": [
+          "parenthesized multi-axis variant suffix"
+        ],
+        "top_result": "industrial electric motor (fractional-power duty, induction topology, drive-integrated motor)"
+      },
+      {
+        "id": "f08",
+        "query": "industrial robot",
+        "reasons": [
+          "parenthesized multi-axis variant suffix"
+        ],
+        "top_result": "six-axis articulated industrial robot (heavy-payload duty, compact reach, force/torque-aware control)"
+      }
+    ]
+  },
+  "failure_rate": 0.9891304347826086,
+  "fixes_applied": false,
+  "founder_query_count": 20,
+  "queries_with_any_failure": 91,
+  "queries_with_relevant_result": 72,
+  "queries_with_results": 91,
+  "query_count": 92,
+  "query_set_frozen_before_baseline": true,
+  "relevant_result_rate": 0.782608695652174,
+  "result_count_max": 10,
+  "result_count_min": 0,
+  "runner_version": "1.0.0",
+  "schema_version": "india_v1.run2_baseline_metrics.v1",
+  "selected_domain_counts": {
+    "01": 15,
+    "02": 6,
+    "03": 8,
+    "04": 7,
+    "05": 4,
+    "06": 6,
+    "07": 8,
+    "08": 6,
+    "09": 7,
+    "10": 7,
+    "11": 6,
+    "12": 7,
+    "shared": 4
+  },
+  "selected_status_counts": {
+    "AVAILABLE": 9,
+    "IMPORT_DEPENDENT": 15,
+    "MISSING": 2,
+    "PARTIAL": 47,
+    "SCALE_LIMITED": 16,
+    "STRONG": 1,
+    "UNKNOWN": 1
+  },
+  "top1_expected_domain_count": 61,
+  "top1_expected_domain_rate": 0.6630434782608695,
+  "top_k": 10,
+  "unseen_query_count": 72
+}

@@ -1,0 +1,951 @@
+{
+  "probe_count": 20,
+  "probes": [
+    {
+      "expected_domain": "05",
+      "id": "a01",
+      "query": "rotary screw compressor",
+      "results": [
+        {
+          "canonical_name": "Foundational Industrial compressor — centrifugal · automotive",
+          "display_name": "Foundational Industrial compressor — centrifugal · automotive",
+          "domain_code": "12",
+          "family_key": "india-v1:12:industrial-compressor:centrifugal",
+          "id": "india-v1:12:industrial-compressor:centrifugal:automotive",
+          "match_type": "all_tokens",
+          "matched_on": [
+            "aliases",
+            "compressor",
+            "explanation",
+            "name"
+          ],
+          "rank": 1,
+          "score": 10500
+        },
+        {
+          "canonical_name": "Foundational Industrial compressor — high pressure · automotive",
+          "display_name": "Foundational Industrial compressor — high pressure · automotive",
+          "domain_code": "12",
+          "family_key": "india-v1:12:industrial-compressor:high-pressure",
+          "id": "india-v1:12:industrial-compressor:high-pressure:automotive",
+          "match_type": "all_tokens",
+          "matched_on": [
+            "aliases",
+            "compressor",
+            "explanation",
+            "name"
+          ],
+          "rank": 2,
+          "score": 10500
+        },
+        {
+          "canonical_name": "Foundational Industrial compressor — reciprocating · automotive",
+          "display_name": "Foundational Industrial compressor — reciprocating · automotive",
+          "domain_code": "12",
+          "family_key": "india-v1:12:industrial-compressor:reciprocating",
+          "id": "india-v1:12:industrial-compressor:reciprocating:automotive",
+          "match_type": "all_tokens",
+          "matched_on": [
+            "aliases",
+            "compressor",
+            "explanation",
+            "name"
+          ],
+          "rank": 3,
+          "score": 10500
+        }
+      ]
+    },
+    {
+      "expected_domain": "08",
+      "id": "a02",
+      "query": "milk homogenizer",
+      "results": [
+        {
+          "canonical_name": "Reference primitive: milk homogenizer",
+          "display_name": "Reference primitive: milk homogenizer",
+          "domain_code": "shared",
+          "family_key": "id:reference_milk_homogenizer",
+          "id": "reference:milk_homogenizer",
+          "match_type": "exact",
+          "matched_on": [
+            "aliases",
+            "homogenizer",
+            "milk",
+            "name"
+          ],
+          "rank": 1,
+          "score": 11190
+        },
+        {
+          "canonical_name": "Reference primitive: product 08 milk homogenizer",
+          "display_name": "Reference primitive: product 08 milk homogenizer",
+          "domain_code": "shared",
+          "family_key": "id:reference_product_08_milk_homogenizer",
+          "id": "reference:product_08_milk_homogenizer",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "homogenizer",
+            "milk",
+            "name"
+          ],
+          "rank": 2,
+          "score": 10390
+        }
+      ]
+    },
+    {
+      "expected_domain": "11",
+      "id": "a03",
+      "query": "corrugated box machine",
+      "results": [
+        {
+          "canonical_name": "Corrugated box — double wall · export",
+          "display_name": "Corrugated box — double wall · export",
+          "domain_code": "11",
+          "family_key": "india-v1:11:corrugated-box:double-wall",
+          "id": "india-v1:11:corrugated-box:double-wall:export",
+          "match_type": "all_tokens",
+          "matched_on": [
+            "aliases",
+            "box",
+            "corrugated",
+            "explanation",
+            "name"
+          ],
+          "rank": 1,
+          "score": 9880
+        },
+        {
+          "canonical_name": "Corrugated box — heavy duty · export",
+          "display_name": "Corrugated box — heavy duty · export",
+          "domain_code": "11",
+          "family_key": "india-v1:11:corrugated-box:heavy-duty",
+          "id": "india-v1:11:corrugated-box:heavy-duty:export",
+          "match_type": "all_tokens",
+          "matched_on": [
+            "aliases",
+            "box",
+            "corrugated",
+            "explanation",
+            "name"
+          ],
+          "rank": 2,
+          "score": 9880
+        },
+        {
+          "canonical_name": "Corrugated box — single wall · export",
+          "display_name": "Corrugated box — single wall · export",
+          "domain_code": "11",
+          "family_key": "india-v1:11:corrugated-box:single-wall",
+          "id": "india-v1:11:corrugated-box:single-wall:export",
+          "match_type": "all_tokens",
+          "matched_on": [
+            "aliases",
+            "box",
+            "corrugated",
+            "explanation",
+            "name"
+          ],
+          "rank": 3,
+          "score": 9880
+        }
+      ]
+    },
+    {
+      "expected_domain": "06",
+      "id": "a04",
+      "query": "induction furnace",
+      "results": [
+        {
+          "canonical_name": "Reference primitive: equipment vacuum induction furnace",
+          "display_name": "Reference primitive: equipment vacuum induction furnace",
+          "domain_code": "shared",
+          "family_key": "id:shared_equipment_vacuum_induction_furnace",
+          "id": "shared:equipment:vacuum_induction_furnace",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "furnace",
+            "induction",
+            "name"
+          ],
+          "rank": 1,
+          "score": 10420
+        },
+        {
+          "canonical_name": "Reference primitive: shared equipment vacuum induction furnace",
+          "display_name": "Reference primitive: shared equipment vacuum induction furnace",
+          "domain_code": "shared",
+          "family_key": "id:reference_shared_equipment_vacuum_induction_furnace",
+          "id": "reference:shared_equipment_vacuum_induction_furnace",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "furnace",
+            "induction",
+            "name"
+          ],
+          "rank": 2,
+          "score": 10390
+        }
+      ]
+    },
+    {
+      "expected_domain": "06",
+      "id": "a05",
+      "query": "industrial chiller",
+      "results": [
+        {
+          "canonical_name": "Industrial chiller — absorption · monsoon",
+          "display_name": "Industrial chiller — absorption · monsoon",
+          "domain_code": "10",
+          "family_key": "india-v1:10:industrial-chiller:absorption",
+          "id": "india-v1:10:industrial-chiller:absorption:monsoon",
+          "match_type": "exact",
+          "matched_on": [
+            "aliases",
+            "chiller",
+            "explanation",
+            "name"
+          ],
+          "rank": 1,
+          "score": 11390
+        },
+        {
+          "canonical_name": "Industrial chiller — air cooled · monsoon",
+          "display_name": "Industrial chiller — air cooled · monsoon",
+          "domain_code": "10",
+          "family_key": "india-v1:10:industrial-chiller:air-cooled",
+          "id": "india-v1:10:industrial-chiller:air-cooled:monsoon",
+          "match_type": "exact",
+          "matched_on": [
+            "aliases",
+            "chiller",
+            "explanation",
+            "name"
+          ],
+          "rank": 2,
+          "score": 11390
+        },
+        {
+          "canonical_name": "Industrial chiller — low gwp refrigerant · monsoon",
+          "display_name": "Industrial chiller — low gwp refrigerant · monsoon",
+          "domain_code": "10",
+          "family_key": "india-v1:10:industrial-chiller:low-gwp-refrigerant",
+          "id": "india-v1:10:industrial-chiller:low-gwp-refrigerant:monsoon",
+          "match_type": "exact",
+          "matched_on": [
+            "aliases",
+            "chiller",
+            "explanation",
+            "name"
+          ],
+          "rank": 3,
+          "score": 11390
+        }
+      ]
+    },
+    {
+      "expected_domain": "10",
+      "id": "a06",
+      "query": "hydraulic cylinder",
+      "results": [
+        {
+          "canonical_name": "Reference primitive: shared capability hydraulic cylinders",
+          "display_name": "Reference primitive: shared capability hydraulic cylinders",
+          "domain_code": "shared",
+          "family_key": "id:reference_shared_capability_hydraulic_cylinders",
+          "id": "reference:shared_capability_hydraulic_cylinders",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "cylinder",
+            "hydraulic",
+            "name"
+          ],
+          "rank": 1,
+          "score": 10390
+        },
+        {
+          "canonical_name": "Reference primitive: capability hydraulic cylinders",
+          "display_name": "Reference primitive: capability hydraulic cylinders",
+          "domain_code": "shared",
+          "family_key": "id:shared_capability_hydraulic_cylinders",
+          "id": "shared:capability:hydraulic_cylinders",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "cylinder",
+            "hydraulic",
+            "name"
+          ],
+          "rank": 2,
+          "score": 10390
+        }
+      ]
+    },
+    {
+      "expected_domain": "11",
+      "id": "a07",
+      "query": "pharmaceutical blister packaging machine",
+      "results": [
+        {
+          "canonical_name": "Packaging machine — bottling and capping · pharma contact",
+          "display_name": "Packaging machine — bottling and capping · pharma contact",
+          "domain_code": "11",
+          "family_key": "india-v1:11:packaging-machine:bottling-and-capping",
+          "id": "india-v1:11:packaging-machine:bottling-and-capping:pharma-contact",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "category",
+            "explanation",
+            "name",
+            "packaging",
+            "pharma",
+            "uses"
+          ],
+          "rank": 1,
+          "score": 3822
+        },
+        {
+          "canonical_name": "Packaging machine — cartoning · pharma contact",
+          "display_name": "Packaging machine — cartoning · pharma contact",
+          "domain_code": "11",
+          "family_key": "india-v1:11:packaging-machine:cartoning",
+          "id": "india-v1:11:packaging-machine:cartoning:pharma-contact",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "category",
+            "explanation",
+            "name",
+            "packaging",
+            "pharma",
+            "uses"
+          ],
+          "rank": 2,
+          "score": 3822
+        },
+        {
+          "canonical_name": "Packaging machine — case packing · pharma contact",
+          "display_name": "Packaging machine — case packing · pharma contact",
+          "domain_code": "11",
+          "family_key": "india-v1:11:packaging-machine:case-packing",
+          "id": "india-v1:11:packaging-machine:case-packing:pharma-contact",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "category",
+            "explanation",
+            "name",
+            "packaging",
+            "pharma",
+            "uses"
+          ],
+          "rank": 3,
+          "score": 3822
+        }
+      ]
+    },
+    {
+      "expected_domain": "09",
+      "id": "a08",
+      "query": "railway axle",
+      "results": [
+        {
+          "canonical_name": "Rail coach — aluminium · metro",
+          "display_name": "Rail coach — aluminium · metro",
+          "domain_code": "09",
+          "family_key": "india-v1:09:rail-coach:aluminium",
+          "id": "india-v1:09:rail-coach:aluminium:metro",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "category",
+            "explanation",
+            "name",
+            "rail",
+            "uses"
+          ],
+          "rank": 1,
+          "score": 3600
+        },
+        {
+          "canonical_name": "Rail coach — composite · metro",
+          "display_name": "Rail coach — composite · metro",
+          "domain_code": "09",
+          "family_key": "india-v1:09:rail-coach:composite",
+          "id": "india-v1:09:rail-coach:composite:metro",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "category",
+            "explanation",
+            "name",
+            "rail",
+            "uses"
+          ],
+          "rank": 2,
+          "score": 3600
+        },
+        {
+          "canonical_name": "Rail coach — double deck · metro",
+          "display_name": "Rail coach — double deck · metro",
+          "domain_code": "09",
+          "family_key": "india-v1:09:rail-coach:double-deck",
+          "id": "india-v1:09:rail-coach:double-deck:metro",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "category",
+            "explanation",
+            "name",
+            "rail",
+            "uses"
+          ],
+          "rank": 3,
+          "score": 3600
+        }
+      ]
+    },
+    {
+      "expected_domain": "06",
+      "id": "a09",
+      "query": "slurry pump",
+      "results": [
+        {
+          "canonical_name": "industrial centrifugal pump — pilot scale · batch configuration · advanced process control",
+          "display_name": "industrial centrifugal pump — pilot scale · batch configuration · advanced process control",
+          "domain_code": "06",
+          "family_key": "product:06:centrifugal-pump",
+          "id": "product:06:centrifugal-pump:pilot-batch-advanced",
+          "match_type": "all_tokens",
+          "matched_on": [
+            "aliases",
+            "name",
+            "pump",
+            "slurry",
+            "uses"
+          ],
+          "rank": 1,
+          "score": 9490
+        }
+      ]
+    },
+    {
+      "expected_domain": "08",
+      "id": "a10",
+      "query": "seed drill",
+      "results": [
+        {
+          "canonical_name": "seed cleaning and treatment system — cooperative scale · stationary installation · manual operation",
+          "display_name": "seed cleaning and treatment system — cooperative scale · stationary installation · manual operation",
+          "domain_code": "08",
+          "family_key": "product:08:seed-cleaner-treater",
+          "id": "product:08:seed-cleaner-treater:cooperative-stationary-manual",
+          "match_type": "all_tokens",
+          "matched_on": [
+            "aliases",
+            "explanation",
+            "name",
+            "seed_drill",
+            "uses"
+          ],
+          "rank": 1,
+          "score": 10490
+        }
+      ]
+    },
+    {
+      "expected_domain": "11",
+      "id": "a11",
+      "query": "industrial sewing machine",
+      "results": [
+        {
+          "canonical_name": "Footwear — cemented · export",
+          "display_name": "Footwear — cemented · export",
+          "domain_code": "11",
+          "family_key": "india-v1:11:footwear:cemented",
+          "id": "india-v1:11:footwear:cemented:export",
+          "match_type": "related",
+          "matched_on": [
+            "explanation",
+            "shoe_stitching"
+          ],
+          "rank": 1,
+          "score": 3520
+        },
+        {
+          "canonical_name": "Footwear — injection sole · export",
+          "display_name": "Footwear — injection sole · export",
+          "domain_code": "11",
+          "family_key": "india-v1:11:footwear:injection-sole",
+          "id": "india-v1:11:footwear:injection-sole:export",
+          "match_type": "related",
+          "matched_on": [
+            "explanation",
+            "shoe_stitching"
+          ],
+          "rank": 2,
+          "score": 3520
+        },
+        {
+          "canonical_name": "Footwear — moulded rubber · export",
+          "display_name": "Footwear — moulded rubber · export",
+          "domain_code": "11",
+          "family_key": "india-v1:11:footwear:moulded-rubber",
+          "id": "india-v1:11:footwear:moulded-rubber:export",
+          "match_type": "related",
+          "matched_on": [
+            "explanation",
+            "shoe_stitching"
+          ],
+          "rank": 3,
+          "score": 3520
+        }
+      ]
+    },
+    {
+      "expected_domain": "07",
+      "id": "a12",
+      "query": "oxygen concentrator",
+      "results": [
+        {
+          "canonical_name": "Reference primitive: medical oxygen concentrator",
+          "display_name": "Reference primitive: medical oxygen concentrator",
+          "domain_code": "shared",
+          "family_key": "id:reference_medical_oxygen_concentrator",
+          "id": "reference:medical_oxygen_concentrator",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "concentrator",
+            "name",
+            "oxygen"
+          ],
+          "rank": 1,
+          "score": 10390
+        },
+        {
+          "canonical_name": "Reference primitive: product 07 medical oxygen concentrator",
+          "display_name": "Reference primitive: product 07 medical oxygen concentrator",
+          "domain_code": "shared",
+          "family_key": "id:reference_product_07_medical_oxygen_concentrator",
+          "id": "reference:product_07_medical_oxygen_concentrator",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "concentrator",
+            "name",
+            "oxygen"
+          ],
+          "rank": 2,
+          "score": 10390
+        }
+      ]
+    },
+    {
+      "expected_domain": "06",
+      "id": "a13",
+      "query": "plate heat exchanger",
+      "results": [
+        {
+          "canonical_name": "industrial heat exchanger — pilot scale · batch configuration · advanced process control",
+          "display_name": "industrial heat exchanger — pilot scale · batch configuration · advanced process control",
+          "domain_code": "06",
+          "family_key": "product:06:industrial-heat-exchanger",
+          "id": "product:06:industrial-heat-exchanger:pilot-batch-advanced",
+          "match_type": "all_tokens",
+          "matched_on": [
+            "aliases",
+            "heat_exchanger",
+            "heat_pump",
+            "name",
+            "uses"
+          ],
+          "rank": 1,
+          "score": 10570
+        }
+      ]
+    },
+    {
+      "expected_domain": "10",
+      "id": "a14",
+      "query": "elevator traction machine",
+      "results": [
+        {
+          "canonical_name": "BLDC/PMSM motor — heavy-duty power · induction topology · standalone motor",
+          "display_name": "BLDC/PMSM motor — heavy-duty power · induction topology · standalone motor",
+          "domain_code": "05",
+          "family_key": "product:05:bldc-pmsm-motor",
+          "id": "product:05:bldc-pmsm-motor:heavy-induction-standalone",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "explanation",
+            "motor",
+            "name",
+            "uses"
+          ],
+          "rank": 1,
+          "score": 3423
+        },
+        {
+          "canonical_name": "squirrel-cage induction motor — heavy-duty power · induction topology · standalone motor",
+          "display_name": "squirrel-cage induction motor — heavy-duty power · induction topology · standalone motor",
+          "domain_code": "05",
+          "family_key": "product:05:induction-motor",
+          "id": "product:05:induction-motor:heavy-induction-standalone",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "explanation",
+            "motor",
+            "name",
+            "uses"
+          ],
+          "rank": 2,
+          "score": 3423
+        },
+        {
+          "canonical_name": "industrial electric motor — heavy-duty power · induction topology · standalone motor",
+          "display_name": "industrial electric motor — heavy-duty power · induction topology · standalone motor",
+          "domain_code": "05",
+          "family_key": "product:05:industrial-motor",
+          "id": "product:05:industrial-motor:heavy-induction-standalone",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "motor",
+            "name",
+            "uses"
+          ],
+          "rank": 3,
+          "score": 3423
+        }
+      ]
+    },
+    {
+      "expected_domain": "07",
+      "id": "a15",
+      "query": "autoclave",
+      "results": [
+        {
+          "canonical_name": "steam sterilizer/autoclave — commercial throughput · vial format · closed-line filling",
+          "display_name": "steam sterilizer/autoclave — commercial throughput · vial format · closed-line filling",
+          "domain_code": "07",
+          "family_key": "product:07:autoclave",
+          "id": "product:07:autoclave:commercial-vial-closed-line",
+          "match_type": "exact",
+          "matched_on": [
+            "aliases",
+            "autoclave",
+            "name",
+            "uses"
+          ],
+          "rank": 1,
+          "score": 11390
+        },
+        {
+          "canonical_name": "Reference primitive: autoclave",
+          "display_name": "Reference primitive: autoclave",
+          "domain_code": "shared",
+          "family_key": "id:reference_autoclave",
+          "id": "reference:autoclave",
+          "match_type": "exact",
+          "matched_on": [
+            "aliases",
+            "autoclave",
+            "name"
+          ],
+          "rank": 2,
+          "score": 11110
+        },
+        {
+          "canonical_name": "Reference primitive: product 07 autoclave",
+          "display_name": "Reference primitive: product 07 autoclave",
+          "domain_code": "shared",
+          "family_key": "id:reference_product_07_autoclave",
+          "id": "reference:product_07_autoclave",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "autoclave",
+            "name"
+          ],
+          "rank": 3,
+          "score": 10310
+        }
+      ]
+    },
+    {
+      "expected_domain": "12",
+      "id": "a16",
+      "query": "vacuum coating machine",
+      "results": [
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing: Semiconductor etch and deposition process - board or module",
+          "display_name": "Semiconductor etch and deposition process — board",
+          "domain_code": "04",
+          "family_key": "d04:product:etch_deposition",
+          "id": "d04:product:etch_deposition:board",
+          "match_type": "related",
+          "matched_on": [
+            "explanation",
+            "thin_film_deposition",
+            "uses"
+          ],
+          "rank": 1,
+          "score": 3520
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing equipment: Semiconductor etch and deposition process - series-production equipment",
+          "display_name": "Semiconductor etch and deposition process — series — production",
+          "domain_code": "04",
+          "family_key": "d04:equipment:etch_deposition",
+          "id": "d04:equipment:etch_deposition:production",
+          "match_type": "related",
+          "matched_on": [
+            "explanation",
+            "thin_film_deposition",
+            "uses"
+          ],
+          "rank": 2,
+          "score": 3510
+        },
+        {
+          "canonical_name": "Electronics, Semiconductors & Computing material: Semiconductor etch and deposition process - functional-grade material",
+          "display_name": "Semiconductor etch and deposition process — functional — functional",
+          "domain_code": "04",
+          "family_key": "d04:material:etch_deposition",
+          "id": "d04:material:etch_deposition:functional",
+          "match_type": "related",
+          "matched_on": [
+            "explanation",
+            "thin_film_deposition",
+            "uses"
+          ],
+          "rank": 3,
+          "score": 3500
+        }
+      ]
+    },
+    {
+      "expected_domain": "05",
+      "id": "a17",
+      "query": "gear hobbing machine",
+      "results": [
+        {
+          "canonical_name": "CNC gear hobbing machine — production scale · fixed-floor configuration · programmable control",
+          "display_name": "CNC gear hobbing machine — production scale · fixed-floor configuration · programmable control",
+          "domain_code": "05",
+          "family_key": "product:05:gear-hobbing-machine",
+          "id": "product:05:gear-hobbing-machine:production-fixed-programmable",
+          "match_type": "exact",
+          "matched_on": [
+            "aliases",
+            "gear_hobbing",
+            "name",
+            "uses"
+          ],
+          "rank": 1,
+          "score": 12090
+        },
+        {
+          "canonical_name": "Reference primitive: gear hobbing machine",
+          "display_name": "Reference primitive: gear hobbing machine",
+          "domain_code": "shared",
+          "family_key": "id:reference_gear_hobbing_machine",
+          "id": "reference:gear_hobbing_machine",
+          "match_type": "exact",
+          "matched_on": [
+            "aliases",
+            "gear_hobbing",
+            "name"
+          ],
+          "rank": 2,
+          "score": 11110
+        },
+        {
+          "canonical_name": "Reference primitive: product 05 gear hobbing machine",
+          "display_name": "Reference primitive: product 05 gear hobbing machine",
+          "domain_code": "shared",
+          "family_key": "id:reference_product_05_gear_hobbing_machine",
+          "id": "reference:product_05_gear_hobbing_machine",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "gear_hobbing",
+            "name"
+          ],
+          "rank": 3,
+          "score": 10310
+        }
+      ]
+    },
+    {
+      "expected_domain": "03",
+      "id": "a18",
+      "query": "transformer winding machine",
+      "results": [
+        {
+          "canonical_name": "Energy & Nuclear: Grid transformer - modular configuration",
+          "display_name": "Grid transformer — modular",
+          "domain_code": "03",
+          "family_key": "d03:product:grid_transformer",
+          "id": "d03:product:grid_transformer:modular",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "explanation",
+            "name",
+            "transformer"
+          ],
+          "rank": 1,
+          "score": 3600
+        },
+        {
+          "canonical_name": "Energy & Nuclear equipment: Grid transformer - series-production equipment",
+          "display_name": "Grid transformer — series — production",
+          "domain_code": "03",
+          "family_key": "d03:equipment:grid_transformer",
+          "id": "d03:equipment:grid_transformer:production",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "explanation",
+            "name",
+            "transformer"
+          ],
+          "rank": 2,
+          "score": 3590
+        },
+        {
+          "canonical_name": "Energy & Nuclear material: Grid transformer - functional-grade material",
+          "display_name": "Grid transformer — functional — functional",
+          "domain_code": "03",
+          "family_key": "d03:material:grid_transformer",
+          "id": "d03:material:grid_transformer:functional",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "explanation",
+            "name",
+            "transformer"
+          ],
+          "rank": 3,
+          "score": 3580
+        }
+      ]
+    },
+    {
+      "expected_domain": "11",
+      "id": "a19",
+      "query": "extruder",
+      "results": [
+        {
+          "canonical_name": "bakery and food extrusion line — high-throughput line · solid product form · programmable line",
+          "display_name": "bakery and food extrusion line — high-throughput line · solid product form · programmable line",
+          "domain_code": "08",
+          "family_key": "product:08:bakery-extrusion-line",
+          "id": "product:08:bakery-extrusion-line:high-throughput-solid-programmable",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "extruder"
+          ],
+          "rank": 1,
+          "score": 10590
+        },
+        {
+          "canonical_name": "Reference primitive: equipment extruder",
+          "display_name": "Reference primitive: equipment extruder",
+          "domain_code": "shared",
+          "family_key": "id:shared_equipment_extruder",
+          "id": "shared:equipment:extruder",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "extruder",
+            "name"
+          ],
+          "rank": 2,
+          "score": 10340
+        },
+        {
+          "canonical_name": "Reference primitive: shared equipment extruder",
+          "display_name": "Reference primitive: shared equipment extruder",
+          "domain_code": "shared",
+          "family_key": "id:reference_shared_equipment_extruder",
+          "id": "reference:shared_equipment_extruder",
+          "match_type": "phrase",
+          "matched_on": [
+            "aliases",
+            "extruder",
+            "name"
+          ],
+          "rank": 3,
+          "score": 10310
+        }
+      ]
+    },
+    {
+      "expected_domain": "10",
+      "id": "a20",
+      "query": "ceramic kiln",
+      "results": [
+        {
+          "canonical_name": "vacuum and controlled-atmosphere furnace — pilot scale · batch configuration · advanced process control",
+          "display_name": "vacuum and controlled-atmosphere furnace — pilot scale · batch configuration · advanced process control",
+          "domain_code": "06",
+          "family_key": "product:06:thermal-vacuum-furnace",
+          "id": "product:06:thermal-vacuum-furnace:pilot-batch-advanced",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "explanation",
+            "heat_treatment"
+          ],
+          "rank": 1,
+          "score": 3340
+        },
+        {
+          "canonical_name": "engineering glass and ceramic material — powder form · high-temperature grade · melt and cast route",
+          "display_name": "engineering glass and ceramic material — powder form · high-temperature grade · melt and cast route",
+          "domain_code": "06",
+          "family_key": "product:06:engineering-glass",
+          "id": "product:06:engineering-glass:powder-high-temperature-melt-route",
+          "match_type": "related",
+          "matched_on": [
+            "aliases",
+            "category",
+            "name",
+            "technical_ceramic",
+            "uses"
+          ],
+          "rank": 2,
+          "score": 3330
+        },
+        {
+          "canonical_name": "Concrete batching plant — dry batch · mine",
+          "display_name": "Concrete batching plant — dry batch · mine",
+          "domain_code": "10",
+          "family_key": "india-v1:10:concrete-batching-plant:dry-batch",
+          "id": "india-v1:10:concrete-batching-plant:dry-batch:mine",
+          "match_type": "related",
+          "matched_on": [
+            "explanation",
+            "rotary_kiln"
+          ],
+          "rank": 3,
+          "score": 3260
+        }
+      ]
+    }
+  ],
+  "schema_version": "india_v1.run2_abuse_probe_results.v1",
+  "top_k": 3
+}
