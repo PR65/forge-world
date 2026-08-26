@@ -396,6 +396,45 @@ def india_search_api(
     }
 
 
+def _india_buildability_payload(subject: str):
+    """Compose the human-facing India product view without exposing IDs."""
+
+    from forge.india_v1.view_model import compose_buildability_view_model
+
+    try:
+        return compose_buildability_view_model(subject, get_india_catalog()).to_dict()
+    except LookupError as exc:
+        raise HTTPException(404, str(exc)) from exc
+
+
+@app.get("/api/india/buildability")
+@app.get("/api/india/view")
+def india_buildability_api(
+    q: str = Query(default="", max_length=200),
+    record_id: Optional[str] = Query(default=None, max_length=240),
+):
+    """Return the presentation-adapted buildability answer for a product.
+
+    The request may use a human search query or an exact record ID.  The
+    response deliberately contains display labels and status summaries only;
+    canonical IDs remain confined to the catalog/search/graph contracts.
+    """
+
+    subject = (record_id or q).strip()
+    if not subject:
+        raise HTTPException(422, "provide a product query or record_id")
+    return _india_buildability_payload(subject)
+
+
+@app.get("/api/india/buildability/{record_id:path}")
+def india_buildability_record_api(record_id: str):
+    """Path-form alias for clients that already have a record deep link."""
+
+    if not record_id.strip() or len(record_id) > 240:
+        raise HTTPException(404, f"India V1 record '{record_id}' not found")
+    return _india_buildability_payload(record_id)
+
+
 @app.get("/api/india/bootstrap")
 def india_bootstrap_api(limit: int = Query(default=12, ge=1, le=24)):
     """Return one bounded payload for first-load India V1 navigation."""
