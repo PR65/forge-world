@@ -191,15 +191,20 @@ export function normalizeRecord(value: unknown, index = 0): IndiaRecord {
   );
   const canonicalName = readString(
     source,
-    ["canonical_name", "canonicalName", "name", "title", "label"],
-    id,
+    ["canonical_name", "canonicalName"],
+  );
+  const displayName = readString(
+    source,
+    ["display_name", "displayName", "family_label", "familyLabel", "name", "title", "label"],
+    canonicalName || id,
   );
   const ladder = normalizeLadder(
     readArray(source, ["making_ladder", "makingLadder", "ladder", "making_steps"]),
   );
   return {
     id,
-    canonicalName,
+    canonicalName: canonicalName || displayName,
+    displayName,
     aliases: readStringArray(source, ["aliases", "alias"]),
     kind: readString(source, ["kind", "type"], "capability"),
     category: readString(source, ["category", "sector", "family"], "Uncategorised"),
@@ -218,11 +223,25 @@ export function normalizeRecord(value: unknown, index = 0): IndiaRecord {
       ["india_status", "indiaStatus", "status", "availability"],
       "UNKNOWN",
     ),
+    statusEpistemicClass: readString(
+      source,
+      [
+        "status_epistemic_class",
+        "statusEpistemicClass",
+        "status_epistemic",
+        "epistemic_class",
+        "epistemicClass",
+        "epistemic",
+      ],
+      "UNKNOWN",
+    ),
     statusBasis: readString(
       source,
       ["status_basis", "statusBasis", "basis", "evidence_basis"],
       "Basis is not recorded yet.",
     ),
+    sourceSpec: readString(source, ["source_spec", "sourceSpec", "source", "provenance"]) || null,
+    isReferenceOnly: Boolean(readValue(source, ["is_reference_only", "isReferenceOnly", "reference_only"])),
     domainId: readString(source, ["domain_id", "domainId"]) || null,
     domainName: readString(source, ["domain_name", "domainName", "domain"]) || null,
     dependencies: normalizeDependencies(source),
@@ -266,11 +285,23 @@ export function normalizeSummary(value: unknown): IndiaSummary {
   for (const [key, count] of Object.entries(counts ?? {})) {
     if (typeof count === "number" && Number.isFinite(count)) statusCounts[key] = count;
   }
+  const readCounts = (keys: string[]): Record<string, number> => {
+    const object = asObject(readValue(source, keys));
+    const output: Record<string, number> = {};
+    for (const [key, count] of Object.entries(object ?? {})) {
+      if (typeof count === "number" && Number.isFinite(count)) output[key] = count;
+    }
+    return output;
+  };
   return {
     recordCount: readNumber(source, ["record_count", "recordCount", "records", "count"]),
+    directRecordCount: readNumber(source, ["direct_record_count", "directRecordCount", "owned_record_count", "ownedRecordCount"]),
+    referenceRecordCount: readNumber(source, ["reference_record_count", "referenceRecordCount", "shared_source_record_count", "sharedSourceRecordCount"]),
     domainCount: readNumber(source, ["domain_count", "domainCount", "domains"]),
     snapshot: readString(source, ["snapshot", "snapshot_id", "snapshotId", "version"]) || null,
     statusCounts,
+    directStatusCounts: readCounts(["direct_status_counts", "directStatusCounts", "owned_status_counts", "ownedStatusCounts"]),
+    statusEpistemicCounts: readCounts(["status_epistemic_counts", "statusEpistemicCounts", "epistemic_counts", "epistemicCounts"]),
   };
 }
 
@@ -298,9 +329,22 @@ function endpointError(label: string, response: Response): Error {
 }
 
 async function fetchJson<T>(path: string, label: string, signal?: AbortSignal): Promise<T> {
-  const response = await fetch(path, { signal });
-  if (!response.ok) throw endpointError(label, response);
-  return (await response.json()) as T;
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 15_000);
+  const abort = () => controller.abort();
+  signal?.addEventListener("abort", abort, { once: true });
+  try {
+    const response = await fetch(path, { signal: controller.signal });
+    if (!response.ok) throw endpointError(label, response);
+    return (await response.json()) as T;
+  } catch (error) {
+    if (signal?.aborted) throw error;
+    if (controller.signal.aborted) throw new Error(`${label} timed out. Please try again.`);
+    throw error;
+  } finally {
+    window.clearTimeout(timeout);
+    signal?.removeEventListener("abort", abort);
+  }
 }
 
 export async function fetchIndiaSummary(signal?: AbortSignal): Promise<IndiaSummary> {
@@ -322,7 +366,7 @@ export async function fetchIndiaDiscover(signal?: AbortSignal): Promise<IndiaDis
       return [
         {
           record,
-          reason: readString(source, ["reason", "why", "explanation", "basis"]),
+          reason: readString(source, ["reason", "rationale", "why", "explanation", "basis"]),
           rank: readNumber(source, ["rank", "score", "priority"]),
         },
       ];
@@ -342,17 +386,42 @@ export async function fetchIndiaBootstrap(signal?: AbortSignal): Promise<IndiaBo
 export async function searchIndia(
   query: string,
   signal?: AbortSignal,
+  options: {
+    domain?: string | null;
+    kind?: string | null;
+    status?: string | null;
+    limit?: number;
+  } = {},
 ): Promise<IndiaSearchResult[]> {
-  const path = `/api/india/search?q=${encodeURIComponent(query.trim())}`;
+  const params = new URLSearchParams({ q: query.trim() });
+  if (options.domain) params.set("domain", options.domain);
+  if (options.kind) params.set("kind", options.kind);
+  if (options.status) params.set("status", options.status);
+  if (options.limit) params.set("limit", String(options.limit));
+  const path = `/api/india/search?${params.toString()}`;
   const payload = await fetchJson<unknown>(path, "India search", signal);
   return unwrapArray(payload).flatMap((value, index) => {
     const source = asObject(value);
     const record = normalizeRecord(source?.record ?? source?.item ?? value, index);
+    const queryValue = query.trim().toLowerCase();
+    const displayName = record.displayName.toLowerCase();
+    const canonical = record.canonicalName.toLowerCase();
+    const aliases = record.aliases.map((alias) => alias.toLowerCase());
+    const matchedOn = readStringArray(source, ["matched_on", "matchedOn", "fields"]);
+    const matchType = readString(source, ["match_type", "matchType", "match", "result_type"])
+      || (queryValue && displayName === queryValue ? "exact name"
+        : queryValue && displayName.includes(queryValue) ? "name"
+          : queryValue && canonical.includes(queryValue) ? "canonical name"
+          : queryValue && aliases.some((alias) => alias.includes(queryValue)) ? "alias"
+            : queryValue && [record.category, record.domainName, record.kind].some((field) => field?.toLowerCase().includes(queryValue)) ? "family"
+              : "related")
+      || null;
     return [
       {
         record,
         score: readNumber(source, ["score", "rank", "relevance"]),
-        matchedOn: readStringArray(source, ["matched_on", "matchedOn", "fields"]),
+        matchedOn: matchedOn.length ? matchedOn : matchType ? [matchType] : [],
+        matchType,
       },
     ];
   });
