@@ -40,7 +40,10 @@ def _string_values(value):
 def _assert_public_labels_are_clean(payload: Mapping[str, object]) -> None:
     text = "\n".join(_string_values(payload))
     lowered = text.casefold()
-    for forbidden in ("reference primitive", "shared:", "product:", "india-v1:", "node:"):
+    for forbidden in (
+        "reference primitive", "shared:", "product:", "india-v1:", "node:",
+        "source pack names a primitive", "canonical v1 record", "record_id", "canonical_name",
+    ):
         assert forbidden not in lowered
     # Field names intentionally use a stable JSON contract; this check is for
     # string values, where internal snake-case IDs would leak to the UI.

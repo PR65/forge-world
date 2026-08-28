@@ -396,6 +396,24 @@ def india_search_api(
     }
 
 
+@app.get("/api/india/resolve")
+def india_resolve_objective_api(
+    q: str = Query(default="", max_length=300),
+    candidate_limit: int = Query(default=4, ge=1, le=8),
+):
+    """Interpret and honestly resolve a simple India manufacturing objective.
+
+    Weak related matches are returned as confirmation-required candidates;
+    they are never silently promoted into the selected analysis subject.
+    """
+
+    from forge.india_v1.objective import resolve_objective
+
+    if not q.strip():
+        raise HTTPException(422, "provide a product or manufacturing objective")
+    return resolve_objective(q, get_india_catalog(), candidate_limit=candidate_limit)
+
+
 def _india_buildability_payload(subject: str):
     """Compose the human-facing India product view without exposing IDs."""
 

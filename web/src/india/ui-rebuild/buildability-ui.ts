@@ -80,10 +80,16 @@ export function cleanDisplayText(value: unknown, fallback = "Mapped requirement"
     .trim();
   if (!raw) return fallback;
 
-  const duplicateParts = raw.split(/\s+[—–]\s+/);
+  const explicitPublicLabel = /^canonical specification owner qualification and effective capacity are unknown$/i.test(raw)
+    ? "Detailed product requirements"
+    : raw.replace(/\s+capability remains unknown\.?$/i, "");
+  const presentationParts = explicitPublicLabel.split(/\s+[—–]\s+/);
+  const generatedVariant = presentationParts.length > 1 && /(?:production scale|fixed[- ]floor|programmable control|heavy payload|compact reach|vision guided|standalone|configuration|duty)/i.test(presentationParts.slice(1).join(" "));
+  const publicRaw = generatedVariant ? presentationParts[0].trim() : raw;
+  const duplicateParts = publicRaw.split(/\s+[—–]\s+/);
   const suffix = duplicateParts.length > 1 ? duplicateParts[duplicateParts.length - 1].trim() : "";
   const prefix = duplicateParts.slice(0, -1).join(" — ").trim();
-  const deduped = suffix && prefix.toLowerCase().includes(suffix.toLowerCase()) ? prefix : raw;
+  const deduped = suffix && prefix.toLowerCase().includes(suffix.toLowerCase()) ? prefix : publicRaw;
   const words = deduped
     .replace(/[/:]+/g, " ")
     .replace(/[_-]+/g, " ")
@@ -105,6 +111,12 @@ export function displayItemTitle(item: Pick<BuildabilityItem, "title"> | null | 
 export function cleanNarrative(value: unknown, fallback = "Not recorded yet."): string {
   const raw = String(value ?? "").trim();
   if (!raw || INTERNAL_LABEL_PATTERN.test(raw)) return fallback;
+  if (/reference[- ]only bridge|source pack names a primitive|canonical v1 record/i.test(raw)) {
+    return "No validated India capability or supply record is attached; status remains UNKNOWN.";
+  }
+  if (/readable bridge for a dependency named by a breadth domain pack/i.test(raw)) {
+    return "Exact product detail is limited; this family bridge does not establish a producer or supply claim.";
+  }
   return raw
     .replace(/\b(?:shared|reference|primitive|node|record):[a-z0-9:_-]+\b/gi, "mapped requirement")
     .replace(/\b[a-z][a-z0-9]*_[a-z0-9_]+\b/gi, (match) => cleanDisplayText(match, "mapped requirement"))

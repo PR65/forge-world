@@ -441,11 +441,14 @@ def _major_systems(
     # subsystem record.  Marking these as derived keeps the distinction clear.
     gaps = [gap for gap in _gap_texts(record) if not _is_generic_import_note(gap)]
     for gap in gaps[:6]:
+        gap_label = re.sub(r"\s+capability remains unknown\.?$", "", gap, flags=re.IGNORECASE).strip() or gap
+        if re.fullmatch(r"canonical specification,? owner,? qualification,? and effective capacity are unknown\.?", gap_label, flags=re.IGNORECASE):
+            gap_label = "Detailed product requirements"
         systems.append(
             _status_item(
                 {
-                    "canonical_name": gap,
-                    "display_name": gap,
+                    "canonical_name": gap_label,
+                    "display_name": gap_label,
                     "kind": "SYSTEM",
                     "status": _normalize_status(record.get("status") or record.get("india_status")),
                     "status_epistemic_class": _epistemic(record),
@@ -585,7 +588,13 @@ def _bottlenecks(
                 "severity": "high" if _BOTTLENECK_PRIORITY.get(status, 8) <= 3 else "medium",
                 "detail": detail,
                 "epistemic_class": _epistemic(source),
-                "basis": _safe_detail(source.get("status_basis") or "Ranked from the existing status and gap overlay; validate before acting.", 320),
+                "basis": _safe_detail(
+                    "No validated India capability or supply record is attached; status remains UNKNOWN."
+                    if source.get("is_reference_only")
+                    else source.get("status_basis")
+                    or "Ranked from the existing status and gap overlay; validate before acting.",
+                    320,
+                ),
             }
         )
         if len(result) >= max(1, min(int(limit), 7)):
@@ -665,7 +674,13 @@ def _link_items(record: Mapping[str, Any], catalog: IndiaCatalog | None, relatio
 def _evidence_summary(record: Mapping[str, Any]) -> list[dict[str, Any]]:
     epistemic = _epistemic(record)
     status = _normalize_status(record.get("status") or record.get("india_status"))
-    basis = _safe_detail(record.get("status_basis") or "No status basis was attached; keep the result UNKNOWN.", 420)
+    basis = _safe_detail(
+        "No validated India capability or supply record is attached; status remains UNKNOWN."
+        if record.get("is_reference_only")
+        else record.get("status_basis")
+        or "No status basis was attached; keep the result UNKNOWN.",
+        420,
+    )
     return [
         {
             "label": "Status basis",
@@ -866,6 +881,9 @@ def compose_buildability_view_model(
     domain = _safe_detail(record.get("domain") or "Shared industrial foundations", 180)
     kind = _humanize_text(record.get("kind") or "PRODUCT").upper()
     category = _safe_detail(record.get("category") or "Industrial requirement", 160)
+    is_reference = bool(record.get("is_reference_only"))
+    if category.casefold() == "reference primitive":
+        category = "Industrial family bridge"
     groups = _requirement_groups(record, catalog)
     links = {
         relation: _link_items(record, catalog, relation)
@@ -892,7 +910,13 @@ def compose_buildability_view_model(
         domain=domain,
         kind=kind,
         category=category,
-        plain_summary=_safe_detail(record.get("explanation") or "The catalog does not provide a plain-language product summary.", 720),
+        plain_summary=_safe_detail(
+            "Exact product detail is limited; this family bridge does not establish a producer or supply claim."
+            if is_reference
+            else record.get("explanation")
+            or "The catalog does not provide a plain-language product summary.",
+            720,
+        ),
         buildability=_buildability(record, catalog),
         major_systems=_major_systems(record, catalog, groups),
         critical_bottlenecks=_bottlenecks(record, catalog, title, limit=bottleneck_limit),

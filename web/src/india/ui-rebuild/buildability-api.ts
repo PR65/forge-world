@@ -35,6 +35,8 @@ function item(value: unknown): BuildabilityItem {
     category: text(source.category) || null,
     status: text(source.status) || "UNKNOWN",
     statusLabel: text(source.status_label) || text(source.statusLabel) || null,
+    epistemicClass: text(source.epistemic_class) || text(source.epistemicClass) || null,
+    dataState: text(source.data_state) || text(source.dataState) || null,
   };
 }
 
@@ -49,10 +51,10 @@ function bottlenecks(value: unknown): BuildabilityBottleneck[] {
     return {
       ...base,
       // Recorded gap detail is the actual bottleneck; the source product name is context.
-      title: text(source.detail) || base.title,
+      title: (text(source.detail) || base.title).replace(/\s+capability remains unknown\.?$/i, ""),
       rank: number(source.rank) ?? index + 1,
       impactLabel: text(source.impact_label) || text(source.severity) || null,
-      reason: null,
+      reason: text(source.basis) || text(source.reason) || base.note || null,
     };
   });
 }
@@ -64,9 +66,12 @@ function path(value: unknown): BuildabilityPathStep[] {
       ...item(entry),
       title: text(source.phase) || text(source.action) || `Step ${index + 1}`,
       summary: text(source.purpose) || null,
-      note: null,
+      note: text(source.condition) || null,
       order: number(source.sequence) ?? index + 1,
       timeLabel: text(source.time_label) || null,
+      action: text(source.action) || null,
+      required: typeof source.required === "boolean" ? source.required : null,
+      allowedActions: array(source.allowed_actions).map(text).filter(Boolean),
     };
   });
 }
@@ -113,6 +118,11 @@ export function normalizeBuildabilityViewModel(value: unknown): BuildabilityView
       unknown: percentage(buildability.unknown, total),
       overallIndex: null,
       assessedLabel: total === null ? null : `${total.toLocaleString("en-IN")} mapped requirements assessed`,
+      evaluatedNodeCount: total,
+      rootStatus: text(buildability.root_status) || null,
+      rootStatusLabel: text(buildability.root_status_label) || null,
+      rootEpistemicClass: text(buildability.root_epistemic_class) || null,
+      overallIndexBasis: text(buildability.overall_index_basis) || null,
     },
     majorSystems: items(source.major_systems),
     criticalBottlenecks: bottlenecks(source.critical_bottlenecks),
@@ -124,6 +134,7 @@ export function normalizeBuildabilityViewModel(value: unknown): BuildabilityView
     materials: items(source.materials),
     metrology: items(source.metrology),
     qualification: items(source.qualification),
+    capabilities: items(source.capabilities),
     upstream: items(source.upstream),
     downstream: items(source.downstream),
     unlocks: items(source.unlocks),
@@ -133,6 +144,7 @@ export function normalizeBuildabilityViewModel(value: unknown): BuildabilityView
     mapPoints: [],
     imports: items(source.imports),
     indiaIndex: null,
+    optionalPanels: object(source.optional_panels),
   };
 }
 

@@ -35,6 +35,11 @@ export interface BuildabilitySummary {
   unknown?: BuildabilityMetricInput;
   overallIndex?: BuildabilityMetricInput;
   assessedLabel?: string | null;
+  evaluatedNodeCount?: number | null;
+  rootStatus?: BuildabilityStatus | null;
+  rootStatusLabel?: string | null;
+  rootEpistemicClass?: string | null;
+  overallIndexBasis?: string | null;
 }
 
 export interface BuildabilityItem {
@@ -50,6 +55,8 @@ export interface BuildabilityItem {
   status?: BuildabilityStatus | null;
   statusLabel?: string | null;
   statusMix?: Partial<Record<BuildabilityStatus, number>> | null;
+  epistemicClass?: string | null;
+  dataState?: string | null;
 }
 
 export interface BuildabilityNode extends BuildabilityItem {
@@ -72,6 +79,9 @@ export interface BuildabilityBottleneck extends BuildabilityItem {
 export interface BuildabilityPathStep extends BuildabilityItem {
   order?: number | null;
   timeLabel?: string | null;
+  action?: string | null;
+  required?: boolean | null;
+  allowedActions?: string[];
 }
 
 export interface BuildabilityFacility extends BuildabilityItem {
@@ -140,6 +150,7 @@ export interface BuildabilityViewModel {
   materials?: BuildabilityItem[];
   metrology?: BuildabilityItem[];
   qualification?: BuildabilityItem[];
+  capabilities?: BuildabilityItem[];
   upstream?: BuildabilityItem[];
   downstream?: BuildabilityItem[];
   unlocks?: BuildabilityItem[];
@@ -149,6 +160,7 @@ export interface BuildabilityViewModel {
   mapPoints?: BuildabilityMapPoint[];
   imports?: BuildabilityItem[];
   indiaIndex?: BuildabilitySidebarSummary | null;
+  optionalPanels?: Record<string, unknown> | null;
 }
 
 export type BuildabilityMode = "Analyze" | "Design" | "Execute" | "Discover" | "Learn";
