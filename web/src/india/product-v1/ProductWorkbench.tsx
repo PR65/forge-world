@@ -18,6 +18,7 @@ import type {
   BuildabilityDomain,
   BuildabilityItem,
   BuildabilityPathStep,
+  BuildabilityQuestion,
   BuildabilityViewModel,
 } from "../ui-rebuild/buildability-types";
 import "./product-workbench.css";
@@ -156,14 +157,14 @@ function Bottlenecks({
   items: BuildabilityBottleneck[];
   onSelect: (item: BuildabilityBottleneck) => void;
 }) {
+  if (!items.length) return null;
   return (
     <section className="fip-workbench-panel fip-bottlenecks" aria-labelledby="fip-bottlenecks-title">
       <header>
         <p>Decision focus</p>
         <h2 id="fip-bottlenecks-title">Most important bottlenecks</h2>
       </header>
-      {items.length ? (
-        <ol>
+      <ol>
           {items.slice(0, 7).map((item, index) => (
             <li key={`${item.title}-${index}`}>
               <button onClick={() => onSelect(item)} type="button">
@@ -176,10 +177,27 @@ function Bottlenecks({
               </button>
             </li>
           ))}
-        </ol>
-      ) : (
-        <p className="fip-workbench-empty">No ranked bottlenecks are mapped. This is limited data, not proof that the route has no bottlenecks.</p>
-      )}
+      </ol>
+    </section>
+  );
+}
+
+function FrontierQuestions({ items }: { items: BuildabilityQuestion[] }) {
+  if (!items.length) return null;
+  return (
+    <section className="fip-workbench-panel fip-frontier" aria-labelledby="fip-frontier-title">
+      <header>
+        <p>Questions to verify</p>
+        <h2 id="fip-frontier-title">What should be checked next?</h2>
+      </header>
+      <ul>
+        {items.slice(0, 6).map((item, index) => (
+          <li key={`${item.question}-${index}`}>
+            <span aria-hidden="true">?</span>
+            <p>{cleanNarrative(item.question, "A mapped requirement still needs verification.")}</p>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
@@ -200,6 +218,7 @@ function AnalyzeSurface({
   "query" | "objectiveText" | "viewModel" | "loading" | "error" | "resolution" |
   "onQueryChange" | "onAnalyze" | "onSelectionChange" | "onCandidateSelect" | "onRetry"
 >) {
+  const hasDecisionRail = Boolean((viewModel?.criticalBottlenecks?.length ?? 0) || (viewModel?.frontierQuestions?.length ?? 0));
   return (
     <main className="fip-workbench-main" id="fip-main">
       <section className="fip-objective">
@@ -223,16 +242,17 @@ function AnalyzeSurface({
             <div className="fip-answer-head__title">
               <p>{cleanDisplayText(viewModel.domain, "Industrial product")}</p>
               <h2>{cleanDisplayText(viewModel.title, "Selected industrial product")}</h2>
+              {viewModel.qualifier ? <span className="fip-answer-head__qualifier">{cleanDisplayText(viewModel.qualifier, "")}</span> : null}
               {objectiveText && objectiveText.trim().toLowerCase() !== viewModel.title.trim().toLowerCase() ? <small>Objective: {objectiveText}</small> : null}
             </div>
             <div className="fip-answer-head__verdict">
               <span className={`is-${statusTone(viewModel.buildability.rootStatus)}`} />
               <p>{verdict(viewModel)}</p>
-              <small>Basis: {cleanDisplayText(viewModel.buildability.rootEpistemicClass, "UNKNOWN")} · first-order national capability map</small>
+              <small>{statusTone(viewModel.buildability.rootStatus) === "unknown" || /unknown|assumption|estimated|modelled/i.test(viewModel.buildability.rootEpistemicClass || "") ? "Exact India status still needs verification" : `Basis: ${cleanDisplayText(viewModel.buildability.rootEpistemicClass, "limited evidence")}`} · first-order national capability map</small>
             </div>
           </section>
 
-          <div className="fip-analyze-grid" aria-busy={loading || undefined}>
+          <div className={`fip-analyze-grid ${hasDecisionRail ? "has-rail" : ""}`} aria-busy={loading || undefined}>
             <IndustrialDecomposition
               onItemSelect={(value) => onSelectionChange({ kind: "item", value })}
               onProductSelect={() => onSelectionChange({ kind: "item", value: productItem(viewModel) })}
@@ -240,10 +260,13 @@ function AnalyzeSurface({
               onSystemSelect={(value) => onSelectionChange({ kind: "item", value })}
               viewModel={viewModel}
             />
-            <Bottlenecks
-              items={viewModel.criticalBottlenecks ?? []}
-              onSelect={(value) => onSelectionChange({ kind: "bottleneck", value })}
-            />
+            {hasDecisionRail ? <aside className="fip-decision-rail">
+              <Bottlenecks
+                items={viewModel.criticalBottlenecks ?? []}
+                onSelect={(value) => onSelectionChange({ kind: "bottleneck", value })}
+              />
+              <FrontierQuestions items={viewModel.frontierQuestions ?? []} />
+            </aside> : null}
           </div>
         </>
       ) : loading ? (

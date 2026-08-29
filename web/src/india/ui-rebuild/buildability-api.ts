@@ -3,6 +3,7 @@ import type {
   BuildabilityEvidence,
   BuildabilityItem,
   BuildabilityPathStep,
+  BuildabilityQuestion,
   BuildabilityViewModel,
 } from "./buildability-types";
 
@@ -91,6 +92,19 @@ function evidence(value: unknown): BuildabilityEvidence[] {
   });
 }
 
+function questions(value: unknown): BuildabilityQuestion[] {
+  return array(value).map((entry) => {
+    const source = object(entry);
+    return {
+      question: text(source.question) || text(source.title) || text(source.name),
+      subject: text(source.subject) || text(source.requirement) || null,
+      reason: text(source.reason) || text(source.basis) || text(source.detail) || null,
+      status: text(source.status) || null,
+      epistemicClass: text(source.epistemic_class) || text(source.epistemicClass) || null,
+    };
+  }).filter((entry) => Boolean(entry.question));
+}
+
 function percentage(count: unknown, total: number | null) {
   const value = number(count);
   if (value === null || total === null || total <= 0) return null;
@@ -106,6 +120,8 @@ export function normalizeBuildabilityViewModel(value: unknown): BuildabilityView
   const total = number(buildability.evaluated_node_count);
   return {
     title: text(source.title) || "Selected industrial product",
+    qualifier: text(source.qualifier) || text(source.variant) || null,
+    internalCanonicalName: text(source.internal_canonical_name) || null,
     domain: text(source.domain) || null,
     kind: text(source.kind) || null,
     category: text(source.category) || null,
@@ -127,6 +143,7 @@ export function normalizeBuildabilityViewModel(value: unknown): BuildabilityView
     majorSystems: items(source.major_systems),
     criticalBottlenecks: bottlenecks(source.critical_bottlenecks),
     localizationPath: path(source.localization_path),
+    frontierQuestions: questions(source.frontier_questions),
     components: items(source.components),
     processes: items(source.processes),
     equipment: items(source.equipment),

@@ -133,6 +133,16 @@ export default function IndiaApp() {
     return () => controller.abort();
   }, []);
 
+  // Catalog warm-up can outlast the lightweight domain request timeout on a
+  // cold local server. Re-entering DISCOVER gets one fresh bounded attempt
+  // instead of leaving a permanently blank domain section.
+  useEffect(() => {
+    if (mode !== "DISCOVER" || domains.length) return;
+    const controller = new AbortController();
+    void fetchIndiaDomains(controller.signal).then((rows) => setDomains(publicDomains(rows))).catch(() => undefined);
+    return () => controller.abort();
+  }, [domains.length, mode]);
+
   useEffect(() => {
     if (initialRoute.recordId) void loadRecord(initialRoute.recordId); else void analyze(initialRoute.query || DEFAULT_OBJECTIVE, false, initialRoute.mode);
     return () => request.current?.abort();

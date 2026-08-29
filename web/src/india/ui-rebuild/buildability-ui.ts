@@ -52,6 +52,38 @@ const ACRONYMS = new Set([
   "VMC",
 ]);
 
+const PROPER_WORDS = new Map([
+  ["india", "India"],
+]);
+
+const GENERATED_QUALIFIER = /(?:throughput|format|workflow|handling|configuration|production scale|fixed[- ]floor|programmable control|payload|compact reach|vision guided|standalone|closed line|manual|commercial|core facility|duty)/i;
+
+function sentenceCase(value: string): string {
+  const words = value.split(/(\s+)/).map((word) => {
+    if (/^\s+$/.test(word)) return word;
+    const prefix = word.match(/^[^a-zA-Z0-9&]*/)?.[0] ?? "";
+    const suffix = word.match(/[^a-zA-Z0-9&]*$/)?.[0] ?? "";
+    const core = word.slice(prefix.length, word.length - suffix.length || undefined);
+    if (!core) return word;
+    const upper = core.toUpperCase();
+    if (ACRONYMS.has(upper) || /^[A-Z0-9&]{2,6}$/.test(core)) return `${prefix}${upper}${suffix}`;
+    const proper = PROPER_WORDS.get(core.toLowerCase());
+    return `${prefix}${proper ?? core.toLowerCase()}${suffix}`;
+  }).join("");
+  return words.replace(/[A-Za-z]/, (letter) => letter.toUpperCase());
+}
+
+export function displayNameParts(value: unknown): { primary: string; qualifier: string } {
+  const raw = String(value ?? "").trim();
+  const parts = raw.split(/\s+[—–]\s+/).map((part) => part.trim()).filter(Boolean);
+  if (parts.length < 2) return { primary: raw, qualifier: "" };
+  const suffix = parts.slice(1).join(" · ");
+  if (GENERATED_QUALIFIER.test(suffix) || suffix.split(/[·,]/).length >= 2) {
+    return { primary: parts[0], qualifier: suffix };
+  }
+  return { primary: raw, qualifier: "" };
+}
+
 function phraseCase(value: string): string {
   return value
     .split(" ")
@@ -83,15 +115,15 @@ export function cleanDisplayText(value: unknown, fallback = "Mapped requirement"
   const explicitPublicLabel = /^canonical specification owner qualification and effective capacity are unknown$/i.test(raw)
     ? "Detailed product requirements"
     : raw.replace(/\s+capability remains unknown\.?$/i, "");
-  const presentationParts = explicitPublicLabel.split(/\s+[—–]\s+/);
-  const generatedVariant = presentationParts.length > 1 && /(?:production scale|fixed[- ]floor|programmable control|heavy payload|compact reach|vision guided|standalone|configuration|duty)/i.test(presentationParts.slice(1).join(" "));
-  const publicRaw = generatedVariant ? presentationParts[0].trim() : raw;
+  const publicRaw = displayNameParts(explicitPublicLabel).primary
+    .replace(/^(?:foundational|infrastructure|equipment|product|system)\s+(?=[a-z])/i, "");
   const duplicateParts = publicRaw.split(/\s+[—–]\s+/);
   const suffix = duplicateParts.length > 1 ? duplicateParts[duplicateParts.length - 1].trim() : "";
   const prefix = duplicateParts.slice(0, -1).join(" — ").trim();
   const deduped = suffix && prefix.toLowerCase().includes(suffix.toLowerCase()) ? prefix : publicRaw;
   const words = deduped
-    .replace(/[/:]+/g, " ")
+    .replace(/:+/g, " ")
+    .replace(/\s*\/\s*/g, " / ")
     .replace(/[_-]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -100,7 +132,14 @@ export function cleanDisplayText(value: unknown, fallback = "Mapped requirement"
   const canonicalWords = CANONICAL_LABEL_PATTERN.test(raw)
     ? words.replace(/^(shared|reference|primitive|node|record)\s+/i, "")
     : words;
-  return phraseCase(canonicalWords) || fallback;
+  return sentenceCase(phraseCase(canonicalWords)) || fallback;
+}
+
+export function displayItemQualifier(item: Pick<BuildabilityItem, "title" | "subtitle"> | null | undefined): string {
+  const explicit = String(item?.subtitle ?? "").trim();
+  const qualifier = explicit || displayNameParts(item?.title).qualifier;
+  if (!qualifier || /^(?:product architecture|systems?|processes?|materials?|equipment|capabilities|components)$/i.test(qualifier)) return "";
+  return sentenceCase(qualifier.replace(/\s*[·|]\s*/g, " · "));
 }
 
 export function displayItemTitle(item: Pick<BuildabilityItem, "title"> | null | undefined): string {
@@ -218,7 +257,9 @@ function inferredGroupStatus(items: BuildabilityItem[]): BuildabilityStatus {
 
 /** Build the stable seven-card requirement row from the view model. */
 export function deriveRequirementGroups(viewModel: BuildabilityViewModel): BuildabilityRequirementGroup[] {
-  if (viewModel.requirements?.length) return viewModel.requirements;
+  if (viewModel.requirements?.length) {
+    return viewModel.requirements.filter((group) => (group.items?.length ?? group.count ?? 0) > 0);
+  }
   return REQUIREMENT_DEFINITIONS.map(({ id, label, icon, field }) => {
     const items = viewModel[field] ?? [];
     return {
@@ -229,7 +270,7 @@ export function deriveRequirementGroups(viewModel: BuildabilityViewModel): Build
       count: items.length,
       status: inferredGroupStatus(items),
     };
-  });
+  }).filter((group) => group.items.length > 0);
 }
 
 export function statusMix(statusMix: BuildabilityItem["statusMix"], status: BuildabilityStatus | null | undefined): StatusTone[] {

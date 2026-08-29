@@ -87,6 +87,28 @@ def test_unmapped_subtype_can_offer_a_confirmation_required_family_bridge() -> N
     assert resolution["nearest"]["match_basis"] == "Nearest mapped industrial family"
 
 
+def test_subject_sanity_never_promotes_downstream_products_from_dependency_words() -> None:
+    forbidden = {
+        "lithium ion battery": ("tractor", "vehicle", "flow-battery"),
+        "bearing": ("aircraft", "tractor"),
+        "motor": ("agricultural", "tractor"),
+        "scanner": ("aircraft", "tractor"),
+    }
+    for query, blocked_terms in forbidden.items():
+        resolution = resolve_objective(query)["resolution"]
+        titles = " ".join(candidate["title"] for candidate in resolution["candidates"]).casefold()
+        assert not any(term in titles for term in blocked_terms), (query, titles)
+
+
+def test_broad_product_language_remains_easy_but_confirmation_safe() -> None:
+    for query in ("batteries", "pumps", "robots", "CNC", "packaging machine"):
+        resolution = resolve_objective(query)["resolution"]
+        assert resolution["classification"] in {"EXACT", "STRONG", "NEAREST"}, query
+        assert resolution["candidates"], query
+    battery_titles = " ".join(item["title"] for item in resolve_objective("batteries")["resolution"]["candidates"]).casefold()
+    assert "tractor" not in battery_titles
+
+
 def test_resolution_api_contract_supports_objectives_and_bounds_inputs() -> None:
     response = CLIENT.get(
         "/api/india/resolve",

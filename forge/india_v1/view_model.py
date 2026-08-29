@@ -63,12 +63,20 @@ _STATUS_TO_BUCKET = {
 _BOTTLENECK_PRIORITY = {
     "MISSING": 0,
     "IMPORT_DEPENDENT": 1,
-    "CONFLICTED": 2,
-    "UNKNOWN": 3,
-    "SCALE_LIMITED": 4,
-    "PARTIAL": 5,
+    "SCALE_LIMITED": 2,
+    "PARTIAL": 3,
+    "CONFLICTED": 4,
     "AVAILABLE": 9,
     "STRONG": 9,
+    "UNKNOWN": 9,
+}
+
+_BOTTLENECK_ELIGIBLE = {
+    "MISSING",
+    "IMPORT_DEPENDENT",
+    "SCALE_LIMITED",
+    "PARTIAL",
+    "CONFLICTED",
 }
 
 _STATUS_LABELS = {
@@ -92,16 +100,71 @@ _GROUP_LABELS = {
     "tooling": "Tooling and jigs",
     "metrology": "Metrology and testing",
     "qualification": "Qualification and standards",
+    "industrial_environment": "Industrial environment",
 }
 
+_VIEW_DEP_GROUPS = (*DEP_GROUPS, "components")
+
+_INDUSTRIAL_ENVIRONMENT_CATEGORIES = (
+    "shared industrial system",
+    "shared utility system",
+    "shared digital system",
+    "shared assurance system",
+    "shared logistics system",
+    "shared thermal system",
+    "shared controlled environment",
+)
+
 _STAGE_LABELS = {
-    "local_first": "Start with an evidence-backed local route",
-    "initial_import_bridge": "Bridge unresolved requirements where necessary",
-    "integration_and_test": "Integrate, inspect, and test",
-    "next_localization": "Localize the next highest-risk requirement",
-    "harder_later_capability": "Advance the harder later capability",
-    "optional_redesign": "Redesign only if the gap remains binding",
+    "start_locally": "Start locally",
+    "source_initially": "Source initially",
+    "integrate_and_test": "Integrate and test",
+    "localize_next": "Localize next",
+    "develop_later": "Develop later",
 }
+
+# Small presentation scaffolds for the launch-candidate products whose source
+# records contain good manufacturing dependencies but no explicit subsystem
+# group.  These are physical architecture labels only: every generated node is
+# MODELLED/UNKNOWN and therefore makes no India capability or supply claim.
+_PRODUCT_ARCHITECTURES: tuple[tuple[re.Pattern[str], tuple[str, ...]], ...] = (
+    (re.compile(r"freeze[-_: ]?dryer|lyophili", re.I), (
+        "Vacuum chamber and shelf assembly", "Condenser and refrigeration package",
+        "Vacuum system", "Thermal control", "Instrumentation and controls", "Loading and containment",
+    )),
+    (re.compile(r"battery[_: -]?energy[_: -]?storage|\bbess\b", re.I), (
+        "Battery cells and modules", "Battery management system", "Racks and enclosure",
+        "Power conversion system", "Thermal management", "Protection and site controls",
+    )),
+    (re.compile(r"cnc|machining[_: -]?cent", re.I), (
+        "Machine structure", "Spindle system", "Axes and motion system", "Servo drives and controller",
+        "Tooling interface", "Metrology and feedback", "Cooling and lubrication",
+    )),
+    (re.compile(r"centrifugal[_: -]?pump", re.I), (
+        "Casing and impeller", "Shaft and bearings", "Seals", "Motor and coupling",
+        "Baseplate and piping interface", "Instrumentation and protection",
+    )),
+    (re.compile(r"industrial[_: -]?compressor", re.I), (
+        "Compression element", "Driver", "Lubrication and sealing", "Cooling package",
+        "Controls and protection", "Pressure package and enclosure",
+    )),
+    (re.compile(r"transformer", re.I), (
+        "Magnetic core", "Windings", "Insulation system", "Tank and cooling",
+        "Bushings and tap changer", "Protection and test interfaces",
+    )),
+    (re.compile(r"robot|manipulator", re.I), (
+        "Structure and joints", "Actuators and reducers", "Servo drives", "Controller",
+        "Sensors and safety", "End-effector interface",
+    )),
+    (re.compile(r"magnetic[_: -]?resonance|\bmri\b", re.I), (
+        "Magnet and cryogenic system", "Gradient coil system", "RF transmit and receive chain",
+        "Patient handling", "Power and cooling", "Control and image reconstruction",
+    )),
+    (re.compile(r"hemodialysis|dialysis[_: -]?machine", re.I), (
+        "Blood circuit and pump", "Dialyzer and fluid path", "Dialysate preparation",
+        "Ultrafiltration and pressure control", "Sensors and alarms", "Cleaning and disinfection",
+    )),
+)
 
 _ACRONYMS = {
     "api": "API",
@@ -254,7 +317,19 @@ def _friendly_label(record: Mapping[str, Any], fallback: Any = None) -> str:
     # product question.  Keep meaningful cross-domain nouns after the colon.
     chosen = re.sub(r"^(?:Cross-domain|Curated)\s+(?:system|process|material|equipment|capability)\s*:\s*", "", chosen, flags=re.IGNORECASE).strip()
     chosen = re.sub(r"^(?:system|process|material|equipment|capability)\s*:\s*", "", chosen, flags=re.IGNORECASE).strip()
+    chosen = re.sub(r"^(?:Foundational|Infrastructure|Equipment|Product|System)\s+(?=[A-Za-z])", "", chosen, flags=re.IGNORECASE).strip()
     return chosen or "Unspecified requirement"
+
+
+def _public_qualifier(record: Mapping[str, Any], title: str) -> str:
+    display = _text(record.get("display_name") or record.get("canonical_name"))
+    if display:
+        parts = [part.strip() for part in re.split(r"\s+[—–\ufffd]\s+", display) if part.strip()]
+        if len(parts) > 1:
+            qualifier = " · ".join(parts[1:])
+            if qualifier.casefold() != title.casefold():
+                return _safe_detail(qualifier, 180)
+    return _safe_detail(record.get("variant_label") or "", 180)
 
 
 def _safe_detail(value: Any, limit: int = 420) -> str:
@@ -310,9 +385,9 @@ def _iter_refs(value: Any) -> list[Any]:
 
 def _dependencies(record: Mapping[str, Any]) -> dict[str, list[Any]]:
     raw = record.get("dependencies") or record.get("dependency_groups") or {}
-    groups = {group: [] for group in DEP_GROUPS}
+    groups = {group: [] for group in _VIEW_DEP_GROUPS}
     if isinstance(raw, Mapping):
-        for group in DEP_GROUPS:
+        for group in _VIEW_DEP_GROUPS:
             groups[group] = _iter_refs(raw.get(group))
     # Lightweight callers sometimes only provide a flat dependency list.  It
     # is kept visible under capabilities, with UNKNOWN remaining the honest
@@ -320,6 +395,18 @@ def _dependencies(record: Mapping[str, Any]) -> dict[str, list[Any]]:
     if not any(groups.values()):
         groups["capabilities"] = _iter_refs(record.get("dependency_ids"))
     return groups
+
+
+def _public_record_text(value: Any, *, fallback: str) -> str:
+    text = _safe_detail(value, 360)
+    if re.search(
+        r"\b(?:reference primitive|shared-foundation baseline|reusable industrial concept|"
+        r"category is visible|deduplicated|source pack|canonical (?:v1 )?record|catalog overlay)\b",
+        text,
+        re.IGNORECASE,
+    ):
+        return fallback
+    return text or fallback
 
 
 def _status_item(
@@ -338,6 +425,17 @@ def _status_item(
         else record.get("status_basis")
         or "Status basis is not specified; treat the requirement as UNKNOWN until validated."
     )
+    public_summary = _public_record_text(
+        summary or record.get("explanation"),
+        fallback="Mapped industrial requirement; confirm the objective-specific specification and production route.",
+    )
+    public_basis = _public_record_text(
+        basis,
+        fallback=(
+            "The requirement is structurally mapped, but its supplier, facility, specification, qualification, "
+            "and effective capacity still need validation."
+        ),
+    )
     item = {
         "name": _friendly_label(record, fallback),
         "role": _GROUP_LABELS.get(role, _humanize_text(role)),
@@ -345,8 +443,8 @@ def _status_item(
         "status": status,
         "status_label": _STATUS_LABELS[status],
         "epistemic_class": _epistemic(record),
-        "summary": _safe_detail(summary or record.get("explanation") or "Recorded requirement in the India V1 route.", 280),
-        "basis": _safe_detail(basis, 360),
+        "summary": _safe_detail(public_summary, 280),
+        "basis": public_basis,
         "data_state": "LIMITED_DATA" if is_reference else "CATALOG_RECORD",
     }
     if derived:
@@ -371,10 +469,13 @@ def _dedupe_items(items: Iterable[dict[str, Any]], limit: int = 24) -> list[dict
 def _requirement_groups(record: Mapping[str, Any], catalog: IndiaCatalog | None) -> dict[str, list[dict[str, Any]]]:
     dependencies = _dependencies(record)
     base: dict[str, list[dict[str, Any]]] = {group: [] for group in DEP_GROUPS}
-    for group in DEP_GROUPS:
+    subject_label = _friendly_label(record).casefold()
+    for group in _VIEW_DEP_GROUPS:
         rows = []
         for reference in dependencies[group]:
             row = _record_for_reference(catalog, reference)
+            if _friendly_label(row, reference).casefold() == subject_label:
+                continue
             rows.append(_status_item(row, role=group, fallback=reference))
         base[group] = _dedupe_items(rows)
 
@@ -384,11 +485,18 @@ def _requirement_groups(record: Mapping[str, Any], catalog: IndiaCatalog | None)
     components: list[dict[str, Any]] = []
     for reference in dependencies.get("components", ()):
         row = _record_for_reference(catalog, reference)
+        if _friendly_label(row, reference).casefold() == subject_label:
+            continue
         components.append(_status_item(row, role="components", fallback=reference))
 
     all_rows: list[tuple[str, Mapping[str, Any]]] = []
-    for group in DEP_GROUPS:
-        all_rows.extend((group, _record_for_reference(catalog, reference)) for reference in dependencies[group])
+    for group in _VIEW_DEP_GROUPS:
+        all_rows.extend(
+            (group, child)
+            for reference in dependencies[group]
+            for child in (_record_for_reference(catalog, reference),)
+            if _friendly_label(child, reference).casefold() != subject_label
+        )
 
     def filtered(terms: tuple[str, ...], role: str) -> list[dict[str, Any]]:
         return _dedupe_items(
@@ -432,59 +540,53 @@ def _major_systems(
     systems: list[dict[str, Any]] = []
     for reference in dependencies.get("systems", ()):
         row = _record_for_reference(catalog, reference)
+        if _is_industrial_environment(row):
+            continue
         systems.append(_status_item(row, role="systems", fallback=reference))
     if systems:
         return _dedupe_items(systems, limit=12)
 
-    # Several breadth records have no explicit ``systems`` group.  Recorded
-    # gap categories still provide a useful decomposition without inventing a
-    # subsystem record.  Marking these as derived keeps the distinction clear.
-    gaps = [gap for gap in _gap_texts(record) if not _is_generic_import_note(gap)]
-    for gap in gaps[:6]:
-        gap_label = re.sub(r"\s+capability remains unknown\.?$", "", gap, flags=re.IGNORECASE).strip() or gap
-        if re.fullmatch(r"canonical specification,? owner,? qualification,? and effective capacity are unknown\.?", gap_label, flags=re.IGNORECASE):
-            gap_label = "Detailed product requirements"
-        systems.append(
-            _status_item(
-                {
-                    "canonical_name": gap_label,
-                    "display_name": gap_label,
-                    "kind": "SYSTEM",
-                    "status": _normalize_status(record.get("status") or record.get("india_status")),
-                    "status_epistemic_class": _epistemic(record),
-                    "status_basis": "Derived from a recorded gap category; no separate subsystem record is attached.",
-                    "explanation": "Recorded as a decomposition area in the selected product route.",
-                },
-                role="systems",
-                derived=True,
-                summary="Derived from the product's recorded buildability gap categories.",
-            )
-        )
-    if systems:
-        return _dedupe_items(systems, limit=8)
+    identity = " ".join(
+        _text(record.get(key))
+        for key in ("id", "family_key", "family_label", "display_name", "canonical_name")
+    )
+    architecture = next((labels for pattern, labels in _PRODUCT_ARCHITECTURES if pattern.search(identity)), ())
+    return [
+        {
+            "name": label,
+            "role": "Product architecture",
+            "kind": "SYSTEM",
+            "status": "UNKNOWN",
+            "status_label": "India status not verified",
+            "epistemic_class": "MODELLED",
+            "summary": "Physical subsystem in the first-order product architecture.",
+            "basis": "Architecture scaffold only; it does not assert a supplier, qualification, or effective capacity.",
+            "data_state": "MODELLED_PRODUCT_ARCHITECTURE",
+        }
+        for label in architecture
+    ]
 
-    # Last resort: expose the typed group headings as an honest high-level
-    # decomposition.  Status is aggregated only for navigation, never as a
-    # facility/capacity claim.
-    for group in ("processes", "equipment", "materials", "capabilities"):
-        rows = requirement_groups.get(group, ())
-        if not rows:
-            continue
-        status = _status_from_rows(rows)
-        systems.append(
-            {
-                "name": _GROUP_LABELS[group],
-                "role": "Systems",
-                "kind": "SYSTEM",
-                "status": status,
-                "status_label": _STATUS_LABELS[status],
-                "epistemic_class": "MODELLED",
-                "summary": "High-level decomposition heading aggregated from typed requirements.",
-                "basis": "Navigation grouping only; the child requirement statuses remain the source view.",
-                "data_state": "DERIVED_FROM_TYPED_REQUIREMENTS",
-            }
-        )
-    return systems
+
+def _is_industrial_environment(record: Mapping[str, Any]) -> bool:
+    category = _text(record.get("category")).casefold()
+    label = _friendly_label(record).casefold()
+    if any(category.startswith(prefix) for prefix in _INDUSTRIAL_ENVIRONMENT_CATEGORIES):
+        return True
+    return bool(re.search(
+        r"\b(?:industrial infrastructure base|industrial power supply|industrial water|utility services|"
+        r"industrial logistics|factory infrastructure|site services|general utilities)\b",
+        label,
+    ))
+
+
+def _industrial_environment(record: Mapping[str, Any], catalog: IndiaCatalog | None) -> list[dict[str, Any]]:
+    dependencies = _dependencies(record)
+    rows: list[dict[str, Any]] = []
+    for reference in dependencies.get("systems", ()):
+        child = _record_for_reference(catalog, reference)
+        if _is_industrial_environment(child):
+            rows.append(_status_item(child, role="industrial_environment", fallback=reference))
+    return _dedupe_items(rows, limit=12)
 
 
 def _gap_texts(record: Mapping[str, Any]) -> list[str]:
@@ -526,6 +628,48 @@ def _is_generic_import_note(value: str) -> bool:
     )
 
 
+def _is_evidence_gap(value: str) -> bool:
+    return bool(re.search(
+        r"\b(?:no validated india capability|status remains unknown|requires? evidence|"
+        r"canonical specification.*unknown|qualification and effective capacity.*unknown|"
+        r"eligibility is not supply|trade or assembly is not treated|"
+        r"shared primitive is intentionally broad|catalog overlay)\b",
+        value,
+        re.IGNORECASE,
+    ))
+
+
+def _public_bottleneck_detail(status: str, name: str, detail: str) -> str:
+    """Translate catalog/status boilerplate into an operational decision statement."""
+
+    lowered = detail.casefold()
+    boilerplate = (
+        detail.casefold() == name.casefold()
+        or any(
+            marker in lowered
+            for marker in (
+                "category is visible",
+                "curated shared-foundation baseline",
+                "reusable industrial concept",
+                "catalog overlay",
+                "canonical record",
+                "source pack",
+                "remain unknown",
+            )
+        )
+    )
+    if not boilerplate:
+        return detail
+    templates = {
+        "MISSING": "No qualified Indian route is currently mapped for this requirement; identify a make, partner, or redesign path.",
+        "IMPORT_DEPENDENT": "Confirm the imported subcomponents, qualified source, lead time, service coverage, and localization route.",
+        "SCALE_LIMITED": "Demonstrate the required throughput, yield, quality consistency, and ramp path at production scale.",
+        "PARTIAL": "Capability exists in some form, but the required specification, qualification, yield, and scalable throughput are not yet established.",
+        "CONFLICTED": "Available evidence disagrees; resolve the supplier, facility, specification, and qualification facts before committing.",
+    }
+    return templates.get(status, detail)
+
+
 def _bottlenecks(
     record: Mapping[str, Any],
     catalog: IndiaCatalog | None,
@@ -536,7 +680,7 @@ def _bottlenecks(
 
     def add(source: Mapping[str, Any], detail: str, depth: int) -> None:
         status = _normalize_status(source.get("status") or source.get("india_status"))
-        if status in {"AVAILABLE", "STRONG"}:
+        if status not in _BOTTLENECK_ELIGIBLE or _is_evidence_gap(detail):
             return
         label = _friendly_label(source, title)
         candidates.append(
@@ -551,25 +695,28 @@ def _bottlenecks(
         )
 
     for detail in _gap_texts(record):
-        if not _is_generic_import_note(detail):
+        if not _is_generic_import_note(detail) and not _is_evidence_gap(detail):
             add(record, detail, 0)
 
     dependencies = _dependencies(record)
     for group in DEP_GROUPS:
         for reference in dependencies[group]:
             child = _record_for_reference(catalog, reference)
-            if child.get("is_reference_only"):
-                label = _friendly_label(child, reference)
-                add(child, f"{label} capability remains unknown.", 1)
+            if _friendly_label(child, reference).casefold() == title.casefold():
                 continue
-            child_gaps = _gap_texts(child)
+            if child.get("is_reference_only"):
+                continue
+            child_gaps = [
+                detail for detail in _gap_texts(child)
+                if not _is_generic_import_note(detail) and not _is_evidence_gap(detail)
+            ]
             if child_gaps:
                 for detail in child_gaps[:2]:
                     add(child, detail, 1)
-            else:
-                status = _normalize_status(child.get("status") or child.get("india_status"))
-                if status not in {"AVAILABLE", "STRONG"}:
-                    add(child, f"{_friendly_label(child, reference)} remains {_STATUS_LABELS[status].casefold()} in the catalog overlay.", 1)
+                continue
+            status = _normalize_status(child.get("status") or child.get("india_status"))
+            if status in _BOTTLENECK_ELIGIBLE:
+                add(child, _friendly_label(child, reference), 1)
 
     candidates.sort(key=lambda item: item[:4])
     result: list[dict[str, Any]] = []
@@ -579,6 +726,7 @@ def _bottlenecks(
             continue
         seen.add(detail_key)
         status = _normalize_status(source.get("status") or source.get("india_status"))
+        public_detail = _public_bottleneck_detail(status, label, detail)
         result.append(
             {
                 "rank": len(result) + 1,
@@ -586,14 +734,11 @@ def _bottlenecks(
                 "status": status,
                 "status_label": _STATUS_LABELS[status],
                 "severity": "high" if _BOTTLENECK_PRIORITY.get(status, 8) <= 3 else "medium",
-                "detail": detail,
+                "detail": public_detail,
                 "epistemic_class": _epistemic(source),
-                "basis": _safe_detail(
-                    "No validated India capability or supply record is attached; status remains UNKNOWN."
-                    if source.get("is_reference_only")
-                    else source.get("status_basis")
-                    or "Ranked from the existing status and gap overlay; validate before acting.",
-                    320,
+                "basis": (
+                    "Current atlas status; validate the supplier, facility, specification, qualification, "
+                    "and effective capacity before acting."
                 ),
             }
         )
@@ -602,53 +747,128 @@ def _bottlenecks(
     return result
 
 
-def _localization_path(record: Mapping[str, Any], title: str) -> list[dict[str, Any]]:
-    raw = record.get("making_ladder") or record.get("making_ladder_detail") or ()
+def _frontier_questions(groups: Mapping[str, Sequence[Mapping[str, Any]]], limit: int = 6) -> list[dict[str, Any]]:
+    templates = {
+        "components": "Can {name} be sourced or made in India at the required specification and qualification?",
+        "processes": "Can {name} be performed locally at the required process window, yield, and repeatability?",
+        "equipment": "Is {name} available in India with the required accuracy, duty cycle, and service support?",
+        "materials": "Is {name} available domestically in the required grade, purity, and volume?",
+        "capabilities": "Is {name} available in India for this product's specification and qualification route?",
+        "metrology": "Can {name} be measured and accepted locally at the required tolerance?",
+        "qualification": "Can {name} be completed locally for the target customer or regulator?",
+    }
+    questions: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for group in ("components", "equipment", "processes", "materials", "capabilities", "metrology", "qualification"):
+        for item in groups.get(group, ()):
+            status = _normalize_status(item.get("status"))
+            epistemic = _text(item.get("epistemic_class")).upper()
+            if status != "UNKNOWN" and not (epistemic == "ASSUMPTION" and status in _BOTTLENECK_ELIGIBLE):
+                continue
+            name = _text(item.get("name"))
+            key = re.sub(r"[^a-z0-9]+", " ", name.casefold()).strip()
+            if not key or key in seen or name.casefold() in {"detailed product requirements", "unspecified requirement"}:
+                continue
+            seen.add(key)
+            question = templates[group].format(name=name)
+            if status == "IMPORT_DEPENDENT":
+                question = f"Which part of {name} remains import-sensitive at the required specification and scale?"
+            questions.append({
+                "question": question,
+                "subject": name,
+                "reason": "The dependency is structurally mapped, but its objective-specific India status is not verified.",
+                "status": "UNKNOWN",
+                "epistemic_class": item.get("epistemic_class") or "UNKNOWN",
+            })
+            if len(questions) >= max(1, min(int(limit), 8)):
+                return questions
+    return questions
+
+
+def _names(items: Sequence[Mapping[str, Any]], limit: int = 2) -> str:
+    labels = [_text(item.get("name")) for item in items if _text(item.get("name"))][:limit]
+    if len(labels) > 1:
+        return f"{', '.join(labels[:-1])} and {labels[-1]}"
+    return labels[0] if labels else ""
+
+
+def _localization_path(
+    record: Mapping[str, Any],
+    title: str,
+    groups: Mapping[str, Sequence[Mapping[str, Any]]],
+    systems: Sequence[Mapping[str, Any]],
+    bottlenecks: Sequence[Mapping[str, Any]],
+) -> list[dict[str, Any]]:
+    all_requirements = [item for group in groups.values() for item in group]
+    available = [item for item in all_requirements if _normalize_status(item.get("status")) in {"AVAILABLE", "STRONG"}]
+    constrained = [item for item in all_requirements if _normalize_status(item.get("status")) in {"IMPORT_DEPENDENT", "MISSING", "SCALE_LIMITED"}]
+    quality = [*groups.get("metrology", ()), *groups.get("qualification", ())]
+    first_systems = _names(systems, 2)
+    product = _humanize_text(title)
     steps: list[dict[str, Any]] = []
-    for index, raw_step in enumerate(_iter_refs(raw), start=1):
-        if isinstance(raw_step, Mapping):
-            action = _text(raw_step.get("action") or "DEVELOP").upper()
-            purpose = raw_step.get("purpose") or raw_step.get("text") or raw_step.get("step") or ""
-            condition = raw_step.get("condition") or ""
-            required = bool(raw_step.get("required", True))
-            sequence = raw_step.get("sequence") or index
-            stage = _text(raw_step.get("stage"))
-            allowed = raw_step.get("allowed_actions") or ()
-        else:
-            action = _text(getattr(raw_step, "action", "DEVELOP")).upper()
-            purpose = getattr(raw_step, "purpose", "")
-            condition = getattr(raw_step, "condition", "")
-            required = True
-            sequence = getattr(raw_step, "sequence", index)
-            stage = ""
-            allowed = ()
-        if action not in {"IMPORT", "DEVELOP", "LICENSE", "JV", "BUILD", "SUBSTITUTE", "REDESIGN", "R&D"}:
-            action = "DEVELOP"
-        try:
-            sequence_value = int(sequence)
-        except (TypeError, ValueError):
-            sequence_value = index
-        clean_purpose = _safe_detail(purpose, 360)
-        if not clean_purpose:
-            clean_purpose = f"Advance the route for {_humanize_text(title)}."
-        steps.append(
-            {
-                "sequence": sequence_value,
-                "action": action,
-                "phase": _STAGE_LABELS.get(stage, _humanize_text(stage)) if stage else "Next route step",
-                "purpose": clean_purpose,
-                "condition": _safe_detail(condition, 360),
-                "required": required,
-                "allowed_actions": [
-                    _text(candidate).upper()
-                    for candidate in _iter_refs(allowed)
-                    if _text(candidate).upper() in {"IMPORT", "DEVELOP", "LICENSE", "JV", "BUILD", "SUBSTITUTE", "REDESIGN", "R&D"}
-                ],
-            }
-        )
-    steps.sort(key=lambda item: (item["sequence"], item["action"], item["purpose"]))
-    # Keep the route concise.  The full ladder remains available through the
-    # existing record endpoint; this product surface should fit the first view.
+
+    start_focus = _names(available, 2) or first_systems
+    steps.append({
+        "sequence": 1,
+        "action": "BUILD",
+        "phase": _STAGE_LABELS["start_locally"],
+        "purpose": (
+            f"Begin with the mapped local base around {start_focus}, then define a narrow assembly and integration boundary."
+            if available else
+            f"Start by defining the fabrication, assembly, and integration boundary for {product} around {start_focus or 'its mapped architecture'}."
+        ),
+        "condition": "Confirm specification, supplier readiness, and acceptance criteria before treating any item as locally production-ready.",
+        "required": True,
+        "status": available[0].get("status") if available else "UNKNOWN",
+    })
+    source_focus = _names(constrained, 3) or _names(groups.get("equipment", ()), 3)
+    if source_focus:
+        steps.append({
+            "sequence": len(steps) + 1,
+            "action": "IMPORT",
+            "phase": _STAGE_LABELS["source_initially"],
+            "purpose": f"Keep {source_focus} open to initial external sourcing while local integration evidence develops.",
+            "condition": "This is a starting boundary, not a claim that imports are available, allocated, or qualified.",
+            "required": True,
+            "status": constrained[0].get("status") if constrained else "UNKNOWN",
+        })
+    quality_focus = _names(quality, 3)
+    steps.append({
+        "sequence": len(steps) + 1,
+        "action": "DEVELOP",
+        "phase": _STAGE_LABELS["integrate_and_test"],
+        "purpose": (
+            f"Establish assembly, inspection, and acceptance around {quality_focus}."
+            if quality_focus else
+            f"Create a product-specific integration, inspection, and acceptance test for {product}."
+        ),
+        "condition": "Do not claim production readiness until product-specific acceptance and qualification gates pass.",
+        "required": True,
+        "status": quality[0].get("status") if quality else "UNKNOWN",
+    })
+    if bottlenecks:
+        focus = _text(bottlenecks[0].get("detail") or bottlenecks[0].get("name"))
+        steps.append({
+            "sequence": len(steps) + 1,
+            "action": "DEVELOP",
+            "phase": _STAGE_LABELS["localize_next"],
+            "purpose": f"Localize or redesign around {focus} after the initial integration route is stable.",
+            "condition": "Prioritize this only after verifying that it remains decision-critical for the chosen specification.",
+            "required": True,
+            "status": bottlenecks[0].get("status") or "UNKNOWN",
+        })
+    later = [item for item in groups.get("capabilities", ()) if _normalize_status(item.get("status")) != "AVAILABLE"]
+    later_focus = _names(later, 2)
+    if later_focus:
+        steps.append({
+            "sequence": len(steps) + 1,
+            "action": "R&D",
+            "phase": _STAGE_LABELS["develop_later"],
+            "purpose": f"Deepen {later_focus} once demand, interfaces, and the qualification route are stable.",
+            "condition": "Treat this as capability development; licensing or equipment purchase alone does not establish local know-how.",
+            "required": False,
+            "status": later[0].get("status") or "UNKNOWN",
+        })
     return steps[:6]
 
 
@@ -674,12 +894,15 @@ def _link_items(record: Mapping[str, Any], catalog: IndiaCatalog | None, relatio
 def _evidence_summary(record: Mapping[str, Any]) -> list[dict[str, Any]]:
     epistemic = _epistemic(record)
     status = _normalize_status(record.get("status") or record.get("india_status"))
-    basis = _safe_detail(
+    basis = _public_record_text(
         "No validated India capability or supply record is attached; status remains UNKNOWN."
         if record.get("is_reference_only")
         else record.get("status_basis")
         or "No status basis was attached; keep the result UNKNOWN.",
-        420,
+        fallback=(
+            "The current atlas establishes a first-order India status, but the product-specific supplier, "
+            "facility, qualification, and effective-capacity evidence still needs validation."
+        ),
     )
     return [
         {
@@ -790,6 +1013,7 @@ class BuildabilityViewModel(Mapping[str, Any]):
     major_systems: Sequence[Mapping[str, Any]]
     critical_bottlenecks: Sequence[Mapping[str, Any]]
     localization_path: Sequence[Mapping[str, Any]]
+    frontier_questions: Sequence[Mapping[str, Any]]
     components: Sequence[Mapping[str, Any]]
     processes: Sequence[Mapping[str, Any]]
     equipment: Sequence[Mapping[str, Any]]
@@ -798,6 +1022,7 @@ class BuildabilityViewModel(Mapping[str, Any]):
     metrology: Sequence[Mapping[str, Any]]
     qualification: Sequence[Mapping[str, Any]]
     capabilities: Sequence[Mapping[str, Any]]
+    industrial_environment: Sequence[Mapping[str, Any]]
     upstream: Sequence[Mapping[str, Any]]
     downstream: Sequence[Mapping[str, Any]]
     unlocks: Sequence[Mapping[str, Any]]
@@ -823,6 +1048,7 @@ class BuildabilityViewModel(Mapping[str, Any]):
             "major_systems": deepcopy(list(self.major_systems)),
             "critical_bottlenecks": deepcopy(list(self.critical_bottlenecks)),
             "localization_path": deepcopy(list(self.localization_path)),
+            "frontier_questions": deepcopy(list(self.frontier_questions)),
             "components": deepcopy(list(self.components)),
             "processes": deepcopy(list(self.processes)),
             "equipment": deepcopy(list(self.equipment)),
@@ -831,6 +1057,7 @@ class BuildabilityViewModel(Mapping[str, Any]):
             "metrology": deepcopy(list(self.metrology)),
             "qualification": deepcopy(list(self.qualification)),
             "capabilities": deepcopy(list(self.capabilities)),
+            "industrial_environment": deepcopy(list(self.industrial_environment)),
             "upstream": deepcopy(list(self.upstream)),
             "downstream": deepcopy(list(self.downstream)),
             "unlocks": deepcopy(list(self.unlocks)),
@@ -875,7 +1102,7 @@ def compose_buildability_view_model(
     catalog = catalog or get_catalog()
     record = _resolve_subject(subject, catalog)
     title = _friendly_label(record, "Selected industrial product")
-    variant = _safe_detail(record.get("variant_label") or "", 180)
+    variant = _public_qualifier(record, title)
     if variant.casefold() == title.casefold():
         variant = ""
     domain = _safe_detail(record.get("domain") or "Shared industrial foundations", 180)
@@ -885,6 +1112,9 @@ def compose_buildability_view_model(
     if category.casefold() == "reference primitive":
         category = "Industrial family bridge"
     groups = _requirement_groups(record, catalog)
+    systems = _major_systems(record, catalog, groups)
+    bottlenecks = _bottlenecks(record, catalog, title, limit=bottleneck_limit)
+    frontier_questions = _frontier_questions(groups)
     links = {
         relation: _link_items(record, catalog, relation)
         for relation in ("upstream", "downstream", "related")
@@ -918,9 +1148,10 @@ def compose_buildability_view_model(
             720,
         ),
         buildability=_buildability(record, catalog),
-        major_systems=_major_systems(record, catalog, groups),
-        critical_bottlenecks=_bottlenecks(record, catalog, title, limit=bottleneck_limit),
-        localization_path=_localization_path(record, title),
+        major_systems=systems,
+        critical_bottlenecks=bottlenecks,
+        localization_path=_localization_path(record, title, groups, systems, bottlenecks),
+        frontier_questions=frontier_questions,
         components=groups["components"],
         processes=groups["processes"],
         equipment=groups["equipment"],
@@ -929,6 +1160,7 @@ def compose_buildability_view_model(
         metrology=groups["metrology"],
         qualification=groups["qualification"],
         capabilities=groups["capabilities"],
+        industrial_environment=_industrial_environment(record, catalog),
         upstream=links["upstream"],
         downstream=downstream,
         unlocks=deepcopy(downstream),

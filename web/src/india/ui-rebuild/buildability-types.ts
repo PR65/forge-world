@@ -84,6 +84,14 @@ export interface BuildabilityPathStep extends BuildabilityItem {
   allowedActions?: string[];
 }
 
+export interface BuildabilityQuestion {
+  question: string;
+  subject?: string | null;
+  reason?: string | null;
+  status?: BuildabilityStatus | null;
+  epistemicClass?: string | null;
+}
+
 export interface BuildabilityFacility extends BuildabilityItem {
   location?: string | null;
   strengthAreas?: string[];
@@ -133,6 +141,8 @@ export interface BuildabilitySidebarSummary {
 
 export interface BuildabilityViewModel {
   title: string;
+  qualifier?: string | null;
+  internalCanonicalName?: string | null;
   domain?: string | null;
   kind?: string | null;
   category?: string | null;
@@ -143,6 +153,7 @@ export interface BuildabilityViewModel {
   requirements?: BuildabilityRequirementGroup[];
   criticalBottlenecks?: BuildabilityBottleneck[];
   localizationPath?: BuildabilityPathStep[];
+  frontierQuestions?: BuildabilityQuestion[];
   components?: BuildabilityItem[];
   processes?: BuildabilityItem[];
   equipment?: BuildabilityItem[];

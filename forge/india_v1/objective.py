@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import asdict, dataclass
-from typing import Any, Mapping
+from typing import Any, Mapping, Sequence
 
 from .catalog import IndiaCatalog, get_catalog
 from .view_model import compose_buildability_view_model
@@ -80,11 +80,74 @@ _MATCH_BASIS = {
     "related": "Related industrial family",
 }
 
+# Resolver-only subject vocabulary.  Catalog search intentionally indexes
+# explanatory and dependency text for discovery; objective resolution needs a
+# stricter notion of what a record *is*.  These reusable family anchors are
+# therefore evaluated against the query subject and the record's family label,
+# never against uses, requirements, or dependency prose.
+_SUBJECT_FAMILY_RULES: tuple[tuple[str, int, tuple[str, ...], tuple[str, ...]], ...] = (
+    ("mri", 100, ("mri", "magnetic resonance imaging"), ("07",)),
+    ("ct", 100, ("ct scanner", "computed tomography"), ("07",)),
+    ("freeze_dryer", 90, ("freeze dryer", "freeze drier", "lyophilizer"), ("07", "08")),
+    ("cnc", 90, ("cnc", "computer numerical control", "machining center", "machining centre"), ("05", "12")),
+    ("reaction_wheel", 90, ("reaction wheel",), ("01",)),
+    ("traction_inverter", 90, ("traction inverter",), ("09",)),
+    ("hydraulic_breaker", 90, ("hydraulic breaker",), ("10",)),
+    ("grain_sorter", 90, ("grain colour sorter", "grain color sorter", "grain sorter"), ("08",)),
+    ("semiconductor_equipment", 85, ("semiconductor equipment", "wafer equipment"), ("04",)),
+    ("battery", 70, ("battery", "batteries", "energy storage"), ("03", "09")),
+    ("bearing", 70, ("bearing", "bearings"), ("05", "12")),
+    ("motor", 70, ("motor", "motors"), ("05", "09", "10")),
+    ("pump", 70, ("pump", "pumps"), ("05", "06", "10")),
+    ("compressor", 70, ("compressor", "compressors", "blower", "blowers"), ("05", "12")),
+    ("transformer", 70, ("transformer", "transformers"), ("03",)),
+    ("robot", 70, ("robot", "robots", "robotic", "robotics"), ("05",)),
+    ("packaging", 70, ("packaging", "packer", "packers"), ("11", "05")),
+    ("textile", 70, ("textile", "loom", "looms", "weaving"), ("11",)),
+    ("furnace", 70, ("furnace", "furnaces", "kiln", "kilns"), ("06", "10")),
+    ("aircraft", 60, ("aircraft", "airplane", "aeroplane"), ("01",)),
+    ("agricultural_machine", 60, ("agricultural", "agriculture", "tractor", "farm machinery"), ("08", "09")),
+    ("dialysis", 60, ("dialysis", "hemodialysis", "dialysis machine"), ("07",)),
+    # Generic scanner is deliberately lower-priority than a named modality.
+    # Thus "MRI scanner" is MRI, while an unqualified optical/document scanner
+    # cannot silently become a medical imaging system.
+    ("scanner", 10, ("scanner", "scanners"), ()),
+)
+
+_RESOLUTION_LOW_INFORMATION = {
+    "a",
+    "an",
+    "and",
+    "build",
+    "center",
+    "centre",
+    "equipment",
+    "industrial",
+    "machine",
+    "machines",
+    "machinery",
+    "make",
+    "manufacture",
+    "of",
+    "product",
+    "products",
+    "system",
+    "systems",
+    "the",
+    "unit",
+    "units",
+}
+_PRODUCT_SUBJECT_FAMILIES = frozenset(rule[0] for rule in _SUBJECT_FAMILY_RULES)
+_PRODUCT_KINDS = {"PRODUCT", "EQUIPMENT"}
+_MIN_DIRECT_COVERAGE = 0.50
+_MIN_CANDIDATE_MARGIN = 18.0
+
 # Query-only family bridges. These do not add atlas records or assert that the
 # requested subtype is equivalent to the family; they only make a useful,
 # confirmation-required partial result possible when the exact subtype is not
 # mapped. Rules are deliberately broad industrial families, not benchmark IDs.
 _FAMILY_FALLBACKS = (
+    (re.compile(r"\btraction inverter\b", re.I), "motor drive"),
     (re.compile(r"\b(?:lathe|boring mill|milling machine|drilling machine|grinder|edm|rotary table)\b", re.I), "CNC machining center"),
     (re.compile(r"\b(?:pump)\b", re.I), "industrial centrifugal pump"),
     (re.compile(r"\b(?:compressor|blower)\b", re.I), "industrial compressor"),
@@ -250,6 +313,90 @@ def _retrieval_query(product_query: str) -> str:
     return _clean(query)
 
 
+def _subject_words(value: Any) -> set[str]:
+    words = re.findall(r"[a-z0-9]+", str(value or "").casefold().replace("&", " and "))
+    normalized: set[str] = set()
+    for word in words:
+        if word in _RESOLUTION_LOW_INFORMATION:
+            continue
+        if len(word) > 4 and word.endswith("ies"):
+            word = f"{word[:-3]}y"
+        elif len(word) > 4 and word.endswith("s") and not word.endswith("ss"):
+            word = word[:-1]
+        normalized.add(word)
+    return normalized
+
+
+def _subject_families(value: Any) -> set[str]:
+    text = re.sub(r"[^a-z0-9]+", " ", str(value or "").casefold()).strip()
+    matches: list[tuple[int, str]] = []
+    for family, priority, aliases, _domains in _SUBJECT_FAMILY_RULES:
+        if any(re.search(rf"\b{re.escape(alias)}\b", text) for alias in aliases):
+            matches.append((priority, family))
+    if not matches:
+        return set()
+    highest = max(priority for priority, _family in matches)
+    return {family for priority, family in matches if priority == highest}
+
+
+def _record_subject(record: Mapping[str, Any]) -> str:
+    # Family label is intentionally first: generated variant axes may contain
+    # words such as "battery electric" that describe a tractor configuration,
+    # not the subject requested by the user.
+    label = str(record.get("family_label") or record.get("display_name") or record.get("canonical_name") or "")
+    return re.split(r"\s+[—–]\s+", label, maxsplit=1)[0].strip()
+
+
+def _semantic_hit(
+    query: str,
+    hit: Mapping[str, Any],
+) -> dict[str, Any] | None:
+    record = hit.get("record") if isinstance(hit.get("record"), Mapping) else {}
+    if record.get("is_reference_only"):
+        return None
+    subject = _record_subject(record)
+    query_words = _subject_words(query)
+    subject_words = _subject_words(subject)
+    query_families = _subject_families(query)
+    subject_families = _subject_families(subject)
+    kind = str(record.get("kind") or "").upper()
+
+    # Objective queries are product-like unless the person explicitly asks
+    # for a process, material, or capability.  A dependency bridge must not be
+    # promoted into the product merely because its technical name is exact.
+    explicit_non_product = bool(re.search(r"\b(?:process|material|capability|technology|skill)\b", query, re.I))
+    if not explicit_non_product and kind and kind not in _PRODUCT_KINDS:
+        return None
+
+    if query_families:
+        if not subject_families or query_families.isdisjoint(subject_families):
+            return None
+
+    direct_overlap = len(query_words & subject_words)
+    direct_coverage = direct_overlap / max(1, len(query_words))
+    family_compatible = bool(query_families & subject_families)
+    match_type = str(hit.get("match_type") or "")
+    if not family_compatible and direct_coverage < _MIN_DIRECT_COVERAGE:
+        return None
+    if match_type == "related" and direct_coverage < _MIN_DIRECT_COVERAGE:
+        return None
+
+    enriched = dict(hit)
+    enriched["subject_coverage"] = direct_coverage
+    enriched["subject_families"] = sorted(subject_families)
+    enriched["family_compatible"] = family_compatible
+    return enriched
+
+
+def _semantic_hits(query: str, hits: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    result: list[dict[str, Any]] = []
+    for hit in hits:
+        accepted = _semantic_hit(query, hit)
+        if accepted is not None:
+            result.append(accepted)
+    return result
+
+
 def _candidate(hit: Mapping[str, Any], catalog: IndiaCatalog) -> dict[str, Any]:
     record = hit["record"]
     raw_title = str(
@@ -260,9 +407,20 @@ def _candidate(hit: Mapping[str, Any], catalog: IndiaCatalog) -> dict[str, Any]:
     ).strip()
     title = re.split(r"\s+[—–]\s+", raw_title, maxsplit=1)[0]
     title = re.sub(r"^reference\s+primitive\s*:\s*", "", title, flags=re.IGNORECASE)
+    title = re.sub(
+        r"^(?:(?:cross-domain|foundational|infrastructure)\s+equipment\s*:\s*|"
+        r"(?:foundational|infrastructure|equipment|product|system)\s+(?=[a-z]))",
+        "",
+        title,
+        flags=re.IGNORECASE,
+    )
     title = _clean(title.replace("_", " ")) or "Mapped industrial family"
     status = str(record.get("status") or "UNKNOWN").upper()
     summary = str(record.get("explanation") or record.get("use") or "").strip()
+    if re.search(r"\b(?:primitive|deduplicated|source pack|canonical record)\b", summary, re.IGNORECASE):
+        summary = str(record.get("use") or "").strip()
+    if re.search(r"\b(?:primitive|deduplicated|source pack|canonical record)\b", summary, re.IGNORECASE):
+        summary = f"Mapped {str(record.get('kind') or 'industrial capability').casefold()} in the India industrial atlas."
     if len(summary) > 320:
         summary = summary[:317].rstrip() + "..."
     return {
@@ -282,7 +440,7 @@ def _classification(hit: Mapping[str, Any] | None) -> str:
     if hit is None:
         return "UNRESOLVED"
     match_type = str(hit.get("match_type") or "")
-    coverage = float(hit.get("coverage") or 0.0)
+    coverage = min(float(hit.get("coverage") or 0.0), float(hit.get("subject_coverage") or 1.0))
     if match_type == "exact" and coverage >= 0.99:
         return "EXACT"
     if match_type in {"phrase", "all_tokens", "alias"} and coverage >= 0.90:
@@ -300,15 +458,16 @@ def resolve_objective(value: str, catalog: IndiaCatalog | None = None, *, candid
     catalog = catalog or get_catalog()
     objective = parse_objective(value)
     search_query = _retrieval_query(objective.product_query)
-    hits = (
+    raw_hits = (
         catalog.search_hits(
             search_query,
-            limit=max(1, min(int(candidate_limit), 8)),
+            limit=max(12, min(int(candidate_limit) * 6, 48)),
             include_variants=False,
         )
         if search_query
         else []
     )
+    hits = _semantic_hits(search_query, raw_hits)[: max(1, min(int(candidate_limit), 8))]
     top = hits[0] if hits else None
     classification = _classification(top)
     fallback_used = False
@@ -316,23 +475,42 @@ def resolve_objective(value: str, catalog: IndiaCatalog | None = None, *, candid
     if classification == "UNRESOLVED" and search_query:
         fallback_query = next((family for pattern, family in _FAMILY_FALLBACKS if pattern.search(search_query)), "")
         if fallback_query:
-            fallback_hits = catalog.search_hits(
+            fallback_hits = _semantic_hits(fallback_query, catalog.search_hits(
                 fallback_query,
-                limit=max(1, min(int(candidate_limit), 8)),
+                limit=max(12, min(int(candidate_limit) * 6, 48)),
                 include_variants=False,
-            )
+            ))[: max(1, min(int(candidate_limit), 8))]
             if fallback_hits and _classification(fallback_hits[0]) in {"EXACT", "STRONG", "NEAREST"}:
                 hits = fallback_hits
                 top = hits[0]
                 classification = "NEAREST"
                 fallback_used = True
 
+    # A narrow score margin between different families is a confirmation
+    # signal, not permission to auto-select. Exact subject aliases remain exact.
+    if classification == "STRONG" and len(hits) > 1:
+        top_family = str(top.get("family_key") or top.get("id") or "") if top else ""
+        second_family = str(hits[1].get("family_key") or hits[1].get("id") or "")
+        margin = float(top.get("score") or 0.0) - float(hits[1].get("score") or 0.0) if top else 0.0
+        if top_family != second_family and margin < _MIN_CANDIDATE_MARGIN:
+            classification = "NEAREST"
+
     if classification == "UNRESOLVED":
         # Do not surface a low-overlap result merely because the catalog has a
         # domain prior for one word in the objective.
         candidates: list[dict[str, Any]] = []
     else:
-        candidates = [_candidate(hit, catalog) for hit in hits[: max(1, min(int(candidate_limit), 8))]]
+        candidates = []
+        seen_titles: set[str] = set()
+        for hit in hits[: max(1, min(int(candidate_limit) * 2, 16))]:
+            candidate = _candidate(hit, catalog)
+            title_key = re.sub(r"[^a-z0-9]+", " ", candidate["title"].casefold()).strip()
+            if not title_key or title_key in seen_titles:
+                continue
+            seen_titles.add(title_key)
+            candidates.append(candidate)
+            if len(candidates) >= max(1, min(int(candidate_limit), 8)):
+                break
         if fallback_used:
             candidates = [{**candidate, "match_basis": "Nearest mapped industrial family"} for candidate in candidates]
 

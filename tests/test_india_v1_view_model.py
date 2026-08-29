@@ -43,6 +43,7 @@ def _assert_public_labels_are_clean(payload: Mapping[str, object]) -> None:
     for forbidden in (
         "reference primitive", "shared:", "product:", "india-v1:", "node:",
         "source pack names a primitive", "canonical v1 record", "record_id", "canonical_name",
+        "curated shared-foundation baseline", "category is visible", "reusable industrial concept",
     ):
         assert forbidden not in lowered
     # Field names intentionally use a stable JSON contract; this check is for
@@ -61,9 +62,13 @@ def test_five_representative_products_compose_one_generalized_view() -> None:
         assert first == second
         assert first["title"] == expected_title
         assert first["plain_summary"]
-        assert first["major_systems"]
-        assert first["critical_bottlenecks"]
+        # Product architecture is emitted only when it is explicitly mapped or
+        # covered by a bounded physical scaffold; requirement headings and gap
+        # prose must never masquerade as subsystems.
+        assert first["major_systems"] or any(first[group] for group in ("processes", "equipment", "materials", "capabilities"))
         assert len(first["critical_bottlenecks"]) <= 7
+        assert all(item["status"] != "UNKNOWN" for item in first["critical_bottlenecks"])
+        assert isinstance(first["frontier_questions"], list)
         assert [step["sequence"] for step in first["localization_path"]] == sorted(
             step["sequence"] for step in first["localization_path"]
         )
@@ -82,6 +87,21 @@ def test_five_representative_products_compose_one_generalized_view() -> None:
         assert sum(buildability[key] for key in ("available", "partial_or_import_dependent", "missing", "unknown")) == buildability["evaluated_node_count"]
         assert buildability["overall_index"] is None
         _assert_public_labels_are_clean(first)
+
+
+def test_unknown_dependencies_become_questions_not_bottlenecks() -> None:
+    payload = compose_buildability_view_model("freeze dryer").to_dict()
+    assert payload["frontier_questions"]
+    assert all("UNKNOWN" not in item["question"] for item in payload["frontier_questions"])
+    assert all(item["status"] != "UNKNOWN" for item in payload["critical_bottlenecks"])
+
+
+def test_generic_industrial_environment_never_masquerades_as_product_architecture() -> None:
+    payload = compose_buildability_view_model("battery energy storage system").to_dict()
+    systems = " ".join(item["name"] for item in payload["major_systems"]).casefold()
+    for forbidden in ("industrial infrastructure base", "industrial power supply", "industrial logistics", "water and utility"):
+        assert forbidden not in systems
+    assert "battery cells and modules" in systems
 
 
 def test_view_preserves_typed_links_and_is_honest_about_absent_facilities() -> None:

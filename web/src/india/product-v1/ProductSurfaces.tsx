@@ -1,8 +1,9 @@
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
   cleanDisplayText,
   cleanNarrative,
   deriveRequirementGroups,
+  displayItemQualifier,
   displayItemTitle,
   statusLabel,
   statusTone,
@@ -36,8 +37,9 @@ function safeCopy(value: string | null | undefined, fallback: string): string {
   return cleanNarrative(value, fallback);
 }
 
-function Status({ item, compact = false }: { item: BuildabilityItem; compact?: boolean }) {
+function Status({ item, compact = false, showUnknown = false }: { item: BuildabilityItem; compact?: boolean; showUnknown?: boolean }) {
   const tone = statusTone(item.status);
+  if (tone === "unknown" && !showUnknown) return null;
   return (
     <span className={`fip-status fip-status--${tone} ${compact ? "fip-status--compact" : ""}`}>
       <span aria-hidden="true" className="fip-status__dot" />
@@ -79,22 +81,25 @@ export function IndustrialDecomposition({
 }: IndustrialDecompositionProps) {
   const systems = viewModel.majorSystems ?? [];
   const groups = useMemo(() => deriveRequirementGroups(viewModel), [viewModel]);
-  const [localSystemKey, setLocalSystemKey] = useState(() => systems[0] ? keyFor(systems[0]) : null);
+  const [localSystemKey, setLocalSystemKey] = useState<string | null>(null);
+  const [hoveredSystemKey, setHoveredSystemKey] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<"STRUCTURE" | "BUILDABILITY">("STRUCTURE");
   const [showAllSystems, setShowAllSystems] = useState(false);
   const [showAllGroups, setShowAllGroups] = useState(false);
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     if (selectedSystemKey !== undefined) return;
-    if (!systems.some((system, index) => keyFor(system, index) === localSystemKey)) {
-      setLocalSystemKey(systems[0] ? keyFor(systems[0]) : null);
+    if (localSystemKey && !systems.some((system, index) => keyFor(system, index) === localSystemKey)) {
+      setLocalSystemKey(null);
     }
   }, [localSystemKey, selectedSystemKey, systems]);
 
   const activeSystemKey = selectedSystemKey === undefined ? localSystemKey : selectedSystemKey;
-  const selectedSystem = systems.find((system, index) => keyFor(system, index) === activeSystemKey) ?? systems[0] ?? null;
+  const selectedSystem = systems.find((system, index) => keyFor(system, index) === activeSystemKey) ?? null;
   const visibleSystems = showAllSystems ? systems : systems.slice(0, maxSystems);
-  const systemGroups = selectedSystem?.requirementGroups?.length ? selectedSystem.requirementGroups : groups;
+  const systemGroups = (selectedSystem?.requirementGroups?.length ? selectedSystem.requirementGroups : groups)
+    .filter((group) => (group.items?.length ?? group.count ?? 0) > 0);
   const visibleGroups = showAllGroups ? systemGroups : systemGroups.slice(0, maxGroups);
 
   function selectSystem(system: BuildabilityNode, index: number) {
@@ -119,21 +124,32 @@ export function IndustrialDecomposition({
           <p className="fip-eyebrow">Industrial decomposition</p>
           <h2 id="fip-decomposition-title">What has to work together</h2>
         </div>
-        <p className="fip-section-note">Select a system to inspect its important industrial requirements.</p>
+        <div className="fip-decomposition__controls" aria-label="Decomposition view">
+          {(["STRUCTURE", "BUILDABILITY"] as const).map((mode) => (
+            <button aria-pressed={viewMode === mode} key={mode} onClick={() => setViewMode(mode)} type="button">
+              {mode === "STRUCTURE" ? "Structure" : "Buildability"}
+            </button>
+          ))}
+        </div>
       </header>
 
-      <div className="fip-decomposition__plane">
+      <div className={`fip-decomposition__plane is-${viewMode.toLowerCase()}`}>
         <button
-          className="fip-root-node"
+          aria-pressed={!selectedSystem}
+          className={`fip-root-node ${!selectedSystem ? "is-active" : ""}`}
           type="button"
-          onClick={() => onProductSelect?.({ title: viewModel.title, kind: viewModel.kind, summary: viewModel.plainSummary })}
+          onClick={() => {
+            setLocalSystemKey(null);
+            onProductSelect?.({ title: viewModel.title, kind: viewModel.kind, summary: viewModel.plainSummary });
+          }}
         >
           <span>{cleanDisplayText(viewModel.kind, "Product")}</span>
           <strong>{cleanDisplayText(viewModel.title, "Selected product")}</strong>
+          {viewModel.qualifier ? <em>{cleanDisplayText(viewModel.qualifier, "")}</em> : null}
           <small>{safeCopy(viewModel.plainSummary, "A first-order industrial product map.")}</small>
         </button>
 
-        <div className="fip-connector" aria-hidden="true" />
+        <div className="fip-decomposition__axis" aria-hidden="true"><span /></div>
 
         {systems.length ? (
           <div className="fip-system-grid" aria-label="Major systems">
@@ -143,20 +159,26 @@ export function IndustrialDecomposition({
               return (
                 <button
                   aria-pressed={active}
-                  className={`fip-system-node ${active ? "is-active" : ""}`}
+                  className={`fip-system-node is-${statusTone(system.status)} ${active ? "is-active" : ""} ${hoveredSystemKey && hoveredSystemKey !== systemKey ? "is-dimmed" : ""}`}
                   key={systemKey}
                   onClick={() => selectSystem(system, index)}
+                  onMouseEnter={() => setHoveredSystemKey(systemKey)}
+                  onMouseLeave={() => setHoveredSystemKey(null)}
                   type="button"
                 >
                   <span className="fip-system-node__number">{String(index + 1).padStart(2, "0")}</span>
                   <strong>{safeTitle(system)}</strong>
-                  <Status compact item={system} />
+                  {displayItemQualifier(system) ? <small>{displayItemQualifier(system)}</small> : null}
+                  {viewMode === "BUILDABILITY" ? <Status compact item={system} /> : null}
                 </button>
               );
             })}
           </div>
         ) : (
-          <Empty>Major systems are not yet mapped for this product.</Empty>
+          <div className="fip-architecture-gap">
+            <strong>Detailed subsystem architecture is not yet mapped for this product.</strong>
+            <p>The manufacturing requirements below remain useful, but they are not being presented as physical components.</p>
+          </div>
         )}
 
         {systems.length > maxSystems ? (
@@ -167,7 +189,7 @@ export function IndustrialDecomposition({
 
         <div className="fip-requirements-head">
           <div>
-            <span>Important industrial requirements</span>
+            {selectedSystem ? <button className="fip-back-action" onClick={() => setLocalSystemKey(null)} type="button">← Back to product</button> : <span>Important industrial requirements</span>}
             <strong>{selectedSystem ? safeTitle(selectedSystem) : "Product-wide requirements"}</strong>
           </div>
           <small>Open a class to see mapped processes, equipment, materials and capabilities.</small>
@@ -192,7 +214,7 @@ export function IndustrialDecomposition({
                       <strong>{safeTitle(group)}</strong>
                       <small>{items.length || group.count || 0} mapped</small>
                     </span>
-                    <Status compact item={group} />
+                    {viewMode === "BUILDABILITY" ? <Status compact item={group} /> : null}
                     <span aria-hidden="true" className="fip-chevron">{expanded ? "−" : "+"}</span>
                   </button>
                   {expanded ? (
@@ -200,8 +222,8 @@ export function IndustrialDecomposition({
                       <div className="fip-requirement-items">
                         {visibleItems.map((item, itemIndex) => (
                           <button key={keyFor(item, itemIndex)} onClick={() => onItemSelect?.(item)} type="button">
-                            <span>{safeTitle(item)}</span>
-                            <Status compact item={item} />
+                            <span><strong>{safeTitle(item)}</strong>{displayItemQualifier(item) ? <small>{displayItemQualifier(item)}</small> : null}</span>
+                            {viewMode === "BUILDABILITY" ? <Status compact item={item} /> : null}
                           </button>
                         ))}
                       </div>
@@ -252,7 +274,7 @@ function difficultyFor(selection: WhySelection): string {
   if (tone === "partial") return "The mapped state indicates a partial, scale-limited or import-dependent capability.";
   if (tone === "available") return "The capability appears broadly available, but objective-specific scale and qualification are not established here.";
   if (tone === "conflicted") return "The mapped evidence conflicts, so the capability position cannot be stated cleanly.";
-  return "The industrial difficulty is not resolved in the current map. It remains UNKNOWN.";
+  return "FORGE knows this dependency belongs in the route, but its exact India status at the required specification is not yet verified.";
 }
 
 function firstActionFor(selection: WhySelection): string {
@@ -287,13 +309,25 @@ export function WhyDrawer({
   onGoDeeper,
   onAddToBuildPath,
 }: WhyDrawerProps) {
+  const dialogRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
     if (!open) return;
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") onClose();
+      if (event.key === "Tab" && dialogRef.current) {
+        const focusable = Array.from(dialogRef.current.querySelectorAll<HTMLElement>('button, [href], input, summary, [tabindex]:not([tabindex="-1"])'))
+          .filter((element) => !element.hasAttribute("disabled"));
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
     }
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    requestAnimationFrame(() => dialogRef.current?.querySelector<HTMLElement>("button")?.focus());
+    return () => { window.removeEventListener("keydown", onKeyDown); previousFocus?.focus(); };
   }, [onClose, open]);
 
   if (!open || !selection) return null;
@@ -302,7 +336,7 @@ export function WhyDrawer({
   return (
     <div className="fip-drawer-layer">
       <button aria-label="Close WHY inspector" className="fip-drawer-scrim" onClick={onClose} type="button" />
-      <aside aria-labelledby="fip-why-title" aria-modal="true" className="fip-why" role="dialog">
+      <aside aria-labelledby="fip-why-title" aria-modal="true" className="fip-why" ref={dialogRef} role="dialog">
         <header className="fip-why__head">
           <div>
             <p className="fip-eyebrow">Why</p>
@@ -334,7 +368,7 @@ export function WhyDrawer({
         </div>
 
         <div className="fip-why__section">
-          <h3>Main industrial difficulty</h3>
+          <h3>{statusTone(item.status) === "unknown" ? "What remains uncertain" : "Main industrial difficulty"}</h3>
           <p>{difficultyFor(selection)}</p>
         </div>
 
@@ -383,6 +417,8 @@ function firstNames(items: BuildabilityItem[], limit = 2): string {
 
 /** Compose a product-specific staged path from the current presentation graph. */
 function specificBuildPath(viewModel: BuildabilityViewModel): BuildabilityPathStep[] {
+  const mapped = (viewModel.localizationPath ?? []).filter((step) => safeTitle(step) && (step.summary || step.note));
+  if (mapped.length) return mapped.slice(0, 6);
   const product = cleanDisplayText(viewModel.title, "the selected product");
   const all = [
     ...(viewModel.majorSystems ?? []), ...(viewModel.components ?? []), ...(viewModel.processes ?? []),
@@ -391,9 +427,6 @@ function specificBuildPath(viewModel: BuildabilityViewModel): BuildabilityPathSt
   const available = all.filter((item) => statusTone(item.status) === "available");
   const constrained = all.filter((item) => ["partial", "missing"].includes(statusTone(item.status)));
   const quality = [...(viewModel.metrology ?? []), ...(viewModel.qualification ?? [])];
-  const bottleneck = viewModel.criticalBottlenecks?.[0];
-  const harder = [...(viewModel.capabilities ?? []), ...(viewModel.equipment ?? []), ...(viewModel.materials ?? [])]
-    .find((item) => statusTone(item.status) !== "available");
   const route: BuildabilityPathStep[] = [];
 
   route.push({
@@ -415,22 +448,6 @@ function specificBuildPath(viewModel: BuildabilityViewModel): BuildabilityPathSt
       : "Define product-specific inspection, acceptance and qualification gates; these are not yet separated in the mapped record.",
     action: "QUALIFY", order: route.length + 1, status: quality[0]?.status || "UNKNOWN", statusLabel: quality[0]?.statusLabel || "Unknown",
   });
-  if (bottleneck) route.push({
-    title: `Localize ${safeTitle(bottleneck)}`,
-    summary: safeCopy(bottleneck.summary || bottleneck.note, "Treat this as the first high-risk localization target after integration is stable."),
-    action: "DEVELOP", order: route.length + 1, status: bottleneck.status, statusLabel: bottleneck.statusLabel,
-  });
-  if (harder && (!bottleneck || safeTitle(harder) !== safeTitle(bottleneck))) route.push({
-    title: `Develop ${safeTitle(harder)}`,
-    summary: `Deepen the reusable capability behind ${safeTitle(harder)} only after the initial product route demonstrates demand and a qualification path.`,
-    action: "DEVELOP", order: route.length + 1, status: harder.status, statusLabel: harder.statusLabel,
-  });
-  const hasRedesign = (viewModel.localizationPath ?? []).some((step) => (step.action || "").toUpperCase() === "REDESIGN");
-  if (hasRedesign && bottleneck) route.push({
-    title: `Revisit the architecture around ${safeTitle(bottleneck)}`,
-    summary: "Use substitution or redesign only if this dependency remains binding; any alternative creates a new requirement and qualification route.",
-    action: "REDESIGN", order: route.length + 1, status: bottleneck.status, statusLabel: bottleneck.statusLabel,
-  });
   return route.slice(0, 6);
 }
 
@@ -447,7 +464,7 @@ export function BuildPathSurface({
     ...(viewModel.majorSystems ?? []), ...(viewModel.components ?? []), ...(viewModel.processes ?? []),
     ...(viewModel.equipment ?? []), ...(viewModel.materials ?? []), ...(viewModel.capabilities ?? []),
   ];
-  const explicitImports = (viewModel.imports ?? []).filter((item) => safeTitle(item) !== "Mapped Requirement");
+  const explicitImports = (viewModel.imports ?? []).filter((item) => safeTitle(item).toLowerCase() !== "mapped requirement");
   const imports = explicitImports.length
     ? explicitImports
     : typedRequirements.filter((item) => ["partial", "missing"].includes(statusTone(item.status))).slice(0, 7);
@@ -509,6 +526,18 @@ export function BuildPathSurface({
             )}
           </section>
 
+          {(viewModel.frontierQuestions ?? []).length ? (
+            <section className="fip-surface fip-build__boundary fip-build__questions">
+              <p className="fip-eyebrow">Questions to verify</p>
+              <h2>Before committing the route</h2>
+              <ul>
+                {(viewModel.frontierQuestions ?? []).slice(0, 5).map((item, index) => (
+                  <li key={`${item.question}-${index}`}>{safeCopy(item.question, "Verify the mapped requirement.")}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+
           <section className="fip-surface fip-build__boundary">
             <p className="fip-eyebrow">Develop later</p>
             <h2>Harder enabling capabilities</h2>
@@ -556,24 +585,21 @@ interface RelationshipSectionProps {
 }
 
 function RelationshipSection({ title, description, items, onItemSelect }: RelationshipSectionProps) {
+  if (!items.length) return null;
   return (
     <section className="fip-relationship">
       <header>
         <h3>{title}</h3>
         <p>{description}</p>
       </header>
-      {items.length ? (
-        <div className="fip-relationship__items">
+      <div className="fip-relationship__items">
           {items.slice(0, 10).map((item, index) => (
             <button key={keyFor(item, index)} onClick={() => onItemSelect?.(item)} type="button">
               <span>{safeTitle(item)}</span>
               <Status compact item={item} />
             </button>
           ))}
-        </div>
-      ) : (
-        <Empty>No mapped relationships in this direction yet.</Empty>
-      )}
+      </div>
     </section>
   );
 }
@@ -672,6 +698,7 @@ export function DiscoverSurface({
                 {domainItems.slice(0, 12).map((item, index) => (
                   <button key={keyFor(item, index)} onClick={() => onItemSelect?.(item)} type="button">
                     <strong>{safeTitle(item)}</strong>
+                    {displayItemQualifier(item) ? <span>{displayItemQualifier(item)}</span> : null}
                     <small>{safeCopy(item.summary, item.kind || "Mapped industrial record")}</small>
                     <Status compact item={item} />
                   </button>
@@ -688,6 +715,7 @@ export function DiscoverSurface({
             <div>
               <p className="fip-eyebrow">Current context</p>
               <h2 id="fip-context-title">{cleanDisplayText(viewModel.title, "Selected industrial product")}</h2>
+              {viewModel.qualifier ? <span className="fip-public-qualifier">{cleanDisplayText(viewModel.qualifier, "")}</span> : null}
             </div>
             <p className="fip-section-note">{safeCopy(viewModel.plainSummary, "Explore the mapped industrial relationships around this product.")}</p>
           </header>
