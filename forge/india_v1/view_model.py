@@ -22,7 +22,9 @@ import re
 import unicodedata
 from typing import Any, Iterable
 
+from .architecture import compile_product_architecture
 from .catalog import DEP_GROUPS, IndiaCatalog, get_catalog
+from .objective_models import ArchitectureNodeKind
 
 
 VIEW_MODEL_SCHEMA_VERSION = "forge.india.buildability.v1"
@@ -536,15 +538,30 @@ def _major_systems(
     catalog: IndiaCatalog | None,
     requirement_groups: Mapping[str, Sequence[Mapping[str, Any]]],
 ) -> list[dict[str, Any]]:
-    dependencies = _dependencies(record)
-    systems: list[dict[str, Any]] = []
-    for reference in dependencies.get("systems", ()):
-        row = _record_for_reference(catalog, reference)
-        if _is_industrial_environment(row):
-            continue
-        systems.append(_status_item(row, role="systems", fallback=reference))
-    if systems:
-        return _dedupe_items(systems, limit=12)
+    architecture = compile_product_architecture(record, catalog, max_depth=2)
+    physical = [
+        node
+        for node in architecture.nodes
+        if node.id != architecture.product_record_id
+        and node.kind in {ArchitectureNodeKind.PRODUCT_SYSTEM, ArchitectureNodeKind.PRODUCT_COMPONENT}
+        and node.depth <= 2
+    ]
+    if physical:
+        return _dedupe_items(
+            {
+                "name": node.label,
+                "role": "Product architecture",
+                "kind": "SYSTEM" if node.kind is ArchitectureNodeKind.PRODUCT_SYSTEM else "COMPONENT",
+                "status": _normalize_status(node.status),
+                "status_label": _STATUS_LABELS[_normalize_status(node.status)],
+                "epistemic_class": node.epistemic_class,
+                "summary": node.description or "Explicit physical node in the mapped product architecture.",
+                "basis": "Physical relationship compiled from typed India V1 record structure.",
+                "data_state": "COMPILED_PRODUCT_ARCHITECTURE",
+                "derivation_class": node.derivation_class.value,
+            }
+            for node in physical
+        )
 
     identity = " ".join(
         _text(record.get(key))
@@ -562,6 +579,7 @@ def _major_systems(
             "summary": "Physical subsystem in the first-order product architecture.",
             "basis": "Architecture scaffold only; it does not assert a supplier, qualification, or effective capacity.",
             "data_state": "MODELLED_PRODUCT_ARCHITECTURE",
+            "derivation_class": "MODELLED",
         }
         for label in architecture
     ]
