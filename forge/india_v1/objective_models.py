@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
 from enum import Enum
+from math import isfinite
 from typing import Any, Mapping, Sequence
 
 
@@ -95,8 +96,8 @@ class QuantitativeCoefficient:
             raise ValueError("UNKNOWN coefficient must not carry a numeric value")
         if self.state is not CoefficientState.UNKNOWN and self.value is None:
             raise ValueError("quantified coefficient requires a numeric value")
-        if self.value is not None and self.value < 0:
-            raise ValueError("coefficient must be non-negative")
+        if self.value is not None and (not isfinite(self.value) or self.value < 0):
+            raise ValueError("coefficient must be finite and non-negative")
 
     def to_dict(self) -> dict[str, Any]:
         return _json(asdict(self))
@@ -176,14 +177,25 @@ class IndustrialObjective:
             raise ValueError("V0 supports only the bounded 'manufacture' objective")
         if not self.product.strip() or len(self.product) > 240:
             raise ValueError("product must contain 1-240 characters")
-        if self.quantity <= 0:
-            raise ValueError("quantity must be positive")
+        if not isfinite(self.quantity) or self.quantity <= 0:
+            raise ValueError("quantity must be finite and positive")
+        if not self.output_unit.strip() or len(self.output_unit) > 32:
+            raise ValueError("output_unit must contain 1-32 characters")
+        if not self.geography.strip() or len(self.geography) > 80:
+            raise ValueError("geography must contain 1-80 characters")
         if self.period not in {"year", "month", "week", "day"}:
             raise ValueError("period must be year, month, week, or day")
         if not 2026 <= self.target_year <= 2200:
             raise ValueError("target_year must be in [2026, 2200]")
         if len(self.constraints) > 12:
             raise ValueError("at most 12 bounded constraints are supported")
+        for constraint in self.constraints:
+            if not constraint.kind.strip() or len(constraint.kind) > 64:
+                raise ValueError("constraint kind must contain 1-64 characters")
+            if isinstance(constraint.value, str) and (not constraint.value.strip() or len(constraint.value) > 240):
+                raise ValueError("text constraint values must contain 1-240 characters")
+            if isinstance(constraint.value, float) and not isfinite(constraint.value):
+                raise ValueError("numeric constraint values must be finite")
 
     @property
     def annual_quantity(self) -> float:

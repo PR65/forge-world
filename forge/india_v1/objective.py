@@ -333,6 +333,10 @@ def _semantic_hit(
     query_words = _subject_words(query)
     subject_words = _subject_words(subject)
     signature_words = _record_signature_words(record)
+    # Use the declared family label, not variant axes embedded in family keys:
+    # ``battery-electric`` describes a tractor configuration, not its subject.
+    family_identity = str(record.get("family_label") or "").casefold()
+    family_identity_words = _subject_words(family_identity)
     kind = str(record.get("kind") or "").upper()
 
     # Objective queries are product-like unless the person explicitly asks
@@ -346,8 +350,15 @@ def _semantic_hit(
     subject_overlap = query_words & subject_words
     direct_overlap = len(query_words & signature_words)
     signature_coverage = direct_overlap / max(1, len(query_words))
+    identity_match = bool(
+        query_words
+        and (
+            query_words <= family_identity_words
+            or all(len(word) >= 5 and word in family_identity for word in query_words)
+        )
+    )
     if not subject_overlap and not (
-        len(query_words) >= 2
+        (len(query_words) >= 2 or identity_match)
         and match_type in {"exact", "phrase", "all_tokens", "alias"}
         and signature_coverage >= 0.90
     ):
