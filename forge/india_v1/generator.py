@@ -56,6 +56,7 @@ from .schema import (
     IntegrityReport,
     LadderStep,
 )
+from .quality import correct_epistemic_status
 
 
 GENERATOR_VERSION = "1.0.0"
@@ -319,6 +320,21 @@ def _record(
     source_spec: str = "data.india_v1.domains_01_04",
 ) -> AtlasRecord:
     deps = {group: tuple(sorted(set(dependencies.get(group, ())))) for group in DEPENDENCY_GROUPS}
+    corrected = correct_epistemic_status(
+        {
+            "status": status,
+            "status_basis": status_basis,
+            "status_epistemic_class": "CONFLICTED" if status == "CONFLICTED" else "ASSUMPTION",
+        }
+    )
+    status = str(corrected.get("status", status))
+    status_basis = str(corrected.get("status_basis", status_basis))
+    status_epistemic_class = str(
+        corrected.get(
+            "status_epistemic_class",
+            "CONFLICTED" if status == "CONFLICTED" else "ASSUMPTION",
+        )
+    )
     return AtlasRecord(
         id=record_id,
         canonical_name=canonical_name,
@@ -329,7 +345,7 @@ def _record(
         explanation=explanation,
         uses=tuple(uses),
         status=status,
-        status_epistemic_class="ASSUMPTION" if status != "CONFLICTED" else "CONFLICTED",
+        status_epistemic_class=status_epistemic_class,
         status_basis=status_basis,
         dependencies=deps,
         gap_import_notes=gap_import_notes,

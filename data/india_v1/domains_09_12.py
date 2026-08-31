@@ -25,6 +25,13 @@ from dataclasses import dataclass
 import re
 from typing import Any, Iterable, Mapping, Sequence
 
+from forge.india_v1.quality import (
+    correct_epistemic_status,
+    display_name,
+    family_key,
+    variant_label,
+)
+
 
 # These are the human-facing overlays defined by the FORGE India operating
 # vision.  They must not be interpreted as capacity or qualification claims.
@@ -362,15 +369,36 @@ def _record(
 ) -> dict[str, Any]:
     architecture_label = _label(architecture)
     context_label = _label(context)
-    canonical_name = f"{architecture_label.title()} {archetype.name} - {context_label.title()}"
     record_id = (
         f"india-v1:{domain.number:02d}:{_slug(archetype.id)}:"
         f"{_slug(architecture)}:{_slug(context)}"
+    )
+    canonical_name = display_name(
+        {
+            "id": record_id,
+            "canonical_name": f"{architecture_label.title()} {archetype.name} — {context_label.title()}",
+            "variant_axes": {"architecture": architecture, "operating_context": context},
+        }
     )
     dependencies = _dependency_groups(domain.id, archetype, architecture, context)
     dependency_ids = _unique(item for group in dependencies.values() for item in group)
     status = _status_for_variant(archetype, architecture)
     basis = _status_basis(status)
+    corrected = correct_epistemic_status(
+        {
+            "status": status,
+            "india_status": status,
+            "status_basis": basis["basis"],
+            "status_epistemic_class": basis["epistemic_class"],
+            # The 09--12 pack intentionally keeps its source overlay class;
+            # the correction helper only changes it when an unsupported
+            # STRONG/MISSING assumption is actually present.
+            "epistemic_class": basis["epistemic_class"],
+        }
+    )
+    status = str(corrected.get("status", status))
+    basis_text = str(corrected.get("status_basis", basis["basis"]))
+    basis_epistemic = str(corrected.get("status_epistemic_class", basis["epistemic_class"]))
 
     # Relations intentionally point at shared primitives and stable archetype
     # nodes.  The registry can later resolve an archetype node to all variants.
@@ -411,9 +439,13 @@ def _record(
         "domain_id": domain.id,
         "domain_number": domain.number,
         "archetype_id": f"node:{domain.number:02d}:{archetype.id}",
+        "family_key": family_key(record_id),
         "ordinal": ordinal,
         "canonical_name": canonical_name,
         "name": canonical_name,
+        "display_name": canonical_name,
+        "variant_label": variant_label({"variant_axes": {"architecture": architecture, "operating_context": context}}),
+        "profile": _atlas_profile(domain.id, archetype),
         "aliases": _unique(
             [
                 archetype.name,
@@ -429,11 +461,13 @@ def _record(
             f"{archetype.explanation}"
         ),
         "use": f"{archetype.use} This variant is framed for {context_label.lower()}.",
-        "india_status": status,
+        "india_status": str(corrected.get("india_status", status)),
         "status": status,
-        "status_basis": basis["basis"],
-        "status_basis_epistemic_class": basis["epistemic_class"],
-        "epistemic_class": EPISTEMIC_CLASS,
+        "status_basis": basis_text,
+        "status_basis_epistemic_class": basis_epistemic,
+        "status_epistemic_class": basis_epistemic,
+        "status_basis_metadata": corrected.get("status_basis_metadata", {}),
+        "epistemic_class": basis_epistemic,
         "variant_axes": {
             "architecture": architecture,
             "operating_context": context,

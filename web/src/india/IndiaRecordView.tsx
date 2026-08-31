@@ -1,5 +1,6 @@
+import { useState, type MouseEvent as ReactMouseEvent } from "react";
 import IndiaChainRibbon from "./IndiaChainRibbon";
-import { displayStatus, statusTone } from "./india-ui";
+import { displayEpistemicClass, displayStatus, epistemicTone, statusTone } from "./india-ui";
 import type {
   IndiaDependencyGroupKey,
   IndiaLink,
@@ -11,6 +12,7 @@ interface IndiaRecordViewProps {
   loading: boolean;
   error: string | null;
   onBack: () => void;
+  onRetry: () => void;
   onNavigate: (link: IndiaLink) => void;
 }
 
@@ -26,6 +28,16 @@ function MissingNote({ children }: { children: string }) {
   return <p className="india-missing-note">{children}</p>;
 }
 
+function recordHref(id: string): string {
+  return `/india/records/${encodeURIComponent(id)}`;
+}
+
+function interceptRecordLink(event: ReactMouseEvent<HTMLAnchorElement>, onNavigate: () => void) {
+  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  onNavigate();
+}
+
 function LinkCluster({
   title,
   links,
@@ -35,31 +47,34 @@ function LinkCluster({
   links: IndiaLink[];
   onNavigate: (link: IndiaLink) => void;
 }) {
-  const visibleLinks = links.slice(0, 24);
+  const [expanded, setExpanded] = useState(false);
+  const visibleLinks = expanded ? links : links.slice(0, 8);
   return (
     <section className="india-link-cluster">
       <h3>{title}</h3>
       {links.length ? (
         <div className="india-link-list">
-          {visibleLinks.map((link, index) => (
-            <button
+          {visibleLinks.map((link, index) => link.id ? (
+            <a
               className="india-related-link"
-              type="button"
-              key={`${link.id ?? link.label}-${index}`}
-              onClick={() => onNavigate(link)}
-              disabled={!link.id}
+              href={recordHref(link.id)}
+              key={`${link.id}-${index}`}
+              onClick={(event) => interceptRecordLink(event, () => onNavigate(link))}
               title={link.note || link.label}
             >
               <span>{link.label}</span>
               {link.kind ? <small>{link.kind}</small> : null}
               {link.note ? <em>{link.note}</em> : null}
-            </button>
+            </a>
+          ) : (
+            <span className="india-related-link unavailable" key={`${link.label}-${index}`} title={link.note || link.label}>
+              <span>{link.label}</span>
+              {link.kind ? <small>{link.kind}</small> : null}
+              {link.note ? <em>{link.note}</em> : null}
+            </span>
           ))}
-          {links.length > visibleLinks.length ? (
-            <p className="india-link-overflow">
-              Showing 24 of {links.length} connections. Search the atlas to narrow this branch.
-            </p>
-          ) : null}
+          {links.length > visibleLinks.length ? <button className="india-disclosure-button" type="button" onClick={() => setExpanded(true)}>Show {links.length - visibleLinks.length} more connections</button> : null}
+          {expanded && links.length > 8 ? <button className="india-disclosure-button" type="button" onClick={() => setExpanded(false)}>Show fewer connections</button> : null}
         </div>
       ) : (
         <MissingNote>Nothing is mapped in this direction yet.</MissingNote>
@@ -88,6 +103,7 @@ export default function IndiaRecordView({
   loading,
   error,
   onBack,
+  onRetry,
   onNavigate,
 }: IndiaRecordViewProps) {
   if (loading && !record) return <RecordSkeleton />;
@@ -99,6 +115,7 @@ export default function IndiaRecordView({
         <div>
           <h2>This record could not be opened</h2>
           <p>{error}</p>
+          <button className="india-button primary" type="button" onClick={onRetry}>Retry record</button>
           <button className="india-button secondary" type="button" onClick={onBack}>
             Back to the atlas
           </button>
@@ -136,7 +153,7 @@ export default function IndiaRecordView({
           <span aria-hidden="true">·</span>
           {record.category}
         </div>
-        <h1 id="india-record-title">{record.canonicalName}</h1>
+        <h1 id="india-record-title">{record.displayName}</h1>
         <div className="india-record-meta">
           <span>{record.kind}</span>
           <span aria-hidden="true">·</span>
@@ -146,6 +163,10 @@ export default function IndiaRecordView({
           <span className={`india-status ${statusTone(record.indiaStatus)}`}>
             India status: {displayStatus(record.indiaStatus)}
           </span>
+          <span className={`india-epistemic-chip ${epistemicTone(record.statusEpistemicClass)}`}>
+            {displayEpistemicClass(record.statusEpistemicClass)}
+          </span>
+          {record.isReferenceOnly ? <span className="india-reference-chip">Reference layer</span> : null}
           {record.aliases.length ? (
             <span className="india-aliases">Also known as {record.aliases.join(", ")}</span>
           ) : null}
@@ -170,7 +191,11 @@ export default function IndiaRecordView({
           <div className="india-section-kicker">India status and basis</div>
           <strong>{displayStatus(record.indiaStatus)}</strong>
         </div>
-        <p>{record.statusBasis}</p>
+        <div>
+          <p>{record.statusBasis}</p>
+          <p className="india-basis-note">This is a broad prior about the mapped record, not proof of qualified supply, effective capacity, or current availability.</p>
+          {record.sourceSpec ? <p className="india-source-spec"><span>Source specification:</span> {record.sourceSpec}</p> : null}
+        </div>
       </section>
 
       <section className="india-detail-section">
@@ -184,27 +209,31 @@ export default function IndiaRecordView({
           </span>
         </div>
         <div className="india-dependency-grid">
-          {dependencyEntries.map(([key, links]) => (
-            <section className="india-dependency-card" key={key}>
-              <h3>{DEPENDENCY_LABELS[key]}</h3>
+          {dependencyEntries.map(([key, links], index) => (
+            <details className="india-dependency-card" key={key} open={index === 0}>
+              <summary><span>{DEPENDENCY_LABELS[key]}</span><small>{links.length} mapped</small></summary>
               {links.length ? (
                 <div className="india-compact-link-list">
-                  {links.map((link, index) => (
-                    <button
-                      type="button"
-                      key={`${link.id ?? link.label}-${index}`}
-                      onClick={() => onNavigate(link)}
-                      disabled={!link.id}
+                  {links.map((link, index) => link.id ? (
+                    <a
+                      href={recordHref(link.id)}
+                      key={`${link.id}-${index}`}
+                      onClick={(event) => interceptRecordLink(event, () => onNavigate(link))}
                     >
                       <span>{link.label}</span>
                       {link.kind ? <small>{link.kind}</small> : null}
-                    </button>
+                    </a>
+                  ) : (
+                    <span className="india-compact-link unavailable" key={`${link.label}-${index}`}>
+                      <span>{link.label}</span>
+                      {link.kind ? <small>{link.kind}</small> : null}
+                    </span>
                   ))}
                 </div>
               ) : (
                 <MissingNote>Not mapped yet.</MissingNote>
               )}
-            </section>
+            </details>
           ))}
         </div>
       </section>

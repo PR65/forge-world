@@ -1,522 +1,235 @@
-import {
-  FormEvent,
-  useCallback,
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  startTransition,
-} from "react";
-import IndiaRecordView from "./IndiaRecordView";
-import {
-  fetchIndiaDiscover,
-  fetchIndiaDomains,
-  fetchIndiaRecord,
-  fetchIndiaSummary,
-  searchIndia,
-} from "./india-api";
-import { displayStatus, firstSentence, formatCount, statusTone } from "./india-ui";
-import type {
-  IndiaDiscoverResult,
-  IndiaDomain,
-  IndiaLink,
-  IndiaRecord,
-  IndiaSearchResult,
-  IndiaSummary,
-} from "./india-types";
-import "./india.css";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { fetchIndiaDomains, searchIndia } from "./india-api";
+import type { IndiaDomain } from "./india-types";
+import ProductWorkbench from "./product-v1/ProductWorkbench";
+import type { ProductMode, ProductResolutionNotice } from "./product-v1/ProductWorkbench";
+import type { WhySelection } from "./product-v1";
+import { compileObjective, resolveObjective } from "./product-v1/objective-api";
+import type { ObjectiveCompilation } from "./product-v1/objective-api";
+import { fetchBuildability } from "./ui-rebuild/buildability-api";
+import type { BuildabilityDomain, BuildabilityItem, BuildabilityViewModel } from "./ui-rebuild/buildability-types";
 
-const DISCOVERY_PROMPTS = [
-  { label: "Transformer", query: "transformer" },
-  { label: "Packaging machine", query: "packaging machine" },
-  { label: "Textile machine", query: "textile machine" },
-  { label: "Pumps and valves", query: "pumps valves" },
-];
+const DEFAULT_OBJECTIVE = "industrial freeze dryer";
+const DOMAIN_SHORT_NAMES: Record<string, string> = {
+  "01": "Aerospace & Space", "02": "Defense & Strategic", "03": "Energy & Nuclear",
+  "04": "Electronics & Semiconductors", "05": "Machines & Robotics", "06": "Materials & Chemicals",
+  "07": "Medical & Scientific", "08": "Food & Agriculture", "09": "Transport & Mobility",
+  "10": "Infrastructure & Heavy Industry", "11": "Consumer & Manufacturing", "12": "Foundational Capabilities",
+};
 
-const TAGLINE_WORDS = "Start with an object. Follow the chain. See what India can build next.".split(" ");
+interface Route { recordId: string | null; query: string | null; domainId: string | null; mode: ProductMode }
 
-type LoadState = "idle" | "loading" | "ready" | "error";
-
-function SearchBox({
-  value,
-  onChange,
-  onSubmit,
-  compact = false,
-}: {
-  value: string;
-  onChange: (value: string) => void;
-  onSubmit: () => void;
-  compact?: boolean;
-}) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const submit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    onSubmit();
-    inputRef.current?.focus();
-  };
-  return (
-    <form className={`india-search ${compact ? "compact" : ""}`} onSubmit={submit} role="search">
-      <label htmlFor={compact ? "india-search-compact" : "india-search-main"}>
-        Search products, capabilities, machines, materials
-      </label>
-      <div className="india-search-row">
-        <span className="india-search-mark" aria-hidden="true">⌕</span>
-        <input
-          ref={inputRef}
-          id={compact ? "india-search-compact" : "india-search-main"}
-          type="search"
-          value={value}
-          onChange={(event) => onChange(event.target.value)}
-          placeholder="Try transformer, CNC machine, bearings, textile machine…"
-          autoComplete="off"
-          spellCheck={false}
-        />
-        <button className="india-button primary" type="submit">Search atlas</button>
-      </div>
-      <p className="india-search-hint">Use a plain name. Results stay linked to their evidence state.</p>
-    </form>
-  );
+function publicDomains(domains: IndiaDomain[]): BuildabilityDomain[] {
+  return domains.map((domain) => ({
+    id: domain.id, name: domain.name, shortName: DOMAIN_SHORT_NAMES[domain.id] || domain.name,
+    description: domain.description, recordCount: domain.recordCount, status: domain.status,
+  }));
 }
 
-function SearchResults({
-  query,
-  state,
-  error,
-  results,
-  onOpen,
-}: {
-  query: string;
-  state: LoadState;
-  error: string | null;
-  results: IndiaSearchResult[];
-  onOpen: (id: string) => void;
-}) {
-  const term = query.trim();
-  if (!term) return null;
-  if (term.length < 2) {
-    return <p className="india-search-message">Type at least two characters to search the atlas.</p>;
-  }
-  if (state === "loading") {
-    return (
-      <div className="india-result-skeleton" role="status" aria-label="Searching">
-        <span className="india-skeleton-line wide" />
-        <span className="india-skeleton-line medium" />
-        <span className="india-skeleton-line wide" />
-      </div>
-    );
-  }
-  if (state === "error") {
-    return (
-      <div className="india-state india-state-inline" role="alert">
-        <span className="india-state-mark">!</span>
-        <div>
-          <strong>Search is unavailable</strong>
-          <p>{error || "The India search endpoint did not return a result."}</p>
-        </div>
-      </div>
-    );
-  }
-  if (!results.length) {
-    return (
-      <div className="india-empty-search">
-        <strong>No mapped record matches “{term}”.</strong>
-        <span>Try a broader object name, or browse a domain below.</span>
-      </div>
-    );
-  }
-  return (
-    <section className="india-results" aria-live="polite" aria-label="Search results">
-      <div className="india-results-head">
-        <span>{results.length} mapped result{results.length === 1 ? "" : "s"}</span>
-        <span>Open a record to inspect its chain</span>
-      </div>
-      <ul>
-        {results.slice(0, 32).map((result) => (
-          <li key={result.record.id}>
-            <button type="button" onClick={() => onOpen(result.record.id)}>
-              <span className={`india-status tiny ${statusTone(result.record.indiaStatus)}`}>
-                {displayStatus(result.record.indiaStatus)}
-              </span>
-              <strong>{result.record.canonicalName}</strong>
-              <span>{firstSentence(result.record.explanation)}</span>
-              <small>{result.record.kind} · {result.record.category}</small>
-            </button>
-          </li>
-        ))}
-      </ul>
-      {results.length > 32 ? <p className="india-results-foot">Showing the first 32 matches. Refine the name to narrow the atlas.</p> : null}
-    </section>
-  );
+function readRoute(): Route {
+  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  const match = path.match(/^\/india\/records\/(.+)$/);
+  const params = new URLSearchParams(window.location.search);
+  const requestedMode = (params.get("mode") || "ANALYZE").toUpperCase();
+  const mode: ProductMode = requestedMode === "BUILD" || requestedMode === "DISCOVER" ? requestedMode : "ANALYZE";
+  return { recordId: match ? decodeURIComponent(match[1]) : null, query: params.get("q"), domainId: params.get("domain"), mode };
 }
 
-function TaglineReveal() {
-  const ref = useRef<HTMLParagraphElement>(null);
-  useEffect(() => {
-    const node = ref.current;
-    if (!node || typeof IntersectionObserver === "undefined") return;
-    const words = Array.from(node.querySelectorAll<HTMLElement>("[data-tagline-word]"));
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("is-visible");
-      }),
-      { threshold: 0.45 },
-    );
-    words.forEach((word) => observer.observe(word));
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <section className="india-tagline" aria-label="Atlas principle">
-      <p ref={ref}>
-        {TAGLINE_WORDS.map((word, index) => (
-          <span key={`${word}-${index}`} data-tagline-word style={{ transitionDelay: `${index * 36}ms` }}>
-            {word}{index === TAGLINE_WORDS.length - 1 ? "" : " "}
-          </span>
-        ))}
-      </p>
-    </section>
-  );
+function updateUrl(mode: ProductMode, query: string, domainId: string | null, push: boolean) {
+  const params = new URLSearchParams({ mode: mode.toLowerCase() });
+  if (query.trim()) params.set("q", query.trim());
+  if (mode === "DISCOVER" && domainId) params.set("domain", domainId);
+  window.history[push ? "pushState" : "replaceState"]({ forgeIndia: true }, "", `/india?${params.toString()}`);
 }
 
-function DomainGrid({
-  domains,
-  activeDomain,
-  onChoose,
-}: {
-  domains: IndiaDomain[];
-  activeDomain: string | null;
-  onChoose: (domain: IndiaDomain) => void;
-}) {
-  if (!domains.length) {
-    return (
-      <div className="india-state india-state-panel">
-        <span className="india-state-mark">12</span>
-        <div>
-          <strong>Domain browse is empty</strong>
-          <p>The India domains endpoint returned no records. Search remains available while the registry is connected.</p>
-        </div>
-      </div>
-    );
-  }
-  return (
-    <div className="india-domain-grid">
-      {domains.map((domain, index) => (
-        <button
-          className={`india-domain-card ${activeDomain === domain.id ? "active" : ""}`}
-          type="button"
-          key={domain.id}
-          onClick={() => onChoose(domain)}
-        >
-          <span className="india-domain-number">{String(index + 1).padStart(2, "0")}</span>
-          <span className="india-domain-copy">
-            <strong>{domain.name}</strong>
-            <span>{domain.description || "Open this domain to search its mapped capability records."}</span>
-          </span>
-          <span className="india-domain-foot">
-            <span>{domain.recordCount === null ? "Count not recorded" : `${formatCount(domain.recordCount)} records`}</span>
-            {domain.status ? <span className={`india-status tiny ${statusTone(domain.status)}`}>{displayStatus(domain.status)}</span> : null}
-          </span>
-        </button>
-      ))}
-    </div>
-  );
+function errorText(error: unknown): string {
+  return error instanceof Error && error.message ? error.message : "The industrial map could not be loaded.";
 }
 
-function DiscoveryList({
-  items,
-  onOpen,
-  onSearch,
-}: {
-  items: IndiaDiscoverResult[];
-  onOpen: (id: string) => void;
-  onSearch: (query: string) => void;
-}) {
-  return (
-    <div className="india-discovery-layout">
-      <div className="india-discovery-list">
-        {items.length ? items.slice(0, 6).map((item) => (
-          <button className="india-discovery-card" type="button" key={item.record.id} onClick={() => onOpen(item.record.id)}>
-            <span className="india-discovery-rule" aria-hidden="true" />
-            <span className="india-discovery-copy">
-              <strong>{item.record.canonicalName}</strong>
-              <span>{item.reason || firstSentence(item.record.explanation)}</span>
-            </span>
-            <span className={`india-status tiny ${statusTone(item.record.indiaStatus)}`}>{displayStatus(item.record.indiaStatus)}</span>
-          </button>
-        )) : (
-          <div className="india-empty-discovery">
-            <strong>Discovery examples</strong>
-            <p>Start with a concrete object and follow its dependencies into the industrial backbone.</p>
-            <div className="india-prompt-list">
-              {DISCOVERY_PROMPTS.map((prompt) => (
-                <button type="button" key={prompt.query} onClick={() => onSearch(prompt.query)}>{prompt.label} <span aria-hidden="true">↗</span></button>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-      <aside className="india-discovery-note">
-        <div className="india-section-kicker">How to read this atlas</div>
-        <p>India status is a broad evidence label, not a factory directory or a promise of qualified supply.</p>
-        <p>Open any result to see what feeds it, what it enables, and which gaps remain explicit.</p>
-      </aside>
-    </div>
-  );
-}
-
-function SummaryStrip({ summary }: { summary: IndiaSummary | null }) {
-  const statusEntries = Object.entries(summary?.statusCounts ?? {}).slice(0, 3);
-  return (
-    <div className="india-summary-strip" aria-label="Atlas coverage">
-      <div><strong>{formatCount(summary?.recordCount)}</strong><span>mapped records</span></div>
-      <div><strong>{formatCount(summary?.domainCount)}</strong><span>industrial domains</span></div>
-      <div><strong>{summary?.snapshot || "Not versioned"}</strong><span>registry snapshot</span></div>
-      {statusEntries.length ? (
-        <div className="india-summary-statuses">
-          {statusEntries.map(([status, count]) => <span key={status}>{displayStatus(status)} · {formatCount(count)}</span>)}
-        </div>
-      ) : null}
-    </div>
-  );
+function updateMetadata(viewModel: BuildabilityViewModel | null, mode: ProductMode) {
+  document.title = viewModel?.title ? `${viewModel.title} · ${mode} · FORGE INDIA` : `${mode} · FORGE INDIA`;
+  const description = viewModel?.plainSummary || "A first-order map of what it takes to manufacture physical products in India.";
+  let meta = document.head.querySelector<HTMLMetaElement>('meta[name="description"]');
+  if (!meta) { meta = document.createElement("meta"); meta.name = "description"; document.head.appendChild(meta); }
+  meta.content = description;
 }
 
 export default function IndiaApp() {
-  const [summary, setSummary] = useState<IndiaSummary | null>(null);
-  const [domains, setDomains] = useState<IndiaDomain[]>([]);
-  const [discover, setDiscover] = useState<IndiaDiscoverResult[]>([]);
-  const [bootstrapState, setBootstrapState] = useState<LoadState>("loading");
-  const [bootstrapError, setBootstrapError] = useState<string | null>(null);
-  const [query, setQuery] = useState("");
-  const deferredQuery = useDeferredValue(query);
-  const [searchResults, setSearchResults] = useState<IndiaSearchResult[]>([]);
-  const [searchState, setSearchState] = useState<LoadState>("idle");
-  const [searchError, setSearchError] = useState<string | null>(null);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [selectedRecord, setSelectedRecord] = useState<IndiaRecord | null>(null);
-  const [recordState, setRecordState] = useState<LoadState>("idle");
-  const [recordError, setRecordError] = useState<string | null>(null);
-  const [activeDomain, setActiveDomain] = useState<string | null>(null);
-  const recordRequest = useRef<AbortController | null>(null);
+  const initialRoute = useMemo(readRoute, []);
+  const [mode, setMode] = useState<ProductMode>(initialRoute.mode);
+  const [query, setQuery] = useState(initialRoute.query || DEFAULT_OBJECTIVE);
+  const [objectiveText, setObjectiveText] = useState(initialRoute.query || DEFAULT_OBJECTIVE);
+  const [domains, setDomains] = useState<BuildabilityDomain[]>([]);
+  const [activeDomainId, setActiveDomainId] = useState<string | null>(initialRoute.domainId);
+  const [domainItems, setDomainItems] = useState<BuildabilityItem[]>([]);
+  const [viewModel, setViewModel] = useState<BuildabilityViewModel | null>(null);
+  const [resolution, setResolution] = useState<ProductResolutionNotice | null>(null);
+  const [objectiveCompilation, setObjectiveCompilation] = useState<ObjectiveCompilation | null>(null);
+  const [objectiveCompilationError, setObjectiveCompilationError] = useState<string | null>(null);
+  const [objectiveCompilationLoading, setObjectiveCompilationLoading] = useState(false);
+  const [selection, setSelection] = useState<WhySelection | null>(null);
+  const [addedItems, setAddedItems] = useState<BuildabilityItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const request = useRef<AbortController | null>(null);
+  const domainRequest = useRef<AbortController | null>(null);
+  const generation = useRef(0);
+
+  const loadRecord = useCallback(async (recordId: string) => {
+    request.current?.abort();
+    const controller = new AbortController(); request.current = controller; const current = ++generation.current;
+    setLoading(true); setError(null); setResolution(null); setObjectiveCompilation(null); setObjectiveCompilationError(null); setObjectiveCompilationLoading(false);
+    try {
+      const next = await fetchBuildability(recordId, controller.signal);
+      if (controller.signal.aborted || current !== generation.current) return;
+      setViewModel(next); setQuery(next.title); setObjectiveText(next.title);
+    } catch (cause) {
+      if (!controller.signal.aborted && current === generation.current) setError(errorText(cause));
+    } finally { if (!controller.signal.aborted && current === generation.current) setLoading(false); }
+  }, []);
+
+  const loadConfirmed = useCallback(async (title: string, push = true) => {
+    const target = title.trim(); if (!target) return;
+    request.current?.abort();
+    const controller = new AbortController(); request.current = controller; const current = ++generation.current;
+    setLoading(true); setError(null); setSelection(null); setObjectiveCompilation(null); setObjectiveCompilationError(null); setObjectiveCompilationLoading(false);
+    try {
+      const resolved = await resolveObjective(target, controller.signal);
+      const next = resolved.analysis;
+      if (controller.signal.aborted || current !== generation.current) return;
+      if (!resolved.canAnalyze || !next) throw new Error(`The confirmed family “${target}” could not be resolved safely.`);
+      setViewModel(next); setQuery(target); setObjectiveText(target);
+      setResolution({ quality: "strong", message: `Using the confirmed mapped product: ${next.title}.`, productQuery: target });
+      setMode("ANALYZE"); updateUrl("ANALYZE", target, null, push);
+    } catch (cause) {
+      if (!controller.signal.aborted && current === generation.current) setError(errorText(cause));
+    } finally { if (!controller.signal.aborted && current === generation.current) setLoading(false); }
+  }, []);
+
+  const analyze = useCallback(async (rawInput: string, push = true, targetMode: ProductMode = "ANALYZE") => {
+    const target = rawInput.trim(); if (!target) return;
+    request.current?.abort();
+    const controller = new AbortController(); request.current = controller; const current = ++generation.current;
+    setLoading(true); setError(null); setSelection(null); setQuery(target); setObjectiveText(target); setMode(targetMode);
+    setObjectiveCompilation(null); setObjectiveCompilationError(null); setObjectiveCompilationLoading(false);
+    try {
+      const resolved = await resolveObjective(target, controller.signal);
+      if (controller.signal.aborted || current !== generation.current) return;
+      const quality: ProductResolutionNotice["quality"] = resolved.canAnalyze ? "strong" : resolved.requiresConfirmation ? "nearest" : "unresolved";
+      setResolution({
+        quality, message: `${resolved.message} ${resolved.honestyNote}`.trim(), productQuery: resolved.objective.productQuery,
+        candidates: resolved.candidates.map((candidate) => candidate.title),
+      });
+      if (!resolved.canAnalyze || !resolved.selected) { setViewModel(null); updateUrl(targetMode, target, null, push); return; }
+      const next = resolved.analysis;
+      if (!next) throw new Error("The resolved product did not return a composed industrial view.");
+      setViewModel(next);
+      const matchingDomain = domains.find((domain) => domain.name === next.domain);
+      if (matchingDomain) setActiveDomainId(matchingDomain.id);
+      if (resolved.objective.quantity !== null) {
+        setObjectiveCompilationLoading(true);
+        try {
+          const compilation = await compileObjective(resolved.objective, controller.signal);
+          if (!controller.signal.aborted && current === generation.current) setObjectiveCompilation(compilation);
+        } catch (cause) {
+          if (!controller.signal.aborted && current === generation.current) setObjectiveCompilationError(errorText(cause));
+        } finally {
+          if (!controller.signal.aborted && current === generation.current) setObjectiveCompilationLoading(false);
+        }
+      }
+      updateUrl(targetMode, target, targetMode === "DISCOVER" ? activeDomainId : null, push);
+    } catch (cause) {
+      if (!controller.signal.aborted && current === generation.current) { setViewModel(null); setError(errorText(cause)); }
+    } finally { if (!controller.signal.aborted && current === generation.current) setLoading(false); }
+  }, [activeDomainId, domains]);
 
   useEffect(() => {
     const controller = new AbortController();
-    setBootstrapState("loading");
-    void Promise.allSettled([
-      fetchIndiaSummary(controller.signal),
-      fetchIndiaDomains(controller.signal),
-      fetchIndiaDiscover(controller.signal),
-    ]).then((results) => {
-      if (controller.signal.aborted) return;
-      const [summaryResult, domainsResult, discoverResult] = results;
-      const failures: string[] = [];
-      if (summaryResult.status === "fulfilled") setSummary(summaryResult.value);
-      else failures.push(summaryResult.reason instanceof Error ? summaryResult.reason.message : "Summary unavailable");
-      if (domainsResult.status === "fulfilled") setDomains(domainsResult.value);
-      else failures.push(domainsResult.reason instanceof Error ? domainsResult.reason.message : "Domains unavailable");
-      if (discoverResult.status === "fulfilled") setDiscover(discoverResult.value);
-      else failures.push(discoverResult.reason instanceof Error ? discoverResult.reason.message : "Discovery unavailable");
-      if (failures.length === 3) {
-        setBootstrapState("error");
-        setBootstrapError("The India atlas endpoints did not respond. Start the API and reload this page.");
-      } else {
-        setBootstrapState("ready");
-        setBootstrapError(failures.length ? failures.join(" ") : null);
-      }
-    });
+    void fetchIndiaDomains(controller.signal).then((rows) => setDomains(publicDomains(rows))).catch(() => setDomains([]));
     return () => controller.abort();
   }, []);
 
+  // Catalog warm-up can outlast the lightweight domain request timeout on a
+  // cold local server. Re-entering DISCOVER gets one fresh bounded attempt
+  // instead of leaving a permanently blank domain section.
   useEffect(() => {
-    const term = deferredQuery.trim();
-    if (!term) {
-      setSearchResults([]);
-      setSearchState("idle");
-      setSearchError(null);
-      return;
-    }
-    if (term.length < 2) {
-      setSearchResults([]);
-      setSearchState("ready");
-      return;
-    }
+    if (mode !== "DISCOVER" || domains.length) return;
     const controller = new AbortController();
-    setSearchState("loading");
-    setSearchError(null);
-    const timer = window.setTimeout(() => {
-      void searchIndia(term, controller.signal).then((results) => {
-        if (controller.signal.aborted) return;
-        startTransition(() => {
-          setSearchResults(results);
-          setSearchState("ready");
-        });
-      }).catch((error: unknown) => {
-        if (controller.signal.aborted) return;
-        setSearchState("error");
-        setSearchError(error instanceof Error ? error.message : "The search request failed.");
-      });
-    }, 160);
-    return () => {
-      window.clearTimeout(timer);
-      controller.abort();
+    void fetchIndiaDomains(controller.signal).then((rows) => setDomains(publicDomains(rows))).catch(() => undefined);
+    return () => controller.abort();
+  }, [domains.length, mode]);
+
+  useEffect(() => {
+    if (initialRoute.recordId) void loadRecord(initialRoute.recordId); else void analyze(initialRoute.query || DEFAULT_OBJECTIVE, false, initialRoute.mode);
+    return () => request.current?.abort();
+    // Initial navigation is captured once; popstate owns later routes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => updateMetadata(viewModel, mode), [mode, viewModel]);
+
+  const browseDomain = useCallback(async (domainId: string) => {
+    domainRequest.current?.abort();
+    const controller = new AbortController(); domainRequest.current = controller;
+    setDomainItems([]);
+    try {
+      const matches = await searchIndia("", controller.signal, { domain: domainId, limit: 12 });
+      if (controller.signal.aborted) return;
+      setDomainItems(matches.map(({ record }) => ({
+        title: record.displayName || record.canonicalName,
+        summary: record.explanation || record.use,
+        kind: record.kind,
+        category: record.category,
+        status: record.indiaStatus,
+        statusLabel: record.indiaStatus,
+        epistemicClass: record.statusEpistemicClass,
+      })));
+    } catch {
+      if (!controller.signal.aborted) setDomainItems([]);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (mode === "DISCOVER" && activeDomainId) void browseDomain(activeDomainId);
+    return () => domainRequest.current?.abort();
+  }, [activeDomainId, browseDomain, mode]);
+
+  useEffect(() => {
+    const onPopState = () => {
+      const next = readRoute(); setMode(next.mode); setActiveDomainId(next.domainId);
+      if (next.recordId) void loadRecord(next.recordId); else if (next.query) void analyze(next.query, false, next.mode);
     };
-  }, [deferredQuery]);
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [analyze, loadRecord]);
 
-  const searchIndex = useMemo(
-    () => new Map(searchResults.map((result) => [result.record.id, result])),
-    [searchResults],
-  );
+  const changeMode = useCallback((next: ProductMode) => {
+    setMode(next); setSelection(null); updateUrl(next, objectiveText || query, activeDomainId, true);
+  }, [activeDomainId, objectiveText, query]);
 
-  const openRecord = useCallback((id: string) => {
-    if (!id) return;
-    recordRequest.current?.abort();
-    const controller = new AbortController();
-    recordRequest.current = controller;
-    setSelectedId(id);
-    setSelectedRecord(searchIndex.get(id)?.record ?? null);
-    setRecordState("loading");
-    setRecordError(null);
-    void fetchIndiaRecord(id, controller.signal).then((record) => {
-      if (!controller.signal.aborted) {
-        setSelectedRecord(record);
-        setRecordState("ready");
-      }
-    }).catch((error: unknown) => {
-      if (!controller.signal.aborted) {
-        setRecordState("error");
-        setRecordError(error instanceof Error ? error.message : "The record request failed.");
-      }
-    });
-  }, [searchIndex]);
+  const chooseDomain = useCallback((domain: BuildabilityDomain) => {
+    setActiveDomainId(domain.id); setMode("DISCOVER");
+    updateUrl("DISCOVER", objectiveText || query, domain.id, true);
+  }, [objectiveText, query]);
 
-  const openLink = useCallback((link: IndiaLink) => {
-    if (link.id) openRecord(link.id);
-  }, [openRecord]);
-
-  const backToAtlas = useCallback(() => {
-    recordRequest.current?.abort();
-    setSelectedId(null);
-    setSelectedRecord(null);
-    setRecordState("idle");
-    setRecordError(null);
+  const addToBuildPath = useCallback((item: BuildabilityItem) => {
+    setAddedItems((current) => current.some((candidate) => candidate.title.toLowerCase() === item.title.toLowerCase()) ? current : [...current, item]);
+    setSelection(null);
   }, []);
-
-  const chooseDomain = useCallback((domain: IndiaDomain) => {
-    setActiveDomain(domain.id);
-    setSelectedId(null);
-    setSelectedRecord(null);
-    setQuery(domain.name);
+  const removeFromBuildPath = useCallback((item: BuildabilityItem) => {
+    setAddedItems((current) => current.filter((candidate) => candidate.title.toLowerCase() !== item.title.toLowerCase()));
   }, []);
-
-  const performSearch = useCallback(() => {
-    if (!query.trim()) return;
-    setSelectedId(null);
-    setSelectedRecord(null);
-    setRecordState("idle");
-  }, [query]);
-
-  const searchExamples = useCallback((term: string) => {
-    setSelectedId(null);
-    setSelectedRecord(null);
-    setActiveDomain(null);
-    setQuery(term);
-  }, []);
-
-  const isDetail = Boolean(selectedId);
 
   return (
-    <div className="india-app">
-      <a className="india-skip-link" href="#india-main">Skip to atlas</a>
-      <header className="india-topbar">
-        <div className="india-topbar-inner">
-          <a className="india-brand" href="/" aria-label="FORGE India home">
-            <span className="india-brand-mark" aria-hidden="true">F</span>
-            <span><strong>FORGE INDIA</strong><small>industrial field guide</small></span>
-          </a>
-          <nav aria-label="Atlas navigation">
-            <a href="#domains">12 domains</a>
-            <a href="#discover">Discovery</a>
-          </nav>
-          <span className="india-topbar-note">V1 · evidence stays visible</span>
-        </div>
-      </header>
-
-      <main id="india-main" className="india-main">
-        {!isDetail ? (
-          <>
-            <section className="india-hero" aria-labelledby="india-title">
-              <div className="india-hero-copy">
-                <div className="india-eyebrow">FORGE INDIA / WHAT CAN INDIA BUILD?</div>
-                <h1 id="india-title">Start with the object.<br /><span>See the industrial path.</span></h1>
-                <p className="india-hero-lede">A readable atlas of products, capabilities, dependencies, and gaps. Search one thing, then follow the chain into the systems that make it possible.</p>
-                <SearchBox value={query} onChange={setQuery} onSubmit={performSearch} />
-                <SearchResults query={query} state={searchState} error={searchError} results={searchResults} onOpen={openRecord} />
-              </div>
-              <aside className="india-hero-note" aria-label="Atlas scope">
-                <div className="india-scope-line"><span>01</span><p>Search a real object</p></div>
-                <div className="india-scope-line"><span>02</span><p>Read its India status and basis</p></div>
-                <div className="india-scope-line"><span>03</span><p>Trace dependencies and next actions</p></div>
-                <div className="india-scope-rule" />
-                <p className="india-scope-foot">No directory claims. No silent substitution. Unknown remains visible.</p>
-              </aside>
-            </section>
-
-            <SummaryStrip summary={summary} />
-
-            {bootstrapError ? (
-              <div className={`india-connection-note ${bootstrapState === "error" ? "error" : ""}`} role={bootstrapState === "error" ? "alert" : "status"}>
-                <span>{bootstrapState === "error" ? "Atlas connection" : "Partial atlas connection"}</span>
-                <p>{bootstrapError}</p>
-              </div>
-            ) : null}
-
-            <TaglineReveal />
-
-            <section id="domains" className="india-section" aria-labelledby="domains-title">
-              <div className="india-section-heading">
-                <div>
-                  <div className="india-section-kicker">Browse by field</div>
-                  <h2 id="domains-title">Twelve domains, one connected atlas</h2>
-                </div>
-                <p>Choose a field to start a search. The same primitives can reappear across sectors.</p>
-              </div>
-              {bootstrapState === "loading" && !domains.length ? (
-                <div className="india-domain-loading" role="status" aria-label="Loading domains">
-                  {Array.from({ length: 6 }, (_, index) => <span className="india-skeleton-block" key={index} />)}
-                </div>
-              ) : <DomainGrid domains={domains} activeDomain={activeDomain} onChoose={chooseDomain} />}
-            </section>
-
-            <section id="discover" className="india-section india-discovery-section" aria-labelledby="discover-title">
-              <div className="india-section-heading">
-                <div>
-                  <div className="india-section-kicker">Find the leverage</div>
-                  <h2 id="discover-title">Start with a build question</h2>
-                </div>
-                <p>Discovery is a doorway into records, not a scorecard.</p>
-              </div>
-              <DiscoveryList items={discover} onOpen={openRecord} onSearch={searchExamples} />
-            </section>
-
-            <footer className="india-footer">
-              <span>FORGE WORLD · India atlas</span>
-              <span>Capability records are evidence backed and explicitly incomplete.</span>
-            </footer>
-          </>
-        ) : (
-          <section className="india-detail-stage" aria-labelledby="india-detail-heading">
-            <div className="india-detail-toolbar">
-              <div>
-                <div className="india-eyebrow">FORGE INDIA / RECORD VIEW</div>
-                <h1 id="india-detail-heading">Trace one capability</h1>
-              </div>
-              <SearchBox value={query} onChange={setQuery} onSubmit={performSearch} compact />
-            </div>
-            {query.trim() ? <SearchResults query={query} state={searchState} error={searchError} results={searchResults} onOpen={openRecord} /> : null}
-            <IndiaRecordView record={selectedRecord} loading={recordState === "loading"} error={recordError} onBack={backToAtlas} onNavigate={openLink} />
-          </section>
-        )}
-      </main>
-    </div>
+    <ProductWorkbench
+      activeDomainId={activeDomainId} addedItems={addedItems} domainItems={domainItems} domains={domains} error={error} loading={loading}
+      mode={mode} objectiveText={objectiveText} onAddToBuildPath={addToBuildPath}
+      objectiveCompilation={objectiveCompilation} objectiveCompilationError={objectiveCompilationError}
+      objectiveCompilationLoading={objectiveCompilationLoading}
+      onAnalyze={(value) => void analyze(value)} onCandidateSelect={(value) => void loadConfirmed(value)}
+      onDomainSelect={chooseDomain} onGoDeeper={(item) => void loadConfirmed(item.title)} onModeChange={changeMode}
+      onQueryChange={setQuery} onRemoveAddedItem={removeFromBuildPath} onRetry={() => void analyze(objectiveText || query)}
+      onSelectionChange={setSelection} query={query} resolution={resolution} selection={selection} viewModel={viewModel}
+    />
   );
 }
-

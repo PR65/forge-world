@@ -1,0 +1,59 @@
+{
+  "baseline": {
+    "failure_counts": {
+      "bad_domain": 30,
+      "broken_dependency": 0,
+      "dead_end": 0,
+      "duplicate": 88,
+      "misleading_certainty": 10,
+      "nonsense_generic_decomposition": 31,
+      "search_miss": 20,
+      "useless_status_gap_ladder": 35,
+      "weak_related_unlock": 38,
+      "weird_generated_name": 30
+    },
+    "failure_rate": 0.9891304347826086,
+    "relevant_result_rate": 0.782608695652174,
+    "top1_expected_domain_rate": 0.6630434782608695
+  },
+  "baseline_phase": "baseline",
+  "battery_digest_sha256": "420dededfa575a191549e22840fd76e8ddcc01c00c3edb3287ecc0e9e9f61ac6",
+  "battery_id": "run2-founders-adversarial-20260826",
+  "delta": {
+    "failure_counts": {
+      "bad_domain": -17,
+      "broken_dependency": 0,
+      "dead_end": 0,
+      "duplicate": -88,
+      "misleading_certainty": -4,
+      "nonsense_generic_decomposition": -31,
+      "search_miss": -19,
+      "useless_status_gap_ladder": -5,
+      "weak_related_unlock": -5,
+      "weird_generated_name": -14
+    },
+    "failure_rate": -0.3913043478260869,
+    "relevant_result_rate": 0.2065217391304347,
+    "top1_expected_domain_rate": 0.19565217391304357
+  },
+  "final": {
+    "failure_counts": {
+      "bad_domain": 13,
+      "broken_dependency": 0,
+      "dead_end": 0,
+      "duplicate": 0,
+      "misleading_certainty": 6,
+      "nonsense_generic_decomposition": 0,
+      "search_miss": 1,
+      "useless_status_gap_ladder": 30,
+      "weak_related_unlock": 33,
+      "weird_generated_name": 16
+    },
+    "failure_rate": 0.5978260869565217,
+    "relevant_result_rate": 0.9891304347826086,
+    "top1_expected_domain_rate": 0.8586956521739131
+  },
+  "final_phase": "final",
+  "query_count": 92,
+  "schema_version": "india_v1.run2_baseline_vs_final.v1"
+}

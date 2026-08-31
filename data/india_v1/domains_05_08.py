@@ -37,6 +37,13 @@ from __future__ import annotations
 from itertools import product
 from typing import Any, Iterable, Mapping
 
+from forge.india_v1.quality import (
+    correct_epistemic_status,
+    display_name,
+    family_key,
+    variant_label,
+)
+
 
 SCHEMA_VERSION = "india_v1.domain_cards.v1"
 DOMAIN_ORDER = ("05", "06", "07", "08")
@@ -292,6 +299,64 @@ IMAGING_PROFILE = _profile(
     compatibility_note="Care setting, instrument configuration, and workflow axes are constrained to plausible imaging/instrument deployments.",
 )
 
+CLINICAL_PROFILE = _profile(
+    (
+        "care_setting",
+        [
+            _option("ward", "ward/bedside setting", dependencies=("capability:clinical-operations",)),
+            _option("critical-care", "critical-care setting", dependencies=("capability:critical-care",)),
+            _option("procedure", "procedure-room setting", dependencies=("capability:clinical-protocols",)),
+            _option("home-care", "home-care or ambulatory setting", dependencies=("capability:home-care",)),
+        ],
+    ),
+    (
+        "configuration",
+        [
+            _option("standalone", "standalone device configuration", dependencies=("capability:medical-device-design",)),
+            _option("modular", "modular device configuration", dependencies=("capability:medical-device-assembly",)),
+            _option("integrated", "integrated clinical configuration", dependencies=("capability:medical-data-systems",)),
+        ],
+    ),
+    (
+        "workflow",
+        [
+            _option("clinician-led", "clinician-led workflow", dependencies=("capability:clinical-operators",)),
+            _option("protocol-guided", "protocol-guided workflow", dependencies=("capability:clinical-protocols",)),
+            _option("connected", "connected monitoring workflow", dependencies=("capability:medical-data-systems",)),
+        ],
+    ),
+    compatibility_note="Care setting, device configuration, and clinical workflow axes are restricted to plausible patient-care deployments.",
+)
+
+COLD_CHAIN_PROFILE = _profile(
+    (
+        "temperature_zone",
+        [
+            _option("chilled", "chilled-temperature zone", dependencies=("capability:refrigeration-engineering",)),
+            _option("frozen", "frozen-temperature zone", dependencies=("capability:thermal-systems-design",)),
+            _option("deep-frozen", "deep-frozen temperature zone", dependencies=("capability:refrigeration-maintenance",)),
+            _option("controlled", "controlled-temperature zone", dependencies=("capability:temperature-traceability",)),
+        ],
+    ),
+    (
+        "configuration",
+        [
+            _option("cold-room", "cold-room configuration", dependencies=("capability:cold-chain-engineering",)),
+            _option("warehouse", "refrigerated-warehouse configuration", dependencies=("capability:material-handling",)),
+            _option("mobile", "mobile cold-chain configuration", dependencies=("capability:food-logistics",)),
+        ],
+    ),
+    (
+        "monitoring",
+        [
+            _option("manual", "manual temperature monitoring", dependencies=("capability:food-operators",)),
+            _option("data-logged", "data-logged monitoring", dependencies=("capability:temperature-traceability",)),
+            _option("closed-loop", "closed-loop thermal monitoring", dependencies=("capability:utility-reliability",)),
+        ],
+    ),
+    compatibility_note="Temperature zone, storage configuration, and monitoring axes describe cold-chain operation rather than generic process-plant synthesis.",
+)
+
 LAB_PROFILE = _profile(
     (
         "throughput",
@@ -475,12 +540,14 @@ PROFILES = {
     "material": MATERIAL_PROFILE,
     "chemical": CHEMICAL_PROFILE,
     "imaging": IMAGING_PROFILE,
+    "clinical": CLINICAL_PROFILE,
     "lab": LAB_PROFILE,
     "bioprocess": BIOPROCESS_PROFILE,
     "sterile": STERILE_PROFILE,
     "food": FOOD_PROFILE,
     "agriculture": AGRICULTURE_PROFILE,
     "bio_food": BIO_FOOD_PROFILE,
+    "cold_chain": COLD_CHAIN_PROFILE,
 }
 
 
@@ -1754,7 +1821,7 @@ MEDICAL_ARCHETYPES = (
     ),
     _archetype(
         "patient-monitor", "multiparameter patient monitor", ("patient monitor", "bedside monitor"),
-        kind="instrument", category="critical care equipment", profile="lab",
+        kind="instrument", category="critical care equipment", profile="clinical",
         dependencies={
             "design": ("capability:medical-device-design", "capability:biomedical-signal-processing", "capability:embedded-control"),
             "process": ("process:electronics-assembly", "process:medical-device-assembly", "process:calibration", "process:software-validation"),
@@ -1773,7 +1840,7 @@ MEDICAL_ARCHETYPES = (
     ),
     _archetype(
         "infusion-pump", "medical infusion pump", ("infusion pump", "syringe pump"),
-        kind="equipment", category="drug delivery equipment", profile="lab",
+        kind="equipment", category="drug delivery equipment", profile="clinical",
         dependencies={
             "design": ("capability:medical-device-design", "capability:fluid-control", "capability:embedded-control"),
             "process": ("process:precision-machining", "process:medical-device-assembly", "process:calibration", "process:software-validation"),
@@ -1792,7 +1859,7 @@ MEDICAL_ARCHETYPES = (
     ),
     _archetype(
         "dialysis-machine", "hemodialysis machine", ("dialysis machine", "renal replacement system"),
-        kind="equipment", category="renal care equipment", profile="process",
+        kind="equipment", category="renal care equipment", profile="clinical",
         dependencies={
             "design": ("capability:medical-device-design", "capability:fluid-control", "capability:water-treatment"),
             "process": ("process:medical-device-assembly", "process:water-purification", "process:calibration", "process:sterilisation"),
@@ -2039,7 +2106,7 @@ MEDICAL_ARCHETYPES = (
     ),
     _archetype(
         "lab-incubator", "laboratory incubator", ("lab incubator", "CO2 incubator"),
-        kind="equipment", category="laboratory equipment", profile="process",
+        kind="equipment", category="laboratory equipment", profile="lab",
         dependencies={
             "design": ("capability:thermal-systems-design", "capability:lab-equipment-design", "capability:environmental-control"),
             "process": ("process:sheet-metal-fabrication", "process:electronics-assembly", "process:thermal-control", "process:calibration"),
@@ -2423,7 +2490,7 @@ FOOD_ARCHETYPES = (
     ),
     _archetype(
         "cold-storage-system", "industrial cold-storage system", ("cold store", "refrigerated warehouse"),
-        kind="facility_system", category="cold chain", profile="process",
+        kind="facility_system", category="cold chain", profile="cold_chain",
         dependencies={
             "design": ("capability:cold-chain-engineering", "capability:thermal-systems-design"),
             "process": ("process:refrigeration", "process:thermal-insulation", "process:material-handling", "process:temperature-monitoring"),
@@ -2776,7 +2843,16 @@ def _build_record(domain_meta: Mapping[str, Any], blueprint: Mapping[str, Any], 
     variant_key = "-".join(axis_keys)
     record_id = f"product:{domain_meta['domain_id']}:{blueprint['id']}:{variant_key}"
     variant_name = ", ".join(axis_labels)
-    name = f"{blueprint['name']} ({variant_name})"
+    # Keep the family noun prominent and put the compatible axes in a readable
+    # secondary label.  The old parenthesized suffix was a high-volume search
+    # artifact rather than a useful product name.
+    name = display_name(
+        {
+            "id": record_id,
+            "canonical_name": str(blueprint["name"]),
+            "variant": {"labels": axis_labels},
+        }
+    )
 
     groups: list[dict[str, Any]] = []
     for group, ids in blueprint["dependencies"].items():
@@ -2879,6 +2955,18 @@ def _build_record(domain_meta: Mapping[str, Any], blueprint: Mapping[str, Any], 
     common_import_notes = [str(row["note"]) for row in gaps if row["type"] == "import_note"]
     common_kind = kind_map.get(str(blueprint["kind"]), "PRODUCT")
     common_status = status_map.get(str(blueprint["status"]), "UNKNOWN")
+    corrected = correct_epistemic_status(
+        {
+            "status": common_status,
+            "india_status": str(blueprint["status"]),
+            "status_basis": str(blueprint["status_basis"]),
+            "status_epistemic_class": str(blueprint["status_epistemic"]),
+            "epistemic_class": str(blueprint["status_epistemic"]),
+        }
+    )
+    common_status = str(corrected["status"])
+    common_status_basis = str(corrected["status_basis"])
+    common_status_epistemic = str(corrected.get("status_epistemic_class", blueprint["status_epistemic"]))
 
     return {
         "schema_version": SCHEMA_VERSION,
@@ -2891,15 +2979,17 @@ def _build_record(domain_meta: Mapping[str, Any], blueprint: Mapping[str, Any], 
         "domain_key": str(domain_meta["short_name"]),
         "domain": str(domain_meta["domain"]),
         "archetype_id": str(blueprint["id"]),
+        "family_key": family_key(record_id),
         "kind": common_kind,
         "kind_detail": str(blueprint["kind"]),
         "category": str(blueprint["category"]),
         "name": name,
         "canonical_name": name,
+        "display_name": name,
         # Alias strings are variant-qualified so a registry can enforce global
         # alias uniqueness without losing the unqualified archetype aliases.
         "aliases": _dedupe(
-            tuple(f"{alias} ({variant_key})" for alias in (*blueprint["aliases"], str(blueprint["name"])))
+            tuple(f"{alias} — {variant_key}" for alias in (*blueprint["aliases"], str(blueprint["name"])))
             + (f"{blueprint['id']}:{variant_key}",)
         ),
         "archetype_aliases": _dedupe((*blueprint["aliases"], str(blueprint["name"]))),
@@ -2913,15 +3003,18 @@ def _build_record(domain_meta: Mapping[str, Any], blueprint: Mapping[str, Any], 
             "labels": axis_labels,
             "compatibility_note": str(profile["compatibility_note"]),
         },
-        "india_status": str(blueprint["status"]),
-        "india_status_epistemic": str(blueprint["status_epistemic"]),
-        "india_status_basis": str(blueprint["status_basis"]),
+        "variant_label": variant_label({"variant": {"labels": axis_labels}}),
+        "profile": str(blueprint["profile"]),
+        "india_status": str(corrected.get("india_status", blueprint["status"])),
+        "india_status_epistemic": common_status_epistemic,
+        "india_status_basis": common_status_basis,
         "status": common_status,
-        "status_basis": str(blueprint["status_basis"]),
-        "status_epistemic_class": str(blueprint["status_epistemic"]),
-        "status_basis_epistemic_class": str(blueprint["status_epistemic"]),
-        "epistemic_class": str(blueprint["status_epistemic"]),
-        "epistemic_basis": str(blueprint["status_basis"]),
+        "status_basis": common_status_basis,
+        "status_epistemic_class": common_status_epistemic,
+        "status_basis_epistemic_class": common_status_epistemic,
+        "epistemic_class": common_status_epistemic,
+        "epistemic_basis": common_status_basis,
+        "status_basis_metadata": corrected.get("status_basis_metadata", {}),
         "dependencies": dependency_group_map,
         "dependency_groups": groups,
         "dependency_ids": dependency_ids,

@@ -1,3 +1,4 @@
+import type { MouseEvent as ReactMouseEvent } from "react";
 import type { IndiaLink, IndiaRecord } from "./india-types";
 
 interface IndiaChainRibbonProps {
@@ -11,6 +12,16 @@ interface RibbonNode {
   tone: "upstream" | "current" | "downstream" | "unlock";
 }
 
+function recordHref(id: string): string {
+  return `/india/records/${encodeURIComponent(id)}`;
+}
+
+function interceptRecordLink(event: ReactMouseEvent<HTMLAnchorElement>, onNavigate: () => void) {
+  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  onNavigate();
+}
+
 function RibbonLinks({
   links,
   onNavigate,
@@ -22,16 +33,21 @@ function RibbonLinks({
   return (
     <div className="india-ribbon-links">
       {links.slice(0, 4).map((link, index) => (
-        <button
-          className="india-ribbon-link"
-          type="button"
-          key={`${link.id ?? link.label}-${index}`}
-          onClick={() => onNavigate(link)}
-          disabled={!link.id}
-          title={link.note || link.label}
-        >
-          {link.label}
-        </button>
+        link.id ? (
+          <a
+            className="india-ribbon-link"
+            href={recordHref(link.id)}
+            key={`${link.id}-${index}`}
+            onClick={(event) => interceptRecordLink(event, () => onNavigate(link))}
+            title={link.note || link.label}
+          >
+            {link.label}
+          </a>
+        ) : (
+          <span className="india-ribbon-link unavailable" key={`${link.label}-${index}`} title={link.note || link.label}>
+            {link.label}
+          </span>
+        )
       ))}
       {links.length > 4 ? (
         <span className="india-ribbon-more">+{links.length - 4} more</span>
@@ -47,7 +63,7 @@ export default function IndiaChainRibbon({
   const nodes: RibbonNode[] = [
     { label: "Upstream", links: record.upstream, tone: "upstream" },
     {
-      label: record.canonicalName,
+      label: record.displayName,
       links: [],
       tone: "current",
     },
@@ -82,4 +98,3 @@ export default function IndiaChainRibbon({
     </section>
   );
 }
-

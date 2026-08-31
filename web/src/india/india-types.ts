@@ -24,13 +24,17 @@ export interface IndiaMakingStep {
 export interface IndiaRecord {
   id: string;
   canonicalName: string;
+  displayName: string;
   aliases: string[];
   kind: string;
   category: string;
   explanation: string;
   use: string;
   indiaStatus: IndiaStatus;
+  statusEpistemicClass: string;
   statusBasis: string;
+  sourceSpec: string | null;
+  isReferenceOnly: boolean;
   domainId: string | null;
   domainName: string | null;
   dependencies: IndiaDependencyGroups;
@@ -53,15 +57,20 @@ export interface IndiaDomain {
 
 export interface IndiaSummary {
   recordCount: number | null;
+  directRecordCount: number | null;
+  referenceRecordCount: number | null;
   domainCount: number | null;
   snapshot: string | null;
   statusCounts: Record<string, number>;
+  directStatusCounts: Record<string, number>;
+  statusEpistemicCounts: Record<string, number>;
 }
 
 export interface IndiaSearchResult {
   record: IndiaRecord;
   score: number | null;
   matchedOn: string[];
+  matchType: string | null;
 }
 
 export interface IndiaDiscoverResult {

@@ -1,0 +1,3030 @@
+{
+  "canonical_names": {
+    "all": {
+      "exact_duplicate_group_count": 0,
+      "exact_duplicate_row_count": 0,
+      "max_rows_per_name": 1,
+      "top_duplicate_names": [],
+      "unique_canonical_name_count": 14662
+    },
+    "direct": {
+      "exact_duplicate_group_count": 0,
+      "exact_duplicate_row_count": 0,
+      "max_rows_per_name": 1,
+      "top_duplicate_names": [],
+      "unique_canonical_name_count": 12253
+    },
+    "reference": {
+      "exact_duplicate_group_count": 0,
+      "exact_duplicate_row_count": 0,
+      "max_rows_per_name": 1,
+      "top_duplicate_names": [],
+      "unique_canonical_name_count": 2409
+    }
+  },
+  "distributions": {
+    "all": {
+      "domain_counts": {
+        "01": 928,
+        "02": 928,
+        "03": 928,
+        "04": 928,
+        "05": 900,
+        "06": 1080,
+        "07": 1080,
+        "08": 1080,
+        "09": 1080,
+        "10": 1080,
+        "11": 1080,
+        "12": 1080,
+        "shared": 2490
+      },
+      "domain_status_counts": {
+        "01": {
+          "AVAILABLE": 176,
+          "CONFLICTED": 29,
+          "IMPORT_DEPENDENT": 206,
+          "PARTIAL": 415,
+          "SCALE_LIMITED": 80,
+          "UNKNOWN": 22
+        },
+        "02": {
+          "AVAILABLE": 161,
+          "CONFLICTED": 29,
+          "IMPORT_DEPENDENT": 235,
+          "PARTIAL": 416,
+          "SCALE_LIMITED": 64,
+          "UNKNOWN": 23
+        },
+        "03": {
+          "AVAILABLE": 264,
+          "IMPORT_DEPENDENT": 138,
+          "PARTIAL": 324,
+          "SCALE_LIMITED": 91,
+          "UNKNOWN": 111
+        },
+        "04": {
+          "AVAILABLE": 23,
+          "IMPORT_DEPENDENT": 459,
+          "PARTIAL": 294,
+          "SCALE_LIMITED": 48,
+          "UNKNOWN": 104
+        },
+        "05": {
+          "IMPORT_DEPENDENT": 108,
+          "PARTIAL": 540,
+          "SCALE_LIMITED": 252
+        },
+        "06": {
+          "IMPORT_DEPENDENT": 288,
+          "PARTIAL": 468,
+          "SCALE_LIMITED": 252,
+          "UNKNOWN": 72
+        },
+        "07": {
+          "IMPORT_DEPENDENT": 396,
+          "PARTIAL": 612,
+          "SCALE_LIMITED": 72
+        },
+        "08": {
+          "PARTIAL": 936,
+          "SCALE_LIMITED": 144
+        },
+        "09": {
+          "PARTIAL": 333,
+          "SCALE_LIMITED": 747
+        },
+        "10": {
+          "PARTIAL": 450,
+          "SCALE_LIMITED": 630
+        },
+        "11": {
+          "PARTIAL": 585,
+          "SCALE_LIMITED": 495
+        },
+        "12": {
+          "IMPORT_DEPENDENT": 72,
+          "PARTIAL": 549,
+          "SCALE_LIMITED": 459
+        },
+        "shared": {
+          "AVAILABLE": 36,
+          "IMPORT_DEPENDENT": 7,
+          "PARTIAL": 36,
+          "SCALE_LIMITED": 2,
+          "UNKNOWN": 2409
+        }
+      },
+      "kind_counts": {
+        "CAPABILITY": 3212,
+        "EQUIPMENT": 5017,
+        "MATERIAL": 1277,
+        "PROCESS": 947,
+        "PRODUCT": 4209
+      },
+      "record_count": 14662,
+      "status_counts": {
+        "AVAILABLE": 660,
+        "CONFLICTED": 58,
+        "IMPORT_DEPENDENT": 1909,
+        "PARTIAL": 5958,
+        "SCALE_LIMITED": 3336,
+        "UNKNOWN": 2741
+      },
+      "status_epistemic_counts": {
+        "ASSUMPTION": 7824,
+        "CONFLICTED": 58,
+        "MODELLED": 720,
+        "UNKNOWN": 6060
+      }
+    },
+    "direct": {
+      "domain_counts": {
+        "01": 928,
+        "02": 928,
+        "03": 928,
+        "04": 928,
+        "05": 900,
+        "06": 1080,
+        "07": 1080,
+        "08": 1080,
+        "09": 1080,
+        "10": 1080,
+        "11": 1080,
+        "12": 1080,
+        "shared": 81
+      },
+      "domain_status_counts": {
+        "01": {
+          "AVAILABLE": 176,
+          "CONFLICTED": 29,
+          "IMPORT_DEPENDENT": 206,
+          "PARTIAL": 415,
+          "SCALE_LIMITED": 80,
+          "UNKNOWN": 22
+        },
+        "02": {
+          "AVAILABLE": 161,
+          "CONFLICTED": 29,
+          "IMPORT_DEPENDENT": 235,
+          "PARTIAL": 416,
+          "SCALE_LIMITED": 64,
+          "UNKNOWN": 23
+        },
+        "03": {
+          "AVAILABLE": 264,
+          "IMPORT_DEPENDENT": 138,
+          "PARTIAL": 324,
+          "SCALE_LIMITED": 91,
+          "UNKNOWN": 111
+        },
+        "04": {
+          "AVAILABLE": 23,
+          "IMPORT_DEPENDENT": 459,
+          "PARTIAL": 294,
+          "SCALE_LIMITED": 48,
+          "UNKNOWN": 104
+        },
+        "05": {
+          "IMPORT_DEPENDENT": 108,
+          "PARTIAL": 540,
+          "SCALE_LIMITED": 252
+        },
+        "06": {
+          "IMPORT_DEPENDENT": 288,
+          "PARTIAL": 468,
+          "SCALE_LIMITED": 252,
+          "UNKNOWN": 72
+        },
+        "07": {
+          "IMPORT_DEPENDENT": 396,
+          "PARTIAL": 612,
+          "SCALE_LIMITED": 72
+        },
+        "08": {
+          "PARTIAL": 936,
+          "SCALE_LIMITED": 144
+        },
+        "09": {
+          "PARTIAL": 333,
+          "SCALE_LIMITED": 747
+        },
+        "10": {
+          "PARTIAL": 450,
+          "SCALE_LIMITED": 630
+        },
+        "11": {
+          "PARTIAL": 585,
+          "SCALE_LIMITED": 495
+        },
+        "12": {
+          "IMPORT_DEPENDENT": 72,
+          "PARTIAL": 549,
+          "SCALE_LIMITED": 459
+        },
+        "shared": {
+          "AVAILABLE": 36,
+          "IMPORT_DEPENDENT": 7,
+          "PARTIAL": 36,
+          "SCALE_LIMITED": 2
+        }
+      },
+      "kind_counts": {
+        "CAPABILITY": 1270,
+        "EQUIPMENT": 4886,
+        "MATERIAL": 1142,
+        "PROCESS": 746,
+        "PRODUCT": 4209
+      },
+      "record_count": 12253,
+      "status_counts": {
+        "AVAILABLE": 660,
+        "CONFLICTED": 58,
+        "IMPORT_DEPENDENT": 1909,
+        "PARTIAL": 5958,
+        "SCALE_LIMITED": 3336,
+        "UNKNOWN": 332
+      },
+      "status_epistemic_counts": {
+        "ASSUMPTION": 7824,
+        "CONFLICTED": 58,
+        "MODELLED": 720,
+        "UNKNOWN": 3651
+      }
+    },
+    "reference": {
+      "domain_counts": {
+        "shared": 2409
+      },
+      "domain_status_counts": {
+        "shared": {
+          "UNKNOWN": 2409
+        }
+      },
+      "kind_counts": {
+        "CAPABILITY": 1942,
+        "EQUIPMENT": 131,
+        "MATERIAL": 135,
+        "PROCESS": 201
+      },
+      "record_count": 2409,
+      "status_counts": {
+        "UNKNOWN": 2409
+      },
+      "status_epistemic_counts": {
+        "UNKNOWN": 2409
+      }
+    }
+  },
+  "epistemic_corrections": {
+    "catalog_status_basis_metadata_count": 0,
+    "correction_detection_counts": {
+      "status_basis_marker_observed": 231,
+      "status_basis_metadata_observed": 0,
+      "status_transition_observed": 0
+    },
+    "correction_rule": "ASSUMPTION-backed STRONG/MISSING becomes UNKNOWN; prior label remains in status_basis_metadata when present",
+    "derived_correction_count": 231,
+    "derived_correction_samples": [
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:capability:solid_rocket_motor:design",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:capability:solid_rocket_motor:integration",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:capability:solid_rocket_motor:process",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:capability:solid_rocket_motor:scale",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:equipment:solid_rocket_motor:inspection",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:equipment:solid_rocket_motor:production",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:equipment:solid_rocket_motor:prototype",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:material:solid_rocket_motor:functional",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:material:solid_rocket_motor:recycled",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:material:solid_rocket_motor:structural",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:process:solid_rocket_motor:prototype",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:process:solid_rocket_motor:recovery",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:process:solid_rocket_motor:series",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:product:solid_rocket_motor:avionics",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:product:solid_rocket_motor:large",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:product:solid_rocket_motor:low_earth_orbit",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:product:solid_rocket_motor:medium",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:product:solid_rocket_motor:propulsion",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:product:solid_rocket_motor:prototype",
+        "prior_status": "STRONG"
+      },
+      {
+        "corrected_status": "UNKNOWN",
+        "id": "d01:product:solid_rocket_motor:reusable",
+        "prior_status": "STRONG"
+      }
+    ],
+    "source_direct_row_count": 12253
+  },
+  "families": {
+    "all": {
+      "family_count": 3725,
+      "multi_variant_family_count": 1235,
+      "record_count": 14662,
+      "records_in_multi_variant_families": 12172,
+      "singleton_family_count": 2490,
+      "top_families": [
+        {
+          "family_key": "product:05:3-axis-cnc-vmc",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:5-axis-cnc-machining-center",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:autonomous-mobile-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:bldc-pmsm-motor",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:cartesian-gantry-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:cnc-grinding-machine",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:cnc-turning-center",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:collaborative-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:delta-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:gear-grinding-machine",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:gear-hobbing-machine",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:induction-motor",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:industrial-motor",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:industrial-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:laser-cutting-machine",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:motor-drive",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:packaging-machinery",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:plc-controller",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:press-brake",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:scara-robot",
+          "variant_count": 36
+        }
+      ],
+      "variant_consolidation_ratio": 3.936107,
+      "variants_per_family": {
+        "max": 36,
+        "median": 1,
+        "min": 1,
+        "p95": 12
+      }
+    },
+    "by_domain_direct": {
+      "01": {
+        "family_count": 160,
+        "multi_variant_family_count": 160,
+        "record_count": 928,
+        "records_in_multi_variant_families": 928,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "d01:product:aero_engine_core",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:aerospace_test_qualification",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:airborne_radar",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:aircraft_actuation",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:aircraft_landing_gear",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:attitude_determination_control",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:avionics_display",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:communications_satellite",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:composite_airframe",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:cryogenic_upper_stage",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:earth_observation_satellite",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:flight_computer",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:helicopter_rotor_system",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:launch_site_ground_system",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:launch_vehicle",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:liquid_rocket_engine",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:navigation_satellite",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:payload_optical_system",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:precision_inertial_unit",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d01:product:propulsion_feed_system",
+            "variant_count": 12
+          }
+        ],
+        "variant_consolidation_ratio": 5.8,
+        "variants_per_family": {
+          "max": 12,
+          "median": 4.0,
+          "min": 4,
+          "p95": 12
+        }
+      },
+      "02": {
+        "family_count": 160,
+        "multi_variant_family_count": 160,
+        "record_count": 928,
+        "records_in_multi_variant_families": 928,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "d02:product:airborne_early_warning",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:ammunition_propulsion",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:armor_materials",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:armored_vehicle",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:artillery_system",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:assault_rifle_system",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:ballistic_missile_subsystem",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:battlefield_radar",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:counter_uas",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:cruise_missile",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:cyber_physical_security",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:defense_test_range",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:electro_optic_payload",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:electronic_warfare",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:energetic_materials",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:ground_based_air_defense",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:guided_missile",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:laser_designator",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:loitering_munition",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d02:product:military_satcom_terminal",
+            "variant_count": 12
+          }
+        ],
+        "variant_consolidation_ratio": 5.8,
+        "variants_per_family": {
+          "max": 12,
+          "median": 4.0,
+          "min": 4,
+          "p95": 12
+        }
+      },
+      "03": {
+        "family_count": 160,
+        "multi_variant_family_count": 160,
+        "record_count": 928,
+        "records_in_multi_variant_families": 928,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "d03:product:battery_energy_storage",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:carbon_capture",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:concentrated_solar",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:conversion_enrichment",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:distribution_automation",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:fast_breeder_reactor",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:flow_battery",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:fuel_cell_system",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:gas_turbine",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:geothermal_system",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:grid_forming_inverter",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:grid_transformer",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:heavy_water_system",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:hvdc_converter",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:hydroelectric_turbine",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:hydrogen_electrolyzer",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:industrial_energy_management",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:nuclear_fuel_fabrication",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:nuclear_instrumentation_control",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d03:product:nuclear_waste_management",
+            "variant_count": 12
+          }
+        ],
+        "variant_consolidation_ratio": 5.8,
+        "variants_per_family": {
+          "max": 12,
+          "median": 4.0,
+          "min": 4,
+          "p95": 12
+        }
+      },
+      "04": {
+        "family_count": 160,
+        "multi_variant_family_count": 160,
+        "record_count": 928,
+        "records_in_multi_variant_families": 928,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "d04:product:advanced_package",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:ai_accelerator",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:analog_mixed_signal",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:automotive_electronics",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:ceramic_package",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:compound_semiconductor_fab",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:data_center_server",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:display_panel",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:edge_compute_module",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:electronic_design_automation",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:electronic_test_instrumentation",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:embedded_compute",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:etch_deposition",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:gan_rf_device",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:high_performance_compute",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:igbt_module",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:image_sensor",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:industrial_control_system",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:lithography_process",
+            "variant_count": 12
+          },
+          {
+            "family_key": "d04:product:medical_electronics",
+            "variant_count": 12
+          }
+        ],
+        "variant_consolidation_ratio": 5.8,
+        "variants_per_family": {
+          "max": 12,
+          "median": 4.0,
+          "min": 4,
+          "p95": 12
+        }
+      },
+      "05": {
+        "family_count": 25,
+        "multi_variant_family_count": 25,
+        "record_count": 900,
+        "records_in_multi_variant_families": 900,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "product:05:3-axis-cnc-vmc",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:5-axis-cnc-machining-center",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:autonomous-mobile-robot",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:bldc-pmsm-motor",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:cartesian-gantry-robot",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:cnc-grinding-machine",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:cnc-turning-center",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:collaborative-robot",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:delta-robot",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:gear-grinding-machine",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:gear-hobbing-machine",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:induction-motor",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:industrial-motor",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:industrial-robot",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:laser-cutting-machine",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:motor-drive",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:packaging-machinery",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:plc-controller",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:press-brake",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:05:scara-robot",
+            "variant_count": 36
+          }
+        ],
+        "variant_consolidation_ratio": 36.0,
+        "variants_per_family": {
+          "max": 36,
+          "median": 36,
+          "min": 36,
+          "p95": 36
+        }
+      },
+      "06": {
+        "family_count": 30,
+        "multi_variant_family_count": 30,
+        "record_count": 1080,
+        "records_in_multi_variant_families": 1080,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "product:06:alkaline-electrolyzer",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:alloy-steel-bar",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:aluminum-alloy",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:ammonia-urea-plant",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:bearing-steel",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:centrifugal-pump",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:chlor-alkali-plant",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:copper-rod",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:electrical-steel",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:engineering-glass",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:engineering-polymer",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:graphite-anode",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:hard-carbon-anode",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:industrial-gas-separation",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:industrial-heat-exchanger",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:industrial-heat-pump",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:lfp-cathode-material",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:lithium-compound",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:methanol-syngas-plant",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:06:nickel-superalloy",
+            "variant_count": 36
+          }
+        ],
+        "variant_consolidation_ratio": 36.0,
+        "variants_per_family": {
+          "max": 36,
+          "median": 36.0,
+          "min": 36,
+          "p95": 36
+        }
+      },
+      "07": {
+        "family_count": 30,
+        "multi_variant_family_count": 30,
+        "record_count": 1080,
+        "records_in_multi_variant_families": 1080,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "product:07:anesthesia-workstation",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:autoclave",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:bioreactor",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:cell-therapy-isolator",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:ct-scanner",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:dialysis-machine",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:flow-cytometer",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:freeze-dryer",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:gc-ms-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:hplc-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:infusion-pump",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:lab-centrifuge",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:lab-incubator",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:lc-ms-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:microplate-reader",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:mri-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:patient-monitor",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:pcr-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:pet-spect-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:07:pharma-solid-dose-line",
+            "variant_count": 36
+          }
+        ],
+        "variant_consolidation_ratio": 36.0,
+        "variants_per_family": {
+          "max": 36,
+          "median": 36.0,
+          "min": 36,
+          "p95": 36
+        }
+      },
+      "08": {
+        "family_count": 30,
+        "multi_variant_family_count": 30,
+        "record_count": 1080,
+        "records_in_multi_variant_families": 1080,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "product:08:anaerobic-digester",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:aquaculture-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:aseptic-packaging-line",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:bakery-extrusion-line",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:bottling-line",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:cheese-yogurt-vat",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:cold-storage-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:combine-harvester",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:dairy-pasteurizer",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:edible-oil-refinery",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:feed-mill",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:food-dehydrator",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:food-fermentation-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:food-freeze-dryer",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:form-fill-seal-line",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:grain-dryer",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:grain-mill",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:greenhouse-system",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:industrial-refrigeration",
+            "variant_count": 36
+          },
+          {
+            "family_key": "product:08:irrigation-pump",
+            "variant_count": 36
+          }
+        ],
+        "variant_consolidation_ratio": 36.0,
+        "variants_per_family": {
+          "max": 36,
+          "median": 36.0,
+          "min": 36,
+          "p95": 36
+        }
+      },
+      "09": {
+        "family_count": 120,
+        "multi_variant_family_count": 120,
+        "record_count": 1080,
+        "records_in_multi_variant_families": 1080,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "india-v1:09:agricultural-tractor:battery-electric",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:agricultural-tractor:cng",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:agricultural-tractor:diesel",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:agricultural-tractor:hybrid",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:airport-ground-vehicle:battery-electric",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:airport-ground-vehicle:diesel",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:airport-ground-vehicle:hybrid",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:airport-ground-vehicle:hydrogen-electric",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:ambulance:battery-electric",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:ambulance:cng",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:ambulance:diesel",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:ambulance:hybrid",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:city-bus:battery-electric",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:city-bus:cng",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:city-bus:diesel",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:city-bus:hybrid",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:coastal-vessel:diesel",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:coastal-vessel:hybrid-electric",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:coastal-vessel:lng",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:09:coastal-vessel:shore-power-ready",
+            "variant_count": 9
+          }
+        ],
+        "variant_consolidation_ratio": 9.0,
+        "variants_per_family": {
+          "max": 9,
+          "median": 9.0,
+          "min": 9,
+          "p95": 9
+        }
+      },
+      "10": {
+        "family_count": 120,
+        "multi_variant_family_count": 120,
+        "record_count": 1080,
+        "records_in_multi_variant_families": 1080,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "india-v1:10:air-handling-unit:energy-recovery",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:air-handling-unit:fresh-air",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:air-handling-unit:hygienic",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:air-handling-unit:recirculating",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:asphalt-paver:electric-assist",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:asphalt-paver:high-precision-grade",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:asphalt-paver:tracked",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:asphalt-paver:wheeled",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:bulldozer:battery-electric",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:bulldozer:crawler-diesel",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:bulldozer:hybrid",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:bulldozer:wheel-diesel",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:busduct-system:air-insulated",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:busduct-system:fire-rated",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:busduct-system:plug-in",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:busduct-system:sandwich-busduct",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:centrifugal-pump-skid:end-suction",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:centrifugal-pump-skid:multistage",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:centrifugal-pump-skid:split-case",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:10:centrifugal-pump-skid:vertical-turbine",
+            "variant_count": 9
+          }
+        ],
+        "variant_consolidation_ratio": 9.0,
+        "variants_per_family": {
+          "max": 9,
+          "median": 9.0,
+          "min": 9,
+          "p95": 9
+        }
+      },
+      "11": {
+        "family_count": 120,
+        "multi_variant_family_count": 120,
+        "record_count": 1080,
+        "records_in_multi_variant_families": 1080,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "india-v1:11:basic-garment:knit-cotton",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:basic-garment:synthetic-blend",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:basic-garment:technical-fabric",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:basic-garment:woven-cotton",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:blow-moulding-machine:accumulator-head",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:blow-moulding-machine:continuous",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:blow-moulding-machine:extrusion-blow",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:blow-moulding-machine:injection-stretch-blow",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:bottle-container:glass-formed",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:bottle-container:hdpe-blow-moulded",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:bottle-container:metal-drawn",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:bottle-container:pet-blow-moulded",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:ceiling-fan:bldc-motor",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:ceiling-fan:induction-motor",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:ceiling-fan:remote-controlled",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:ceiling-fan:smart-connected",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:cookware:aluminium",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:cookware:cast-iron",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:cookware:ceramic-coated",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:11:cookware:stainless-steel",
+            "variant_count": 9
+          }
+        ],
+        "variant_consolidation_ratio": 9.0,
+        "variants_per_family": {
+          "max": 9,
+          "median": 9.0,
+          "min": 9,
+          "p95": 9
+        }
+      },
+      "12": {
+        "family_count": 120,
+        "multi_variant_family_count": 120,
+        "record_count": 1080,
+        "records_in_multi_variant_families": 1080,
+        "singleton_family_count": 0,
+        "top_families": [
+          {
+            "family_key": "india-v1:12:centrifugal-pump:end-suction",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:centrifugal-pump:multistage",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:centrifugal-pump:split-case",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:centrifugal-pump:vertical-turbine",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:closed-die-forging:cold-forging",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:closed-die-forging:hot-forging",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:closed-die-forging:precision-forging",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:closed-die-forging:warm-forging",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:cnc-machining-center:five-axis",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:cnc-machining-center:four-axis",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:cnc-machining-center:horizontal",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:cnc-machining-center:three-axis",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:control-valve:electric",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:control-valve:hydraulic",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:control-valve:pneumatic",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:control-valve:smart-positioner",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:cutting-tools:cemented-carbide",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:cutting-tools:ceramic",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:cutting-tools:diamond-or-cbn",
+            "variant_count": 9
+          },
+          {
+            "family_key": "india-v1:12:cutting-tools:high-speed-steel",
+            "variant_count": 9
+          }
+        ],
+        "variant_consolidation_ratio": 9.0,
+        "variants_per_family": {
+          "max": 9,
+          "median": 9.0,
+          "min": 9,
+          "p95": 9
+        }
+      },
+      "shared": {
+        "family_count": 81,
+        "multi_variant_family_count": 0,
+        "record_count": 81,
+        "records_in_multi_variant_families": 0,
+        "singleton_family_count": 81,
+        "top_families": [
+          {
+            "family_key": "id:shared_capability_composite_design",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_data_analytics_digital_twin",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_embedded_control_software",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_facility_operations",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_high_purity_processing",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_high_voltage_insulation",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_industrial_cybersecurity",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_industrial_metrology",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_materials_engineering",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_power_conversion",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_precision_manufacturing",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_process_control_yield",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_reliability_qualification",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_safety_case_regulatory",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_supply_chain_qualification",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_systems_engineering",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_thermal_management",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_capability_workforce_tacit_knowledge",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_equipment_additive_machine",
+            "variant_count": 1
+          },
+          {
+            "family_key": "id:shared_equipment_assembly_cell",
+            "variant_count": 1
+          }
+        ],
+        "variant_consolidation_ratio": 1.0,
+        "variants_per_family": {
+          "max": 1,
+          "median": 1,
+          "min": 1,
+          "p95": 1
+        }
+      }
+    },
+    "direct": {
+      "family_count": 1316,
+      "multi_variant_family_count": 1235,
+      "record_count": 12253,
+      "records_in_multi_variant_families": 12172,
+      "singleton_family_count": 81,
+      "top_families": [
+        {
+          "family_key": "product:05:3-axis-cnc-vmc",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:5-axis-cnc-machining-center",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:autonomous-mobile-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:bldc-pmsm-motor",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:cartesian-gantry-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:cnc-grinding-machine",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:cnc-turning-center",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:collaborative-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:delta-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:gear-grinding-machine",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:gear-hobbing-machine",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:induction-motor",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:industrial-motor",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:industrial-robot",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:laser-cutting-machine",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:motor-drive",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:packaging-machinery",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:plc-controller",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:press-brake",
+          "variant_count": 36
+        },
+        {
+          "family_key": "product:05:scara-robot",
+          "variant_count": 36
+        }
+      ],
+      "variant_consolidation_ratio": 9.31079,
+      "variants_per_family": {
+        "max": 36,
+        "median": 9.0,
+        "min": 1,
+        "p95": 36
+      }
+    }
+  },
+  "graph": {
+    "all": {
+      "dead_end_count": 0,
+      "dead_end_ids_sample": [],
+      "edge_counts": {
+        "dependency_ids": 370348,
+        "downstream": 618923,
+        "related": 524049,
+        "upstream": 448720
+      },
+      "missing_edge_samples": [],
+      "missing_unique_edge_count": 0,
+      "navigation_coverage_count": 14662,
+      "navigation_coverage_rate": 1.0,
+      "record_count": 14662,
+      "resolution_universe_record_count": 14662,
+      "resolved_unique_edge_count": 1962040,
+      "self_reference_count": 0,
+      "self_reference_samples": [],
+      "top_connectivity": [
+        {
+          "domain": "shared",
+          "family_key": "id:shared_capability_industrial_metrology",
+          "id": "shared:capability:industrial_metrology",
+          "in_degree": 8072,
+          "kind": "CAPABILITY",
+          "out_degree": 8036,
+          "total_navigation_degree": 16108
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_stainless_steel",
+          "id": "reference:shared_material_stainless_steel",
+          "in_degree": 6780,
+          "kind": "CAPABILITY",
+          "out_degree": 6780,
+          "total_navigation_degree": 13560
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_material_stainless_steel",
+          "id": "shared:material:stainless_steel",
+          "in_degree": 6732,
+          "kind": "MATERIAL",
+          "out_degree": 6780,
+          "total_navigation_degree": 13512
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_alloy_steel",
+          "id": "reference:shared_material_alloy_steel",
+          "in_degree": 5004,
+          "kind": "CAPABILITY",
+          "out_degree": 5004,
+          "total_navigation_degree": 10008
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_material_alloy_steel",
+          "id": "shared:material:alloy_steel",
+          "in_degree": 4968,
+          "kind": "MATERIAL",
+          "out_degree": 5004,
+          "total_navigation_degree": 9972
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_copper",
+          "id": "reference:shared_material_copper",
+          "in_degree": 4716,
+          "kind": "CAPABILITY",
+          "out_degree": 4716,
+          "total_navigation_degree": 9432
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_material_copper",
+          "id": "shared:material:copper",
+          "in_degree": 4716,
+          "kind": "MATERIAL",
+          "out_degree": 4716,
+          "total_navigation_degree": 9432
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_process_surface_treatment",
+          "id": "reference:shared_process_surface_treatment",
+          "in_degree": 4620,
+          "kind": "CAPABILITY",
+          "out_degree": 4620,
+          "total_navigation_degree": 9240
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_power_electronics",
+          "id": "reference:shared_capability_power_electronics",
+          "in_degree": 4500,
+          "kind": "CAPABILITY",
+          "out_degree": 4500,
+          "total_navigation_degree": 9000
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_carbon_steel",
+          "id": "reference:shared_material_carbon_steel",
+          "in_degree": 4428,
+          "kind": "CAPABILITY",
+          "out_degree": 4428,
+          "total_navigation_degree": 8856
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_material_carbon_steel",
+          "id": "shared:material:carbon_steel",
+          "in_degree": 4428,
+          "kind": "MATERIAL",
+          "out_degree": 4428,
+          "total_navigation_degree": 8856
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_bearings",
+          "id": "reference:shared_capability_bearings",
+          "in_degree": 4320,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 8640
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_industrial_controls",
+          "id": "reference:shared_capability_industrial_controls",
+          "in_degree": 4320,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 8640
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_motors",
+          "id": "reference:shared_capability_motors",
+          "in_degree": 4320,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 8640
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_process_quality",
+          "id": "reference:shared_capability_process_quality",
+          "in_degree": 4320,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 8640
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_seals_and_gaskets",
+          "id": "reference:shared_capability_seals_and_gaskets",
+          "in_degree": 4320,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 8640
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_tooling_and_fixtures",
+          "id": "reference:shared_capability_tooling_and_fixtures",
+          "in_degree": 4320,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 8640
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_aluminium",
+          "id": "reference:shared_material_aluminium",
+          "in_degree": 4320,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 8640
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_engineering_polymers",
+          "id": "reference:shared_material_engineering_polymers",
+          "in_degree": 4320,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 8640
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_process_assembly_and_test",
+          "id": "reference:shared_process_assembly_and_test",
+          "in_degree": 4320,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 8640
+        }
+      ],
+      "unique_edge_count": 1962040
+    },
+    "direct": {
+      "dead_end_count": 0,
+      "dead_end_ids_sample": [],
+      "edge_counts": {
+        "dependency_ids": 370348,
+        "downstream": 201322,
+        "related": 40904,
+        "upstream": 448720
+      },
+      "missing_edge_samples": [],
+      "missing_unique_edge_count": 0,
+      "navigation_coverage_count": 12253,
+      "navigation_coverage_rate": 1.0,
+      "record_count": 12253,
+      "resolution_universe_record_count": 14662,
+      "resolved_unique_edge_count": 1061294,
+      "self_reference_count": 0,
+      "self_reference_samples": [],
+      "top_connectivity": [
+        {
+          "domain": "shared",
+          "family_key": "id:shared_capability_industrial_metrology",
+          "id": "shared:capability:industrial_metrology",
+          "in_degree": 8072,
+          "kind": "CAPABILITY",
+          "out_degree": 8036,
+          "total_navigation_degree": 16108
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_system_industrial_infrastructure",
+          "id": "shared:system:industrial_infrastructure",
+          "in_degree": 3788,
+          "kind": "PRODUCT",
+          "out_degree": 3784,
+          "total_navigation_degree": 7572
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_equipment_coordinate_measuring_machine",
+          "id": "shared:equipment:coordinate_measuring_machine",
+          "in_degree": 3735,
+          "kind": "EQUIPMENT",
+          "out_degree": 3734,
+          "total_navigation_degree": 7469
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_process_metrology_inspection",
+          "id": "shared:process:metrology_inspection",
+          "in_degree": 3734,
+          "kind": "PROCESS",
+          "out_degree": 3733,
+          "total_navigation_degree": 7467
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_process_requirements_systems_engineering",
+          "id": "shared:process:requirements_systems_engineering",
+          "in_degree": 3725,
+          "kind": "PROCESS",
+          "out_degree": 3724,
+          "total_navigation_degree": 7449
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_capability_supply_chain_qualification",
+          "id": "shared:capability:supply_chain_qualification",
+          "in_degree": 3716,
+          "kind": "CAPABILITY",
+          "out_degree": 3716,
+          "total_navigation_degree": 7432
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_process_design_verification",
+          "id": "shared:process:design_verification",
+          "in_degree": 3716,
+          "kind": "PROCESS",
+          "out_degree": 3716,
+          "total_navigation_degree": 7432
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_system_industrial_power",
+          "id": "shared:system:industrial_power",
+          "in_degree": 3716,
+          "kind": "PRODUCT",
+          "out_degree": 3716,
+          "total_navigation_degree": 7432
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_capability_systems_engineering",
+          "id": "shared:capability:systems_engineering",
+          "in_degree": 3658,
+          "kind": "CAPABILITY",
+          "out_degree": 3658,
+          "total_navigation_degree": 7316
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_equipment_environmental_test_chamber",
+          "id": "shared:equipment:environmental_test_chamber",
+          "in_degree": 3615,
+          "kind": "EQUIPMENT",
+          "out_degree": 3615,
+          "total_navigation_degree": 7230
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_capability_reliability_qualification",
+          "id": "shared:capability:reliability_qualification",
+          "in_degree": 3542,
+          "kind": "CAPABILITY",
+          "out_degree": 3542,
+          "total_navigation_degree": 7084
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_process_assembly_integration",
+          "id": "shared:process:assembly_integration",
+          "in_degree": 3502,
+          "kind": "PROCESS",
+          "out_degree": 3501,
+          "total_navigation_degree": 7003
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_process_heat_treatment",
+          "id": "shared:process:heat_treatment",
+          "in_degree": 3471,
+          "kind": "PROCESS",
+          "out_degree": 3471,
+          "total_navigation_degree": 6942
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_process_high_reliability_qualification",
+          "id": "shared:process:high_reliability_qualification",
+          "in_degree": 3426,
+          "kind": "PROCESS",
+          "out_degree": 3426,
+          "total_navigation_degree": 6852
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_capability_process_control_yield",
+          "id": "shared:capability:process_control_yield",
+          "in_degree": 3415,
+          "kind": "CAPABILITY",
+          "out_degree": 3414,
+          "total_navigation_degree": 6829
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_material_ceramic",
+          "id": "shared:material:ceramic",
+          "in_degree": 3289,
+          "kind": "MATERIAL",
+          "out_degree": 3289,
+          "total_navigation_degree": 6578
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_equipment_assembly_cell",
+          "id": "shared:equipment:assembly_cell",
+          "in_degree": 3050,
+          "kind": "EQUIPMENT",
+          "out_degree": 3050,
+          "total_navigation_degree": 6100
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_equipment_electrical_test_bench",
+          "id": "shared:equipment:electrical_test_bench",
+          "in_degree": 3021,
+          "kind": "EQUIPMENT",
+          "out_degree": 3021,
+          "total_navigation_degree": 6042
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_system_test_qualification_infrastructure",
+          "id": "shared:system:test_qualification_infrastructure",
+          "in_degree": 2933,
+          "kind": "PRODUCT",
+          "out_degree": 2933,
+          "total_navigation_degree": 5866
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_capability_materials_engineering",
+          "id": "shared:capability:materials_engineering",
+          "in_degree": 2574,
+          "kind": "CAPABILITY",
+          "out_degree": 2573,
+          "total_navigation_degree": 5147
+        }
+      ],
+      "unique_edge_count": 1061294
+    },
+    "reference": {
+      "dead_end_count": 0,
+      "dead_end_ids_sample": [],
+      "edge_counts": {
+        "dependency_ids": 0,
+        "downstream": 417601,
+        "related": 483145,
+        "upstream": 0
+      },
+      "missing_edge_samples": [],
+      "missing_unique_edge_count": 0,
+      "navigation_coverage_count": 2409,
+      "navigation_coverage_rate": 1.0,
+      "record_count": 2409,
+      "resolution_universe_record_count": 14662,
+      "resolved_unique_edge_count": 900746,
+      "self_reference_count": 0,
+      "self_reference_samples": [],
+      "top_connectivity": [
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_stainless_steel",
+          "id": "reference:shared_material_stainless_steel",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 6780,
+          "total_navigation_degree": 6780
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_material_stainless_steel",
+          "id": "shared:material:stainless_steel",
+          "in_degree": 0,
+          "kind": "MATERIAL",
+          "out_degree": 6780,
+          "total_navigation_degree": 6780
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_alloy_steel",
+          "id": "reference:shared_material_alloy_steel",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 5004,
+          "total_navigation_degree": 5004
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_material_alloy_steel",
+          "id": "shared:material:alloy_steel",
+          "in_degree": 0,
+          "kind": "MATERIAL",
+          "out_degree": 5004,
+          "total_navigation_degree": 5004
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_copper",
+          "id": "reference:shared_material_copper",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4716,
+          "total_navigation_degree": 4716
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_material_copper",
+          "id": "shared:material:copper",
+          "in_degree": 0,
+          "kind": "MATERIAL",
+          "out_degree": 4716,
+          "total_navigation_degree": 4716
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_process_surface_treatment",
+          "id": "reference:shared_process_surface_treatment",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4620,
+          "total_navigation_degree": 4620
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_capability_power_electronics",
+          "id": "shared:capability:power_electronics",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4620,
+          "total_navigation_degree": 4620
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_process_surface_treatment",
+          "id": "shared:process:surface_treatment",
+          "in_degree": 0,
+          "kind": "PROCESS",
+          "out_degree": 4620,
+          "total_navigation_degree": 4620
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_power_electronics",
+          "id": "reference:shared_capability_power_electronics",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4500,
+          "total_navigation_degree": 4500
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_carbon_steel",
+          "id": "reference:shared_material_carbon_steel",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4428,
+          "total_navigation_degree": 4428
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:shared_material_carbon_steel",
+          "id": "shared:material:carbon_steel",
+          "in_degree": 0,
+          "kind": "MATERIAL",
+          "out_degree": 4428,
+          "total_navigation_degree": 4428
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_bearings",
+          "id": "reference:shared_capability_bearings",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 4320
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_industrial_controls",
+          "id": "reference:shared_capability_industrial_controls",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 4320
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_motors",
+          "id": "reference:shared_capability_motors",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 4320
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_process_quality",
+          "id": "reference:shared_capability_process_quality",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 4320
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_seals_and_gaskets",
+          "id": "reference:shared_capability_seals_and_gaskets",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 4320
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_capability_tooling_and_fixtures",
+          "id": "reference:shared_capability_tooling_and_fixtures",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 4320
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_aluminium",
+          "id": "reference:shared_material_aluminium",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 4320
+        },
+        {
+          "domain": "shared",
+          "family_key": "id:reference_shared_material_engineering_polymers",
+          "id": "reference:shared_material_engineering_polymers",
+          "in_degree": 0,
+          "kind": "CAPABILITY",
+          "out_degree": 4320,
+          "total_navigation_degree": 4320
+        }
+      ],
+      "unique_edge_count": 900746
+    }
+  },
+  "indiabuild_accounting": {
+    "current_official_top_level_observation": {
+      "assessed_capability_count": 3876,
+      "catalogue_claim": 10000,
+      "mapped_capability_count": 7049,
+      "maturity_counts": {
+        "COMPETITIVE": 114,
+        "DEMONSTRATED": 682,
+        "EMERGING": 1075,
+        "NO_CAPABILITY": 470,
+        "PRODUCING_LICENSED": 468,
+        "PRODUCING_OWN_TECH": 1067
+      },
+      "observed_on": "2026-08-26",
+      "scope": "official top-level observation only; no row-level export or parity claim",
+      "source_urls": [
+        "https://indiabuild.wiki/",
+        "https://indiabuild.wiki/how-it-works"
+      ],
+      "unassessed_capability_count": 3173
+    },
+    "forge_counts_for_context": {
+      "direct_record_count": 12253,
+      "record_count": 14662,
+      "reference_record_count": 2409
+    },
+    "parity_note": "No verified public row-level IndiaBUILD export is present locally; Forge ontology record counts are not treated as IndiaBUILD row counts.",
+    "parity_status": "NOT_COMPARABLE",
+    "repository_verified_snapshot": {
+      "assessed_or_sample_class_counts": {
+        "FORGE_DEEPER_EQUIVALENT": 4,
+        "INACCESSIBLE_OR_UNVERIFIABLE": 0,
+        "MATCHED": 2,
+        "MISSING": 0,
+        "UNRESOLVED": 4
+      },
+      "catalogue_claim": 10000,
+      "mapped_capability_count": 7047,
+      "observed_on": "2026-08-22",
+      "sample_size": 10
+    },
+    "row_level_export_available": false,
+    "source_artifact": "research/india_v1/indiabuild_accounting.json",
+    "source_artifact_sha256": "b093e85d28294ad2d7ad685e1264f12d0fbc92c5af36d51e08b80f9711675864",
+    "source_urls": [
+      "https://indiabuild.wiki/",
+      "https://indiabuild.wiki/how-it-works"
+    ]
+  },
+  "integrity": {
+    "all_references_resolve": true,
+    "error_count": 0,
+    "ok": true,
+    "unique_aliases": 39836,
+    "unique_ids": 14662
+  },
+  "ladders": {
+    "all": {
+      "action_diversity_defect_count": 0,
+      "allowed_action_violation_count": 0,
+      "complete_count": 14662,
+      "distinct_action_sequence_count": 13,
+      "dominant_semantic_signature_count": 2930,
+      "dominant_semantic_signature_rate": 0.199836,
+      "expected_stages": [
+        "local_first",
+        "initial_import_bridge",
+        "integration_and_test",
+        "next_localization",
+        "harder_later_capability",
+        "optional_redesign"
+      ],
+      "incomplete_count": 0,
+      "length_counts": {
+        "6": 14662
+      },
+      "low_semantic_diversity_defect": false,
+      "low_semantic_diversity_threshold": 0.95,
+      "order_defect_count": 0,
+      "ordered_count": 14662,
+      "record_count": 14662,
+      "semantic_signature_count": 39,
+      "stage_action_counts": {
+        "harder_later_capability": {
+          "LICENSE": 2184,
+          "R&D": 12478
+        },
+        "initial_import_bridge": {
+          "IMPORT": 14662
+        },
+        "integration_and_test": {
+          "BUILD": 1829,
+          "DEVELOP": 10304,
+          "JV": 2449,
+          "R&D": 80
+        },
+        "local_first": {
+          "DEVELOP": 8515,
+          "R&D": 6147
+        },
+        "next_localization": {
+          "BUILD": 2449,
+          "DEVELOP": 12133,
+          "SUBSTITUTE": 80
+        },
+        "optional_redesign": {
+          "REDESIGN": 14582,
+          "SUBSTITUTE": 80
+        }
+      },
+      "top_action_sequences": [
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "DEVELOP",
+            "DEVELOP",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 6604
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "DEVELOP",
+            "DEVELOP",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 3555
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "JV",
+            "BUILD",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 1942
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "BUILD",
+            "DEVELOP",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 1598
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "JV",
+            "BUILD",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 470
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "BUILD",
+            "DEVELOP",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 135
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "DEVELOP",
+            "DEVELOP",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 131
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "R&D",
+            "SUBSTITUTE",
+            "R&D",
+            "SUBSTITUTE"
+          ],
+          "count": 79
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "BUILD",
+            "DEVELOP",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 65
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "JV",
+            "BUILD",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 37
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "BUILD",
+            "DEVELOP",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 31
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "DEVELOP",
+            "DEVELOP",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 14
+        }
+      ]
+    },
+    "direct": {
+      "action_diversity_defect_count": 0,
+      "allowed_action_violation_count": 0,
+      "complete_count": 12253,
+      "distinct_action_sequence_count": 12,
+      "dominant_semantic_signature_count": 2930,
+      "dominant_semantic_signature_rate": 0.239125,
+      "expected_stages": [
+        "local_first",
+        "initial_import_bridge",
+        "integration_and_test",
+        "next_localization",
+        "harder_later_capability",
+        "optional_redesign"
+      ],
+      "incomplete_count": 0,
+      "length_counts": {
+        "6": 12253
+      },
+      "low_semantic_diversity_defect": false,
+      "low_semantic_diversity_threshold": 0.95,
+      "order_defect_count": 0,
+      "ordered_count": 12253,
+      "record_count": 12253,
+      "semantic_signature_count": 35,
+      "stage_action_counts": {
+        "harder_later_capability": {
+          "LICENSE": 242,
+          "R&D": 12011
+        },
+        "initial_import_bridge": {
+          "IMPORT": 12253
+        },
+        "integration_and_test": {
+          "BUILD": 1829,
+          "DEVELOP": 10304,
+          "JV": 40,
+          "R&D": 80
+        },
+        "local_first": {
+          "DEVELOP": 8515,
+          "R&D": 3738
+        },
+        "next_localization": {
+          "BUILD": 40,
+          "DEVELOP": 12133,
+          "SUBSTITUTE": 80
+        },
+        "optional_redesign": {
+          "REDESIGN": 12173,
+          "SUBSTITUTE": 80
+        }
+      },
+      "top_action_sequences": [
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "DEVELOP",
+            "DEVELOP",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 6604
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "DEVELOP",
+            "DEVELOP",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 3555
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "BUILD",
+            "DEVELOP",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 1598
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "BUILD",
+            "DEVELOP",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 135
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "DEVELOP",
+            "DEVELOP",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 131
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "R&D",
+            "SUBSTITUTE",
+            "R&D",
+            "SUBSTITUTE"
+          ],
+          "count": 79
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "BUILD",
+            "DEVELOP",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 65
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "JV",
+            "BUILD",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 37
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "BUILD",
+            "DEVELOP",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 31
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "DEVELOP",
+            "DEVELOP",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 14
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "JV",
+            "BUILD",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 3
+        },
+        {
+          "actions": [
+            "DEVELOP",
+            "IMPORT",
+            "R&D",
+            "SUBSTITUTE",
+            "LICENSE",
+            "SUBSTITUTE"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    "reference": {
+      "action_diversity_defect_count": 0,
+      "allowed_action_violation_count": 0,
+      "complete_count": 2409,
+      "distinct_action_sequence_count": 2,
+      "dominant_semantic_signature_count": 1942,
+      "dominant_semantic_signature_rate": 0.806144,
+      "expected_stages": [
+        "local_first",
+        "initial_import_bridge",
+        "integration_and_test",
+        "next_localization",
+        "harder_later_capability",
+        "optional_redesign"
+      ],
+      "incomplete_count": 0,
+      "length_counts": {
+        "6": 2409
+      },
+      "low_semantic_diversity_defect": false,
+      "low_semantic_diversity_threshold": 0.95,
+      "order_defect_count": 0,
+      "ordered_count": 2409,
+      "record_count": 2409,
+      "semantic_signature_count": 4,
+      "stage_action_counts": {
+        "harder_later_capability": {
+          "LICENSE": 1942,
+          "R&D": 467
+        },
+        "initial_import_bridge": {
+          "IMPORT": 2409
+        },
+        "integration_and_test": {
+          "JV": 2409
+        },
+        "local_first": {
+          "R&D": 2409
+        },
+        "next_localization": {
+          "BUILD": 2409
+        },
+        "optional_redesign": {
+          "REDESIGN": 2409
+        }
+      },
+      "top_action_sequences": [
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "JV",
+            "BUILD",
+            "LICENSE",
+            "REDESIGN"
+          ],
+          "count": 1942
+        },
+        {
+          "actions": [
+            "R&D",
+            "IMPORT",
+            "JV",
+            "BUILD",
+            "R&D",
+            "REDESIGN"
+          ],
+          "count": 467
+        }
+      ]
+    }
+  },
+  "name_artifacts": {
+    "all": {
+      "duplicate_display_name_row_count": 512,
+      "generic_lifecycle_suffix_count": 640,
+      "parenthesized_name_count": 0,
+      "space_hyphen_name_count": 3712
+    },
+    "direct": {
+      "duplicate_display_name_row_count": 512,
+      "generic_lifecycle_suffix_count": 640,
+      "parenthesized_name_count": 0,
+      "space_hyphen_name_count": 3712
+    },
+    "reference": {
+      "duplicate_display_name_row_count": 0,
+      "generic_lifecycle_suffix_count": 0,
+      "parenthesized_name_count": 0,
+      "space_hyphen_name_count": 0
+    }
+  },
+  "profile_fixes": {
+    "per_family": {
+      "cold-storage-system": {
+        "expected_profile": "cold_chain",
+        "mismatch_count": 0,
+        "observed_profiles": {
+          "cold_chain": 36
+        },
+        "row_count": 36
+      },
+      "dialysis-machine": {
+        "expected_profile": "clinical",
+        "mismatch_count": 0,
+        "observed_profiles": {
+          "clinical": 36
+        },
+        "row_count": 36
+      },
+      "infusion-pump": {
+        "expected_profile": "clinical",
+        "mismatch_count": 0,
+        "observed_profiles": {
+          "clinical": 36
+        },
+        "row_count": 36
+      },
+      "lab-incubator": {
+        "expected_profile": "lab",
+        "mismatch_count": 0,
+        "observed_profiles": {
+          "lab": 36
+        },
+        "row_count": 36
+      },
+      "patient-monitor": {
+        "expected_profile": "clinical",
+        "mismatch_count": 0,
+        "observed_profiles": {
+          "clinical": 36
+        },
+        "row_count": 36
+      }
+    },
+    "profile_field_row_count": 4140,
+    "source_pack": "data.india_v1.domains_05_08",
+    "targeted_expected_row_count": 180,
+    "targeted_family_count": 5,
+    "targeted_mismatch_count": 0,
+    "targeted_row_count": 180
+  },
+  "record_counts": {
+    "direct_record_count": 12253,
+    "direct_share": 0.835698,
+    "record_count": 14662,
+    "reference_record_count": 2409,
+    "reference_share": 0.164302
+  },
+  "record_digest_sha256": "996015e1b1baf6dcba54cab23100f7bc42ba27b5ce187d37f3e2ddf96b670219",
+  "runner_version": "1.0.0",
+  "schema_version": "india_v1.run2_quality_accounting.v1",
+  "source_api": "forge.india_v1.catalog.get_catalog"
+}

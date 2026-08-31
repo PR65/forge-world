@@ -8,7 +8,7 @@ import re
 from collections import deque
 from pathlib import Path
 from threading import Lock
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Literal, Optional, Sequence
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -133,6 +133,35 @@ class ResearchResolveIn(BaseModel):
     approve_for_scenario: bool = False
 
 
+class IndiaObjectiveConstraintIn(BaseModel):
+    kind: str = Field(min_length=1, max_length=64)
+    value: str | float
+
+    @field_validator("value")
+    @classmethod
+    def validate_value(cls, value: str | float) -> str | float:
+        if isinstance(value, str):
+            value = value.strip()
+            if not value or len(value) > 240:
+                raise ValueError("text constraint values must contain 1-240 characters")
+        elif not math.isfinite(value):
+            raise ValueError("numeric constraint values must be finite")
+        return value
+
+
+class IndiaIndustrialObjectiveIn(BaseModel):
+    objective: Literal["manufacture"] = "manufacture"
+    product: str = Field(min_length=1, max_length=240)
+    quantity: float = Field(gt=0, allow_inf_nan=False)
+    unit: str = Field(default="units", min_length=1, max_length=32)
+    period: Literal["year", "month", "week", "day"] = "year"
+    geography: str = Field(default="INDIA", min_length=1, max_length=80)
+    target_year: int = Field(default=2030, ge=2026, le=2200)
+    constraints: List[IndiaObjectiveConstraintIn] = Field(default_factory=list, max_length=12)
+    confirm_family: bool = False
+    use_fixtures: bool = True
+
+
 def _objective_spec(obj: ObjectiveIn) -> ObjectiveSpecInput:
     assumptions = {
         key: (float(value[0]), float(value[1]))
@@ -165,15 +194,21 @@ def _india_summary_record(catalog, record_id: str) -> Dict[str, Any]:
     return {
         "id": record["id"],
         "canonical_name": record["canonical_name"],
-        "name": record["canonical_name"],
-        "aliases": list(record["aliases"]),
+        # ``canonical_name`` remains the source-facing label; ``name`` is the
+        # compact quality-normalized display label used by the UI.
+        "name": record.get("display_name") or record["canonical_name"],
+        "display_name": record.get("display_name") or record["canonical_name"],
+        "family_key": record.get("family_key") or record["id"],
+        "family_label": record.get("family_label") or record["canonical_name"],
+        "variant_label": record.get("variant_label", ""),
+        "aliases": list(record["aliases"][:20]),
         "domain_id": record["domain_id"],
         "domain_code": record["domain_code"],
         "domain": record["domain"],
         "category": record["category"],
         "kind": record["kind"],
-        "explanation": record["explanation"],
-        "uses": list(record["uses"]),
+        "explanation": str(record["explanation"])[:1200],
+        "uses": list(record["uses"][:20]),
         "use": record["uses"][0] if record["uses"] else "",
         "status": record["status"],
         "india_status": record["status"],
@@ -181,6 +216,31 @@ def _india_summary_record(catalog, record_id: str) -> Dict[str, Any]:
         "status_basis": record["status_basis"],
         "is_reference_only": record["is_reference_only"],
         "depth_profile": INDIA_DEPTH_PROFILE,
+    }
+
+
+def _india_link_dto(catalog, record_id: str) -> Dict[str, Any]:
+    """Return a bounded graph link without recursively embedding a record."""
+
+    record = catalog.by_id.get(record_id)
+    if record is None:
+        raise HTTPException(404, f"India V1 record '{record_id}' not found")
+    display = record.get("display_name") or record["canonical_name"]
+    return {
+        "id": record["id"],
+        "canonical_name": record["canonical_name"],
+        "name": display,
+        "display_name": display,
+        "family_key": record.get("family_key") or record["id"],
+        "family_label": record.get("family_label") or display,
+        "variant_label": record.get("variant_label", ""),
+        "domain_id": record["domain_id"],
+        "domain_code": record["domain_code"],
+        "domain": record["domain"],
+        "kind": record["kind"],
+        "status": record["status"],
+        "status_epistemic_class": record["status_epistemic_class"],
+        "is_reference_only": record["is_reference_only"],
     }
 
 
@@ -193,7 +253,7 @@ def _india_full_record(catalog, record_id: str) -> Dict[str, Any]:
     dependency_ids: Dict[str, List[str]] = {}
     for group, references in record["dependencies"].items():
         dependency_ids[group] = list(references)
-        dependencies[group] = [_india_summary_record(catalog, reference) for reference in references]
+        dependencies[group] = [_india_link_dto(catalog, reference) for reference in references]
 
     # Highly reused foundations can unlock thousands of records. Keep a
     # record response readable and bounded; the graph/search endpoints retain
@@ -201,7 +261,7 @@ def _india_full_record(catalog, record_id: str) -> Dict[str, Any]:
     link_limit = 100
 
     def linked(references: Sequence[str]) -> List[Dict[str, Any]]:
-        return [_india_summary_record(catalog, reference) for reference in references[:link_limit]]
+        return [_india_link_dto(catalog, reference) for reference in references[:link_limit]]
 
     upstream = linked(record["upstream"])
     downstream = linked(record["downstream"])
@@ -324,25 +384,144 @@ def india_search_api(
     kind: Optional[str] = Query(default=None, max_length=50),
     status: Optional[str] = Query(default=None, max_length=80),
     limit: int = Query(default=25, ge=1, le=100),
+    include_variants: bool = Query(default=False),
 ):
     catalog = get_india_catalog()
     domain_code = _india_domain_filter(catalog, domain)
     kind_value = _india_kind_filter(kind)
     status_value = _india_status_filter(status)
-    ranked = catalog.ranked_search(
-        q.strip(), domain=domain_code, kind=kind_value, status=status_value, limit=limit
+    hits = catalog.search_hits(
+        q.strip(),
+        domain=domain_code,
+        kind=kind_value,
+        status=status_value,
+        limit=limit,
+        include_variants=include_variants,
     )
     results = []
-    for rank, (record, score) in enumerate(ranked, start=1):
-        results.append({**_india_summary_record(catalog, record["id"]), "rank": rank, "score": score})
+    for rank, hit in enumerate(hits, start=1):
+        record = hit["record"]
+        results.append(
+            {
+                **_india_summary_record(catalog, record["id"]),
+                "rank": rank,
+                "score": int(hit["score"]),
+                "match_type": str(hit.get("match_type", "")),
+                "matched_on": list(hit.get("matched_on", ())),
+                "coverage": float(hit.get("coverage", 0.0)),
+                "domain_match": bool(hit.get("domain_match", False)),
+            }
+        )
     return {
         "query": q,
         "domain": domain_code,
         "kind": kind_value,
         "status": status_value,
         "limit": limit,
+        "include_variants": include_variants,
         "count": len(results),
         "results": results,
+        "depth_profile": INDIA_DEPTH_PROFILE,
+    }
+
+
+@app.get("/api/india/resolve")
+def india_resolve_objective_api(
+    q: str = Query(default="", max_length=300),
+    candidate_limit: int = Query(default=4, ge=1, le=8),
+):
+    """Interpret and honestly resolve a simple India manufacturing objective.
+
+    Weak related matches are returned as confirmation-required candidates;
+    they are never silently promoted into the selected analysis subject.
+    """
+
+    from forge.india_v1.objective import resolve_objective
+
+    if not q.strip():
+        raise HTTPException(422, "provide a product or manufacturing objective")
+    return resolve_objective(q, get_india_catalog(), candidate_limit=candidate_limit)
+
+
+@app.post("/api/india/objective/compile")
+def india_compile_objective_api(request: IndiaIndustrialObjectiveIn):
+    """Compile a bounded manufacturing target through the existing FORGE core."""
+
+    from forge.india_v1.objective_compiler import compile_industrial_objective
+    from forge.india_v1.objective_models import IndustrialObjective, ObjectiveConstraint
+
+    objective = IndustrialObjective(
+        objective_type=request.objective,
+        product=request.product.strip(),
+        quantity=request.quantity,
+        output_unit=request.unit.strip(),
+        period=request.period,
+        geography=request.geography.strip().upper(),
+        target_year=request.target_year,
+        constraints=tuple(
+            ObjectiveConstraint(kind=item.kind.strip(), value=item.value)
+            for item in request.constraints
+        ),
+        confirm_family=request.confirm_family,
+    )
+    try:
+        return compile_industrial_objective(
+            objective,
+            catalog=get_india_catalog(),
+            use_fixtures=request.use_fixtures,
+        ).to_dict()
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+
+
+def _india_buildability_payload(subject: str):
+    """Compose the human-facing India product view without exposing IDs."""
+
+    from forge.india_v1.view_model import compose_buildability_view_model
+
+    try:
+        return compose_buildability_view_model(subject, get_india_catalog()).to_dict()
+    except LookupError as exc:
+        raise HTTPException(404, str(exc)) from exc
+
+
+@app.get("/api/india/buildability")
+@app.get("/api/india/view")
+def india_buildability_api(
+    q: str = Query(default="", max_length=200),
+    record_id: Optional[str] = Query(default=None, max_length=240),
+):
+    """Return the presentation-adapted buildability answer for a product.
+
+    The request may use a human search query or an exact record ID.  The
+    response deliberately contains display labels and status summaries only;
+    canonical IDs remain confined to the catalog/search/graph contracts.
+    """
+
+    subject = (record_id or q).strip()
+    if not subject:
+        raise HTTPException(422, "provide a product query or record_id")
+    return _india_buildability_payload(subject)
+
+
+@app.get("/api/india/buildability/{record_id:path}")
+def india_buildability_record_api(record_id: str):
+    """Path-form alias for clients that already have a record deep link."""
+
+    if not record_id.strip() or len(record_id) > 240:
+        raise HTTPException(404, f"India V1 record '{record_id}' not found")
+    return _india_buildability_payload(record_id)
+
+
+@app.get("/api/india/bootstrap")
+def india_bootstrap_api(limit: int = Query(default=12, ge=1, le=24)):
+    """Return one bounded payload for first-load India V1 navigation."""
+
+    catalog = get_india_catalog()
+    return {
+        "summary": india_summary(catalog),
+        "domains": india_domains(catalog),
+        "discover": india_discover_api(limit),
         "depth_profile": INDIA_DEPTH_PROFILE,
     }
 
@@ -1091,6 +1270,34 @@ def option_value():
 
 @app.get("/")
 def index():
+    if (WEB_DIST / "index.html").exists():
+        return FileResponse(WEB_DIST / "index.html")
+    return {"error": "frontend not built; run npm run build in web/"}
+
+
+_PUBLIC_DOCS = {
+    "DATA_SOURCES.md": ROOT / "docs" / "DATA_SOURCES.md",
+    "DATA_RIGHTS.md": ROOT / "docs" / "DATA_RIGHTS.md",
+    "FORGE_INDIA_V1_KNOWN_LIMITATIONS.md": ROOT / "docs" / "FORGE_INDIA_V1_KNOWN_LIMITATIONS.md",
+}
+
+
+@app.get("/docs/{document_name}")
+def public_document(document_name: str):
+    """Serve the small, explicit public documentation surface linked by V1."""
+
+    document = _PUBLIC_DOCS.get(document_name)
+    if document is None or not document.exists():
+        raise HTTPException(404, "Public document not found")
+    return FileResponse(document, media_type="text/markdown; charset=utf-8")
+
+
+@app.get("/india")
+@app.get("/india/")
+@app.get("/india/records/{record_id:path}")
+def india_frontend(record_id: str | None = None):
+    """Return the SPA shell for launch routes and direct record deep links."""
+
     if (WEB_DIST / "index.html").exists():
         return FileResponse(WEB_DIST / "index.html")
     return {"error": "frontend not built; run npm run build in web/"}
