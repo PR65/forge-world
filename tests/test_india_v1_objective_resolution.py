@@ -109,6 +109,14 @@ def test_broad_product_language_remains_easy_but_confirmation_safe() -> None:
     assert "tractor" not in battery_titles
 
 
+def test_plural_product_head_resolves_like_singular_objective() -> None:
+    singular = resolve_objective("industrial robot")["resolution"]
+    plural = resolve_objective("India manufacture 100,000 industrial robots per year by 2030")["resolution"]
+
+    assert plural["classification"] == singular["classification"] == "EXACT"
+    assert plural["selected"]["title"] == singular["selected"]["title"]
+
+
 def test_resolution_api_contract_supports_objectives_and_bounds_inputs() -> None:
     response = CLIENT.get(
         "/api/india/resolve",

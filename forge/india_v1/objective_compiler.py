@@ -249,6 +249,7 @@ def compile_industrial_objective(
         )
         for capacity in (fixture.capacities if fixture else ())
     )
+    capacity_observation_by_node = {observation.node_id: observation for observation in capacities}
     bridge = compile_architecture_to_core(
         architecture,
         annual_quantity=annual_quantity,
@@ -343,6 +344,7 @@ def compile_industrial_objective(
         else:
             lo = hi = None
             epistemic = "UNKNOWN"
+        observation = capacity_observation_by_node.get(node_id)
         capacity_ledger.append(
             {
                 "node_id": node_id,
@@ -353,6 +355,7 @@ def compile_industrial_objective(
                 "unit": row.get("unit"),
                 "state": "KNOWN" if lo is not None else "UNKNOWN",
                 "epistemic_class": epistemic,
+                "source_record_ids": list(observation.source_record_ids) if observation else [],
                 "unknown_reasons": list(envelope.unknown_reasons) if envelope and lo is None else [],
             }
         )
@@ -377,6 +380,7 @@ def compile_industrial_objective(
                 "coverage_ratio_hi": coverage_hi,
                 "unit": row.get("unit"),
                 "state": "CALCULATED" if gap_lo is not None else "UNKNOWN",
+                "epistemic_class": epistemic,
             }
         )
 
@@ -401,11 +405,13 @@ def compile_industrial_objective(
     bottlenecks: list[dict[str, Any]] = []
     for gap in gap_ledger:
         if gap["gap_lo"] is not None and gap["gap_hi"] and gap["gap_hi"] > 0:
+            assumption_note = " under an explicit capacity ASSUMPTION" if gap["epistemic_class"] == "ASSUMPTION" else ""
             bottlenecks.append(
                 {
                     "node_id": gap["node_id"], "label": gap["label"],
-                    "reason": f"Objective demand exceeds declared domestic capacity; gap interval {gap['gap_lo']:g}-{gap['gap_hi']:g} {gap['unit']}.",
+                    "reason": f"Objective demand exceeds declared domestic capacity{assumption_note}; gap interval {gap['gap_lo']:g}-{gap['gap_hi']:g} {gap['unit']}.",
                     "criticality": 100.0 * (1.0 - float(gap["coverage_ratio_hi"] or 0.0)),
+                    "epistemic_class": gap["epistemic_class"],
                     "trace": [gap["node_id"]],
                 }
             )
@@ -429,13 +435,15 @@ def compile_industrial_objective(
             verification.append({"id": f"verify:coefficient:{row['node_id']}", "target": row["node_id"], "question": question, "reason": "QUANTITY_COEFFICIENT_UNKNOWN"})
             actions.append({"id": f"action:verify:coefficient:{row['node_id']}", "category": ClosureActionCategory.VERIFY.value, "target": row["node_id"], "label": row["label"], "reason": question, "objective_demand": None, "capacity_state": "UNKNOWN", "dependency_state": "UNKNOWN", "prerequisites": [], "supporting_evidence": row["source_record_ids"], "unresolved_questions": [question]})
     for cap in capacity_ledger:
-        if cap["state"] == "UNKNOWN":
+        if cap["state"] == "UNKNOWN" or cap["epistemic_class"] == "ASSUMPTION":
             question = f"Verify current annual Indian production capacity for {cap['label']}."
-            verification.append({"id": f"verify:capacity:{cap['node_id']}", "target": cap["node_id"], "question": question, "reason": "DOMESTIC_CAPACITY_UNKNOWN"})
-            actions.append({"id": f"action:verify:capacity:{cap['node_id']}", "category": ClosureActionCategory.VERIFY.value, "target": cap["node_id"], "label": cap["label"], "reason": question, "objective_demand": demand_by_node[cap["node_id"]].get("quantity"), "capacity_state": "UNKNOWN", "dependency_state": next((dep["state"] for dep in dependency if dep["node_id"] == cap["node_id"]), "UNKNOWN"), "prerequisites": [], "supporting_evidence": [], "unresolved_questions": [question]})
+            reason = "DOMESTIC_CAPACITY_UNKNOWN" if cap["state"] == "UNKNOWN" else "DOMESTIC_CAPACITY_ASSUMPTION"
+            verification.append({"id": f"verify:capacity:{cap['node_id']}", "target": cap["node_id"], "question": question, "reason": reason})
+            actions.append({"id": f"action:verify:capacity:{cap['node_id']}", "category": ClosureActionCategory.VERIFY.value, "target": cap["node_id"], "label": cap["label"], "reason": question, "objective_demand": demand_by_node[cap["node_id"]].get("quantity"), "capacity_state": cap["state"], "dependency_state": next((dep["state"] for dep in dependency if dep["node_id"] == cap["node_id"]), "UNKNOWN"), "prerequisites": [], "supporting_evidence": cap["source_record_ids"], "unresolved_questions": [question]})
     for gap in gap_ledger:
         if gap["gap_hi"] is not None and gap["gap_hi"] > 0:
-            actions.append({"id": f"action:make:{gap['node_id']}", "category": ClosureActionCategory.MAKE.value, "target": gap["node_id"], "label": gap["label"], "reason": "Declared domestic capacity is below objective-derived demand.", "objective_demand": gap["required"], "capacity_state": "KNOWN", "dependency_state": next((dep["state"] for dep in dependency if dep["node_id"] == gap["node_id"]), "UNKNOWN"), "prerequisites": [f"action:verify:capacity:{gap['node_id']}"] if next((cap["epistemic_class"] for cap in capacity_ledger if cap["node_id"] == gap["node_id"]), "") == "ASSUMPTION" else [], "supporting_evidence": [], "unresolved_questions": []})
+            capacity = next((cap for cap in capacity_ledger if cap["node_id"] == gap["node_id"]), None)
+            actions.append({"id": f"action:make:{gap['node_id']}", "category": ClosureActionCategory.MAKE.value, "target": gap["node_id"], "label": gap["label"], "reason": "Declared domestic capacity is below objective-derived demand.", "objective_demand": gap["required"], "capacity_state": "KNOWN", "dependency_state": next((dep["state"] for dep in dependency if dep["node_id"] == gap["node_id"]), "UNKNOWN"), "prerequisites": [f"action:verify:capacity:{gap['node_id']}"] if capacity and capacity["epistemic_class"] == "ASSUMPTION" else [], "supporting_evidence": capacity["source_record_ids"] if capacity else [], "unresolved_questions": []})
     for dep in dependency:
         category = {
             DependencyState.MISSING.value: ClosureActionCategory.DEVELOP,

@@ -32,6 +32,10 @@ def test_robot_fixture_derives_demand_and_assumption_labelled_capacity_gap() -> 
     assert gap["coverage_ratio_lo"] == gap["coverage_ratio_hi"] == 250_000.0 / 600_000.0
     capacity = next(row for row in result.capacity_ledger if row["node_id"] == servo["node_id"])
     assert capacity["epistemic_class"] == "ASSUMPTION"
+    verify_id = f"action:verify:capacity:{servo['node_id']}"
+    assert any(action["id"] == verify_id for action in result.closure_actions)
+    make = next(action for action in result.closure_actions if action["id"] == f"action:make:{servo['node_id']}")
+    assert make["prerequisites"] == [verify_id]
 
 
 def test_partial_quantification_retains_unknown_and_unknown_is_not_a_bottleneck() -> None:

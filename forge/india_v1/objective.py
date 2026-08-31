@@ -22,10 +22,16 @@ OBJECTIVE_RESOLUTION_SCHEMA_VERSION = "forge-india-objective-resolution-v1"
 _SPACE = re.compile(r"\s+")
 _LEADING_INTENT = (
     re.compile(r"^(?:i|we)\s+(?:want|would\s+like|plan|need)\s+to\s+", re.IGNORECASE),
+    re.compile(r"^(?:wants?|plans?|needs?)\s+to\s+", re.IGNORECASE),
     re.compile(r"^help\s+(?:me|us)\s+(?:to\s+)?", re.IGNORECASE),
     re.compile(r"^what\s+(?:would|does)\s+it\s+take\s+to\s+", re.IGNORECASE),
     re.compile(r"^can\s+india\s+", re.IGNORECASE),
-    re.compile(r"^(?:please\s+)?(?:analy[sz]e|build|make|manufacture|produce|locali[sz]e)\s+", re.IGNORECASE),
+    re.compile(r"^(?:please\s+)?(?:analy[sz]e|builds?|makes?|manufactures?|produces?|locali[sz]e)\s+", re.IGNORECASE),
+)
+_LEADING_GEOGRAPHY = re.compile(
+    r"^(?:in\s+)?india\s+(?=(?:(?:wants?|plans?|needs?)\s+to\s+)?"
+    r"(?:analy[sz]e|builds?|makes?|manufactures?|produces?|locali[sz]e)\b)",
+    re.IGNORECASE,
 )
 _GEOGRAPHY = re.compile(r"\b(?:in|within|for)\s+india\b", re.IGNORECASE)
 _CADENCE = re.compile(
@@ -172,6 +178,11 @@ def parse_objective(value: str) -> ParsedObjective:
     geography = ""
     geography_label = ""
 
+    leading_geography = _LEADING_GEOGRAPHY.match(work)
+    if leading_geography:
+        geography = "INDIA"
+        geography_label = "India"
+        work = _clean(work[leading_geography.end():])
     if re.match(r"^can\s+india\b", work, re.IGNORECASE) or _GEOGRAPHY.search(work):
         geography = "INDIA"
         geography_label = "India"
@@ -273,6 +284,12 @@ def _retrieval_query(product_query: str) -> str:
         query = re.sub(rf"\b{word}[- ]axis\b", f"{digit}-axis", query, flags=re.IGNORECASE)
     query = re.sub(r"\b([3-6])-?axis\s+CNC\s+machines?\b", r"\1-axis CNC machining center", query, flags=re.IGNORECASE)
     query = re.sub(r"\bMRI\s+machines?\b", "MRI", query, flags=re.IGNORECASE)
+    # Normalize only the final product head for catalog retrieval.  The
+    # semantic safety checks still adjudicate the complete query/family.
+    final = re.search(r"([A-Za-z][A-Za-z0-9-]*)\s*$", query)
+    if final:
+        normalized = next(iter(_subject_words(final.group(1))), final.group(1))
+        query = f"{query[:final.start(1)]}{normalized}{query[final.end(1):]}"
     return _clean(query)
 
 
@@ -284,7 +301,9 @@ def _subject_words(value: Any) -> set[str]:
             continue
         if len(word) > 4 and word.endswith("ies"):
             word = f"{word[:-3]}y"
-        elif len(word) > 4 and word.endswith("s") and not word.endswith("ss"):
+        elif len(word) > 5 and word.endswith(("sses", "xes", "zes", "ches", "shes")):
+            word = word[:-2]
+        elif len(word) > 4 and word.endswith("s") and not word.endswith(("ss", "us", "is")):
             word = word[:-1]
         normalized.add(word)
     return normalized
