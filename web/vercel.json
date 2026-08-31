@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://forgeindia-api.onrender.com/api/:path*"
+    },
+    {
+      "source": "/india/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/india",
+      "destination": "/index.html"
+    }
+  ]
+}
