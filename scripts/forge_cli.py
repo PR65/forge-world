@@ -6,6 +6,7 @@ import json
 import os
 import sys
 from pathlib import Path
+from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -84,6 +85,37 @@ def cmd_adapter(args):
     print(json.dumps(run_adapter_demo(args.country), indent=1)[:6000])
 
 
+def _objective_constraints(args):
+    from forge.india_v1.objective_models import ObjectiveConstraint
+
+    constraints = [ObjectiveConstraint(kind="avoid_country", value=value) for value in args.avoid_country]
+    for raw in args.constraint:
+        if "=" not in raw:
+            raise ValueError("--constraint must use KIND=VALUE")
+        kind, value = raw.split("=", 1)
+        constraints.append(ObjectiveConstraint(kind=kind.strip(), value=value.strip()))
+    return tuple(constraints)
+
+
+def cmd_objective_compile(args):
+    from forge.india_v1.objective_compiler import compile_industrial_objective
+    from forge.india_v1.objective_models import IndustrialObjective
+
+    objective = IndustrialObjective(
+        objective_type="manufacture",
+        product=args.product,
+        quantity=args.quantity,
+        output_unit=args.unit,
+        period=args.period,
+        geography=args.geography,
+        target_year=args.target_year,
+        constraints=_objective_constraints(args),
+        confirm_family=args.confirm_family,
+    )
+    compilation = compile_industrial_objective(objective, use_fixtures=not args.no_fixtures)
+    print(json.dumps(compilation.to_dict(), indent=2, sort_keys=True, ensure_ascii=False))
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="forge")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -108,6 +140,22 @@ def main(argv=None):
     a = sub.add_parser("adapter", help="fetch live World Bank observations")
     a.add_argument("--country", default="IND")
     a.set_defaults(func=cmd_adapter)
+
+    objective = sub.add_parser("objective", help="compile a bounded industrial objective")
+    objective_sub = objective.add_subparsers(dest="objective_cmd", required=True)
+    compile_parser = objective_sub.add_parser("compile", help="compile objective demand, capacity, and closure JSON")
+    compile_parser.add_argument("--product", required=True)
+    compile_parser.add_argument("--quantity", required=True, type=float)
+    compile_parser.add_argument("--unit", default="units")
+    compile_parser.add_argument("--per", dest="period", choices=("year", "month", "week", "day"), default="year")
+    compile_parser.add_argument("--geography", default="INDIA")
+    compile_parser.add_argument("--target-year", type=int, default=2030)
+    compile_parser.add_argument("--avoid-country", action="append", default=[])
+    compile_parser.add_argument("--constraint", action="append", default=[], metavar="KIND=VALUE")
+    compile_parser.add_argument("--confirm-family", action="store_true")
+    compile_parser.add_argument("--no-fixtures", action="store_true", help="disable deterministic validation fixtures")
+    compile_parser.add_argument("--json", action="store_true", help="emit deterministic JSON (the V0 output format)")
+    compile_parser.set_defaults(func=cmd_objective_compile)
 
     args = ap.parse_args(argv)
     args.func(args)

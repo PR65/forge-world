@@ -4,7 +4,8 @@ import type { IndiaDomain } from "./india-types";
 import ProductWorkbench from "./product-v1/ProductWorkbench";
 import type { ProductMode, ProductResolutionNotice } from "./product-v1/ProductWorkbench";
 import type { WhySelection } from "./product-v1";
-import { resolveObjective } from "./product-v1/objective-api";
+import { compileObjective, resolveObjective } from "./product-v1/objective-api";
+import type { ObjectiveCompilation } from "./product-v1/objective-api";
 import { fetchBuildability } from "./ui-rebuild/buildability-api";
 import type { BuildabilityDomain, BuildabilityItem, BuildabilityViewModel } from "./ui-rebuild/buildability-types";
 
@@ -63,6 +64,9 @@ export default function IndiaApp() {
   const [domainItems, setDomainItems] = useState<BuildabilityItem[]>([]);
   const [viewModel, setViewModel] = useState<BuildabilityViewModel | null>(null);
   const [resolution, setResolution] = useState<ProductResolutionNotice | null>(null);
+  const [objectiveCompilation, setObjectiveCompilation] = useState<ObjectiveCompilation | null>(null);
+  const [objectiveCompilationError, setObjectiveCompilationError] = useState<string | null>(null);
+  const [objectiveCompilationLoading, setObjectiveCompilationLoading] = useState(false);
   const [selection, setSelection] = useState<WhySelection | null>(null);
   const [addedItems, setAddedItems] = useState<BuildabilityItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -74,7 +78,7 @@ export default function IndiaApp() {
   const loadRecord = useCallback(async (recordId: string) => {
     request.current?.abort();
     const controller = new AbortController(); request.current = controller; const current = ++generation.current;
-    setLoading(true); setError(null); setResolution(null);
+    setLoading(true); setError(null); setResolution(null); setObjectiveCompilation(null); setObjectiveCompilationError(null); setObjectiveCompilationLoading(false);
     try {
       const next = await fetchBuildability(recordId, controller.signal);
       if (controller.signal.aborted || current !== generation.current) return;
@@ -88,7 +92,7 @@ export default function IndiaApp() {
     const target = title.trim(); if (!target) return;
     request.current?.abort();
     const controller = new AbortController(); request.current = controller; const current = ++generation.current;
-    setLoading(true); setError(null); setSelection(null);
+    setLoading(true); setError(null); setSelection(null); setObjectiveCompilation(null); setObjectiveCompilationError(null); setObjectiveCompilationLoading(false);
     try {
       const resolved = await resolveObjective(target, controller.signal);
       const next = resolved.analysis;
@@ -107,6 +111,7 @@ export default function IndiaApp() {
     request.current?.abort();
     const controller = new AbortController(); request.current = controller; const current = ++generation.current;
     setLoading(true); setError(null); setSelection(null); setQuery(target); setObjectiveText(target); setMode(targetMode);
+    setObjectiveCompilation(null); setObjectiveCompilationError(null); setObjectiveCompilationLoading(false);
     try {
       const resolved = await resolveObjective(target, controller.signal);
       if (controller.signal.aborted || current !== generation.current) return;
@@ -121,6 +126,17 @@ export default function IndiaApp() {
       setViewModel(next);
       const matchingDomain = domains.find((domain) => domain.name === next.domain);
       if (matchingDomain) setActiveDomainId(matchingDomain.id);
+      if (resolved.objective.quantity !== null) {
+        setObjectiveCompilationLoading(true);
+        try {
+          const compilation = await compileObjective(resolved.objective, controller.signal);
+          if (!controller.signal.aborted && current === generation.current) setObjectiveCompilation(compilation);
+        } catch (cause) {
+          if (!controller.signal.aborted && current === generation.current) setObjectiveCompilationError(errorText(cause));
+        } finally {
+          if (!controller.signal.aborted && current === generation.current) setObjectiveCompilationLoading(false);
+        }
+      }
       updateUrl(targetMode, target, targetMode === "DISCOVER" ? activeDomainId : null, push);
     } catch (cause) {
       if (!controller.signal.aborted && current === generation.current) { setViewModel(null); setError(errorText(cause)); }
@@ -132,6 +148,16 @@ export default function IndiaApp() {
     void fetchIndiaDomains(controller.signal).then((rows) => setDomains(publicDomains(rows))).catch(() => setDomains([]));
     return () => controller.abort();
   }, []);
+
+  // Catalog warm-up can outlast the lightweight domain request timeout on a
+  // cold local server. Re-entering DISCOVER gets one fresh bounded attempt
+  // instead of leaving a permanently blank domain section.
+  useEffect(() => {
+    if (mode !== "DISCOVER" || domains.length) return;
+    const controller = new AbortController();
+    void fetchIndiaDomains(controller.signal).then((rows) => setDomains(publicDomains(rows))).catch(() => undefined);
+    return () => controller.abort();
+  }, [domains.length, mode]);
 
   useEffect(() => {
     if (initialRoute.recordId) void loadRecord(initialRoute.recordId); else void analyze(initialRoute.query || DEFAULT_OBJECTIVE, false, initialRoute.mode);
@@ -198,6 +224,8 @@ export default function IndiaApp() {
     <ProductWorkbench
       activeDomainId={activeDomainId} addedItems={addedItems} domainItems={domainItems} domains={domains} error={error} loading={loading}
       mode={mode} objectiveText={objectiveText} onAddToBuildPath={addToBuildPath}
+      objectiveCompilation={objectiveCompilation} objectiveCompilationError={objectiveCompilationError}
+      objectiveCompilationLoading={objectiveCompilationLoading}
       onAnalyze={(value) => void analyze(value)} onCandidateSelect={(value) => void loadConfirmed(value)}
       onDomainSelect={chooseDomain} onGoDeeper={(item) => void loadConfirmed(item.title)} onModeChange={changeMode}
       onQueryChange={setQuery} onRemoveAddedItem={removeFromBuildPath} onRetry={() => void analyze(objectiveText || query)}
