@@ -22,10 +22,16 @@ OBJECTIVE_RESOLUTION_SCHEMA_VERSION = "forge-india-objective-resolution-v1"
 _SPACE = re.compile(r"\s+")
 _LEADING_INTENT = (
     re.compile(r"^(?:i|we)\s+(?:want|would\s+like|plan|need)\s+to\s+", re.IGNORECASE),
+    re.compile(r"^(?:wants?|plans?|needs?)\s+to\s+", re.IGNORECASE),
     re.compile(r"^help\s+(?:me|us)\s+(?:to\s+)?", re.IGNORECASE),
     re.compile(r"^what\s+(?:would|does)\s+it\s+take\s+to\s+", re.IGNORECASE),
     re.compile(r"^can\s+india\s+", re.IGNORECASE),
-    re.compile(r"^(?:please\s+)?(?:analy[sz]e|build|make|manufacture|produce|locali[sz]e)\s+", re.IGNORECASE),
+    re.compile(r"^(?:please\s+)?(?:analy[sz]e|builds?|makes?|manufactures?|produces?|locali[sz]e)\s+", re.IGNORECASE),
+)
+_LEADING_GEOGRAPHY = re.compile(
+    r"^(?:in\s+)?india\s+(?=(?:(?:wants?|plans?|needs?)\s+to\s+)?"
+    r"(?:analy[sz]e|builds?|makes?|manufactures?|produces?|locali[sz]e)\b)",
+    re.IGNORECASE,
 )
 _GEOGRAPHY = re.compile(r"\b(?:in|within|for)\s+india\b", re.IGNORECASE)
 _CADENCE = re.compile(
@@ -80,40 +86,6 @@ _MATCH_BASIS = {
     "related": "Related industrial family",
 }
 
-# Resolver-only subject vocabulary.  Catalog search intentionally indexes
-# explanatory and dependency text for discovery; objective resolution needs a
-# stricter notion of what a record *is*.  These reusable family anchors are
-# therefore evaluated against the query subject and the record's family label,
-# never against uses, requirements, or dependency prose.
-_SUBJECT_FAMILY_RULES: tuple[tuple[str, int, tuple[str, ...], tuple[str, ...]], ...] = (
-    ("mri", 100, ("mri", "magnetic resonance imaging"), ("07",)),
-    ("ct", 100, ("ct scanner", "computed tomography"), ("07",)),
-    ("freeze_dryer", 90, ("freeze dryer", "freeze drier", "lyophilizer"), ("07", "08")),
-    ("cnc", 90, ("cnc", "computer numerical control", "machining center", "machining centre"), ("05", "12")),
-    ("reaction_wheel", 90, ("reaction wheel",), ("01",)),
-    ("traction_inverter", 90, ("traction inverter",), ("09",)),
-    ("hydraulic_breaker", 90, ("hydraulic breaker",), ("10",)),
-    ("grain_sorter", 90, ("grain colour sorter", "grain color sorter", "grain sorter"), ("08",)),
-    ("semiconductor_equipment", 85, ("semiconductor equipment", "wafer equipment"), ("04",)),
-    ("battery", 70, ("battery", "batteries", "energy storage"), ("03", "09")),
-    ("bearing", 70, ("bearing", "bearings"), ("05", "12")),
-    ("motor", 70, ("motor", "motors"), ("05", "09", "10")),
-    ("pump", 70, ("pump", "pumps"), ("05", "06", "10")),
-    ("compressor", 70, ("compressor", "compressors", "blower", "blowers"), ("05", "12")),
-    ("transformer", 70, ("transformer", "transformers"), ("03",)),
-    ("robot", 70, ("robot", "robots", "robotic", "robotics"), ("05",)),
-    ("packaging", 70, ("packaging", "packer", "packers"), ("11", "05")),
-    ("textile", 70, ("textile", "loom", "looms", "weaving"), ("11",)),
-    ("furnace", 70, ("furnace", "furnaces", "kiln", "kilns"), ("06", "10")),
-    ("aircraft", 60, ("aircraft", "airplane", "aeroplane"), ("01",)),
-    ("agricultural_machine", 60, ("agricultural", "agriculture", "tractor", "farm machinery"), ("08", "09")),
-    ("dialysis", 60, ("dialysis", "hemodialysis", "dialysis machine"), ("07",)),
-    # Generic scanner is deliberately lower-priority than a named modality.
-    # Thus "MRI scanner" is MRI, while an unqualified optical/document scanner
-    # cannot silently become a medical imaging system.
-    ("scanner", 10, ("scanner", "scanners"), ()),
-)
-
 _RESOLUTION_LOW_INFORMATION = {
     "a",
     "an",
@@ -137,30 +109,27 @@ _RESOLUTION_LOW_INFORMATION = {
     "unit",
     "units",
 }
-_PRODUCT_SUBJECT_FAMILIES = frozenset(rule[0] for rule in _SUBJECT_FAMILY_RULES)
 _PRODUCT_KINDS = {"PRODUCT", "EQUIPMENT"}
 _MIN_DIRECT_COVERAGE = 0.50
 _MIN_CANDIDATE_MARGIN = 18.0
 
-# Query-only family bridges. These do not add atlas records or assert that the
-# requested subtype is equivalent to the family; they only make a useful,
-# confirmation-required partial result possible when the exact subtype is not
-# mapped. Rules are deliberately broad industrial families, not benchmark IDs.
-_FAMILY_FALLBACKS = (
-    (re.compile(r"\btraction inverter\b", re.I), "motor drive"),
-    (re.compile(r"\b(?:lathe|boring mill|milling machine|drilling machine|grinder|edm|rotary table)\b", re.I), "CNC machining center"),
-    (re.compile(r"\b(?:pump)\b", re.I), "industrial centrifugal pump"),
-    (re.compile(r"\b(?:compressor|blower)\b", re.I), "industrial compressor"),
-    (re.compile(r"\btransformer\b", re.I), "grid transformer"),
-    (re.compile(r"\b(?:loom|carding|yarn|textile)\b", re.I), "textile machinery"),
-    (re.compile(r"\b(?:packaging|carton|label applicator|pallet wrapping|tube filling)\b", re.I), "packaging machine"),
-    (re.compile(r"\b(?:autoclave|sterili[sz])", re.I), "medical sterilization equipment"),
-    (re.compile(r"\b(?:spectrophotometer|chromatograph|laboratory|centrifuge|rotary evaporator)\b", re.I), "laboratory equipment"),
-    (re.compile(r"\b(?:wafer|plasma etch|wire bonder|spin coater|semiconductor wet bench)\b", re.I), "semiconductor equipment"),
-    (re.compile(r"\b(?:jaw crusher|flotation|ore sort|vibrating screen)\b", re.I), "mineral processing equipment"),
-    (re.compile(r"\b(?:railway|rail)\b", re.I), "rail equipment"),
-    (re.compile(r"\b(?:kiln|furnace)\b", re.I), "industrial furnace"),
-    (re.compile(r"\b(?:extruder|extrusion)\b", re.I), "extrusion equipment"),
+# A deliberately small cross-family safety vocabulary, not a product routing
+# table.  These modifiers change the underlying machine/component family and
+# therefore must occur in the mapped record's own name/aliases before a hit is
+# offered.  Everything else is resolved from catalog names, aliases, family
+# keys and graph metadata.
+_FAMILY_DEFINING_MODIFIERS = frozenset(
+    {"ball", "hydraulic", "optical", "plasma", "reaction", "traction", "vacuum", "wind"}
+)
+_SAFE_FAMILY_HEADS = frozenset(
+    {"battery", "cnc", "compressor", "furnace", "motor", "packaging", "pump", "robot", "transformer"}
+)
+_SAFE_BROADER_MODIFIERS = frozenset({"traction"})
+_FAMILY_CONFLICTS = (
+    (frozenset({"lithium", "ion"}), frozenset({"flow"})),
+)
+_SAFE_HEAD_EQUIVALENTS = (
+    (frozenset({"cell"}), frozenset({"lithium", "ion", "pouch"}), "battery"),
 )
 
 
@@ -209,6 +178,11 @@ def parse_objective(value: str) -> ParsedObjective:
     geography = ""
     geography_label = ""
 
+    leading_geography = _LEADING_GEOGRAPHY.match(work)
+    if leading_geography:
+        geography = "INDIA"
+        geography_label = "India"
+        work = _clean(work[leading_geography.end():])
     if re.match(r"^can\s+india\b", work, re.IGNORECASE) or _GEOGRAPHY.search(work):
         geography = "INDIA"
         geography_label = "India"
@@ -310,6 +284,12 @@ def _retrieval_query(product_query: str) -> str:
         query = re.sub(rf"\b{word}[- ]axis\b", f"{digit}-axis", query, flags=re.IGNORECASE)
     query = re.sub(r"\b([3-6])-?axis\s+CNC\s+machines?\b", r"\1-axis CNC machining center", query, flags=re.IGNORECASE)
     query = re.sub(r"\bMRI\s+machines?\b", "MRI", query, flags=re.IGNORECASE)
+    # Normalize only the final product head for catalog retrieval.  The
+    # semantic safety checks still adjudicate the complete query/family.
+    final = re.search(r"([A-Za-z][A-Za-z0-9-]*)\s*$", query)
+    if final:
+        normalized = next(iter(_subject_words(final.group(1))), final.group(1))
+        query = f"{query[:final.start(1)]}{normalized}{query[final.end(1):]}"
     return _clean(query)
 
 
@@ -321,22 +301,12 @@ def _subject_words(value: Any) -> set[str]:
             continue
         if len(word) > 4 and word.endswith("ies"):
             word = f"{word[:-3]}y"
-        elif len(word) > 4 and word.endswith("s") and not word.endswith("ss"):
+        elif len(word) > 5 and word.endswith(("sses", "xes", "zes", "ches", "shes")):
+            word = word[:-2]
+        elif len(word) > 4 and word.endswith("s") and not word.endswith(("ss", "us", "is")):
             word = word[:-1]
         normalized.add(word)
     return normalized
-
-
-def _subject_families(value: Any) -> set[str]:
-    text = re.sub(r"[^a-z0-9]+", " ", str(value or "").casefold()).strip()
-    matches: list[tuple[int, str]] = []
-    for family, priority, aliases, _domains in _SUBJECT_FAMILY_RULES:
-        if any(re.search(rf"\b{re.escape(alias)}\b", text) for alias in aliases):
-            matches.append((priority, family))
-    if not matches:
-        return set()
-    highest = max(priority for priority, _family in matches)
-    return {family for priority, family in matches if priority == highest}
 
 
 def _record_subject(record: Mapping[str, Any]) -> str:
@@ -345,6 +315,30 @@ def _record_subject(record: Mapping[str, Any]) -> str:
     # not the subject requested by the user.
     label = str(record.get("family_label") or record.get("display_name") or record.get("canonical_name") or "")
     return re.split(r"\s+[—–]\s+", label, maxsplit=1)[0].strip()
+
+
+def _record_signature_words(record: Mapping[str, Any]) -> set[str]:
+    """Build a product-family signature exclusively from record identity fields."""
+
+    values = [
+        record.get("family_label"),
+        record.get("display_name"),
+        record.get("canonical_name"),
+        record.get("family_key"),
+        *list(record.get("aliases") or ()),
+    ]
+    signature: set[str] = set()
+    for value in values:
+        signature.update(_subject_words(value))
+    return signature
+
+
+def _head_word(words: set[str], query: str) -> str:
+    ordered: list[str] = []
+    for raw_word in re.findall(r"[a-z0-9]+", str(query).casefold()):
+        normalized = _subject_words(raw_word)
+        ordered.extend(word for word in normalized if word in words)
+    return ordered[-1] if ordered else ""
 
 
 def _semantic_hit(
@@ -357,8 +351,11 @@ def _semantic_hit(
     subject = _record_subject(record)
     query_words = _subject_words(query)
     subject_words = _subject_words(subject)
-    query_families = _subject_families(query)
-    subject_families = _subject_families(subject)
+    signature_words = _record_signature_words(record)
+    # Use the declared family label, not variant axes embedded in family keys:
+    # ``battery-electric`` describes a tractor configuration, not its subject.
+    family_identity = str(record.get("family_label") or "").casefold()
+    family_identity_words = _subject_words(family_identity)
     kind = str(record.get("kind") or "").upper()
 
     # Objective queries are product-like unless the person explicitly asks
@@ -368,22 +365,37 @@ def _semantic_hit(
     if not explicit_non_product and kind and kind not in _PRODUCT_KINDS:
         return None
 
-    if query_families:
-        if not subject_families or query_families.isdisjoint(subject_families):
-            return None
-
-    direct_overlap = len(query_words & subject_words)
-    direct_coverage = direct_overlap / max(1, len(query_words))
-    family_compatible = bool(query_families & subject_families)
     match_type = str(hit.get("match_type") or "")
+    subject_overlap = query_words & subject_words
+    direct_overlap = len(query_words & signature_words)
+    signature_coverage = direct_overlap / max(1, len(query_words))
+    identity_match = bool(
+        query_words
+        and (
+            query_words <= family_identity_words
+            or all(len(word) >= 5 and word in family_identity for word in query_words)
+        )
+    )
+    if not subject_overlap and not (
+        (len(query_words) >= 2 or identity_match)
+        and match_type in {"exact", "phrase", "all_tokens", "alias"}
+        and signature_coverage >= 0.90
+    ):
+        return None
+    direct_coverage = max(len(subject_overlap) / max(1, len(query_words)), signature_coverage if not subject_overlap else 0.0)
+    head = _head_word(query_words, query)
+    family_compatible = bool(head and head in signature_words and query_words & subject_words)
+    missing_definers = (query_words & _FAMILY_DEFINING_MODIFIERS) - signature_words
+    if missing_definers:
+        return None
     if not family_compatible and direct_coverage < _MIN_DIRECT_COVERAGE:
         return None
-    if match_type == "related" and direct_coverage < _MIN_DIRECT_COVERAGE:
+    if match_type == "related" and direct_coverage < (1.0 / 3.0):
         return None
 
     enriched = dict(hit)
     enriched["subject_coverage"] = direct_coverage
-    enriched["subject_families"] = sorted(subject_families)
+    enriched["subject_signature"] = sorted(signature_words)
     enriched["family_compatible"] = family_compatible
     return enriched
 
@@ -447,7 +459,7 @@ def _classification(hit: Mapping[str, Any] | None) -> str:
         return "STRONG"
     # Related hits sharing fewer than half of the meaningful query terms are
     # too weak even for a nearest-family suggestion.
-    if coverage >= 0.50:
+    if bool(hit.get("family_compatible")) and coverage >= 0.50:
         return "NEAREST"
     return "UNRESOLVED"
 
@@ -470,17 +482,47 @@ def resolve_objective(value: str, catalog: IndiaCatalog | None = None, *, candid
     hits = _semantic_hits(search_query, raw_hits)[: max(1, min(int(candidate_limit), 8))]
     top = hits[0] if hits else None
     classification = _classification(top)
-    fallback_used = False
 
+    # Generic, bounded family inheritance: when a compound subtype is absent,
+    # retry only its product-family head.  This is not a per-product routing
+    # table and always requires confirmation.  Family-defining modifiers such
+    # as "vacuum" or "optical" block inheritance unless explicitly known to
+    # remain within the broader family (traction motor is the one current
+    # example).
+    fallback_used = False
     if classification == "UNRESOLVED" and search_query:
-        fallback_query = next((family for pattern, family in _FAMILY_FALLBACKS if pattern.search(search_query)), "")
-        if fallback_query:
-            fallback_hits = _semantic_hits(fallback_query, catalog.search_hits(
-                fallback_query,
-                limit=max(12, min(int(candidate_limit) * 6, 48)),
-                include_variants=False,
-            ))[: max(1, min(int(candidate_limit), 8))]
-            if fallback_hits and _classification(fallback_hits[0]) in {"EXACT", "STRONG", "NEAREST"}:
+        query_words = _subject_words(search_query)
+        head = _head_word(query_words, search_query)
+        head = next(
+            (
+                replacement
+                for required, context, replacement in _SAFE_HEAD_EQUIVALENTS
+                if required.issubset(query_words) and bool(context & query_words)
+            ),
+            head,
+        )
+        missing_definers = query_words & _FAMILY_DEFINING_MODIFIERS
+        inheritance_safe = not (missing_definers - _SAFE_BROADER_MODIFIERS)
+        if head in _SAFE_FAMILY_HEADS and inheritance_safe:
+            fallback_hits = _semantic_hits(
+                head,
+                catalog.search_hits(
+                    head,
+                    limit=max(12, min(int(candidate_limit) * 6, 48)),
+                    include_variants=False,
+                ),
+            )[: max(1, min(int(candidate_limit), 8))]
+            fallback_hits = [
+                hit
+                for hit in fallback_hits
+                if head in _subject_words(_record_subject(hit["record"]))
+                and not any(
+                    query_terms.issubset(query_words)
+                    and bool(blocked_terms & _subject_words(_record_subject(hit["record"])))
+                    for query_terms, blocked_terms in _FAMILY_CONFLICTS
+                )
+            ]
+            if fallback_hits:
                 hits = fallback_hits
                 top = hits[0]
                 classification = "NEAREST"
@@ -511,9 +553,8 @@ def resolve_objective(value: str, catalog: IndiaCatalog | None = None, *, candid
             candidates.append(candidate)
             if len(candidates) >= max(1, min(int(candidate_limit), 8)):
                 break
-        if fallback_used:
+        if fallback_used or classification == "NEAREST":
             candidates = [{**candidate, "match_basis": "Nearest mapped industrial family"} for candidate in candidates]
-
     selected = candidates[0] if candidates and classification in {"EXACT", "STRONG"} else None
     analysis = compose_buildability_view_model(top["record"], catalog).to_dict() if selected and top else None
     nearest = candidates[0] if candidates and classification == "NEAREST" else None

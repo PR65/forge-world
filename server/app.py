@@ -8,7 +8,7 @@ import re
 from collections import deque
 from pathlib import Path
 from threading import Lock
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Literal, Optional, Sequence
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -131,6 +131,35 @@ class ResearchResolveIn(BaseModel):
     capture: Dict[str, Any]
     reviewer: str = Field(min_length=1)
     approve_for_scenario: bool = False
+
+
+class IndiaObjectiveConstraintIn(BaseModel):
+    kind: str = Field(min_length=1, max_length=64)
+    value: str | float
+
+    @field_validator("value")
+    @classmethod
+    def validate_value(cls, value: str | float) -> str | float:
+        if isinstance(value, str):
+            value = value.strip()
+            if not value or len(value) > 240:
+                raise ValueError("text constraint values must contain 1-240 characters")
+        elif not math.isfinite(value):
+            raise ValueError("numeric constraint values must be finite")
+        return value
+
+
+class IndiaIndustrialObjectiveIn(BaseModel):
+    objective: Literal["manufacture"] = "manufacture"
+    product: str = Field(min_length=1, max_length=240)
+    quantity: float = Field(gt=0, allow_inf_nan=False)
+    unit: str = Field(default="units", min_length=1, max_length=32)
+    period: Literal["year", "month", "week", "day"] = "year"
+    geography: str = Field(default="INDIA", min_length=1, max_length=80)
+    target_year: int = Field(default=2030, ge=2026, le=2200)
+    constraints: List[IndiaObjectiveConstraintIn] = Field(default_factory=list, max_length=12)
+    confirm_family: bool = False
+    use_fixtures: bool = True
 
 
 def _objective_spec(obj: ObjectiveIn) -> ObjectiveSpecInput:
@@ -412,6 +441,37 @@ def india_resolve_objective_api(
     if not q.strip():
         raise HTTPException(422, "provide a product or manufacturing objective")
     return resolve_objective(q, get_india_catalog(), candidate_limit=candidate_limit)
+
+
+@app.post("/api/india/objective/compile")
+def india_compile_objective_api(request: IndiaIndustrialObjectiveIn):
+    """Compile a bounded manufacturing target through the existing FORGE core."""
+
+    from forge.india_v1.objective_compiler import compile_industrial_objective
+    from forge.india_v1.objective_models import IndustrialObjective, ObjectiveConstraint
+
+    objective = IndustrialObjective(
+        objective_type=request.objective,
+        product=request.product.strip(),
+        quantity=request.quantity,
+        output_unit=request.unit.strip(),
+        period=request.period,
+        geography=request.geography.strip().upper(),
+        target_year=request.target_year,
+        constraints=tuple(
+            ObjectiveConstraint(kind=item.kind.strip(), value=item.value)
+            for item in request.constraints
+        ),
+        confirm_family=request.confirm_family,
+    )
+    try:
+        return compile_industrial_objective(
+            objective,
+            catalog=get_india_catalog(),
+            use_fixtures=request.use_fixtures,
+        ).to_dict()
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
 
 
 def _india_buildability_payload(subject: str):

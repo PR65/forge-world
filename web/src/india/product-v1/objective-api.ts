@@ -63,6 +63,49 @@ export interface ObjectiveResolution {
   analysis: BuildabilityViewModel | null;
 }
 
+export interface ObjectiveDemandLine {
+  node_id: string;
+  label: string;
+  quantity: number | null;
+  unit: string | null;
+  quantity_state: string;
+  coefficient_state: string | string[] | null;
+}
+
+export interface ObjectiveGapLine {
+  node_id: string;
+  label: string;
+  required: number | null;
+  capacity_lo: number | null;
+  capacity_hi: number | null;
+  gap_lo: number | null;
+  gap_hi: number | null;
+  coverage_ratio_lo: number | null;
+  coverage_ratio_hi: number | null;
+  unit: string | null;
+  state: string;
+}
+
+export interface ObjectiveCompilation {
+  schema_version: string;
+  result_class: string;
+  resolved_objective: Record<string, unknown>;
+  demand_ledger: ObjectiveDemandLine[];
+  capacity_ledger: Array<{
+    node_id: string;
+    label: string;
+    capacity_lo: number | null;
+    capacity_hi: number | null;
+    unit: string | null;
+    state: string;
+    epistemic_class: string;
+  }>;
+  gap_ledger: ObjectiveGapLine[];
+  bottlenecks: Array<{ node_id: string; label: string; reason: string; criticality: number }>;
+  closure_actions: Array<{ id: string; category: string; label: string; reason: string }>;
+  verification_frontier: Array<{ id: string; question: string; reason: string }>;
+}
+
 function candidate(value: unknown): ObjectiveCandidate | null {
   const source = object(value);
   const title = text(source.title);
@@ -122,4 +165,32 @@ export async function resolveObjective(query: string, signal?: AbortSignal): Pro
     candidates,
     analysis: text(analysisSource.title) ? normalizeBuildabilityViewModel(analysisSource) : null,
   };
+}
+
+export async function compileObjective(
+  context: ObjectiveContext,
+  signal?: AbortSignal,
+): Promise<ObjectiveCompilation> {
+  if (context.quantity === null) throw new Error("A quantity is required for objective compilation.");
+  const period = ({ PER_MONTH: "month", PER_WEEK: "week", PER_DAY: "day" } as const)[context.cadence as "PER_MONTH" | "PER_WEEK" | "PER_DAY"] || "year";
+  const response = await fetch("/api/india/objective/compile", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      objective: "manufacture",
+      product: context.productQuery,
+      quantity: context.quantity,
+      unit: "units",
+      period,
+      geography: context.geography || "INDIA",
+      target_year: context.deadlineYear || 2030,
+      constraints: context.constraints.map((value) => ({ kind: "text", value })),
+    }),
+    signal,
+  });
+  if (!response.ok) {
+    const payload = await response.json().catch(() => null) as { detail?: string } | null;
+    throw new Error(payload?.detail || `Objective compilation failed (${response.status}).`);
+  }
+  return await response.json() as ObjectiveCompilation;
 }

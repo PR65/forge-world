@@ -133,6 +133,38 @@ body:has(.fip-workbench) { overflow: auto; }
 .fip-workbench-loading p { margin: 0.5rem auto 1rem; max-width: 42rem; }
 .fip-workbench-loading button { border: 1px solid var(--fip-border-strong); background: var(--fip-surface-raised); padding: 0.55rem 0.8rem; }
 
+.fip-objective-compilation { margin-bottom: 1.5rem; border: 1px solid var(--fip-border); background: #101315; }
+.fip-objective-compilation > header { display: flex; gap: 0.75rem 1rem; align-items: baseline; flex-wrap: wrap; padding: 1rem 1.1rem; border-bottom: 1px solid var(--fip-border); }
+.fip-objective-compilation > header p { width: 100%; margin: 0; color: var(--fip-accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.fip-objective-compilation > header h1 { flex: 1; margin: 0; font-size: 1.35rem; }
+.fip-objective-compilation > header span { color: var(--fip-muted); font-family: ui-monospace, monospace; font-size: 0.68rem; }
+.fip-objective-compilation.is-loading, .fip-objective-compilation.is-error { padding: 1rem 1.1rem; color: var(--fip-muted); }
+.fip-objective-compilation.is-error { border-left: 3px solid var(--fip-missing); }
+.fip-objective-compilation.is-error p { margin: 0.3rem 0 0; }
+.fip-objective-target { display: grid; grid-template-columns: auto 1fr; gap: 0.15rem 1rem; align-items: baseline; padding: 0.9rem 1.1rem; border-bottom: 1px solid var(--fip-border); }
+.fip-objective-target small { grid-column: 1 / -1; color: var(--fip-muted); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.fip-objective-target strong { color: var(--fip-accent); font-size: 1.15rem; }
+.fip-objective-target p { margin: 0; color: var(--fip-text); }
+.fip-objective-ledgers, .fip-objective-closure { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.fip-objective-ledgers > section, .fip-objective-closure > section { min-width: 0; padding: 1rem 1.1rem; }
+.fip-objective-ledgers > section + section, .fip-objective-closure > section + section { border-left: 1px solid var(--fip-border); }
+.fip-objective-closure { border-top: 1px solid var(--fip-border); }
+.fip-objective-compilation h2 { margin: 0 0 0.75rem; font-size: 0.92rem; }
+.fip-objective-compilation ul, .fip-objective-compilation ol { list-style: none; margin: 0; padding: 0; }
+.fip-objective-ledgers li { display: flex; gap: 0.8rem; justify-content: space-between; padding: 0.55rem 0; border-top: 1px solid color-mix(in srgb, var(--fip-border) 65%, transparent); }
+.fip-objective-ledgers li:first-child { border-top: 0; }
+.fip-objective-ledgers li span { min-width: 0; }
+.fip-objective-ledgers li strong, .fip-objective-ledgers li small { display: block; }
+.fip-objective-ledgers li strong { overflow: hidden; font-size: 0.8rem; text-overflow: ellipsis; white-space: nowrap; }
+.fip-objective-ledgers li small { margin-top: 0.2rem; color: var(--fip-muted); font-size: 0.65rem; }
+.fip-objective-ledgers li em { flex: none; color: var(--fip-accent); font-size: 0.73rem; font-style: normal; text-align: right; }
+.fip-objective-ledgers section > p, .fip-objective-closure section > p { margin: 0; color: var(--fip-muted); font-size: 0.8rem; line-height: 1.55; }
+.fip-objective-closure li { padding: 0.48rem 0; color: var(--fip-muted); font-size: 0.78rem; line-height: 1.45; }
+.fip-objective-closure li + li { border-top: 1px solid color-mix(in srgb, var(--fip-border) 65%, transparent); }
+.fip-objective-closure li strong { display: block; color: var(--fip-text); }
+.fip-objective-closure li span { float: right; margin-left: 0.5rem; color: var(--fip-accent); font-family: ui-monospace, monospace; font-size: 0.64rem; }
+.fip-objective-closure li p { margin: 0.2rem 0 0; }
+
 @media (max-width: 980px) {
   .fip-workbench-topbar { grid-template-columns: 1fr auto; gap: 0.5rem 1rem; padding: 0 1rem; }
   .fip-workbench-topbar nav { justify-content: flex-end; }
@@ -141,6 +173,8 @@ body:has(.fip-workbench) { overflow: auto; }
   .fip-analyze-grid.has-rail,
   .fip-answer-head { grid-template-columns: 1fr; }
   .fip-answer-head { gap: 1rem; }
+  .fip-objective-ledgers, .fip-objective-closure { grid-template-columns: 1fr; }
+  .fip-objective-ledgers > section + section, .fip-objective-closure > section + section { border-top: 1px solid var(--fip-border); border-left: 0; }
 }
 
 @media (max-width: 640px) {
